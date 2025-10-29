@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="CatInCloud Labs Logo">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#6ee7ff"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+  </defs>
+  <!-- Cloud -->
+  <path d="M30 78a18 18 0 0 1 5-35c2-13 13-23 27-23 16 0 29 13 29 29v1a18 18 0 0 1 5 35H30z" fill="url(#g)"/>
+  <!-- Cat ears -->
+  <path d="M60 30l6 16-16-6zM92 34l-2 17-14-10z" fill="#b3e9ff"/>
+  <!-- Eyes -->
+  <circle cx="56" cy="70" r="4" fill="#0b0f14"/>
+  <circle cx="76" cy="70" r="4" fill="#0b0f14"/>
+  <!-- Whiskers -->
+  <path d="M42 76h16M42 82h16M70 76h16M70 82h16" stroke="#0b0f14" stroke-width="3" stroke-linecap="round"/>
+</svg>

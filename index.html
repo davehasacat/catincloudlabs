@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CatInCloud Labs — Cloud & Data Engineering Consulting</title>
+  <meta name="description" content="CatInCloud Labs helps teams build enterprise-grade data platforms on AWS, Snowflake, dbt, and Airflow." />
+  <link rel="canonical" href="https://catincloudlabs.com/" />
+  <link rel="icon" href="/assets/favicon.png" />
+  <meta property="og:title" content="CatInCloud Labs — Cloud & Data Engineering Consulting" />
+  <meta property="og:description" content="Enterprise-grade pipelines. AWS, Snowflake, dbt, Airflow. Delivered with security, reliability, and pragmatism." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://catincloudlabs.com/" />
+  <meta property="og:image" content="https://catincloudlabs.com/assets/social-card.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@catincloudlabs" />
+  <link rel="preload" href="/assets/style.css" as="style" />
+  <link rel="stylesheet" href="/assets/style.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "CatInCloud Labs",
+    "url": "https://catincloudlabs.com/",
+    "logo": "https://catincloudlabs.com/assets/logo.svg",
+    "sameAs": []
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header container">
+    <div class="brand">
+      <img class="logo" src="/assets/logo.svg" alt="CatInCloud Labs logo" width="40" height="40" />
+      <span class="brand-name">CatInCloud Labs</span>
+    </div>
+    <nav class="nav">
+      <a href="#services">Services</a>
+      <a href="#approach">Approach</a>
+      <a href="#about">About</a>
+      <a class="btn" href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <h1>Enterprise‑grade Cloud & Data Engineering</h1>
+      <p class="sub">
+        We design and operate production‑ready pipelines on <strong>AWS</strong>, <strong>Snowflake</strong>, <strong>dbt</strong>, and <strong>Airflow (MWAA)</strong> — with security, observability, and cost control from day one.
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#contact">Request a consult</a>
+        <a class="btn btn-ghost" href="#services">See services</a>
+      </div>
+    </section>
+
+    <section id="services" class="section container">
+      <h2>What we do</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>AWS Data Platforms</h3>
+          <p>Private VPC networking, KMS encryption, MWAA, S3 lake zones, and least‑privilege IAM. Built the way enterprises expect.</p>
+        </article>
+        <article class="card">
+          <h3>Snowflake & dbt</h3>
+          <p>Storage integrations, roles/grants, incremental models, documentation, and CI for reliable analytics delivery.</p>
+        </article>
+        <article class="card">
+          <h3>Orchestration & Ops</h3>
+          <p>Airflow DAG design, observability, retries/backfills, and operational runbooks that keep data moving.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="approach" class="section container">
+      <h2>How we work</h2>
+      <ul class="pill-list">
+        <li>Security‑first (private endpoints, KMS, IAM)</li>
+        <li>Reproducible IaC (Terraform‑ready patterns)</li>
+        <li>Observability (CloudWatch, metrics, alerts)</li>
+        <li>Documentation your team can run</li>
+      </ul>
+    </section>
+
+    <section id="about" class="section container">
+      <h2>About the founder</h2>
+      <p>Led by Dave Anaya, a cloud engineer focused on pragmatic, enterprise‑grade data platforms. Recent work includes a fully private MWAA environment orchestrating AWS → Snowflake pipelines with dbt Cloud.</p>
+    </section>
+
+    <section id="contact" class="section container contact">
+      <h2>Contact</h2>
+      <p>Ready to chat? Email <a href="mailto:hello@catincloudlabs.com">hello@catincloudlabs.com</a> or book a short consult.</p>
+      <p class="note">Prefer a NDA first? No problem — we can provide a mutual NDA on request.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer container">
+    <div>© <span id="y"></span> CatInCloud Labs LLC</div>
+    <div class="small">Built with Cloudflare Pages · AWS · Snowflake · dbt · Airflow</div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

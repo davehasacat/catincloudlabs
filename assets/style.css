@@ -1,0 +1,39 @@
+/* CatInCloud Labs — minimal, modern CSS */
+:root{
+  --bg:#0b0f14;
+  --panel:#121823;
+  --ink:#e6edf3;
+  --muted:#a5b1c2;
+  --brand:#6ee7ff;
+  --accent:#7c3aed;
+  --ring: rgba(110,231,255,.35);
+  --radius:18px;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial}
+a{color:var(--brand);text-decoration:none}
+a:hover{opacity:.9}
+.container{max-width:1100px;margin:0 auto;padding:24px}
+.site-header{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{display:flex;align-items:center;gap:10px}
+.brand .brand-name{font-weight:700;letter-spacing:.2px}
+.logo{display:block;filter:drop-shadow(0 4px 12px rgba(110,231,255,.15))}
+.nav{display:flex;gap:16px;align-items:center}
+.nav a{padding:8px 10px;border-radius:10px}
+.btn{display:inline-block;padding:10px 14px;border-radius:14px;background:var(--panel);border:1px solid #1f2a3a}
+.btn:hover{box-shadow:0 0 0 3px var(--ring)}
+.btn-primary{background:linear-gradient(135deg,var(--brand),var(--accent));color:#081018;border:none}
+.btn-ghost{background:transparent;border:1px solid #223046}
+.hero{padding:64px 24px;text-align:center}
+.hero h1{font-size:clamp(28px,5vw,44px);line-height:1.15;margin:0 0 12px}
+.hero .sub{max-width:740px;margin:0 auto 20px;color:var(--muted)}
+.section{padding:28px 0}
+.section h2{font-size:24px;margin:0 0 12px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:8px}
+.card{background:var(--panel);padding:18px;border:1px solid #1f2a3a;border-radius:var(--radius)}
+.pill-list{display:flex;flex-wrap:wrap;gap:10px;list-style:none;padding:0;margin:10px 0 0}
+.pill-list li{background:var(--panel);border:1px solid #1f2a3a;border-radius:999px;padding:8px 12px}
+.contact .note{color:var(--muted);font-size:.95rem}
+.site-footer{border-top:1px solid #1f2a3a;margin-top:28px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;color:var(--muted)}
+.small{font-size:.9rem}
+@media (max-width:640px){.nav{display:none}}
