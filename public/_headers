@@ -1,27 +1,7 @@
 /*
-  # ─────────────────────────────
-  # Core Security Headers
-  # ─────────────────────────────
-  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: geolocation=(), microphone=(), camera=()
-  Cross-Origin-Opener-Policy: same-origin
-  Cross-Origin-Embedder-Policy: require-corp
-  Cross-Origin-Resource-Policy: same-origin
-
-  # ─────────────────────────────
-  # Content Security Policy (CSP)
-  # ─────────────────────────────
-  # This CSP locks down everything to self by default.
-  # It allows inline styles (needed for simple static CSS) and safe data URIs for images.
-  # You can extend img-src or script-src later (e.g., 'self' https://plausible.io for analytics).
-
-  Content-Security-Policy: default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; font-src 'self' data:; script-src 'none'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; upgrade-insecure-requests
-
-  # ─────────────────────────────
-  # Performance & Caching
-  # ─────────────────────────────
-  Cache-Control: public, max-age=31536000, immutable
-  ETag: off
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+  Content-Security-Policy: default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'none'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; upgrade-insecure-requests
