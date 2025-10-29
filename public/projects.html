@@ -4,14 +4,52 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Projects — CatInCloud Labs</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Selected projects from CatInCloud Labs — cloud data platforms, secure VPC networking, and analytics." />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <link rel="canonical" href="https://catincloudlabs.pages.dev/projects.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Projects — CatInCloud Labs" />
+  <meta property="og:description" content="Enterprise Stock Market ELT, Private Networking Blueprints, and the upcoming Analytics Layer." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://catincloudlabs.pages.dev/projects.html" />
+  <meta property="og:image" content="https://catincloudlabs.pages.dev/social-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Projects — CatInCloud Labs" />
+  <meta name="twitter:description" content="AWS MWAA, Snowflake, dbt Cloud, KMS, and secure private networking." />
+  <meta name="twitter:image" content="https://catincloudlabs.pages.dev/social-card.png" />
+
+  <!-- Icons & theme -->
   <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/favicon.png" />
+  <meta name="theme-color" content="#111827" />
+
+  <!-- Styles -->
   <link rel="stylesheet" href="/styles.css" />
+
+  <!-- When custom domain goes live, switch these three lines: -->
+  <!--
+  <link rel="canonical" href="https://www.catincloudlabs.com/projects.html" />
+  <meta property="og:url" content="https://www.catincloudlabs.com/projects.html" />
+  <meta property="og:image" content="https://www.catincloudlabs.com/social-card.png" />
+  -->
 </head>
 <body>
+  <!-- Accessibility: skip link -->
+  <a href="#main" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">
+    Skip to content
+  </a>
+
   <header class="site-header">
     <div class="wrap">
-      <img src="/logo.svg" alt="CatInCloud Labs Logo" class="logo" />
-      <nav class="nav">
+      <img src="/logo.svg" alt="CatInCloud Labs logo" class="logo" />
+      <nav class="nav" aria-label="Primary">
         <a href="/">Home</a>
         <a href="/about.html">About</a>
         <a href="/projects.html" class="active">Projects</a>
@@ -19,7 +57,8 @@
       </nav>
     </div>
   </header>
-  <main class="wrap">
+
+  <main id="main" class="wrap">
     <h1>Projects</h1>
     <ul class="project-list">
       <li><strong>Enterprise Stock Market ELT</strong> — AWS MWAA, Snowflake, dbt Cloud, KMS — Phase 2 ✅</li>
@@ -27,6 +66,7 @@
       <li><strong>Analytics Layer (Upcoming)</strong> — Plotly Dash on Snowflake marts (Phase 3)</li>
     </ul>
   </main>
+
   <footer class="site-footer">
     <div class="wrap">
       <p>© 2025 CatInCloud Labs. All rights reserved.</p>
