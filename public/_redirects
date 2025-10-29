@@ -1,0 +1,10 @@
+# ─────────────────────────────
+# Clean root
+# ─────────────────────────────
+/index.html    /    301
+
+# ─────────────────────────────
+# (Optional) Redirect old preview domain → production
+# Uncomment this rule *after* your custom domain goes live.
+# ─────────────────────────────
+# https://catincloudlabs-cloudflare-pages.pages.dev/*    https://www.catincloudlabs.com/:splat    301
