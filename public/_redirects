@@ -1,0 +1,5 @@
+# Clean root
+/index.html    /    301
+
+# (Optional) Redirect old preview domain → production (enable after custom domain is live)
+# https://catincloudlabs.pages.dev/*    https://www.catincloudlabs.com/:splat    301

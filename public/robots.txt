@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://catincloudlabs.pages.dev/sitemap.xml
