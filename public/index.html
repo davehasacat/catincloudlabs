@@ -28,8 +28,9 @@
   <meta name="twitter:image" content="https://catincloudlabs.com/social-card.png" />
 
   <!-- Icons & theme -->
-  <link rel="icon" type="image/png" href="/favicon.png" />
-  <link rel="apple-touch-icon" href="/favicon.png" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="alternate icon" href="/favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" href="/favicon.svg" />
   <meta name="theme-color" content="#111827" />
   <meta name="color-scheme" content="light dark" />
 
@@ -42,9 +43,18 @@
     Skip to content
   </a>
 
+  <!-- Header -->
   <header class="site-header">
     <div class="wrap">
-      <img src="/logo.svg" alt="CatInCloud Labs logo" class="logo" />
+      <a href="/" class="site-logo" aria-label="CatInCloud Labs">
+        <img
+          src="/logo-wordmark-dark.svg"
+          alt="CatInCloud Labs"
+          width="192"
+          height="38"
+          class="logo"
+        />
+      </a>
       <nav class="nav" aria-label="Primary">
         <a href="/" class="active" aria-current="page">Home</a>
         <a href="/about.html">About</a>
