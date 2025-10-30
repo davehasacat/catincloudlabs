@@ -1,53 +1,79 @@
-# CatInCloud Labs — Website (Cloudflare Pages)
+# CatInCloud Labs 🌩️  
 
-A minimal, production-ready static site for **catincloudlabs.com**. Deploys automatically from GitHub to **Cloudflare Pages**.
+_Cloud Engineering • Data Pipelines • DevOps Excellence_
 
-## Quick start
+**CatInCloud Labs** is a minimalist, enterprise-grade portfolio site for showcasing cloud architecture and data engineering projects.
 
-1. **Create repo** on GitHub (public or private).
-2. Copy these files into the repo (root).
-3. Commit & push to `main`.
+---
 
-## Deploy to Cloudflare Pages
+## 🚀 Deployment
 
-1. Cloudflare Dashboard → **Pages** → *Create project* → **Connect to Git**.
-2. Select this repo.
-3. **Build settings**:  
-   - Framework preset: **None**  
-   - Build command: *(leave empty)*  
-   - Build output directory: **/** (project root)
-4. Click **Save and Deploy**.
-5. You’ll get a preview URL like `https://<project>.pages.dev`.
+This site is hosted on **Cloudflare Pages**.
 
-## Add custom domain
+**Configuration:**
 
-1. In the Pages project → **Custom domains** → **Set up a custom domain**.
-2. Enter `catincloudlabs.com` (and add `www.catincloudlabs.com` if you prefer a `www` host).  
-3. Cloudflare will prompt to create DNS records automatically.
-4. Optional: set a redirect from `www` → apex (or apex → www) in Pages' **Domain management**.
+- **Root Directory:** `/`
+- **Build Output Directory:** `public`
+- **Build Command:** *(none — static site)*
+- **Custom Domain:** [catincloudlabs.com](https://catincloudlabs.com)
 
-## Edit content
+**Public assets:**
 
-- Update text in `index.html`.  
-- Tweak colors/spacing in `assets/style.css`.  
-- Replace the logo at `assets/logo.svg` and social image at `assets/social-card.png`.  
-- Update contact email in the **Contact** section.  
-- Add more pages later (e.g., `services.html`, `about.html`).
+```
+public/
+├── index.html
+├── about.html
+├── projects.html
+├── styles.css
+├── favicon.png
+├── logo.svg
+├── robots.txt
+├── sitemap.xml
+├── humans.txt
+└── .well-known/
+    └── security.txt
+```
 
-## Security headers
+---
 
-- `_headers` sets a strict baseline CSP and common security headers.  
-- Because `script-src 'none'`, the page has **no JavaScript dependencies** (except a tiny inline year-setter). If you add scripts later, loosen CSP accordingly (e.g., `script-src 'self'`).
+## 🧠 Philosophy
 
-## SEO
+The site follows CatInCloud Labs’ core design principles:
 
-- `robots.txt` and `sitemap.xml` included.  
-- Open Graph/Twitter tags set in `index.html`.
+- **Clarity over complexity**
+- **Security and standards by default**
+- **Dark-mode native aesthetic**
+- **Cloud-native professionalism**
 
-## 404 page
+---
 
-- `404.html` is used by Cloudflare Pages automatically for missing routes.
+## 📄 Metadata & Compliance
 
-## License
+- **robots.txt** — SEO and crawler directives  
+- **sitemap.xml** — Sitemap for search engines  
+- **humans.txt** — Credits and technology  
+- **.well-known/security.txt** — Responsible disclosure policy  
 
-This starter is provided as-is. Feel free to adapt it for CatInCloud Labs.
+---
+
+## 🔧 Maintenance
+
+**To update content:**
+
+- Edit the HTML files in `/public`
+- Commit and push changes to `main`
+- Cloudflare Pages auto-deploys on push
+
+**To test locally:**
+
+```bash
+# Run a quick local preview
+python -m http.server 8080 --directory public
+
+```
+
+Then open: [http://localhost:8080](http://localhost:8080)
+
+---
+
+© 2025 CatInCloud Labs — “cats who cloud. humans that stay grounded.”
