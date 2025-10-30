@@ -3,7 +3,7 @@
    File: public/styles.css
    ========================================================================== */
 
-/* Design tokens */
+/* ========== 1) Design tokens ================================================= */
 :root {
   --bg: #f8fafc;          /* slate-50 */
   --fg: #111827;          /* slate-900 */
@@ -32,7 +32,7 @@
   --fz-h2: clamp(1.2rem, 2.5vw, 1.4rem);
 }
 
-/* Dark mode (auto) */
+/* ========== 2) Dark mode (auto) ============================================= */
 @media (prefers-color-scheme: dark) {
   :root {
     --bg: #0b1220;
@@ -47,7 +47,7 @@
   }
 }
 
-/* Global resets */
+/* ========== 3) Resets & Global ============================================== */
 * { box-sizing: border-box; }
 html, body { height: 100%; }
 body {
@@ -61,14 +61,6 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Container */
-.wrap {
-  width: 100%;
-  max-width: var(--container);
-  margin: var(--space-10) auto;
-  padding: 0 var(--space-5);
-}
-
 /* Links */
 a { color: var(--brand); text-decoration: none; }
 a:hover { text-decoration: underline; }
@@ -80,11 +72,16 @@ a:hover { text-decoration: underline; }
   border-radius: 6px;
 }
 
-/* Skip link (visible on keyboard focus) */
-.skip-link {
-  position: absolute;
-  left: -9999px;
+/* ========== 4) Layout ======================================================== */
+.wrap {
+  width: 100%;
+  max-width: var(--container);
+  margin: var(--space-10) auto;
+  padding: 0 var(--space-5);
 }
+
+/* ========== 5) Accessibility ================================================= */
+.skip-link { position: absolute; left: -9999px; }
 .skip-link:focus-visible {
   left: var(--space-5);
   top: var(--space-5);
@@ -97,7 +94,7 @@ a:hover { text-decoration: underline; }
   box-shadow: var(--shadow-sm);
 }
 
-/* Header & Nav */
+/* ========== 6) Header, Branding & Nav ======================================= */
 .site-header {
   position: sticky;
   top: 0;
@@ -115,24 +112,32 @@ a:hover { text-decoration: underline; }
 }
 .logo { height: 36px; width: auto; }
 
-.nav {
-  margin-left: auto;
-  display: flex;
-  gap: var(--space-2);
+/* Brand text beside the logo */
+.brand,
+.brand a {
+  color: var(--fg);
+  font-weight: 600;
+  text-decoration: none;
 }
+.brand a:hover { opacity: .9; }
+
+/* In dark mode, make brand text white for stronger contrast */
+@media (prefers-color-scheme: dark) {
+  .brand,
+  .brand a { color: #ffffff; }
+}
+
+/* Nav */
+.nav { margin-left: auto; display: flex; gap: var(--space-2); }
 .nav a {
   color: var(--fg);
   text-decoration: none;
   padding: 8px 10px;
   border-radius: 10px;
 }
-.nav a:hover {
-  background: rgba(0,0,0,0.04);
-}
+.nav a:hover { background: rgba(0,0,0,0.04); }
 @media (prefers-color-scheme: dark) {
-  .nav a:hover {
-    background: rgba(255,255,255,0.06);
-  }
+  .nav a:hover { background: rgba(255,255,255,0.06); }
 }
 .nav a.active {
   background: rgba(14,165,233,0.12);
@@ -140,42 +145,48 @@ a:hover { text-decoration: underline; }
   font-weight: 600;
 }
 
-/* Typography */
+/* ========== 7) Typography & Hero ============================================ */
 h1, h2 { margin: 0 0 var(--space-3) 0; line-height: 1.2; }
 h1 { font-size: var(--fz-h1); }
 h2 { font-size: var(--fz-h2); }
 .tagline { color: var(--muted); margin: var(--space-2) 0 0; }
 
-/* Hero */
 .hero { margin-top: var(--space-8); }
 
-/* Cards */
+/* ========== 8) Cards (two-card layout) ====================================== */
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: var(--space-4);
-  margin-top: var(--space-6);
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--space-6);
+  margin-top: var(--space-8);
 }
+
 .card {
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: var(--space-5);
+  padding: var(--space-6);
   box-shadow: var(--shadow-sm);
   transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease;
 }
 .card:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
-  border-color: rgba(14,165,233,0.4);
+  /* border-color kept neutral until palette chosen */
+}
+.card p {
+  margin-bottom: var(--space-4);
+  line-height: 1.65;
 }
 
-/* Lists */
-.project-list {
-  list-style: none;
-  padding-left: 0;
-  margin-top: var(--space-4);
+/* Larger screens: a bit more breathing room */
+@media (min-width: 900px) {
+  .cards { gap: var(--space-8); }
+  .card { padding: var(--space-8); }
 }
+
+/* ========== 9) Lists (projects page) ======================================== */
+.project-list { list-style: none; padding-left: 0; margin-top: var(--space-4); }
 .project-list li {
   background: var(--card);
   border: 1px solid var(--border);
@@ -185,10 +196,11 @@ h2 { font-size: var(--fz-h2); }
   box-shadow: var(--shadow-sm);
 }
 
-/* Footer */
+/* ========== 10) Footer ====================================================== */
 .site-footer {
   border-top: 1px solid var(--border);
   background: var(--card);
+  margin-top: var(--space-10); /* extra space before footer */
 }
 .site-footer .wrap {
   margin: 0 auto;
@@ -197,59 +209,19 @@ h2 { font-size: var(--fz-h2); }
   color: var(--muted);
 }
 
-/* 404 page */
-.not-found {
-  text-align: center;
-  padding: 80px 20px;
-}
+/* ========== 11) 404 page ==================================================== */
+.not-found { text-align: center; padding: 80px 20px; }
 .not-found h1 {
   font-size: clamp(3rem, 8vw, 4.5rem);
   margin: 0 0 .5rem;
 }
 
-/* Utilities */
+/* ========== 12) Utilities & Print ========================================== */
 .center { text-align: center; }
 .hidden { display: none !important; }
 
-/* Print basics */
 @media print {
   .site-header, .site-footer, .nav { display: none !important; }
   .wrap { margin: 0; max-width: 100%; }
   a { text-decoration: underline; }
-}
-
-/* ==========================================================================
-   Two-card layout refinements (Oct 2025)
-   ========================================================================== */
-
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: var(--space-6);
-  margin-top: var(--space-8);
-}
-
-.card {
-  padding: var(--space-6);
-}
-
-.card p {
-  margin-bottom: var(--space-4);
-  line-height: 1.65;
-}
-
-/* Slightly more space before footer on longer pages */
-.site-footer {
-  margin-top: var(--space-10);
-}
-
-/* Responsive tuning for larger screens */
-@media (min-width: 900px) {
-  .cards {
-    gap: var(--space-8);
-  }
-
-  .card {
-    padding: var(--space-8);
-  }
 }
