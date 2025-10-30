@@ -6,13 +6,13 @@
   <title>Projects — CatInCloud Labs</title>
 
   <!-- SEO -->
-  <meta name="description" content="Selected projects from CatInCloud Labs — cloud data platforms, secure VPC networking, and analytics." />
+  <meta name="description" content="Selected projects from CatInCloud Labs — production-ready cloud and data pipelines." />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <link rel="canonical" href="https://catincloudlabs.com/projects.html" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="Projects — CatInCloud Labs" />
-  <meta property="og:description" content="Enterprise Stock Market ELT, Private Networking Blueprints, and the upcoming Analytics Layer." />
+  <meta property="og:description" content="A look at our enterprise-grade AWS data pipeline and architecture work." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://catincloudlabs.com/projects.html" />
   <meta property="og:image" content="https://catincloudlabs.com/social-card.png" />
@@ -24,12 +24,13 @@
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Projects — CatInCloud Labs" />
-  <meta name="twitter:description" content="AWS MWAA, Snowflake, dbt Cloud, KMS, and secure private networking." />
+  <meta name="twitter:description" content="Enterprise-grade data & cloud systems — MWAA • Snowflake • dbt Cloud" />
   <meta name="twitter:image" content="https://catincloudlabs.com/social-card.png" />
 
-  <!-- Icons & theme -->
-  <link rel="icon" type="image/png" href="/favicon.png" />
-  <link rel="apple-touch-icon" href="/favicon.png" />
+  <!-- Icons & Theme -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="alternate icon" href="/favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" href="/favicon.svg" />
   <meta name="theme-color" content="#111827" />
   <meta name="color-scheme" content="light dark" />
 
@@ -37,14 +38,13 @@
   <link rel="stylesheet" href="/styles.css" />
 </head>
 <body>
-  <!-- Accessibility: skip link -->
-  <a href="#main" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">
-    Skip to content
-  </a>
+  <a href="#main" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">Skip to content</a>
 
   <header class="site-header">
     <div class="wrap">
-      <img src="/logo.svg" alt="CatInCloud Labs logo" class="logo" />
+      <a href="/" class="site-logo" aria-label="CatInCloud Labs">
+        <img src="/logo-wordmark-dark.svg" alt="CatInCloud Labs" width="192" height="38" class="logo" />
+      </a>
       <nav class="nav" aria-label="Primary">
         <a href="/">Home</a>
         <a href="/about.html">About</a>
@@ -54,33 +54,43 @@
     </div>
   </header>
 
-  <main id="main" class="wrap">
+  <main id="main" class="wrap hero">
     <h1>Projects</h1>
+    <p class="tagline">Selected work and reference architectures.</p>
 
-    <article class="card">
-      <h2>Enterprise Stock Market ELT</h2>
-      <p>
-        A production-grade data pipeline built on AWS, MWAA, Snowflake, and dbt Cloud —
-        designed to securely ingest, transform, and deliver market data at scale using
-        KMS encryption and enterprise best practices. Fully cloud operational.
-      </p>
-    </article>
+    <section class="cards">
+      <div class="card">
+        <h2>Enterprise Stock Market ELT</h2>
+        <p>
+          A production-grade pipeline on AWS with MWAA (Airflow), Snowflake, and dbt Cloud.
+          Private-by-default networking (S3 Gateway + interface endpoints), SSE-KMS,
+          Secrets Manager for credentials, and fine-grained IAM — all aligned to an
+          enterprise posture.
+        </p>
+        <ul>
+          <li>Incremental models in dbt for efficient transforms</li>
+          <li>Curated S3 buckets: artifacts, raw, stage, curated, snowflake-stage</li>
+          <li>Observability via CloudWatch logs and Airflow task monitoring</li>
+        </ul>
+      </div>
 
-    <article class="card">
-      <h2>Private Networking Blueprints</h2>
-      <p>
-        Reference VPC configurations for private subnets, interface and gateway endpoints,
-        Private DNS, and least-privilege IAM — enabling secure, production-ready cloud environments.
-      </p>
-    </article>
+      <div class="card">
+        <h2>MWAA Private Environment</h2>
+        <p>
+          Pattern for securely hosting Airflow with private web server access, VPC endpoints
+          for ECR/Logs/KMS/Secrets, and a hardened artifacts bucket. This is our baseline for
+          any data platform requiring strict network boundaries.
+        </p>
+      </div>
 
-    <article class="card">
-      <h2>Analytics Layer (Upcoming)</h2>
-      <p>
-        A browser-based analytics dashboard built with Plotly Dash on top of Snowflake marts,
-        providing interactive insights into market and options data.
-      </p>
-    </article>
+      <div class="card">
+        <h2>Future: Dashboards & Apps</h2>
+        <p>
+          Roadmap includes interactive dashboards (Plotly/Streamlit) on AWS App Runner/ECS,
+          fronted by Cloudflare for global delivery and secure edges.
+        </p>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">

@@ -6,13 +6,13 @@
   <title>About — CatInCloud Labs</title>
 
   <!-- SEO -->
-  <meta name="description" content="About CatInCloud Labs — practical, enterprise-grade cloud engineering and data platforms." />
+  <meta name="description" content="About CatInCloud Labs — We design and build enterprise-grade cloud and data systems with security, clarity, and reliability." />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <link rel="canonical" href="https://catincloudlabs.com/about.html" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="About — CatInCloud Labs" />
-  <meta property="og:description" content="We focus on secure AWS architectures, robust ELT pipelines, and maintainable analytics workflows." />
+  <meta property="og:description" content="We build production-ready cloud and data platforms with MWAA, Snowflake, and dbt Cloud — the right way." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://catincloudlabs.com/about.html" />
   <meta property="og:image" content="https://catincloudlabs.com/social-card.png" />
@@ -24,28 +24,27 @@
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="About — CatInCloud Labs" />
-  <meta name="twitter:description" content="Secure AWS, MWAA, Snowflake, and dbt Cloud — delivered with enterprise rigor." />
+  <meta name="twitter:description" content="Enterprise-grade data & cloud systems — MWAA • Snowflake • dbt Cloud" />
   <meta name="twitter:image" content="https://catincloudlabs.com/social-card.png" />
 
-  <!-- Icons & theme -->
-  <link rel="icon" type="image/png" href="/favicon.png" />
-  <link rel="apple-touch-icon" href="/favicon.png" />
+  <!-- Icons & Theme -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="alternate icon" href="/favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" href="/favicon.svg" />
   <meta name="theme-color" content="#111827" />
   <meta name="color-scheme" content="light dark" />
 
   <!-- Styles -->
   <link rel="stylesheet" href="/styles.css" />
 </head>
-
 <body>
-  <!-- Accessibility: skip link -->
-  <a href="#main" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">
-    Skip to content
-  </a>
+  <a href="#main" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">Skip to content</a>
 
   <header class="site-header">
     <div class="wrap">
-      <img src="/logo.svg" alt="CatInCloud Labs logo" class="logo" />
+      <a href="/" class="site-logo" aria-label="CatInCloud Labs">
+        <img src="/logo-wordmark-dark.svg" alt="CatInCloud Labs" width="192" height="38" class="logo" />
+      </a>
       <nav class="nav" aria-label="Primary">
         <a href="/">Home</a>
         <a href="/about.html" class="active" aria-current="page">About</a>
@@ -55,17 +54,38 @@
     </div>
   </header>
 
-  <main id="main" class="wrap">
-    <h1>About</h1>
-    <p>
-      CatInCloud Labs helps teams modernize data platforms with a practical, enterprise-grade approach.
-      We focus on secure AWS architectures, robust ELT pipelines, and maintainable analytics workflows.
-    </p>
-    <p>
-      Our philosophy is simple: build what’s needed, build it right, and build it to last.
-      We believe in building things that work — no frills, no fluff — just well-designed systems
-      that scale cleanly and stand the test of time.
-    </p>
+  <main id="main" class="wrap hero">
+    <h1>About CatInCloud Labs</h1>
+    <p class="tagline">Enterprise-grade cloud & data platforms — built with care.</p>
+
+    <section class="cards">
+      <div class="card">
+        <h2>Our Approach</h2>
+        <p>
+          We design platforms with security, clarity, and maintainability front and center:
+          private networking, least-privilege IAM, KMS encryption, and observability as table stakes.
+        </p>
+        <p>
+          Our preferred stack for modern data work: <strong>AWS MWAA</strong> (Airflow) for orchestration,
+          <strong>Snowflake</strong> for warehousing, and <strong>dbt Cloud</strong> for transformations.
+          We favor incremental, testable deployments over big-bang migrations.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>Who We Work With</h2>
+        <p>
+          Teams that value reliability and correctness; startups leveling up for audits and scale; and
+          data groups moving from ad-hoc scripts to repeatable pipelines.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>Contact</h2>
+        <p>Interested in working together or want a quick architecture review?</p>
+        <p><a href="mailto:dave@catincloudlabs.com">dave@catincloudlabs.com</a></p>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
