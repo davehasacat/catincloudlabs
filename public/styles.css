@@ -112,53 +112,59 @@ a:hover { text-decoration: underline; }
   gap: var(--space-4);
 }
 
-/* Brand: icon + text as one link */
-.brand-link {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-2);
+.logo {
+  height: 36px;
+  width: auto;
+}
+
+/* Brand text beside the logo */
+.brand,
+.brand a {
+  color: #1f2937; /* slate-800 for light mode */
+  font-weight: 600;
   text-decoration: none;
 }
 
-.logo { height: 36px; width: auto; }
+.brand a:hover {
+  opacity: 0.9;
+}
 
-/* Light mode brand text */
-.brand-text {
-  color: #1f2937; /* slate-800 */
-  font-weight: 600;
-  white-space: nowrap;
+/* In dark mode, make brand text white for strong contrast */
+@media (prefers-color-scheme: dark) {
+  .site-header .brand,
+  .site-header .brand a {
+    color: #ffffff;
+  }
 }
 
 /* Nav */
-.nav { margin-left: auto; display: flex; gap: var(--space-2); }
+.nav {
+  margin-left: auto;
+  display: flex;
+  gap: var(--space-2);
+}
+
 .nav a {
   color: var(--fg);
   text-decoration: none;
   padding: 8px 10px;
   border-radius: 10px;
 }
-.nav a:hover { background: rgba(0, 0, 0, 0.04); }
-@media (prefers-color-scheme: dark) {
-  .nav a:hover { background: rgba(255, 255, 255, 0.06); }
+
+.nav a:hover {
+  background: rgba(0, 0, 0, 0.04);
 }
+
+@media (prefers-color-scheme: dark) {
+  .nav a:hover {
+    background: rgba(255, 255, 255, 0.06);
+  }
+}
+
 .nav a.active {
   background: rgba(14, 165, 233, 0.12);
   color: var(--brand-ink);
   font-weight: 600;
-}
-
-/* --- Dark mode: force high contrast for brand text and typical SVGs/images --- */
-@media (prefers-color-scheme: dark) {
-  .brand-text { color: #ffffff !important; }
-  /* If logo.svg isn't white in dark mode, invert it without touching other images */
-  .site-header .logo { filter: invert(1) brightness(1.1) contrast(1.05); }
-  /* If your SVG uses shapes with hardcoded fills, this helps in many cases */
-  .site-header .logo * { fill: #ffffff !important; stroke: #ffffff !important; }
-}
-
-/* Optional: hide brand text on very small screens to keep header tidy */
-@media (max-width: 420px) {
-  .brand-text { display: none; }
 }
 
 /* ========== 7) Typography & Hero ============================================ */
