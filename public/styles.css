@@ -158,7 +158,7 @@ main p {
 .hero { margin-top: var(--space-8); }
 
 /* ========== 8) Cards (legacy / optional) ==================================== */
-/* Kept for any pages still using .cards/.card, but not required for About/Projects */
+/* Kept for any pages still using .cards/.card */
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -190,7 +190,7 @@ main p {
   .card { padding: var(--space-8); }
 }
 
-/* ========== 9) Projects — simple cards (used by Projects & About) =========== */
+/* ========== 9) Simple cards (Projects & About share these) ================== */
 .projects-list {
   display: flex;
   flex-direction: column;
@@ -202,7 +202,7 @@ main p {
   padding: var(--space-5);
   border: 1px solid var(--border);
   border-radius: 10px;
-  background: var(--card);            /* minimal, not heavy */
+  background: var(--card);
   box-shadow: var(--shadow-sm);
 }
 
@@ -215,6 +215,12 @@ main p {
   margin: 0;
   line-height: 1.7;
   color: var(--muted);
+}
+
+/* Narrow variant for About page: centers a single card on desktop */
+.projects-list.narrow .project-card {
+  max-width: 860px;
+  margin: 0 auto;
 }
 
 /* ========== 10) Footer ====================================================== */
@@ -262,7 +268,7 @@ main p {
 
 /* === Desktop polish ======================================================= */
 @media (min-width: 1024px) {
-  :root { --container: 1080px; }        /* reads better on desktop */
+  :root { --container: 1080px; }   /* reads better on desktop */
 
   /* Reduce float under sticky header */
   .hero { margin-top: 24px; }
@@ -274,7 +280,7 @@ main p {
   /* Reading comfort */
   main p {
     max-width: 68ch;
-    font-size: 1.0625rem;               /* ~17px */
+    font-size: 1.0625rem;          /* ~17px */
     line-height: 1.75;
   }
 
@@ -289,11 +295,12 @@ main p {
   .project-card p { margin-top: 6px; }
 }
 
-/* Two-column layout for cards on very wide screens (projects & about) */
+/* Two-column layout for cards on very wide screens (Projects only) */
 @media (min-width: 1280px) {
-  .projects-list {
+  /* Don’t force About into two columns; only Projects should split */
+  body:not(.about) .projects-list {
     display: grid;
-    grid-template-columns: 1fr 1fr;     /* About has 1 card, Projects has 3 */
+    grid-template-columns: 1fr 1fr;
     gap: 22px;
   }
 }
@@ -303,7 +310,7 @@ main p {
   .project-card { border-color: rgba(148,163,184,.18); }
 }
 
-/* Extra nudge for first .wrap on pages that use .hero */
+/* Extra nudge for the first .wrap on pages that use .hero */
 @media (min-width: 1024px) {
   body .wrap:first-of-type.hero { margin-top: 24px; }
 }
