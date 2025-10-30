@@ -190,7 +190,7 @@ main p {
   .card { padding: var(--space-8); }
 }
 
-/* ========== 9) Projects — simple cards ====================================== */
+/* ========== 9) Projects — simple cards (used by Projects & About) =========== */
 .projects-list {
   display: flex;
   flex-direction: column;
@@ -262,9 +262,9 @@ main p {
 
 /* === Desktop polish ======================================================= */
 @media (min-width: 1024px) {
-  :root { --container: 1080px; }        /* a bit wider reads better on desktop */
+  :root { --container: 1080px; }        /* reads better on desktop */
 
-  /* Reduce “float” under the sticky header */
+  /* Reduce float under sticky header */
   .hero { margin-top: 24px; }
 
   /* Headings spacing */
@@ -278,11 +278,8 @@ main p {
     line-height: 1.75;
   }
 
-  /* Project cards: lighter touch */
-  .projects-list {
-    gap: 20px;
-    margin-top: 24px;
-  }
+  /* Simple card tuning */
+  .projects-list { gap: 20px; margin-top: 24px; }
   .project-card {
     padding: 18px 22px;
     border-radius: 12px;
@@ -292,11 +289,11 @@ main p {
   .project-card p { margin-top: 6px; }
 }
 
-/* Two-column layout for projects on very wide screens */
+/* Two-column layout for cards on very wide screens (projects & about) */
 @media (min-width: 1280px) {
   .projects-list {
-    display: grid;                      /* switch from vertical list to grid */
-    grid-template-columns: 1fr 1fr;
+    display: grid;
+    grid-template-columns: 1fr 1fr;     /* About has 1 card, Projects has 3 */
     gap: 22px;
   }
 }
@@ -306,6 +303,7 @@ main p {
   .project-card { border-color: rgba(148,163,184,.18); }
 }
 
+/* Extra nudge for first .wrap on pages that use .hero */
 @media (min-width: 1024px) {
   body .wrap:first-of-type.hero { margin-top: 24px; }
 }
