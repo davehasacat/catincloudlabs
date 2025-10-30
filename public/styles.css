@@ -219,6 +219,19 @@ h2 { font-size: var(--fz-h2); }
 }
 
 /* ========== 10) Footer ====================================================== */
+
+/* ==========================================================================
+   Footer tagline (Oct 2025)
+   ========================================================================== */
+
+.footer-tagline {
+  margin-top: var(--space-3);
+  font-size: 0.9rem;
+  color: var(--muted);
+  font-style: italic;
+  text-align: center;
+}
+
 .site-footer {
   border-top: 1px solid var(--border);
   background: var(--card);
