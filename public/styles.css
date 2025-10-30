@@ -217,3 +217,39 @@ h2 { font-size: var(--fz-h2); }
   .wrap { margin: 0; max-width: 100%; }
   a { text-decoration: underline; }
 }
+
+/* ==========================================================================
+   Two-card layout refinements (Oct 2025)
+   ========================================================================== */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--space-6);
+  margin-top: var(--space-8);
+}
+
+.card {
+  padding: var(--space-6);
+}
+
+.card p {
+  margin-bottom: var(--space-4);
+  line-height: 1.65;
+}
+
+/* Slightly more space before footer on longer pages */
+.site-footer {
+  margin-top: var(--space-10);
+}
+
+/* Responsive tuning for larger screens */
+@media (min-width: 900px) {
+  .cards {
+    gap: var(--space-8);
+  }
+
+  .card {
+    padding: var(--space-8);
+  }
+}
