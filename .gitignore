@@ -1,0 +1,34 @@
+# OS & editor files
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+
+# Node & build artifacts (if added later)
+node_modules/
+dist/
+.cache/
+*.lock
+
+# Cloudflare Pages local dev cache
+functions/.cache/
+functions/node_modules/
+
+# Environment files (if you use them in the future)
+.env
+.env.local
+.env.*
+.venv
+
+# IDEs & tooling
+.vscode/
+.idea/
+*.swp
+
+# Backup or generated files
+*.bak
+*.old
+
+# Build output
+# (For now, /public is the source; if you ever switch to a generator, unignore it.)
+# public/

@@ -1,4 +1,13 @@
+# robots.txt for CatInCloud Labs
+# Allow full indexing and discovery of all public pages
+
 User-agent: *
 Allow: /
 
-Sitemap: https://catincloudlabs.pages.dev/sitemap.xml
+# Disallow unnecessary system or build files (defensive, even if not exposed)
+Disallow: /_headers
+Disallow: /_redirects
+Disallow: /404.html
+
+# Sitemap reference (use your custom domain)
+Sitemap: https://catincloudlabs.com/sitemap.xml

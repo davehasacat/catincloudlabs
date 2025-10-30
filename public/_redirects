@@ -1,1 +1,9 @@
+# Ensure root URL always resolves cleanly
 /index.html    /    301
+
+# Redirect any stray .html requests to clean URLs (optional polish)
+/about.html    /about    301
+/projects.html /projects 301
+
+# Default 404 fallback for Cloudflare Pages
+/*    /404.html    404

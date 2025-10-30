@@ -5,24 +5,24 @@
 
   <!-- Home -->
   <url>
-    <loc>https://catincloudlabs.pages.dev/</loc>
-    <lastmod>2025-10-29</lastmod>
+    <loc>https://catincloudlabs.com/</loc>
+    <lastmod>2025-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <!-- About -->
   <url>
-    <loc>https://catincloudlabs.pages.dev/about.html</loc>
-    <lastmod>2025-10-29</lastmod>
+    <loc>https://catincloudlabs.com/about.html</loc>
+    <lastmod>2025-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- Projects -->
   <url>
-    <loc>https://catincloudlabs.pages.dev/projects.html</loc>
-    <lastmod>2025-10-29</lastmod>
+    <loc>https://catincloudlabs.com/projects.html</loc>
+    <lastmod>2025-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
