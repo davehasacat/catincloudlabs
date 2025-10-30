@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="64" viewBox="0 0 320 64" role="img" aria-labelledby="title desc">
+  <title id="title">CatInCloud Labs</title>
+  <desc id="desc">Wordmark for CatInCloud Labs with cloud icon and brand colors, optimized for light backgrounds.</desc>
+  <defs>
+    <linearGradient id="cloudGradient" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0ea5e9"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Icon -->
+  <g transform="translate(0,8)">
+    <rect width="48" height="48" rx="12" fill="url(#cloudGradient)"/>
+    <!-- simple cloud -->
+    <g transform="translate(8, 12)">
+      <ellipse cx="16" cy="14" rx="10" ry="5" fill="#ffffff"/>
+      <circle cx="12" cy="11" r="4" fill="#ffffff"/>
+      <circle cx="20" cy="12" r="5" fill="#ffffff"/>
+      <rect x="6" y="14" width="20" height="4" fill="#ffffff"/>
+    </g>
+  </g>
+
+  <!-- Text -->
+  <g transform="translate(64, 40)">
+    <text font-family="Inter, Arial, Helvetica, sans-serif" font-weight="700" font-size="26" fill="#111827" letter-spacing="0.2">
+      CatInCloud <tspan fill="#0ea5e9">Labs</tspan>
+    </text>
+  </g>
+</svg>

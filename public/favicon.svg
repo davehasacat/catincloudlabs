@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 48 48" role="img" aria-labelledby="title desc">
+  <title id="title">CatInCloud Labs Icon</title>
+  <desc id="desc">Rounded blue gradient square with white cloud.</desc>
+  <defs>
+    <linearGradient id="cloudGradient" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0ea5e9"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+  </defs>
+  <rect width="48" height="48" rx="12" fill="url(#cloudGradient)"/>
+  <g transform="translate(8, 12)">
+    <ellipse cx="16" cy="14" rx="10" ry="5" fill="#ffffff"/>
+    <circle cx="12" cy="11" r="4" fill="#ffffff"/>
+    <circle cx="20" cy="12" r="5" fill="#ffffff"/>
+    <rect x="6" y="14" width="20" height="4" fill="#ffffff"/>
+  </g>
+</svg>
