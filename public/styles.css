@@ -8,9 +8,9 @@
   --bg: #f8fafc;          /* slate-50 */
   --fg: #111827;          /* slate-900 */
   --muted: #6b7280;       /* slate-500 */
-  --card: #ffffff;        /* white */
-  --border: #e5e7eb;      /* slate-200 */
-  --brand: #0ea5e9;       /* sky-500 */
+  --card: #ffffff;         /* white */
+  --border: #e5e7eb;       /* slate-200 */
+  --brand: #0ea5e9;        /* sky-500 */
   --brand-ink: #0b7db0;
 
   --radius: 16px;
@@ -50,6 +50,7 @@
 /* ========== 3) Resets & Global ============================================== */
 * { box-sizing: border-box; }
 html, body { height: 100%; }
+
 body {
   margin: 0;
   font-size: var(--fz-base);
@@ -94,7 +95,7 @@ a:hover { text-decoration: underline; }
   box-shadow: var(--shadow-sm);
 }
 
-/* ========== 6) Header, Branding & Nav ======================================= */
+/* ========== 6) Header & Navigation ========================================== */
 .site-header {
   position: sticky;
   top: 0;
@@ -117,27 +118,6 @@ a:hover { text-decoration: underline; }
   width: auto;
 }
 
-/* Brand text beside the logo */
-.brand,
-.brand a {
-  color: #1f2937; /* slate-800 for light mode */
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.brand a:hover {
-  opacity: 0.9;
-}
-
-/* In dark mode, make brand text white for strong contrast */
-@media (prefers-color-scheme: dark) {
-  .site-header .brand,
-  .site-header .brand a {
-    color: #ffffff;
-  }
-}
-
-/* Nav */
 .nav {
   margin-left: auto;
   display: flex;
@@ -151,14 +131,10 @@ a:hover { text-decoration: underline; }
   border-radius: 10px;
 }
 
-.nav a:hover {
-  background: rgba(0, 0, 0, 0.04);
-}
+.nav a:hover { background: rgba(0, 0, 0, 0.04); }
 
 @media (prefers-color-scheme: dark) {
-  .nav a:hover {
-    background: rgba(255, 255, 255, 0.06);
-  }
+  .nav a:hover { background: rgba(255, 255, 255, 0.06); }
 }
 
 .nav a.active {
@@ -191,24 +167,30 @@ h2 { font-size: var(--fz-h2); }
   box-shadow: var(--shadow-sm);
   transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease;
 }
+
 .card:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
-  /* border-color kept neutral until palette chosen */
 }
+
 .card p {
   margin-bottom: var(--space-4);
   line-height: 1.65;
 }
 
-/* Larger screens: a bit more breathing room */
+/* Larger screens */
 @media (min-width: 900px) {
   .cards { gap: var(--space-8); }
   .card { padding: var(--space-8); }
 }
 
 /* ========== 9) Lists (projects page) ======================================== */
-.project-list { list-style: none; padding-left: 0; margin-top: var(--space-4); }
+.project-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: var(--space-4);
+}
+
 .project-list li {
   background: var(--card);
   border: 1px solid var(--border);
@@ -219,11 +201,6 @@ h2 { font-size: var(--fz-h2); }
 }
 
 /* ========== 10) Footer ====================================================== */
-
-/* ==========================================================================
-   Footer tagline (Oct 2025)
-   ========================================================================== */
-
 .footer-tagline {
   margin-top: var(--space-3);
   font-size: 0.9rem;
@@ -235,8 +212,9 @@ h2 { font-size: var(--fz-h2); }
 .site-footer {
   border-top: 1px solid var(--border);
   background: var(--card);
-  margin-top: var(--space-10); /* extra space before footer */
+  margin-top: var(--space-10);
 }
+
 .site-footer .wrap {
   margin: 0 auto;
   padding: var(--space-5);
@@ -245,7 +223,11 @@ h2 { font-size: var(--fz-h2); }
 }
 
 /* ========== 11) 404 page ==================================================== */
-.not-found { text-align: center; padding: 80px 20px; }
+.not-found {
+  text-align: center;
+  padding: 80px 20px;
+}
+
 .not-found h1 {
   font-size: clamp(3rem, 8vw, 4.5rem);
   margin: 0 0 .5rem;
