@@ -103,6 +103,7 @@ a:hover { text-decoration: underline; }
   border-bottom: 1px solid var(--border);
   backdrop-filter: saturate(180%) blur(8px);
 }
+
 .site-header .wrap {
   margin: 0 auto;
   padding: var(--space-3) var(--space-5);
@@ -110,37 +111,58 @@ a:hover { text-decoration: underline; }
   align-items: center;
   gap: var(--space-4);
 }
-.logo { height: 36px; width: auto; }
+
+.logo {
+  height: 36px;
+  width: auto;
+}
 
 /* Brand text beside the logo */
 .brand,
 .brand a {
-  color: var(--fg);
+  color: #1f2937; /* slate-800 for light mode */
   font-weight: 600;
   text-decoration: none;
 }
-.brand a:hover { opacity: .9; }
 
-/* In dark mode, make brand text white for stronger contrast */
+.brand a:hover {
+  opacity: 0.9;
+}
+
+/* In dark mode, make brand text white for strong contrast */
 @media (prefers-color-scheme: dark) {
-  .brand,
-  .brand a { color: #ffffff; }
+  .site-header .brand,
+  .site-header .brand a {
+    color: #ffffff;
+  }
 }
 
 /* Nav */
-.nav { margin-left: auto; display: flex; gap: var(--space-2); }
+.nav {
+  margin-left: auto;
+  display: flex;
+  gap: var(--space-2);
+}
+
 .nav a {
   color: var(--fg);
   text-decoration: none;
   padding: 8px 10px;
   border-radius: 10px;
 }
-.nav a:hover { background: rgba(0,0,0,0.04); }
-@media (prefers-color-scheme: dark) {
-  .nav a:hover { background: rgba(255,255,255,0.06); }
+
+.nav a:hover {
+  background: rgba(0, 0, 0, 0.04);
 }
+
+@media (prefers-color-scheme: dark) {
+  .nav a:hover {
+    background: rgba(255, 255, 255, 0.06);
+  }
+}
+
 .nav a.active {
-  background: rgba(14,165,233,0.12);
+  background: rgba(14, 165, 233, 0.12);
   color: var(--brand-ink);
   font-weight: 600;
 }
