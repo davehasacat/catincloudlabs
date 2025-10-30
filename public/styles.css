@@ -1,144 +1,244 @@
 /* ==========================================================================
-   CatInCloud Labs — Base Styles (simplified)
+   CatInCloud Labs — Base Styles
    File: public/styles.css
    ========================================================================== */
 
-/* ========== 1) Tokens ======================================================= */
-:root{
-  --bg:#f8fafc;           /* slate-50 */
-  --fg:#111827;           /* slate-900 */
-  --muted:#6b7280;        /* slate-500 */
-  --card:#ffffff;
-  --border:#e5e7eb;       /* slate-200 */
-  --brand:#0ea5e9;        /* sky-500 */
-  --brand-ink:#0b7db0;
+/* ========== 1) Design tokens ================================================= */
+:root {
+  --bg: #f8fafc;          /* slate-50 */
+  --fg: #111827;          /* slate-900 */
+  --muted: #6b7280;       /* slate-500 */
+  --card: #ffffff;         /* white */
+  --border: #e5e7eb;       /* slate-200 */
+  --brand: #0ea5e9;        /* sky-500 */
+  --brand-ink: #0b7db0;
 
-  --radius:12px;
-  --shadow-sm:0 1px 3px rgba(0,0,0,.06);
+  --radius: 16px;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,.06);
+  --shadow-md: 0 8px 24px rgba(0,0,0,.08);
 
-  --space-2:8px;
-  --space-3:12px;
-  --space-4:16px;
-  --space-5:20px;
-  --space-6:24px;
-  --space-8:32px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
 
-  --container:980px;
-  --fz-base:16px;
-  --fz-h1:clamp(2rem,4vw,2.4rem);
-  --fz-h2:clamp(1.2rem,2.5vw,1.4rem);
+  --container: 980px;
+  --fz-base: 16px;
+  --fz-h1: clamp(2rem, 4vw, 2.4rem);
+  --fz-h2: clamp(1.2rem, 2.5vw, 1.4rem);
 }
-@media (prefers-color-scheme:dark){
-  :root{
-    --bg:#0b1220;
-    --fg:#e5e7eb;
-    --muted:#cbd5e1;
-    --card:#0f172a;
-    --border:#1f2937;
-    --brand:#38bdf8;
-    --brand-ink:#1a8bb8;
+
+/* ========== 2) Dark mode (auto) ============================================= */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0b1220;
+    --fg: #e5e7eb;
+    --muted: #9ca3af;
+    --card: #0f172a;
+    --border: #1f2937;
+    --brand: #38bdf8;
+    --brand-ink: #1a8bb8;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,.35);
+    --shadow-md: 0 8px 24px rgba(0,0,0,.35);
   }
 }
 
-/* ========== 2) Base ========================================================= */
-*{box-sizing:border-box}
-html,body{height:100%}
-body{
-  margin:0;
-  font:var(--fz-base)/1.6 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol",sans-serif;
-  color:var(--fg);
-  background:var(--bg);
-  -webkit-font-smoothing:antialiased;
-  text-rendering:optimizeLegibility;
-}
-a{color:var(--brand);text-decoration:none}
-a:hover{text-decoration:underline}
-:focus-visible{outline:2px solid var(--brand);outline-offset:2px;border-radius:6px}
+/* ========== 3) Resets & Global ============================================== */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
 
-/* ========== 3) Layout ======================================================= */
-.wrap{
-  width:100%;
-  max-width:var(--container);
-  margin:0 auto;                 /* no vertical margins -> prevents stacking */
-  padding:0 var(--space-5);
-}
-.hero{padding-top:24px}          /* small, reliable offset under sticky header */
-
-/* ========== 4) Accessibility ================================================= */
-.skip-link{position:absolute;left:-9999px}
-.skip-link:focus-visible{
-  left:var(--space-5);top:var(--space-5);z-index:1000;
-  background:var(--card);color:var(--fg);
-  padding:var(--space-3) var(--space-4);
-  border:1px solid var(--border);border-radius:8px;
-  box-shadow:var(--shadow-sm);
+body {
+  margin: 0;
+  font-size: var(--fz-base);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  line-height: 1.6;
+  color: var(--fg);
+  background: var(--bg);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* ========== 5) Header & Nav ================================================= */
-.site-header{
-  position:sticky;top:0;z-index:50;
-  background:var(--card);
-  border-bottom:1px solid var(--border);
-  backdrop-filter:saturate(180%) blur(8px);
-}
-.site-header .wrap{
-  padding:var(--space-3) var(--space-5);
-  display:flex;align-items:center;gap:var(--space-4);
-}
-.logo{height:36px;width:auto}
-.nav{margin-left:auto;display:flex;gap:var(--space-2)}
-.nav a{color:var(--fg);padding:8px 10px;border-radius:10px}
-.nav a:hover{background:rgba(0,0,0,.04)}
-@media (prefers-color-scheme:dark){.nav a:hover{background:rgba(255,255,255,.06)}}
-.nav a.active{background:rgba(14,165,233,.12);color:var(--brand-ink);font-weight:600}
+/* Links */
+a { color: var(--brand); text-decoration: none; }
+a:hover { text-decoration: underline; }
 
-/* ========== 6) Type ========================================================= */
-h1,h2{margin:0 0 var(--space-3) 0;line-height:1.2}
-h1{font-size:var(--fz-h1)}
-h2{font-size:var(--fz-h2)}
-main p{max-width:70ch;margin:var(--space-3) 0;line-height:1.7;color:var(--muted)}
-
-/* ========== 7) Simple Cards (Projects & About) ============================== */
-.projects-list{display:flex;flex-direction:column;gap:var(--space-4);margin-top:var(--space-6)}
-.project-card{
-  padding:18px 22px;
-  border:1px solid var(--border);
-  border-radius:var(--radius);
-  background:var(--card);
-  box-shadow:var(--shadow-sm);
-}
-.project-card h2{margin:0 0 var(--space-2)}
-.project-card p{margin:0;line-height:1.7;color:var(--muted)}
-/* Narrow variant keeps About single-column and centered on wide screens */
-.projects-list.narrow .project-card{max-width:860px;margin:0 auto}
-
-/* ========== 8) Footer ======================================================= */
-.site-footer{border-top:1px solid var(--border);background:var(--card);margin-top:var(--space-8)}
-.site-footer .wrap{padding:var(--space-5);text-align:center;color:var(--muted)}
-.footer-tagline{margin-top:var(--space-3);font-size:.9rem;font-style:italic}
-
-/* ========== 9) Print ======================================================== */
-@media print{
-  .site-header,.site-footer,.nav{display:none !important}
-  .wrap{max-width:100%;padding:0}
-  a{text-decoration:underline}
+/* Focus visibility (keyboard users) */
+:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+  border-radius: 6px;
 }
 
-/* ========== 10) Desktop polish (small, unified) ============================ */
-@media (min-width:1024px){
-  :root{--container:1080px}
-  .hero{padding-top:24px}            /* same value; documented here for clarity */
-  h1{margin-bottom:12px}
-  h2{margin-bottom:8px}
-  main p{max-width:68ch;font-size:1.0625rem;line-height:1.75} /* ~17px */
+/* ========== 4) Layout ======================================================== */
+.wrap {
+  width: 100%;
+  max-width: var(--container);
+  margin: var(--space-10) auto;
+  padding: 0 var(--space-5);
 }
-/* Two-column only for multi-card lists (Projects). About stays narrow single. */
-@media (min-width:1280px){
-  .projects-list:not(.narrow){
-    display:grid;grid-template-columns:1fr 1fr;gap:22px;
-  }
+
+/* ========== 5) Accessibility ================================================= */
+.skip-link { position: absolute; left: -9999px; }
+.skip-link:focus-visible {
+  left: var(--space-5);
+  top: var(--space-5);
+  z-index: 1000;
+  background: var(--card);
+  color: var(--fg);
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: var(--shadow-sm);
 }
-/* Slight border contrast for dark mode cards */
-@media (prefers-color-scheme:dark){
-  .project-card{border-color:rgba(148,163,184,.18);background:rgba(255,255,255,.02)}
+
+/* ========== 6) Header & Navigation ========================================== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: saturate(180%) blur(8px);
+}
+
+.site-header .wrap {
+  margin: 0 auto;
+  padding: var(--space-3) var(--space-5);
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.logo {
+  height: 36px;
+  width: auto;
+}
+
+.nav {
+  margin-left: auto;
+  display: flex;
+  gap: var(--space-2);
+}
+
+.nav a {
+  color: var(--fg);
+  text-decoration: none;
+  padding: 8px 10px;
+  border-radius: 10px;
+}
+
+.nav a:hover { background: rgba(0, 0, 0, 0.04); }
+
+@media (prefers-color-scheme: dark) {
+  .nav a:hover { background: rgba(255, 255, 255, 0.06); }
+}
+
+.nav a.active {
+  background: rgba(14, 165, 233, 0.12);
+  color: var(--brand-ink);
+  font-weight: 600;
+}
+
+/* ========== 7) Typography & Hero ============================================ */
+h1, h2 { margin: 0 0 var(--space-3) 0; line-height: 1.2; }
+h1 { font-size: var(--fz-h1); }
+h2 { font-size: var(--fz-h2); }
+.tagline { color: var(--muted); margin: var(--space-2) 0 0; }
+
+.hero { margin-top: var(--space-8); }
+
+/* ========== 8) Cards (two-card layout) ====================================== */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--space-6);
+  margin-top: var(--space-8);
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-sm);
+  transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.card p {
+  margin-bottom: var(--space-4);
+  line-height: 1.65;
+}
+
+/* Larger screens */
+@media (min-width: 900px) {
+  .cards { gap: var(--space-8); }
+  .card { padding: var(--space-8); }
+}
+
+/* ========== 9) Lists (projects page) ======================================== */
+.project-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: var(--space-4);
+}
+
+.project-list li {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: var(--space-4);
+  margin-bottom: var(--space-3);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ========== 10) Footer ====================================================== */
+.footer-tagline {
+  margin-top: var(--space-3);
+  font-size: 0.9rem;
+  color: var(--muted);
+  font-style: italic;
+  text-align: center;
+}
+
+.site-footer {
+  border-top: 1px solid var(--border);
+  background: var(--card);
+  margin-top: var(--space-10);
+}
+
+.site-footer .wrap {
+  margin: 0 auto;
+  padding: var(--space-5);
+  text-align: center;
+  color: var(--muted);
+}
+
+/* ========== 11) 404 page ==================================================== */
+.not-found {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.not-found h1 {
+  font-size: clamp(3rem, 8vw, 4.5rem);
+  margin: 0 0 .5rem;
+}
+
+/* ========== 12) Utilities & Print ========================================== */
+.center { text-align: center; }
+.hidden { display: none !important; }
+
+@media print {
+  .site-header, .site-footer, .nav { display: none !important; }
+  .wrap { margin: 0; max-width: 100%; }
+  a { text-decoration: underline; }
 }
