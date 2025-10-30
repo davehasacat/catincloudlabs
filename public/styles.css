@@ -8,9 +8,9 @@
   --bg: #f8fafc;          /* slate-50 */
   --fg: #111827;          /* slate-900 */
   --muted: #6b7280;       /* slate-500 */
-  --card: #ffffff;         /* white */
-  --border: #e5e7eb;       /* slate-200 */
-  --brand: #0ea5e9;        /* sky-500 */
+  --card: #ffffff;        /* white */
+  --border: #e5e7eb;      /* slate-200 */
+  --brand: #0ea5e9;       /* sky-500 */
   --brand-ink: #0b7db0;
 
   --radius: 16px;
@@ -37,7 +37,7 @@
   :root {
     --bg: #0b1220;
     --fg: #e5e7eb;
-    --muted: #9ca3af;
+    --muted: #cbd5e1;      /* slightly lighter body copy on dark */
     --card: #0f172a;
     --border: #1f2937;
     --brand: #38bdf8;
@@ -132,7 +132,6 @@ a:hover { text-decoration: underline; }
 }
 
 .nav a:hover { background: rgba(0, 0, 0, 0.04); }
-
 @media (prefers-color-scheme: dark) {
   .nav a:hover { background: rgba(255, 255, 255, 0.06); }
 }
@@ -147,11 +146,19 @@ a:hover { text-decoration: underline; }
 h1, h2 { margin: 0 0 var(--space-3) 0; line-height: 1.2; }
 h1 { font-size: var(--fz-h1); }
 h2 { font-size: var(--fz-h2); }
-.tagline { color: var(--muted); margin: var(--space-2) 0 0; }
+
+/* Minimal pages: comfortable reading width + rhythm */
+main p {
+  max-width: 70ch;
+  margin: var(--space-3) 0;
+  line-height: 1.7;
+  color: var(--muted);
+}
 
 .hero { margin-top: var(--space-8); }
 
-/* ========== 8) Cards (two-card layout) ====================================== */
+/* ========== 8) Cards (legacy / optional) ==================================== */
+/* Kept for any pages still using .cards/.card, but not required for About/Projects */
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -178,26 +185,36 @@ h2 { font-size: var(--fz-h2); }
   line-height: 1.65;
 }
 
-/* Larger screens */
 @media (min-width: 900px) {
   .cards { gap: var(--space-8); }
   .card { padding: var(--space-8); }
 }
 
-/* ========== 9) Lists (projects page) ======================================== */
-.project-list {
-  list-style: none;
-  padding-left: 0;
-  margin-top: var(--space-4);
+/* ========== 9) Projects — simple cards ====================================== */
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin-top: var(--space-6);
 }
 
-.project-list li {
-  background: var(--card);
+.project-card {
+  padding: var(--space-5);
   border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: var(--space-4);
-  margin-bottom: var(--space-3);
+  border-radius: 10px;
+  background: var(--card);            /* minimal, not heavy */
   box-shadow: var(--shadow-sm);
+}
+
+.project-card h2 {
+  margin-top: 0;
+  margin-bottom: var(--space-2);
+}
+
+.project-card p {
+  margin: 0;
+  line-height: 1.7;
+  color: var(--muted);
 }
 
 /* ========== 10) Footer ====================================================== */

@@ -57,26 +57,34 @@
   <main id="main" class="wrap hero">
     <h1>Projects</h1>
 
-    <h2>Enterprise Stock Market ELT</h2>
-    <p>
-      A production-grade data pipeline on AWS integrating MWAA (Airflow), Snowflake, and dbt Cloud.
-      It uses private networking, SSE-KMS encryption, and fine-grained IAM to ensure a secure and
-      auditable architecture for ingesting and transforming market data.
-    </p>
+    <section class="projects-list">
+      <div class="project-card">
+        <h2>Enterprise Stock Market ELT</h2>
+        <p>
+          A production-grade data pipeline on AWS integrating MWAA (Airflow), Snowflake, and dbt Cloud.
+          It uses private networking, SSE-KMS encryption, and fine-grained IAM to ensure a secure and
+          auditable architecture for ingesting and transforming market data.
+        </p>
+      </div>
 
-    <h2>MWAA Private Environment</h2>
-    <p>
-      A hardened Airflow deployment using AWS MWAA within a fully private VPC. It connects to
-      ECR, CloudWatch, KMS, and Secrets Manager through VPC endpoints to eliminate public traffic
-      while maintaining observability and control.
-    </p>
+      <div class="project-card">
+        <h2>MWAA Private Environment</h2>
+        <p>
+          A hardened Airflow deployment using AWS MWAA within a fully private VPC. It connects to
+          ECR, CloudWatch, KMS, and Secrets Manager through VPC endpoints to eliminate public traffic
+          while maintaining observability and control.
+        </p>
+      </div>
 
-    <h2>Future: Dashboards & Apps</h2>
-    <p>
-      Planned development includes interactive dashboards using Plotly Dash and Streamlit, hosted
-      on AWS App Runner or ECS and distributed globally via Cloudflare. These apps will extend the
-      ELT pipeline into live analytics experiences.
-    </p>
+      <div class="project-card">
+        <h2>Future: Dashboards & Apps</h2>
+        <p>
+          Planned development includes interactive dashboards using Plotly Dash and Streamlit, hosted
+          on AWS App Runner or ECS and distributed globally via Cloudflare. These apps will extend the
+          ELT pipeline into live analytics experiences.
+        </p>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
