@@ -49,48 +49,34 @@
         <a href="/">Home</a>
         <a href="/about.html">About</a>
         <a href="/projects.html" class="active" aria-current="page">Projects</a>
-        <a href="mailto:dave@catincloudlabs.com">Contact</a>
+        <a href="/contact.html">Contact</a>
       </nav>
     </div>
   </header>
 
   <main id="main" class="wrap hero">
     <h1>Projects</h1>
-    <p class="tagline">Selected work and reference architectures.</p>
 
-    <section class="cards">
-      <div class="card">
-        <h2>Enterprise Stock Market ELT</h2>
-        <p>
-          A production-grade pipeline on AWS with MWAA (Airflow), Snowflake, and dbt Cloud.
-          Private-by-default networking (S3 Gateway + interface endpoints), SSE-KMS,
-          Secrets Manager for credentials, and fine-grained IAM — all aligned to an
-          enterprise posture.
-        </p>
-        <ul>
-          <li>Incremental models in dbt for efficient transforms</li>
-          <li>Curated S3 buckets: artifacts, raw, stage, curated, snowflake-stage</li>
-          <li>Observability via CloudWatch logs and Airflow task monitoring</li>
-        </ul>
-      </div>
+    <h2>Enterprise Stock Market ELT</h2>
+    <p>
+      A production-grade data pipeline on AWS integrating MWAA (Airflow), Snowflake, and dbt Cloud.
+      It uses private networking, SSE-KMS encryption, and fine-grained IAM to ensure a secure and
+      auditable architecture for ingesting and transforming market data.
+    </p>
 
-      <div class="card">
-        <h2>MWAA Private Environment</h2>
-        <p>
-          Pattern for securely hosting Airflow with private web server access, VPC endpoints
-          for ECR/Logs/KMS/Secrets, and a hardened artifacts bucket. This is our baseline for
-          any data platform requiring strict network boundaries.
-        </p>
-      </div>
+    <h2>MWAA Private Environment</h2>
+    <p>
+      A hardened Airflow deployment using AWS MWAA within a fully private VPC. It connects to
+      ECR, CloudWatch, KMS, and Secrets Manager through VPC endpoints to eliminate public traffic
+      while maintaining observability and control.
+    </p>
 
-      <div class="card">
-        <h2>Future: Dashboards & Apps</h2>
-        <p>
-          Roadmap includes interactive dashboards (Plotly/Streamlit) on AWS App Runner/ECS,
-          fronted by Cloudflare for global delivery and secure edges.
-        </p>
-      </div>
-    </section>
+    <h2>Future: Dashboards & Apps</h2>
+    <p>
+      Planned development includes interactive dashboards using Plotly Dash and Streamlit, hosted
+      on AWS App Runner or ECS and distributed globally via Cloudflare. These apps will extend the
+      ELT pipeline into live analytics experiences.
+    </p>
   </main>
 
   <footer class="site-footer">
