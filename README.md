@@ -19,7 +19,7 @@ This site is hosted on **Cloudflare Pages**.
 
 **Public assets:**
 
-```
+```txt
 public/
 ├── index.html
 ├── about.html
