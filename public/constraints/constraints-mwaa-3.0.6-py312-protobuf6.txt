@@ -1,35 +1,51 @@
+# =============================================================================
+# CatInCloud Labs — MWAA Constraints (Customized)
+# File: constraints-mwaa-3.0.6-py312-protobuf6.txt
+# Host: https://catincloudlabs.com/constraints/constraints-mwaa-3.0.6-py312-protobuf6.txt
+#
+# Purpose
+# - This file is a customized copy of Apache Airflow’s official constraints for:
+#     Airflow 3.0.6  •  Python 3.12
+# - It is tailored for our MWAA environment to satisfy dbt-core 1.10.x’s requirement
+#   for protobuf >= 6, while otherwise preserving Airflow’s known-good pins.
+#
+# Source / Provenance
+# - Base file: Apache Airflow constraints-3.0.6 / constraints-3.12.txt
+# - Generated upstream on: 2025-08-23T18:07:04.578460 (v3-0-test branch per upstream header)
+# - This customized version is maintained by CatInCloud Labs and is not an official
+#   Apache/AWS artifact.
+#
+# Delta from Upstream (minimal, explicit)
+# - protobuf==6.30.1   (upstream pinned protobuf 4.x; dbt-core 1.10.13+ needs protobuf 6.x)
+# - [Optional] If we must require a newer Snowflake provider, we will also bump:
+#     apache-airflow-providers-snowflake==<version>
+#   Otherwise we keep the upstream provider pin to minimize drift.
+#
+# How to use on MWAA (requirements.txt)
+# - Reference exactly ONE constraints URL (this file), then list only what we actually need:
+#
+#     --constraint "https://catincloudlabs.com/constraints/constraints-mwaa-3.0.6-py312-protobuf6.txt"
+#     dbt-core==1.10.13
+#     dbt-snowflake==1.10.2
+#     apache-airflow-providers-snowflake
+#
+# Guidance
+# - Do NOT add a separate protobuf pin in requirements.txt; this file already defines it.
+# - Keep this file as the single source of truth for resolver changes (adjust here first).
+# - Prefer the smallest possible edits to stay close to upstream constraints.
+#
+# Maintenance Checklist
+# 1) Ensure exactly ONE protobuf line exists and it is 6.30.1.
+# 2) If you must change a provider/lib pin, edit it here and record it in the Delta section.
+# 3) Sanity-test locally using the MWAA 3.0.6 Py3.12 image: `pip install -r requirements.txt`.
+# 4) Serve with Content-Type: text/plain; charset=utf-8 and a stable URL.
+# 5) Version this file name if you introduce additional deltas (e.g., add “-prov6.6.0”).
+#
+# Disclaimer
+# - This file is intended ONLY for the MWAA dependency install step. Subsequent pip installs
+#   without constraints may introduce packages outside this set.
+# =============================================================================
 
-#
-# This constraints file was automatically generated on 2025-08-23T18:07:04.578460
-# via `uv pip install --resolution highest` for the "v3-0-test" branch of Airflow.
-# This variant of constraints install uses the HEAD of the branch version for 'apache-airflow' but installs
-# the providers from PIP-released packages at the moment of the constraint generation.
-#
-# Those constraints are actually those that regular users use to install released version of Airflow.
-# We also use those constraints after "apache-airflow" is released and the constraints are tagged with
-# "constraints-X.Y.Z" tag to build the production image for that version.
-#
-# This constraints file is meant to be used only in the "apache-airflow" installation command and not
-# in all subsequent pip commands. By using a constraints.txt file, we ensure that solely the Airflow
-# installation step is reproducible. Subsequent pip commands may install packages that would have
-# been incompatible with the constraints used in Airflow reproducible installation step. Finally, pip
-# commands that might change the installed version of apache-airflow should include "apache-airflow==X.Y.Z"
-# in the list of install targets to prevent Airflow accidental upgrade or downgrade.
-#
-# Typical installation process of airflow for Python 3.9 is (with random selection of extras and custom
-# dependencies added), usually consists of two steps:
-#
-# 1. Reproducible installation of airflow with selected providers (note constraints are used):
-#
-# pip install "apache-airflow[celery,cncf.kubernetes,google,amazon,snowflake]==X.Y.Z" \
-#     --constraint \
-#    "https://raw.githubusercontent.com/apache/airflow/constraints-X.Y.Z/constraints-3.12.txt"
-#
-# 2. Installing own dependencies that are potentially not matching the constraints (note constraints are not
-#    used, and apache-airflow==X.Y.Z is used to make sure there is no accidental airflow upgrade/downgrade.
-#
-# pip install "apache-airflow==X.Y.Z" "snowflake-connector-python[pandas]=N.M.O"
-#
 APScheduler==3.11.0
 Authlib==1.6.2
 Deprecated==1.2.18
@@ -829,3 +845,11 @@ zstandard==0.24.0
 # --- custom edit for dbt compatibility ---
 protobuf==6.30.1
 # -----------------------------------------
+#
+#
+# =============================================================================
+# CatInCloud Labs — Recorded Deltas from Upstream
+# - protobuf==6.30.1   ← required by dbt-core 1.10.13+
+# - [Optional future delta] apache-airflow-providers-snowflake==6.6.0
+#   (Only if our DAGs require it; otherwise we retain the upstream pin.)
+# =============================================================================
