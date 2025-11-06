@@ -122,5 +122,5 @@ yarl==1.11.1
 zipp==3.20.2
 
 # --- custom edit for dbt compatibility ---
-protobuf==6.30.1
+protobuf==5.28.3
 # -----------------------------------------
