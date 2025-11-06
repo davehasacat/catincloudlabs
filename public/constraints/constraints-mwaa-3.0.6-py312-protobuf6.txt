@@ -269,6 +269,7 @@ cadwyn==5.4.4
 cassandra-driver==3.29.2
 cattrs==25.1.1
 celery==5.5.2
+certifi==2024.8.30
 cffi==1.17.1
 cfgv==3.4.0
 cfn-lint==1.39.0
@@ -451,7 +452,7 @@ ipdb==0.13.13
 ipykernel==6.30.1
 ipython==9.4.0
 ipython_pygments_lexers==1.1.1
-isodate==0.7.2
+isodate==0.6.1
 itsdangerous==2.2.0
 jaraco.classes==3.4.0
 jaraco.context==6.0.1
@@ -599,6 +600,7 @@ prison==0.2.1
 prometheus_client==0.22.1
 prompt_toolkit==3.0.51
 propcache==0.3.2
+protobuf==6.30.1
 proto-plus==1.26.1
 psutil==7.0.0
 psycopg2-binary==2.9.10
@@ -841,16 +843,8 @@ zope.event==5.1.1
 zope.interface==7.2
 zstandard==0.24.0
 
-# --- custom edit for dbt compatibility ---
-protobuf==6.30.1
-certifi==2024.8.30
-# -----------------------------------------
-#
-#
 # =============================================================================
 # CatInCloud Labs — Recorded Deltas from Upstream
 # - protobuf==6.30.1   ← required by dbt-core 1.10.13+
 # - certifi==2024.8.30
-# - [Optional future delta] apache-airflow-providers-snowflake==6.6.0
-#   (Only if our DAGs require it; otherwise we retain the upstream pin.)
 # =============================================================================
