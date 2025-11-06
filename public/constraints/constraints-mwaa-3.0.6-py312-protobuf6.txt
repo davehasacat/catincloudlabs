@@ -269,6 +269,7 @@ cadwyn==5.4.4
 cassandra-driver==3.29.2
 cattrs==25.1.1
 celery==5.5.2
+certifi==2025.8.3
 cffi==1.17.1
 cfgv==3.4.0
 cfn-lint==1.39.0
@@ -843,13 +844,13 @@ zstandard==0.24.0
 
 # --- custom edit for dbt compatibility ---
 protobuf==6.30.1
-certifi==2024.8.30
 # -----------------------------------------
 #
 #
 # =============================================================================
 # CatInCloud Labs — Recorded Deltas from Upstream
 # - protobuf==6.30.1   ← required by dbt-core 1.10.13+
+# - certifi==2024.8.30
 # - [Optional future delta] apache-airflow-providers-snowflake==6.6.0
 #   (Only if our DAGs require it; otherwise we retain the upstream pin.)
 # =============================================================================
