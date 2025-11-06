@@ -1,244 +1,191 @@
-/* ==========================================================================
-   CatInCloud Labs — Base Styles
-   File: public/styles.css
-   ========================================================================== */
+/*
+CatInCloud Labs — Bright Theme Starter
+Purpose: pivot the site from dark to bright without a full rewrite.
+Drop-in: save as /public/styles/bright.css (or replace styles.css)
+Notes:
+- Uses CSS custom properties (design tokens) at :root
+- Accessible contrast (WCAG AA+) by default
+- Gentle depth via shadows, rounded corners; crisp text on warm-leaning grayscale
+*/
 
-/* ========== 1) Design tokens ================================================= */
+/* 1) Design tokens */
 :root {
-  --bg: #f8fafc;          /* slate-50 */
-  --fg: #111827;          /* slate-900 */
-  --muted: #6b7280;       /* slate-500 */
-  --card: #ffffff;         /* white */
-  --border: #e5e7eb;       /* slate-200 */
-  --brand: #0ea5e9;        /* sky-500 */
-  --brand-ink: #0b7db0;
+  /* Brand accent — bright lilac verging on rose */
+  --accent-50:  #fcf6ff;
+  --accent-100: #f6e8ff;
+  --accent-200: #edd0ff;
+  --accent-300: #e2b0ff;
+  --accent-400: #d285ff;
+  --accent-500: #c05dff; /* primary */
+  --accent-600: #a642e6;
+  --accent-700: #8b33c4;
+  --accent-800: #6c2897;
+  --accent-900: #541f74;
 
-  --radius: 16px;
-  --shadow-sm: 0 1px 3px rgba(0,0,0,.06);
-  --shadow-md: 0 8px 24px rgba(0,0,0,.08);
+  /* Neutral scale (bright / warm gray) */
+  --gray-50:  #f9fafb;
+  --gray-100: #f3f4f6; /* page background */
+  --gray-200: #e5e7eb; /* borders */
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af; /* muted text */
+  --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827; /* highest contrast text */
 
-  --space-1: 4px;
-  --space-2: 8px;
-  --space-3: 12px;
-  --space-4: 16px;
-  --space-5: 20px;
-  --space-6: 24px;
-  --space-8: 32px;
-  --space-10: 40px;
+  /* Semantic aliases */
+  --bg-page: var(--gray-100);
+  --bg-surface: #ffffff;
+  --bg-elevated: #ffffff;
+  --text: var(--gray-900);
+  --text-muted: var(--gray-600);
+  --link: var(--accent-600);
+  --link-hover: var(--accent-500);
+  --primary: var(--accent-500);
+  --primary-hover: var(--accent-600);
+  --primary-pressed: var(--accent-700);
+  --ring: var(--accent-400);
 
-  --container: 980px;
-  --fz-base: 16px;
-  --fz-h1: clamp(2rem, 4vw, 2.4rem);
-  --fz-h2: clamp(1.2rem, 2.5vw, 1.4rem);
+  /* Effects & rhythm */
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --shadow-sm: 0 1px 2px rgba(17, 24, 39, 0.06);
+  --shadow-md: 0 6px 16px rgba(17, 24, 39, 0.08);
+  --shadow-lg: 0 12px 30px rgba(17, 24, 39, 0.12);
+  --transition-fast: 120ms ease;
+  --transition: 200ms cubic-bezier(.2,.7,.2,1);
+  --maxw-readable: 72ch;
 }
 
-/* ========== 2) Dark mode (auto) ============================================= */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #0b1220;
-    --fg: #e5e7eb;
-    --muted: #9ca3af;
-    --card: #0f172a;
-    --border: #1f2937;
-    --brand: #38bdf8;
-    --brand-ink: #1a8bb8;
-    --shadow-sm: 0 1px 3px rgba(0,0,0,.35);
-    --shadow-md: 0 8px 24px rgba(0,0,0,.35);
-  }
-}
-
-/* ========== 3) Resets & Global ============================================== */
+/* 2) Global reset + base */
 * { box-sizing: border-box; }
-html, body { height: 100%; }
-
+html { color-scheme: light; }
 body {
   margin: 0;
-  font-size: var(--fz-base);
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  background: var(--bg-page);
+  color: var(--text);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
   line-height: 1.6;
-  color: var(--fg);
-  background: var(--bg);
   text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
 }
+
+img, svg, video { max-width: 100%; height: auto; }
+
+/* Typography scale */
+h1 { font-size: clamp(2rem, 1.2rem + 3vw, 3rem); line-height: 1.15; margin: 0 0 .5rem; letter-spacing: -0.01em; }
+h2 { font-size: clamp(1.5rem, 1rem + 1.5vw, 2rem); line-height: 1.2; margin: 2rem 0 .75rem; }
+h3 { font-size: 1.25rem; margin: 1.25rem 0 .5rem; }
+p { margin: 0 0 1rem; }
+small, .muted { color: var(--text-muted); }
 
 /* Links */
-a { color: var(--brand); text-decoration: none; }
-a:hover { text-decoration: underline; }
+a { color: var(--link); text-decoration: none; transition: color var(--transition-fast); }
+a:hover { color: var(--link-hover); text-decoration: underline; }
+a:focus-visible { outline: 3px solid var(--ring); outline-offset: 2px; border-radius: 6px; }
 
-/* Focus visibility (keyboard users) */
-:focus-visible {
-  outline: 2px solid var(--brand);
-  outline-offset: 2px;
-  border-radius: 6px;
-}
+/* 3) Layout helpers */
+.container { width: min(1100px, 92vw); margin-inline: auto; }
+.stack > * + * { margin-top: var(--stack-gap, 1.25rem); }
+.grid { display: grid; gap: 1.25rem; }
+.grid.cols-3 { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
 
-/* ========== 4) Layout ======================================================== */
-.wrap {
-  width: 100%;
-  max-width: var(--container);
-  margin: var(--space-10) auto;
-  padding: 0 var(--space-5);
-}
-
-/* ========== 5) Accessibility ================================================= */
-.skip-link { position: absolute; left: -9999px; }
-.skip-link:focus-visible {
-  left: var(--space-5);
-  top: var(--space-5);
-  z-index: 1000;
-  background: var(--card);
-  color: var(--fg);
-  padding: var(--space-3) var(--space-4);
-  border: 1px solid var(--border);
-  border-radius: 8px;
+/* 4) Components */
+.header {
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--gray-200);
+  position: sticky; top: 0; z-index: 10;
   box-shadow: var(--shadow-sm);
 }
-
-/* ========== 6) Header & Navigation ========================================== */
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  background: var(--card);
-  border-bottom: 1px solid var(--border);
-  backdrop-filter: saturate(180%) blur(8px);
-}
-
-.site-header .wrap {
-  margin: 0 auto;
-  padding: var(--space-3) var(--space-5);
-  display: flex;
-  align-items: center;
-  gap: var(--space-4);
-}
-
-.logo {
-  height: 36px;
-  width: auto;
-}
-
 .nav {
-  margin-left: auto;
-  display: flex;
-  gap: var(--space-2);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: .9rem 1rem;
 }
+.nav a.brand { font-weight: 700; color: var(--gray-900); }
+.nav .menu { display: flex; gap: 1rem; }
+.nav .menu a { color: var(--gray-700); padding: .5rem .6rem; border-radius: 8px; }
+.nav .menu a:hover { background: var(--gray-100); }
 
-.nav a {
-  color: var(--fg);
-  text-decoration: none;
-  padding: 8px 10px;
-  border-radius: 10px;
+.hero {
+  background: linear-gradient(180deg, var(--accent-50), transparent 60%);
+  padding: 3.5rem 0 2rem;
 }
+.hero .kicker { color: var(--accent-700); font-weight: 600; text-transform: uppercase; letter-spacing: .08em; }
+.hero .title { max-width: 22ch; }
+.hero .subtitle { max-width: 60ch; color: var(--text-muted); }
+.hero .cta { margin-top: 1.25rem; display: flex; gap: .75rem; flex-wrap: wrap; }
 
-.nav a:hover { background: rgba(0, 0, 0, 0.04); }
+.button { 
+  display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+  padding: .7rem 1rem; border-radius: var(--radius-md);
+  border: 1px solid transparent; font-weight: 600; cursor: pointer;
+  transition: transform var(--transition), background var(--transition);
+}
+.button:focus-visible { outline: 3px solid var(--ring); outline-offset: 3px; }
+.button.primary { background: var(--primary); color: white; box-shadow: var(--shadow-md); }
+.button.primary:hover { background: var(--primary-hover); transform: translateY(-1px); }
+.button.primary:active { background: var(--primary-pressed); transform: translateY(0); }
+.button.ghost { background: white; border-color: var(--gray-200); color: var(--gray-800); }
+.button.ghost:hover { border-color: var(--gray-300); box-shadow: var(--shadow-sm); }
 
+.card { background: var(--bg-surface); border: 1px solid var(--gray-200); border-radius: var(--radius-lg); padding: 1.25rem; box-shadow: var(--shadow-sm); }
+.card:hover { box-shadow: var(--shadow-md); }
+.card .eyebrow { text-transform: uppercase; font-size: .8rem; letter-spacing: .08em; color: var(--text-muted); }
+
+.section { padding: 2.5rem 0; }
+.section.alt { background: #fff; }
+
+.kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; }
+.kpis .kpi { background: white; border-radius: var(--radius-md); padding: 1rem 1.25rem; border: 1px solid var(--gray-200); box-shadow: var(--shadow-sm); }
+.kpis .kpi .value { font-size: 1.75rem; font-weight: 800; }
+.kpis .kpi .label { color: var(--text-muted); }
+
+.footer {
+  margin-top: 3rem;
+  background: linear-gradient(0deg, var(--accent-50), transparent 70%);
+  border-top: 1px solid var(--gray-200);
+}
+.footer .inner { padding: 1.5rem 0; color: var(--gray-700); }
+
+/* 5) Forms */
+.input {
+  width: 100%; padding: .7rem .9rem; border-radius: 12px; border: 1px solid var(--gray-300);
+  background: white; color: var(--text);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+.input::placeholder { color: var(--gray-400); }
+.input:focus { border-color: var(--accent-400); box-shadow: 0 0 0 4px color-mix(in oklab, var(--accent-400) 25%, transparent); outline: none; }
+
+/* 6) Utilities */
+.badge { display:inline-block; padding:.2rem .5rem; border-radius:999px; background: var(--accent-100); color: var(--accent-700); font-weight:600; }
+.border { border: 1px solid var(--gray-200); }
+.rounded { border-radius: var(--radius-md); }
+.shadow { box-shadow: var(--shadow-sm); }
+.center { text-align:center; }
+
+/* 7) Optional: keep a dark mode but default to light */
 @media (prefers-color-scheme: dark) {
-  .nav a:hover { background: rgba(255, 255, 255, 0.06); }
+  /* We still default to bright; only apply dark if you add a .theme-dark class on <html> */
+}
+html.theme-dark {
+  /* Minimal alternate palette for future toggle; not used by default */
+  --bg-page: #0b0f15;
+  --bg-surface: #0f1520;
+  --bg-elevated: #0f1520;
+  --text: #e6eaf2;
+  --text-muted: #aab3c2;
+  --link: #c6a6ff;
+  --link-hover: #ddb8ff;
+  --ring: #7f5cff;
 }
 
-.nav a.active {
-  background: rgba(14, 165, 233, 0.12);
-  color: var(--brand-ink);
-  font-weight: 600;
+/* 8) Example composables for existing pages */
+.hero-simple {
+  display:grid; gap:1rem; align-items:start;
 }
+.hero-simple .actions { display:flex; gap:.75rem; flex-wrap:wrap; }
 
-/* ========== 7) Typography & Hero ============================================ */
-h1, h2 { margin: 0 0 var(--space-3) 0; line-height: 1.2; }
-h1 { font-size: var(--fz-h1); }
-h2 { font-size: var(--fz-h2); }
-.tagline { color: var(--muted); margin: var(--space-2) 0 0; }
-
-.hero { margin-top: var(--space-8); }
-
-/* ========== 8) Cards (two-card layout) ====================================== */
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: var(--space-6);
-  margin-top: var(--space-8);
-}
-
-.card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: var(--space-6);
-  box-shadow: var(--shadow-sm);
-  transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease;
-}
-
-.card:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
-}
-
-.card p {
-  margin-bottom: var(--space-4);
-  line-height: 1.65;
-}
-
-/* Larger screens */
-@media (min-width: 900px) {
-  .cards { gap: var(--space-8); }
-  .card { padding: var(--space-8); }
-}
-
-/* ========== 9) Lists (projects page) ======================================== */
-.project-list {
-  list-style: none;
-  padding-left: 0;
-  margin-top: var(--space-4);
-}
-
-.project-list li {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: var(--space-4);
-  margin-bottom: var(--space-3);
-  box-shadow: var(--shadow-sm);
-}
-
-/* ========== 10) Footer ====================================================== */
-.footer-tagline {
-  margin-top: var(--space-3);
-  font-size: 0.9rem;
-  color: var(--muted);
-  font-style: italic;
-  text-align: center;
-}
-
-.site-footer {
-  border-top: 1px solid var(--border);
-  background: var(--card);
-  margin-top: var(--space-10);
-}
-
-.site-footer .wrap {
-  margin: 0 auto;
-  padding: var(--space-5);
-  text-align: center;
-  color: var(--muted);
-}
-
-/* ========== 11) 404 page ==================================================== */
-.not-found {
-  text-align: center;
-  padding: 80px 20px;
-}
-
-.not-found h1 {
-  font-size: clamp(3rem, 8vw, 4.5rem);
-  margin: 0 0 .5rem;
-}
-
-/* ========== 12) Utilities & Print ========================================== */
-.center { text-align: center; }
-.hidden { display: none !important; }
-
-@media print {
-  .site-header, .site-footer, .nav { display: none !important; }
-  .wrap { margin: 0; max-width: 100%; }
-  a { text-decoration: underline; }
-}
+/* 9) Animations (subtle) */
+.reveal { opacity: 0; transform: translateY(6px); animation: revealIn .5s var(--transition) forwards; }
+@keyframes revealIn { to { opacity: 1; transform: none; } }

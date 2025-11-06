@@ -31,75 +31,96 @@
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="alternate icon" href="/favicon.png" type="image/png" />
   <link rel="apple-touch-icon" href="/favicon.svg" />
-  <meta name="theme-color" content="#111827" />
-  <meta name="color-scheme" content="light dark" />
+  <!-- Light theme defaults -->
+  <meta name="theme-color" content="#f3f4f6" />
+  <meta name="color-scheme" content="light" />
 
   <!-- Styles -->
+  <!-- Using your replaced bright stylesheet at the same path -->
   <link rel="stylesheet" href="/styles.css" />
 </head>
 <body>
   <!-- Accessibility: skip link -->
-  <a href="#main" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">
-    Skip to content
-  </a>
+  <a href="#main" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">Skip to content</a>
 
   <!-- Header -->
-  <header class="site-header">
-    <div class="wrap">
-      <a href="/" class="site-logo" aria-label="CatInCloud Labs">
-        <img
-          src="/logo-wordmark-dark.svg"
-          alt="CatInCloud Labs"
-          width="192"
-          height="38"
-          class="logo"
-        />
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="/" aria-label="CatInCloud Labs">
+        <img src="/logo-wordmark-light.svg" alt="CatInCloud Labs" height="32" />
       </a>
-      <nav class="nav" aria-label="Primary">
+      <nav class="menu" aria-label="Primary">
         <a href="/" class="active" aria-current="page">Home</a>
         <a href="/about.html">About</a>
         <a href="/projects.html">Projects</a>
-        <a href="/contact.html">Contact</a>
+        <a href="/contact.html" class="button ghost">Contact</a>
+        <a href="/get-started.html" class="button primary">Get started</a>
       </nav>
     </div>
   </header>
 
-  <main id="main" class="wrap hero">
-    <h1>CatInCloud Labs</h1>
-    <p class="tagline">Cloud Engineering • Data Pipelines • DevOps Excellence</p>
-
-    <section class="cards">
-      <div class="card">
-        <h2>Enterprise Stock Market ELT</h2>
-        <p>
-          A production-grade data pipeline built on AWS, MWAA, Snowflake, and dbt Cloud,
-          designed to securely ingest, transform, and deliver market data at scale using
-          KMS encryption and enterprise best practices. The cloud-native architecture
-          supports both stocks and options data and employs dbt’s incremental loading
-          strategy for efficient, maintainable transformations.
-        </p>
+  <!-- Hero -->
+  <main id="main">
+    <section class="hero">
+      <div class="container hero-simple">
+        <div class="stack" style="--stack-gap:1rem">
+          <div class="kicker">Cloud • Data • DevOps</div>
+          <h1 class="title">CatInCloud Labs</h1>
+          <p class="subtitle">Cloud Engineering • Data Pipelines • DevOps Excellence</p>
+          <div class="actions">
+            <a class="button primary" href="/get-started.html">Talk to us</a>
+            <a class="button ghost" href="/projects.html">See our work</a>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <div class="card">
-        <h2>Architecture Philosophy</h2>
-        <p>
-          We believe modern data systems should be secure, observable, and simple enough
-          to maintain without layers of unnecessary complexity.
-        </p>
-        <p>
-          Every component, from networking and IAM to ELT orchestration, is designed
-          with clarity, scalability, and least-privilege principles in mind.
-        </p>
+    <!-- Content cards -->
+    <section class="section">
+      <div class="container">
+        <div class="grid cols-3">
+          <article class="card reveal" style="grid-column: span 3; max-width: var(--maxw-readable);">
+            <div class="eyebrow">Flagship</div>
+            <h2>Enterprise Stock Market ELT</h2>
+            <p>
+              A production-grade data pipeline built on AWS, MWAA, Snowflake, and dbt Cloud,
+              designed to securely ingest, transform, and deliver market data at scale using
+              KMS encryption and enterprise best practices. The cloud-native architecture
+              supports both stocks and options data and employs dbt’s incremental loading
+              strategy for efficient, maintainable transformations.
+            </p>
+          </article>
+
+          <article class="card reveal" style="grid-column: span 3; max-width: var(--maxw-readable);">
+            <div class="eyebrow">Approach</div>
+            <h2>Architecture Philosophy</h2>
+            <p>
+              We believe modern data systems should be secure, observable, and simple enough
+              to maintain without layers of unnecessary complexity.
+            </p>
+            <p>
+              Every component, from networking and IAM to ELT orchestration, is designed
+              with clarity, scalability, and least-privilege principles in mind.
+            </p>
+          </article>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="wrap">
-      <p>© 2025 CatInCloud Labs. All rights reserved.</p>
-      <p class="footer-tagline">Cats who cloud. Humans that stay grounded.</p>
-      <p><a href="mailto:dave@catincloudlabs.com">dave@catincloudlabs.com</a></p>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container inner">
+      <div class="grid" style="grid-template-columns:1fr auto; align-items:center;">
+        <small>© <span id="y"></span> CatInCloud Labs — DaveHasACat LLC</small>
+        <div class="stack" style="--stack-gap:.25rem">
+          <a href="/about.html">About</a> ·
+          <a href="/security.txt">Security</a> ·
+          <a href="/privacy.html">Privacy</a>
+        </div>
+      </div>
     </div>
+    <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
   </footer>
 </body>
 </html>
