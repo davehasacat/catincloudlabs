@@ -842,9 +842,3 @@ zipp==3.23.0
 zope.event==5.1.1
 zope.interface==7.2
 zstandard==0.24.0
-
-# =============================================================================
-# CatInCloud Labs — Recorded Deltas from Upstream
-# - protobuf==6.30.1   ← required by dbt-core 1.10.13+
-# - certifi==2024.8.30
-# =============================================================================
