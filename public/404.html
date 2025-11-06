@@ -6,22 +6,30 @@
   <title>404 — Page Not Found | CatInCloud Labs</title>
 
   <!-- SEO -->
-  <meta name="description" content="404 error page for CatInCloud Labs — the page you’re looking for could not be found." />
-  <meta name="robots" content="noindex,follow" />
+  <meta name="robots" content="noindex,follow,max-image-preview:large" />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="404 — Page Not Found" />
-  <meta property="og:description" content="The page you were looking for could not be found." />
+  <!-- Open Graph / Twitter (optional but consistent) -->
+  <meta property="og:title" content="404 — Page Not Found | CatInCloud Labs" />
+  <meta property="og:description" content="The page you're looking for doesn't exist. Let's get you back on track." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://catincloudlabs.com/social-card.png" />
+  <meta property="og:url" content="https://catincloudlabs.com/404.html" />
+  <meta property="og:image" content="https://catincloudlabs.com/assets/social-card.png" />
+  <meta property="og:site_name" content="CatInCloud Labs" />
+  <meta property="og:locale" content="en_US" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="404 — Page Not Found | CatInCloud Labs" />
+  <meta name="twitter:description" content="The page you're looking for doesn't exist. Let's get you back on track." />
+  <meta name="twitter:image" content="https://catincloudlabs.com/assets/social-card.png" />
 
-  <!-- Icons & Theme -->
-  <link rel="icon" type="image/png" href="/favicon.png" />
-  <link rel="apple-touch-icon" href="/favicon.png" />
-  <meta name="theme-color" content="#111827" />
+  <!-- Icons & theme -->
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+  <link rel="alternate icon" href="/assets/favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" href="/assets/favicon.png" />
+  <meta name="theme-color" content="#f3f4f6" />
+  <meta name="color-scheme" content="light" />
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="/styles/styles.css" />
 </head>
 
 <body>
@@ -31,30 +39,64 @@
   </a>
 
   <!-- Header -->
-  <header class="site-header">
-    <div class="wrap">
-      <img src="/logo.svg" alt="CatInCloud Labs logo" class="logo" />
-      <nav class="nav" aria-label="Primary">
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="/" aria-label="CatInCloud Labs">
+        <img src="/assets/logo-wordmark-light.svg" alt="CatInCloud Labs" height="32" />
+      </a>
+      <nav class="menu" aria-label="Primary">
         <a href="/">Home</a>
         <a href="/about.html">About</a>
         <a href="/projects.html">Projects</a>
-        <a href="/contact.html">Contact</a>
+        <a href="/contact.html" class="button ghost">Contact</a>
       </nav>
     </div>
   </header>
 
-  <!-- Main content -->
-  <main id="main" class="wrap not-found center">
-    <h1>404</h1>
-    <p>We couldn’t find that page.</p>
-    <p><a href="/" class="button">← Go back home</a></p>
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-simple">
+        <div class="stack" style="--stack-gap:1rem">
+          <div class="kicker">404</div>
+          <h1 class="title">Page not found.</h1>
+          <p class="subtitle">The page you're looking for doesn't exist or has moved. Let's get you back on track.</p>
+          <div class="actions">
+            <a class="button primary" href="/">Go Home</a>
+            <a class="button ghost" href="/contact.html">Contact us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Helpful links -->
+    <section class="section">
+      <div class="container">
+        <article class="card reveal" style="max-width: var(--maxw-readable); margin-inline:auto; text-align:center;">
+          <h2>Try one of these</h2>
+          <p>Browse a few popular pages while you're here:</p>
+          <p>
+            <a href="/about.html">About</a> ·
+            <a href="/projects.html">Projects</a> ·
+            <a href="/contact.html">Contact</a>
+          </p>
+        </article>
+      </div>
+    </section>
   </main>
 
   <!-- Footer -->
-  <footer class="site-footer">
-    <div class="wrap">
-      <p>© 2025 CatInCloud Labs. All rights reserved.</p>
+  <footer class="footer">
+    <div class="container inner center">
+      <small>© <span id="y"></span> CatInCloud Labs — DaveHasACat LLC</small>
+      <p><em>Cats who cloud. Humans that stay grounded.</em></p>
+      <div class="stack" style="--stack-gap:.25rem; justify-content:center; margin-top:0.5rem;">
+        <a href="/about.html">About</a> ·
+        <a href="/security.txt">Security</a> ·
+        <a href="/privacy.html">Privacy</a>
+      </div>
     </div>
+    <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
   </footer>
 </body>
 </html>

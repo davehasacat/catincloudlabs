@@ -6,87 +6,113 @@
   <title>About — CatInCloud Labs</title>
 
   <!-- SEO -->
-  <meta name="description" content="About CatInCloud Labs — practical, enterprise-grade cloud engineering and data platforms." />
+  <meta name="description" content="About CatInCloud Labs — We build secure, maintainable, enterprise-grade cloud and data platforms that scale cleanly and stand the test of time." />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <link rel="canonical" href="https://catincloudlabs.com/about.html" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="About — CatInCloud Labs" />
-  <meta property="og:description" content="We focus on secure AWS architectures, robust ELT pipelines, and maintainable analytics workflows." />
+  <meta property="og:description" content="We build secure, maintainable, enterprise-grade cloud and data platforms that scale cleanly and stand the test of time." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://catincloudlabs.com/about.html" />
-  <meta property="og:image" content="https://catincloudlabs.com/social-card.png" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
+  <meta property="og:image" content="https://catincloudlabs.com/assets/social-card.png" />
   <meta property="og:site_name" content="CatInCloud Labs" />
   <meta property="og:locale" content="en_US" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="About — CatInCloud Labs" />
-  <meta name="twitter:description" content="Secure AWS, MWAA, Snowflake, and dbt Cloud — delivered with enterprise rigor." />
-  <meta name="twitter:image" content="https://catincloudlabs.com/social-card.png" />
+  <meta name="twitter:description" content="We build secure, maintainable, enterprise-grade cloud and data platforms that scale cleanly and stand the test of time." />
+  <meta name="twitter:image" content="https://catincloudlabs.com/assets/social-card.png" />
 
-  <!-- Icons & Theme -->
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-  <link rel="alternate icon" href="/favicon.png" type="image/png" />
-  <link rel="apple-touch-icon" href="/favicon.svg" />
-  <meta name="theme-color" content="#111827" />
-  <meta name="color-scheme" content="light dark" />
+  <!-- Icons & theme -->
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+  <link rel="alternate icon" href="/assets/favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" href="/assets/favicon.png" />
+  <meta name="theme-color" content="#f3f4f6" />
+  <meta name="color-scheme" content="light" />
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="/styles/styles.css" />
 </head>
-<body>
-  <a href="#main" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">Skip to content</a>
 
-  <header class="site-header">
-    <div class="wrap">
-      <a href="/" class="site-logo" aria-label="CatInCloud Labs">
-        <img src="/logo-wordmark-dark.svg" alt="CatInCloud Labs" width="192" height="38" class="logo" />
+<body>
+  <!-- Accessibility: skip link -->
+  <a href="#main" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">
+    Skip to content
+  </a>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="/" aria-label="CatInCloud Labs">
+        <img src="/assets/logo-wordmark-light.svg" alt="CatInCloud Labs" height="32" />
       </a>
-      <nav class="nav" aria-label="Primary">
+      <nav class="menu" aria-label="Primary">
         <a href="/">Home</a>
         <a href="/about.html" class="active" aria-current="page">About</a>
         <a href="/projects.html">Projects</a>
-        <a href="/contact.html">Contact</a>
+        <a href="/contact.html" class="button ghost">Contact</a>
       </nav>
     </div>
   </header>
 
-  <main id="main" class="wrap hero">
-    <h1>About CatInCloud</h1>
-    <article class="card">
-      <h2>Designed to Work</h2>
-      <p>
-        We believe in building things that work. No frills. No fluff. Just well-designed systems
-        that scale cleanly and stand the test of time.
-      </p>
-    </article>
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-simple">
+        <div class="stack" style="--stack-gap:1rem">
+          <div class="kicker">About</div>
+          <h1 class="title">We build things that last.</h1>
+          <p class="subtitle">Modern cloud and data platforms — engineered for clarity, security, and long-term maintainability.</p>
+        </div>
+      </div>
+    </section>
 
-    <article class="card">
-      <h2>Gold Standard Security</h2>
-      <p>
-        Every platform we design starts with clarity and security: private networking, least-privilege IAM,
-        KMS encryption, and observability as table stakes. We build what’s needed, build it right, and build it to last.
-      </p>
-    </article>
+    <!-- About cards -->
+    <section class="section">
+      <div class="container">
+        <div class="stack" style="--stack-gap:1.25rem">
+          <article class="card reveal" style="max-width: var(--maxw-readable); margin-inline:auto;">
+            <h2>Designed to Work</h2>
+            <p>
+              We believe in building things that work. No frills. No fluff. Just well-designed systems
+              that scale cleanly and stand the test of time.
+            </p>
+          </article>
 
-    <article class="card">
-      <h2>Tech Stack</h2>
-      <p>
-        Our preferred stack for modern data work includes AWS MWAA (Airflow) for orchestration, Snowflake for warehousing,
-        and dbt Cloud for transformations. All aligned to enterprise best practices and incremental, testable delivery.
-      </p>
-    </article>
+          <article class="card reveal" style="max-width: var(--maxw-readable); margin-inline:auto;">
+            <h2>Gold Standard Security</h2>
+            <p>
+              Every platform we design starts with clarity and security: private networking, least-privilege IAM,
+              KMS encryption, and observability as table stakes. We build what's needed, build it right, and build it to last.
+            </p>
+          </article>
+
+          <article class="card reveal" style="max-width: var(--maxw-readable); margin-inline:auto;">
+            <h2>Tech Stack</h2>
+            <p>
+              Our preferred stack for modern data work includes AWS MWAA (Airflow) for orchestration, Snowflake for warehousing,
+              and dbt Cloud for transformations. All aligned to enterprise best practices and incremental, testable delivery.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="wrap">
-      <p>© 2025 CatInCloud Labs. All rights reserved.</p>
-      <p class="footer-tagline">Cats who cloud. Humans that stay grounded.</p>
-      <p><a href="mailto:dave@catincloudlabs.com">dave@catincloudlabs.com</a></p>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container inner center">
+      <small>© <span id="y"></span> CatInCloud Labs — DaveHasACat LLC</small>
+      <p><em>Cats who cloud. Humans that stay grounded.</em></p>
+      <div class="stack" style="--stack-gap:.25rem; justify-content:center; margin-top:0.5rem;">
+        <a href="/about.html">About</a> ·
+        <a href="/security.txt">Security</a> ·
+        <a href="/privacy.html">Privacy</a>
+      </div>
     </div>
+    <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
   </footer>
 </body>
 </html>
