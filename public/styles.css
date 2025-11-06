@@ -1,41 +1,36 @@
 /*
-CatInCloud Labs — Bright Theme Starter
-Purpose: pivot the site from dark to bright without a full rewrite.
-Drop-in: save as /public/styles/bright.css (or replace styles.css)
-Notes:
-- Uses CSS custom properties (design tokens) at :root
-- Accessible contrast (WCAG AA+) by default
-- Gentle depth via shadows, rounded corners; crisp text on warm-leaning grayscale
+CatInCloud Labs — Bright Theme (Blue Variant)
+Purpose: pivot the site to a clean sky blue + blue + white color scheme.
+Drop-in: /public/styles/styles.css
 */
 
-/* 1) Design tokens */
 :root {
-  /* Brand accent — bright lilac verging on rose */
-  --accent-50:  #fcf6ff;
-  --accent-100: #f6e8ff;
-  --accent-200: #edd0ff;
-  --accent-300: #e2b0ff;
-  --accent-400: #d285ff;
-  --accent-500: #c05dff; /* primary */
-  --accent-600: #a642e6;
-  --accent-700: #8b33c4;
-  --accent-800: #6c2897;
-  --accent-900: #541f74;
+  /* Blue accent range */
+  --accent-50:  #f0f9ff;
+  --accent-100: #e0f2fe;
+  --accent-200: #bae6fd;
+  --accent-300: #7dd3fc;
+  --accent-400: #38bdf8;
+  --accent-500: #0ea5e9; /* primary */
+  --accent-600: #0284c7;
+  --accent-700: #0369a1;
+  --accent-800: #075985;
+  --accent-900: #0c4a6e;
 
-  /* Neutral scale (bright / warm gray) */
+  /* Neutral scale (cool gray) */
   --gray-50:  #f9fafb;
-  --gray-100: #f3f4f6; /* page background */
-  --gray-200: #e5e7eb; /* borders */
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
   --gray-300: #d1d5db;
-  --gray-400: #9ca3af; /* muted text */
+  --gray-400: #9ca3af;
   --gray-500: #6b7280;
   --gray-600: #4b5563;
   --gray-700: #374151;
   --gray-800: #1f2937;
-  --gray-900: #111827; /* highest contrast text */
+  --gray-900: #111827;
 
-  /* Semantic aliases */
-  --bg-page: var(--gray-100);
+  /* Semantic tokens */
+  --bg-page: var(--gray-50);
   --bg-surface: #ffffff;
   --bg-elevated: #ffffff;
   --text: var(--gray-900);
@@ -47,7 +42,7 @@ Notes:
   --primary-pressed: var(--accent-700);
   --ring: var(--accent-400);
 
-  /* Effects & rhythm */
+  /* Radius, shadows, transitions */
   --radius-sm: 10px;
   --radius-md: 16px;
   --radius-lg: 24px;
@@ -59,8 +54,7 @@ Notes:
   --maxw-readable: 72ch;
 }
 
-/* 2) Global reset + base */
-* { box-sizing: border-box; }
+/* Base */
 html { color-scheme: light; }
 body {
   margin: 0;
@@ -68,14 +62,11 @@ body {
   color: var(--text);
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
   line-height: 1.6;
-  text-rendering: optimizeLegibility;
 }
 
-img, svg, video { max-width: 100%; height: auto; }
-
-/* Typography scale */
-h1 { font-size: clamp(2rem, 1.2rem + 3vw, 3rem); line-height: 1.15; margin: 0 0 .5rem; letter-spacing: -0.01em; }
-h2 { font-size: clamp(1.5rem, 1rem + 1.5vw, 2rem); line-height: 1.2; margin: 2rem 0 .75rem; }
+/* Typography */
+h1 { font-size: clamp(2rem, 1.2rem + 3vw, 3rem); line-height: 1.15; margin: 0 0 .5rem; }
+h2 { font-size: clamp(1.5rem, 1rem + 1.5vw, 2rem); margin: 2rem 0 .75rem; }
 h3 { font-size: 1.25rem; margin: 1.25rem 0 .5rem; }
 p { margin: 0 0 1rem; }
 small, .muted { color: var(--text-muted); }
@@ -83,46 +74,28 @@ small, .muted { color: var(--text-muted); }
 /* Links */
 a { color: var(--link); text-decoration: none; transition: color var(--transition-fast); }
 a:hover { color: var(--link-hover); text-decoration: underline; }
-a:focus-visible { outline: 3px solid var(--ring); outline-offset: 2px; border-radius: 6px; }
 
-/* 3) Layout helpers */
+/* Layout */
 .container { width: min(1100px, 92vw); margin-inline: auto; }
 .stack > * + * { margin-top: var(--stack-gap, 1.25rem); }
 .grid { display: grid; gap: 1.25rem; }
 .grid.cols-3 { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
 
-/* 4) Components */
-.header {
-  background: var(--bg-surface);
-  border-bottom: 1px solid var(--gray-200);
-  position: sticky; top: 0; z-index: 10;
-  box-shadow: var(--shadow-sm);
-}
-.nav {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: .9rem 1rem;
-}
+/* Components */
+.header { background: var(--bg-surface); border-bottom: 1px solid var(--gray-200); box-shadow: var(--shadow-sm); position: sticky; top: 0; z-index: 10; }
+.nav { display: flex; align-items: center; justify-content: space-between; padding: .9rem 1rem; }
 .nav a.brand { font-weight: 700; color: var(--gray-900); }
 .nav .menu { display: flex; gap: 1rem; }
 .nav .menu a { color: var(--gray-700); padding: .5rem .6rem; border-radius: 8px; }
 .nav .menu a:hover { background: var(--gray-100); }
 
-.hero {
-  background: linear-gradient(180deg, var(--accent-50), transparent 60%);
-  padding: 3.5rem 0 2rem;
-}
+.hero { background: linear-gradient(180deg, var(--accent-50), transparent 60%); padding: 3.5rem 0 2rem; }
 .hero .kicker { color: var(--accent-700); font-weight: 600; text-transform: uppercase; letter-spacing: .08em; }
 .hero .title { max-width: 22ch; }
 .hero .subtitle { max-width: 60ch; color: var(--text-muted); }
 .hero .cta { margin-top: 1.25rem; display: flex; gap: .75rem; flex-wrap: wrap; }
 
-.button { 
-  display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
-  padding: .7rem 1rem; border-radius: var(--radius-md);
-  border: 1px solid transparent; font-weight: 600; cursor: pointer;
-  transition: transform var(--transition), background var(--transition);
-}
-.button:focus-visible { outline: 3px solid var(--ring); outline-offset: 3px; }
+.button { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; padding: .7rem 1rem; border-radius: var(--radius-md); border: 1px solid transparent; font-weight: 600; cursor: pointer; transition: transform var(--transition), background var(--transition); }
 .button.primary { background: var(--primary); color: white; box-shadow: var(--shadow-md); }
 .button.primary:hover { background: var(--primary-hover); transform: translateY(-1px); }
 .button.primary:active { background: var(--primary-pressed); transform: translateY(0); }
@@ -131,61 +104,21 @@ a:focus-visible { outline: 3px solid var(--ring); outline-offset: 2px; border-ra
 
 .card { background: var(--bg-surface); border: 1px solid var(--gray-200); border-radius: var(--radius-lg); padding: 1.25rem; box-shadow: var(--shadow-sm); }
 .card:hover { box-shadow: var(--shadow-md); }
-.card .eyebrow { text-transform: uppercase; font-size: .8rem; letter-spacing: .08em; color: var(--text-muted); }
 
-.section { padding: 2.5rem 0; }
-.section.alt { background: #fff; }
+.footer { margin-top: 3rem; background: linear-gradient(0deg, var(--accent-50), transparent 70%); border-top: 1px solid var(--gray-200); }
+.footer .inner { padding: 1.5rem 0; color: var(--gray-700); text-align: center; }
 
-.kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; }
-.kpis .kpi { background: white; border-radius: var(--radius-md); padding: 1rem 1.25rem; border: 1px solid var(--gray-200); box-shadow: var(--shadow-sm); }
-.kpis .kpi .value { font-size: 1.75rem; font-weight: 800; }
-.kpis .kpi .label { color: var(--text-muted); }
-
-.footer {
-  margin-top: 3rem;
-  background: linear-gradient(0deg, var(--accent-50), transparent 70%);
-  border-top: 1px solid var(--gray-200);
-}
-.footer .inner { padding: 1.5rem 0; color: var(--gray-700); }
-
-/* 5) Forms */
-.input {
-  width: 100%; padding: .7rem .9rem; border-radius: 12px; border: 1px solid var(--gray-300);
-  background: white; color: var(--text);
-  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
-}
-.input::placeholder { color: var(--gray-400); }
+/* Inputs */
+.input { width: 100%; padding: .7rem .9rem; border-radius: 12px; border: 1px solid var(--gray-300); background: white; color: var(--text); }
 .input:focus { border-color: var(--accent-400); box-shadow: 0 0 0 4px color-mix(in oklab, var(--accent-400) 25%, transparent); outline: none; }
 
-/* 6) Utilities */
+/* Utilities */
 .badge { display:inline-block; padding:.2rem .5rem; border-radius:999px; background: var(--accent-100); color: var(--accent-700); font-weight:600; }
 .border { border: 1px solid var(--gray-200); }
 .rounded { border-radius: var(--radius-md); }
 .shadow { box-shadow: var(--shadow-sm); }
 .center { text-align:center; }
 
-/* 7) Optional: keep a dark mode but default to light */
-@media (prefers-color-scheme: dark) {
-  /* We still default to bright; only apply dark if you add a .theme-dark class on <html> */
-}
-html.theme-dark {
-  /* Minimal alternate palette for future toggle; not used by default */
-  --bg-page: #0b0f15;
-  --bg-surface: #0f1520;
-  --bg-elevated: #0f1520;
-  --text: #e6eaf2;
-  --text-muted: #aab3c2;
-  --link: #c6a6ff;
-  --link-hover: #ddb8ff;
-  --ring: #7f5cff;
-}
-
-/* 8) Example composables for existing pages */
-.hero-simple {
-  display:grid; gap:1rem; align-items:start;
-}
-.hero-simple .actions { display:flex; gap:.75rem; flex-wrap:wrap; }
-
-/* 9) Animations (subtle) */
+/* Animations */
 .reveal { opacity: 0; transform: translateY(6px); animation: revealIn .5s var(--transition) forwards; }
 @keyframes revealIn { to { opacity: 1; transform: none; } }
