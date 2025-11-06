@@ -31,13 +31,13 @@
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
   <link rel="alternate icon" href="/assets/favicon.png" type="image/png" />
   <link rel="apple-touch-icon" href="/assets/favicon.png" />
-  <!-- Light theme defaults -->
   <meta name="theme-color" content="#f3f4f6" />
   <meta name="color-scheme" content="light" />
 
   <!-- Styles -->
   <link rel="stylesheet" href="/styles/styles.css" />
 </head>
+
 <body>
   <!-- Accessibility: skip link -->
   <a href="#main" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">
@@ -48,7 +48,6 @@
   <header class="header">
     <div class="container nav">
       <a class="brand" href="/" aria-label="CatInCloud Labs">
-        <!-- Per your note: use this mark on white backgrounds -->
         <img src="/assets/logo-wordmark-light.svg" alt="CatInCloud Labs" height="32" />
       </a>
       <nav class="menu" aria-label="Primary">
@@ -77,11 +76,11 @@
       </div>
     </section>
 
-    <!-- Content cards -->
+    <!-- Content cards (clean centered layout) -->
     <section class="section">
       <div class="container">
-        <div class="grid cols-3">
-          <article class="card reveal" style="grid-column: span 3; max-width: var(--maxw-readable);">
+        <div class="stack" style="--stack-gap:1.25rem">
+          <article class="card reveal" style="max-width: var(--maxw-readable); margin-inline:auto;">
             <div class="eyebrow">Flagship</div>
             <h2>Enterprise Stock Market ELT</h2>
             <p>
@@ -93,7 +92,7 @@
             </p>
           </article>
 
-          <article class="card reveal" style="grid-column: span 3; max-width: var(--maxw-readable);">
+          <article class="card reveal" style="max-width: var(--maxw-readable); margin-inline:auto;">
             <div class="eyebrow">Approach</div>
             <h2>Architecture Philosophy</h2>
             <p>
