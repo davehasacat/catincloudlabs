@@ -295,6 +295,30 @@ a:hover { color: var(--link-hover); text-decoration: underline; }
   .nav .menu a{ padding: .45rem .5rem; }
 }
 
+/* a11y: hide skip link until focus */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.skip-link:focus {
+  position: fixed;
+  left: 16px;
+  top: 16px;
+  width: auto;
+  height: auto;
+  padding: .6rem .8rem;
+  background: #fff;
+  color: var(--text);
+  border: 1px solid var(--gray-300);
+  border-radius: 10px;
+  box-shadow: var(--shadow-sm);
+  z-index: 1000;
+}
+
 /* Optional: tighten up hero video behavior */
 .ci-hero__media { overflow: hidden; }  /* ensure no stray edges on some devices */
 .ci-hero__video { display: block; }    /* avoid inline-gap quirks */
