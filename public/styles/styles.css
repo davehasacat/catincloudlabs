@@ -263,13 +263,5 @@ a:hover { color: var(--link-hover); text-decoration: underline; }
 .ci-hero__media { overflow: hidden; }           /* ensure no stray edges on some devices */
 .ci-hero__video { display: block; }             /* avoids inline-gap quirks in some browsers */
 
-
-
 /* Homepage-only background */
 body.home { --bg-page: #F3F9F2; }  /* try different values here */
-
-/* Make the hero match the page (optional) */
-body.home .ci-hero__media .ci-hero__video {
-  background: linear-gradient(180deg, var(--bg-page), #F3F9F2 60%);
-}
-
