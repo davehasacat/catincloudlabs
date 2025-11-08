@@ -1,23 +1,35 @@
 /*
-CatInCloud Labs — Bright Theme (Blue Variant)
-Purpose: pivot the site to a clean sky blue + blue + white color scheme.
+CatInCloud Labs — Bright Theme (Blue Variant, modernized with color-mix)
+Purpose: pivot the site to a clean sky blue + blue + white scheme with token-driven scales.
 Drop-in: /public/styles/styles.css
 */
 
 :root {
-  /* Blue accent range */
-  --accent-50:  #f0f9ff;
-  --accent-100: #e0f2fe;
-  --accent-200: #bae6fd;
-  --accent-300: #7dd3fc;
-  --accent-400: #38bdf8;
-  --accent-500: #0ea5e9; /* primary */
-  --accent-600: #0284c7;
-  --accent-700: #0369a1;
-  --accent-800: #075985;
-  --accent-900: #0c4a6e;
+  /* === Base brand colors === */
+  --accent: #0ea5e9;         /* primary blue */
+  --brand:  #138200;         /* supporting green (used on .home) */
 
-  /* Neutral scale (cool gray) */
+  /* === Accent scale generated with color-mix (perceptual OKLab) === */
+  --accent-50:  color-mix(in oklab, var(--accent) 6%,  white);
+  --accent-100: color-mix(in oklab, var(--accent) 12%, white);
+  --accent-200: color-mix(in oklab, var(--accent) 25%, white);
+  --accent-300: color-mix(in oklab, var(--accent) 40%, white);
+  --accent-400: color-mix(in oklab, var(--accent) 55%, white);
+  --accent-500: var(--accent);
+  --accent-600: color-mix(in oklab, var(--accent) 85%, black);
+  --accent-700: color-mix(in oklab, var(--accent) 70%, black);
+  --accent-800: color-mix(in oklab, var(--accent) 55%, black);
+  --accent-900: color-mix(in oklab, var(--accent) 40%, black);
+
+  /* === Optional: brand-green tints === */
+  --brand-10: color-mix(in oklab, var(--brand) 10%, white);
+  --brand-20: color-mix(in oklab, var(--brand) 20%, white);
+  --brand-40: color-mix(in oklab, var(--brand) 40%, white);
+  --brand-60: color-mix(in oklab, var(--brand) 60%, white);
+  --brand-80: color-mix(in oklab, var(--brand) 80%, white);
+  --brand-95: color-mix(in oklab, var(--brand) 95%, white);
+
+  /* === Neutrals === */
   --gray-50:  #f9fafb;
   --gray-100: #f3f4f6;
   --gray-200: #e5e7eb;
@@ -29,18 +41,22 @@ Drop-in: /public/styles/styles.css
   --gray-800: #1f2937;
   --gray-900: #111827;
 
-  /* Semantic tokens */
-  --bg-page: var(--gray-50);
-  --bg-surface: #ffffff;
+  /* === Semantic tokens (driven by scales) === */
+  --bg-page:     var(--gray-50);
+  --bg-surface:  #ffffff;
   --bg-elevated: #ffffff;
-  --text: var(--gray-900);
-  --text-muted: var(--gray-600);
-  --link: var(--accent-600);
-  --link-hover: var(--accent-500);
-  --primary: var(--accent-500);
-  --primary-hover: var(--accent-600);
-  --primary-pressed: var(--accent-700);
-  --ring: var(--accent-400);
+
+  --text:        var(--gray-900);
+  --text-muted:  var(--gray-600);
+
+  --link:        var(--accent-600);
+  --link-hover:  var(--accent-500);
+
+  --primary:         var(--accent-500);
+  --primary-hover:   color-mix(in oklab, var(--primary) 85%, black);
+  --primary-pressed: color-mix(in oklab, var(--primary) 70%, black);
+
+  --ring:            var(--accent-400);
 
   /* Radius, shadows, transitions */
   --radius-sm: 10px;
@@ -52,9 +68,29 @@ Drop-in: /public/styles/styles.css
   --transition-fast: 120ms ease;
   --transition: 200ms cubic-bezier(.2,.7,.2,1);
   --maxw-readable: 72ch;
-
-  /* Safe area for notches */
   --safe-top: env(safe-area-inset-top, 0px);
+}
+
+/* Fallback for browsers without color-mix (keeps your original static scale) */
+@supports not (color: color-mix(in oklab, white 50%, black)) {
+  :root{
+    --accent-50:  #f0f9ff;
+    --accent-100: #e0f2fe;
+    --accent-200: #bae6fd;
+    --accent-300: #7dd3fc;
+    --accent-400: #38bdf8;
+    --accent-500: #0ea5e9;
+    --accent-600: #0284c7;
+    --accent-700: #0369a1;
+    --accent-800: #075985;
+    --accent-900: #0c4a6e;
+
+    --link: var(--accent-600);
+    --link-hover: var(--accent-500);
+    --primary: var(--accent-500);
+    --primary-hover: #0284c7;
+    --primary-pressed:#0369a1;
+  }
 }
 
 /* Base */
@@ -65,6 +101,15 @@ body {
   color: var(--text);
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
   line-height: 1.6;
+}
+
+/* Skip link */
+.skip-link{
+  position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;
+}
+.skip-link:focus{
+  position:fixed;left:1rem;top:1rem;width:auto;height:auto;padding:.5rem .75rem;
+  background:#fff;border:1px solid var(--gray-300);border-radius:8px;z-index:9999;
 }
 
 /* Typography */
@@ -85,14 +130,23 @@ a:hover { color: var(--link-hover); text-decoration: underline; }
 .grid.cols-3 { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
 
 /* Components */
-.header { background: var(--bg-surface); border-bottom: 1px solid var(--gray-200); box-shadow: var(--shadow-sm); position: sticky; top: 0; z-index: 10; }
+.header {
+  background: color-mix(in oklab, #fff 85%, transparent);
+  border-bottom: 1px solid var(--gray-200);
+  box-shadow: var(--shadow-sm);
+  position: sticky; top: 0; z-index: 10;
+  backdrop-filter: saturate(1.2) blur(6px);
+}
 .nav { display: flex; align-items: center; justify-content: space-between; padding: .9rem 1rem; }
 .nav a.brand { font-weight: 700; color: var(--gray-900); }
 .nav .menu { display: flex; gap: 1rem; }
 .nav .menu a { color: var(--gray-700); padding: .5rem .6rem; border-radius: 8px; }
 .nav .menu a:hover { background: var(--gray-100); }
 
-.hero { background: linear-gradient(180deg, var(--accent-50), transparent 60%); padding: 3.5rem 0 2rem; }
+.hero {
+  background: linear-gradient(180deg, color-mix(in oklab, var(--accent) 6%, white), transparent 60%);
+  padding: 3.5rem 0 2rem;
+}
 .hero .kicker { color: var(--accent-700); font-weight: 600; text-transform: uppercase; letter-spacing: .08em; }
 .hero .title { max-width: 22ch; }
 .hero .subtitle { max-width: 60ch; color: var(--text-muted); }
@@ -102,13 +156,15 @@ a:hover { color: var(--link-hover); text-decoration: underline; }
 .button.primary { background: var(--primary); color: white; box-shadow: var(--shadow-md); }
 .button.primary:hover { background: var(--primary-hover); transform: translateY(-1px); }
 .button.primary:active { background: var(--primary-pressed); transform: translateY(0); }
-.button.ghost { background: white; border-color: var(--gray-200); color: var(--gray-800); }
-.button.ghost:hover { border-color: var(--gray-300); box-shadow: var(--shadow-sm); }
+.button.ghost { background: white; border-color: var(--gray-200); color: var(--link); }
+.button.ghost:hover { border-color: var(--gray-300); box-shadow: var(--shadow-sm); color: var(--link-hover); }
 
 .card { background: var(--bg-surface); border: 1px solid var(--gray-200); border-radius: var(--radius-lg); padding: 1.25rem; box-shadow: var(--shadow-sm); }
 .card:hover { box-shadow: var(--shadow-md); }
+.eyebrow{ font-size:.8rem; font-weight:600; color: var(--accent-700); letter-spacing:.06em; text-transform:uppercase; }
 
-.footer { margin-top: 3rem; background: linear-gradient(0deg, var(--accent-50), transparent 70%); border-top: 1px solid var(--gray-200); }
+/* Footer */
+.footer { margin-top: 3rem; background: linear-gradient(0deg, color-mix(in oklab, var(--accent) 6%, white), transparent 70%); border-top: 1px solid var(--gray-200); }
 .footer .inner { padding: 1.5rem 0; color: var(--gray-700); text-align: center; }
 
 /* Inputs */
@@ -130,18 +186,18 @@ a:hover { color: var(--link-hover); text-decoration: underline; }
 .ci-hero{
   position: relative;
   min-height: clamp(520px, 70vh, 880px);
-  background: linear-gradient(180deg, var(--accent-50), #fff 60%);
+  background: linear-gradient(180deg, color-mix(in oklab, var(--accent) 6%, white), #fff 60%);
   overflow: clip;
 }
 
 /* Media fills the section */
-.ci-hero__media{ position:absolute; inset:0; }
+.ci-hero__media{ position:absolute; inset:0; overflow:hidden; }
 .ci-hero__video{
   width:100%; height:100%;
   object-fit:cover; object-position:center;
-  /* gentle zoom to hide side pillars on desktop; undone on phones below */
   transform: scale(1.03);
   transform-origin: center 48%;
+  display:block;
 }
 
 /* Content sits above the video */
@@ -185,10 +241,9 @@ a:hover { color: var(--link-hover); text-decoration: underline; }
   .ci-hero{ background: url('/assets/hero-fallback.jpg') center/cover no-repeat, var(--bg-page); }
 }
 
-/* Sticky header polish */
-.header{ backdrop-filter: saturate(1.2) blur(6px); background: color-mix(in srgb, #fff 85%, transparent); }
+/* Sticky header polish already above */
 
-/* --- Readable hero text (softer outline) ------------------------------- */
+/* --- Readable hero text (subtle outline) ------------------------------- */
 .ci-hero__content h1,
 .ci-hero__content p{
   color:#fff;
@@ -213,20 +268,13 @@ a:hover { color: var(--link-hover); text-decoration: underline; }
   }
 }
 
-/* phone (iPhone widths, etc.) */
+/* phone */
 @media (max-width: 430px){
   .ci-hero{ min-height: 66vh; }
-
-  /* undo desktop zoom so nothing clips on narrow viewports */
-  .ci-hero__video{
-    transform: none;
-    transform-origin: center top;
-  }
-
+  .ci-hero__video{ transform: none; transform-origin: center top; }
   .ci-hero__content{
     padding: calc(var(--safe-top) + clamp(40px, 9vh, 72px)) 14px 14px;
   }
-
   .ci-hero__content h1{
     max-width: 16ch;
     margin-inline: auto;
@@ -235,7 +283,6 @@ a:hover { color: var(--link-hover); text-decoration: underline; }
     letter-spacing: 0;
     text-wrap: balance;
   }
-
   .ci-hero__content p{
     font-size: .95rem;
     margin-bottom: .9rem;
@@ -243,25 +290,14 @@ a:hover { color: var(--link-hover); text-decoration: underline; }
       0 0 2px rgba(0,0,0,.7),
       0 0 6px rgba(0,0,0,.35);
   }
-
-  /* stack buttons, finger-friendly target size */
-  .ci-hero__cta{
-    flex-direction: column;
-    align-items: center;
-    gap: .6rem;
-  }
-  .ci-btn{
-    width: max(220px, 72%);
-    padding: .6rem .9rem;
-  }
-
-  /* tighten header links a hair on small screens */
+  .ci-hero__cta{ flex-direction: column; align-items: center; gap: .6rem; }
+  .ci-btn{ width: max(220px, 72%); padding: .6rem .9rem; }
   .nav .menu a{ padding: .45rem .5rem; }
 }
 
 /* Optional: tighten up hero video behavior */
-.ci-hero__media { overflow: hidden; }           /* ensure no stray edges on some devices */
-.ci-hero__video { display: block; }             /* avoids inline-gap quirks in some browsers */
+.ci-hero__media { overflow: hidden; }  /* ensure no stray edges on some devices */
+.ci-hero__video { display: block; }    /* avoid inline-gap quirks */
 
-/* Homepage-only background */
-body.home { --bg-page: #F3F9F2; }  /* try different values here */
+/* Homepage-only background uses brand-green, softly */
+body.home { --bg-page: color-mix(in oklab, var(--brand) 12%, white); }
