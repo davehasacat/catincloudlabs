@@ -298,6 +298,3 @@ a:hover { color: var(--link-hover); text-decoration: underline; }
 /* Optional: tighten up hero video behavior */
 .ci-hero__media { overflow: hidden; }  /* ensure no stray edges on some devices */
 .ci-hero__video { display: block; }    /* avoid inline-gap quirks */
-
-/* Homepage-only background uses brand-green, softly */
-body.home { --bg-page: color-mix(in oklab, var(--brand) 12%, white); }
