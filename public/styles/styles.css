@@ -131,12 +131,14 @@ a:hover { color: var(--link-hover); text-decoration: underline; }
   overflow: clip;
 }
 
-/* Media fills the section; we keep text readable without hazy overlays */
+/* Media fills the section */
 .ci-hero__media{ position:absolute; inset:0; }
 .ci-hero__video{
   width:100%; height:100%;
   object-fit:cover; object-position:center;
-  /* no filters to avoid softening DAG text */
+  /* gentle zoom to hide side pillars; tweak 1.02–1.05 or remove if not needed */
+  transform: scale(1.03);
+  transform-origin: center 48%;
 }
 
 /* Content sits above the video */
@@ -144,7 +146,7 @@ a:hover { color: var(--link-hover); text-decoration: underline; }
   position: relative; z-index: 1;
   width: min(1100px, 92vw);
   margin: 0 auto;
-  padding: clamp(28px, 5vw, 72px) 16px;
+  padding: clamp(56px, 10vh, 110px) 16px 16px;
   text-align: center;
   color: var(--text);
 }
@@ -159,9 +161,8 @@ a:hover { color: var(--link-hover); text-decoration: underline; }
   font-size: clamp(1rem, .6rem + 1vw, 1.125rem);
 }
 
-/* CTA buttons (namespaced to avoid clashes with .button) */
+/* CTA buttons (namespaced) */
 .ci-hero__cta{ display:inline-flex; gap:.75rem; flex-wrap:wrap; justify-content:center; }
-
 .ci-btn{
   display:inline-flex; align-items:center; justify-content:center;
   padding:.7rem 1rem; border-radius: var(--radius-md);
@@ -169,28 +170,31 @@ a:hover { color: var(--link-hover); text-decoration: underline; }
   transition: transform var(--transition), box-shadow var(--transition), background var(--transition), color var(--transition);
 }
 .ci-btn:focus-visible{ outline:3px solid var(--ring); outline-offset:2px; }
-
-.ci-btn--primary{
-  background: var(--primary); color:#fff; box-shadow: var(--shadow-md);
-}
+.ci-btn--primary{ background: var(--primary); color:#fff; box-shadow: var(--shadow-md); }
 .ci-btn--primary:hover{ background: var(--primary-hover); transform: translateY(-1px); }
 .ci-btn--primary:active{ background: var(--primary-pressed); transform: translateY(0); }
-
-.ci-btn--ghost{
-  background:#fff; border-color: var(--gray-200); color: var(--link);
-}
+.ci-btn--ghost{ background:#fff; border-color: var(--gray-200); color: var(--link); }
 .ci-btn--ghost:hover{ border-color: var(--gray-300); box-shadow: var(--shadow-sm); color: var(--link-hover); }
 
-/* Respect reduced motion */
+/* Reduced motion */
 @media (prefers-reduced-motion: reduce){
   .ci-hero__video{ display:none; }
   .ci-hero{ background: url('/assets/hero-fallback.jpg') center/cover no-repeat, var(--bg-page); }
 }
 
-/* Small tweak so sticky header doesn't visually overlap hero on scroll */
+/* Sticky header polish */
 .header{ backdrop-filter: saturate(1.2) blur(6px); background: color-mix(in srgb, #fff 85%, transparent); }
 
-/* --- TEMP: high-contrast hero text (white with black border) ----------- */
+/* --- Readable hero text (softer outline) ------------------------------- */
+.ci-hero__content h1,
+.ci-hero__content p{
+  color:#fff;
+  text-shadow:
+    0 0 3px rgba(0,0,0,.75),
+    0 0 8px rgba(0,0,0,.45);
+}
+
+/* If you ever need the heavy outline again, swap this in:
 .ci-hero__content h1,
 .ci-hero__content p{
   color:#fff;
@@ -199,8 +203,4 @@ a:hover { color: var(--link-hover); text-decoration: underline; }
     1px 1px 0 #000, -1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000,
     0 0 2px #000, 0 0 4px #000;
 }
-
-/* Lift text a bit so it doesn't overlap nodes */
-.ci-hero__content{
-  padding-top: clamp(36px, 6vw, 84px);
-}
+*/
