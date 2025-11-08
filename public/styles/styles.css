@@ -258,3 +258,7 @@ a:hover { color: var(--link-hover); text-decoration: underline; }
   /* tighten header links a hair on small screens */
   .nav .menu a{ padding: .45rem .5rem; }
 }
+
+/* Optional: tighten up hero video behavior */
+.ci-hero__media { overflow: hidden; }           /* ensure no stray edges on some devices */
+.ci-hero__video { display: block; }             /* avoids inline-gap quirks in some browsers */
