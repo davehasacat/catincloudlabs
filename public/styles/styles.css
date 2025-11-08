@@ -266,9 +266,10 @@ a:hover { color: var(--link-hover); text-decoration: underline; }
 
 
 /* Homepage-only background */
-body.home { --bg-page: #D0E6CC; }  /* try different values here */
+body.home { --bg-page: #F3F9F2; }  /* try different values here */
 
 /* Make the hero match the page (optional) */
 body.home .ci-hero {
-  background: linear-gradient(180deg, var(--bg-page), #fff 60%);
+  background: linear-gradient(180deg, var(--bg-page), #F3F9F2 60%);
 }
+
