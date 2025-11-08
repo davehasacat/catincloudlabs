@@ -34,6 +34,9 @@
   <meta name="theme-color" content="#f3f4f6" />
   <meta name="color-scheme" content="light" />
 
+  <!-- Preload hero video for a snappier start -->
+  <link rel="preload" as="video" href="/assets/hero.webm" type="video/webm" />
+
   <!-- Styles -->
   <link rel="stylesheet" href="/styles/styles.css" />
 </head>
@@ -60,17 +63,24 @@
   </header>
 
   <main id="main">
-    <!-- Hero -->
-    <section class="hero">
-      <div class="container hero-simple">
-        <div class="stack" style="--stack-gap:1rem">
-          <div class="kicker">Cloud • Data • DevOps</div>
-          <h1 class="title">CatInCloud Labs</h1>
-          <p class="subtitle">Cloud Engineering • Data Pipelines • DevOps Excellence</p>
-          <div class="actions">
-            <a class="button primary" href="/contact.html">Talk to us</a>
-            <a class="button ghost" href="/projects.html">See our work</a>
-          </div>
+    <!-- Hero (video) -->
+    <section class="ci-hero">
+      <div class="ci-hero__media">
+        <video class="ci-hero__video" autoplay muted loop playsinline preload="metadata" poster="/assets/hero-fallback.jpg">
+          <source src="/assets/hero.webm" type="video/webm" />
+          <source src="/assets/hero.mp4" type="video/mp4" />
+        </video>
+        <noscript>
+          <img src="/assets/hero-fallback.jpg" alt="MWAA/dbt/Snowflake pipeline running successfully" />
+        </noscript>
+      </div>
+
+      <div class="ci-hero__content">
+        <h1>Enterprise-Grade Cloud Data Pipeline — Proven in Production</h1>
+        <p>Cats who cloud. Humans that stay grounded.</p>
+        <div class="ci-hero__cta">
+          <a class="ci-btn ci-btn--primary" href="/projects.html#proof">See the Proof</a>
+          <a class="ci-btn ci-btn--ghost" href="/contact.html">Work with Us</a>
         </div>
       </div>
     </section>
