@@ -269,7 +269,7 @@ a:hover { color: var(--link-hover); text-decoration: underline; }
 body.home { --bg-page: #F3F9F2; }  /* try different values here */
 
 /* Make the hero match the page (optional) */
-body.home .ci-hero {
+body.home .ci-hero__media .ci-hero__video {
   background: linear-gradient(180deg, var(--bg-page), #F3F9F2 60%);
 }
 
