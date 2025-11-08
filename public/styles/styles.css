@@ -52,6 +52,9 @@ Drop-in: /public/styles/styles.css
   --transition-fast: 120ms ease;
   --transition: 200ms cubic-bezier(.2,.7,.2,1);
   --maxw-readable: 72ch;
+
+  /* Safe area for notches */
+  --safe-top: env(safe-area-inset-top, 0px);
 }
 
 /* Base */
@@ -136,7 +139,7 @@ a:hover { color: var(--link-hover); text-decoration: underline; }
 .ci-hero__video{
   width:100%; height:100%;
   object-fit:cover; object-position:center;
-  /* gentle zoom to hide side pillars; tweak 1.02–1.05 or remove if not needed */
+  /* gentle zoom to hide side pillars on desktop; undone on phones below */
   transform: scale(1.03);
   transform-origin: center 48%;
 }
@@ -194,19 +197,7 @@ a:hover { color: var(--link-hover); text-decoration: underline; }
     0 0 8px rgba(0,0,0,.45);
 }
 
-/* If you ever need the heavy outline again, swap this in:
-.ci-hero__content h1,
-.ci-hero__content p{
-  color:#fff;
-  text-shadow:
-    0 1px 0 #000, 1px 0 0 #000, -1px 0 0 #000, 0 -1px 0 #000,
-    1px 1px 0 #000, -1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000,
-    0 0 2px #000, 0 0 4px #000;
-}
-*/
-
 /* ------------------ Mobile polish ------------------ */
-:root { --safe-top: env(safe-area-inset-top, 0px); }
 
 /* tablet down */
 @media (max-width: 768px){
@@ -218,7 +209,7 @@ a:hover { color: var(--link-hover); text-decoration: underline; }
     margin-inline: auto;
     font-size: clamp(1.8rem, 1rem + 3.5vw, 2.6rem);
     line-height: 1.08;
-    text-wrap: balance; /* safe fallback if unsupported */
+    text-wrap: balance;
   }
 }
 
@@ -250,7 +241,7 @@ a:hover { color: var(--link-hover); text-decoration: underline; }
     margin-bottom: .9rem;
     text-shadow:
       0 0 2px rgba(0,0,0,.7),
-      0 0 6px rgba(0,0,0,.35); /* slightly softer halo on mobile */
+      0 0 6px rgba(0,0,0,.35);
   }
 
   /* stack buttons, finger-friendly target size */
