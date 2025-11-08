@@ -4,12 +4,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>CatInCloud Labs - Cloud Engineering & Data Pipelines</title>
-
   <!-- SEO -->
   <meta name="description" content="CatInCloud Labs - Cloud engineering, data pipelines, and DevOps excellence." />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <link rel="canonical" href="https://catincloudlabs.com/" />
-
   <!-- Open Graph -->
   <meta property="og:title" content="CatInCloud Labs" />
   <meta property="og:description" content="Building enterprise-grade data and cloud systems with precision and security." />
@@ -20,54 +18,28 @@
   <meta property="og:image:height" content="630" />
   <meta property="og:site_name" content="CatInCloud Labs" />
   <meta property="og:locale" content="en_US" />
-
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="CatInCloud Labs" />
   <meta name="twitter:description" content="Enterprise-grade data & cloud systems - MWAA • Snowflake • dbt Cloud" />
   <meta name="twitter:image" content="https://catincloudlabs.com/assets/social-card.png" />
-
   <!-- Icons & theme -->
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
   <link rel="alternate icon" href="/assets/favicon.png" type="image/png" />
   <link rel="apple-touch-icon" href="/assets/favicon.png" />
   <meta name="theme-color" content="#f3f4f6" />
   <meta name="color-scheme" content="light" />
-
   <!-- Preload hero video (conditional by media) -->
   <link rel="preload" as="video" href="/assets/hero_m.webm" type="video/webm" media="(max-width: 768px) and (orientation: portrait)" />
   <link rel="preload" as="video" href="/assets/hero.webm" type="video/webm" media="(min-width: 769px), (orientation: landscape)" />
-
   <!-- Styles -->
   <link rel="stylesheet" href="/styles/styles.css" />
   <style>
-    /* Ensure the video covers the frame (no letterboxing) */
-    .ci-hero__media,
-    .ci-hero__video {
-      width: 100%;
-      height: 100%;
-    }
-    .ci-hero__media {
-      position: absolute;
-      inset: 0;
-      overflow: hidden;
-    }
-    .ci-hero__video {
-      object-fit: cover;
-    }
-    .ci-hero {
-      position: relative;
-      min-height: clamp(420px, 70vh, 780px);
-      display: grid;
-      place-items: center;
-      isolation: isolate; /* keep content above video */
-    }
-    .ci-hero__content {
-      position: relative;
-      z-index: 1;
-      text-align: center;
-      padding-inline: 1rem;
-    }
+    .ci-hero__media, .ci-hero__video { width: 100%; height: 100%; }
+    .ci-hero__media { position: absolute; inset: 0; overflow: hidden; }
+    .ci-hero__video { object-fit: cover; }
+    .ci-hero { position: relative; min-height: clamp(420px, 70vh, 780px); display: grid; place-items: center; isolation: isolate; }
+    .ci-hero__content { position: relative; z-index: 1; text-align: center; padding-inline: 1rem; }
   </style>
 </head>
 
@@ -164,6 +136,9 @@
       </div>
     </div>
     <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+
+    <!-- Auto-pause hero video when off-screen (external to satisfy CSP script-src 'self') -->
+    <script src="/scripts/hero-auto-pause.js" defer></script>
   </footer>
 </body>
 </html>
