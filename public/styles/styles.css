@@ -122,3 +122,70 @@ a:hover { color: var(--link-hover); text-decoration: underline; }
 /* Animations */
 .reveal { opacity: 0; transform: translateY(6px); animation: revealIn .5s var(--transition) forwards; }
 @keyframes revealIn { to { opacity: 1; transform: none; } }
+
+/* === CI Hero (video) =================================================== */
+.ci-hero{
+  position: relative;
+  min-height: clamp(520px, 70vh, 880px);
+  background: linear-gradient(180deg, var(--accent-50), #fff 60%);
+  overflow: clip;
+}
+
+/* Media fills the section; we keep text readable without hazy overlays */
+.ci-hero__media{ position:absolute; inset:0; }
+.ci-hero__video{
+  width:100%; height:100%;
+  object-fit:cover; object-position:center;
+  /* no filters to avoid softening DAG text */
+}
+
+/* Content sits above the video */
+.ci-hero__content{
+  position: relative; z-index: 1;
+  width: min(1100px, 92vw);
+  margin: 0 auto;
+  padding: clamp(28px, 5vw, 72px) 16px;
+  text-align: center;
+  color: var(--text);
+}
+.ci-hero__content h1{
+  margin: 0 0 .5rem;
+  font-size: clamp(2rem, 1.2rem + 3vw, 3rem);
+  line-height: 1.12;
+}
+.ci-hero__content p{
+  margin: 0 0 1.25rem;
+  color: var(--text-muted);
+  font-size: clamp(1rem, .6rem + 1vw, 1.125rem);
+}
+
+/* CTA buttons (namespaced to avoid clashes with .button) */
+.ci-hero__cta{ display:inline-flex; gap:.75rem; flex-wrap:wrap; justify-content:center; }
+
+.ci-btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  padding:.7rem 1rem; border-radius: var(--radius-md);
+  border:1px solid transparent; font-weight:600; text-decoration:none;
+  transition: transform var(--transition), box-shadow var(--transition), background var(--transition), color var(--transition);
+}
+.ci-btn:focus-visible{ outline:3px solid var(--ring); outline-offset:2px; }
+
+.ci-btn--primary{
+  background: var(--primary); color:#fff; box-shadow: var(--shadow-md);
+}
+.ci-btn--primary:hover{ background: var(--primary-hover); transform: translateY(-1px); }
+.ci-btn--primary:active{ background: var(--primary-pressed); transform: translateY(0); }
+
+.ci-btn--ghost{
+  background:#fff; border-color: var(--gray-200); color: var(--link);
+}
+.ci-btn--ghost:hover{ border-color: var(--gray-300); box-shadow: var(--shadow-sm); color: var(--link-hover); }
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .ci-hero__video{ display:none; }
+  .ci-hero{ background: url('/assets/hero-fallback.jpg') center/cover no-repeat, var(--bg-page); }
+}
+
+/* Small tweak so sticky header doesn't visually overlap hero on scroll */
+.header{ backdrop-filter: saturate(1.2) blur(6px); background: color-mix(in srgb, #fff 85%, transparent); }
