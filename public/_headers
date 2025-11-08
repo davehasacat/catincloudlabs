@@ -1,5 +1,4 @@
 /*
-  # Core Security Headers (site-wide)
   Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
@@ -9,22 +8,18 @@
   Cross-Origin-Embedder-Policy: require-corp
   Cross-Origin-Resource-Policy: same-origin
   X-Permitted-Cross-Domain-Policies: none
-
-  # Content Security Policy (CSP)
-  # Allow our own JS (including the inline year script), styles, images, and media.
-  # Also allow Cloudflare RUM beacon script + its POST endpoint.
   Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; connect-src 'self' https://cloudflareinsights.com; media-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; font-src 'self' data:; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; upgrade-insecure-requests
-
-  # Default cache: HTML/documents should revalidate; assets override below
-  Cache-Control: no-cache
   Vary: Accept-Encoding
 
-# Documents (fresh by default)
+/index.html
+  Cache-Control: no-cache
+
 /*.html
   Cache-Control: no-cache
 
 /404.html
   X-Robots-Tag: noindex
+  Cache-Control: no-cache
 
 /robots.txt
   Cache-Control: public, max-age=86400
@@ -38,54 +33,28 @@
 /humans.txt
   Cache-Control: public, max-age=86400
 
-# Static assets (version filenames and cache hard)
 /assets/*
-  # Long cache at the browser and CDN; bump filename (hash/date) on change
   Cache-Control: public, max-age=31536000, immutable
   Vary: Accept-Encoding
 
-# Scripts
 /assets/*.js
   Content-Type: application/javascript; charset=utf-8
 
-# Styles
 /assets/*.css
   Content-Type: text/css; charset=utf-8
 
-# Images & icons
-/assets/*.png
-  Cache-Control: public, max-age=31536000, immutable
-/assets/*.jpg
-  Cache-Control: public, max-age=31536000, immutable
-/assets/*.jpeg
-  Cache-Control: public, max-age=31536000, immutable
-/assets/*.webp
-  Cache-Control: public, max-age=31536000, immutable
-/assets/*.avif
-  Cache-Control: public, max-age=31536000, immutable
-/assets/*.ico
-  Cache-Control: public, max-age=31536000, immutable
-
-# SVG - explicit MIME + long cache
 /assets/*.svg
   Content-Type: image/svg+xml; charset=utf-8
-  Cache-Control: public, max-age=31536000, immutable
 
-# Fonts - explicit MIME + long cache
 /assets/*.woff2
   Content-Type: font/woff2
-  Cache-Control: public, max-age=31536000, immutable
-
-# Videos (explicit MIME, range, long cache)
 
 /assets/*.webm
   Content-Type: video/webm
   Accept-Ranges: bytes
   Content-Disposition: inline
-  Cache-Control: public, max-age=31536000, immutable
 
 /assets/*.mp4
   Content-Type: video/mp4
   Accept-Ranges: bytes
   Content-Disposition: inline
-  Cache-Control: public, max-age=31536000, immutable
