@@ -34,11 +34,41 @@
   <meta name="theme-color" content="#f3f4f6" />
   <meta name="color-scheme" content="light" />
 
-  <!-- Preload hero video for a snappier start -->
-  <link rel="preload" as="video" href="/assets/hero.webm" type="video/webm" />
+  <!-- Preload hero video (conditional by media) -->
+  <link rel="preload" as="video" href="/assets/hero_m.webm" type="video/webm" media="(max-width: 768px) and (orientation: portrait)" />
+  <link rel="preload" as="video" href="/assets/hero.webm" type="video/webm" media="(min-width: 769px), (orientation: landscape)" />
 
   <!-- Styles -->
   <link rel="stylesheet" href="/styles/styles.css" />
+  <style>
+    /* Ensure the video covers the frame (no letterboxing) */
+    .ci-hero__media,
+    .ci-hero__video {
+      width: 100%;
+      height: 100%;
+    }
+    .ci-hero__media {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+    .ci-hero__video {
+      object-fit: cover;
+    }
+    .ci-hero {
+      position: relative;
+      min-height: clamp(420px, 70vh, 780px);
+      display: grid;
+      place-items: center;
+      isolation: isolate; /* keep content above video */
+    }
+    .ci-hero__content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding-inline: 1rem;
+    }
+  </style>
 </head>
 
 <body>
@@ -65,10 +95,14 @@
   <main id="main">
     <!-- Hero (video) -->
     <section class="ci-hero">
-      <div class="ci-hero__media">
+      <div class="ci-hero__media" aria-hidden="true">
         <video class="ci-hero__video" autoplay muted loop playsinline preload="metadata" poster="/assets/hero-fallback.jpg">
+          <!-- Mobile/tall cut -->
+          <source src="/assets/hero_m.webm" type="video/webm" media="(max-width: 768px) and (orientation: portrait)" />
+          <source src="/assets/hero_m.mp4"  type="video/mp4"  media="(max-width: 768px) and (orientation: portrait)" />
+          <!-- Desktop/wide cut (default) -->
           <source src="/assets/hero.webm" type="video/webm" />
-          <source src="/assets/hero.mp4" type="video/mp4" />
+          <source src="/assets/hero.mp4"  type="video/mp4" />
         </video>
         <noscript>
           <img src="/assets/hero-fallback.jpg" alt="MWAA/dbt/Snowflake pipeline running successfully" />
