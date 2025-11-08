@@ -34,6 +34,36 @@
   <link rel="preload" as="video" href="/assets/hero.webm" type="video/webm" media="(min-width: 769px), (orientation: landscape)" />
   <!-- Styles -->
   <link rel="stylesheet" href="/styles/styles.css" />
+
+  <!-- JSON-LD: Organization + WebSite -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"CatInCloud Labs",
+    "url":"https://catincloudlabs.com/",
+    "logo":"https://catincloudlabs.com/assets/logo-wordmark-light.svg",
+    "email":"dave@catincloudlabs.com",
+    "address":{
+      "@type":"PostalAddress",
+      "addressLocality":"Minneapolis",
+      "addressRegion":"MN",
+      "addressCountry":"US"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebSite",
+    "name":"CatInCloud Labs",
+    "url":"https://catincloudlabs.com/",
+    "potentialAction":{
+      "@type":"ContactAction",
+      "target":"mailto:dave@catincloudlabs.com"
+    }
+  }
+  </script>
 </head>
 
 <body class="home">
