@@ -16,7 +16,8 @@
   # Content Security Policy (CSP)
   # ─────────────────────────────
   # Allow our own JS (including the inline year script), styles, images, and media.
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; media-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; font-src 'self' data:; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; upgrade-insecure-requests
+  # Also allow Cloudflare RUM beacon script + its POST endpoint.
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; connect-src 'self' https://cloudflareinsights.com; media-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; font-src 'self' data:; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; upgrade-insecure-requests
 
   # Default cache: HTML/documents should revalidate; assets override below
   Cache-Control: no-cache
