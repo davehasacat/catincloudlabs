@@ -26,6 +26,10 @@
 /*.html
   Cache-Control: no-store, max-age=0
 
+# 404 should never be indexed
+/404.html
+  X-Robots-Tag: noindex
+
 # robots + sitemap — short cache so edits propagate quickly
 /robots.txt
   Cache-Control: public, max-age=86400
@@ -34,6 +38,10 @@
 
 # Security contact (well-known) — moderate cache
 /.well-known/security.txt
+  Cache-Control: public, max-age=86400
+
+# Humans file — short cache for quick edits
+/humans.txt
   Cache-Control: public, max-age=86400
 
 # ─────────────────────────────
