@@ -18,91 +18,85 @@
   # Allow our own JS (including the inline year script), styles, images, and media.
   Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; media-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; font-src 'self' data:; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; upgrade-insecure-requests
 
-  # Default cache: no-store for dynamic docs; assets override below
-  Cache-Control: no-store, max-age=0
-  ETag: off
+  # Default cache: HTML/documents should revalidate; assets override below
+  Cache-Control: no-cache
+  Vary: Accept-Encoding
 
-# Fresh HTML — always re-fetch
+# ─────────────────────────────
+# Documents (fresh by default)
+# ─────────────────────────────
+
 /*.html
-  Cache-Control: no-store, max-age=0
+  Cache-Control: no-cache
 
-# 404 should never be indexed
 /404.html
   X-Robots-Tag: noindex
 
-# robots + sitemap — short cache so edits propagate quickly
 /robots.txt
   Cache-Control: public, max-age=86400
+
 /sitemap.xml
   Cache-Control: public, max-age=86400
 
-# Security contact (well-known) — moderate cache
 /.well-known/security.txt
   Cache-Control: public, max-age=86400
 
-# Humans file — short cache for quick edits
 /humans.txt
   Cache-Control: public, max-age=86400
 
 # ─────────────────────────────
-# Hero videos (explicit MIME + range requests + 7-day cache)
+# Static assets (version filenames and cache hard)
 # ─────────────────────────────
-/assets/hero*.webm
-  Content-Type: video/webm
-  Accept-Ranges: bytes
-  Content-Disposition: inline
-  Cache-Control: public, max-age=604800
 
-/assets/hero*.mp4
-  Content-Type: video/mp4
-  Accept-Ranges: bytes
-  Content-Disposition: inline
-  Cache-Control: public, max-age=604800
+/assets/*
+  # Long cache at the browser and CDN; bump filename (hash/date) on change
+  Cache-Control: public, max-age=31536000, immutable
+  Vary: Accept-Encoding
 
-# Poster image for the hero — 7-day cache
-/assets/hero-fallback.jpg
-  Cache-Control: public, max-age=604800
-
-# Other video files (non-hero) — 7-day cache
-/*.webm
-  Content-Type: video/webm
-  Accept-Ranges: bytes
-  Content-Disposition: inline
-  Cache-Control: public, max-age=604800
-/*.mp4
-  Content-Type: video/mp4
-  Accept-Ranges: bytes
-  Content-Disposition: inline
-  Cache-Control: public, max-age=604800
-
-# Scripts served by us — long cache (immutable)
-/*.js
+# Scripts
+/assets/*.js
   Content-Type: application/javascript; charset=utf-8
+
+# Styles
+/assets/*.css
+  Content-Type: text/css; charset=utf-8
+
+# Images & icons
+/assets/*.png
+  Cache-Control: public, max-age=31536000, immutable
+/assets/*.jpg
+  Cache-Control: public, max-age=31536000, immutable
+/assets/*.jpeg
+  Cache-Control: public, max-age=31536000, immutable
+/assets/*.webp
+  Cache-Control: public, max-age=31536000, immutable
+/assets/*.avif
+  Cache-Control: public, max-age=31536000, immutable
+/assets/*.ico
   Cache-Control: public, max-age=31536000, immutable
 
-# Stylesheets — long cache (immutable)
-/*.css
-  Cache-Control: public, max-age=31536000, immutable
-
-# Images & icons — long cache (immutable)
-/*.png
-  Cache-Control: public, max-age=31536000, immutable
-/*.jpg
-  Cache-Control: public, max-age=31536000, immutable
-/*.jpeg
-  Cache-Control: public, max-age=31536000, immutable
-/*.webp
-  Cache-Control: public, max-age=31536000, immutable
-/*.avif
-  Cache-Control: public, max-age=31536000, immutable
-/*.ico
-  Cache-Control: public, max-age=31536000, immutable
-
-# SVG — set explicit MIME + long cache
-/*.svg
+# SVG - explicit MIME + long cache
+/assets/*.svg
   Content-Type: image/svg+xml; charset=utf-8
   Cache-Control: public, max-age=31536000, immutable
 
-# Fonts — long cache (immutable)
-/*.woff2
+# Fonts - explicit MIME + long cache
+/assets/*.woff2
+  Content-Type: font/woff2
+  Cache-Control: public, max-age=31536000, immutable
+
+# ─────────────────────────────
+# Videos (explicit MIME, range, long cache)
+# ─────────────────────────────
+
+/assets/*.webm
+  Content-Type: video/webm
+  Accept-Ranges: bytes
+  Content-Disposition: inline
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/*.mp4
+  Content-Type: video/mp4
+  Accept-Ranges: bytes
+  Content-Disposition: inline
   Cache-Control: public, max-age=31536000, immutable
