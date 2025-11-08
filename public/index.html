@@ -123,32 +123,6 @@
       </div>
     </section>
 
-    <!-- Proof of Success (two diagrams) -->
-    <section id="proof" class="section" aria-label="Proof of Success">
-      <div class="container grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem;">
-        <!-- Architecture Snapshot -->
-        <figure class="card">
-          <img
-            src="/assets/architecture-flow.v1.svg"
-            alt="Data flow: MWAA orchestrates ingest to S3 (Raw, Stage, Curated); dbt transforms in Snowflake (RAW→PREP→MARTS); outputs feed Analytics & Apps."
-            loading="eager" decoding="async"
-            style="width:100%;height:auto" />
-          <figcaption class="muted" style="margin-top:.5rem;">Architecture snapshot</figcaption>
-        </figure>
-
-        <!-- Security & Observability -->
-        <figure class="card">
-          <img
-            src="/assets/security-observability.v1.svg"
-            alt="Security and observability: KMS, Secrets Manager, and CloudWatch support the pipeline."
-            loading="lazy" decoding="async"
-            style="width:100%;height:auto" />
-          <figcaption class="muted" style="margin-top:.5rem;">Security & Observability</figcaption>
-        </figure>
-      </div>
-    </section>
-  </main>
-
   <!-- Footer -->
   <footer class="footer">
     <div class="container inner center">
