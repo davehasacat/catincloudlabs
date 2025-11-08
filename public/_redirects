@@ -1,9 +1,19 @@
-# Ensure root URL always resolves cleanly
-/index.html    /    301
+# --- Pretty paths → actual .html files (works with your current structure)
+# If you later enable “Clean URLs” at the platform level, you can delete these.
 
-# Redirect any stray .html requests to clean URLs (optional polish)
-/about.html    /about    301
-/projects.html /projects 301
+/           /index.html      200
+/about      /about.html      200
+/projects   /projects.html   200
+/contact    /contact.html    200
+/privacy    /privacy.html    200
+
+# Optional: canonicalize explicit .html to pretty (after mappings above exist)
+# (Safe now because /about, /projects, etc. resolve)
+/about.html      /about      301
+/projects.html   /projects   301
+/contact.html    /contact    301
+/privacy.html    /privacy    301
+/index.html      /           301
 
 # Default 404 fallback for Cloudflare Pages
-/*    /404.html    404
+/*          /404.html        404
