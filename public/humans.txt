@@ -5,17 +5,21 @@ Site: https://catincloudlabs.com
 Email: dave@catincloudlabs.com
 
 /* SITE */
-Last Updated: 2025-10-30
+Last Updated: 2025-11-08
 Language: English
 Standards: HTML5, CSS3
 Platform: Cloudflare Pages
-Region: US-East (Ohio)
-Design Philosophy: Minimal, secure, and performance-driven.
+Region: US-East (us-east-2, Ohio)
+Design Philosophy: Minimal, secure, performance-driven.
 
 /* TECHNOLOGY */
 Stack: AWS MWAA • Snowflake • dbt Cloud • S3 • KMS
-Tools: VS Code • GitHub • Cloudflare • Draw.io
-Version: MVP 2025.10
+Tools: VS Code • GitHub • Cloudflare • draw.io
+Version: MVP 2025.11
+
+/* SECURITY */
+Security Contact: /security.txt
+Policy: /.well-known/security.txt
 
 /* CREDITS */
 Built with care by CatInCloud Labs.

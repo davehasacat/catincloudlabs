@@ -1,30 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-    xmlns:xhtml="http://www.w3.org/1999/xhtml">
-
-  <!-- Home -->
-  <url>
-    <loc>https://catincloudlabs.com/</loc>
-    <lastmod>2025-10-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
-
-  <!-- About -->
-  <url>
-    <loc>https://catincloudlabs.com/about.html</loc>
-    <lastmod>2025-10-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Projects -->
-  <url>
-    <loc>https://catincloudlabs.com/projects.html</loc>
-    <lastmod>2025-10-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://catincloudlabs.com/</loc></url>
+  <url><loc>https://catincloudlabs.com/about</loc></url>
+  <url><loc>https://catincloudlabs.com/projects</loc></url>
+  <url><loc>https://catincloudlabs.com/contact</loc></url>
+  <url><loc>https://catincloudlabs.com/privacy</loc></url>
 </urlset>

@@ -1,0 +1,12 @@
+# security.txt — Canonical (RFC 9116)
+# https://catincloudlabs.com/.well-known/security.txt
+
+Contact: mailto:dave@catincloudlabs.com
+Preferred-Languages: en
+Policy: https://catincloudlabs.com/security.txt
+Canonical: https://catincloudlabs.com/.well-known/security.txt
+Expires: 2026-11-08T00:00:00Z
+
+# Notes:
+# CatInCloud Labs welcomes responsible disclosure. Please allow up to 72 hours for a response.
+# Do not publicly disclose issues until they have been verified and resolved.

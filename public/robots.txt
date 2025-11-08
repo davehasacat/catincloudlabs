@@ -4,10 +4,12 @@
 User-agent: *
 Allow: /
 
-# Disallow unnecessary system or build files (defensive, even if not exposed)
+# Defensive: these are config artifacts and shouldn't be indexed anyway
 Disallow: /_headers
 Disallow: /_redirects
-Disallow: /404.html
 
-# Sitemap reference (use your custom domain)
+# Let crawlers fetch /404.html so they can see its meta robots "noindex"
+# (Do NOT disallow /404.html here.)
+
+# Sitemap
 Sitemap: https://catincloudlabs.com/sitemap.xml

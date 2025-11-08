@@ -3,25 +3,27 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About — CatInCloud Labs</title>
+  <title>About - CatInCloud Labs</title>
 
   <!-- SEO -->
-  <meta name="description" content="About CatInCloud Labs — We build secure, maintainable, enterprise-grade cloud and data platforms that scale cleanly and stand the test of time." />
+  <meta name="description" content="About CatInCloud Labs - We build secure, maintainable, enterprise-grade cloud and data platforms that scale cleanly and stand the test of time." />
   <meta name="robots" content="index,follow,max-image-preview:large" />
-  <link rel="canonical" href="https://catincloudlabs.com/about.html" />
+  <link rel="canonical" href="https://catincloudlabs.com/about" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="About — CatInCloud Labs" />
+  <meta property="og:title" content="About - CatInCloud Labs" />
   <meta property="og:description" content="We build secure, maintainable, enterprise-grade cloud and data platforms that scale cleanly and stand the test of time." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://catincloudlabs.com/about.html" />
+  <meta property="og:url" content="https://catincloudlabs.com/about" />
   <meta property="og:image" content="https://catincloudlabs.com/assets/social-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <meta property="og:site_name" content="CatInCloud Labs" />
   <meta property="og:locale" content="en_US" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="About — CatInCloud Labs" />
+  <meta name="twitter:title" content="About - CatInCloud Labs" />
   <meta name="twitter:description" content="We build secure, maintainable, enterprise-grade cloud and data platforms that scale cleanly and stand the test of time." />
   <meta name="twitter:image" content="https://catincloudlabs.com/assets/social-card.png" />
 
@@ -38,9 +40,7 @@
 
 <body>
   <!-- Accessibility: skip link -->
-  <a href="#main" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">
-    Skip to content
-  </a>
+  <a href="#main" class="skip-link">Skip to content</a>
 
   <!-- Header -->
   <header class="header">
@@ -50,9 +50,9 @@
       </a>
       <nav class="menu" aria-label="Primary">
         <a href="/">Home</a>
-        <a href="/about.html" class="active" aria-current="page">About</a>
-        <a href="/projects.html">Projects</a>
-        <a href="/contact.html" class="button ghost">Contact</a>
+        <a href="/about" class="active" aria-current="page">About</a>
+        <a href="/projects">Projects</a>
+        <a href="/contact" class="button ghost">Contact</a>
       </nav>
     </div>
   </header>
@@ -64,7 +64,7 @@
         <div class="stack" style="--stack-gap:1rem">
           <div class="kicker">About</div>
           <h1 class="title">We build things that last.</h1>
-          <p class="subtitle">Modern cloud and data platforms — engineered for clarity, security, and long-term maintainability.</p>
+          <p class="subtitle">Modern cloud and data platforms - engineered for clarity, security, and long-term maintainability.</p>
         </div>
       </div>
     </section>
@@ -104,15 +104,22 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="container inner center">
-      <small>© <span id="y"></span> CatInCloud Labs — DaveHasACat LLC</small>
+      <small>© <span id="y"></span> CatInCloud Labs - DaveHasACat LLC</small>
       <p><em>Cats who cloud. Humans that stay grounded.</em></p>
       <div class="stack" style="--stack-gap:.25rem; justify-content:center; margin-top:0.5rem;">
-        <a href="/about.html">About</a> ·
-        <a href="/security.txt">Security</a> ·
-        <a href="/privacy.html">Privacy</a>
+        <a href="/about">About</a> ·
+        <a href="/.well-known/security.txt">Security</a> ·
+        <a href="/privacy">Privacy</a>
       </div>
     </div>
-    <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+
+    <!-- Set footer year + theme-color to match current computed background -->
+    <script>
+      document.getElementById('y').textContent = new Date().getFullYear();
+      const metaTheme = document.querySelector('meta[name="theme-color"]');
+      const bg = getComputedStyle(document.documentElement).getPropertyValue('--bg-page').trim();
+      if (metaTheme && bg) metaTheme.setAttribute('content', bg);
+    </script>
   </footer>
 </body>
 </html>

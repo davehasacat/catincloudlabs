@@ -1,16 +1,11 @@
-// Auto-pause the hero video when it’s not at least 25% visible
-(() => {
+document.addEventListener('DOMContentLoaded', () => {
   const v = document.querySelector('.ci-hero__video');
   if (!v || !('IntersectionObserver' in window)) return;
-
-  const io = new IntersectionObserver(([entry]) => {
-    if (!entry) return;
-    if (entry.isIntersecting) {
-      if (v.paused) v.play().catch(() => {});
-    } else {
-      if (!v.paused) v.pause();
-    }
-  }, { threshold: 0.25 });
-
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (!e.isIntersecting && !v.paused) v.pause();
+      if (e.isIntersecting && v.paused) v.play().catch(()=>{});
+    });
+  }, { threshold: 0.1 });
   io.observe(v);
-})();
+});
