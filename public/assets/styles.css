@@ -322,3 +322,25 @@ a:hover { color: var(--link-hover); text-decoration: underline; }
 /* Optional: tighten up hero video behavior */
 .ci-hero__media { overflow: hidden; }  /* ensure no stray edges on some devices */
 .ci-hero__video { display: block; }    /* avoid inline-gap quirks */
+
+.proof-diagram.card {
+  border-radius: 1rem;               /* match your cards */
+  background: var(--surface, #fff);
+  box-shadow: 0 2px 12px rgba(0,0,0,.06);
+  padding: clamp(16px, 3vw, 28px);
+  margin: clamp(16px, 3vw, 28px) auto;
+}
+
+.diagram-figure { margin: 0; }
+.diagram {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-inline: auto;
+}
+.diagram-caption {
+  margin-top: .5rem;
+  font-size: .875rem;
+  color: #6b7280;                     /* subtle gray; swap to your token */
+  text-align: center;
+}
