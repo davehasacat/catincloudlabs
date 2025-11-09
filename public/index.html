@@ -4,10 +4,12 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>CatInCloud Labs - Cloud Engineering & Data Pipelines</title>
+
   <!-- SEO -->
   <meta name="description" content="CatInCloud Labs - Cloud engineering, data pipelines, and DevOps excellence." />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <link rel="canonical" href="https://catincloudlabs.com/" />
+
   <!-- Open Graph -->
   <meta property="og:title" content="CatInCloud Labs" />
   <meta property="og:description" content="Building enterprise-grade data and cloud systems with precision and security." />
@@ -18,20 +20,24 @@
   <meta property="og:image:height" content="630" />
   <meta property="og:site_name" content="CatInCloud Labs" />
   <meta property="og:locale" content="en_US" />
+
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="CatInCloud Labs" />
   <meta name="twitter:description" content="Enterprise-grade data & cloud systems - MWAA • Snowflake • dbt Cloud" />
   <meta name="twitter:image" content="https://catincloudlabs.com/assets/social-card.png" />
+
   <!-- Icons & theme -->
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
   <link rel="alternate icon" href="/assets/favicon.png" type="image/png" />
   <link rel="apple-touch-icon" href="/assets/favicon.png" />
   <meta name="theme-color" content="#f3f4f6" />
   <meta name="color-scheme" content="light" />
-  <!-- Preload hero video (conditional by media) -->
+
+  <!-- Preload hero video (match sources below) -->
   <link rel="preload" as="video" href="/assets/hero_m.webm" type="video/webm" media="(max-width: 768px) and (orientation: portrait)" />
   <link rel="preload" as="video" href="/assets/hero.webm" type="video/webm" media="(min-width: 769px), (orientation: landscape)" />
+
   <!-- Styles -->
   <link rel="stylesheet" href="/assets/styles.css" />
 
@@ -87,9 +93,9 @@
 
   <main id="main">
     <!-- Hero (video) -->
-    <section class="ci-hero" aria-label="CatInCloud Labs - Hero">
-      <div class="ci-hero__media" aria-hidden="true">
-        <video class="ci-hero__video" autoplay muted loop playsinline preload="metadata" poster="/assets/hero-fallback.jpg">
+    <section class="hero" aria-label="CatInCloud Labs - Hero">
+      <div class="hero__media" aria-hidden="true">
+        <video class="hero__video" autoplay muted loop playsinline preload="metadata" poster="/assets/hero-fallback.jpg">
           <!-- Mobile/tall cut -->
           <source src="/assets/hero_m.webm" type="video/webm" media="(max-width: 768px) and (orientation: portrait)" />
           <source src="/assets/hero_m.mp4"  type="video/mp4"  media="(max-width: 768px) and (orientation: portrait)" />
@@ -102,10 +108,10 @@
         </noscript>
       </div>
 
-      <div class="ci-hero__content">
+      <div class="hero__content">
         <h1>CatInCloud Labs</h1>
         <p>Cloud Architecture Solutions</p>
-        <div class="ci-hero__cta">
+        <div class="hero__cta">
           <a class="ci-btn ci-btn--primary" href="#proof">See the Proof</a>
           <a class="ci-btn ci-btn--ghost" href="/contact">Work with Us</a>
         </div>
@@ -132,11 +138,12 @@
           <article id="proof" class="card reveal proof-diagram" style="max-width: var(--maxw-readable); margin-inline:auto;">
             <figure class="diagram-figure" style="margin:0;">
               <img
-                src="/assets/architecture-flow.v1.svg"
+                src="/assets/diagrams/architecture-flow.v1.svg"
                 alt="Architecture flow diagram showing MWAA → S3 → dbt → Snowflake → Analytics"
                 class="diagram"
                 width="1160" height="300"
-                loading="lazy" decoding="async" />
+                loading="lazy" decoding="async"
+                sizes="(max-width: 700px) 100vw, 1160px" />
               <figcaption class="diagram-caption">Architecture flow</figcaption>
             </figure>
           </article>
@@ -153,15 +160,18 @@
               with clarity, scalability, and least-privilege principles in mind.
             </p>
           </article>
-          <article id="proof" class="card reveal proof-diagram" style="max-width: var(--maxw-readable); margin-inline:auto;">
+
+          <!-- Orchestration diagram card (unique anchor) -->
+          <article id="orchestration" class="card reveal proof-diagram" style="max-width: var(--maxw-readable); margin-inline:auto;">
             <figure class="diagram-figure" style="margin:0;">
               <img
                 src="/assets/diagrams/security-observability.v1.svg"
-                alt="MWAA orchestration diagram showing secure, outbound only S3 -> Snowflake connection"
+                alt="MWAA orchestration with private VPC, S3 Gateway Endpoint, and outbound-only path to Snowflake"
                 class="diagram"
                 width="1160" height="300"
-                loading="lazy" decoding="async" />
-              <figcaption class="diagram-caption">MWAA Orchestration: Raw S3 Bucket -> Snowflake</figcaption>
+                loading="lazy" decoding="async"
+                sizes="(max-width: 700px) 100vw, 1160px" />
+              <figcaption class="diagram-caption">MWAA Orchestration: Raw S3 Bucket → Snowflake</figcaption>
             </figure>
           </article>
         </div>
