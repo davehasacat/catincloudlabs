@@ -65,3 +65,6 @@
 /assets/diagrams/*
   Cache-Control: public, max-age=31536000, immutable
   Content-Type: image/svg+xml; charset=utf-8
+
+/assets/hero-fallback.jpg
+  Cache-Control: public, max-age=604800
