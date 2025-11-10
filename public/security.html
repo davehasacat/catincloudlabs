@@ -39,10 +39,8 @@
 </head>
 
 <body>
-  <!-- Accessibility: skip link -->
   <a href="#main" class="skip-link">Skip to content</a>
 
-  <!-- Header -->
   <header class="header">
     <div class="container nav">
       <a class="brand" href="/" aria-label="CatInCloud Labs">
@@ -58,7 +56,6 @@
   </header>
 
   <main id="main">
-    <!-- Hero -->
     <section class="hero">
       <div class="container hero-simple">
         <div class="stack" style="--stack-gap:1rem">
@@ -69,7 +66,6 @@
       </div>
     </section>
 
-    <!-- Policy -->
     <section class="section">
       <div class="container">
         <article class="card reveal" style="max-width: var(--maxw-readable); margin-inline:auto;">
@@ -87,13 +83,23 @@
             Email: <a href="mailto:dave@catincloudlabs.com" aria-label="Email security report to CatInCloud Labs">dave@catincloudlabs.com</a><br />
             Security.txt: <a href="/.well-known/security.txt">/.well-known/security.txt</a>
           </p>
-          <p><strong>Include:</strong></p>
-          <ul>
-            <li>Description of the issue and potential impact</li>
-            <li>Steps to reproduce (proof-of-concept if applicable)</li>
-            <li>Target/URL, timestamp, and environment details (browser, OS)</li>
-            <li>Your contact info for follow-up</li>
-          </ul>
+
+          <!-- NEW: quick copy-paste template for reporters -->
+          <details>
+            <summary><strong>Report template (copy &amp; fill)</strong></summary>
+            <pre style="white-space: pre-wrap; margin-top:.75rem;">Title: [Short summary of the issue]
+Target/URL: [Full URL]
+Impact: [What could an attacker do?]
+Steps to Reproduce:
+1) …
+2) …
+3) …
+Observed Result: […]
+Expected Result: […]
+Environment: [Browser/OS], Timestamp (UTC): […]
+Attachments/PoC: [Links or inline]
+Researcher Contact: [Name/Email or handle]</pre>
+          </details>
 
           <h2>Scope</h2>
           <p>
@@ -125,10 +131,11 @@
             <li><strong>Disclosure:</strong> Please give us reasonable time to fix before any public disclosure.</li>
           </ul>
 
-          <h2>Recognition</h2>
+          <!-- UPDATED: anchor matches security.txt Acknowledgments field -->
+          <h2 id="thanks">Recognition</h2>
           <p>
-            While we don’t operate a bounty program, we appreciate the security community and may add an acknowledgment to a future
-            <em>Hall of Thanks</em> page for impactful, high-quality reports.
+            While we don’t operate a bounty program, we appreciate the security community and may add an acknowledgment here for
+            impactful, high-quality reports. If you’d like recognition, please let us know when you submit.
           </p>
 
           <h2>Data &amp; Privacy</h2>
@@ -147,7 +154,6 @@
     </section>
   </main>
 
-  <!-- Footer -->
   <footer class="footer">
     <div class="container inner center">
       <small>© <span id="y"></span> CatInCloud Labs - DaveHasACat LLC</small>
@@ -161,7 +167,6 @@
       </div>
     </div>
 
-    <!-- Set footer year + theme-color to match current computed background -->
     <script>
       document.getElementById('y').textContent = new Date().getFullYear();
       const metaTheme = document.querySelector('meta[name="theme-color"]');
