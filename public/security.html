@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Security - CatInCloud Labs</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Security at CatInCloud Labs: responsible disclosure, scope, reporting instructions, and safe-harbor policy." />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <link rel="canonical" href="https://catincloudlabs.com/security" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Security - CatInCloud Labs" />
+  <meta property="og:description" content="Responsible disclosure policy, scope, and safe harbor for CatInCloud Labs." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://catincloudlabs.com/security" />
+  <meta property="og:image" content="https://catincloudlabs.com/assets/social-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content="CatInCloud Labs" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Security - CatInCloud Labs" />
+  <meta name="twitter:description" content="Responsible disclosure policy, scope, and safe harbor for CatInCloud Labs." />
+  <meta name="twitter:image" content="https://catincloudlabs.com/assets/social-card.png" />
+
+  <!-- Icons & theme -->
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+  <link rel="alternate icon" href="/assets/favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" href="/assets/favicon.png" />
+  <meta name="theme-color" content="#f3f4f6" />
+  <meta name="color-scheme" content="light" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/styles.css" />
+</head>
+
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="/" aria-label="CatInCloud Labs">
+        <img src="/assets/logo-wordmark-light.svg" alt="CatInCloud Labs" height="32" />
+      </a>
+      <nav class="menu" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/projects">Projects</a>
+        <a href="/contact" class="button ghost">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container hero-simple">
+        <div class="stack" style="--stack-gap:1rem">
+          <div class="kicker">Security</div>
+          <h1 class="title">Responsible Disclosure</h1>
+          <p class="subtitle">Thanks for helping us keep things safe. Here’s how to report issues and what to expect.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <article class="card reveal" style="max-width: var(--maxw-readable); margin-inline:auto;">
+          <p><strong>Last updated:</strong> November 2025</p>
+
+          <h2>Overview</h2>
+          <p>
+            CatInCloud Labs (operated by <strong>DaveHasACat LLC</strong>) takes a security-first approach: private networking,
+            least-privilege IAM, encryption, and observability. If you believe you’ve found a vulnerability, we want to hear from you.
+            Please report it privately so we can investigate and fix it quickly.
+          </p>
+
+          <h2>How to Report</h2>
+          <p>
+            Email: <a href="mailto:dave@catincloudlabs.com" aria-label="Email security report to CatInCloud Labs">dave@catincloudlabs.com</a><br />
+            Security.txt: <a href="/.well-known/security.txt">/.well-known/security.txt</a>
+          </p>
+
+          <!-- NEW: quick copy-paste template for reporters -->
+          <details>
+            <summary><strong>Report template (copy &amp; fill)</strong></summary>
+            <pre style="white-space: pre-wrap; margin-top:.75rem;">Title: [Short summary of the issue]
+Target/URL: [Full URL]
+Impact: [What could an attacker do?]
+Steps to Reproduce:
+1) …
+2) …
+3) …
+Observed Result: […]
+Expected Result: […]
+Environment: [Browser/OS], Timestamp (UTC): […]
+Attachments/PoC: [Links or inline]
+Researcher Contact: [Name/Email or handle]</pre>
+          </details>
+
+          <h2>Scope</h2>
+          <p>
+            <code>catincloudlabs.com</code> and public assets we host under this domain (including static content on Cloudflare Pages).
+            Client environments and third-party platforms are out of scope unless explicitly authorized in writing.
+          </p>
+
+          <h2>Out of Scope</h2>
+          <ul>
+            <li>Denial-of-service (DoS), load, or stress testing</li>
+            <li>Automated scanning that degrades service</li>
+            <li>Clickjacking on pages without sensitive actions</li>
+            <li>Missing security headers that do not directly lead to exploit</li>
+            <li>Rate-limit testing, SPF/DMARC best-practice commentary without exploit</li>
+            <li>Physical, social engineering, or third-party vendor issues</li>
+          </ul>
+
+          <h2>Safe Harbor</h2>
+          <p>
+            If you follow this policy and act in good faith, we won’t initiate legal action against you for security research.
+            Don’t access, modify, or exfiltrate data that isn’t yours. If you encounter non-public data, stop, don’t save it, and
+            report the minimal details needed to reproduce the issue.
+          </p>
+
+          <h2>Handling &amp; Timelines</h2>
+          <ul>
+            <li><strong>Acknowledgment:</strong> We aim to respond within <strong>72 hours</strong>.</li>
+            <li><strong>Remediation:</strong> We prioritize based on severity and impact; we’ll share status updates where feasible.</li>
+            <li><strong>Disclosure:</strong> Please give us reasonable time to fix before any public disclosure.</li>
+          </ul>
+
+          <!-- UPDATED: anchor matches security.txt Acknowledgments field -->
+          <h2 id="thanks">Recognition</h2>
+          <p>
+            While we don’t operate a bounty program, we appreciate the security community and may add an acknowledgment here for
+            impactful, high-quality reports. If you’d like recognition, please let us know when you submit.
+          </p>
+
+          <h2>Data &amp; Privacy</h2>
+          <p>
+            Our <a href="/privacy">Privacy Policy</a> explains how we handle personal data. We avoid unnecessary collection and do not
+            use advertising trackers. Server logs (e.g., IP, user agent, request metadata) may be retained for security and operations.
+          </p>
+
+          <h2>Questions</h2>
+          <p>
+            Reach us at <a href="mailto:dave@catincloudlabs.com">dave@catincloudlabs.com</a>. For the machine-readable details, see
+            <a href="/.well-known/security.txt">/.well-known/security.txt</a>.
+          </p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container inner center">
+      <small>© <span id="y"></span> CatInCloud Labs - DaveHasACat LLC</small>
+      <p><em>Cats who cloud. Humans that stay grounded.</em></p>
+      <div class="stack" style="--stack-gap:.25rem; justify-content:center; margin-top:0.5rem;">
+        <a href="/about">About</a> ·
+        <a href="/security" aria-current="page">Security</a> ·
+        <a href="/privacy">Privacy</a> ·
+        <a href="/terms">Terms</a> ·
+        <a href="mailto:dave@catincloudlabs.com" aria-label="Email CatInCloud Labs">Contact</a>
+      </div>
+    </div>
+
+    <script>
+      document.getElementById('y').textContent = new Date().getFullYear();
+      const metaTheme = document.querySelector('meta[name="theme-color"]');
+      const bg = getComputedStyle(document.documentElement).getPropertyValue('--bg-page').trim();
+      if (metaTheme && bg) metaTheme.setAttribute('content', bg);
+    </script>
+  </footer>
+</body>
+</html>

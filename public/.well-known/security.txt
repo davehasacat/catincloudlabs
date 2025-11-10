@@ -3,10 +3,13 @@
 
 Contact: mailto:dave@catincloudlabs.com
 Preferred-Languages: en
-Policy: https://catincloudlabs.com/security.txt
+Policy: https://catincloudlabs.com/security
+Acknowledgments: https://catincloudlabs.com/security#thanks
+Hiring: https://catincloudlabs.com/
 Canonical: https://catincloudlabs.com/.well-known/security.txt
 Expires: 2026-11-08T00:00:00Z
 
 # Notes:
 # CatInCloud Labs welcomes responsible disclosure. Please allow up to 72 hours for a response.
 # Do not publicly disclose issues until they have been verified and resolved.
+# If you prefer encrypted communication, ask for a PGP key.

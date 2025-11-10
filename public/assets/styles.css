@@ -296,3 +296,67 @@ a:hover { color: var(--link-hover); text-decoration: underline; }
   color: #6b7280;
   text-align: center;
 }
+
+/* 1) Global, consistent focus styles (matches your button ring) */
+a:focus-visible,
+.button:focus-visible {
+  outline: 3px solid var(--ring);
+  outline-offset: 2px;
+}
+
+/* 2) Nav: visible active state + keyboard focus */
+.nav .menu a[aria-current="page"] {
+  color: var(--accent-700);
+  background: var(--accent-50);
+  font-weight: 700;
+}
+.nav .menu a:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--ring) 40%, transparent);
+  border-radius: 8px;
+}
+
+/* 3) Footer link color consistency (inherit your link tokens) */
+.footer a { color: var(--link); }
+.footer a:hover { color: var(--link-hover); text-decoration: underline; }
+
+/* 4) Respect reduced motion for your reveal animation too */
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; animation: none; }
+}
+
+/* 5) Be kind to data savers: fall back to the hero image */
+@media (prefers-reduced-data: reduce) {
+  .hero__video, .ci-hero__video { display: none; }
+  .hero, .ci-hero {
+    background: url('/assets/hero-fallback.jpg') center/cover no-repeat, var(--bg-page);
+  }
+}
+
+/* 6) Slightly larger tap targets for main nav on touch screens */
+@media (pointer: coarse) {
+  .nav .menu a { padding: .65rem .7rem; }
+}
+
+/* --- Compact subpage heroes (Privacy/Terms/Security/Contact) --- */
+/* Your subpages use the "hero-simple" container, so we can safely scope */
+.hero:has(.hero-simple) {
+  min-height: clamp(160px, 22svh, 320px);
+  background: linear-gradient(180deg,
+              color-mix(in oklab, var(--accent) 4%, white),
+              #fff 40%);
+}
+.hero:has(.hero-simple) .hero-simple .stack {
+  /* tighten vertical rhythm */
+  padding-block: clamp(16px, 3vh, 24px);
+}
+.hero:has(.hero-simple) .title { margin-bottom: .4rem; }
+.hero:has(.hero-simple) .subtitle { max-width: 60ch; }
+
+/* --- Sticky footer on short pages --- */
+html, body { height: 100%; }
+body { display: flex; flex-direction: column; }
+main { flex: 1; }
+
+/* Optional: slightly reduce the card’s top margin on legal pages */
+.section .card:first-child { margin-top: clamp(8px, 2vh, 12px); }

@@ -18,8 +18,8 @@ Tools: VS Code • GitHub • Cloudflare • draw.io
 Version: MVP 2025.11
 
 /* SECURITY */
-Security Contact: /security.txt
-Policy: /.well-known/security.txt
+Security Contact: /.well-known/security.txt
+Security Policy: /security
 
 /* CREDITS */
 Built with care by CatInCloud Labs.
