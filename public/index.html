@@ -134,8 +134,8 @@
             </p>
           </article>
 
-          <!-- Proof diagram card -->
-          <article id="proof" class="card reveal proof-diagram" style="max-width: var(--maxw-readable); margin-inline:auto;">
+          <!-- Architecture diagram card (renamed anchor) -->
+          <article id="architecture" class="card reveal proof-diagram" style="max-width: var(--maxw-readable); margin-inline:auto;">
             <figure class="diagram-figure" style="margin:0;">
               <img
                 src="/assets/diagrams/architecture-flow.v2.svg"
@@ -161,11 +161,11 @@
             </p>
           </article>
 
-          <!-- Orchestration diagram card (unique anchor) -->
+          <!-- Security/observability diagram card -->
           <article id="orchestration" class="card reveal proof-diagram" style="max-width: var(--maxw-readable); margin-inline:auto;">
             <figure class="diagram-figure" style="margin:0;">
               <img
-                src="/assets/diagrams/security-observability.v1.svg"
+                src="/assets/diagrams/security-observability.v2.svg"
                 alt="MWAA orchestration with private VPC, S3 Gateway Endpoint, and outbound-only path to Snowflake"
                 class="diagram"
                 width="1160" height="300"
@@ -173,6 +173,36 @@
                 sizes="(max-width: 700px) 100vw, 1160px" />
               <figcaption class="diagram-caption">MWAA Orchestration: Raw S3 Bucket -> Snowflake</figcaption>
             </figure>
+          </article>
+
+          <article id="proof" class="card reveal" style="max-width: var(--maxw-readable); margin-inline:auto;">
+            <div class="eyebrow">Proof of Success</div>
+            <h2>End-to-End in Action</h2>
+            <div class="proof-grid" style="display:grid; gap:1rem;">
+              <figure class="proof-item" style="margin:0;">
+                <img
+                  src="/assets/images/proof/proof-success-ingest.v1.1920w.jpg"
+                  alt="Ingest: API data lands privately in S3 (RAW zone)"
+                  loading="lazy" decoding="async" width="1920" height="1080">
+                <figcaption>Ingest - API -> S3 (RAW)</figcaption>
+              </figure>
+
+              <figure class="proof-item" style="margin:0;">
+                <img
+                  src="/assets/images/proof/proof-success-load.v1.1920w.jpg"
+                  alt="Load: Snowflake securely reads objects from S3 via a stage"
+                  loading="lazy" decoding="async" width="1920" height="1080">
+                <figcaption>Load - Snowflake COPY from S3</figcaption>
+              </figure>
+
+              <figure class="proof-item" style="margin:0;">
+                <img
+                  src="/assets/images/proof/proof-success-transform.v1.1920w.jpg"
+                  alt="Transform: dbt builds typed and curated models"
+                  loading="lazy" decoding="async" width="1920" height="1080">
+                <figcaption>Transform - dbt models & marts</figcaption>
+              </figure>
+            </div>
           </article>
         </div>
       </div>
