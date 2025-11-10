@@ -3,7 +3,7 @@
 
 Contact: mailto:dave@catincloudlabs.com
 Preferred-Languages: en
-Policy: https://catincloudlabs.com/security.txt
+Policy: https://catincloudlabs.com/security
 Canonical: https://catincloudlabs.com/.well-known/security.txt
 Expires: 2026-11-08T00:00:00Z
 
