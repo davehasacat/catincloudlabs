@@ -360,3 +360,55 @@ main { flex: 1; }
 
 /* Optional: slightly reduce the card’s top margin on legal pages */
 .section .card:first-child { margin-top: clamp(8px, 2vh, 12px); }
+
+/* ── Mobile overflow fix (safe, surgical) ───────────────────────────── */
+
+/* Stop horizontal scroll everywhere */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Any hero/background section can't push the page wider */
+.hero, .section-hero, [data-bg="grid"] {
+  position: relative;
+  overflow-x: clip; /* better than hidden for iOS */
+}
+
+/* If you use a decorative grid via ::before/::after, keep it inside the viewport */
+.hero::before,
+.section-hero::before,
+[data-bg="grid"]::before,
+.hero::after,
+.section-hero::after,
+[data-bg="grid"]::after {
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  transform: none !important; /* neutralize translate tricks that cause overflow */
+}
+
+/* Make images/SVG/video truly responsive and stop inline gaps */
+img, svg, video, canvas {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Prevent figures/cards from letting children bleed outside rounded corners */
+figure, .card {
+  overflow: hidden;
+}
+
+/* Avoid 100vw traps on iOS chrome/safari UI chrome changes */
+@supports (width: 100dvw) {
+  .hero, .section-hero, [data-full-bleed] {
+    inline-size: 100dvw;
+    max-inline-size: 100dvw;
+  }
+}
+
+/* Reasonable mobile container padding to reduce edge pressure */
+@media (max-width: 768px) {
+  .container { padding-inline: 16px; }
+}
