@@ -25,9 +25,6 @@
   Cache-Control: no-cache
 /security
   Cache-Control: no-cache
-/404.html
-  X-Robots-Tag: noindex
-  Cache-Control: no-cache
 /robots.txt
   Cache-Control: public, max-age=86400
 /sitemap.xml
@@ -75,3 +72,5 @@
   Cache-Control: public, max-age=604800
 /assets/hero-fallback.jpg
   Cache-Control: public, max-age=604800
+/404.html
+  X-Robots-Tag: noindex, nofollow, noarchive
