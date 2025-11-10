@@ -361,54 +361,70 @@ main { flex: 1; }
 /* Optional: slightly reduce the card’s top margin on legal pages */
 .section .card:first-child { margin-top: clamp(8px, 2vh, 12px); }
 
-/* ── Mobile overflow fix (safe, surgical) ───────────────────────────── */
+/* ──────────────────────────────────────────────────────────────────── */
+/*  MOBILE HORIZONTAL OVERFLOW CLAMP (safe, scoped)                    */
+/*  Fixes the white gutter / grid peeking in on iOS/Chrome incognito. */
+/* ──────────────────────────────────────────────────────────────────── */
 
-/* Stop horizontal scroll everywhere */
 html, body {
   max-width: 100%;
-  overflow-x: hidden;
+  overflow-x: hidden; /* reinforce */
 }
 
-/* Any hero/background section can't push the page wider */
-.hero, .section-hero, [data-bg="grid"] {
+/* Prevent any full-bleed section or background from widening the page */
+:is(.hero, .ci-hero), [data-full-bleed] {
   position: relative;
-  overflow-x: clip; /* better than hidden for iOS */
+  overflow-x: clip; /* only clamp the horizontal axis */
 }
 
-/* If you use a decorative grid via ::before/::after, keep it inside the viewport */
-.hero::before,
-.section-hero::before,
-[data-bg="grid"]::before,
-.hero::after,
-.section-hero::after,
-[data-bg="grid"]::after {
+/* If decorative backgrounds use pseudo-elements, keep them inside */
+:is(.hero, .ci-hero)::before,
+:is(.hero, .ci-hero)::after {
   left: 0 !important;
   right: 0 !important;
-  width: 100% !important;
-  transform: none !important; /* neutralize translate tricks that cause overflow */
+  width: auto !important;
+  max-width: 100% !important;
+  transform: none !important;
 }
 
-/* Make images/SVG/video truly responsive and stop inline gaps */
-img, svg, video, canvas {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
+/* Figures/cards shouldn’t let children bleed past rounded corners */
+figure, .card { overflow: hidden; }
 
-/* Prevent figures/cards from letting children bleed outside rounded corners */
-figure, .card {
-  overflow: hidden;
-}
-
-/* Avoid 100vw traps on iOS chrome/safari UI chrome changes */
+/* Use dynamic viewport width when supported to avoid 100vw Safari quirks */
 @supports (width: 100dvw) {
-  .hero, .section-hero, [data-full-bleed] {
+  :is(.hero, .ci-hero), [data-full-bleed] {
     inline-size: 100dvw;
     max-inline-size: 100dvw;
   }
 }
 
-/* Reasonable mobile container padding to reduce edge pressure */
+/* Slightly tighter container padding on mobile to reduce edge pressure */
 @media (max-width: 768px) {
-  .container { padding-inline: 16px; }
+  .container { width: min(1100px, 94vw); }
+}
+
+/* Mobile overflow clamp */
+html, body { max-width: 100%; overflow-x: clip; }
+
+:is(.hero, .ci-hero), [data-full-bleed] {
+  position: relative;
+  overflow-x: clip;
+}
+
+:is(.hero, .ci-hero)::before,
+:is(.hero, .ci-hero)::after {
+  left: 0 !important;
+  right: 0 !important;
+  width: auto !important;
+  max-width: 100% !important;
+  transform: none !important;
+}
+
+figure, .card { overflow: hidden; }
+
+@supports (width: 100dvw) {
+  :is(.hero, .ci-hero), [data-full-bleed] {
+    inline-size: 100dvw;
+    max-inline-size: 100dvw;
+  }
 }
