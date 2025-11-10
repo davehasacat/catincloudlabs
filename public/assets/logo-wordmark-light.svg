@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="320" height="64" viewBox="0 0 320 64" role="img" aria-labelledby="title desc">
   <title id="title">CatInCloud Labs</title>
-  <desc id="desc">Wordmark for CatInCloud Labs with cloud icon and brand colors, optimized for light backgrounds.</desc>
+  <desc id="desc">Wordmark for CatInCloud Labs with cloud icon and brand colors, optimized for dark backgrounds.</desc>
   <defs>
     <linearGradient id="cloudGradient" x1="0" x2="1" y1="0" y2="1">
       <stop offset="0%" stop-color="#0ea5e9"/>
@@ -23,7 +23,7 @@
 
   <!-- Text -->
   <g transform="translate(64, 40)">
-    <text font-family="Inter, Arial, Helvetica, sans-serif" font-weight="700" font-size="26" fill="#111827" letter-spacing="0.2">
+    <text font-family="Inter, Arial, Helvetica, sans-serif" font-weight="700" font-size="26" fill="#ffffff" letter-spacing="0.2">
       CatInCloud <tspan fill="#0ea5e9">Labs</tspan>
     </text>
   </g>
