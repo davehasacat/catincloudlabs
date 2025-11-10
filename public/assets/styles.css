@@ -338,3 +338,25 @@ a:focus-visible,
   .nav .menu a { padding: .65rem .7rem; }
 }
 
+/* --- Compact subpage heroes (Privacy/Terms/Security/Contact) --- */
+/* Your subpages use the "hero-simple" container, so we can safely scope */
+.hero:has(.hero-simple) {
+  min-height: clamp(160px, 22svh, 320px);
+  background: linear-gradient(180deg,
+              color-mix(in oklab, var(--accent) 4%, white),
+              #fff 40%);
+}
+.hero:has(.hero-simple) .hero-simple .stack {
+  /* tighten vertical rhythm */
+  padding-block: clamp(16px, 3vh, 24px);
+}
+.hero:has(.hero-simple) .title { margin-bottom: .4rem; }
+.hero:has(.hero-simple) .subtitle { max-width: 60ch; }
+
+/* --- Sticky footer on short pages --- */
+html, body { height: 100%; }
+body { display: flex; flex-direction: column; }
+main { flex: 1; }
+
+/* Optional: slightly reduce the card’s top margin on legal pages */
+.section .card:first-child { margin-top: clamp(8px, 2vh, 12px); }
