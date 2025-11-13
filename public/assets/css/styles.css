@@ -335,6 +335,20 @@ a:hover { color: var(--link-hover); text-decoration: underline; }
   }
 }
 
+/* Micro-tweaks for hero text on small phones */
+@media (max-width: 430px){
+  :is(.hero__content, .ci-hero__content) h1{
+    line-height: 1.12;       /* was 1.06: a touch more breathing room */
+    letter-spacing: 0.01em;  /* tiny spacing for cleaner caps/mixed case */
+  }
+
+  :is(.hero__content, .ci-hero__content) p{
+    max-width: 26ch;
+    margin-inline: auto;
+    font-weight: 500;        /* bumps contrast without changing color */
+  }
+}
+
 /* === Diagrams ========================================================= */
 .proof-diagram.card {
   border-radius: 1rem;
