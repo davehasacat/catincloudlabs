@@ -15,7 +15,7 @@
   <meta property="og:description" content="Building enterprise-grade data and cloud systems with precision and security." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://catincloudlabs.com/" />
-  <meta property="og:image" content="https://catincloudlabs.com/assets/brand/social-card.png" />
+  <meta property="og:image" content="https://catincloudlabs.com/assets/social-card.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:site_name" content="CatInCloud Labs" />
@@ -25,22 +25,21 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="CatInCloud Labs" />
   <meta name="twitter:description" content="Enterprise-grade data & cloud systems - MWAA • Snowflake • dbt Cloud" />
-  <meta name="twitter:image" content="https://catincloudlabs.com/assets/brand/social-card.png" />
+  <meta name="twitter:image" content="https://catincloudlabs.com/assets/social-card.png" />
 
   <!-- Icons & theme -->
-  <link rel="icon" href="/assets/favicons/favicon.ico" sizes="any" />
-  <link rel="icon" type="image/svg+xml" href="/assets/favicons/safari-pinned-tab.svg" />
-  <link rel="apple-touch-icon" href="/assets/favicons/apple-touch-icon.png" />
-  <link rel="manifest" href="/assets/favicons/site.webmanifest" />
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+  <link rel="alternate icon" href="/assets/favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" href="/assets/favicon.png" />
   <meta name="theme-color" content="#f3f4f6" />
   <meta name="color-scheme" content="light" />
 
   <!-- Preload hero video (match sources below) -->
-  <link rel="preload" as="video" href="/assets/video/hero_m.webm" type="video/webm" media="(max-width: 768px) and (orientation: portrait)" />
-  <link rel="preload" as="video" href="/assets/video/hero.webm" type="video/webm" media="(min-width: 769px), (orientation: landscape)" />
+  <link rel="preload" as="video" href="/assets/hero_m.webm" type="video/webm" media="(max-width: 768px) and (orientation: portrait)" />
+  <link rel="preload" as="video" href="/assets/hero.webm" type="video/webm" media="(min-width: 769px), (orientation: landscape)" />
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/assets/css/styles.css" />
+  <link rel="stylesheet" href="/assets/styles.css" />
 
   <!-- JSON-LD: Organization + WebSite -->
   <script type="application/ld+json">
@@ -49,7 +48,7 @@
     "@type":"Organization",
     "name":"CatInCloud Labs",
     "url":"https://catincloudlabs.com/",
-    "logo":"https://catincloudlabs.com/assets/brand/logo-wordmark-light.svg",
+    "logo":"https://catincloudlabs.com/assets/logo-wordmark-light.svg",
     "email":"dave@catincloudlabs.com",
     "address":{
       "@type":"PostalAddress",
@@ -81,7 +80,7 @@
   <header class="header">
     <div class="container nav">
       <a class="brand" href="/" aria-label="CatInCloud Labs">
-        <img src="/assets/brand/logo-wordmark-light.svg" alt="CatInCloud Labs" height="32" />
+        <img src="/assets/logo-wordmark-light.svg" alt="CatInCloud Labs" height="32" />
       </a>
       <nav class="menu" aria-label="Primary">
         <a href="/" class="active" aria-current="page">Home</a>
@@ -96,16 +95,16 @@
     <!-- Hero (video) -->
     <section class="hero" aria-label="CatInCloud Labs - Hero">
       <div class="hero__media" aria-hidden="true">
-        <video class="hero__video" autoplay muted loop playsinline preload="metadata" poster="/assets/video/hero-fallback.jpg">
+        <video class="hero__video" autoplay muted loop playsinline preload="metadata" poster="/assets/hero-fallback.jpg">
           <!-- Mobile/tall cut -->
-          <source src="/assets/video/hero_m.webm" type="video/webm" media="(max-width: 768px) and (orientation: portrait)" />
-          <source src="/assets/video/hero_m.mp4"  type="video/mp4"  media="(max-width: 768px) and (orientation: portrait)" />
+          <source src="/assets/hero_m.webm" type="video/webm" media="(max-width: 768px) and (orientation: portrait)" />
+          <source src="/assets/hero_m.mp4"  type="video/mp4"  media="(max-width: 768px) and (orientation: portrait)" />
           <!-- Desktop/wide cut (default) -->
-          <source src="/assets/video/hero.webm" type="video/webm" />
-          <source src="/assets/video/hero.mp4"  type="video/mp4" />
+          <source src="/assets/hero.webm" type="video/webm" />
+          <source src="/assets/hero.mp4"  type="video/mp4" />
         </video>
         <noscript>
-          <img src="/assets/video/hero-fallback.jpg" alt="MWAA/dbt/Snowflake pipeline running successfully" />
+          <img src="/assets/hero-fallback.jpg" alt="MWAA/dbt/Snowflake pipeline running successfully" />
         </noscript>
       </div>
 
@@ -119,7 +118,7 @@
       </div>
     </section>
 
-    <!-- Content -->
+    <!-- Content cards (clean centered layout) -->
     <section class="section">
       <div class="container">
         <div class="stack" style="--stack-gap:1.25rem">
@@ -135,12 +134,12 @@
             </p>
           </article>
 
-          <!-- Architecture diagram -->
+          <!-- Architecture diagram card (renamed anchor) -->
           <article id="architecture" class="card reveal proof-diagram" style="max-width: var(--maxw-readable); margin-inline:auto;">
             <figure class="diagram-figure" style="margin:0;">
               <img
-                src="/assets/diagrams/architecture-flow.v1.svg"
-                alt="Architecture flow diagram showing MWAA orchestrating S3 to Snowflake via COPY, with dbt building marts"
+                src="/assets/diagrams/architecture-flow.v2.svg"
+                alt="Architecture flow diagram showing MWAA -> S3 -> dbt -> Snowflake -> Analytics"
                 class="diagram"
                 width="1160" height="300"
                 loading="lazy" decoding="async"
@@ -149,104 +148,66 @@
             </figure>
           </article>
 
-          <!-- Security/observability diagram -->
+          <article class="card reveal" style="max-width: var(--maxw-readable); margin-inline:auto;">
+            <div class="eyebrow">Approach</div>
+            <h2>Architecture Philosophy</h2>
+            <p>
+              We believe modern data systems should be secure, observable, and simple enough
+              to maintain without layers of unnecessary complexity.
+            </p>
+            <p>
+              Every component, from networking and IAM to ELT orchestration, is designed
+              with clarity, scalability, and least-privilege principles in mind.
+            </p>
+          </article>
+
+          <!-- Security/observability diagram card -->
           <article id="orchestration" class="card reveal proof-diagram" style="max-width: var(--maxw-readable); margin-inline:auto;">
             <figure class="diagram-figure" style="margin:0;">
               <img
-                src="/assets/diagrams/security-observability.v1.svg"
-                alt="Private VPC with S3 Gateway Endpoint; MWAA orchestrates Snowflake load; outbound-only egress"
+                src="/assets/diagrams/security-observability.v2.svg"
+                alt="MWAA orchestration with private VPC, S3 Gateway Endpoint, and outbound-only path to Snowflake"
                 class="diagram"
                 width="1160" height="300"
                 loading="lazy" decoding="async"
                 sizes="(max-width: 700px) 100vw, 1160px" />
-              <figcaption class="diagram-caption">Security & Observability highlights</figcaption>
+              <figcaption class="diagram-caption">MWAA Orchestration: Raw S3 Bucket -> Snowflake</figcaption>
             </figure>
           </article>
 
-          <!-- Proof of Success (click-to-zoom gallery) -->
           <article id="proof" class="card reveal" style="max-width: var(--maxw-readable); margin-inline:auto;">
             <div class="eyebrow">Proof of Success</div>
             <h2>End-to-End in Action</h2>
+            <div class="proof-grid" style="display:grid; gap:1rem;">
+              <figure class="proof-item" style="margin:0;">
+                <img
+                  src="/assets/images/proof/proof-success-ingest.v1.1920w.jpg"
+                  alt="Ingest: API data lands privately in S3 (RAW zone)"
+                  loading="lazy" decoding="async" width="1920" height="1080">
+                <figcaption>Ingest - API -> S3 (RAW)</figcaption>
+              </figure>
 
-            <section class="proof-gallery container" aria-label="Proof of Success">
-              <div class="proof-grid">
-                <!-- Card 1 -->
-                <figure class="proof-card">
-                  <button class="proof-zoom"
-                          type="button"
-                          aria-label="Open full-size image: Airflow DAG end-to-end"
-                          data-full="/assets/proof/proof-1-full.webp"
-                          data-caption="End-to-end: DAG orchestration from ingest to Snowflake marts">
-                    <span class="proof-zoom-badge">Click to zoom</span>
-                    <picture>
-                      <source type="image/webp"
-                              srcset="/assets/proof/proof-1@1x.webp 1x, /assets/proof/proof-1@2x.webp 2x" />
-                      <img loading="lazy" decoding="async" alt="Airflow DAG run shows green task states"
-                           src="/assets/proof/proof-1@1x.webp" width="1280" height="720"
-                           style="aspect-ratio: 16 / 9;" />
-                    </picture>
-                  </button>
-                  <figcaption>End-to-end orchestration in Airflow (green = successful tasks)</figcaption>
-                </figure>
+              <figure class="proof-item" style="margin:0;">
+                <img
+                  src="/assets/images/proof/proof-success-load.v1.1920w.jpg"
+                  alt="Load: Snowflake securely reads objects from S3 via a stage"
+                  loading="lazy" decoding="async" width="1920" height="1080">
+                <figcaption>Load - Snowflake COPY from S3</figcaption>
+              </figure>
 
-                <!-- Card 2 -->
-                <figure class="proof-card">
-                  <button class="proof-zoom"
-                          type="button"
-                          aria-label="Open full-size image: Snowflake tables with typed data"
-                          data-full="/assets/proof/proof-2-full.webp"
-                          data-caption="Snowflake: typed staging → marts with precise decimals">
-                    <span class="proof-zoom-badge">Click to zoom</span>
-                    <picture>
-                      <source type="image/webp"
-                              srcset="/assets/proof/proof-2@1x.webp 1x, /assets/proof/proof-2@2x.webp 2x" />
-                      <img loading="lazy" decoding="async" alt="Snowflake table view with decimal precision"
-                           src="/assets/proof/proof-2@1x.webp" width="1280" height="720"
-                           style="aspect-ratio: 16 / 9;" />
-                    </picture>
-                  </button>
-                  <figcaption>Snowflake marts with correct typing & decimal precision</figcaption>
-                </figure>
-
-                <!-- Card 3 -->
-                <figure class="proof-card">
-                  <button class="proof-zoom"
-                          type="button"
-                          aria-label="Open full-size image: Run view + result table"
-                          data-full="/assets/proof/proof-3-full.webp"
-                          data-caption="Run details + resulting table snapshot (combined view)">
-                    <span class="proof-zoom-badge">Click to zoom</span>
-                    <picture>
-                      <source type="image/webp"
-                              srcset="/assets/proof/proof-3@1x.webp 1x, /assets/proof/proof-3@2x.webp 2x" />
-                      <img loading="lazy" decoding="async" alt="Combined DAG run details and Snowflake result table"
-                           src="/assets/proof/proof-3@1x.webp" width="1280" height="720"
-                           style="aspect-ratio: 16 / 9;" />
-                    </picture>
-                  </button>
-                  <figcaption>Run details + resulting data (combined screenshot)</figcaption>
-                </figure>
-              </div>
-            </section>
+              <figure class="proof-item" style="margin:0;">
+                <img
+                  src="/assets/images/proof/proof-success-transform.v1.1920w.jpg"
+                  alt="Transform: dbt builds typed and curated models"
+                  loading="lazy" decoding="async" width="1920" height="1080">
+                <figcaption>Transform - dbt models & marts</figcaption>
+              </figure>
+            </div>
           </article>
         </div>
       </div>
     </section>
   </main>
-
-  <!-- Lightbox root (one per page) -->
-  <div id="lightbox" class="lb" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-label="Image viewer">
-    <div class="lb__backdrop" data-close></div>
-    <div class="lb__stage" role="document">
-      <button class="lb__close" type="button" title="Close (Esc)" aria-label="Close" data-close>&times;</button>
-      <img class="lb__img" alt="" />
-      <p class="lb__caption" id="lb-caption"></p>
-      <div class="lb__nav" aria-hidden="true">
-        <button class="lb__prev" type="button" title="Previous (←)" aria-label="Previous image">&#10094;</button>
-        <button class="lb__next" type="button" title="Next (→)" aria-label="Next image">&#10095;</button>
-      </div>
-    </div>
-  </div>
 
   <!-- Footer -->
   <footer class="footer">
@@ -262,99 +223,14 @@
       </div>
     </div>
 
-    <!-- Set footer year + theme-color -->
+    <!-- Set footer year + theme-color to match current computed background -->
     <script>
       document.getElementById('y').textContent = new Date().getFullYear();
       const metaTheme = document.querySelector('meta[name="theme-color"]');
       const bg = getComputedStyle(document.documentElement).getPropertyValue('--bg-page').trim();
       if (metaTheme && bg) metaTheme.setAttribute('content', bg);
     </script>
-    <script src="/assets/js/hero-auto-pause.js" defer></script>
+    <script src="/scripts/hero-auto-pause.js" defer></script>
   </footer>
-
-  <!-- Proof-of-Success lightbox JS -->
-  <script>
-  (() => {
-    const cards = [...document.querySelectorAll('.proof-zoom')];
-    const lb = document.getElementById('lightbox');
-    if (!cards.length || !lb) return;
-
-    const imgEl = lb.querySelector('.lb__img');
-    const captionEl = lb.querySelector('.lb__caption');
-    const closeEls = lb.querySelectorAll('[data-close]');
-    const prevBtn = lb.querySelector('.lb__prev');
-    const nextBtn = lb.querySelector('.lb__next');
-
-    let idx = 0;
-    let lastFocus = null;
-
-    function open(i) {
-      idx = i;
-      const btn = cards[idx];
-      const full = btn.dataset.full;
-      const cap = btn.dataset.caption || '';
-      imgEl.src = full;
-      imgEl.alt = btn.getAttribute('aria-label') || '';
-      captionEl.textContent = cap;
-
-      // Preload neighbors
-      const prev = cards[(idx - 1 + cards.length) % cards.length]?.dataset.full;
-      const next = cards[(idx + 1) % cards.length]?.dataset.full;
-      [prev, next].filter(Boolean).forEach(src => { const im = new Image(); im.src = src; });
-
-      lastFocus = document.activeElement;
-      lb.hidden = false;
-      lb.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
-      lb.querySelector('.lb__close').focus();
-    }
-
-    function close() {
-      lb.setAttribute('aria-hidden', 'true');
-      lb.hidden = true;
-      document.body.style.overflow = '';
-      imgEl.removeAttribute('src');
-      if (lastFocus && document.contains(lastFocus)) lastFocus.focus();
-    }
-
-    function show(delta) {
-      idx = (idx + delta + cards.length) % cards.length;
-      open(idx);
-    }
-
-    // Bind thumbnails
-    cards.forEach((btn, i) => {
-      btn.addEventListener('click', () => open(i));
-      btn.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(i); }
-      });
-    });
-
-    // Close actions
-    closeEls.forEach(el => el.addEventListener('click', close));
-    lb.addEventListener('click', (e) => {
-      if (e.target === lb) close();
-    });
-
-    // Nav
-    if (prevBtn && nextBtn) {
-      prevBtn.addEventListener('click', () => show(-1));
-      nextBtn.addEventListener('click', () => show(1));
-    }
-
-    // Keys
-    document.addEventListener('keydown', (e) => {
-      if (lb.hidden) return;
-      if (e.key === 'Escape') close();
-      else if (e.key === 'ArrowLeft') show(-1);
-      else if (e.key === 'ArrowRight') show(1);
-    });
-
-    // Prevent wheel-zoom background scroll while open
-    lb.addEventListener('wheel', (e) => {
-      if (!lb.hidden) e.preventDefault();
-    }, { passive: false });
-  })();
-  </script>
 </body>
 </html>
