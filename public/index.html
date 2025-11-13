@@ -170,61 +170,67 @@
 
             <section class="proof-gallery container" aria-label="Proof of Success">
               <div class="proof-grid">
-                <!-- Card 1 -->
+                <!-- INGEST -->
                 <figure class="proof-card">
-                  <button class="proof-zoom"
-                          type="button"
-                          aria-label="Open full-size image: Airflow DAG end-to-end"
-                          data-full="/assets/proof/proof-1-full.webp"
-                          data-caption="End-to-end: DAG orchestration from ingest to Snowflake marts">
+                  <button class="proof-zoom" type="button"
+                          aria-label="Open full-size image: Ingest S3 RAW"
+                          data-full="/assets/proof/proof-success-ingest.v1.1920w.webp"
+                          data-caption="Ingest: API → S3 (RAW, private via S3 Gateway)">
                     <span class="proof-zoom-badge">Click to zoom</span>
                     <picture>
                       <source type="image/webp"
-                              srcset="/assets/proof/proof-1@1x.webp 1x, /assets/proof/proof-1@2x.webp 2x" />
-                      <img loading="lazy" decoding="async" alt="Airflow DAG run shows green task states"
-                           src="/assets/proof/proof-1@1x.webp" width="1280" height="720"
-                           style="aspect-ratio: 16 / 9;" />
+                              srcset="/assets/proof/proof-success-ingest.v1.1280w.webp 1280w,
+                                      /assets/proof/proof-success-ingest.v1.1920w.webp 1920w"
+                              sizes="(max-width: 700px) 100vw, 1280px" />
+                      <img loading="lazy" decoding="async"
+                           alt="Ingest: API data lands privately in S3 (RAW zone)"
+                           src="/assets/proof/proof-success-ingest.v1.1920w.jpg"
+                           width="1920" height="1080" style="aspect-ratio:16/9;" />
                     </picture>
                   </button>
-                  <figcaption>End-to-end orchestration in Airflow (green = successful tasks)</figcaption>
+                  <figcaption>Ingest — API → S3 (RAW)</figcaption>
                 </figure>
 
-                <!-- Card 2 -->
+                <!-- LOAD -->
                 <figure class="proof-card">
-                  <button class="proof-zoom"
-                          type="button"
-                          aria-label="Open full-size image: Snowflake tables with typed data"
-                          data-full="/assets/proof/proof-2-full.webp"
-                          data-caption="Snowflake: typed staging → marts with precise decimals">
+                  <button class="proof-zoom" type="button"
+                          aria-label="Open full-size image: Snowflake load"
+                          data-full="/assets/proof/proof-success-load.v1.1920w.webp"
+                          data-caption="Load: Snowflake COPY from S3 stage (typed staging → marts)">
                     <span class="proof-zoom-badge">Click to zoom</span>
                     <picture>
                       <source type="image/webp"
-                              srcset="/assets/proof/proof-2@1x.webp 1x, /assets/proof/proof-2@2x.webp 2x" />
-                      <img loading="lazy" decoding="async" alt="Snowflake table view with decimal precision"
-                           src="/assets/proof/proof-2@1x.webp" width="1280" height="720"
-                           style="aspect-ratio: 16 / 9;" />
+                              srcset="/assets/proof/proof-success-load.v1.1280w.webp 1280w,
+                                      /assets/proof/proof-success-load.v1.1920w.webp 1920w"
+                              sizes="(max-width: 700px) 100vw, 1280px" />
+                      <img loading="lazy" decoding="async"
+                           alt="Load: Snowflake securely reads objects from S3 via a stage"
+                           src="/assets/proof/proof-success-load.v1.1920w.jpg"
+                           width="1920" height="1080" style="aspect-ratio:16/9;" />
                     </picture>
                   </button>
-                  <figcaption>Snowflake marts with correct typing & decimal precision</figcaption>
+                  <figcaption>Load — Snowflake COPY from S3</figcaption>
                 </figure>
 
-                <!-- Card 3 -->
+                <!-- TRANSFORM -->
                 <figure class="proof-card">
-                  <button class="proof-zoom"
-                          type="button"
-                          aria-label="Open full-size image: Run view + result table"
-                          data-full="/assets/proof/proof-3-full.webp"
-                          data-caption="Run details + resulting table snapshot (combined view)">
+                  <button class="proof-zoom" type="button"
+                          aria-label="Open full-size image: dbt transform"
+                          data-full="/assets/proof/proof-success-transform.v1.1920w.webp"
+                          data-caption="Transform: dbt builds typed & curated models with precise decimals">
                     <span class="proof-zoom-badge">Click to zoom</span>
                     <picture>
                       <source type="image/webp"
-                              srcset="/assets/proof/proof-3@1x.webp 1x, /assets/proof/proof-3@2x.webp 2x" />
-                      <img loading="lazy" decoding="async" alt="Combined DAG run details and Snowflake result table"
-                           src="/assets/proof/proof-3@1x.webp" width="1280" height="720"
-                           style="aspect-ratio: 16 / 9;" />
+                              srcset="/assets/proof/proof-success-transform.v1.1280w.webp 1280w,
+                                      /assets/proof/proof-success-transform.v1.1920w.webp 1920w"
+                              sizes="(max-width: 700px) 100vw, 1280px" />
+                      <img loading="lazy" decoding="async"
+                           alt="Transform: dbt builds typed and curated models"
+                           src="/assets/proof/proof-success-transform.v1.1920w.jpg"
+                           width="1920" height="1080" style="aspect-ratio:16/9;" />
                     </picture>
                   </button>
-                  <figcaption>Run details + resulting data (combined screenshot)</figcaption>
+                  <figcaption>Transform — dbt models & marts</figcaption>
                 </figure>
               </div>
             </section>
@@ -296,6 +302,13 @@
       imgEl.src = full;
       imgEl.alt = btn.getAttribute('aria-label') || '';
       captionEl.textContent = cap;
+
+      // Fallback to .jpg if .webp fails (older browsers)
+      imgEl.onerror = () => {
+        if (imgEl.src.endsWith('.webp')) {
+          imgEl.src = imgEl.src.replace('.webp', '.jpg');
+        }
+      };
 
       // Preload neighbors
       const prev = cards[(idx - 1 + cards.length) % cards.length]?.dataset.full;
