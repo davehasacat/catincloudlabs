@@ -19,7 +19,7 @@
     {
       webp: "/assets/proof/proof-success-transform.v1.1920w.webp",
       jpg:  "/assets/proof/proof-success-transform.v1.1920w.jpg",
-      caption: "Transform — dbt models in Snowflake",
+      caption: "Transform: dbt models in Snowflake",
       alt: "Transform: dbt builds typed staging and mart models in Snowflake with precise decimals."
     }
   ];
