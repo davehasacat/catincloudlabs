@@ -517,3 +517,10 @@ figure, .card { overflow: hidden; }
   cursor: pointer;
   margin: 0 0.5rem;
 }
+
+.proof-shell img[data-proof-img] {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
