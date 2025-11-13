@@ -531,15 +531,15 @@ figure, .card { overflow: hidden; }
   position: fixed;
   inset: 0;
   z-index: 60;
-  display: flex;
+  display: flex !important;          /* force flex so we can center */
   align-items: center;
   justify-content: center;
-  padding: 1.5rem 0.75rem;  /* gutter around the card */
-  overflow-x: hidden;       /* avoid tiny horizontal scroll / cutoff */
+  padding: 1.5rem 0.75rem;           /* gutter around the card */
+  overflow-x: hidden;                /* avoid tiny horizontal scroll / cutoff */
 }
 
 .lb[hidden] {
-  display: none !important; /* JS toggles the hidden attribute */
+  display: none !important;          /* JS toggles the hidden attribute */
 }
 
 .lb__backdrop {
@@ -552,11 +552,11 @@ figure, .card { overflow: hidden; }
 .lb__stage {
   position: relative;
   z-index: 1;
-  box-sizing: border-box;   /* width includes padding */
+  box-sizing: border-box;            /* width includes padding */
   flex: 1 1 auto;
   width: 100%;
   max-width: 1200px;
-  margin: 0 auto;           /* center horizontally */
+  margin: 0 auto;                    /* center horizontally */
   padding: 1rem;
   border-radius: 1.5rem;
   background: #ffffff;
