@@ -525,44 +525,47 @@ figure, .card { overflow: hidden; }
   display: block;
 }
 
-/* === Lightbox centering & sizing === */
+/* === Lightbox: centering, sizing, mobile behavior === */
 
 .lb {
   position: fixed;
   inset: 0;
   z-index: 60;
-  display: flex;              /* center both axes */
+  display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1.5rem 0.75rem;    /* breathing room from top/bottom edges */
+  padding: 1.5rem 0.75rem;  /* gutter around the card */
+  overflow-x: hidden;       /* avoid tiny horizontal scroll / cutoff */
 }
 
 .lb[hidden] {
-  display: none !important;   /* JS uses `hidden` attribute */
+  display: none !important; /* JS toggles the hidden attribute */
 }
 
 .lb__backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(15, 23, 42, 0.85); /* dark overlay behind the card */
+  background: rgba(15, 23, 42, 0.85);
 }
 
 /* The white card that holds the image + caption */
 .lb__stage {
   position: relative;
   z-index: 1;
+  box-sizing: border-box;   /* width includes padding */
+  flex: 1 1 auto;
   width: 100%;
   max-width: 1200px;
-  margin: 0 0.75rem;
+  margin: 0 auto;           /* center horizontally */
+  padding: 1rem;
   border-radius: 1.5rem;
   background: #ffffff;
-  padding: 1rem;
   max-height: calc(100vh - 3rem);
   display: flex;
   flex-direction: column;
 }
 
-/* Make sure the zoomed image fits nicely on mobile */
+/* Zoomed image */
 .lb__img {
   width: 100%;
   max-height: calc(100vh - 7rem);
@@ -570,9 +573,20 @@ figure, .card { overflow: hidden; }
   border-radius: 1rem;
 }
 
-/* Caption just under the image */
+/* Caption */
 .lb__caption {
   margin-top: 0.75rem;
   font-size: 0.9rem;
   color: #111827;
+}
+
+/* Small-screen polish */
+@media (max-width: 768px) {
+  .lb {
+    padding: 2.25rem 0.75rem 2rem;
+  }
+
+  .lb__stage {
+    border-radius: 1.25rem;
+  }
 }
