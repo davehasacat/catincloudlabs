@@ -15,7 +15,7 @@
   <meta property="og:description" content="Get in touch with CatInCloud Labs to discuss your next cloud or data engineering project." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://catincloudlabs.com/contact" />
-  <meta property="og:image" content="https://catincloudlabs.com/assets/social-card.png" />
+  <meta property="og:image" content="https://catincloudlabs.com/assets/brand/social-card.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:site_name" content="CatInCloud Labs" />
@@ -25,7 +25,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Contact - CatInCloud Labs" />
   <meta name="twitter:description" content="Let's connect and explore how we can help you build secure, maintainable data platforms." />
-  <meta name="twitter:image" content="https://catincloudlabs.com/assets/social-card.png" />
+  <meta name="twitter:image" content="https://catincloudlabs.com/assets/brand/social-card.png" />
 
   <!-- Icons & theme -->
   <link rel="icon" href="/assets/favicons/favicon.svg" type="image/svg+xml" />
@@ -72,11 +72,101 @@
     <!-- Contact card -->
     <section class="section">
       <div class="container">
-        <article class="card reveal" style="max-width: var(--maxw-readable); margin-inline:auto; text-align:center;">
+        <article class="card reveal" style="max-width: var(--maxw-readable); margin-inline:auto;">
           <h2>Get in touch</h2>
-          <p>You can reach us directly at:</p>
-          <p>
-            <a href="mailto:dave@catincloudlabs.com" class="button primary" aria-label="Email CatInCloud Labs">dave@catincloudlabs.com</a>
+          <p>Tell us a bit about your project, and we'll follow up with next steps and a time to talk.</p>
+
+          <!-- Success message (shown after redirect with ?status=thanks) -->
+          <div
+            id="form-status"
+            role="status"
+            aria-live="polite"
+            hidden
+            style="margin-top:1rem; padding:0.75rem 1rem; border-radius:0.5rem; border:1px solid rgba(34,197,94,0.4); background:rgba(22,163,74,0.04); font-size:0.95rem;">
+            Thanks for reaching out 😸 We'll get back to you as soon as I can.
+          </div>
+
+          <form
+            action="https://formspree.io/f/xwpavlwn"
+            method="POST"
+            class="stack"
+            style="--stack-gap:1rem; margin-top:1.5rem;"
+          >
+            <!-- Honeypot field (spam protection) -->
+            <div style="position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden;">
+              <label>
+                If you are a human, leave this field blank:
+                <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" />
+              </label>
+            </div>
+
+            <!-- Subject + redirect for Formspree -->
+            <input type="hidden" name="_subject" value="New inquiry from catincloudlabs.com" />
+            <input type="hidden" name="_redirect" value="https://catincloudlabs.com/thank-you" />
+
+            <label style="display:block; text-align:left;">
+              <span>Name<span aria-hidden="true"> *</span></span>
+              <input
+                type="text"
+                name="name"
+                autocomplete="name"
+                required
+              />
+            </label>
+
+            <label style="display:block; text-align:left;">
+              <span>Work email<span aria-hidden="true"> *</span></span>
+              <input
+                type="email"
+                name="email"
+                autocomplete="email"
+                required
+              />
+            </label>
+
+            <label style="display:block; text-align:left;">
+              <span>Company (optional)</span>
+              <input
+                type="text"
+                name="company"
+                autocomplete="organization"
+              />
+            </label>
+
+            <label style="display:block; text-align:left;">
+              <span>What are you exploring? (optional)</span>
+              <select name="interest">
+                <option value="">Select an option</option>
+                <option value="audit">Audit & hardening sprint</option>
+                <option value="pipeline">End-to-end pipeline build</option>
+                <option value="modernization">Modernizing an existing stack</option>
+                <option value="discovery">Discovery call / not sure yet</option>
+                <option value="other">Something else</option>
+              </select>
+            </label>
+
+            <label style="display:block; text-align:left;">
+              <span>How can we help?<span aria-hidden="true"> *</span></span>
+              <textarea
+                name="message"
+                rows="6"
+                required
+                placeholder="Share a bit about your current stack, goals, and timeline."
+              ></textarea>
+            </label>
+
+            <button type="submit" class="button primary" style="margin-top:0.5rem;">
+              Send message
+            </button>
+
+            <p style="font-size:0.85rem; color:var(--text-muted, #4b5563); margin-top:0.5rem;">
+              We respect your time and inbox. You'll hear back from a human (not a sales robot).
+            </p>
+          </form>
+
+          <p style="margin-top:1.5rem; font-size:0.9rem;">
+            Prefer email? You can always reach us directly at
+            <a href="mailto:dave@catincloudlabs.com" aria-label="Email CatInCloud Labs">dave@catincloudlabs.com</a>.
           </p>
         </article>
       </div>
@@ -96,6 +186,21 @@
         <a href="mailto:dave@catincloudlabs.com" aria-label="Email CatInCloud Labs">Contact</a>
       </div>
     </div>
+
+    <!-- Show success message based on query string (?status=thanks) -->
+    <script>
+      (function () {
+        try {
+          const params = new URLSearchParams(window.location.search || "");
+          if (params.get("status") === "thanks") {
+            const el = document.getElementById("form-status");
+            if (el) el.hidden = false;
+          }
+        } catch (e) {
+          // no-op
+        }
+      })();
+    </script>
 
     <!-- Set footer year + theme-color to match current computed background -->
     <script>

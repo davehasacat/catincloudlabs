@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Thank You - CatInCloud Labs</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Thanks for reaching out to CatInCloud Labs. We'll review your message and follow up with next steps." />
+  <meta name="robots" content="noindex,follow,max-image-preview:large" />
+  <link rel="canonical" href="https://catincloudlabs.com/thank-you" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Thank You - CatInCloud Labs" />
+  <meta property="og:description" content="We've received your message and will be in touch shortly." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://catincloudlabs.com/thank-you" />
+  <meta property="og:image" content="https://catincloudlabs.com/assets/brand/social-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content="CatInCloud Labs" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Thank You - CatInCloud Labs" />
+  <meta name="twitter:description" content="We've received your message and will be in touch shortly." />
+  <meta name="twitter:image" content="https://catincloudlabs.com/assets/brand/social-card.png" />
+
+  <!-- Icons & theme -->
+  <link rel="icon" href="/assets/favicons/favicon.svg" type="image/svg+xml" />
+  <link rel="alternate icon" href="/assets/favicons/favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" href="/assets/favicons/favicon.png" />
+  <meta name="theme-color" content="#f3f4f6" />
+  <meta name="color-scheme" content="light" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+</head>
+
+<body>
+  <!-- Accessibility: skip link -->
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="/" aria-label="CatInCloud Labs">
+        <img src="/assets/brand/logo-wordmark-light.svg" alt="CatInCloud Labs" height="32" />
+      </a>
+      <nav class="menu" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/projects">Projects</a>
+        <a href="/contact" class="button ghost">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero / Thank-you message -->
+    <section class="hero">
+      <div class="container hero-simple">
+        <div class="stack" style="--stack-gap:1rem">
+          <div class="kicker">Thank you</div>
+          <h1 class="title">We've received your message.</h1>
+          <p class="subtitle">
+            We'll review what you shared and follow up with next steps. In the meantime, feel free to reply to the confirmation email
+            or reach out directly if anything is urgent.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <article class="card reveal" style="max-width: var(--maxw-readable); margin-inline:auto; text-align:center;">
+          <h2>What happens next?</h2>
+          <p>We typically respond within one to two business days with a short set of clarifying questions or a suggested time to talk.</p>
+          <p style="margin-top:1rem;">
+            If you prefer, you can also email us directly at
+            <a href="mailto:dave@catincloudlabs.com" aria-label="Email CatInCloud Labs">dave@catincloudlabs.com</a>.
+          </p>
+          <div class="stack" style="--stack-gap:.75rem; margin-top:1.5rem; justify-content:center;">
+            <a href="/" class="button primary">Back to homepage</a>
+            <a href="/projects" class="button ghost">View recent projects</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container inner center">
+      <small>© <span id="y"></span> CatInCloud Labs - DaveHasACat LLC</small>
+      <p><em>Cats who cloud. Humans that stay grounded.</em></p>
+      <div class="stack" style="--stack-gap:.25rem; justify-content:center; margin-top:0.5rem;">
+        <a href="/about">About</a> ·
+        <a href="/security">Security</a> ·
+        <a href="/privacy">Privacy</a> ·
+        <a href="/terms">Terms</a> ·
+        <a href="mailto:dave@catincloudlabs.com" aria-label="Email CatInCloud Labs">Contact</a>
+      </div>
+    </div>
+
+    <!-- Set footer year + theme-color to match current computed background -->
+    <script>
+      document.getElementById('y').textContent = new Date().getFullYear();
+      const metaTheme = document.querySelector('meta[name="theme-color"]');
+      const bg = getComputedStyle(document.documentElement).getPropertyValue('--bg-page').trim();
+      if (metaTheme && bg) metaTheme.setAttribute('content', bg);
+    </script>
+  </footer>
+</body>
+</html>
