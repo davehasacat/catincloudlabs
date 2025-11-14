@@ -759,3 +759,25 @@ figure, .card { overflow: hidden; }
     max-width: 720px;
   }
 }
+
+/* Micro-tune hero subhead pill spacing & width */
+
+.hero-subhead-pill {
+  max-width: min(720px, 92vw);   /* a bit narrower on mobile */
+  margin: 0.75rem auto 1.5rem;   /* slightly closer to hero */
+}
+
+/* Tablet+ : pull it up a touch more into the hero area */
+@media (min-width: 768px) {
+  .hero-subhead-pill {
+    margin-top: -2rem;
+    margin-bottom: 2.25rem;
+  }
+}
+
+/* Laptop+ : bridge hero + flagship more clearly */
+@media (min-width: 1024px) {
+  .hero-subhead-pill {
+    margin-top: -2.75rem;
+  }
+}
