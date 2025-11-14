@@ -705,9 +705,10 @@ figure, .card { overflow: hidden; }
 }
 
 /* === HERO SUBHEAD PILL ============================================= */
+/* Lives between the hero and the flagship card */
 
 .hero-subhead-pill {
-  display: flex;                      /* block-level so margin:auto works */
+  display: flex;
   align-items: center;
   justify-content: flex-start;
   gap: 0.5rem;
@@ -721,7 +722,7 @@ figure, .card { overflow: hidden; }
   box-shadow: 0 18px 40px rgba(15, 23, 42, 0.4);
 
   max-width: min(720px, 94vw);
-  margin: 0.75rem auto 1.5rem;        /* centered between hero + flagship */
+  margin: 0.85rem auto 1.75rem;      /* centered between hero + flagship */
 }
 
 .hero-subhead-kicker {
@@ -740,18 +741,18 @@ figure, .card { overflow: hidden; }
   font-weight: 400;
 }
 
-/* Tablet+: gently tuck it up toward the hero */
+/* Tablet+: tuck it slightly up towards the hero */
 @media (min-width: 768px) {
   .hero-subhead-pill {
-    margin-top: -2.25rem;            /* pulls into bottom of hero */
+    margin-top: -1.75rem;            /* pulls into bottom of hero */
     margin-bottom: 2.25rem;
     border-radius: 999px;
   }
 }
 
-/* Large desktop: bridge a bit more */
+/* Large desktop: a bit more overlap */
 @media (min-width: 1200px) {
   .hero-subhead-pill {
-    margin-top: -3rem;
+    margin-top: -2.5rem;
   }
 }
