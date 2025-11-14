@@ -808,7 +808,7 @@ figure, .card { overflow: hidden; }
 
   display: flex;
   flex-direction: column;
-  padding-right: 2.0rem;
+  padding-right: 1.0rem;
 }
 
 .contact-form .field {
@@ -839,7 +839,7 @@ figure, .card { overflow: hidden; }
 .contact-form select,
 .contact-form textarea {
   width: 100%;
-  padding: 0.6rem 2.0rem;
+  padding: 0.6rem 0.75rem;
   border-radius: var(--field-radius);
   border: 1px solid var(--field-border-muted);
   background: var(--field-bg);
