@@ -704,11 +704,12 @@ figure, .card { overflow: hidden; }
   }
 }
 
-/* HERO SUBHEAD */
+/* === HERO SUBHEAD PILL ============================================= */
 
 .hero-subhead-pill {
-  display: inline-flex;
+  display: flex;                      /* block-level so margin:auto works */
   align-items: center;
+  justify-content: flex-start;
   gap: 0.5rem;
 
   padding: 0.6rem 1.1rem;
@@ -718,9 +719,9 @@ figure, .card { overflow: hidden; }
   font-size: 0.85rem;
   line-height: 1.4;
   box-shadow: 0 18px 40px rgba(15, 23, 42, 0.4);
-  max-width: min(720px, 92vw);
 
-  margin: 0.5rem auto 1.25rem;  /* noticeable change on mobile */
+  max-width: min(720px, 94vw);
+  margin: 0.75rem auto 1.5rem;        /* centered between hero + flagship */
 }
 
 .hero-subhead-kicker {
@@ -739,18 +740,18 @@ figure, .card { overflow: hidden; }
   font-weight: 400;
 }
 
-/* Tablet+: pull farther into the hero */
+/* Tablet+: gently tuck it up toward the hero */
 @media (min-width: 768px) {
   .hero-subhead-pill {
-    margin-top: -3rem;      /* was around -2rem */
-    margin-bottom: 2.5rem;
+    margin-top: -2.25rem;            /* pulls into bottom of hero */
+    margin-bottom: 2.25rem;
     border-radius: 999px;
   }
 }
 
-/* Laptop+: bridge even more clearly */
+/* Large desktop: bridge a bit more */
 @media (min-width: 1200px) {
   .hero-subhead-pill {
-    margin-top: -4rem;
+    margin-top: -3rem;
   }
 }
