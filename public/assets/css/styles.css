@@ -755,3 +755,12 @@ figure, .card { overflow: hidden; }
     justify-content: flex-start;
   }
 }
+
+@media (min-width: 1024px) {
+  .hero-subhead-pill {
+    bottom: 3.25rem;          /* was 2.5rem */
+    font-size: 0.85rem;       /* a hair smaller */
+    padding: 0.55rem 1rem;
+    max-width: 720px;         /* keeps it from feeling too wide */
+  }
+}
