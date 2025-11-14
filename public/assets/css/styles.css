@@ -1,7 +1,6 @@
 /*
 CatInCloud Labs — Bright Theme (Blue Variant, modernized with color-mix)
 Purpose: pivot the site to a clean sky blue + blue + white scheme with token-driven scales.
-Drop-in: /public/assets/css/styles.css
 */
 
 :root {
@@ -453,16 +452,39 @@ a:focus-visible,
 
 /* --- Compact subpage heroes (Privacy/Terms/Security/Contact) --- */
 .hero:has(.hero-simple) {
+  position: relative;
   min-height: clamp(160px, 22svh, 320px);
-  background: linear-gradient(180deg,
-              color-mix(in oklab, var(--accent) 4%, white),
-              #fff 40%);
+  background: linear-gradient(
+    180deg,
+    color-mix(in oklab, var(--accent) 4%, white),
+    #fff 40%
+  );
+  color: var(--text);            /* back to normal dark text */
 }
+
+/* Kill the dark video overlay on simple heroes */
+.hero:has(.hero-simple)::before {
+  content: none;
+}
+
+/* Inner layout + text reset */
 .hero:has(.hero-simple) .hero-simple .stack {
   padding-block: clamp(16px, 3vh, 24px);
 }
-.hero:has(.hero-simple) .title { margin-bottom: .4rem; }
-.hero:has(.hero-simple) .subtitle { max-width: 60ch; }
+
+.hero:has(.hero-simple) .title,
+.hero:has(.hero-simple) .subtitle {
+  color: var(--text);
+  text-shadow: none;             /* remove DAG-style glow */
+}
+
+.hero:has(.hero-simple) .title {
+  margin-bottom: 0.4rem;
+}
+
+.hero:has(.hero-simple) .subtitle {
+  max-width: 60ch;
+}
 
 /* --- Sticky footer on short pages --- */
 html, body { height: 100%; }
@@ -772,6 +794,6 @@ figure, .card { overflow: hidden; }
 @media (min-width: 1024px) {
   .hero-subhead-pill {
     margin-top: -1rem;     /* was -1.75rem / -2.5rem; less overlap with hero */
-    margin-bottom: 2.5rem; /* a bit more breathing room above the flagship card */
+    margin-bottom: 2.75rem; /* a bit more breathing room above the flagship card */
   }
 }
