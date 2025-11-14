@@ -878,7 +878,7 @@ figure, .card { overflow: hidden; }
     calc(100% - 9px) 50%;
   background-size: 6px 6px, 6px 6px;
   background-repeat: no-repeat;
-  padding-right: 2rem;
+  padding-right: 1.0rem;
 }
 
 .contact-form .form-footnote {
