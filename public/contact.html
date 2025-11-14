@@ -76,20 +76,10 @@
           <h2>Get in touch</h2>
           <p>Tell us a bit about your project, and we'll follow up with next steps and a time to talk.</p>
 
-          <!-- Success message (shown after redirect with ?status=thanks) -->
-          <div
-            id="form-status"
-            role="status"
-            aria-live="polite"
-            hidden
-            style="margin-top:1rem; padding:0.75rem 1rem; border-radius:0.5rem; border:1px solid rgba(34,197,94,0.4); background:rgba(22,163,74,0.04); font-size:0.95rem;">
-            Thanks for reaching out 😸 We'll get back to you as soon as I can.
-          </div>
-
           <form
             action="https://formspree.io/f/xwpavlwn"
             method="POST"
-            class="stack"
+            class="stack contact-form"
             style="--stack-gap:1rem; margin-top:1.5rem;"
           >
             <!-- Honeypot field (spam protection) -->
@@ -104,8 +94,10 @@
             <input type="hidden" name="_subject" value="New inquiry from catincloudlabs.com" />
             <input type="hidden" name="_redirect" value="https://catincloudlabs.com/thank-you" />
 
-            <label style="display:block; text-align:left;">
-              <span>Name<span aria-hidden="true"> *</span></span>
+            <label class="field">
+              <span class="field-label">
+                Name <span class="required" aria-hidden="true">*</span>
+              </span>
               <input
                 type="text"
                 name="name"
@@ -114,8 +106,10 @@
               />
             </label>
 
-            <label style="display:block; text-align:left;">
-              <span>Work email<span aria-hidden="true"> *</span></span>
+            <label class="field">
+              <span class="field-label">
+                Work email <span class="required" aria-hidden="true">*</span>
+              </span>
               <input
                 type="email"
                 name="email"
@@ -124,8 +118,8 @@
               />
             </label>
 
-            <label style="display:block; text-align:left;">
-              <span>Company (optional)</span>
+            <label class="field">
+              <span class="field-label">Company <span class="field-optional">(optional)</span></span>
               <input
                 type="text"
                 name="company"
@@ -133,11 +127,11 @@
               />
             </label>
 
-            <label style="display:block; text-align:left;">
-              <span>What are you exploring? (optional)</span>
+            <label class="field">
+              <span class="field-label">What are you exploring? <span class="field-optional">(optional)</span></span>
               <select name="interest">
                 <option value="">Select an option</option>
-                <option value="audit">Audit & hardening sprint</option>
+                <option value="audit">Audit &amp; hardening sprint</option>
                 <option value="pipeline">End-to-end pipeline build</option>
                 <option value="modernization">Modernizing an existing stack</option>
                 <option value="discovery">Discovery call / not sure yet</option>
@@ -145,8 +139,10 @@
               </select>
             </label>
 
-            <label style="display:block; text-align:left;">
-              <span>How can we help?<span aria-hidden="true"> *</span></span>
+            <label class="field">
+              <span class="field-label">
+                How can we help? <span class="required" aria-hidden="true">*</span>
+              </span>
               <textarea
                 name="message"
                 rows="6"
@@ -159,7 +155,7 @@
               Send message
             </button>
 
-            <p style="font-size:0.85rem; color:var(--text-muted, #4b5563); margin-top:0.5rem;">
+            <p class="form-footnote">
               We respect your time and inbox. You'll hear back from a human (not a sales robot).
             </p>
           </form>
@@ -186,21 +182,6 @@
         <a href="mailto:dave@catincloudlabs.com" aria-label="Email CatInCloud Labs">Contact</a>
       </div>
     </div>
-
-    <!-- Show success message based on query string (?status=thanks) -->
-    <script>
-      (function () {
-        try {
-          const params = new URLSearchParams(window.location.search || "");
-          if (params.get("status") === "thanks") {
-            const el = document.getElementById("form-status");
-            if (el) el.hidden = false;
-          }
-        } catch (e) {
-          // no-op
-        }
-      })();
-    </script>
 
     <!-- Set footer year + theme-color to match current computed background -->
     <script>

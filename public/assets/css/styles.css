@@ -797,3 +797,91 @@ figure, .card { overflow: hidden; }
     margin-bottom: 2.25rem; /* a bit more breathing room above the flagship card */
   }
 }
+
+/* === Contact form === */
+
+.contact-form {
+  --field-radius: 0.75rem;
+  --field-border-muted: color-mix(in oklab, var(--accent) 6%, #e5e7eb);
+  --field-border-strong: color-mix(in oklab, var(--accent) 25%, #d1d5db);
+  --field-bg: #ffffff;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form .field {
+  text-align: left;
+}
+
+.contact-form .field-label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-subtle, #374151);
+}
+
+.contact-form .required {
+  color: var(--accent-500, var(--accent));
+  font-weight: 600;
+}
+
+.contact-form .field-optional {
+  font-weight: 400;
+  font-size: 0.85rem;
+  color: var(--text-muted, #6b7280);
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  border-radius: var(--field-radius);
+  border: 1px solid var(--field-border-muted);
+  background: var(--field-bg);
+  font: inherit;
+  line-height: 1.4;
+  transition:
+    border-color 120ms ease,
+    box-shadow 120ms ease,
+    background-color 120ms ease;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 6rem;
+}
+
+.contact-form input[type="text"]:focus-visible,
+.contact-form input[type="email"]:focus-visible,
+.contact-form select:focus-visible,
+.contact-form textarea:focus-visible {
+  outline: none;
+  border-color: var(--field-border-strong);
+  box-shadow: 0 0 0 1px var(--accent-200);
+}
+
+/* Make the select look a bit nicer cross-browser */
+.contact-form select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--accent) 50%),
+    linear-gradient(135deg, var(--accent) 50%, transparent 50%);
+  background-position:
+    calc(100% - 14px) 50%,
+    calc(100% - 9px) 50%;
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+  padding-right: 2rem;
+}
+
+.contact-form .form-footnote {
+  font-size: 0.85rem;
+  color: var(--text-muted, #6b7280);
+  margin-top: 0.25rem;
+}
