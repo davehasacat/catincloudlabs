@@ -793,7 +793,7 @@ figure, .card { overflow: hidden; }
 /* Laptop/desktop: lower the hero subhead pill so it doesn't cover the "load" task */
 @media (min-width: 1024px) {
   .hero-subhead-pill {
-    margin-top: -1rem;     /* was -1.75rem / -2.5rem; less overlap with hero */
-    margin-bottom: 2.75rem; /* a bit more breathing room above the flagship card */
+    margin-top: -0.9rem;     /* was -1.75rem / -2.5rem; less overlap with hero */
+    margin-bottom: 2.5rem; /* a bit more breathing room above the flagship card */
   }
 }
