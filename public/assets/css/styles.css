@@ -808,7 +808,7 @@ figure, .card { overflow: hidden; }
 
   display: flex;
   flex-direction: column;
-  padding-right: 1.0rem;
+  padding-right: 1rem;
 }
 
 .contact-form .field {
@@ -878,7 +878,7 @@ figure, .card { overflow: hidden; }
     calc(100% - 9px) 50%;
   background-size: 6px 6px, 6px 6px;
   background-repeat: no-repeat;
-  padding-right: 1.0rem;
+  padding-right: 2rem;
 }
 
 .contact-form .form-footnote {
