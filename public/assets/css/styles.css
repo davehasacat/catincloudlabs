@@ -704,10 +704,6 @@ figure, .card { overflow: hidden; }
   }
 }
 
-.hero {
-  position: relative;
-}
-
 /* HERO SUBHEAD */
 
 .hero-subhead-pill {
