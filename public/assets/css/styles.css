@@ -708,7 +708,7 @@ figure, .card { overflow: hidden; }
   position: relative;
 }
 
-/* Pill between hero and flagship */
+/* HERO SUBHEAD */
 
 .hero-subhead-pill {
   display: inline-flex;
@@ -722,9 +722,9 @@ figure, .card { overflow: hidden; }
   font-size: 0.85rem;
   line-height: 1.4;
   box-shadow: 0 18px 40px rgba(15, 23, 42, 0.4);
-  max-width: min(800px, 92vw);
+  max-width: min(720px, 92vw);
 
-  margin: 1rem auto 1.75rem; /* mobile: just sits between hero + card */
+  margin: 0.5rem auto 1.25rem;  /* noticeable change on mobile */
 }
 
 .hero-subhead-kicker {
@@ -743,41 +743,18 @@ figure, .card { overflow: hidden; }
   font-weight: 400;
 }
 
-/* Tablet+: gently pull it up so it overlaps the hero slightly */
+/* Tablet+: pull farther into the hero */
 @media (min-width: 768px) {
   .hero-subhead-pill {
-    margin-top: -1.5rem;  /* pulls up into the bottom of the hero */
-    margin-bottom: 2rem;
+    margin-top: -3rem;      /* was around -2rem */
+    margin-bottom: 2.5rem;
     border-radius: 999px;
   }
 }
 
-/* Laptop+: match the spacing you liked on desktop */
-@media (min-width: 1024px) {
+/* Laptop+: bridge even more clearly */
+@media (min-width: 1200px) {
   .hero-subhead-pill {
-    margin-top: -2.25rem;
-    max-width: 720px;
-  }
-}
-
-/* Micro-tune hero subhead pill spacing & width */
-
-.hero-subhead-pill {
-  max-width: min(720px, 92vw);   /* a bit narrower on mobile */
-  margin: 0.75rem auto 1.5rem;   /* slightly closer to hero */
-}
-
-/* Tablet+ : pull it up a touch more into the hero area */
-@media (min-width: 768px) {
-  .hero-subhead-pill {
-    margin-top: -2rem;
-    margin-bottom: 2.25rem;
-  }
-}
-
-/* Laptop+ : bridge hero + flagship more clearly */
-@media (min-width: 1024px) {
-  .hero-subhead-pill {
-    margin-top: -2.75rem;
+    margin-top: -4rem;
   }
 }
