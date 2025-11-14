@@ -378,6 +378,15 @@ a:hover { color: var(--link-hover); text-decoration: underline; }
   }
 }
 
+/* Push hero text up a bit on desktop */
+@media (min-width: 1024px) {
+  :is(.hero__content, .ci-hero__content){
+    /* less top padding, a bit more bottom = content shifts upward */
+    padding-top: clamp(32px, 5vh, 64px);
+    padding-bottom: clamp(56px, 14vh, 140px);
+  }
+}
+
 /* === Diagrams ========================================================= */
 .proof-diagram.card {
   border-radius: 1rem;
