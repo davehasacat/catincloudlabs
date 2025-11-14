@@ -487,6 +487,11 @@ html, body {
   overflow-x: clip; /* only clamp the horizontal axis */
 }
 
+/* Let the subhead pill overlap upward without being clipped */
+:is(.hero, .ci-hero){
+  overflow-y: visible;
+}
+
 /* If decorative backgrounds use pseudo-elements, keep them inside */
 :is(.hero, .ci-hero)::before,
 :is(.hero, .ci-hero)::after {
