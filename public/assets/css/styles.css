@@ -708,18 +708,15 @@ figure, .card { overflow: hidden; }
   position: relative;
 }
 
-/* Pill that sits near the bottom of the hero */
+/* Mobile-first: simple pill in normal flow */
 .hero-subhead-pill {
-  position: absolute;
-  left: 50%;
-  bottom: 2.5rem; /* adjust up/down to taste */
-  transform: translateX(-50%);
+  margin: 1.25rem auto 0;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   padding: 0.6rem 1.1rem;
-  border-radius: 999px;
-  background: rgba(15, 23, 42, 0.82); /* dark overlay */
+  border-radius: 1rem;
+  background: rgba(15, 23, 42, 0.9);
   color: #f9fafb;
   font-size: 0.9rem;
   line-height: 1.4;
@@ -727,7 +724,6 @@ figure, .card { overflow: hidden; }
   max-width: min(800px, 92vw);
 }
 
-/* Small “label” inside the pill */
 .hero-subhead-kicker {
   font-weight: 600;
   text-transform: uppercase;
@@ -739,28 +735,29 @@ figure, .card { overflow: hidden; }
   color: #f9fafb;
 }
 
-/* The longer descriptive bit */
 .hero-subhead-text {
   font-weight: 400;
 }
 
-/* Mobile: let it sit in normal flow, not absolutely positioned */
-@media (max-width: 768px) {
+/* Tablet+ : center it under the hero */
+@media (min-width: 768px) {
   .hero-subhead-pill {
-    position: static;
-    transform: none;
-    margin: 1.25rem auto 0;
-    border-radius: 1rem;
-    text-align: left;
+    position: absolute;
+    left: 50%;
+    bottom: 3rem;
+    transform: translateX(-50%);
+    margin: 0;
+    border-radius: 999px;
     justify-content: flex-start;
   }
 }
 
+/* Laptop+ : micro-tweak size/spacing */
 @media (min-width: 1024px) {
   .hero-subhead-pill {
-    bottom: 3.25rem;          /* was 2.5rem */
-    font-size: 0.85rem;       /* a hair smaller */
+    bottom: 3.25rem;
+    font-size: 0.85rem;
     padding: 0.55rem 1rem;
-    max-width: 720px;         /* keeps it from feeling too wide */
+    max-width: 720px;
   }
 }
