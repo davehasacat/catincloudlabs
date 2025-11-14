@@ -761,3 +761,9 @@ figure, .card { overflow: hidden; }
     margin-top: -2.5rem;
   }
 }
+
+/* Make sure the subhead pill sits on top of hero + section */
+.hero-subhead-pill {
+  position: relative;   /* enable z-index */
+  z-index: 3;           /* above hero/section default stacking */
+}
