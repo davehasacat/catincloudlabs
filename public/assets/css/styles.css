@@ -808,7 +808,7 @@ figure, .card { overflow: hidden; }
 
   display: flex;
   flex-direction: column;
-  padding-right: 0.75rem;
+  padding-right: 1.0rem;
 }
 
 .contact-form .field {
