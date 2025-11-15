@@ -277,21 +277,32 @@
               data-proof-caption
               style="margin-top:0.9rem;font-size:0.95rem;color:#334155;"
             >
-              Ingest — API → S3 (RAW)
+              Ingest - API -> S3 (RAW)
             </p>
 
             <!-- New: 3-panel end-to-end proof image -->
-            <figure class="proof-figure" style="margin-top:1.75rem;text-align:center;">
-              <img
-                src="/assets/proof/proof-end-to-end-panel.v1.png"
-                alt="Three panels showing daily Airflow runs for the stocks load, a partitioned validation DAG, and Snowflake rows with trade_date and load_date."
-                class="proof-figure__img"
-                loading="lazy"
-                decoding="async"
-                style="max-width:100%;height:auto;border-radius:1.5rem;box-shadow:0 18px 40px rgba(15,23,42,0.26);"
-              />
-              <figcaption class="proof-figure__caption" style="margin-top:0.75rem;font-size:0.9rem;color:#4b5563;">
-                From scheduled Airflow runs to validated rows in Snowflake; the same pattern we'd adapt to your
+            <figure class="proof-figure">
+              <button
+                type="button"
+                class="proof-figure__button"
+                data-panel-open
+                data-caption="From scheduled Airflow runs to validated rows in Snowflake-the same pattern we'd adapt to your sources and your environment."
+                aria-label="Click to zoom the end-to-end 3-panel pipeline screenshot"
+              >
+                <img
+                  src="/assets/proof/proof-end-to-end-panel.v1.png"
+                  alt="Three panels showing daily Airflow runs for the stocks load, a partitioned validation DAG, and Snowflake rows with trade_date and load_date."
+                  class="proof-figure__img"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span class="proof-zoom-pill">
+                  Click to zoom
+                </span>
+              </button>
+
+              <figcaption class="proof-figure__caption">
+                From scheduled Airflow runs to validated rows in Snowflake&mdash;the same pattern we'd adapt to your
                 sources and your environment.
               </figcaption>
             </figure>
@@ -310,7 +321,7 @@
       <p class="lb__caption" id="lb-caption"></p>
       <div class="lb__nav" aria-hidden="true">
         <button class="lb__prev" type="button" title="Previous (←)" aria-label="Previous image">&#10094;</button>
-        <button class="lb__next" type="button" title="Next (→)" aria-label="Next image">&#10095;</button>
+        <button class="lb__next" type="button" title="Next (->)" aria-label="Next image">&#10095;</button>
       </div>
     </div>
   </div>
@@ -338,6 +349,7 @@
     </script>
     <script src="/assets/js/hero-auto-pause.js" defer></script>
     <script src="/assets/js/proof-lightbox.js" defer></script>
+    <script src="/assets/js/proof-panel-lightbox.js" defer></script>
   </footer>
 </body>
 </html>
