@@ -886,3 +886,99 @@ figure, .card { overflow: hidden; }
   color: var(--text-muted, #6b7280);
   margin-top: 0.25rem;
 }
+
+/* === Proof of Success: 3-panel image === */
+
+.proof-figure {
+  margin-top: 1.75rem;
+  text-align: center;
+}
+
+.proof-figure__img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 1.5rem;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.26);
+}
+
+/* Caption under the 3-panel image */
+.proof-figure__caption {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #4b5563; /* slate-600; adjust if you have a token like var(--text-muted) */
+  max-width: 48rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Slightly tighten spacing on smaller screens */
+@media (max-width: 640px) {
+  .proof-figure {
+    margin-top: 1.25rem;
+  }
+
+  .proof-figure__caption {
+    font-size: 0.85rem;
+  }
+}
+
+/* === Proof of Success: 3-panel image === */
+
+.proof-figure {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.proof-figure__button {
+  border: 0;
+  padding: 0;
+  background: none;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+}
+
+/* Slightly larger on desktop, but still responsive */
+.proof-figure__img {
+  width: 100%;
+  max-width: 960px; /* <-- makes it a tad larger than the top proof image */
+  height: auto;
+  border-radius: 1.5rem;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.26);
+}
+
+/* Reusable 'Click to zoom' pill */
+.proof-zoom-pill {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  background: rgba(15, 23, 42, 0.9);
+  color: #f9fafb;
+}
+
+/* Caption under the 3-panel image */
+.proof-figure__caption {
+  margin-top: 0.75rem;
+  margin-bottom: 0.25rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #4b5563;
+  max-width: 48rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 640px) {
+  .proof-figure {
+    margin-top: 1.5rem;
+  }
+
+  .proof-figure__caption {
+    font-size: 0.9rem;
+    line-height: 1.55;
+  }
+}
