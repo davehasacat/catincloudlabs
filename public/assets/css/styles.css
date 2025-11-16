@@ -809,6 +809,17 @@ figure, .card { overflow: hidden; }
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
+
+  /* Mobile / base: let the card handle most of the padding */
+  padding-right: 0.5rem;
+}
+
+/* Desktop: give extra breathing room on the right so fields
+   don’t hug the card edge */
+@media (min-width: 1024px) {
+  .contact-form {
+    padding-right: 2.5rem;  /* adjust between 2–3rem to taste */
+  }
 }
 
 /* Slightly less padding on smaller screens so it doesn’t feel cramped */
