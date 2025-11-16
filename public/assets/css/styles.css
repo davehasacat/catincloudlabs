@@ -808,7 +808,25 @@ figure, .card { overflow: hidden; }
 
   display: flex;
   flex-direction: column;
-  padding-right: 1rem;
+  box-sizing: border-box;
+
+  /* Mobile / base: let the card handle most of the padding */
+  padding-right: 0.5rem;
+}
+
+/* Desktop: give extra breathing room on the right so fields
+   don’t hug the card edge */
+@media (min-width: 1024px) {
+  .contact-form {
+    padding-right: 2.5rem;  /* adjust between 2–3rem to taste */
+  }
+}
+
+/* Slightly less padding on smaller screens so it doesn’t feel cramped */
+@media (max-width: 768px) {
+  .contact-form {
+    padding-right: 0.75rem;
+  }
 }
 
 .contact-form .field {
@@ -980,5 +998,28 @@ figure, .card { overflow: hidden; }
   .proof-figure__caption {
     font-size: 0.9rem;
     line-height: 1.55;
+  }
+}
+
+/* Contact page card: give the whole block more breathing room */
+.page--contact .card,
+.page--contact .contact-card {
+  padding-inline: clamp(1.75rem, 4vw, 2.5rem);
+}
+
+/* On smaller screens, don’t over-pad */
+@media (max-width: 640px) {
+  .page--contact .card,
+  .page--contact .contact-card {
+    padding-inline: 1.25rem;
+  }
+}
+
+/* Desktop-only: give the contact form its own narrower column */
+@media (min-width: 1024px) {
+  .contact-form {
+    max-width: 640px;   /* tweak to taste: 600–720px is a good range */
+    width: 100%;
+    margin-right: auto; /* align with left side of the card */
   }
 }
