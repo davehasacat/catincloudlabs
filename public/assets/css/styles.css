@@ -1013,7 +1013,7 @@ figure, .card { overflow: hidden; }
 
   /* Make the form itself a slightly narrower column */
   .page--contact .contact-form {
-    max-width: 640px;   /* tweak up/down if you want */
+    max-width: 600px;   /* tweak up/down if you want */
     width: 100%;
   }
 }
