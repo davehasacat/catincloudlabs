@@ -808,7 +808,17 @@ figure, .card { overflow: hidden; }
 
   display: flex;
   flex-direction: column;
-  padding-right: 1rem;
+
+  /* Give the fields a bit more breathing room on the right inside the card */
+  padding-right: clamp(1.25rem, 3vw, 1.75rem);
+  box-sizing: border-box;
+}
+
+/* Slightly less padding on smaller screens so it doesn’t feel cramped */
+@media (max-width: 768px) {
+  .contact-form {
+    padding-right: 0.75rem;
+  }
 }
 
 .contact-form .field {
