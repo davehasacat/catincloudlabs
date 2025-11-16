@@ -808,9 +808,6 @@ figure, .card { overflow: hidden; }
 
   display: flex;
   flex-direction: column;
-
-  /* Give the fields a bit more breathing room on the right inside the card */
-  padding-right: clamp(1.25rem, 3vw, 1.75rem);
   box-sizing: border-box;
 }
 
@@ -990,5 +987,19 @@ figure, .card { overflow: hidden; }
   .proof-figure__caption {
     font-size: 0.9rem;
     line-height: 1.55;
+  }
+}
+
+/* Contact page card: give the whole block more breathing room */
+.page--contact .card,
+.page--contact .contact-card {
+  padding-inline: clamp(1.75rem, 4vw, 2.5rem);
+}
+
+/* On smaller screens, don’t over-pad */
+@media (max-width: 640px) {
+  .page--contact .card,
+  .page--contact .contact-card {
+    padding-inline: 1.25rem;
   }
 }
