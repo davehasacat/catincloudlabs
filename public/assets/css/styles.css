@@ -1004,16 +1004,11 @@ figure, .card { overflow: hidden; }
   }
 }
 
-/* Desktop-only tweaks for contact form */
+/* Desktop-only: give the contact form its own narrower column */
 @media (min-width: 1024px) {
-  /* Keep the card nice and roomy */
-  .page--contact .contact-card {
-    padding-inline: 2.25rem;
-  }
-
-  /* Make the form itself a slightly narrower column */
-  .page--contact .contact-form {
-    max-width: 600px;   /* tweak up/down if you want */
+  .contact-form {
+    max-width: 640px;   /* tweak to taste: 600–720px is a good range */
     width: 100%;
+    margin-right: auto; /* align with left side of the card */
   }
 }
