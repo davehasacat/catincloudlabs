@@ -117,7 +117,8 @@
             Enterprise-grade data pipelines for small teams.
           </h1>
           <p class="subtitle">
-            I help lean engineering teams design and run AWS + Snowflake pipelines that are secure, observable, and boring-on-purpose. I'll wrestle with messy data while you ship features.
+            I help lean engineering teams design and run AWS + Snowflake pipelines that are secure, observable, and boring-on-purpose.
+            I'll wrestle with messy data so you can keep shipping features.
           </p>
 
           <div class="hero__cta">
@@ -128,10 +129,6 @@
               See proof of success
             </a>
           </div>
-
-          <p class="hero-footnote">
-            A 30-minute call to talk through your stack, what's working, what's not, and whether CatInCloud Labs is a fit.
-          </p>
         </div>
       </div>
     </section>
@@ -338,7 +335,7 @@
       <p class="lb__caption" id="lb-caption"></p>
       <div class="lb__nav" aria-hidden="true">
         <button class="lb__prev" type="button" title="Previous (←)" aria-label="Previous image">&#10094;</button>
-        <button class="lb__next" type="button" title="Next (->)" aria-label="Next image">&#10095;</button>
+        <button class="lb__next" type="button" title="Next image">&#10095;</button>
       </div>
     </div>
   </div>
@@ -357,13 +354,8 @@
       </div>
     </div>
 
-    <!-- Set footer year + theme-color -->
-    <script>
-      document.getElementById('y').textContent = new Date().getFullYear();
-      const metaTheme = document.querySelector('meta[name="theme-color"]');
-      const bg = getComputedStyle(document.documentElement).getPropertyValue('--bg-page').trim();
-      if (metaTheme && bg) metaTheme.setAttribute('content', bg);
-    </script>
+    <!-- Scripts -->
+    <script src="/assets/js/footer-year-theme.js" defer></script>
     <script src="/assets/js/hero-auto-pause.js" defer></script>
     <script src="/assets/js/proof-lightbox.js" defer></script>
     <script src="/assets/js/proof-panel-lightbox.js" defer></script>

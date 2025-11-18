@@ -1023,3 +1023,8 @@ figure, .card { overflow: hidden; }
     margin-right: auto; /* align with left side of the card */
   }
 }
+
+.hero__content .subtitle {
+  max-width: 40rem;
+  margin-inline: auto;
+}
