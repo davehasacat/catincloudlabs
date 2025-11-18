@@ -194,11 +194,15 @@ a:hover { color: var(--link-hover); text-decoration: underline; }
 /* Media fills the section */
 :is(.hero__media, .ci-hero__media){ position:absolute; inset:0; overflow:hidden; }
 :is(.hero__video, .ci-hero__video){
-  width:100%; height:100%;
+  width:100%;
+  height:100%;
   object-fit: cover;
   /* Keep the bottom of the DAG visible by default */
   object-position: 50% 88%;
   display:block;
+
+  /* Light dim to reduce visual noise behind the text */
+  filter: brightness(0.78);
 }
 
 /* Content sits above the video */
@@ -286,9 +290,11 @@ a:hover { color: var(--link-hover); text-decoration: underline; }
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at center,
-      rgba(15, 23, 42, 0.10),
-      rgba(15, 23, 42, 0.85));
+    radial-gradient(
+      circle at center,
+      rgba(15, 23, 42, 0.45),
+      rgba(15, 23, 42, 0.90)
+    );
   z-index: 1;
   pointer-events: none;
 }
@@ -350,12 +356,14 @@ a:hover { color: var(--link-hover); text-decoration: underline; }
 
 /* Desktop hero polish (keep mobile as-is) */
 @media (min-width: 1024px) {
-  /* Let more of the DAG show through on large screens */
+  /* Desktop: still dimmed, but let a little more of the DAG peek through */
   :is(.hero, .ci-hero)::before{
     background:
-      radial-gradient(circle at center,
-        rgba(15, 23, 42, 0.02),
-        rgba(15, 23, 42, 0.65));
+      radial-gradient(
+        circle at center,
+        rgba(15, 23, 42, 0.35),
+        rgba(15, 23, 42, 0.75)
+      );
   }
 
   :is(.hero__content, .ci-hero__content) h1{
@@ -585,7 +593,7 @@ figure, .card { overflow: hidden; }
   pointer-events: none;
 }
 
-/* Lightbox */
+/* Lightbox base */
 .lb[aria-hidden="false"] { display: block; }
 .lb[hidden] { display: none !important; }
 
@@ -794,7 +802,7 @@ figure, .card { overflow: hidden; }
 @media (min-width: 1024px) {
   .hero-subhead-pill {
     margin-top: -0.85rem;     /* was -1.75rem / -2.5rem; less overlap with hero */
-    margin-bottom: 2.25rem; /* a bit more breathing room above the flagship card */
+    margin-bottom: 2.25rem;   /* a bit more breathing room above the flagship card */
   }
 }
 
@@ -908,42 +916,6 @@ figure, .card { overflow: hidden; }
 /* === Proof of Success: 3-panel image === */
 
 .proof-figure {
-  margin-top: 1.75rem;
-  text-align: center;
-}
-
-.proof-figure__img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 1.5rem;
-  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.26);
-}
-
-/* Caption under the 3-panel image */
-.proof-figure__caption {
-  margin-top: 0.75rem;
-  font-size: 0.9rem;
-  line-height: 1.5;
-  color: #4b5563; /* slate-600; adjust if you have a token like var(--text-muted) */
-  max-width: 48rem;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* Slightly tighten spacing on smaller screens */
-@media (max-width: 640px) {
-  .proof-figure {
-    margin-top: 1.25rem;
-  }
-
-  .proof-figure__caption {
-    font-size: 0.85rem;
-  }
-}
-
-/* === Proof of Success: 3-panel image === */
-
-.proof-figure {
   margin-top: 2rem;
   text-align: center;
 }
@@ -960,7 +932,7 @@ figure, .card { overflow: hidden; }
 /* Slightly larger on desktop, but still responsive */
 .proof-figure__img {
   width: 100%;
-  max-width: 960px; /* <-- makes it a tad larger than the top proof image */
+  max-width: 960px; /* makes it a tad larger than the top proof image */
   height: auto;
   border-radius: 1.5rem;
   box-shadow: 0 18px 40px rgba(15, 23, 42, 0.26);
