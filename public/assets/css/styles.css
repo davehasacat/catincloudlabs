@@ -467,7 +467,6 @@ main { flex: 1; } /* sticky footer support */
   }
 }
 
-
 /* === Diagrams ========================================================= */
 .proof-diagram.card {
   border-radius: 1rem;
@@ -1024,15 +1023,16 @@ figure, .card { overflow: hidden; }
   margin-inline: auto;
   margin-bottom: 0.75rem;
   font-size: clamp(0.98rem, 0.7rem + 0.6vw, 1.05rem);
-  color: rgba(249, 250, 251, 0.92); /* slightly softer than pure white */
+  color: rgba(249, 250, 251, 0.92);
 }
 
 /* Hero subtitle + footnote tuning */
 .hero-footnote {
-  max-width: 36rem;              /* narrower so it feels like a footnote */
-  margin: 0.75rem auto 0;        /* a bit more breathing room from CTAs */
-  font-size: 0.88rem;            /* slightly smaller than body text */
+  max-width: 36rem;
+  margin: 0.75rem auto 0;
+  font-size: 0.88rem;
   line-height: 1.5;
   color: rgba(249, 250, 251, 0.78);
   text-wrap: balance;
+  text-align: center;
 }
