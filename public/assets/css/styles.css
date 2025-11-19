@@ -93,18 +93,32 @@ Purpose: pivot the site to a clean sky blue + blue + white scheme with token-dri
 }
 
 /* Base */
-html { color-scheme: light; }
-html, body { overflow-x: hidden; }        /* guard against 100vw math/overflows */
+html { 
+  color-scheme: light; 
+  height: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 body {
   margin: 0;
   background: var(--bg-page);
   color: var(--text);
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
   line-height: 1.6;
+  height: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column; /* sticky footer layout */
 }
 
 /* Media should never overflow */
-img, svg, video, canvas { max-width: 100%; height: auto; display: block; }
+img, svg, video, canvas { 
+  max-width: 100%; 
+  height: auto; 
+  display: block; 
+}
 
 /* Skip link (single definition) */
 .skip-link{
@@ -120,7 +134,7 @@ img, svg, video, canvas { max-width: 100%; height: auto; display: block; }
 h1 { font-size: clamp(2rem, 1.2rem + 3vw, 3rem); line-height: 1.15; margin: 0 0 .5rem; }
 h2 { font-size: clamp(1.5rem, 1rem + 1.5vw, 2rem); margin: 2rem 0 .75rem; }
 h3 { font-size: 1.25rem; margin: 1.25rem 0 .5rem; }
-p { margin: 0 0 1rem; }
+p  { margin: 0 0 1rem; }
 small, .muted { color: var(--text-muted); }
 
 /* Hero kicker (small label above H1) */
@@ -130,18 +144,37 @@ small, .muted { color: var(--text-muted); }
   letter-spacing: 0.16em;
   text-transform: uppercase;
   opacity: 0.92;
+  color: var(--text-muted);
+}
+
+/* Kicker when it lives over the hero video */
+:is(.hero__content, .ci-hero__content) .kicker {
+  color: #e5f6ff;
+  text-shadow:
+    0 0 4px rgba(15, 23, 42, 0.8),
+    0 0 10px rgba(15, 23, 42, 0.9);
+  margin-bottom: 0.1rem;
 }
 
 /* Links */
-a { color: var(--link); text-decoration: none; transition: color var(--transition-fast); }
-a:hover { color: var(--link-hover); text-decoration: underline; }
+a { 
+  color: var(--link); 
+  text-decoration: none; 
+  transition: color var(--transition-fast); 
+}
+a:hover { 
+  color: var(--link-hover); 
+  text-decoration: underline; 
+}
 
 /* Layout */
 .container { width: min(1100px, 92vw); margin-inline: auto; }
-.section { padding-inline: clamp(16px, 4vw, 24px); }  /* prevents >100vw with child 100vw */
+.section  { padding-inline: clamp(16px, 4vw, 24px); }  /* prevents >100vw with child 100vw */
 .stack > * + * { margin-top: var(--stack-gap, 1.25rem); }
 .grid { display: grid; gap: 1.25rem; }
 .grid.cols-3 { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+
+main { flex: 1; } /* sticky footer support */
 
 /* Components */
 .header {
@@ -158,11 +191,28 @@ a:hover { color: var(--link-hover); text-decoration: underline; }
 .nav .menu a:hover { background: var(--gray-100); }
 
 /* Cards & buttons */
-.card { background: var(--bg-surface); border: 1px solid var(--gray-200); border-radius: var(--radius-lg); padding: 1.25rem; box-shadow: var(--shadow-sm); }
+.card { 
+  background: var(--bg-surface); 
+  border: 1px solid var(--gray-200); 
+  border-radius: var(--radius-lg); 
+  padding: 1.25rem; 
+  box-shadow: var(--shadow-sm); 
+}
 .card:hover { box-shadow: var(--shadow-md); }
 .eyebrow{ font-size:.8rem; font-weight:600; color: var(--accent-700); letter-spacing:.06em; text-transform:uppercase; }
 
-.button { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; padding: .7rem 1rem; border-radius: var(--radius-md); border: 1px solid transparent; font-weight: 600; cursor: pointer; transition: transform var(--transition), background var(--transition); }
+.button { 
+  display: inline-flex; 
+  align-items: center; 
+  justify-content: center; 
+  gap: .5rem; 
+  padding: .7rem 1rem; 
+  border-radius: var(--radius-md); 
+  border: 1px solid transparent; 
+  font-weight: 600; 
+  cursor: pointer; 
+  transition: transform var(--transition), background var(--transition); 
+}
 .button.primary { background: var(--primary); color: white; box-shadow: var(--shadow-md); }
 .button.primary:hover { background: var(--primary-hover); transform: translateY(-1px); }
 .button.primary:active { background: var(--primary-pressed); transform: translateY(0); }
@@ -170,19 +220,34 @@ a:hover { color: var(--link-hover); text-decoration: underline; }
 .button.ghost:hover { border-color: var(--gray-300); box-shadow: var(--shadow-sm); color: var(--link-hover); }
 
 /* Footer */
-.footer { margin-top: 3rem; background: linear-gradient(0deg, color-mix(in oklab, var(--accent) 6%, white), transparent 70%); border-top: 1px solid var(--gray-200); }
+.footer { 
+  margin-top: 3rem; 
+  background: linear-gradient(0deg, color-mix(in oklab, var(--accent) 6%, white), transparent 70%); 
+  border-top: 1px solid var(--gray-200); 
+}
 .footer .inner { padding: 1.5rem 0; color: var(--gray-700); text-align: center; }
 
 /* Inputs */
-.input { width: 100%; padding: .7rem .9rem; border-radius: 12px; border: 1px solid var(--gray-300); background: white; color: var(--text); }
-.input:focus { border-color: var(--accent-400); box-shadow: 0 0 0 4px color-mix(in oklab, var(--accent-400) 25%, transparent); outline: none; }
+.input { 
+  width: 100%; 
+  padding: .7rem .9rem; 
+  border-radius: 12px; 
+  border: 1px solid var(--gray-300); 
+  background: white; 
+  color: var(--text); 
+}
+.input:focus { 
+  border-color: var(--accent-400); 
+  box-shadow: 0 0 0 4px color-mix(in oklab, var(--accent-400) 25%, transparent); 
+  outline: none; 
+}
 
 /* Utilities */
-.badge { display:inline-block; padding:.2rem .5rem; border-radius:999px; background: var(--accent-100); color: var(--accent-700); font-weight:600; }
-.border { border: 1px solid var(--gray-200); }
+.badge   { display:inline-block; padding:.2rem .5rem; border-radius:999px; background: var(--accent-100); color: var(--accent-700); font-weight:600; }
+.border  { border: 1px solid var(--gray-200); }
 .rounded { border-radius: var(--radius-md); }
-.shadow { box-shadow: var(--shadow-sm); }
-.center { text-align:center; }
+.shadow  { box-shadow: var(--shadow-sm); }
+.center  { text-align:center; }
 
 /* Animations */
 .reveal { opacity: 0; transform: translateY(6px); animation: revealIn .5s var(--transition) forwards; }
@@ -393,11 +458,10 @@ a:hover { color: var(--link-hover); text-decoration: underline; }
   }
 }
 
-/* Push hero text up a bit on desktop */
+/* Desktop: keep hero comfortably below sticky header */
 @media (min-width: 1024px) {
   :is(.hero__content, .ci-hero__content){
-    /* less top padding, a bit more bottom = content shifts upward */
-    padding-top: clamp(32px, 5vh, 64px);
+    padding-top: clamp(80px, 10vh, 120px);
     padding-bottom: clamp(56px, 14vh, 140px);
   }
 }
@@ -502,11 +566,6 @@ a:focus-visible,
   max-width: 60ch;
 }
 
-/* --- Sticky footer on short pages --- */
-html, body { height: 100%; }
-body { display: flex; flex-direction: column; }
-main { flex: 1; }
-
 /* Optional: slightly reduce the card’s top margin on legal pages */
 .section .card:first-child { margin-top: clamp(8px, 2vh, 12px); }
 
@@ -514,12 +573,6 @@ main { flex: 1; }
 /*  MOBILE HORIZONTAL OVERFLOW CLAMP (safe, scoped)                    */
 /*  Fixes the white gutter / grid peeking in on iOS/Chrome incognito. */
 /* ──────────────────────────────────────────────────────────────────── */
-html, body {
-  max-width: 100%;
-  overflow-x: hidden;
-}
-
-/* Prevent any full-bleed section or background from widening the page */
 :is(.hero, .ci-hero), [data-full-bleed] {
   position: relative;
   overflow-x: clip; /* only clamp the horizontal axis */
@@ -603,83 +656,7 @@ figure, .card { overflow: hidden; }
 
 /* Lightbox base */
 .lb[aria-hidden="false"] { display: block; }
-.lb[hidden] { display: none !important; }
-
-.lb {
-  position: fixed; inset: 0;
-  z-index: 9999;
-  display: grid;
-  place-items: center;
-}
-
-.lb__backdrop {
-  position: absolute; inset: 0;
-  background: rgb(0 0 0 / 0.6);
-}
-
-.lb__stage {
-  position: relative;
-  max-width: min(96vw, 1400px);
-  max-height: 90vh;
-  padding: clamp(8px, 1vw, 14px);
-  background: #fff;
-  border-radius: 0.75rem;
-  box-shadow: 0 20px 60px rgb(0 0 0 / 0.35);
-  display: grid;
-  grid-template-rows: 1fr auto;
-  gap: 0.5rem;
-}
-
-.lb__img {
-  max-width: 100%;
-  max-height: 70vh;
-  object-fit: contain;
-  border-radius: 0.5rem;
-}
-
-.lb__close {
-  position: absolute;
-  top: 6px; right: 8px;
-  font-size: 2rem; line-height: 1;
-  width: 2.25rem; height: 2.25rem;
-  border: none; background: transparent; color: #000;
-  cursor: pointer;
-}
-
-.lb__caption {
-  margin: 0;
-  font-size: 0.95rem;
-  color: #111;
-  text-wrap: balance;
-}
-
-.lb__nav {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  pointer-events: none;
-}
-
-.lb__prev, .lb__next {
-  pointer-events: auto;
-  border: none;
-  background: rgb(255 255 255 / 0.85);
-  width: 2.5rem; height: 2.5rem;
-  border-radius: 999px;
-  font-size: 1.25rem;
-  display: grid; place-items: center;
-  cursor: pointer;
-  margin: 0 0.5rem;
-}
-
-.proof-shell img[data-proof-img] {
-  width: 100%;
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
+.lb[hidden]             { display: none !important; }
 
 /* === Lightbox: centering, sizing, mobile behavior === */
 
@@ -692,10 +669,6 @@ figure, .card { overflow: hidden; }
   justify-content: center;
   padding: 1.5rem 0.75rem;           /* gutter around the card */
   overflow-x: hidden;                /* avoid tiny horizontal scroll / cutoff */
-}
-
-.lb[hidden] {
-  display: none !important;          /* JS toggles the hidden attribute */
 }
 
 .lb__backdrop {
@@ -729,11 +702,51 @@ figure, .card { overflow: hidden; }
   border-radius: 1rem;
 }
 
+/* Close button */
+.lb__close {
+  position: absolute;
+  top: 6px; right: 8px;
+  font-size: 2rem; line-height: 1;
+  width: 2.25rem; height: 2.25rem;
+  border: none; background: transparent; color: #000;
+  cursor: pointer;
+}
+
 /* Caption */
 .lb__caption {
   margin-top: 0.75rem;
   font-size: 0.9rem;
   color: #111827;
+  text-wrap: balance;
+}
+
+/* Optional nav arrows (currently disabled in your JS for panels) */
+.lb__nav {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  pointer-events: none;
+}
+
+.lb__prev, .lb__next {
+  pointer-events: auto;
+  border: none;
+  background: rgb(255 255 255 / 0.85);
+  width: 2.5rem; height: 2.5rem;
+  border-radius: 999px;
+  font-size: 1.25rem;
+  display: grid; place-items: center;
+  cursor: pointer;
+  margin: 0 0.5rem;
+}
+
+.proof-shell img[data-proof-img] {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 /* Small-screen polish */
@@ -809,8 +822,8 @@ figure, .card { overflow: hidden; }
 /* Laptop/desktop: lower the hero subhead pill so it doesn't cover the "load" task */
 @media (min-width: 1024px) {
   .hero-subhead-pill {
-    margin-top: -0.85rem;     /* was -1.75rem / -2.5rem; less overlap with hero */
-    margin-bottom: 2.25rem;   /* a bit more breathing room above the flagship card */
+    margin-top: -0.85rem;     /* less overlap with hero */
+    margin-bottom: 2.25rem;   /* breathing room above flagship card */
   }
 }
 
@@ -834,7 +847,10 @@ figure, .card { overflow: hidden; }
    don’t hug the card edge */
 @media (min-width: 1024px) {
   .contact-form {
-    padding-right: 2.5rem;  /* adjust between 2–3rem to taste */
+    padding-right: 2.5rem;
+    max-width: 640px;   /* tweak to taste: 600–720px is a good range */
+    width: 100%;
+    margin-right: auto; /* align with left side of the card */
   }
 }
 
@@ -921,6 +937,20 @@ figure, .card { overflow: hidden; }
   margin-top: 0.25rem;
 }
 
+/* Contact page card: give the whole block more breathing room */
+.page--contact .card,
+.page--contact .contact-card {
+  padding-inline: clamp(1.75rem, 4vw, 2.5rem);
+}
+
+/* On smaller screens, don’t over-pad */
+@media (max-width: 640px) {
+  .page--contact .card,
+  .page--contact .contact-card {
+    padding-inline: 1.25rem;
+  }
+}
+
 /* === Proof of Success: 3-panel image === */
 
 .proof-figure {
@@ -981,41 +1011,12 @@ figure, .card { overflow: hidden; }
   }
 }
 
-/* Contact page card: give the whole block more breathing room */
-.page--contact .card,
-.page--contact .contact-card {
-  padding-inline: clamp(1.75rem, 4vw, 2.5rem);
-}
-
-/* On smaller screens, don’t over-pad */
-@media (max-width: 640px) {
-  .page--contact .card,
-  .page--contact .contact-card {
-    padding-inline: 1.25rem;
-  }
-}
-
-/* Desktop-only: give the contact form its own narrower column */
-@media (min-width: 1024px) {
-  .contact-form {
-    max-width: 640px;   /* tweak to taste: 600–720px is a good range */
-    width: 100%;
-    margin-right: auto; /* align with left side of the card */
-  }
-}
-
 /* Hero text widths */
 .hero__content .title {
   max-width: 22ch;   /* tweak 20–24ch to taste */
   margin-inline: auto;
 }
 
-.hero__content .subtitle {
-  max-width: 40rem;
-  margin-inline: auto;
-}
-
-/* Hero subtitle + footnote tuning */
 .hero__content .subtitle {
   max-width: 34rem;
   margin-inline: auto;
@@ -1024,10 +1025,11 @@ figure, .card { overflow: hidden; }
   color: rgba(249, 250, 251, 0.92); /* slightly softer than pure white */
 }
 
+/* Hero subtitle + footnote tuning */
 .hero-footnote {
-  max-width: 42rem;
-  margin: 0.35rem auto 0;
-  font-size: 0.9rem;
+  max-width: 36rem;              /* narrower so it feels like a footnote */
+  margin: 0.75rem auto 0;        /* a bit more breathing room from CTAs */
+  font-size: 0.88rem;            /* slightly smaller than body text */
   line-height: 1.5;
   color: rgba(249, 250, 251, 0.78);
   text-wrap: balance;
