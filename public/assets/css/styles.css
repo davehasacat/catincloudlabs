@@ -502,8 +502,8 @@ main { flex: 1; } /* sticky footer support */
 
   /* Desktop: keep hero comfortably below sticky header, slightly lower in the frame */
   :is(.hero__content, .ci-hero__content){
-    padding-top: clamp(96px, 12vh, 140px);
-    padding-bottom: clamp(40px, 10vh, 96px);
+    padding-top: clamp(72px, 9vh, 120px);
+    padding-bottom: clamp(48px, 11vh, 96px);
   }
 }
 
