@@ -996,6 +996,11 @@ figure, .card { overflow: hidden; }
   }
 }
 
+.hero__content .title {
+  max-width: 22ch;   /* tweak 20–24ch to taste */
+  margin-inline: auto;
+}
+
 .hero__content .subtitle {
   max-width: 40rem;
   margin-inline: auto;
