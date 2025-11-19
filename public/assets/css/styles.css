@@ -271,8 +271,8 @@ main { flex: 1; } /* sticky footer support */
   width:100%;
   height:100%;
   object-fit: cover;
-  /* Keep the bottom of the DAG visible by default */
-  object-position: 50% 88%;
+  /* Nudge frame down a bit on desktop */
+  object-position: 50% 92%;
   display:block;
   /* Light dim to reduce visual noise behind the text */
   filter: brightness(0.78);
