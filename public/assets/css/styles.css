@@ -432,6 +432,15 @@ main { flex: 1; } /* sticky footer support */
   }
 }
 
+/* Laptop + desktop: subtly zoom video to crop out Airflow UI chrome */
+@media (min-width: 768px) {
+  :is(.hero__video, .ci-hero__video){
+    transform: scale(1.07);
+    transform-origin: center center;
+    object-position: 50% 86%;
+  }
+}
+
 /* === HERO contrast + overlay ========================================= */
 
 /* Light text over video */
@@ -512,37 +521,6 @@ main { flex: 1; } /* sticky footer support */
   :is(.hero__content, .ci-hero__content){
     padding-top: clamp(100px, 12.5vh, 144px);
     padding-bottom: clamp(56px, 11vh, 120px);
-  }
-}
-
-/* Desktop & large laptop: hide Airflow UI at far left/right of the video,
-   but keep the center (and load task) much cleaner */
-@media (min-width: 768px) {
-  :is(.hero, .ci-hero)::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    z-index: 1; /* same layer as ::before overlay */
-
-    background:
-      linear-gradient(
-        to right,
-        /* Strong mask on far left */
-        rgba(15, 23, 42, 0.96) 0%,
-        rgba(15, 23, 42, 0.96) 3%,
-        /* Fade out by ~10% */
-        rgba(15, 23, 42, 0.88) 7%,
-        transparent 12%,
-
-        /* Big clear window through the middle */
-        transparent 88%,
-
-        /* Fade back in near the right edge */
-        rgba(15, 23, 42, 0.88) 93%,
-        rgba(15, 23, 42, 0.96) 97%,
-        rgba(15, 23, 42, 0.96) 100%
-      );
   }
 }
 
@@ -988,7 +966,7 @@ figure, .card { overflow: hidden; }
 
 .contact-form input[type="text"]:focus-visible,
 .contact-form input[type="email"]:focus-visible,
-.contact-form select[type="text"]:focus-visible,
+.contact-form select:focus-visible,
 .contact-form textarea:focus-visible {
   outline: none;
   border-color: var(--field-border-strong);
