@@ -123,6 +123,15 @@ h3 { font-size: 1.25rem; margin: 1.25rem 0 .5rem; }
 p { margin: 0 0 1rem; }
 small, .muted { color: var(--text-muted); }
 
+/* Hero kicker (small label above H1) */
+.kicker {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  opacity: 0.92;
+}
+
 /* Links */
 a { color: var(--link); text-decoration: none; transition: color var(--transition-fast); }
 a:hover { color: var(--link-hover); text-decoration: underline; }
@@ -200,7 +209,6 @@ a:hover { color: var(--link-hover); text-decoration: underline; }
   /* Keep the bottom of the DAG visible by default */
   object-position: 50% 88%;
   display:block;
-
   /* Light dim to reduce visual noise behind the text */
   filter: brightness(0.78);
 }
@@ -996,6 +1004,7 @@ figure, .card { overflow: hidden; }
   }
 }
 
+/* Hero text widths */
 .hero__content .title {
   max-width: 22ch;   /* tweak 20–24ch to taste */
   margin-inline: auto;
