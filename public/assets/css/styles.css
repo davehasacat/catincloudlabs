@@ -299,13 +299,25 @@ main { flex: 1; } /* sticky footer support */
 }
 
 /* CTA buttons (namespaced) */
-.hero__cta, .ci-hero__cta{ display:inline-flex; gap:.75rem; flex-wrap:wrap; justify-content:center; }
-.ci-btn{
-  display:inline-flex; align-items:center; justify-content:center;
-  padding:.7rem 1rem; border-radius: var(--radius-md);
-  border:1px solid transparent; font-weight:600; text-decoration:none;
-  transition: transform var(--transition), box-shadow var(--transition), background var(--transition), color var(--transition);
+.hero__cta,
+.ci-hero__cta {
+  display: flex;              /* was inline-flex */
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
 }
+
+/* Desktop: keep CTA row in the same centered column as the text */
+@media (min-width: 768px) {
+  .hero__cta,
+  .ci-hero__cta {
+    width: 100%;
+    max-width: 36rem;         /* matches footnote column */
+    margin-inline: auto;      /* centers the whole CTA block */
+  }
+}
+
 .ci-btn:focus-visible{ outline:3px solid var(--ring); outline-offset:2px; }
 .ci-btn--primary{ background: var(--primary); color:#fff; box-shadow: var(--shadow-md); }
 .ci-btn--primary:hover{ background: var(--primary-hover); transform: translateY(-1px); }
@@ -1069,6 +1081,7 @@ figure, .card { overflow: hidden; }
 /* Hero subtitle + footnote tuning */
 .hero-footnote {
   display: block;
+  width: 100%;
   max-width: 36rem;
   margin: 0.75rem auto 0;
   font-size: 0.88rem;
@@ -1076,4 +1089,10 @@ figure, .card { overflow: hidden; }
   color: rgba(249, 250, 251, 0.78);
   text-wrap: balance;
   text-align: center;
+}
+
+/* If the footnote lives inside the CTA flex row, make it its own line */
+.hero__cta .hero-footnote,
+.ci-hero__cta .hero-footnote {
+  flex: 0 0 100%;
 }
