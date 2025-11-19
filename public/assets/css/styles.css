@@ -515,8 +515,8 @@ main { flex: 1; } /* sticky footer support */
   }
 }
 
-/* Large desktop: hide Airflow UI at far left/right of the video */
-@media (min-width: 1280px) {
+/* Laptop + large desktop: hide Airflow UI at far left/right of the video */
+@media (min-width: 1024px) {
   :is(.hero, .ci-hero)::after {
     content: "";
     position: absolute;
@@ -527,10 +527,10 @@ main { flex: 1; } /* sticky footer support */
       linear-gradient(
         90deg,
         rgba(15, 23, 42, 0.96) 0%,
-        rgba(15, 23, 42, 0.96) 7%,   /* solid mask on far left */
-        transparent 18%,             /* fully clear through the middle */
-        transparent 82%,
-        rgba(15, 23, 42, 0.96) 93%,  /* solid mask on far right */
+        rgba(15, 23, 42, 0.96) 6%,   /* solid mask on far left */
+        transparent 16%,             /* fully clear through the middle */
+        transparent 84%,
+        rgba(15, 23, 42, 0.96) 94%,  /* solid mask on far right */
         rgba(15, 23, 42, 0.96) 100%
       );
   }
