@@ -1057,3 +1057,23 @@ figure, .card { overflow: hidden; }
   margin-left: auto;
   margin-right: auto;
 }
+
+/* Keep hero CTAs and footnote in the same centered column */
+.hero__cta,
+.ci-hero__cta {
+  max-width: 36rem;       /* same as footnote */
+  margin-left: auto;
+  margin-right: auto;     /* centers the whole CTA row */
+}
+
+/* Hero subtitle + footnote tuning */
+.hero-footnote {
+  display: block;
+  max-width: 36rem;
+  margin: 0.75rem auto 0;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: rgba(249, 250, 251, 0.78);
+  text-wrap: balance;
+  text-align: center;
+}
