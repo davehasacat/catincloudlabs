@@ -298,32 +298,92 @@ main { flex: 1; } /* sticky footer support */
   font-size: clamp(1rem, .6rem + 1vw, 1.125rem);
 }
 
-/* CTA buttons (namespaced) */
+/* Hero text widths */
+.hero__content .title {
+  max-width: 22ch;   /* tweak 20–24ch to taste */
+  margin-inline: auto;
+}
+
+.hero__content .subtitle {
+  max-width: 34rem;
+  margin-inline: auto;
+  margin-bottom: 0.75rem;
+  font-size: clamp(0.98rem, 0.7rem + 0.6vw, 1.05rem);
+  color: rgba(249, 250, 251, 0.92);
+}
+
+/* CTA buttons (namespaced) + footnote */
 .hero__cta,
 .ci-hero__cta {
-  display: flex;              /* was inline-flex */
+  display: flex;
   justify-content: center;
   align-items: center;
   gap: 0.75rem;
   flex-wrap: wrap;
+  width: 100%;
+  max-width: 36rem;       /* shared column with subtitle + footnote */
+  margin-inline: auto;    /* center the column */
 }
 
-/* Desktop: keep CTA row in the same centered column as the text */
-@media (min-width: 768px) {
-  .hero__cta,
-  .ci-hero__cta {
-    width: 100%;
-    max-width: 36rem;         /* matches footnote column */
-    margin-inline: auto;      /* centers the whole CTA block */
-  }
+/* Buttons */
+.ci-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 1rem;
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition),
+    background var(--transition),
+    color var(--transition);
 }
 
-.ci-btn:focus-visible{ outline:3px solid var(--ring); outline-offset:2px; }
-.ci-btn--primary{ background: var(--primary); color:#fff; box-shadow: var(--shadow-md); }
-.ci-btn--primary:hover{ background: var(--primary-hover); transform: translateY(-1px); }
-.ci-btn--primary:active{ background: var(--primary-pressed); transform: translateY(0); }
-.ci-btn--ghost{ background:#fff; border-color: var(--gray-200); color: var(--link); }
-.ci-btn--ghost:hover{ border-color: var(--gray-300); box-shadow: var(--shadow-sm); color: var(--link-hover); }
+.ci-btn:focus-visible{
+  outline:3px solid var(--ring);
+  outline-offset:2px;
+}
+
+.ci-btn--primary{
+  background: var(--primary);
+  color:#fff;
+  box-shadow: var(--shadow-md);
+}
+.ci-btn--primary:hover{
+  background: var(--primary-hover);
+  transform: translateY(-1px);
+}
+.ci-btn--primary:active{
+  background: var(--primary-pressed);
+  transform: translateY(0);
+}
+
+.ci-btn--ghost{
+  background:#fff;
+  border-color: var(--gray-200);
+  color: var(--link);
+}
+.ci-btn--ghost:hover{
+  border-color: var(--gray-300);
+  box-shadow: var(--shadow-sm);
+  color: var(--link-hover);
+}
+
+/* Footnote: its own full-width row inside the CTA flex container */
+.hero-footnote {
+  flex: 0 0 100%;           /* take a full row under the buttons */
+  width: 100%;
+  max-width: 36rem;
+  margin: 0.75rem auto 0;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: rgba(249, 250, 251, 0.78);
+  text-align: center;
+  text-wrap: balance;
+}
 
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce){
@@ -347,7 +407,7 @@ main { flex: 1; } /* sticky footer support */
     max-width: 16ch;
     margin-inline: auto;
     font-size: clamp(1.6rem, 5.2vw + .6rem, 2.1rem);
-    line-height: 1.06;
+    line-height: 1.12;
     text-wrap: balance;
   }
   :is(.hero__content, .ci-hero__content) p{
@@ -357,12 +417,22 @@ main { flex: 1; } /* sticky footer support */
       0 0 2px rgba(0,0,0,.7),
       0 0 6px rgba(0,0,0,.35);
   }
-  .hero__cta, .ci-hero__cta{ flex-direction: column; align-items: center; gap: .6rem; }
-  .ci-btn{ width: max(220px, 72%); padding: .6rem .9rem; }
-  .nav .menu a{ padding: .45rem .5rem; }
+
+  .hero__cta,
+  .ci-hero__cta{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .ci-btn{
+    width: max(220px, 72%);
+    max-width: 320px;
+    margin-inline: auto;
+    padding: 0.6rem 0.9rem;
+  }
 }
 
-/* === HERO contrast + CTA centering tweak ============================= */
+/* === HERO contrast + overlay ========================================= */
 
 /* Light text over video */
 :is(.hero, .ci-hero){
@@ -400,45 +470,6 @@ main { flex: 1; } /* sticky footer support */
     0 0 18px rgba(15, 23, 42, 0.9);
 }
 
-/* Make CTA container truly centered */
-.hero__cta,
-.ci-hero__cta{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.75rem;
-  flex-wrap: wrap;
-  width: 100%;
-}
-
-/* On very small screens, stack buttons and keep them centered */
-@media (max-width: 430px){
-  .hero__cta,
-  .ci-hero__cta{
-    flex-direction: column;
-    align-items: center;
-  }
-  .ci-btn{
-    width: max(220px, 72%);
-    max-width: 320px;
-    margin-inline: auto;
-  }
-}
-
-/* Micro-tweaks for hero text on small phones */
-@media (max-width: 430px){
-  :is(.hero__content, .ci-hero__content) h1{
-    line-height: 1.12;       /* was 1.06: a touch more breathing room */
-    letter-spacing: 0.01em;  /* tiny spacing for cleaner caps/mixed case */
-  }
-
-  :is(.hero__content, .ci-hero__content) p{
-    max-width: 26ch;
-    margin-inline: auto;
-    font-weight: 500;        /* bumps contrast without changing color */
-  }
-}
-
 /* Desktop hero polish (keep mobile as-is) */
 @media (min-width: 1024px) {
   /* Desktop: still dimmed, but let a little more of the DAG peek through */
@@ -468,12 +499,9 @@ main { flex: 1; } /* sticky footer support */
     padding: 0.65rem 1.3rem;
     font-size: 0.98rem;
   }
-}
 
-/* Desktop: keep hero comfortably below sticky header, slightly lower in the frame */
-@media (min-width: 1024px) {
+  /* Desktop: keep hero comfortably below sticky header, slightly lower in the frame */
   :is(.hero__content, .ci-hero__content){
-    /* More top padding, less bottom padding = text shifts down a bit */
     padding-top: clamp(96px, 12vh, 140px);
     padding-bottom: clamp(40px, 10vh, 96px);
   }
@@ -921,7 +949,7 @@ figure, .card { overflow: hidden; }
 
 .contact-form input[type="text"]:focus-visible,
 .contact-form input[type="email"]:focus-visible,
-.contact-form select:focus-visible,
+.contact-form select[type="text"]:focus-visible,
 .contact-form textarea:focus-visible {
   outline: none;
   border-color: var(--field-border-strong);
@@ -1022,77 +1050,4 @@ figure, .card { overflow: hidden; }
     font-size: 0.9rem;
     line-height: 1.55;
   }
-}
-
-/* Hero text widths */
-.hero__content .title {
-  max-width: 22ch;   /* tweak 20–24ch to taste */
-  margin-inline: auto;
-}
-
-.hero__content .subtitle {
-  max-width: 34rem;
-  margin-inline: auto;
-  margin-bottom: 0.75rem;
-  font-size: clamp(0.98rem, 0.7rem + 0.6vw, 1.05rem);
-  color: rgba(249, 250, 251, 0.92);
-}
-
-/* Hero subtitle + footnote tuning */
-.hero-footnote {
-  max-width: 36rem;
-  margin: 0.75rem auto 0;
-  font-size: 0.88rem;
-  line-height: 1.5;
-  color: rgba(249, 250, 251, 0.78);
-  text-wrap: balance;
-  text-align: center;
-}
-
-/* Hero subtitle + footnote tuning */
-.hero-footnote {
-  max-width: 36rem;
-  margin: 0.75rem auto 0;
-  font-size: 0.88rem;
-  line-height: 1.5;
-  color: rgba(249, 250, 251, 0.78);
-  text-wrap: balance;
-  text-align: center;
-}
-
-/* If the footnote lives inside the CTA flex row, make it its own full-width line */
-.hero__cta .hero-footnote,
-.ci-hero__cta .hero-footnote {
-  flex: 0 0 100%;      /* force a new row in the flex container */
-  width: 100%;
-  margin-top: 0.75rem; /* space it below the buttons */
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* Keep hero CTAs and footnote in the same centered column */
-.hero__cta,
-.ci-hero__cta {
-  max-width: 36rem;       /* same as footnote */
-  margin-left: auto;
-  margin-right: auto;     /* centers the whole CTA row */
-}
-
-/* Hero subtitle + footnote tuning */
-.hero-footnote {
-  display: block;
-  width: 100%;
-  max-width: 36rem;
-  margin: 0.75rem auto 0;
-  font-size: 0.88rem;
-  line-height: 1.5;
-  color: rgba(249, 250, 251, 0.78);
-  text-wrap: balance;
-  text-align: center;
-}
-
-/* If the footnote lives inside the CTA flex row, make it its own line */
-.hero__cta .hero-footnote,
-.ci-hero__cta .hero-footnote {
-  flex: 0 0 100%;
 }
