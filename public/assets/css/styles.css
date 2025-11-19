@@ -515,39 +515,33 @@ main { flex: 1; } /* sticky footer support */
   }
 }
 
-/* Laptop + large desktop: mask Airflow UI at far left/right and bottom */
+/* Desktop & large laptop: hide Airflow UI at far left/right of the video,
+   but keep the center (and load task) much cleaner */
 @media (min-width: 768px) {
   :is(.hero, .ci-hero)::after {
     content: "";
     position: absolute;
     inset: 0;
     pointer-events: none;
-    z-index: 1; /* above video, below hero__content */
+    z-index: 1; /* same layer as ::before overlay */
 
-    /* 2-layer mask:
-       - strong side rails to hide the plus and right panel
-       - bottom fade to bury any low UI chrome
-    */
     background:
-      /* Side rails */
       linear-gradient(
         to right,
-        rgba(15, 23, 42, 0.98) 0%,
-        rgba(15, 23, 42, 0.98) 9%,
-        rgba(15, 23, 42, 0.92) 16%,
-        transparent 28%,
-        transparent 72%,
-        rgba(15, 23, 42, 0.92) 84%,
-        rgba(15, 23, 42, 0.98) 91%,
-        rgba(15, 23, 42, 0.98) 100%
-      ),
-      /* Bottom fade */
-      linear-gradient(
-        to bottom,
-        transparent 0%,
-        transparent 70%,
-        rgba(15, 23, 42, 0.9) 92%,
-        rgba(15, 23, 42, 0.98) 100%
+        /* Strong mask on far left */
+        rgba(15, 23, 42, 0.96) 0%,
+        rgba(15, 23, 42, 0.96) 3%,
+        /* Fade out by ~10% */
+        rgba(15, 23, 42, 0.88) 7%,
+        transparent 12%,
+
+        /* Big clear window through the middle */
+        transparent 88%,
+
+        /* Fade back in near the right edge */
+        rgba(15, 23, 42, 0.88) 93%,
+        rgba(15, 23, 42, 0.96) 97%,
+        rgba(15, 23, 42, 0.96) 100%
       );
   }
 }
