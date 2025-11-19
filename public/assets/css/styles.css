@@ -392,7 +392,7 @@ main { flex: 1; } /* sticky footer support */
 /* --- Mobile polish ---------------------------------------------------- */
 @media (max-width: 700px){
   :is(.hero, .ci-hero){ min-height: clamp(520px, 84svh, 920px); }
-  :is(.hero__video, .ci-hero__video){ object-position: 55% 100%; } /* anchor the bottom on phones */
+  :is(.hero__video, .ci-hero__video){ object-position: 45% 100%; } /* anchor the bottom on phones */
   :is(.hero__content, .ci-hero__content){
     padding-top: calc(var(--safe-top) + clamp(48px, 9vh, 96px));
   }
