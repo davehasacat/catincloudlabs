@@ -88,7 +88,7 @@
         <a href="/about">About</a>
         <a href="/projects">Projects</a>
         <a href="/services">Services</a>
-        <a href="/contact" class="button ghost">Contact</a>
+        <a href="/contact#contact-form" class="button ghost">Contact</a>
       </nav>
     </div>
   </header>
@@ -111,11 +111,25 @@
       </div>
 
       <div class="hero__content">
-        <h1>CatInCloud Labs</h1>
-        <p>Cloud Architecture Solutions</p>
-        <div class="hero__cta">
-          <a class="ci-btn ci-btn--primary" href="#proof">See the Proof</a>
-          <a class="ci-btn ci-btn--ghost" href="/contact">Work with Us</a>
+        <div class="stack" style="--stack-gap:1.1rem">
+          <div class="kicker">CatInCloud Labs</div>
+          <h1 class="title">
+            Secure, reliable data pipelines.
+          </h1>
+          <p class="subtitle">
+            I'll wrestle with messy data. You keep shipping features.
+          </p>
+          <div class="hero__cta">
+            <a class="ci-btn ci-btn--primary" href="/contact#contact-form">
+              Book a discovery call
+            </a>
+            <a class="ci-btn ci-btn--ghost" href="#proof">
+              See proof of success
+            </a>
+            <p class="hero-footnote">
+              30-minutes to chat through your current stack and priorities.
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -160,13 +174,15 @@
           <article id="orchestration" class="card reveal proof-diagram" style="max-width: var(--maxw-readable); margin-inline:auto;">
             <figure class="diagram-figure" style="margin:0;">
               <img
-                src="/assets/diagrams/security-observability.v3.svg"
+                src="/assets/diagrams/security-observability.v4.svg"
                 alt="Private VPC with S3 Gateway Endpoint; MWAA orchestrates Snowflake load; outbound-only egress"
                 class="diagram"
                 width="1160" height="300"
                 loading="lazy" decoding="async"
                 sizes="(max-width: 700px) 100vw, 1160px" />
-              <figcaption class="diagram-caption">Security &amp; Observability Highlights - dotted arrows = private/controlled network paths</figcaption>
+              <figcaption class="diagram-caption">
+                Security & Observability Highlights - dotted arrows = private/controlled network paths
+              </figcaption>
             </figure>
           </article>
 
@@ -322,7 +338,7 @@
       <p class="lb__caption" id="lb-caption"></p>
       <div class="lb__nav" aria-hidden="true">
         <button class="lb__prev" type="button" title="Previous (←)" aria-label="Previous image">&#10094;</button>
-        <button class="lb__next" type="button" title="Next (->)" aria-label="Next image">&#10095;</button>
+        <button class="lb__next" type="button" title="Next (→)" aria-label="Next image">&#10095;</button>
       </div>
     </div>
   </div>
@@ -337,17 +353,12 @@
         <a href="/security">Security</a> ·
         <a href="/privacy">Privacy</a> ·
         <a href="/terms">Terms</a> ·
-        <a href="/contact" aria-label="Contact CatInCloud Labs">Contact</a>
+        <a href="/contact#contact-form" aria-label="Contact CatInCloud Labs">Contact</a>
       </div>
     </div>
 
-    <!-- Set footer year + theme-color -->
-    <script>
-      document.getElementById('y').textContent = new Date().getFullYear();
-      const metaTheme = document.querySelector('meta[name="theme-color"]');
-      const bg = getComputedStyle(document.documentElement).getPropertyValue('--bg-page').trim();
-      if (metaTheme && bg) metaTheme.setAttribute('content', bg);
-    </script>
+    <!-- Scripts -->
+    <script src="/assets/js/footer-year-theme.js" defer></script>
     <script src="/assets/js/hero-auto-pause.js" defer></script>
     <script src="/assets/js/proof-lightbox.js" defer></script>
     <script src="/assets/js/proof-panel-lightbox.js" defer></script>
