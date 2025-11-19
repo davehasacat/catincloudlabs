@@ -1036,3 +1036,24 @@ figure, .card { overflow: hidden; }
   text-wrap: balance;
   text-align: center;
 }
+
+/* Hero subtitle + footnote tuning */
+.hero-footnote {
+  max-width: 36rem;
+  margin: 0.75rem auto 0;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: rgba(249, 250, 251, 0.78);
+  text-wrap: balance;
+  text-align: center;
+}
+
+/* If the footnote lives inside the CTA flex row, make it its own full-width line */
+.hero__cta .hero-footnote,
+.ci-hero__cta .hero-footnote {
+  flex: 0 0 100%;      /* force a new row in the flex container */
+  width: 100%;
+  margin-top: 0.75rem; /* space it below the buttons */
+  margin-left: auto;
+  margin-right: auto;
+}
