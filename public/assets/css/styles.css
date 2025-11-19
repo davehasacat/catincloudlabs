@@ -1014,3 +1014,21 @@ figure, .card { overflow: hidden; }
   max-width: 40rem;
   margin-inline: auto;
 }
+
+/* Hero subtitle + footnote tuning */
+.hero__content .subtitle {
+  max-width: 34rem;
+  margin-inline: auto;
+  margin-bottom: 0.75rem;
+  font-size: clamp(0.98rem, 0.7rem + 0.6vw, 1.05rem);
+  color: rgba(249, 250, 251, 0.92); /* slightly softer than pure white */
+}
+
+.hero-footnote {
+  max-width: 42rem;
+  margin: 0.35rem auto 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: rgba(249, 250, 251, 0.78);
+  text-wrap: balance;
+}
