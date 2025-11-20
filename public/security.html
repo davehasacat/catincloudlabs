@@ -15,7 +15,7 @@
   <meta property="og:description" content="Responsible disclosure policy, scope, and safe harbor for CatInCloud Labs." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://catincloudlabs.com/security" />
-  <meta property="og:image" content="https://catincloudlabs.com/assets/social-card.png" />
+  <meta property="og:image" content="https://catincloudlabs.com/assets/brand/social-card.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:site_name" content="CatInCloud Labs" />
@@ -25,7 +25,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Security - CatInCloud Labs" />
   <meta name="twitter:description" content="Responsible disclosure policy, scope, and safe harbor for CatInCloud Labs." />
-  <meta name="twitter:image" content="https://catincloudlabs.com/assets/social-card.png" />
+  <meta name="twitter:image" content="https://catincloudlabs.com/assets/brand/social-card.png" />
 
   <!-- Icons & theme -->
   <link rel="icon" href="/assets/favicons/favicon.svg" type="image/svg+xml" />
@@ -85,7 +85,6 @@
             Security.txt: <a href="/.well-known/security.txt">/.well-known/security.txt</a>
           </p>
 
-          <!-- NEW: quick copy-paste template for reporters -->
           <details>
             <summary><strong>Report template (copy &amp; fill)</strong></summary>
             <pre style="white-space: pre-wrap; margin-top:.75rem;">Title: [Short summary of the issue]
@@ -132,7 +131,6 @@ Researcher Contact: [Name/Email or handle]</pre>
             <li><strong>Disclosure:</strong> Please give us reasonable time to fix before any public disclosure.</li>
           </ul>
 
-          <!-- UPDATED: anchor matches security.txt Acknowledgments field -->
           <h2 id="thanks">Recognition</h2>
           <p>
             While we don't operate a bounty program, we appreciate the security community and may add an acknowledgment here for
@@ -168,12 +166,7 @@ Researcher Contact: [Name/Email or handle]</pre>
       </div>
     </div>
 
-    <script>
-      document.getElementById('y').textContent = new Date().getFullYear();
-      const metaTheme = document.querySelector('meta[name="theme-color"]');
-      const bg = getComputedStyle(document.documentElement).getPropertyValue('--bg-page').trim();
-      if (metaTheme && bg) metaTheme.setAttribute('content', bg);
-    </script>
+    <script src="/assets/js/footer-year-theme.js" defer></script>
   </footer>
 </body>
 </html>
