@@ -1069,23 +1069,31 @@ figure, .card { overflow: hidden; }
   margin-top: 0;
 }
 
-/* --- Mobile nav fix: allow wrapping & stacking --- */
+/* --- Mobile nav: compact, wrapped, not huge --- */
 @media (max-width: 640px) {
+  .header {
+    padding-block: 0.5rem; /* tighter top/bottom */
+  }
+
   .header .nav {
-    flex-direction: column;
+    flex-wrap: wrap;
     align-items: center;
-    gap: 0.5rem;
+    justify-content: space-between;
+    row-gap: 0.25rem;
   }
 
   .menu {
+    flex: 1 0 100%;
+    display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
     column-gap: 0.75rem;
-    row-gap: 0.35rem;
-    white-space: normal; /* override any nowrap */
+    row-gap: 0.25rem;
+    white-space: normal; /* allow wrap */
   }
 
   .menu a {
-    padding-inline: 0.6rem;  /* slightly tighter so labels fit */
+    font-size: 0.9rem;
+    padding: 0.25rem 0.55rem; /* smaller pill */
   }
 }
