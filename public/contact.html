@@ -6,13 +6,13 @@
   <title>Contact - CatInCloud Labs</title>
 
   <!-- SEO -->
-  <meta name="description" content="Contact CatInCloud Labs - Let's discuss your cloud data projects and how we can help you build secure, maintainable systems." />
+  <meta name="description" content="Contact CatInCloud Labs to discuss your AWS, Snowflake, and dbt stack and how we can help you design or harden your cloud data pipelines." />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <link rel="canonical" href="https://catincloudlabs.com/contact" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="Contact - CatInCloud Labs" />
-  <meta property="og:description" content="Get in touch with CatInCloud Labs to discuss your next cloud or data engineering project." />
+  <meta property="og:description" content="Contact CatInCloud Labs to discuss your AWS, Snowflake, and dbt stack and how we can help you design or harden your cloud data pipelines." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://catincloudlabs.com/contact" />
   <meta property="og:image" content="https://catincloudlabs.com/assets/brand/social-card.png" />
@@ -24,7 +24,7 @@
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Contact - CatInCloud Labs" />
-  <meta name="twitter:description" content="Let's connect and explore how we can help you build secure, maintainable data platforms." />
+  <meta name="twitter:description" content="Contact CatInCloud Labs to discuss your AWS, Snowflake, and dbt stack and how we can help you design or harden your cloud data pipelines." />
   <meta name="twitter:image" content="https://catincloudlabs.com/assets/brand/social-card.png" />
 
   <!-- Icons & theme -->
@@ -38,7 +38,7 @@
   <link rel="stylesheet" href="/assets/css/styles.css" />
 </head>
 
-<body>
+<body class="page--contact">
   <!-- Accessibility: skip link -->
   <a href="#main" class="skip-link">Skip to content</a>
 
@@ -53,7 +53,7 @@
         <a href="/about">About</a>
         <a href="/projects">Projects</a>
         <a href="/services">Services</a>
-        <a href="/contact#contact-form" class="active button ghost" aria-current="page">Contact</a>
+        <a href="/contact#contact-form" class="button ghost active" aria-current="page">Contact</a>
       </nav>
     </div>
   </header>
@@ -66,7 +66,7 @@
           <div class="kicker">Contact</div>
           <h1 class="title">Book a discovery call.</h1>
           <p class="subtitle">
-            Share a bit about your stack, goals, and constraints. I'll follow up to schedule a 30-minute call to talk through what's working, what's not, and whether CatInCloud Labs is a fit.
+            Contact CatInCloud Labs to discuss your AWS, Snowflake, and dbt stack and how we can help you design or harden your cloud data pipelines.
           </p>
         </div>
       </div>
@@ -186,13 +186,7 @@
       </div>
     </div>
 
-    <!-- Set footer year + theme-color to match current computed background -->
-    <script>
-      document.getElementById('y').textContent = new Date().getFullYear();
-      const metaTheme = document.querySelector('meta[name="theme-color"]');
-      const bg = getComputedStyle(document.documentElement).getPropertyValue('--bg-page').trim();
-      if (metaTheme && bg) metaTheme.setAttribute('content', bg);
-    </script>
+    <script src="/assets/js/footer-year-theme.js" defer></script>
   </footer>
 </body>
 </html>

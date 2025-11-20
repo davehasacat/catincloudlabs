@@ -10,61 +10,65 @@
   X-Permitted-Cross-Domain-Policies: none
   Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; connect-src 'self' https://cloudflareinsights.com https://*.cloudflareinsights.com; media-src 'self' blob:; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; font-src 'self' data:; object-src 'none'; base-uri 'self'; frame-src 'none'; frame-ancestors 'none'; form-action 'self' https://formspree.io; upgrade-insecure-requests
   Vary: Accept-Encoding
-*/
+  Cache-Control: no-cache
 
-  Cache-Control: no-cache
-/about
-  Cache-Control: no-cache
-/projects
-  Cache-Control: no-cache
-/contact
-  Cache-Control: no-cache
-/privacy
-  Cache-Control: no-cache
-/terms
-  Cache-Control: no-cache
-/security
-  Cache-Control: no-cache
 /robots.txt
   Cache-Control: public, max-age=86400
+
 /sitemap.xml
   Cache-Control: public, max-age=86400
+
 /.well-known/security.txt
   Cache-Control: public, max-age=86400
+
 /security.txt
   Cache-Control: public, max-age=86400
+
 /humans.txt
   Cache-Control: public, max-age=86400
 
 /assets/*
   Cache-Control: public, max-age=31536000, immutable
   Vary: Accept-Encoding
+
 /assets/*.css
   Content-Type: text/css; charset=utf-8
+
 /assets/*.js
   Content-Type: application/javascript; charset=utf-8
+
 /assets/*.svg
   Content-Type: image/svg+xml; charset=utf-8
+
 /assets/diagrams/*
   Cache-Control: public, max-age=31536000, immutable
+
 /assets/*.png
   Content-Type: image/png
+
 /assets/*.jpg
   Content-Type: image/jpeg
+
 /assets/*.jpeg
   Content-Type: image/jpeg
+
 /assets/*.gif
   Content-Type: image/gif
+
 /assets/*.webp
   Content-Type: image/webp
+
 /assets/*.avif
   Content-Type: image/avif
+
 /assets/*.woff2
   Content-Type: font/woff2
+
 /assets/*.webm
   Content-Type: video/webm
   Accept-Ranges: bytes
   Content-Disposition: inline
+
 /assets/*.mp4
   Content-Type: video/mp4
   Accept-Ranges: bytes
@@ -72,8 +76,10 @@
 
 /assets/brand/social-card.png
   Cache-Control: public, max-age=604800
+
 /assets/video/hero-fallback.jpg
   Cache-Control: public, max-age=604800
 
 /404.html
+  Cache-Control: no-cache
   X-Robots-Tag: noindex, nofollow, noarchive

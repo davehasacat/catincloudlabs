@@ -6,13 +6,13 @@
   <title>Thank You - CatInCloud Labs</title>
 
   <!-- SEO -->
-  <meta name="description" content="Thanks for reaching out to CatInCloud Labs. We'll review your message and follow up with next steps." />
-  <meta name="robots" content="noindex,follow,max-image-preview:large" />
+  <meta name="description" content="Thanks for reaching out to CatInCloud Labs. We'll review your message and follow up with clear next steps, usually within one to two business days." />
+  <meta name="robots" content="noindex,follow" />
   <link rel="canonical" href="https://catincloudlabs.com/thank-you" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="Thank You - CatInCloud Labs" />
-  <meta property="og:description" content="We've received your message and will be in touch shortly." />
+  <meta property="og:description" content="Thanks for reaching out to CatInCloud Labs. We'll review your message and follow up with clear next steps, usually within one to two business days.." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://catincloudlabs.com/thank-you" />
   <meta property="og:image" content="https://catincloudlabs.com/assets/brand/social-card.png" />
@@ -24,13 +24,14 @@
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Thank You - CatInCloud Labs" />
-  <meta name="twitter:description" content="We've received your message and will be in touch shortly." />
+  <meta name="twitter:description" content="Thanks for reaching out to CatInCloud Labs. We'll review your message and follow up with clear next steps, usually within one to two business days." />
   <meta name="twitter:image" content="https://catincloudlabs.com/assets/brand/social-card.png" />
 
   <!-- Icons & theme -->
-  <link rel="icon" href="/assets/favicons/favicon.svg" type="image/svg+xml" />
-  <link rel="alternate icon" href="/assets/favicons/favicon.png" type="image/png" />
-  <link rel="apple-touch-icon" href="/assets/favicons/favicon.png" />
+  <link rel="icon" href="/assets/favicons/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicons/safari-pinned-tab.svg" />
+  <link rel="apple-touch-icon" href="/assets/favicons/apple-touch-icon.png" />
+  <link rel="manifest" href="/assets/favicons/site.webmanifest" />
   <meta name="theme-color" content="#f3f4f6" />
   <meta name="color-scheme" content="light" />
 
@@ -114,13 +115,7 @@
       </div>
     </div>
 
-    <!-- Set footer year + theme-color to match current computed background -->
-    <script>
-      document.getElementById('y').textContent = new Date().getFullYear();
-      const metaTheme = document.querySelector('meta[name="theme-color"]');
-      const bg = getComputedStyle(document.documentElement).getPropertyValue('--bg-page').trim();
-      if (metaTheme && bg) metaTheme.setAttribute('content', bg);
-    </script>
+    <script src="/assets/js/footer-year-theme.js" defer></script>
   </footer>
 </body>
 </html>
