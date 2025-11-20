@@ -28,9 +28,10 @@
   <meta name="twitter:image" content="https://catincloudlabs.com/assets/brand/social-card.png" />
 
   <!-- Icons & theme -->
-  <link rel="icon" href="/assets/favicons/favicon.svg" type="image/svg+xml" />
-  <link rel="alternate icon" href="/assets/favicons/favicon.png" type="image/png" />
-  <link rel="apple-touch-icon" href="/assets/favicons/favicon.png" />
+  <link rel="icon" href="/assets/favicons/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicons/safari-pinned-tab.svg" />
+  <link rel="apple-touch-icon" href="/assets/favicons/apple-touch-icon.png" />
+  <link rel="manifest" href="/assets/favicons/site.webmanifest" />
   <meta name="theme-color" content="#f3f4f6" />
   <meta name="color-scheme" content="light" />
 
@@ -39,8 +40,10 @@
 </head>
 
 <body>
+  <!-- Accessibility: skip link -->
   <a href="#main" class="skip-link">Skip to content</a>
 
+  <!-- Header -->
   <header class="header">
     <div class="container nav">
       <a class="brand" href="/" aria-label="CatInCloud Labs">
@@ -57,16 +60,21 @@
   </header>
 
   <main id="main">
+    <!-- Hero -->
     <section class="hero">
       <div class="container hero-simple">
         <div class="stack" style="--stack-gap:1rem">
           <div class="kicker">Security</div>
           <h1 class="title">Responsible Disclosure</h1>
-          <p class="subtitle">How CatInCloud Labs approaches security: private VPC networking, KMS encryption, least-privilege IAM, and observability for modern data pipelines.</p>
+          <p class="subtitle">
+            How CatInCloud Labs approaches security: private VPC networking, KMS encryption, least-privilege IAM,
+            and observability for modern data pipelines.
+          </p>
         </div>
       </div>
     </section>
 
+    <!-- Policy -->
     <section class="section">
       <div class="container">
         <article class="card reveal" style="max-width: var(--maxw-readable); margin-inline:auto;">
@@ -74,12 +82,13 @@
 
           <h2>Overview</h2>
           <p>
-            CatInCloud Labs (operated by <strong>DaveHasACat LLC</strong>) takes a security-first approach: private networking,
-            least-privilege IAM, encryption, and observability. If you believe you've found a vulnerability, we want to hear from you.
-            Please report it privately so we can investigate and fix it quickly.
+            CatInCloud Labs (operated by <strong>DaveHasACat LLC</strong>) takes a security-first approach:
+            private networking, least-privilege IAM, encryption, and observability. If you believe you've
+            found a vulnerability, we want to hear from you. Please report it privately so we can investigate
+            and fix it quickly.
           </p>
 
-          <h2>How to Report</h2>
+          <h2>How to report</h2>
           <p>
             Email: <a href="mailto:dave@catincloudlabs.com" aria-label="Email security report to CatInCloud Labs">dave@catincloudlabs.com</a><br />
             Security.txt: <a href="/.well-known/security.txt">/.well-known/security.txt</a>
@@ -103,32 +112,33 @@ Researcher Contact: [Name/Email or handle]</pre>
 
           <h2>Scope</h2>
           <p>
-            <code>catincloudlabs.com</code> and public assets we host under this domain (including static content on Cloudflare Pages).
-            Client environments and third-party platforms are out of scope unless explicitly authorized in writing.
+            <code>catincloudlabs.com</code> and public assets we host under this domain (including static content on
+            Cloudflare Pages). Client environments and third-party platforms are out of scope unless explicitly
+            authorized in writing.
           </p>
 
-          <h2>Out of Scope</h2>
+          <h2>Out of scope</h2>
           <ul>
             <li>Denial-of-service (DoS), load, or stress testing</li>
             <li>Automated scanning that degrades service</li>
             <li>Clickjacking on pages without sensitive actions</li>
-            <li>Missing security headers that do not directly lead to exploit</li>
+            <li>Missing security headers that do not directly lead to an exploit</li>
             <li>Rate-limit testing, SPF/DMARC best-practice commentary without exploit</li>
             <li>Physical, social engineering, or third-party vendor issues</li>
           </ul>
 
-          <h2>Safe Harbor</h2>
+          <h2>Safe harbor</h2>
           <p>
             If you follow this policy and act in good faith, we won't initiate legal action against you for security research.
-            Don't access, modify, or exfiltrate data that isn't yours. If you encounter non-public data, stop, don't save it, and
-            report the minimal details needed to reproduce the issue.
+            Don't access, modify, or exfiltrate data that isn't yours. If you encounter non-public data, stop, don't save it,
+            and report the minimal details needed to reproduce the issue.
           </p>
 
-          <h2>Handling &amp; Timelines</h2>
+          <h2>Handling &amp; timelines</h2>
           <ul>
             <li><strong>Acknowledgment:</strong> We aim to respond within <strong>72 hours</strong>.</li>
             <li><strong>Remediation:</strong> We prioritize based on severity and impact; we'll share status updates where feasible.</li>
-            <li><strong>Disclosure:</strong> Please give us reasonable time to fix before any public disclosure.</li>
+            <li><strong>Disclosure:</strong> Please give us reasonable time to fix issues before any public disclosure.</li>
           </ul>
 
           <h2 id="thanks">Recognition</h2>
@@ -137,10 +147,11 @@ Researcher Contact: [Name/Email or handle]</pre>
             impactful, high-quality reports. If you'd like recognition, please let us know when you submit.
           </p>
 
-          <h2>Data &amp; Privacy</h2>
+          <h2>Data &amp; privacy</h2>
           <p>
-            Our <a href="/privacy">Privacy Policy</a> explains how we handle personal data. We avoid unnecessary collection and do not
-            use advertising trackers. Server logs (e.g., IP, user agent, request metadata) may be retained for security and operations.
+            Our <a href="/privacy">Privacy Policy</a> explains how we handle personal data. We avoid unnecessary collection and
+            do not use advertising trackers. Server logs (for example, IP address, user agent, and request metadata) may be
+            retained for security and operations.
           </p>
 
           <h2>Questions</h2>
@@ -153,6 +164,7 @@ Researcher Contact: [Name/Email or handle]</pre>
     </section>
   </main>
 
+  <!-- Footer -->
   <footer class="footer">
     <div class="container inner center">
       <small>© <span id="y"></span> CatInCloud Labs - DaveHasACat LLC</small>
