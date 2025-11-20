@@ -1069,31 +1069,36 @@ figure, .card { overflow: hidden; }
   margin-top: 0;
 }
 
-/* --- Mobile nav: compact, wrapped, not huge --- */
+/* --- Compact mobile nav: de-pill + smaller --- */
 @media (max-width: 640px) {
   .header {
-    padding-block: 0.5rem; /* tighter top/bottom */
+    padding-block: 0.4rem; /* tighter top/bottom */
   }
 
   .header .nav {
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    row-gap: 0.25rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;          /* small gap between logo and nav */
   }
 
   .menu {
-    flex: 1 0 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
-    column-gap: 0.75rem;
-    row-gap: 0.25rem;
-    white-space: normal; /* allow wrap */
+    gap: 0.6rem;
+    font-size: 0.9rem;     /* slightly smaller text */
   }
 
+  /* Make all nav links look like simple text links */
   .menu a {
-    font-size: 0.9rem;
-    padding: 0.25rem 0.55rem; /* smaller pill */
+    padding: 0;
+    border: none;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  /* Special case: active nav item (the one with .button.ghost.active) */
+  .menu a.button.ghost.active {
+    color: var(--accent, #0ea5e9);
+    font-weight: 600;
   }
 }
