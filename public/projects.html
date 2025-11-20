@@ -6,16 +6,16 @@
   <title>Projects - CatInCloud Labs</title>
 
   <!-- SEO -->
-  <meta name="description" content="Projects by CatInCloud Labs - Enterprise-grade cloud data platforms built with AWS MWAA, Snowflake, and dbt Cloud." />
+  <meta name="description" content="Projects by CatInCloud Labs: real-world AWS + Snowflake + dbt platforms, built and hardened with private networking, MWAA, and enterprise practices." />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <link rel="canonical" href="https://catincloudlabs.com/projects" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="Projects - CatInCloud Labs" />
-  <meta property="og:description" content="Enterprise-grade cloud data platforms built with AWS MWAA, Snowflake, and dbt Cloud." />
+  <meta property="og:description" content="Examples of AWS + Snowflake + dbt platforms built with private networking, MWAA, and enterprise-grade patterns." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://catincloudlabs.com/projects" />
-  <meta property="og:image" content="https://catincloudlabs.com/assets/social-card.png" />
+  <meta property="og:image" content="https://catincloudlabs.com/assets/brand/social-card.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:site_name" content="CatInCloud Labs" />
@@ -24,8 +24,8 @@
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Projects - CatInCloud Labs" />
-  <meta name="twitter:description" content="Enterprise-grade cloud data platforms built with AWS MWAA, Snowflake, and dbt Cloud." />
-  <meta name="twitter:image" content="https://catincloudlabs.com/assets/social-card.png" />
+  <meta name="twitter:description" content="Examples of AWS + Snowflake + dbt platforms built with private networking, MWAA, and enterprise-grade patterns." />
+  <meta name="twitter:image" content="https://catincloudlabs.com/assets/brand/social-card.png" />
 
   <!-- Icons & theme -->
   <link rel="icon" href="/assets/favicons/favicon.svg" type="image/svg+xml" />
@@ -51,7 +51,7 @@
       <nav class="menu" aria-label="Primary">
         <a href="/">Home</a>
         <a href="/about">About</a>
-        <a href="/projects" class="active" aria-current="page">Projects</a>
+        <a href="/projects" class="button ghost active" aria-current="page">Projects</a>
         <a href="/services">Services</a>
         <a href="/contact#contact-form" class="button ghost">Contact</a>
       </nav>
@@ -64,8 +64,10 @@
       <div class="container hero-simple">
         <div class="stack" style="--stack-gap:1rem">
           <div class="kicker">Projects</div>
-          <h1 class="title">Enterprise-grade, end to end.</h1>
-          <p class="subtitle">A sample of the systems we've built and hardened - private-by-default, observable, and built to last.</p>
+          <h1 class="title">Examples of real-world AWS + Snowflake + dbt work.</h1>
+          <p class="subtitle">
+            A look at the reference systems I've built and hardened. Private by default, observable, and designed to be lived with day to day.
+          </p>
         </div>
       </div>
     </section>
@@ -74,32 +76,64 @@
     <section class="section">
       <div class="container">
         <div class="stack" style="--stack-gap:1.25rem">
+          <!-- Enterprise Stock Market ELT -->
           <article class="card reveal" style="max-width: var(--maxw-readable); margin-inline:auto;">
-            <h2>Enterprise Stock Market ELT</h2>
+            <h2>Enterprise Stock Market ELT (reference implementation)</h2>
             <p>
-              A production-grade data pipeline built on AWS, MWAA, Snowflake, and dbt Cloud,
-              designed to securely ingest, transform, and deliver market data at scale using
-              KMS encryption and enterprise best practices. Fully cloud operational.
+              A production-grade pipeline built on AWS, MWAA, Snowflake, and dbt, designed to ingest and transform stock and options data
+              in a private VPC. It uses KMS-encrypted S3 buckets, VPC endpoints, and incremental dbt models to keep data flowing reliably
+              from raw JSON to analytics-ready marts.
+            </p>
+            <p class="muted">
+              This is the same architecture pattern I adapt for client environments that want calm, well-understood data platforms.
             </p>
           </article>
 
+          <!-- MWAA Private Environment -->
           <article class="card reveal" style="max-width: var(--maxw-readable); margin-inline:auto;">
-            <h2>MWAA Private Environment</h2>
+            <h2>Private MWAA Environment</h2>
             <p>
-              A hardened Airflow deployment using AWS MWAA within a fully private VPC.
-              It connects to ECR, CloudWatch, KMS, and Secrets Manager through VPC endpoints
-              to eliminate public traffic while maintaining observability and control.
+              A hardened Airflow deployment running on AWS MWAA inside a fully private VPC. MWAA connects to ECR, CloudWatch Logs, KMS,
+              Secrets Manager, and S3 through VPC endpoints. This ensures orchestration, logging, and image pulls all happen without public internet
+              access.
+            </p>
+            <p class="muted">
+              The same approach can be used to keep your schedulers and control plane traffic private while still integrating cleanly with
+              AWS services and your data warehouse.
             </p>
           </article>
 
+          <!-- Future dashboards -->
           <article class="card reveal" style="max-width: var(--maxw-readable); margin-inline:auto;">
-            <h2>Future: Dashboards & Apps</h2>
+            <h2>In progress: Dashboards &amp; apps on top</h2>
             <p>
-              A browser-based analytics dashboard built with Plotly Dash on top of Snowflake marts,
-              providing interactive insights into market and options data.
+              A browser-based analytics layer built with tools like Plotly Dash on top of Snowflake marts. The goal is to provide
+              straightforward views into pipeline health and market data without adding another brittle surface area to maintain.
+            </p>
+            <p class="muted">
+              As the core platform stabilizes, these kinds of dashboards and lightweight apps become much easier to add safely.
             </p>
           </article>
         </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section">
+      <div class="container">
+        <article class="card reveal" style="max-width: var(--maxw-readable); margin-inline:auto; text-align:center;">
+          <h2>Interested in something similar?</h2>
+          <p>
+            If these examples look close to what you need, or resemble the pattern you want for your own stack, the best next step
+            is a short discovery call.
+          </p>
+          <p class="muted">
+            We can walk through your current setup, compare it to this reference architecture, and decide whether an audit sprint or a focused build makes sense.
+          </p>
+          <div class="stack" style="--stack-gap:.75rem; margin-top:1.25rem; justify-content:center;">
+            <a href="/contact#contact-form" class="button primary">Book a discovery call</a>
+          </div>
+        </article>
       </div>
     </section>
   </main>

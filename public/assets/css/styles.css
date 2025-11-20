@@ -622,9 +622,6 @@ a:focus-visible,
   max-width: 60ch;
 }
 
-/* Optional: slightly reduce the card’s top margin on legal pages */
-.section .card:first-child { margin-top: clamp(8px, 2vh, 12px); }
-
 /* ──────────────────────────────────────────────────────────────────── */
 /*  MOBILE HORIZONTAL OVERFLOW CLAMP (safe, scoped)                    */
 /*  Fixes the white gutter / grid peeking in on iOS/Chrome incognito. */
@@ -1065,4 +1062,9 @@ figure, .card { overflow: hidden; }
     font-size: 0.9rem;
     line-height: 1.55;
   }
+}
+
+/* Normalize eyebrow spacing inside cards */
+.card .eyebrow {
+  margin-top: 0;
 }
