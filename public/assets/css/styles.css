@@ -1066,3 +1066,8 @@ figure, .card { overflow: hidden; }
     line-height: 1.55;
   }
 }
+
+/* Normalize eyebrow spacing inside cards */
+.card .eyebrow {
+  margin-top: 0;
+}
