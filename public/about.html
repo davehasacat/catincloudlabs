@@ -6,16 +6,16 @@
   <title>About - CatInCloud Labs</title>
 
   <!-- SEO -->
-  <meta name="description" content="About CatInCloud Labs - We build secure, maintainable, enterprise-grade cloud and data platforms that scale cleanly and stand the test of time." />
+  <meta name="description" content="About CatInCloud Labs: a one-person cloud and data engineering studio focused on reliable AWS + Snowflake + dbt platforms that are secure, maintainable, and calm to run." />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <link rel="canonical" href="https://catincloudlabs.com/about" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="About - CatInCloud Labs" />
-  <meta property="og:description" content="We build secure, maintainable, enterprise-grade cloud and data platforms that scale cleanly and stand the test of time." />
+  <meta property="og:description" content="CatInCloud Labs focuses on reliable AWS + Snowflake + dbt platforms that are private by default, well-documented, and easier to support." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://catincloudlabs.com/about" />
-  <meta property="og:image" content="https://catincloudlabs.com/assets/social-card.png" />
+  <meta property="og:image" content="https://catincloudlabs.com/assets/brand/social-card.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:site_name" content="CatInCloud Labs" />
@@ -24,8 +24,8 @@
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="About - CatInCloud Labs" />
-  <meta name="twitter:description" content="We build secure, maintainable, enterprise-grade cloud and data platforms that scale cleanly and stand the test of time." />
-  <meta name="twitter:image" content="https://catincloudlabs.com/assets/social-card.png" />
+  <meta name="twitter:description" content="CatInCloud Labs focuses on reliable AWS + Snowflake + dbt platforms that are private by default, well-documented, and easier to support." />
+  <meta name="twitter:image" content="https://catincloudlabs.com/assets/brand/social-card.png" />
 
   <!-- Icons & theme -->
   <link rel="icon" href="/assets/favicons/favicon.svg" type="image/svg+xml" />
@@ -50,7 +50,7 @@
       </a>
       <nav class="menu" aria-label="Primary">
         <a href="/">Home</a>
-        <a href="/about" class="active" aria-current="page">About</a>
+        <a href="/about" class="button ghost active" aria-current="page">About</a>
         <a href="/projects">Projects</a>
         <a href="/services">Services</a>
         <a href="/contact#contact-form" class="button ghost">Contact</a>
@@ -64,8 +64,11 @@
       <div class="container hero-simple">
         <div class="stack" style="--stack-gap:1rem">
           <div class="kicker">About</div>
-          <h1 class="title">We build things that last.</h1>
-          <p class="subtitle">Modern cloud and data platforms - engineered for clarity, security, and long-term maintainability.</p>
+          <h1 class="title">Calm, reliable data platforms.</h1>
+          <p class="subtitle">
+            CatInCloud Labs is a one-person cloud and data engineering studio focused on real-world AWS + Snowflake + dbt stacks
+            that are secure, understandable, and maintainable over time.
+          </p>
         </div>
       </div>
     </section>
@@ -74,28 +77,46 @@
     <section class="section">
       <div class="container">
         <div class="stack" style="--stack-gap:1.25rem">
+          <!-- How I work -->
           <article class="card reveal" style="max-width: var(--maxw-readable); margin-inline:auto;">
-            <h2>Designed to Work</h2>
+            <h2>How I think about the work</h2>
             <p>
-              We believe in building things that work. No frills. No fluff. Just well-designed systems
-              that scale cleanly and stand the test of time.
+              I care about systems that actually work in production: clear architecture, predictable behavior, and a level of
+              complexity that fits the team using it. No hype stacks or one-off science projects. Just well-designed platforms
+              your team can explain and build on.
             </p>
           </article>
 
+          <!-- Security / clarity -->
           <article class="card reveal" style="max-width: var(--maxw-readable); margin-inline:auto;">
-            <h2>Gold Standard Security</h2>
+            <h2>Private by default, built to be lived with</h2>
             <p>
-              Every platform we design starts with clarity and security: private networking, least-privilege IAM,
-              KMS encryption, and observability as table stakes. We build what's needed, build it right, and build it to last.
+              Most of my work starts with getting the foundations right: private networking, least-privilege IAM, KMS-encrypted
+              storage, and observability that makes it obvious when something is off. From there, it's about steady improvements,
+              not constant reinvention.
             </p>
           </article>
 
+          <!-- Tech stack -->
           <article class="card reveal" style="max-width: var(--maxw-readable); margin-inline:auto;">
-            <h2>Tech Stack</h2>
+            <h2>The stack I focus on</h2>
             <p>
-              Our preferred stack for modern data work includes AWS MWAA (Airflow) for orchestration, Snowflake for warehousing,
-              and dbt Cloud for transformations. All aligned to enterprise best practices and incremental, testable delivery.
+              I specialize in AWS + Snowflake + dbt pipelines, often orchestrated with AWS MWAA (Airflow). That usually means:
+              S3-based ingestion, Snowflake as the warehouse, dbt for transformations and tests, and Airflow for scheduling and
+              coordination. All wired up with the same patterns I use in my own reference stack.
             </p>
+          </article>
+
+          <!-- Light CTA -->
+          <article class="card reveal" style="max-width: var(--maxw-readable); margin-inline:auto; text-align:center;">
+            <h2>Want to talk through your stack?</h2>
+            <p>
+              If you're working with some version of this stack and want it to feel calmer and more predictable, a short discovery
+              call is a good place to start.
+            </p>
+            <div class="stack" style="--stack-gap:.75rem; margin-top:1.25rem; justify-content:center;">
+              <a href="/contact#contact-form" class="button primary">Book a discovery call</a>
+            </div>
           </article>
         </div>
       </div>
