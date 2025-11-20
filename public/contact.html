@@ -38,7 +38,7 @@
   <link rel="stylesheet" href="/assets/css/styles.css" />
 </head>
 
-<body>
+<body class="page--contact">
   <!-- Accessibility: skip link -->
   <a href="#main" class="skip-link">Skip to content</a>
 
@@ -53,7 +53,7 @@
         <a href="/about">About</a>
         <a href="/projects">Projects</a>
         <a href="/services">Services</a>
-        <a href="/contact#contact-form" class="active button ghost" aria-current="page">Contact</a>
+        <a href="/contact#contact-form" class="button ghost active" aria-current="page">Contact</a>
       </nav>
     </div>
   </header>
@@ -186,13 +186,7 @@
       </div>
     </div>
 
-    <!-- Set footer year + theme-color to match current computed background -->
-    <script>
-      document.getElementById('y').textContent = new Date().getFullYear();
-      const metaTheme = document.querySelector('meta[name="theme-color"]');
-      const bg = getComputedStyle(document.documentElement).getPropertyValue('--bg-page').trim();
-      if (metaTheme && bg) metaTheme.setAttribute('content', bg);
-    </script>
+    <script src="/assets/js/footer-year-theme.js" defer></script>
   </footer>
 </body>
 </html>
