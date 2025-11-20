@@ -15,7 +15,7 @@
   <meta property="og:description" content="Minimal data collection, no trackers, no data selling. Contact: dave@catincloudlabs.com." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://catincloudlabs.com/privacy" />
-  <meta property="og:image" content="https://catincloudlabs.com/assets/social-card.png" />
+  <meta property="og:image" content="https://catincloudlabs.com/assets/brand/social-card.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:site_name" content="CatInCloud Labs" />
@@ -25,7 +25,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Privacy Policy - CatInCloud Labs" />
   <meta name="twitter:description" content="Minimal data collection, no trackers, no data selling. Contact: dave@catincloudlabs.com." />
-  <meta name="twitter:image" content="https://catincloudlabs.com/assets/social-card.png" />
+  <meta name="twitter:image" content="https://catincloudlabs.com/assets/brand/social-card.png" />
 
   <!-- Icons & theme -->
   <link rel="icon" href="/assets/favicons/favicon.svg" type="image/svg+xml" />
@@ -143,13 +143,7 @@
       </div>
     </div>
 
-    <!-- Set footer year + theme-color to match current computed background -->
-    <script>
-      document.getElementById('y').textContent = new Date().getFullYear();
-      const metaTheme = document.querySelector('meta[name="theme-color"]');
-      const bg = getComputedStyle(document.documentElement).getPropertyValue('--bg-page').trim();
-      if (metaTheme && bg) metaTheme.setAttribute('content', bg);
-    </script>
+    <script src="/assets/js/footer-year-theme.js" defer></script>
   </footer>
 </body>
 </html>
