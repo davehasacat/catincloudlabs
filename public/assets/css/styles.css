@@ -1069,36 +1069,55 @@ figure, .card { overflow: hidden; }
   margin-top: 0;
 }
 
-/* --- Compact mobile nav: de-pill + smaller --- */
+/* --- Super-compact mobile header/nav --- */
 @media (max-width: 640px) {
   .header {
-    padding-block: 0.4rem; /* tighter top/bottom */
+    padding-block: 0;              /* no extra vertical padding */
   }
 
   .header .nav {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.25rem;          /* small gap between logo and nav */
+    padding: 0.35rem 0.75rem;      /* tighter than the global .9rem 1rem */
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.2rem 0.5rem;
+  }
+
+  /* Smaller logo on phones */
+  .header .brand img {
+    height: 24px;
   }
 
   .menu {
+    margin-left: auto;
     display: flex;
     flex-wrap: wrap;
-    gap: 0.6rem;
-    font-size: 0.9rem;     /* slightly smaller text */
+    justify-content: flex-end;
+    gap: 0.4rem 0.6rem;
+    font-size: 0.85rem;            /* smaller text */
   }
 
-  /* Make all nav links look like simple text links */
+  /* Strip pill styling completely in the nav */
   .menu a {
     padding: 0;
-    border: none;
+    border: 0;
     background: transparent;
     box-shadow: none;
   }
 
-  /* Special case: active nav item (the one with .button.ghost.active) */
-  .menu a.button.ghost.active {
-    color: var(--accent, #0ea5e9);
+  /* Also neutralize the .button.ghost on Contact */
+  .menu a.button,
+  .menu a.button.ghost {
+    padding: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  /* Active page: just color + slight weight */
+  .nav .menu a[aria-current="page"] {
+    background: transparent;
+    color: var(--accent-700);
     font-weight: 600;
   }
 }
