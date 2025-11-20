@@ -13,7 +13,7 @@
   <meta property="og:description" content="The page you're looking for doesn't exist. Let's get you back on track." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://catincloudlabs.com/404" />
-  <meta property="og:image" content="https://catincloudlabs.com/assets/social-card.png" />
+  <meta property="og:image" content="https://catincloudlabs.com/assets/brand/social-card.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:site_name" content="CatInCloud Labs" />
@@ -21,7 +21,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="404 - Page Not Found | CatInCloud Labs" />
   <meta name="twitter:description" content="The page you're looking for doesn't exist. Let's get you back on track." />
-  <meta name="twitter:image" content="https://catincloudlabs.com/assets/social-card.png" />
+  <meta name="twitter:image" content="https://catincloudlabs.com/assets/brand/social-card.png" />
 
   <!-- Icons & theme -->
   <link rel="icon" href="/assets/favicons/favicon.svg" type="image/svg+xml" />
@@ -35,13 +35,20 @@
 </head>
 
 <body>
+  <!-- Accessibility: skip link -->
   <a href="#main" class="skip-link">Skip to content</a>
 
   <header class="header">
     <div class="container nav">
       <a class="brand" href="/" aria-label="CatInCloud Labs">
-        <img src="/assets/brand/logo-wordmark-light.svg" alt="CatInCloud Labs"
-             width="180" height="32" decoding="async" fetchpriority="high" />
+        <img
+          src="/assets/brand/logo-wordmark-light.svg"
+          alt="CatInCloud Labs"
+          width="180"
+          height="32"
+          decoding="async"
+          fetchpriority="high"
+        />
       </a>
       <nav class="menu" aria-label="Primary">
         <a href="/">Home</a>
@@ -62,7 +69,7 @@
           <p class="subtitle">The page you're looking for doesn't exist or has moved. Let's get you back on track.</p>
           <div class="actions">
             <a class="button primary" href="/">Go Home</a>
-            <a class="button ghost" href="/contact">Contact us</a>
+            <a class="button ghost" href="/contact#contact-form">Contact us</a>
           </div>
         </div>
       </div>
@@ -76,7 +83,7 @@
           <p>
             <a href="/about">About</a> ·
             <a href="/projects">Projects</a> ·
-            <a href="/contact">Contact</a>
+            <a href="/contact#contact-form">Contact</a>
           </p>
         </article>
       </div>
@@ -89,19 +96,14 @@
       <p><em>Cats who cloud. Humans that stay grounded.</em></p>
       <div class="stack" style="--stack-gap:.25rem; justify-content:center; margin-top:0.5rem;">
         <a href="/about">About</a> ·
-        <a href="/.well-known/security.txt">Security</a> ·
+        <a href="/security">Security</a> ·
         <a href="/privacy">Privacy</a> ·
-        <a href="/terms">Terms</a>
+        <a href="/terms">Terms</a> ·
         <a href="/contact#contact-form" aria-label="Contact CatInCloud Labs">Contact</a>
       </div>
     </div>
 
-    <script>
-      document.getElementById('y').textContent = new Date().getFullYear();
-      const metaTheme = document.querySelector('meta[name="theme-color"]');
-      const bg = getComputedStyle(document.documentElement).getPropertyValue('--bg-page').trim();
-      if (metaTheme && bg) metaTheme.setAttribute('content', bg);
-    </script>
+    <script src="/assets/js/footer-year-theme.js" defer></script>
   </footer>
 </body>
 </html>

@@ -114,13 +114,7 @@
       </div>
     </div>
 
-    <!-- Set footer year + theme-color to match current computed background -->
-    <script>
-      document.getElementById('y').textContent = new Date().getFullYear();
-      const metaTheme = document.querySelector('meta[name="theme-color"]');
-      const bg = getComputedStyle(document.documentElement).getPropertyValue('--bg-page').trim();
-      if (metaTheme && bg) metaTheme.setAttribute('content', bg);
-    </script>
+    <script src="/assets/js/footer-year-theme.js" defer></script>
   </footer>
 </body>
 </html>
