@@ -15,7 +15,7 @@
   <meta property="og:description" content="Plain-English Terms of Service for CatInCloud Labs." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://catincloudlabs.com/terms" />
-  <meta property="og:image" content="https://catincloudlabs.com/assets/social-card.png" />
+  <meta property="og:image" content="https://catincloudlabs.com/assets/brand/social-card.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:site_name" content="CatInCloud Labs" />
@@ -25,7 +25,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Terms of Service - CatInCloud Labs" />
   <meta name="twitter:description" content="Plain-English Terms of Service for CatInCloud Labs." />
-  <meta name="twitter:image" content="https://catincloudlabs.com/assets/social-card.png" />
+  <meta name="twitter:image" content="https://catincloudlabs.com/assets/brand/social-card.png" />
 
   <!-- Icons & theme -->
   <link rel="icon" href="/assets/favicons/favicon.svg" type="image/svg+xml" />
@@ -117,7 +117,7 @@
           <h2>15) Changes to these terms</h2>
           <p>We may update these terms from time to time. If we make material changes, we'll update the “Last updated” date and, where reasonable, provide a short notice on the site.</p>
 
-          <h2>16) Governing law & venue</h2>
+          <h2>16) Governing law &amp; venue</h2>
           <p>These terms are governed by the laws of the State of Minnesota, without regard to conflict-of-laws rules. Courts in Hennepin County, Minnesota have exclusive jurisdiction, and you consent to personal jurisdiction there.</p>
 
           <h2>17) Contact</h2>
@@ -137,19 +137,14 @@
       <p><em>Cats who cloud. Humans that stay grounded.</em></p>
       <div class="stack" style="--stack-gap:.25rem; justify-content:center; margin-top:0.5rem;">
         <a href="/about">About</a> ·
-        <a href="/.well-known/security.txt">Security</a> ·
+        <a href="/security">Security</a> ·
         <a href="/privacy">Privacy</a> ·
-        <a href="/terms" aria-current="page">Terms</a>
+        <a href="/terms" aria-current="page">Terms</a> ·
         <a href="/contact#contact-form" aria-label="Contact CatInCloud Labs">Contact</a>
       </div>
     </div>
 
-    <script>
-      document.getElementById('y').textContent = new Date().getFullYear();
-      const metaTheme = document.querySelector('meta[name="theme-color"]');
-      const bg = getComputedStyle(document.documentElement).getPropertyValue('--bg-page').trim();
-      if (metaTheme && bg) metaTheme.setAttribute('content', bg);
-    </script>
+    <script src="/assets/js/footer-year-theme.js" defer></script>
   </footer>
 </body>
 </html>
