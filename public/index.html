@@ -159,29 +159,53 @@
           <!-- Architecture diagram -->
           <article id="architecture" class="card reveal proof-diagram" style="max-width: var(--maxw-readable); margin-inline:auto;">
             <figure class="diagram-figure" style="margin:0;">
-              <img
-                src="/assets/diagrams/architecture-flow.v5.svg"
-                alt="Architecture flow diagram showing MWAA orchestrating S3 to Snowflake via COPY, with dbt building marts"
-                class="diagram"
-                width="1160" height="300"
-                loading="lazy" decoding="async"
-                sizes="(max-width: 700px) 100vw, 1160px" />
-              <figcaption class="diagram-caption">High-level data flow: ingest market data, land it in S3, transform with dbt, &amp; serve from Snowflake.</figcaption>
+              <button
+                type="button"
+                class="proof-figure__button"
+                data-panel-open
+                data-caption="High-level data flow: ingest market data, land it in S3, transform with dbt, &amp; serve from Snowflake."
+                aria-label="Click to zoom the architecture flow diagram"
+              >
+                <img
+                  src="/assets/diagrams/architecture-flow.v5.svg"
+                  alt="Architecture flow diagram showing MWAA orchestrating S3 to Snowflake via COPY, with dbt building marts"
+                  class="diagram"
+                  width="1160" height="300"
+                  loading="lazy" decoding="async"
+                  sizes="(max-width: 700px) 100vw, 1160px" />
+                <span class="proof-zoom-pill">
+                  Click to zoom
+                </span>
+              </button>
+              <figcaption class="diagram-caption">
+                High-level data flow: ingest market data, land it in S3, transform with dbt, &amp; serve from Snowflake.
+              </figcaption>
             </figure>
           </article>
 
           <!-- Security/observability diagram -->
           <article id="orchestration" class="card reveal proof-diagram" style="max-width: var(--maxw-readable); margin-inline:auto;">
             <figure class="diagram-figure" style="margin:0;">
-              <img
-                src="/assets/diagrams/security-observability.v5.svg"
-                alt="Private VPC with S3 Gateway Endpoint; MWAA orchestrates Snowflake load; outbound-only egress"
-                class="diagram"
-                width="1160" height="300"
-                loading="lazy" decoding="async"
-                sizes="(max-width: 700px) 100vw, 1160px" />
+              <button
+                type="button"
+                class="proof-figure__button"
+                data-panel-open
+                data-caption="High-level security view: client VPN into a private VPC; MWAA reaches encrypted S3 via gateway endpoint and orchestrates Snowflake via outbound NAT only."
+                aria-label="Click to zoom the security and observability diagram"
+              >
+                <img
+                  src="/assets/diagrams/security-observability.v5.svg"
+                  alt="Private VPC with S3 Gateway Endpoint; MWAA orchestrates Snowflake load; outbound-only egress"
+                  class="diagram"
+                  width="1160" height="300"
+                  loading="lazy" decoding="async"
+                  sizes="(max-width: 700px) 100vw, 1160px" />
+                <span class="proof-zoom-pill">
+                  Click to zoom
+                </span>
+              </button>
               <figcaption class="diagram-caption">
-                High-level security view: client VPN into a private VPC; MWAA reaches encrypted S3 via gateway endpoint, then orchestrates Snowflake via outbound NAT.
+                High-level security view: client VPN into a private VPC; MWAA reaches encrypted S3 via gateway endpoint and orchestrates Snowflake via outbound NAT only.
               </figcaption>
             </figure>
           </article>
@@ -297,7 +321,7 @@
               Ingest - API -> S3 (RAW)
             </p>
 
-            <!-- New: 3-panel end-to-end proof image -->
+            <!-- 3-panel end-to-end proof image -->
             <figure class="proof-figure">
               <button
                 type="button"
