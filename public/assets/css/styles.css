@@ -1076,10 +1076,25 @@ figure, .card { overflow: hidden; }
   transform: translateY(-1px);
 }
 
-/* On touch devices (no hover), keep it a bit more visible */
+/* On touch devices: use a small magnifying glass instead of text */
 @media (pointer: coarse) {
   .proof-zoom-pill {
-    opacity: 0.7;
+    opacity: 0.85;
+    width: 2.1rem;
+    height: 2.1rem;
+    padding: 0;
+    border-radius: 999px;
+    display: grid;
+    place-items: center;
+    font-size: 1.1rem;
+
+    /* Hide the "Click to zoom" text visually but keep the pill shape */
+    color: transparent;
+  }
+
+  .proof-zoom-pill::before {
+    content: "🔍";
+    color: #4b5563;
   }
 }
 
