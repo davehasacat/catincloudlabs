@@ -657,9 +657,11 @@ figure, .card { overflow: hidden; }
   }
 }
 
-/* Slightly tighter container padding on mobile to reduce edge pressure */
 @media (max-width: 768px) {
   .container { width: min(1100px, 94vw); }
+  .header .container {
+    width: min(1100px, 90vw);
+  }
 }
 
 /* === Proof of Success gallery ======================================= */
