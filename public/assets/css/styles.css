@@ -660,7 +660,7 @@ figure, .card { overflow: hidden; }
 @media (max-width: 768px) {
   .container { width: min(1100px, 94vw); }
   .header .container {
-    width: min(1100px, 88vw);
+    width: min(1100px, 90vw);
   }
 }
 
