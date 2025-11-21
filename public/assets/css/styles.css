@@ -1039,22 +1039,43 @@ figure, .card { overflow: hidden; }
   box-shadow: 0 18px 40px rgba(15, 23, 42, 0.26);
 }
 
-/* Reusable 'Click to zoom' pill (subtle) */
+/* Reusable 'Click to zoom' pill (very subtle) */
 .proof-zoom-pill {
   position: absolute;
-  right: 0.75rem;
-  bottom: 0.75rem;
-  padding: 0.3rem 0.7rem;
+  right: 0.6rem;
+  bottom: 0.6rem;
+  padding: 0.22rem 0.65rem;
   border-radius: 999px;
   font-size: 0.72rem;
 
-  background: rgb(255 255 255 / 0.9);
-  color: #111827;
-  border: 1px solid rgb(148 163 184 / 0.75);
-  box-shadow: 0 8px 20px rgb(15 23 42 / 0.15);
+  background: rgb(255 255 255 / 0.86);
+  color: #4b5563;
+  border: 1px solid rgb(148 163 184 / 0.6);
+  box-shadow: 0 4px 10px rgb(15 23 42 / 0.16);
 
-  pointer-events: none;   /* pill itself isn’t clickable, the whole image is */
+  pointer-events: none;               /* pill itself isn't clickable */
+  opacity: 0.2;                       /* very faint by default */
+  transition:
+    opacity 120ms ease,
+    transform 120ms ease;
 }
+
+/* On hover/focus, make it clear but still small */
+.proof-figure__button:hover .proof-zoom-pill,
+.proof-figure__button:focus-visible .proof-zoom-pill,
+.proof-thumb:hover .proof-zoom-pill,
+.proof-thumb:focus-visible .proof-zoom-pill {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* On touch devices (no hover), keep it a bit more visible */
+@media (pointer: coarse) {
+  .proof-zoom-pill {
+    opacity: 0.7;
+  }
+}
+
 
 /* Caption under the 3-panel image */
 .proof-figure__caption {
