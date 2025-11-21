@@ -1076,33 +1076,10 @@ figure, .card { overflow: hidden; }
   transform: translateY(-1px);
 }
 
-/* Touch devices: tiny CSS magnifying-glass icon, no text */
+/* On touch devices, hide the overlay pill entirely */
 @media (pointer: coarse) {
   .proof-zoom-pill {
-    width: 1.5rem;
-    height: 1.5rem;
-    padding: 0;
-    border-radius: 50%;                          /* circle = lens */
-    border: 2px solid #4b5563;
-    background: rgb(255 255 255 / 0.9);
-    box-shadow: 0 4px 10px rgb(15 23 42 / 0.16);
-
-    /* hide "Click to zoom" text completely */
-    font-size: 0;
-    letter-spacing: 0;
-    overflow: hidden;
-    white-space: nowrap;
-  }
-
-  .proof-zoom-pill::before {
-    /* handle of the magnifying glass */
-    content: "";
-    position: absolute;
-    width: 0.5rem;
-    height: 0.12rem;
-    background: #4b5563;
-    border-radius: 999px;
-    transform: translate(0.65rem, 0.65rem) rotate(45deg);
+    display: none;
   }
 }
 
