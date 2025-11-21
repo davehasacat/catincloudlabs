@@ -1163,3 +1163,16 @@ figure, .card { overflow: hidden; }
     font-weight: 600;
   }
 }
+
+/* Anything that opens the lightbox should feel zoomable on desktop */
+@media (pointer: fine) {
+  .proof-thumb,
+  .proof-figure__button,
+  .diagram-figure .proof-figure__button {
+    cursor: zoom-in;
+  }
+
+  .diagram {
+    cursor: zoom-in;
+  }
+}

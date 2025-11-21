@@ -10,9 +10,12 @@
     const imgEl = lightbox.querySelector(".lb__img");
     const captionEl = lightbox.querySelector("#lb-caption");
     const navEl = lightbox.querySelector(".lb__nav");
+    const closeButtons = lightbox.querySelectorAll("[data-close]");
 
     const triggers = document.querySelectorAll("[data-panel-open]");
     if (!triggers.length) return;
+
+    let lastTrigger = null;
 
     function openFromButton(btn) {
       const img = btn.querySelector("img");
@@ -22,17 +25,24 @@
       const alt = img.getAttribute("alt") || "";
       const caption = btn.getAttribute("data-caption") || alt;
 
+      lastTrigger = btn;
+
       imgEl.src = src;
       imgEl.alt = alt;
       captionEl.textContent = caption;
 
-      // Hide nav arrows for these single images (the proof carousel
-      // still controls them via its own script)
+      // Hide nav arrows for these single images
       if (navEl) navEl.style.display = "none";
 
       lightbox.hidden = false;
       lightbox.setAttribute("aria-hidden", "false");
       document.body.style.overflow = "hidden";
+
+      // Move focus to close button for accessibility
+      const primaryClose = lightbox.querySelector(".lb__close");
+      if (primaryClose) {
+        primaryClose.focus();
+      }
     }
 
     function closeLightbox() {
@@ -41,9 +51,13 @@
       imgEl.removeAttribute("src");
       imgEl.alt = "";
 
-      // Let the proof carousel script / CSS decide nav visibility again
       if (navEl) navEl.style.display = "";
       document.body.style.overflow = "";
+
+      // Restore focus to the thing that opened the lightbox
+      if (lastTrigger && typeof lastTrigger.focus === "function") {
+        lastTrigger.focus();
+      }
     }
 
     // Wire up every data-panel-open trigger (both diagrams + 3-panel)
@@ -54,14 +68,16 @@
     });
 
     // Close buttons / backdrop
-    lightbox
-      .querySelectorAll("[data-close]")
-      .forEach((el) => el.addEventListener("click", closeLightbox));
+    closeButtons.forEach((el) => {
+      el.addEventListener("click", closeLightbox);
+    });
 
     // Esc to close
     document.addEventListener("keydown", function (event) {
       if (event.key === "Escape") {
-        closeLightbox();
+        if (!lightbox.hidden) {
+          closeLightbox();
+        }
       }
     });
   });
