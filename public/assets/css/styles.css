@@ -1076,24 +1076,27 @@ figure, .card { overflow: hidden; }
   transform: translateY(-1px);
 }
 
-/* On touch devices: use a small magnifying glass instead of text */
+/* Touch devices: tiny magnifying icon instead of text */
 @media (pointer: coarse) {
   .proof-zoom-pill {
-    opacity: 0.85;
-    width: 2.1rem;
-    height: 2.1rem;
+    width: 1.6rem;
+    height: 1.6rem;
     padding: 0;
     border-radius: 999px;
     display: grid;
     place-items: center;
-    font-size: 1.1rem;
 
-    /* Hide the "Click to zoom" text visually but keep the pill shape */
-    color: transparent;
+    /* hide the "Click to zoom" text for real */
+    font-size: 0;
+    letter-spacing: 0;
+    overflow: hidden;
+    white-space: nowrap;
   }
 
   .proof-zoom-pill::before {
     content: "🔍";
+    font-size: 0.95rem;
+    line-height: 1;
     color: #4b5563;
   }
 }
