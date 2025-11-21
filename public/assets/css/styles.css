@@ -540,7 +540,7 @@ main { flex: 1; } /* sticky footer support */
 
 @media (min-width: 1024px) {
   .diagram-figure .proof-zoom-pill {
-    bottom: -0.8rem;   /* lower it a tad under the image edge */
+    bottom: -1rem;   /* lower it a tad under the image edge */
   }
 }
 
