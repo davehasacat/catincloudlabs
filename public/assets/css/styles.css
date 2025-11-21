@@ -1039,16 +1039,21 @@ figure, .card { overflow: hidden; }
   box-shadow: 0 18px 40px rgba(15, 23, 42, 0.26);
 }
 
-/* Reusable 'Click to zoom' pill */
+/* Reusable 'Click to zoom' pill (subtle) */
 .proof-zoom-pill {
   position: absolute;
-  right: 1rem;
-  bottom: 1rem;
-  padding: 0.45rem 0.9rem;
+  right: 0.75rem;
+  bottom: 0.75rem;
+  padding: 0.3rem 0.7rem;
   border-radius: 999px;
-  font-size: 0.8rem;
-  background: rgba(15, 23, 42, 0.9);
-  color: #f9fafb;
+  font-size: 0.72rem;
+
+  background: rgb(255 255 255 / 0.9);
+  color: #111827;
+  border: 1px solid rgb(148 163 184 / 0.75);
+  box-shadow: 0 8px 20px rgb(15 23 42 / 0.15);
+
+  pointer-events: none;   /* pill itself isn’t clickable, the whole image is */
 }
 
 /* Caption under the 3-panel image */

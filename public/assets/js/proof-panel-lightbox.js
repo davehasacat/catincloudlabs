@@ -1,75 +1,68 @@
-// assets/js/proof-panel-lightbox.js
-// Hook the 3-panel proof image into the existing lightbox,
-// but treat it as a single image (no prev/next arrows).
+// /assets/js/proof-panel-lightbox.js
+// Lightweight lightbox opener for single images that use data-panel-open.
+// Used by: diagrams + 3-panel proof image.
 
 (function () {
-  function initPanelLightbox() {
-    const trigger = document.querySelector("[data-panel-open]");
-    if (!trigger) return;
-
+  document.addEventListener("DOMContentLoaded", function () {
     const lightbox = document.getElementById("lightbox");
     if (!lightbox) return;
 
-    const lbImg = lightbox.querySelector(".lb__img");
-    const lbCaption = lightbox.querySelector("#lb-caption");
-    const lbNav = lightbox.querySelector(".lb__nav");
-    const closeEls = lightbox.querySelectorAll("[data-close]");
+    const imgEl = lightbox.querySelector(".lb__img");
+    const captionEl = lightbox.querySelector("#lb-caption");
+    const navEl = lightbox.querySelector(".lb__nav");
 
-    // Keep track of the original nav display so we can restore it
-    let navOriginalDisplay = lbNav ? lbNav.style.display : "";
+    const triggers = document.querySelectorAll("[data-panel-open]");
+    if (!triggers.length) return;
 
-    function hideNav() {
-      if (!lbNav) return;
-      navOriginalDisplay = lbNav.style.display || "";
-      lbNav.style.display = "none";
-    }
-
-    function restoreNav() {
-      if (!lbNav) return;
-      lbNav.style.display = navOriginalDisplay || "";
-    }
-
-    // When the 3-panel is clicked, show it in the lightbox and hide nav
-    trigger.addEventListener("click", function () {
-      if (!lbImg) return;
-
-      const img = trigger.querySelector("img");
+    function openFromButton(btn) {
+      const img = btn.querySelector("img");
       if (!img) return;
 
-      // Set image source + alt
-      lbImg.src = img.src;
-      lbImg.alt = img.alt || "";
+      const src = img.getAttribute("src");
+      const alt = img.getAttribute("alt") || "";
+      const caption = btn.getAttribute("data-caption") || alt;
 
-      // Caption: prefer data-caption, fall back to img alt
-      if (lbCaption) {
-        lbCaption.textContent =
-          trigger.dataset.caption || img.alt || "";
-      }
+      imgEl.src = src;
+      imgEl.alt = alt;
+      captionEl.textContent = caption;
 
-      // Hide prev/next arrows for this single-image view
-      hideNav();
+      // Hide nav arrows for these single images (the proof carousel
+      // still controls them via its own script)
+      if (navEl) navEl.style.display = "none";
 
-      // Show the lightbox
       lightbox.hidden = false;
       lightbox.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeLightbox() {
+      lightbox.hidden = true;
+      lightbox.setAttribute("aria-hidden", "true");
+      imgEl.removeAttribute("src");
+      imgEl.alt = "";
+
+      // Let the proof carousel script / CSS decide nav visibility again
+      if (navEl) navEl.style.display = "";
+      document.body.style.overflow = "";
+    }
+
+    // Wire up every data-panel-open trigger (both diagrams + 3-panel)
+    triggers.forEach((btn) => {
+      btn.addEventListener("click", function () {
+        openFromButton(btn);
+      });
     });
 
-    // When the lightbox is closed, restore the nav visibility
-    closeEls.forEach(function (el) {
-      el.addEventListener("click", restoreNav);
-    });
+    // Close buttons / backdrop
+    lightbox
+      .querySelectorAll("[data-close]")
+      .forEach((el) => el.addEventListener("click", closeLightbox));
 
-    // Also restore nav if user closes via Escape key
-    document.addEventListener("keydown", function (evt) {
-      if (evt.key === "Escape" || evt.key === "Esc") {
-        restoreNav();
+    // Esc to close
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") {
+        closeLightbox();
       }
     });
-  }
-
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", initPanelLightbox);
-  } else {
-    initPanelLightbox();
-  }
+  });
 })();
