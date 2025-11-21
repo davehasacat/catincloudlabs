@@ -1072,11 +1072,11 @@ figure, .card { overflow: hidden; }
 /* --- Super-compact mobile header/nav --- */
 @media (max-width: 640px) {
   .header {
-    padding-block: 0;              /* no extra vertical padding */
+    padding-block: 0;
   }
 
   .header .nav {
-    padding: 0.35rem 0.75rem;      /* tighter than the global .9rem 1rem */
+    padding: 0.35rem 1rem;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
@@ -1094,7 +1094,7 @@ figure, .card { overflow: hidden; }
     flex-wrap: wrap;
     justify-content: flex-end;
     gap: 0.4rem 0.6rem;
-    font-size: 0.85rem;            /* smaller text */
+    font-size: 0.85rem;
   }
 
   /* Strip pill styling completely in the nav */
