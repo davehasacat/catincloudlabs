@@ -530,14 +530,29 @@ main { flex: 1; } /* sticky footer support */
   padding: clamp(16px, 3vw, 28px);
   margin: clamp(16px, 3vw, 28px) auto;
 }
-.diagram-figure { margin: 0; }
+
+.diagram-figure {
+  margin: 0;
+  position: relative;           /* allows a 'Click to zoom' pill if you add one */
+  text-align: center;
+  overflow: visible;   /* allow the pill to sit a bit below the image */
+}
+
+@media (min-width: 1024px) {
+  .diagram-figure .proof-zoom-pill {
+    bottom: -1rem;   /* lower it a tad under the image edge */
+  }
+}
+
 .diagram {
   width: 100%;
   max-width: 100%;
   height: auto;
   display: block;
   margin-inline: auto;
+  cursor: zoom-in;              /* key bit: shows it's clickable */
 }
+
 .diagram-caption {
   margin-top: .5rem;
   font-size: .875rem;
@@ -1031,16 +1046,41 @@ figure, .card { overflow: hidden; }
   box-shadow: 0 18px 40px rgba(15, 23, 42, 0.26);
 }
 
-/* Reusable 'Click to zoom' pill */
+/* Reusable 'Click to zoom' pill (very subtle) */
 .proof-zoom-pill {
   position: absolute;
-  right: 1rem;
-  bottom: 1rem;
-  padding: 0.45rem 0.9rem;
+  right: 0.6rem;
+  bottom: 0.6rem;
+  padding: 0.22rem 0.65rem;
   border-radius: 999px;
-  font-size: 0.8rem;
-  background: rgba(15, 23, 42, 0.9);
-  color: #f9fafb;
+  font-size: 0.72rem;
+
+  background: rgb(255 255 255 / 0.86);
+  color: #4b5563;
+  border: 1px solid rgb(148 163 184 / 0.6);
+  box-shadow: 0 4px 10px rgb(15 23 42 / 0.16);
+
+  pointer-events: none;               /* pill itself isn't clickable */
+  opacity: 0.2;                       /* very faint by default */
+  transition:
+    opacity 120ms ease,
+    transform 120ms ease;
+}
+
+/* On hover/focus, make it clear but still small */
+.proof-figure__button:hover .proof-zoom-pill,
+.proof-figure__button:focus-visible .proof-zoom-pill,
+.proof-thumb:hover .proof-zoom-pill,
+.proof-thumb:focus-visible .proof-zoom-pill {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* On touch devices, hide the overlay pill entirely */
+@media (pointer: coarse) {
+  .proof-zoom-pill {
+    display: none;
+  }
 }
 
 /* Caption under the 3-panel image */
@@ -1121,5 +1161,18 @@ figure, .card { overflow: hidden; }
     background: transparent;
     color: var(--accent-700);
     font-weight: 600;
+  }
+}
+
+/* Anything that opens the lightbox should feel zoomable on desktop */
+@media (pointer: fine) {
+  .proof-thumb,
+  .proof-figure__button,
+  .diagram-figure .proof-figure__button {
+    cursor: zoom-in;
+  }
+
+  .diagram {
+    cursor: zoom-in;
   }
 }
