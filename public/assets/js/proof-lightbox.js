@@ -11,8 +11,8 @@
       alt: "Ingest: Airflow DAG writing gzipped ticker JSON files to the S3 RAW bucket."
     },
     {
-      webp: "/assets/proof/proof-success-load.v1.1920w.webp",
-      jpg:  "/assets/proof/proof-success-load.v1.1920w.jpg",
+      webp: "/assets/proof/proof-success-load.v2.1600w.webp",
+      jpg:  "/assets/proof/proof-success-load.v2.1600w.jpg",
       caption: "Load: Snowflake COPY from S3",
       alt: "Load: Airflow load DAG running Snowflake COPY INTO from the S3 stage into RAW tables."
     },
