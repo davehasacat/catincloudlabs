@@ -17,8 +17,8 @@
       alt: "Load: Airflow load DAG running Snowflake COPY INTO from the S3 stage into RAW tables."
     },
     {
-      webp: "/assets/proof/proof-success-transform.v1.1920w.webp",
-      jpg:  "/assets/proof/proof-success-transform.v1.1920w.jpg",
+      webp: "/assets/proof/proof-success-transform.v2.1600w.webp",
+      jpg:  "/assets/proof/proof-success-transform.v2.1600w.jpg",
       caption: "Transform: dbt models in Snowflake",
       alt: "Transform: dbt builds typed staging and mart models in Snowflake with precise decimals."
     }
