@@ -7,7 +7,7 @@
     {
       webp: "/assets/proof/proof-success-ingest.v2.1600w.webp",
       jpg:  "/assets/proof/proof-success-ingest.v2.1600w.jpg",
-      caption: "Ingest: API -> S3 (RAW)",
+      caption: "Ingest: API JSON files to S3",
       alt: "Ingest: Airflow DAG writing gzipped ticker JSON files to the S3 RAW bucket."
     },
     {
