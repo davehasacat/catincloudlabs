@@ -127,7 +127,7 @@
               See proof of success
             </a>
             <p class="hero-footnote">
-              30-minutes to chat through your current stack and priorities.
+              30 minutes to chat through your current stack and priorities.
             </p>
           </div>
         </div>
@@ -306,22 +306,24 @@
               data-proof-caption
               style="margin-top:0.9rem;font-size:0.95rem;color:#334155;"
             >
-              Ingest - API -> S3 (RAW)
+              Ingest: write JSON files to S3
             </p>
 
-            <!-- 3-panel end-to-end proof image -->
+                        <!-- 3-panel end-to-end proof image -->
             <figure class="proof-figure">
               <button
                 type="button"
                 class="proof-figure__button"
                 data-panel-open
-                data-caption="From scheduled Airflow runs to validated rows in Snowflake-the same pattern we'd adapt to your sources and your environment."
+                data-caption="From scheduled Airflow runs to validated rows in Snowflake. The same pattern we'd adapt to your sources and your environment."
                 aria-label="Click to zoom the end-to-end 3-panel pipeline screenshot"
               >
                 <img
-                  src="/assets/proof/proof-end-to-end-panel.v1.png"
-                  alt="Three panels showing daily Airflow runs for the stocks load, a partitioned validation DAG, and Snowflake rows with trade_date and load_date."
+                  src="/assets/proof/proof-end-to-end-panel.v2.1920w.webp"
+                  alt="Three panels: daily Airflow runs for the stocks load, a partitioned validation DAG, and Snowflake rows showing prices with trade and load dates."
                   class="proof-figure__img"
+                  width="1920"
+                  height="1080"
                   loading="lazy"
                   decoding="async"
                 />
@@ -331,10 +333,15 @@
               </button>
 
               <figcaption class="proof-figure__caption">
-                From scheduled Airflow runs to validated rows in Snowflake&mdash;the same pattern we'd adapt to your
-                sources and your environment.
+                <strong>From left to right:</strong>
+                <ol style="margin:0.35rem 0 0;padding-left:1.25rem;">
+                  <li>Daily Airflow runs for the stocks load.</li>
+                  <li>A partitioned, validated load DAG.</li>
+                  <li>Clean prices landed in Snowflake with trade and load dates.</li>
+                </ol>
               </figcaption>
             </figure>
+
           </article>
         </div>
       </div>
