@@ -5,20 +5,20 @@
   // Slides: card + modal share the same list
   const slides = [
     {
-      webp: "/assets/proof/proof-success-ingest.v1.1920w.webp",
-      jpg:  "/assets/proof/proof-success-ingest.v1.1920w.jpg",
+      webp: "/assets/proof/proof-success-ingest.v2.1600w.webp",
+      jpg:  "/assets/proof/proof-success-ingest.v2.1600w.jpg",
       caption: "Ingest: API -> S3 (RAW)",
       alt: "Ingest: Airflow DAG writing gzipped ticker JSON files to the S3 RAW bucket."
     },
     {
-      webp: "/assets/proof/proof-success-load.v1.1920w.webp",
-      jpg:  "/assets/proof/proof-success-load.v1.1920w.jpg",
+      webp: "/assets/proof/proof-success-load.v2.1600w.webp",
+      jpg:  "/assets/proof/proof-success-load.v2.1600w.jpg",
       caption: "Load: Snowflake COPY from S3",
       alt: "Load: Airflow load DAG running Snowflake COPY INTO from the S3 stage into RAW tables."
     },
     {
-      webp: "/assets/proof/proof-success-transform.v1.1920w.webp",
-      jpg:  "/assets/proof/proof-success-transform.v1.1920w.jpg",
+      webp: "/assets/proof/proof-success-transform.v2.1600w.webp",
+      jpg:  "/assets/proof/proof-success-transform.v2.1600w.jpg",
       caption: "Transform: dbt models in Snowflake",
       alt: "Transform: dbt builds typed staging and mart models in Snowflake with precise decimals."
     }
