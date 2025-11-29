@@ -87,6 +87,46 @@
             <p class="muted">
               This is the same architecture pattern I adapt for client environments that want calm, well-understood data platforms.
             </p>
+
+            <!-- 3-panel end-to-end proof image -->
+            <figure class="proof-figure" style="margin-top:1.5rem;">
+              <button
+                type="button"
+                class="proof-figure__button"
+                data-panel-open
+                data-caption="From scheduled Airflow runs to validated rows in Snowflake. The same pattern I’d adapt to your sources and your environment."
+                aria-label="Click to zoom the end-to-end 3-panel pipeline screenshot"
+              >
+                <img
+                  src="/assets/proof/proof-end-to-end-panel.v2.1920w.webp"
+                  alt="Three panels: daily Airflow runs for the stocks load, a partitioned validation DAG, and Snowflake rows showing prices with trade and load dates."
+                  class="proof-figure__img"
+                  width="1920"
+                  height="1080"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span class="proof-zoom-pill">
+                  Click to zoom
+                </span>
+              </button>
+
+              <figcaption class="proof-figure__caption">
+                <strong>From left to right:</strong>
+                <ol style="margin:0.35rem 0 0;padding-left:1.25rem;">
+                  <li>Daily Airflow runs for the stocks load.</li>
+                  <li>A partitioned, validated load DAG.</li>
+                  <li>Clean prices landed in Snowflake with trade and load dates.</li>
+                </ol>
+              </figcaption>
+            </figure>
+
+            <h3 style="margin-top:1.5rem;">At a glance</h3>
+            <ul>
+              <li><strong>Stack:</strong> AWS (VPC, S3, MWAA), Snowflake, dbt</li>
+              <li><strong>Pattern:</strong> private networking, KMS encryption, incremental models</li>
+              <li><strong>Built for:</strong> calm, production-like behavior rather than a one-off demo</li>
+            </ul>
           </article>
 
           <!-- MWAA Private Environment -->
@@ -138,6 +178,20 @@
     </section>
   </main>
 
+  <!-- Lightbox root (one per page) -->
+  <div id="lightbox" class="lb" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <div class="lb__backdrop" data-close></div>
+    <div class="lb__stage" role="document">
+      <button class="lb__close" type="button" title="Close (Esc)" aria-label="Close" data-close>&times;</button>
+      <img class="lb__img" alt="" />
+      <p class="lb__caption" id="lb-caption"></p>
+      <div class="lb__nav" aria-hidden="true">
+        <button class="lb__prev" type="button" title="Previous (←)" aria-label="Previous image">&#10094;</button>
+        <button class="lb__next" type="button" title="Next (→)" aria-label="Next image">&#10095;</button>
+      </div>
+    </div>
+  </div>
+
   <!-- Footer -->
   <footer class="footer">
     <div class="container inner center">
@@ -153,6 +207,7 @@
     </div>
 
     <script src="/assets/js/footer-year-theme.js" defer></script>
+    <script src="/assets/js/proof-panel-lightbox.js" defer></script>
   </footer>
 </body>
 </html>
