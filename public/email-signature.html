@@ -2,52 +2,83 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Email Signature Preview</title>
+  <title>Email Signature | CatInCloud Labs</title>
+  <meta name="robots" content="noindex,nofollow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="/assets/favicons/favicon.svg" type="image/svg+xml" />
+  <style>
+    body {
+      margin: 0;
+      padding: 2rem 1rem;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #f9fafb;
+      color: #111827;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .sig-card {
+      background: #ffffff;
+      padding: 16px 20px;
+      border-radius: 16px;
+      box-shadow: 0 6px 18px rgba(15,23,42,0.10);
+      border: 1px solid #e5e7eb;
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      max-width: 480px;
+    }
+    .sig-logo img {
+      display: block;
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+    }
+    .sig-text {
+      font-size: 14px;
+      line-height: 1.4;
+    }
+    .sig-name {
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+    .sig-title {
+      color: #4b5563;
+      margin-bottom: 4px;
+    }
+    .sig-link {
+      color: #0ea5e9;
+      text-decoration: none;
+    }
+    .sig-link:hover {
+      text-decoration: underline;
+    }
+    .sig-row {
+      margin: 0;
+    }
+  </style>
 </head>
-<body style="margin: 24px; background: #f9fafb;">
-
-  <!-- Signature starts here -->
-  <table cellpadding="0" cellspacing="0" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 14px; line-height: 1.4; color: #111827; background:#ffffff; padding:12px; border-radius:6px;">
-    <tr>
-      <!-- Logo (PNG icon) -->
-      <td style="padding-right: 12px; border-right: 1px solid #e5e7eb; vertical-align:middle; min-width:60px;">
-        <a href="https://catincloudlabs.com" target="_blank" style="text-decoration:none;">
-          <img src="https://catincloudlabs.com/assets/favicons/linkedin-logo-800.png"
-               alt=""
-               style="height:32px; width:32px; display:block; border:0;" />
-        </a>
-      </td>
-
-      <!-- Text block -->
-      <td style="padding-left: 12px; vertical-align:middle;">
-        <div style="font-weight:600; color:#111827;">Dave Anaya</div>
-        <div style="color:#4b5563;">Lead Cloud &amp; Data Engineer&nbsp;|&nbsp;Founder</div>
-        <div style="margin-top:4px;">
-          <a href="mailto:dave@catincloudlabs.com" style="color:#0ea5e9; text-decoration:none;">
-            dave@catincloudlabs.com
-          </a>
-        </div>
-        <div>
-          <a href="https://catincloudlabs.com" style="color:#0ea5e9; text-decoration:none;">
-            catincloudlabs.com
-          </a>
-        </div>
-        <div style="margin-top:4px; color:#4b5563;">
-          <span>LinkedIn:&nbsp;</span>
-          <a href="https://www.linkedin.com/in/dave-anaya"
-             style="color:#0ea5e9; text-decoration:none;">
-            /in/dave-anaya
-          </a>
-          <span>&nbsp;·&nbsp;</span>
-          <a href="https://www.linkedin.com/company/catincloud-labs/"
-             style="color:#0ea5e9; text-decoration:none;">
-            @CatInCloud Labs
-          </a>
-        </div>
-      </td>
-    </tr>
-  </table>
-  <!-- Signature ends here -->
-
+<body>
+  <div class="sig-card">
+    <div class="sig-logo">
+      <img src="/assets/brand/logo-email-128.png" alt="CatInCloud Labs" />
+    </div>
+    <div class="sig-text">
+      <p class="sig-row sig-name">Dave Anaya</p>
+      <p class="sig-row sig-title">Lead Cloud &amp; Data Engineer | Founder</p>
+      <p class="sig-row">
+        <a class="sig-link" href="mailto:dave@catincloudlabs.com">dave@catincloudlabs.com</a>
+      </p>
+      <p class="sig-row">
+        <a class="sig-link" href="https://catincloudlabs.com">catincloudlabs.com</a>
+      </p>
+      <p class="sig-row">
+        LinkedIn:
+        <a class="sig-link" href="https://www.linkedin.com/in/dave-anaya">/in/dave-anaya</a>
+        &nbsp;&middot;&nbsp;
+        <a class="sig-link" href="https://www.linkedin.com/company/catincloud-labs/">@CatInCloud Labs</a>
+      </p>
+    </div>
+  </div>
 </body>
 </html>
