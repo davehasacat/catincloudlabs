@@ -1192,3 +1192,14 @@ figure, .card { overflow: hidden; }
   width: 100% !important;
   height: 100% !important;
 }
+
+#aapl-daily-chart {
+  width: 100%;
+  min-height: 260px;
+}
+
+@media (max-width: 640px) {
+  #aapl-daily-chart {
+    min-height: 220px;
+  }
+}

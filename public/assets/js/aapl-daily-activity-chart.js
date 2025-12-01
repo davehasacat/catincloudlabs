@@ -1,109 +1,122 @@
-// /assets/js/aapl-daily-activity-chart.js
+// /assets/js/aapl_daily_chart.js
+(() => {
+  const el = document.getElementById("aapl-daily-chart");
+  if (!el) return;
 
-(function () {
-  document.addEventListener("DOMContentLoaded", function () {
-    var el = document.getElementById("aapl-daily-activity-chart");
-    if (!el || !window.Plotly) return;
+  fetch("/assets/data/aapl_daily_activity.json")
+    .then((r) => r.json())
+    .then((data) => {
+      const dates = data.map((d) => d.trade_date);
+      const price = data.map((d) => d.underlying_close_price);
+      const volume = data.map((d) => d.total_option_volume);
+      const vol7 = data.map((d) => d.volume_7d_avg);
 
-    fetch("/assets/data/aapl_daily_activity.json", { cache: "no-cache" })
-      .then(function (resp) {
-        if (!resp.ok) {
-          throw new Error("Failed to load AAPL data JSON");
-        }
-        return resp.json();
-      })
-      .then(function (rows) {
-        if (!Array.isArray(rows) || rows.length === 0) {
-          throw new Error("No rows in AAPL JSON");
-        }
-
-        var dates = rows.map(function (r) { return r.trade_date; });
-        var prices = rows.map(function (r) { return Number(r.underlying_close_price); });
-        var volumes = rows.map(function (r) { return Number(r.total_option_volume); });
-        var volAvg = rows.map(function (r) {
-          return r.volume_7d_avg != null ? Number(r.volume_7d_avg) : null;
-        });
-
-        var priceTrace = {
+      const traces = [
+        {
           x: dates,
-          y: prices,
+          y: price,
           name: "Close price",
           type: "scatter",
           mode: "lines",
           line: { width: 2 },
-          yaxis: "y1",
-          hovertemplate: "%{x}<br>Close: %{y:$,.2f}<extra></extra>"
-        };
-
-        var volumeTrace = {
+          yaxis: "y",
+        },
+        {
           x: dates,
-          y: volumes,
+          y: volume,
           name: "Options volume",
           type: "bar",
+          marker: { opacity: 0.8 },
           yaxis: "y2",
-          opacity: 0.6,
-          hovertemplate: "%{x}<br>Volume: %{y:,}<extra></extra>"
-        };
-
-        var volAvgTrace = {
+        },
+        {
           x: dates,
-          y: volAvg,
+          y: vol7,
           name: "Volume 7d avg",
           type: "scatter",
           mode: "lines",
-          line: { width: 1.8, dash: "dash" },
+          line: { dash: "dash", width: 2 },
           yaxis: "y2",
-          hovertemplate: "%{x}<br>7d avg: %{y:,}<extra></extra>"
-        };
+        },
+      ];
 
-        var layout = {
-          margin: { t: 40, r: 60, b: 40, l: 56 },
-          showlegend: true,
+      const baseLayout = {
+        margin: { l: 60, r: 60, t: 10, b: 40 },
+        paper_bgcolor: "rgba(0,0,0,0)",
+        plot_bgcolor: "rgba(0,0,0,0)",
+        hovermode: "x unified",
+        xaxis: {
+          type: "date",
+          title: "Trade date",
+          showgrid: true,
+          gridcolor: "#e5e7eb",
+        },
+        yaxis: {
+          title: "Price (USD)",
+          showgrid: true,
+          gridcolor: "#e5e7eb",
+        },
+        yaxis2: {
+          title: "Total options volume",
+          overlaying: "y",
+          side: "right",
+          showgrid: false,
+        },
+        legend: {
+          orientation: "h",
+          yanchor: "top",
+          y: -0.25,
+          xanchor: "center",
+          x: 0.5,
+        },
+      };
+
+      const config = {
+        responsive: true,
+        displaylogo: false,
+        modeBarButtonsToRemove: ["select2d", "lasso2d", "zoomIn2d", "zoomOut2d"],
+      };
+
+      function getLayout() {
+        const isNarrow = window.matchMedia("(max-width: 640px)").matches;
+
+        if (!isNarrow) return baseLayout;
+
+        // Mobile: tighter margins + smaller fonts + drop y2 title
+        return {
+          ...baseLayout,
+          margin: { l: 45, r: 30, t: 0, b: 40 },
           legend: {
-            orientation: "h",
-            yanchor: "bottom",
-            y: -0.2,
-            xanchor: "center",
-            x: 0.5
+            ...baseLayout.legend,
+            y: -0.32,
+            font: { size: 10 },
           },
           xaxis: {
-            title: "Trade date",
-            tickformat: "%b %d",
-            hoverformat: "%Y-%m-%d"
+            ...baseLayout.xaxis,
+            tickfont: { size: 10 },
+            titlefont: { size: 11 },
           },
           yaxis: {
-            title: "Price (USD)",
-            fixedrange: true
+            ...baseLayout.yaxis,
+            tickfont: { size: 10 },
+            titlefont: { size: 11 },
           },
           yaxis2: {
-            title: "Total options volume",
-            overlaying: "y",
-            side: "right",
-            showgrid: false,
-            fixedrange: true
-          }
+            ...baseLayout.yaxis2,
+            tickfont: { size: 10 },
+            title: "", // hide vertical axis title on narrow screens
+          },
         };
+      }
 
-        var config = {
-          responsive: true,
-          displaylogo: false,
-          modeBarButtonsToRemove: [
-            "toImage",
-            "autoScale2d",
-            "toggleSpikelines",
-            "hoverClosestCartesian",
-            "hoverCompareCartesian"
-          ]
-        };
+      Plotly.newPlot(el, traces, getLayout(), config);
 
-        Plotly.newPlot(el, [priceTrace, volumeTrace, volAvgTrace], layout, config);
-      })
-      .catch(function (err) {
-        console.error("Error rendering AAPL chart:", err);
-        if (el) {
-          el.innerHTML =
-            '<p class="muted">Unable to load chart data right now. Please try refreshing the page.</p>';
-        }
+      // Recompute layout on resize
+      window.addEventListener("resize", () => {
+        Plotly.react(el, traces, getLayout(), config);
       });
-  });
+    })
+    .catch((err) => {
+      console.error("Error loading AAPL chart data", err);
+    });
 })();
