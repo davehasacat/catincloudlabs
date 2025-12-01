@@ -310,14 +310,14 @@
   {
     "trade_date": "2025-11-04",
     "ticker": "AAPL",
-    "underlying_close_price": null,
+    "underlying_close_price": 270.04,
     "total_option_volume": 564484,
     "volume_7d_avg": 884363.428
   },
   {
     "trade_date": "2025-11-05",
     "ticker": "AAPL",
-    "underlying_close_price": null,
+    "underlying_close_price": 270.14,
     "total_option_volume": 488340,
     "volume_7d_avg": 854560.285
   },
