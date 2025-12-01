@@ -1,6 +1,8 @@
 import os
 import csv
+import json
 from pathlib import Path
+from decimal import Decimal
 
 import snowflake.connector
 
@@ -110,11 +112,43 @@ def write_csv(colnames, rows, out_path: Path):
             writer.writerow(row)
 
 
+def coerce_value(v):
+    """
+    Convert Snowflake/DB types into JSON-safe types.
+    """
+    if isinstance(v, Decimal):
+        return float(v)
+    # Dates / timestamps will have isoformat() in most Python DB types
+    if hasattr(v, "isoformat"):
+        return v.isoformat()
+    return v
+
+
+def write_json(colnames, rows, out_path: Path):
+    """
+    Write rows to JSON as a list of records (dicts).
+    """
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+
+    records = []
+    for row in rows:
+        rec = {colnames[i].lower(): coerce_value(row[i]) for i in range(len(colnames))}
+        records.append(rec)
+
+    with out_path.open("w", encoding="utf-8") as f:
+        json.dump(records, f, indent=2)
+
+    return len(records)
+
+
 def main():
-    # Resolve to: public/assets/data/aapl_options_chain_snapshot.csv
-    base_dir = Path(__file__).resolve().parents[1]  # -> public/assets
+    # Base: public/assets
+    base_dir = Path(__file__).resolve().parents[1]
     data_dir = base_dir / "data"
-    out_path = data_dir / "aapl_options_chain_snapshot.csv"
+    data_dir.mkdir(parents=True, exist_ok=True)
+
+    csv_path = data_dir / "aapl_options_chain_snapshot.csv"
+    json_path = data_dir / "aapl_options_chain_snapshot.json"
 
     # Print context from env vars (matches README style)
     context = (
@@ -130,9 +164,14 @@ def main():
     try:
         cur = ctx.cursor()
         colnames, rows = fetch_aapl_options_chain_snapshot(cur)
-        write_csv(colnames, rows, out_path)
 
-        print(f"Wrote {len(rows)} rows to {out_path}")
+        # CSV for raw download / inspection
+        write_csv(colnames, rows, csv_path)
+        print(f"Wrote {len(rows)} rows to {csv_path}")
+
+        # JSON for Plotly dashboard
+        n_json = write_json(colnames, rows, json_path)
+        print(f"Wrote {n_json} records to {json_path}")
     finally:
         try:
             cur.close()
