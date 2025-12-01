@@ -1176,3 +1176,19 @@ figure, .card { overflow: hidden; }
     cursor: zoom-in;
   }
 }
+
+/* === Inline chart on Projects page =================================== */
+
+.chart-shell {
+  width: 100%;
+  max-width: 960px;
+  margin: 1rem auto 0;
+  /* Gives Plotly a nice responsive box to work with */
+  aspect-ratio: 16 / 9;
+}
+
+/* Let Plotly figure handle the sizing inside the shell */
+.chart-shell .js-plotly-plot {
+  width: 100% !important;
+  height: 100% !important;
+}
