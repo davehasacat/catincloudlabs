@@ -1,14 +1,20 @@
 import os
 import json
 from pathlib import Path
+from decimal import Decimal
 
 import snowflake.connector
 from cryptography.hazmat.primitives import serialization
 
 
 def load_private_key():
+    """
+    Load the encrypted PKCS#8 private key from disk using the passphrase
+    in SNOWFLAKE_PRIVATE_KEY_PASSPHRASE and return a key object that
+    the Snowflake connector can use.
+    """
     key_path = os.environ["SNOWFLAKE_PRIVATE_KEY_PATH"]
-    passphrase = os.environ["SNOWFLAKE_PRIVATE_KEY_PASSPHRASE"].encode()
+    passphrase = os.environ["SNOWFLAKE_PRIVATE_KEY_PASSPHRASE"].encode("utf-8")
 
     with open(key_path, "rb") as f:
         private_key = serialization.load_pem_private_key(
@@ -41,7 +47,7 @@ select
     underlying_close_price,
     total_option_volume,
     volume_7d_avg
-from INT_POLYGON__DAILY_TICKER_ACTIVITY
+from STOCKS_ELT_DB.PREP.INT_POLYGON__TICKER_DAILY_ACTIVITY
 where ticker = 'AAPL'
   and trade_date >= dateadd(day, -90, current_date)
 order by trade_date
@@ -52,6 +58,15 @@ def main():
     conn = get_conn()
     try:
         cur = conn.cursor()
+
+        # Optional: debug context so we know where we are
+        cur.execute(
+            "select current_role(), current_warehouse(), "
+            "current_database(), current_schema()"
+        )
+        print("Context:", cur.fetchone())
+
+        # Run the actual query
         cur.execute(SQL)
         cols = [c[0].lower() for c in cur.description]
         rows = []
@@ -62,6 +77,11 @@ def main():
             # Convert DATE to ISO string for JSON
             if rec.get("trade_date") is not None:
                 rec["trade_date"] = rec["trade_date"].isoformat()
+
+            # Convert Decimal -> float so json can serialize it
+            for k, v in rec.items():
+                if isinstance(v, Decimal):
+                    rec[k] = float(v)
 
             rows.append(rec)
     finally:
