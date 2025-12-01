@@ -1176,3 +1176,43 @@ figure, .card { overflow: hidden; }
     cursor: zoom-in;
   }
 }
+
+/* === Inline chart on Projects page =================================== */
+
+.chart-shell {
+  width: 100%;
+  max-width: 960px;
+  margin: 1rem auto 0;
+  min-height: 260px;        /* gives Plotly space before it renders */
+}
+
+/* Ensure Plotly figure fills the shell */
+.chart-shell .js-plotly-plot,
+.chart-shell .plotly-graph-div {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.chart-subtitle {
+  margin: 0 0 0.75rem;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  max-width: 50ch;
+}
+
+.chart-footnote {
+  margin-top: 0.5rem;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+/* Mobile tweaks */
+@media (max-width: 640px) {
+  .chart-shell {
+    min-height: 220px;
+  }
+
+  .chart-footnote {
+    font-size: 0.78rem;
+  }
+}
