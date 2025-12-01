@@ -131,12 +131,20 @@
             <!-- Inline AAPL chart powered by Snowflake-exported JSON -->
             <div class="stack" style="--stack-gap:0.75rem; margin-top:1.5rem;">
               <h3>AAPL daily price &amp; options volume (last ~90 trading days)</h3>
-              <p class="muted">
+              <p class="chart-subtitle">
                 This chart is powered by a static JSON slice exported from Snowflake, using the same marts that would back a client dashboard.
               </p>
-              <div id="aapl-daily-activity-chart" class="chart-shell">
+              <div
+                id="aapl-daily-activity-chart"
+                class="chart-shell"
+                role="img"
+                aria-label="Daily AAPL closing price with total options volume and a 7-day rolling average, over roughly the last ninety trading days."
+              >
                 <noscript>Enable JavaScript to view the interactive chart.</noscript>
               </div>
+              <p class="chart-footnote">
+                Tip: drag to zoom, pinch on touch devices, and use the toolbar to reset or download an image.
+              </p>
             </div>
           </article>
 
