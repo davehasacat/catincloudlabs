@@ -44,7 +44,7 @@
       ];
 
       var desktopLayout = {
-        margin: { l: 60, r: 60, t: 10, b: 40 },
+        margin: { l: 60, r: 50, t: 10, b: 40 },
         paper_bgcolor: "rgba(0,0,0,0)",
         plot_bgcolor: "rgba(0,0,0,0)",
         hovermode: "x unified",
@@ -75,7 +75,7 @@
       };
 
       var mobileLayout = {
-        margin: { l: 45, r: 30, t: 0, b: 40 },
+        margin: { l: 48, r: 6, t: 4, b: 40 },
         paper_bgcolor: "rgba(0,0,0,0)",
         plot_bgcolor: "rgba(0,0,0,0)",
         hovermode: "x unified",
@@ -95,7 +95,7 @@
           titlefont: { size: 11 }
         },
         yaxis2: {
-          title: "",  // hide vertical title on small screens
+          title: "", // hide vertical title on small screens
           overlaying: "y",
           side: "right",
           showgrid: false,
@@ -104,29 +104,50 @@
         legend: {
           orientation: "h",
           yanchor: "top",
-          y: -0.32,
+          y: -0.3,
           xanchor: "center",
           x: 0.5,
           font: { size: 10 }
-        }
+        },
+        height: 320
       };
 
-      function chooseLayout() {
-        var isNarrow = window.innerWidth <= 640;
-        return isNarrow ? mobileLayout : desktopLayout;
+      function isNarrow() {
+        return window.innerWidth <= 640;
       }
 
-      var config = {
-        responsive: true,
-        displaylogo: false,
-        modeBarButtonsToRemove: ["select2d", "lasso2d", "zoomIn2d", "zoomOut2d"]
-      };
+      function chooseLayout() {
+        return isNarrow() ? mobileLayout : desktopLayout;
+      }
+
+      function chooseConfig() {
+        var small = isNarrow();
+        var isCoarse = window.matchMedia("(pointer: coarse)").matches;
+        var showModeBar = !(small || isCoarse);
+
+        return {
+          responsive: true,
+          displaylogo: false,
+          displayModeBar: showModeBar,
+          modeBarButtonsToRemove: [
+            "select2d",
+            "lasso2d",
+            "zoomIn2d",
+            "zoomOut2d",
+            "autoScale2d",
+            "resetScale2d",
+            "hoverClosestCartesian",
+            "hoverCompareCartesian",
+            "toggleSpikelines"
+          ]
+        };
+      }
 
       console.log("Rendering AAPL chart with", data.length, "rows");
-      Plotly.newPlot(el, traces, chooseLayout(), config);
+      Plotly.newPlot(el, traces, chooseLayout(), chooseConfig());
 
       window.addEventListener("resize", function () {
-        Plotly.react(el, traces, chooseLayout(), config);
+        Plotly.react(el, traces, chooseLayout(), chooseConfig());
       });
     })
     .catch(function (err) {
