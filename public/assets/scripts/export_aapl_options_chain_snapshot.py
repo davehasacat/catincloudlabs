@@ -49,46 +49,46 @@ def fetch_aapl_options_chain_snapshot(cur):
             where underlying_ticker = 'AAPL'
         )
         select
-            option_symbol,
-            underlying_ticker,
-            trade_date,
-            expiration_date,
-            option_type,
-            strike_price,
-            option_open_price,
-            option_high_price,
-            option_low_price,
-            option_close_price,
-            option_vwap,
-            option_volume,
-            option_trades,
-            underlying_open_price,
-            underlying_high_price,
-            underlying_low_price,
-            underlying_close_price,
-            underlying_vwap,
-            underlying_volume,
-            underlying_trades,
-            days_to_expiration,
-            signed_moneyness_raw,
-            signed_moneyness_pct,
-            option_aggregates_timestamp,
-            underlying_aggregates_timestamp,
-            option_inserted_at,
-            underlying_inserted_at,
-            option_load_date,
-            underlying_load_date,
-            option_filename,
-            underlying_filename,
-            missing_underlying_flag
+            c.option_symbol,
+            c.underlying_ticker,
+            c.trade_date,
+            c.expiration_date,
+            c.option_type,
+            c.strike_price,
+            c.option_open_price,
+            c.option_high_price,
+            c.option_low_price,
+            c.option_close_price,
+            c.option_vwap,
+            c.option_volume,
+            c.option_trades,
+            c.underlying_open_price,
+            c.underlying_high_price,
+            c.underlying_low_price,
+            c.underlying_close_price,
+            c.underlying_vwap,
+            c.underlying_volume,
+            c.underlying_trades,
+            c.days_to_expiration,
+            c.signed_moneyness_raw,
+            c.signed_moneyness_pct,
+            c.option_aggregates_timestamp,
+            c.underlying_aggregates_timestamp,
+            c.option_inserted_at,
+            c.underlying_inserted_at,
+            c.option_load_date,
+            c.underlying_load_date,
+            c.option_filename,
+            c.underlying_filename,
+            c.missing_underlying_flag
         from STOCKS_ELT_DB.PREP.INT_POLYGON__OPTIONS_CHAIN_DAILY c
         join latest_date d
           on c.trade_date = d.trade_date
         where c.underlying_ticker = 'AAPL'
         order by
-            expiration_date,
-            option_type desc,
-            strike_price
+            c.expiration_date,
+            c.option_type desc,
+            c.strike_price
     """
 
     cur.execute(query)
