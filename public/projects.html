@@ -146,6 +146,27 @@
                 Tip: drag to zoom, pinch on touch devices, and use the toolbar to reset or download an image.
               </p>
             </div>
+
+            <!-- AAPL options chain snapshot dashboard -->
+            <div class="stack" style="--stack-gap:0.75rem; margin-top:1.5rem;">
+              <h3>AAPL options chain snapshot (latest trading day)</h3>
+              <p class="chart-subtitle">
+                This scatter plot shows near-term AAPL options from the latest fully loaded trading day:
+                strikes on the x-axis, option close prices on the y-axis, with marker size scaled by volume
+                and color indicating calls versus puts.
+              </p>
+              <div
+                id="aapl-options-chain-dashboard"
+                class="chart-shell"
+                role="img"
+                aria-label="Scatter plot of AAPL options for the latest trading day, with strike price on the x-axis, option close price on the y-axis, color showing calls versus puts, and marker size representing volume."
+              >
+                <noscript>Enable JavaScript to view the interactive options chain chart.</noscript>
+              </div>
+              <p class="chart-footnote">
+                Tip: hover to see strike, expiry, moneyness, and volume; drag to zoom into specific regions of the chain.
+              </p>
+            </div>
           </article>
 
           <!-- MWAA Private Environment -->
@@ -229,6 +250,7 @@
     <script src="/assets/js/proof-panel-lightbox.js" defer></script>
     <script src="/assets/js/plotly-2.35.3.min.js" defer></script>
     <script src="/assets/js/aapl-daily-activity-chart.js" defer></script>
+    <script src="/assets/js/aapl-options-chain-dashboard.js" defer></script>
   </footer>
 </body>
 </html>
