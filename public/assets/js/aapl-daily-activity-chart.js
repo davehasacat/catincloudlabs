@@ -74,9 +74,9 @@
         }
       };
 
+      // Mobile: slightly narrower, smaller fonts, a bit more right margin
       var mobileLayout = {
-        // r bumped from 6 -> 16 to prevent visual cutoff on the right edge
-        margin: { l: 48, r: 16, t: 4, b: 40 },
+        margin: { l: 48, r: 14, t: 4, b: 40 }, // r bumped only a little from original 6
         paper_bgcolor: "rgba(0,0,0,0)",
         plot_bgcolor: "rgba(0,0,0,0)",
         hovermode: "x unified",
