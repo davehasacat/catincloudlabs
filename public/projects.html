@@ -128,7 +128,7 @@
               <li><strong>Built for:</strong> calm, production-like behavior rather than a one-off demo</li>
             </ul>
 
-            <!-- Multi-ticker daily chart powered by Snowflake-exported JSON -->
+            <!-- Multi-ticker daily chart powered by Snowflake-exported JSON (Export 1) -->
             <div class="stack" style="--stack-gap:0.75rem; margin-top:1.5rem;">
               <div class="stack" style="--stack-gap:0.5rem;">
                 <h3>Daily price &amp; options volume (Sep 2 - Nov 28, 2025)</h3>
@@ -160,7 +160,27 @@
               </p>
             </div>
 
-            <!-- Multi-ticker options chain: aggregated top-contracts table -->
+            <!-- Daily features snapshot (Export 3) -->
+            <div class="stack" style="--stack-gap:0.75rem; margin-top:1.5rem;">
+              <div class="stack" style="--stack-gap:0.5rem;">
+                <h3>Daily features: price, returns, and options activity</h3>
+                <p class="chart-subtitle">
+                  This snapshot uses the same Snowflake marts to summarize short-horizon returns, realized volatility, underlying volume,
+                  options volume versus a 30-day baseline, and the call/put volume mix for the selected ticker.
+                </p>
+              </div>
+
+              <div
+                id="ticker-features-daily-dashboard"
+                class="ticker-features-shell"
+                role="region"
+                aria-label="Latest daily features for the selected ticker, including returns, volatility, volume, and options activity."
+              >
+                <noscript>Enable JavaScript to view the daily features snapshot.</noscript>
+              </div>
+            </div>
+
+            <!-- Multi-ticker options chain: aggregated top-contracts table (Export 2) -->
             <div class="stack" style="--stack-gap:0.75rem; margin-top:1.5rem;">
               <div class="stack" style="--stack-gap:0.5rem;">
                 <h3>Options chain: top contracts over a recent window</h3>
@@ -192,30 +212,6 @@
                 Columns show expiry, option type, strike, latest close price observed in the window, total volume across the window,
                 days to expiration at the end of the window, and average moneyness versus the underlying price.
                 You can tap or click the column headers to re-sort (for example, by total volume, expiry, or moneyness).
-              </p>
-            </div>
-
-            <!-- Multi-ticker daily features snapshot & history -->
-            <div class="stack" style="--stack-gap:0.75rem; margin-top:1.5rem;">
-              <div class="stack" style="--stack-gap:0.5rem;">
-                <h3>Daily features: price, returns, and options activity</h3>
-                <p class="chart-subtitle">
-                  This block uses the same underlying Snowflake marts to calculate daily features for each ticker: short-horizon returns,
-                  realized volatility, underlying volume, options volume versus a 30-day baseline, and the call/put volume mix.
-                </p>
-              </div>
-
-              <div
-                id="ticker-features-daily-dashboard"
-                class="chart-shell"
-                role="region"
-                aria-label="Daily features snapshot and recent history for the selected ticker, including returns, realized volatility, and options activity."
-              >
-                <noscript>Enable JavaScript to view the daily features snapshot and history.</noscript>
-              </div>
-              <p class="chart-footnote">
-                The snapshot tiles show the most recent trading day for the selected ticker. The history table highlights up to the last 60 sessions
-                so you can see how returns, realized volatility, and options activity have evolved over time.
               </p>
             </div>
           </article>
@@ -301,8 +297,8 @@
     <script src="/assets/js/proof-panel-lightbox.js" defer></script>
     <script src="/assets/js/plotly-2.35.3.min.js" defer></script>
     <script src="/assets/js/tickers-daily-activity-chart.js" defer></script>
-    <script src="/assets/js/tickers-options-chain-dashboard.js" defer></script>
     <script src="/assets/js/ticker-features-daily-dashboard.js" defer></script>
+    <script src="/assets/js/tickers-options-chain-dashboard.js" defer></script>
   </footer>
 </body>
 </html>

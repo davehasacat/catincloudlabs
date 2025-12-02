@@ -39,7 +39,18 @@
 
   function fmtInt(val) {
     if (val == null || isNaN(val)) return "—";
-    return Number(val).toLocaleString("en-US");
+    var n = Math.round(Number(val));
+    return n.toLocaleString("en-US");
+  }
+
+  function fmtMillions(val) {
+    if (val == null || isNaN(val)) return "—";
+    var n = Number(val);
+    var abs = Math.abs(n);
+    if (abs >= 1e9) return (n / 1e9).toFixed(1) + "B";
+    if (abs >= 1e6) return (n / 1e6).toFixed(1) + "M";
+    if (abs >= 1e3) return (n / 1e3).toFixed(1) + "K";
+    return n.toLocaleString("en-US");
   }
 
   function fmtMult(val) {
@@ -74,7 +85,7 @@
     return rows[rows.length - 1];
   }
 
-  // --- Render functions ----------------------------------------------------
+  // --- Render snapshot only -----------------------------------------------
 
   function render() {
     container.innerHTML = "";
@@ -89,11 +100,6 @@
 
     var latest = getLatestRow(rows);
 
-    // Wrapper
-    var wrapper = document.createElement("div");
-    wrapper.className = "ticker-features-wrapper";
-
-    // --- Latest snapshot block --------------------------------------------
     var latestBlock = document.createElement("section");
     latestBlock.className = "ticker-features-latest";
 
@@ -107,7 +113,6 @@
 
     var grid = document.createElement("dl");
     grid.className = "ticker-features-summary-grid";
-    // Expect CSS to display this as a 2–3 column grid on larger screens.
 
     function addMetric(label, value) {
       var dt = document.createElement("dt");
@@ -121,84 +126,18 @@
     addMetric("Close price", fmtMoney(latest.close_price));
     addMetric("1-day return", fmtPct(latest.return_1d, 2));
     addMetric("5-day return", fmtPct(latest.return_5d, 2));
-    addMetric("Realized vol (20d, annualized)", fmtPct(latest.realized_vol_20d_annualized, 1));
-    addMetric("Underlying volume", fmtInt(latest.underlying_volume));
-    addMetric("Options volume (today)", fmtInt(latest.option_volume_total));
-    addMetric("Options volume (30-day avg)", fmtInt(latest.option_volume_30d_avg));
-    addMetric("Options volume vs 30-day avg", fmtMult(latest.option_volume_vs_30d));
+    addMetric("Realized vol (20d ann.)", fmtPct(latest.realized_vol_20d_annualized, 1));
+    addMetric("Underlying volume", fmtMillions(latest.underlying_volume));
+    addMetric("Options volume (today)", fmtMillions(latest.option_volume_total));
+    addMetric("Options volume (30d avg)", fmtMillions(latest.option_volume_30d_avg));
+    addMetric("Options volume vs 30d avg", fmtMult(latest.option_volume_vs_30d));
     addMetric("Call/put volume ratio", fmtRatio(latest.call_put_ratio));
 
     latestBlock.appendChild(heading);
     latestBlock.appendChild(sub);
     latestBlock.appendChild(grid);
 
-    // --- Recent history table ---------------------------------------------
-    var historyBlock = document.createElement("section");
-    historyBlock.className = "ticker-features-history";
-
-    var histHeading = document.createElement("h4");
-    histHeading.className = "ticker-features-history-heading";
-    histHeading.textContent = "Recent daily history";
-
-    var table = document.createElement("table");
-    table.className = "options-table ticker-features-table";
-
-    var thead = document.createElement("thead");
-    var headRow = document.createElement("tr");
-    [
-      "Date",
-      "Close",
-      "1-day return",
-      "5-day return",
-      "Realized vol (20d)",
-      "Underlying volume",
-      "Options volume",
-      "Vol vs 30-day",
-      "Call/put ratio"
-    ].forEach(function (label) {
-      var th = document.createElement("th");
-      th.textContent = label;
-      headRow.appendChild(th);
-    });
-    thead.appendChild(headRow);
-    table.appendChild(thead);
-
-    var tbody = document.createElement("tbody");
-    table.appendChild(tbody);
-
-    // Show up to last 60 days, newest on top
-    var recent = rows.slice(-60).slice().reverse();
-
-    recent.forEach(function (row) {
-      var tr = document.createElement("tr");
-
-      function addCell(text, className) {
-        var td = document.createElement("td");
-        if (className) td.className = className;
-        td.textContent = text;
-        tr.appendChild(td);
-      }
-
-      addCell(fmtDateISO(row.trade_date));
-      addCell(fmtMoney(row.close_price));
-      addCell(fmtPct(row.return_1d, 2));
-      addCell(fmtPct(row.return_5d, 2));
-      addCell(fmtPct(row.realized_vol_20d_annualized, 1));
-      addCell(fmtInt(row.underlying_volume));
-      addCell(fmtInt(row.option_volume_total));
-      addCell(fmtMult(row.option_volume_vs_30d));
-      addCell(fmtRatio(row.call_put_ratio));
-
-      tbody.appendChild(tr);
-    });
-
-    historyBlock.appendChild(histHeading);
-    historyBlock.appendChild(table);
-
-    // Assemble
-    wrapper.appendChild(latestBlock);
-    wrapper.appendChild(historyBlock);
-    container.appendChild(wrapper);
+    container.appendChild(latestBlock);
   }
 
   function init() {
