@@ -1,136 +1,105 @@
-// aapl-options-chain-dashboard.js
-// Renders a scatter plot of the latest AAPL options chain snapshot
-// using data from /assets/data/aapl_options_chain_snapshot.json
-
+// /assets/js/aapl-options-chain-dashboard.js
 (function () {
-  const TARGET_ID = "aapl-options-chain-dashboard";
-  const DATA_URL = "/assets/data/aapl_options_chain_snapshot.json";
-
-  function safeNumber(value) {
-    const n = Number(value);
-    return Number.isFinite(n) ? n : null;
+  var container = document.getElementById("aapl-options-chain-dashboard");
+  if (!container) {
+    console.warn("aapl-options-chain-dashboard element not found");
+    return;
   }
 
-  function initChart(records) {
-    const container = document.getElementById(TARGET_ID);
-    if (!container || !records || records.length === 0) {
-      return;
-    }
+  fetch("/assets/data/aapl_options_top_contracts.json")
+    .then(function (r) { return r.json(); })
+    .then(function (rows) {
+      if (!rows || !rows.length) {
+        container.textContent = "No options data available for the latest trading day.";
+        return;
+      }
 
-    // Light filtering: keep "near-term" expiries to avoid an unreadable wall of LEAPS.
-    // Example: days_to_expiration <= 60, and reasonable volumes.
-    const filtered = records.filter((r) => {
-      const dte = safeNumber(r.days_to_expiration);
-      return dte !== null && dte <= 60;
-    });
+      var table = document.createElement("table");
+      table.className = "options-table";
 
-    const calls = filtered.filter((r) => r.option_type === "C");
-    const puts = filtered.filter((r) => r.option_type === "P");
+      var thead = document.createElement("thead");
+      var headRow = document.createElement("tr");
+      var headers = ["Expiry", "Type", "Strike", "Last price", "Volume", "DTE", "Moneyness"];
 
-    function buildTrace(data, name, color) {
-      return {
-        x: data.map((d) => safeNumber(d.strike_price)),
-        y: data.map((d) => safeNumber(d.option_close_price)),
-        text: data.map((d) => {
-          const strike = d.strike_price;
-          const expiry = d.expiration_date;
-          const dte = d.days_to_expiration;
-          const vol = d.option_volume;
-          const moneyness = d.signed_moneyness_pct;
-          const moneynessPct =
-            typeof moneyness === "number"
-              ? (moneyness * 100).toFixed(2) + "%"
-              : String(moneyness ?? "");
-
-          return (
-            `Symbol: ${d.option_symbol}\n` +
-            `Expiry: ${expiry} (${dte} days)\n` +
-            `Strike: ${strike}\n` +
-            `Close: ${d.option_close_price}\n` +
-            `Volume: ${vol}\n` +
-            `Signed moneyness: ${moneynessPct}`
-          );
-        }),
-        mode: "markers",
-        name,
-        marker: {
-          size: data.map((d) => {
-            const vol = safeNumber(d.option_volume) || 0;
-            // Soft size scaling: sublinear so big volumes don't dominate
-            return 6 + Math.log10(1 + vol) * 4;
-          }),
-          opacity: 0.75,
-          // leave color to Plotly's default if you prefer, or set explicit:
-          // color,
-        },
-        hovertemplate:
-          "%{text}<br>" +
-          "Strike: %{x}<br>" +
-          "Close: %{y}<extra>" +
-          name +
-          "</extra>",
-      };
-    }
-
-    const traces = [];
-    if (calls.length) traces.push(buildTrace(calls, "Calls (<=60d)", "#1f77b4"));
-    if (puts.length) traces.push(buildTrace(puts, "Puts (<=60d)", "#ff7f0e"));
-
-    const layout = {
-      margin: { t: 40, r: 20, b: 60, l: 60 },
-      xaxis: {
-        title: "Strike price",
-        zeroline: false,
-      },
-      yaxis: {
-        title: "Option close price",
-        zeroline: false,
-      },
-      legend: {
-        orientation: "h",
-        x: 0,
-        y: 1.15,
-      },
-      hovermode: "closest",
-      showlegend: true,
-      paper_bgcolor: "rgba(0,0,0,0)",
-      plot_bgcolor: "rgba(0,0,0,0)",
-    };
-
-    // Hide the modebar on narrow/mobile screens, keep it on hover for desktop
-    const isNarrow = window.innerWidth <= 640;
-
-    const config = {
-      responsive: true,
-      displaylogo: false,
-      displayModeBar: isNarrow ? false : "hover",
-      modeBarButtonsToRemove: ["toImage", "select2d", "lasso2d"],
-    };
-
-    Plotly.newPlot(container, traces, layout, config);
-  }
-
-  function fetchDataAndRender() {
-    fetch(DATA_URL, { cache: "no-cache" })
-      .then((resp) => {
-        if (!resp.ok) {
-          throw new Error("Failed to load options chain data");
-        }
-        return resp.json();
-      })
-      .then((data) => {
-        initChart(data);
-      })
-      .catch((err) => {
-        // Fail silently but log to console for debugging
-        // eslint-disable-next-line no-console
-        console.error("Error rendering AAPL options chain dashboard:", err);
+      headers.forEach(function (label) {
+        var th = document.createElement("th");
+        th.textContent = label;
+        headRow.appendChild(th);
       });
-  }
 
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", fetchDataAndRender);
-  } else {
-    fetchDataAndRender();
-  }
+      thead.appendChild(headRow);
+      table.appendChild(thead);
+
+      var tbody = document.createElement("tbody");
+
+      function fmtMoney(val) {
+        if (val == null) return "";
+        return "$" + Number(val).toFixed(2);
+      }
+
+      function fmtInt(val) {
+        if (val == null) return "";
+        return Number(val).toLocaleString("en-US");
+      }
+
+      function fmtDte(val) {
+        if (val == null) return "";
+        return Number(val);
+      }
+
+      function fmtMoneyness(val) {
+        if (val == null) return "";
+        var pct = Number(val) * 100;
+        return pct.toFixed(1) + "%";
+      }
+
+      function fmtDateISO(s) {
+        if (!s) return "";
+        var d = new Date(s);
+        if (isNaN(d.getTime())) return "";
+        return d.toLocaleDateString("en-US", {
+          month: "short",
+          day: "numeric",
+          year: "numeric"
+        });
+      }
+
+      rows.forEach(function (row) {
+        var tr = document.createElement("tr");
+
+        function addCell(text, className) {
+          var td = document.createElement("td");
+          if (className) td.className = className;
+          td.textContent = text;
+          tr.appendChild(td);
+        }
+
+        var expiryLabel = fmtDateISO(row.expiration_date);
+        var typeLabel =
+          row.option_type === "C"
+            ? "Call"
+            : row.option_type === "P"
+            ? "Put"
+            : row.option_type || "";
+
+        addCell(expiryLabel);
+        addCell(typeLabel);
+        addCell(fmtMoney(row.strike_price));
+        addCell(fmtMoney(row.option_close_price));
+        addCell(fmtInt(row.option_volume));
+        addCell(fmtDte(row.days_to_expiration));
+        addCell(fmtMoneyness(row.signed_moneyness_pct)); // <-- updated field
+
+        tbody.appendChild(tr);
+      });
+
+      table.appendChild(tbody);
+
+      container.innerHTML = "";
+      container.appendChild(table);
+    })
+    .catch(function (err) {
+      console.error("Error loading AAPL options table data", err);
+      container.textContent = "Unable to load options data right now.";
+    });
 })();

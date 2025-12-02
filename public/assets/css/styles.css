@@ -1216,3 +1216,48 @@ figure, .card { overflow: hidden; }
     font-size: 0.78rem;
   }
 }
+
+/* === Options top-contracts table ===================================== */
+
+.options-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.options-table thead {
+  border-bottom: 1px solid var(--border-subtle, #e5e7eb);
+}
+
+.options-table th,
+.options-table td {
+  padding: 0.35rem 0.5rem;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.options-table th:first-child,
+.options-table td:first-child {
+  text-align: left;
+}
+
+.options-table th:nth-child(2),
+.options-table td:nth-child(2) {
+  text-align: left;
+}
+
+.options-table tbody tr:nth-child(even) {
+  background: var(--bg-subtle, #f9fafb);
+}
+
+/* Mobile tweaks */
+@media (max-width: 640px) {
+  .options-table {
+    font-size: 0.8rem;
+  }
+
+  .options-table th,
+  .options-table td {
+    padding: 0.3rem 0.4rem;
+  }
+}
