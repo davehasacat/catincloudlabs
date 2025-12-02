@@ -1295,3 +1295,22 @@ figure, .card { overflow: hidden; }
 .options-table th[aria-sort="descending"] {
   text-decoration: underline;
 }
+
+/* Optional: controls row above options table */
+.options-table-controls {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.85rem;
+}
+
+.options-table-controls label {
+  color: var(--text-muted);
+}
+
+.options-table-controls select {
+  font-size: 0.85rem;
+  padding: 0.15rem 0.4rem;
+}
