@@ -1,7 +1,7 @@
 # =============================================================================
 # CatInCloud Labs — MWAA Constraints (Customized)
 # File: constraints-mwaa-3.0.6-py312-protobuf6.txt
-# Host: https://catincloudlabs.com/assets/constraints/constraints-mwaa-3.0.6-py312-protobuf6.txt
+# Host: https://catincloudlabs.com/constraints/constraints-mwaa-3.0.6-py312-protobuf6.txt
 #
 # Purpose
 # - This file is a customized copy of Apache Airflow’s official constraints for:
@@ -24,7 +24,7 @@
 # How to use on MWAA (requirements.txt)
 # - Reference exactly ONE constraints URL (this file), then list only what we actually need:
 #
-#     --constraint "https://catincloudlabs.com/assets/constraints/constraints-mwaa-3.0.6-py312-protobuf6.txt"
+#     --constraint "https://catincloudlabs.com/constraints/constraints-mwaa-3.0.6-py312-protobuf6.txt"
 #     dbt-core==1.10.13
 #     dbt-snowflake==1.10.2
 #     apache-airflow-providers-snowflake
