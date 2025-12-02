@@ -1,3 +1,14 @@
+"""
+Export daily underlying price + options activity for 5 tickers
+(AAPL, AMZN, GOOGL, MSFT, NVDA) between 2025-09-01 and 2025-11-30.
+
+Output:
+  /public/assets/data/daily_activity_5tickers.json
+
+Used by:
+  Projects page Plotly chart (ticker dropdown) on catincloudlabs.com.
+"""
+
 import os
 import json
 from pathlib import Path
@@ -40,6 +51,7 @@ def get_conn():
     return conn
 
 
+# Fixed slice: 5 tickers, 2025-09-01 through 2025-11-30
 SQL = """
 select
     trade_date,
@@ -48,9 +60,11 @@ select
     total_option_volume,
     volume_7d_avg
 from STOCKS_ELT_DB.PREP.INT_POLYGON__TICKER_DAILY_ACTIVITY
-where ticker = 'AAPL'
-  and trade_date >= dateadd(day, -90, current_date)
-order by trade_date
+where ticker in ('AAPL','AMZN','GOOGL','MSFT','NVDA')
+  and trade_date between date '2025-09-01' and date '2025-11-30'
+order by
+    ticker,
+    trade_date
 """
 
 
@@ -87,13 +101,13 @@ def main():
     finally:
         conn.close()
 
-    # . . . /public/assets/scripts/export_aapl_daily_activity.py
+    # . . . /public/assets/scripts/export_tickers_daily_activity.py
     # parents[1] => /public/assets
     assets_dir = Path(__file__).resolve().parents[1]
     data_dir = assets_dir / "data"
     data_dir.mkdir(parents=True, exist_ok=True)
 
-    out_path = data_dir / "aapl_daily_activity.json"
+    out_path = data_dir / "daily_activity_5tickers.json"
 
     with out_path.open("w", encoding="utf-8") as f:
         json.dump(rows, f, indent=2)
