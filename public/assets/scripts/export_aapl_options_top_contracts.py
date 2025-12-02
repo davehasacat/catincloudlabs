@@ -41,43 +41,87 @@ def get_conn():
 
 
 SQL = """
-with latest_trade_date as (
-    select max(trade_date) as trade_date
+with bounds as (
+    select
+        max(trade_date) as max_trade_date,
+        dateadd(day, -59, max(trade_date)) as min_trade_date
     from STOCKS_ELT_DB.PREP.INT_POLYGON__OPTIONS_CHAIN_DAILY
     where underlying_ticker = 'AAPL'
 ),
-filtered as (
+base as (
     select
         t.option_symbol,
         t.underlying_ticker,
-        t.trade_date,
         t.expiration_date,
         t.option_type,
         t.strike_price,
         t.option_close_price,
         t.option_volume,
-        t.days_to_expiration,
-        t.signed_moneyness_pct
+        t.signed_moneyness_pct,
+        t.trade_date,
+        b.max_trade_date
     from STOCKS_ELT_DB.PREP.INT_POLYGON__OPTIONS_CHAIN_DAILY t
-    join latest_trade_date d
-      on t.trade_date = d.trade_date
+    join bounds b
+      on t.trade_date between b.min_trade_date and b.max_trade_date
     where t.underlying_ticker = 'AAPL'
-      and t.days_to_expiration between 0 and 30      -- near-term
-      and abs(t.signed_moneyness_pct) <= 0.15        -- near-the-money band
+),
+agg as (
+    select
+        option_symbol,
+        underlying_ticker,
+        expiration_date,
+        option_type,
+        strike_price,
+        sum(option_volume)           as total_volume,
+        avg(signed_moneyness_pct)    as avg_signed_moneyness_pct,
+        max(max_trade_date)          as max_trade_date
+    from base
+    group by
+        option_symbol,
+        underlying_ticker,
+        expiration_date,
+        option_type,
+        strike_price
+),
+last_close as (
+    select
+        option_symbol,
+        option_close_price as latest_close_price,
+        trade_date,
+        row_number() over (
+            partition by option_symbol
+            order by trade_date desc
+        ) as rn
+    from base
+),
+joined as (
+    select
+        a.option_symbol,
+        a.underlying_ticker,
+        a.expiration_date,
+        a.option_type,
+        a.strike_price,
+        lc.latest_close_price,
+        a.total_volume,
+        datediff('day', a.max_trade_date, a.expiration_date) as days_to_expiration,
+        a.avg_signed_moneyness_pct as signed_moneyness_pct
+    from agg a
+    join last_close lc
+      on lc.option_symbol = a.option_symbol
+     and lc.rn = 1
 )
 select
     option_symbol,
     underlying_ticker,
-    trade_date,
     expiration_date,
     option_type,
     strike_price,
-    option_close_price,
-    option_volume,
+    latest_close_price,
+    total_volume,
     days_to_expiration,
     signed_moneyness_pct
-from filtered
-order by option_volume desc, expiration_date, strike_price
+from joined
+order by total_volume desc, expiration_date, strike_price
 limit 15
 """
 
@@ -102,12 +146,11 @@ def main():
         for row in cur.fetchall():
             rec = dict(zip(cols, row))
 
-            # Convert DATEs to ISO strings
-            for k in ("trade_date", "expiration_date"):
-                if rec.get(k) is not None:
-                    rec[k] = rec[k].isoformat()
+            # Convert DATE -> ISO strings
+            if rec.get("expiration_date") is not None:
+                rec["expiration_date"] = rec["expiration_date"].isoformat()
 
-            # Convert Decimal -> float so JSON can serialize it
+            # Convert Decimal -> float
             for k, v in rec.items():
                 if isinstance(v, Decimal):
                     rec[k] = float(v)

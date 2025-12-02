@@ -10,7 +10,7 @@
     .then(function (r) { return r.json(); })
     .then(function (rows) {
       if (!rows || !rows.length) {
-        container.textContent = "No options data available for the latest trading day.";
+        container.textContent = "No options data available for the current window.";
         return;
       }
 
@@ -19,7 +19,15 @@
 
       var thead = document.createElement("thead");
       var headRow = document.createElement("tr");
-      var headers = ["Expiry", "Type", "Strike", "Last price", "Volume", "DTE", "Moneyness"];
+      var headers = [
+        "Expiry",
+        "Type",
+        "Strike",
+        "Last price",
+        "Total volume",
+        "DTE",
+        "Moneyness"
+      ];
 
       headers.forEach(function (label) {
         var th = document.createElement("th");
@@ -85,10 +93,10 @@
         addCell(expiryLabel);
         addCell(typeLabel);
         addCell(fmtMoney(row.strike_price));
-        addCell(fmtMoney(row.option_close_price));
-        addCell(fmtInt(row.option_volume));
+        addCell(fmtMoney(row.latest_close_price));
+        addCell(fmtInt(row.total_volume));
         addCell(fmtDte(row.days_to_expiration));
-        addCell(fmtMoneyness(row.signed_moneyness_pct)); // <-- updated field
+        addCell(fmtMoneyness(row.signed_moneyness_pct));
 
         tbody.appendChild(tr);
       });
