@@ -74,9 +74,9 @@
         }
       };
 
-      // Mobile: slightly narrower, smaller fonts, a bit more right margin
+      // Mobile: hide right-axis tick labels to avoid clipping
       var mobileLayout = {
-        margin: { l: 48, r: 14, t: 4, b: 40 }, // r bumped only a little from original 6
+        margin: { l: 48, r: 12, t: 4, b: 40 },
         paper_bgcolor: "rgba(0,0,0,0)",
         plot_bgcolor: "rgba(0,0,0,0)",
         hovermode: "x unified",
@@ -96,10 +96,11 @@
           titlefont: { size: 11 }
         },
         yaxis2: {
-          title: "", // hide vertical title on small screens
+          title: "",                 // no title on the right for small screens
           overlaying: "y",
           side: "right",
           showgrid: false,
+          showticklabels: false,     // <-- key change: hide tick labels
           tickfont: { size: 10 }
         },
         legend: {
