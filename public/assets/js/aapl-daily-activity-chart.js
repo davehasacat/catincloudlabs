@@ -74,8 +74,9 @@
         }
       };
 
+      // Mobile: hide right-axis tick labels to avoid clipping
       var mobileLayout = {
-        margin: { l: 48, r: 6, t: 4, b: 40 },
+        margin: { l: 48, r: 12, t: 4, b: 40 },
         paper_bgcolor: "rgba(0,0,0,0)",
         plot_bgcolor: "rgba(0,0,0,0)",
         hovermode: "x unified",
@@ -95,10 +96,11 @@
           titlefont: { size: 11 }
         },
         yaxis2: {
-          title: "", // hide vertical title on small screens
+          title: "",                 // no title on the right for small screens
           overlaying: "y",
           side: "right",
           showgrid: false,
+          showticklabels: false,     // <-- key change: hide tick labels
           tickfont: { size: 10 }
         },
         legend: {
@@ -121,14 +123,13 @@
       }
 
       function chooseConfig() {
-        var small = isNarrow();
-        var isCoarse = window.matchMedia("(pointer: coarse)").matches;
-        var showModeBar = !(small || isCoarse);
+        var narrow = isNarrow();
 
         return {
           responsive: true,
           displaylogo: false,
-          displayModeBar: showModeBar,
+          // Hide modebar on narrow/mobile, show on hover for desktop
+          displayModeBar: narrow ? false : "hover",
           modeBarButtonsToRemove: [
             "select2d",
             "lasso2d",

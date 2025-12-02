@@ -1,0 +1,167 @@
+[
+  {
+    "option_symbol": "O:AAPL251003C00260000",
+    "underlying_ticker": "AAPL",
+    "expiration_date": "2025-10-03",
+    "option_type": "C",
+    "strike_price": 260.0,
+    "latest_close_price": 0.01,
+    "total_volume": 776865,
+    "days_to_expiration": -49,
+    "signed_moneyness_pct": 0.017995128989
+  },
+  {
+    "option_symbol": "O:AAPL251024C00265000",
+    "underlying_ticker": "AAPL",
+    "expiration_date": "2025-10-24",
+    "option_type": "C",
+    "strike_price": 265.0,
+    "latest_close_price": 0.1,
+    "total_volume": 498175,
+    "days_to_expiration": -28,
+    "signed_moneyness_pct": 0.041005039665
+  },
+  {
+    "option_symbol": "O:AAPL251114C00275000",
+    "underlying_ticker": "AAPL",
+    "expiration_date": "2025-11-14",
+    "option_type": "C",
+    "strike_price": 275.0,
+    "latest_close_price": 0.01,
+    "total_volume": 496871,
+    "days_to_expiration": -7,
+    "signed_moneyness_pct": 0.047869577994
+  },
+  {
+    "option_symbol": "O:AAPL251107C00270000",
+    "underlying_ticker": "AAPL",
+    "expiration_date": "2025-11-07",
+    "option_type": "C",
+    "strike_price": 270.0,
+    "latest_close_price": 0.01,
+    "total_volume": 489936,
+    "days_to_expiration": -14,
+    "signed_moneyness_pct": 0.03961698521
+  },
+  {
+    "option_symbol": "O:AAPL251121C00275000",
+    "underlying_ticker": "AAPL",
+    "expiration_date": "2025-11-21",
+    "option_type": "C",
+    "strike_price": 275.0,
+    "latest_close_price": 0.01,
+    "total_volume": 476829,
+    "days_to_expiration": 0,
+    "signed_moneyness_pct": 0.050793409573
+  },
+  {
+    "option_symbol": "O:AAPL251024C00260000",
+    "underlying_ticker": "AAPL",
+    "expiration_date": "2025-10-24",
+    "option_type": "C",
+    "strike_price": 260.0,
+    "latest_close_price": 1.2,
+    "total_volume": 468147,
+    "days_to_expiration": -28,
+    "signed_moneyness_pct": 0.021363435148
+  },
+  {
+    "option_symbol": "O:AAPL251010C00260000",
+    "underlying_ticker": "AAPL",
+    "expiration_date": "2025-10-10",
+    "option_type": "C",
+    "strike_price": 260.0,
+    "latest_close_price": 0.01,
+    "total_volume": 450613,
+    "days_to_expiration": -42,
+    "signed_moneyness_pct": 0.019972151993
+  },
+  {
+    "option_symbol": "O:AAPL251003C00257500",
+    "underlying_ticker": "AAPL",
+    "expiration_date": "2025-10-03",
+    "option_type": "C",
+    "strike_price": 257.5,
+    "latest_close_price": 0.46,
+    "total_volume": 435220,
+    "days_to_expiration": -49,
+    "signed_moneyness_pct": 0.008206714289
+  },
+  {
+    "option_symbol": "O:AAPL250926C00257500",
+    "underlying_ticker": "AAPL",
+    "expiration_date": "2025-09-26",
+    "option_type": "C",
+    "strike_price": 257.5,
+    "latest_close_price": 0.01,
+    "total_volume": 426166,
+    "days_to_expiration": -56,
+    "signed_moneyness_pct": 0.010768579525
+  },
+  {
+    "option_symbol": "O:AAPL251017C00250000",
+    "underlying_ticker": "AAPL",
+    "expiration_date": "2025-10-17",
+    "option_type": "C",
+    "strike_price": 250.0,
+    "latest_close_price": 2.25,
+    "total_volume": 396442,
+    "days_to_expiration": -35,
+    "signed_moneyness_pct": -0.013014825384
+  },
+  {
+    "option_symbol": "O:AAPL251121C00270000",
+    "underlying_ticker": "AAPL",
+    "expiration_date": "2025-11-21",
+    "option_type": "C",
+    "strike_price": 270.0,
+    "latest_close_price": 1.47,
+    "total_volume": 380201,
+    "days_to_expiration": 0,
+    "signed_moneyness_pct": 0.031688074857
+  },
+  {
+    "option_symbol": "O:AAPL250926C00255000",
+    "underlying_ticker": "AAPL",
+    "expiration_date": "2025-09-26",
+    "option_type": "C",
+    "strike_price": 255.0,
+    "latest_close_price": 0.4,
+    "total_volume": 378029,
+    "days_to_expiration": -56,
+    "signed_moneyness_pct": 0.00095529235
+  },
+  {
+    "option_symbol": "O:AAPL250926C00260000",
+    "underlying_ticker": "AAPL",
+    "expiration_date": "2025-09-26",
+    "option_type": "C",
+    "strike_price": 260.0,
+    "latest_close_price": 0.01,
+    "total_volume": 374611,
+    "days_to_expiration": -56,
+    "signed_moneyness_pct": 0.0205818667
+  },
+  {
+    "option_symbol": "O:AAPL251017C00260000",
+    "underlying_ticker": "AAPL",
+    "expiration_date": "2025-10-17",
+    "option_type": "C",
+    "strike_price": 260.0,
+    "latest_close_price": 0.01,
+    "total_volume": 348440,
+    "days_to_expiration": -35,
+    "signed_moneyness_pct": 0.026464581611
+  },
+  {
+    "option_symbol": "O:AAPL251121C00280000",
+    "underlying_ticker": "AAPL",
+    "expiration_date": "2025-11-21",
+    "option_type": "C",
+    "strike_price": 280.0,
+    "latest_close_price": 0.01,
+    "total_volume": 329852,
+    "days_to_expiration": 0,
+    "signed_moneyness_pct": 0.069898744298
+  }
+]

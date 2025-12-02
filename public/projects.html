@@ -146,6 +146,28 @@
                 Tip: drag to zoom, pinch on touch devices, and use the toolbar to reset or download an image.
               </p>
             </div>
+
+            <!-- AAPL options chain: aggregated top-contracts table -->
+            <div class="stack" style="--stack-gap:0.75rem; margin-top:1.5rem;">
+              <h3>AAPL options chain: top contracts over a recent window</h3>
+              <p class="chart-subtitle">
+                This table surfaces the AAPL option contracts that carried the most flow over a recent trading window in the dev environment.
+                Each row rolls up total volume for a single contract across that window, with a snapshot of where it sits on the chain.
+              </p>
+              <div
+                id="aapl-options-chain-dashboard"
+                class="chart-shell"
+                role="region"
+                aria-label="Interactive table of the most active AAPL options over a recent trading window."
+              >
+                <noscript>Enable JavaScript to view the options table.</noscript>
+              </div>
+              <p class="chart-footnote">
+                Columns show expiry, option type, strike, latest close price observed in the window, total volume across the window,
+                days to expiration at the end of the window, and average moneyness versus the underlying AAPL price.
+                You can tap or click the column headers to re-sort (for example, by total volume, expiry, or moneyness).
+              </p>
+            </div>
           </article>
 
           <!-- MWAA Private Environment -->
@@ -229,6 +251,7 @@
     <script src="/assets/js/proof-panel-lightbox.js" defer></script>
     <script src="/assets/js/plotly-2.35.3.min.js" defer></script>
     <script src="/assets/js/aapl-daily-activity-chart.js" defer></script>
+    <script src="/assets/js/aapl-options-chain-dashboard.js" defer></script>
   </footer>
 </body>
 </html>
