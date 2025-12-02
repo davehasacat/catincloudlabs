@@ -121,14 +121,13 @@
       }
 
       function chooseConfig() {
-        var small = isNarrow();
-        var isCoarse = window.matchMedia("(pointer: coarse)").matches;
-        var showModeBar = !(small || isCoarse);
+        var narrow = isNarrow();
 
         return {
           responsive: true,
           displaylogo: false,
-          displayModeBar: showModeBar,
+          // Hide modebar on narrow/mobile, show on hover for desktop
+          displayModeBar: narrow ? false : "hover",
           modeBarButtonsToRemove: [
             "select2d",
             "lasso2d",
