@@ -1,4 +1,4 @@
-// /assets/js/options-chain-dashboard.js
+// /assets/js/tickers-options-chain-dashboard.js
 (function () {
   var container = document.getElementById("tickers-options-chain-dashboard");
   if (!container) {
@@ -12,7 +12,7 @@
     return;
   }
 
-  var DATA_URL = "/assets/data/options_chain_5tickers.json";
+  var DATA_URL = "/assets/data/options_top_contracts_5tickers.json";
   var allRows = [];
   var currentTicker = selectEl.value || "AAPL";
 
