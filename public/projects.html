@@ -147,24 +147,25 @@
               </p>
             </div>
 
-            <!-- AAPL options chain snapshot dashboard -->
+            <!-- AAPL options chain: aggregated top-contracts table -->
             <div class="stack" style="--stack-gap:0.75rem; margin-top:1.5rem;">
-              <h3>AAPL options chain snapshot (latest trading day)</h3>
+              <h3>AAPL options chain: top contracts over a recent window</h3>
               <p class="chart-subtitle">
-                This scatter plot shows near-term AAPL options from the latest fully loaded trading day:
-                strikes on the x-axis, option close prices on the y-axis, with marker size scaled by volume
-                and color indicating calls versus puts.
+                This table surfaces the AAPL option contracts that carried the most flow over a recent trading window in the dev environment.
+                Each row rolls up total volume for a single contract across that window, with a snapshot of where it sits on the chain.
               </p>
               <div
                 id="aapl-options-chain-dashboard"
                 class="chart-shell"
-                role="img"
-                aria-label="Scatter plot of AAPL options for the latest trading day, with strike price on the x-axis, option close price on the y-axis, color showing calls versus puts, and marker size representing volume."
+                role="region"
+                aria-label="Interactive table of the most active AAPL options over a recent trading window."
               >
-                <noscript>Enable JavaScript to view the interactive options chain chart.</noscript>
+                <noscript>Enable JavaScript to view the options table.</noscript>
               </div>
               <p class="chart-footnote">
-                Tip: hover to see strike, expiry, moneyness, and volume; drag to zoom into specific regions of the chain.
+                Columns show expiry, option type, strike, latest close price observed in the window, total volume across the window,
+                days to expiration at the end of the window, and average moneyness versus the underlying AAPL price.
+                You can tap or click the column headers to re-sort (for example, by total volume, expiry, or moneyness).
               </p>
             </div>
           </article>
