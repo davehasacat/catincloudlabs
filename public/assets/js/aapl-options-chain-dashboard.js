@@ -97,9 +97,13 @@
       plot_bgcolor: "rgba(0,0,0,0)",
     };
 
+    // Hide the modebar on narrow/mobile screens, keep it on hover for desktop
+    const isNarrow = window.innerWidth <= 640;
+
     const config = {
       responsive: true,
       displaylogo: false,
+      displayModeBar: isNarrow ? false : "hover",
       modeBarButtonsToRemove: ["toImage", "select2d", "lasso2d"],
     };
 
