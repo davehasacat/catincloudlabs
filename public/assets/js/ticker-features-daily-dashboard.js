@@ -141,7 +141,7 @@
     histHeading.textContent = "Recent daily history";
 
     var table = document.createElement("table");
-    table.className = "ticker-features-table";
+    table.className = "options-table ticker-features-table";
 
     var thead = document.createElement("thead");
     var headRow = document.createElement("tr");
