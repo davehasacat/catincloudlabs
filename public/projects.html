@@ -131,7 +131,7 @@
             <!-- Multi-ticker daily chart powered by Snowflake-exported JSON -->
             <div class="stack" style="--stack-gap:0.75rem; margin-top:1.5rem;">
               <div class="stack" style="--stack-gap:0.5rem;">
-                <h3>Daily price &amp; options volume (Sep 1 - Nov 30, 2025)</h3>
+                <h3>Daily price &amp; options volume (Sep 2 - Nov 28, 2025)</h3>
                 <p class="chart-subtitle">
                   This chart is powered by a static JSON slice exported from Snowflake for five large-cap tickers, using the same marts that would back a client dashboard.
                 </p>
@@ -151,7 +151,7 @@
                 id="tickers-daily-activity-chart"
                 class="chart-shell"
                 role="img"
-                aria-label="Daily closing price with total options volume and a 7-day rolling average for the selected ticker between September 1 and November 30, 2025."
+                aria-label="Daily closing price with total options volume and a 7-day rolling average for the selected ticker between September 2 and November 28, 2025."
               >
                 <noscript>Enable JavaScript to view the interactive chart.</noscript>
               </div>
@@ -160,24 +160,37 @@
               </p>
             </div>
 
-            <!-- AAPL options chain: aggregated top-contracts table -->
+            <!-- Multi-ticker options chain: aggregated top-contracts table -->
             <div class="stack" style="--stack-gap:0.75rem; margin-top:1.5rem;">
-              <h3>AAPL options chain: top contracts over a recent window</h3>
-              <p class="chart-subtitle">
-                This table surfaces the AAPL option contracts that carried the most flow over a recent trading window in the dev environment.
-                Each row rolls up total volume for a single contract across that window, with a snapshot of where it sits on the chain.
-              </p>
+              <div class="stack" style="--stack-gap:0.5rem;">
+                <h3>Options chain: top contracts over a recent window</h3>
+                <p class="chart-subtitle">
+                  This table surfaces the option contracts that carried the most flow over a recent trading window, across five large-cap tickers.
+                  Each row rolls up total volume for a single contract across that window, with a snapshot of where it sits on the chain.
+                </p>
+                <label for="options-chain-ticker" class="ticker-label">
+                  Ticker:
+                  <select id="options-chain-ticker">
+                    <option value="AAPL" selected>AAPL</option>
+                    <option value="AMZN">AMZN</option>
+                    <option value="GOOGL">GOOGL</option>
+                    <option value="MSFT">MSFT</option>
+                    <option value="NVDA">NVDA</option>
+                  </select>
+                </label>
+              </div>
+
               <div
-                id="aapl-options-chain-dashboard"
+                id="options-chain-dashboard"
                 class="chart-shell"
                 role="region"
-                aria-label="Interactive table of the most active AAPL options over a recent trading window."
+                aria-label="Interactive table of the most active options contracts for the selected ticker over a recent trading window."
               >
                 <noscript>Enable JavaScript to view the options table.</noscript>
               </div>
               <p class="chart-footnote">
                 Columns show expiry, option type, strike, latest close price observed in the window, total volume across the window,
-                days to expiration at the end of the window, and average moneyness versus the underlying AAPL price.
+                days to expiration at the end of the window, and average moneyness versus the underlying price.
                 You can tap or click the column headers to re-sort (for example, by total volume, expiry, or moneyness).
               </p>
             </div>
@@ -264,7 +277,7 @@
     <script src="/assets/js/proof-panel-lightbox.js" defer></script>
     <script src="/assets/js/plotly-2.35.3.min.js" defer></script>
     <script src="/assets/js/tickers-daily-activity-chart.js" defer></script>
-    <script src="/assets/js/aapl-options-chain-dashboard.js" defer></script>
+    <script src="/assets/js/tickers-options-chain-dashboard.js" defer></script>
   </footer>
 </body>
 </html>
