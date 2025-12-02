@@ -141,7 +141,7 @@
 
   function getFilteredRows() {
     return allRows.filter(function (row) {
-      return row.ticker === currentTicker;
+      return row.underlying_ticker === currentTicker;
     });
   }
 
