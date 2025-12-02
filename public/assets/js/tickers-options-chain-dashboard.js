@@ -70,20 +70,19 @@
   }
 
   function compareValues(a, b, type, dir) {
-    var va = a;
-    var vb = b;
+  var va = a;
+  var vb = b;
 
+  if (type === "number" || type === "date") {
     if (type === "number") {
       va = (va == null || va === "") ? NaN : Number(va);
       vb = (vb == null || vb === "") ? NaN : Number(vb);
     } else if (type === "date") {
       va = va ? new Date(va).getTime() : NaN;
       vb = vb ? new Date(vb).getTime() : NaN;
-    } else {
-      va = (va == null ? "" : String(va));
-      vb = (vb == null ? "" : String(vb));
     }
 
+    // Handle NaNs for numeric/date types
     if (isNaN(va) && !isNaN(vb)) return dir === "asc" ? 1 : -1;
     if (!isNaN(va) && isNaN(vb)) return dir === "asc" ? -1 : 1;
     if (isNaN(va) && isNaN(vb)) return 0;
@@ -92,6 +91,15 @@
     if (va > vb) return dir === "asc" ? 1 : -1;
     return 0;
   }
+
+  // String (and other) types: plain lexicographic compare
+  va = (va == null ? "" : String(va));
+  vb = (vb == null ? "" : String(vb));
+
+  if (va < vb) return dir === "asc" ? -1 : 1;
+  if (va > vb) return dir === "asc" ? 1 : -1;
+  return 0;
+}
 
   function sortRows(rows, key, type, dir) {
     rows.sort(function (a, b) {
