@@ -1217,6 +1217,30 @@ figure, .card { overflow: hidden; }
   }
 }
 
+/* Ticker selector on Projects chart */
+.ticker-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.ticker-label select {
+  font: inherit;
+  padding: 0.25rem 0.5rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-subtle, #e5e7eb);
+  background-color: #fff;
+}
+
+@media (max-width: 640px) {
+  .ticker-label {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
 /* === Options top-contracts table ===================================== */
 
 .options-table {
