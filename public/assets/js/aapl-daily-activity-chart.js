@@ -75,7 +75,8 @@
       };
 
       var mobileLayout = {
-        margin: { l: 48, r: 6, t: 4, b: 40 },
+        // r bumped from 6 -> 16 to prevent visual cutoff on the right edge
+        margin: { l: 48, r: 16, t: 4, b: 40 },
         paper_bgcolor: "rgba(0,0,0,0)",
         plot_bgcolor: "rgba(0,0,0,0)",
         hovermode: "x unified",
