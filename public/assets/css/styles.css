@@ -1261,3 +1261,13 @@ figure, .card { overflow: hidden; }
     padding: 0.3rem 0.4rem;
   }
 }
+
+.options-table th {
+  cursor: pointer;
+  user-select: none;
+}
+
+.options-table th[aria-sort="ascending"],
+.options-table th[aria-sort="descending"] {
+  text-decoration: underline;
+}
