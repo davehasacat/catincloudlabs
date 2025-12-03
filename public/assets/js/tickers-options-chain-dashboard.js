@@ -6,15 +6,19 @@
     return;
   }
 
-  // Reuse the same selector as Export 1
+  // Reuse the same select as the daily chart so everything stays in lockstep
   var selectEl = document.getElementById("daily-activity-ticker");
   if (!selectEl) {
-    console.warn("daily-activity-ticker <select> element not found; defaulting to AAPL");
+    console.warn("daily-activity-ticker select element not found for options table");
+    return;
   }
+
+  // Small label under the subtitle that shows the active ticker
+  var tickerLabelEl = document.getElementById("options-ticker-label");
 
   var DATA_URL = "/assets/data/options_top_contracts_5tickers.json";
   var allRows = [];
-  var currentTicker = (selectEl && selectEl.value) ? selectEl.value : "AAPL";
+  var currentTicker = selectEl.value || "AAPL";
 
   // Map headers to data keys + sort types
   var columns = [
@@ -162,6 +166,12 @@
     });
   }
 
+  function updateTickerLabel() {
+    if (tickerLabelEl) {
+      tickerLabelEl.textContent = currentTicker;
+    }
+  }
+
   function buildTable() {
     var table = document.createElement("table");
     table.className = "options-table";
@@ -237,6 +247,7 @@
       tbody.appendChild(emptyRow);
 
       updateAriaSort(thead, null);
+      updateTickerLabel();
       return;
     }
 
@@ -275,6 +286,8 @@
 
       tbody.appendChild(tr);
     });
+
+    updateTickerLabel();
   }
 
   function init() {
@@ -283,6 +296,7 @@
       .then(function (rows) {
         if (!rows || !rows.length) {
           container.textContent = "No options data available for the current window.";
+          updateTickerLabel();
           return;
         }
 
@@ -300,17 +314,16 @@
           build.thead.querySelector('th[data-key="total_volume"]')
         );
 
-        // Keep table in sync with Export 1 selector, if present
-        if (selectEl) {
-          selectEl.addEventListener("change", function (evt) {
-            currentTicker = evt.target.value || "AAPL";
-            renderBody(build.table, build.thead, build.tbody, null);
-          });
-        }
+        // Follow the same ticker selector as the daily chart
+        selectEl.addEventListener("change", function (evt) {
+          currentTicker = evt.target.value || "AAPL";
+          renderBody(build.table, build.thead, build.tbody, null);
+        });
       })
       .catch(function (err) {
         console.error("Error loading options table data", err);
         container.textContent = "Unable to load options data right now.";
+        updateTickerLabel();
       });
   }
 
