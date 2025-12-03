@@ -6,15 +6,15 @@
     return;
   }
 
-  var selectEl = document.getElementById("ticker-options-select");
+  // Reuse the same selector as Export 1
+  var selectEl = document.getElementById("daily-activity-ticker");
   if (!selectEl) {
-    console.warn("ticker-options-select element not found");
-    return;
+    console.warn("daily-activity-ticker <select> element not found; defaulting to AAPL");
   }
 
   var DATA_URL = "/assets/data/options_top_contracts_5tickers.json";
   var allRows = [];
-  var currentTicker = selectEl.value || "AAPL";
+  var currentTicker = (selectEl && selectEl.value) ? selectEl.value : "AAPL";
 
   // Map headers to data keys + sort types
   var columns = [
@@ -149,7 +149,6 @@
       }
     );
     if (targetTh) {
-      th = targetTh;
       targetTh.setAttribute(
         "aria-sort",
         currentSortDir === "asc" ? "ascending" : "descending"
@@ -301,11 +300,13 @@
           build.thead.querySelector('th[data-key="total_volume"]')
         );
 
-        // Wire dropdown
-        selectEl.addEventListener("change", function (evt) {
-          currentTicker = evt.target.value;
-          renderBody(build.table, build.thead, build.tbody, null);
-        });
+        // Keep table in sync with Export 1 selector, if present
+        if (selectEl) {
+          selectEl.addEventListener("change", function (evt) {
+            currentTicker = evt.target.value || "AAPL";
+            renderBody(build.table, build.thead, build.tbody, null);
+          });
+        }
       })
       .catch(function (err) {
         console.error("Error loading options table data", err);
