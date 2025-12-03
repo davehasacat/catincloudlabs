@@ -78,9 +78,9 @@ agg as (
         expiration_date,
         option_type,
         strike_price,
-        sum(option_volume)           as total_volume,
-        avg(signed_moneyness_pct)    as avg_signed_moneyness_pct,
-        max(max_trade_date)          as max_trade_date
+        sum(option_volume)        as total_volume,
+        avg(signed_moneyness_pct) as avg_signed_moneyness_pct,
+        max(max_trade_date)       as max_trade_date
     from base
     group by
         option_symbol,
@@ -109,7 +109,14 @@ joined as (
         a.strike_price,
         lc.latest_close_price,
         a.total_volume,
+
+        -- DTE relative to the window end (max_trade_date per contract).
+        -- This will be:
+        --   > 0  for contracts that expire after the window end
+        --   = 0  when expiration_date = max_trade_date
+        --   < 0  for contracts already past expiration by the window end
         datediff('day', a.max_trade_date, a.expiration_date) as days_to_expiration,
+
         a.avg_signed_moneyness_pct as signed_moneyness_pct
     from agg a
     join last_close lc
@@ -147,6 +154,7 @@ from ranked
 where rn <= 25
 order by underlying_ticker, total_volume desc, expiration_date, strike_price
 """
+
 
 
 def main():
