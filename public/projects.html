@@ -215,14 +215,16 @@
                 id="tickers-options-chain-dashboard"
                 class="chart-shell"
                 role="region"
-                aria-label="Interactive table of the most active options contracts for the selected ticker over a recent trading window."
+                aria-label="Interactive table of the most active options contracts for the selected ticker over a recent trading window, including expiry, type, strike, last price, total volume, days to expiration, and moneyness."
               >
                 <noscript>Enable JavaScript to view the options table.</noscript>
               </div>
               <p class="chart-footnote">
                 Columns show expiry, option type, strike, the latest close price observed in the window, total volume across the window,
-                days to expiration at the end of the window, and average moneyness versus the underlying price.
-                You can tap or click the column headers to re-sort (for example, by total volume, expiry, or moneyness) to find the contracts that matter most.
+                <abbr title="Days to Expiration at the end of the window">DTE</abbr>, and average moneyness versus the underlying price.
+                Many of the most active contracts in this sample were very short-dated and have since expired, so they now appear with
+                <strong>DTE = 0</strong> even though they were trading earlier in the window. You can tap or click the column headers to re-sort
+                (for example, by total volume, expiry, or moneyness) to find the contracts that matter most.
               </p>
             </div>
           </article>

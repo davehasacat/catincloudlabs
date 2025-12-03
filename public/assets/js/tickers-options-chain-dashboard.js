@@ -23,7 +23,12 @@
     { label: "Strike",       key: "strike_price",         type: "number" },
     { label: "Last price",   key: "latest_close_price",   type: "number" },
     { label: "Total volume", key: "total_volume",         type: "number" },
-    { label: "DTE",          key: "days_to_expiration",   type: "number" },
+    {
+      label: "DTE",
+      key: "days_to_expiration",
+      type: "number",
+      title: "DTE = Days to Expiration at the end of the window. Expired contracts show DTE = 0."
+    },
     { label: "Moneyness",    key: "signed_moneyness_pct", type: "number" }
   ];
 
@@ -167,11 +172,21 @@
 
     columns.forEach(function (col, idx) {
       var th = document.createElement("th");
-      th.textContent = col.label;
       th.setAttribute("data-key", col.key);
       th.setAttribute("data-type", col.type);
       th.setAttribute("data-index", idx);
       th.setAttribute("aria-sort", "none");
+
+      // Special-case DTE to use an <abbr> with a tooltip
+      if (col.key === "days_to_expiration" && col.title) {
+        var abbr = document.createElement("abbr");
+        abbr.textContent = col.label;
+        abbr.title = col.title;
+        th.appendChild(abbr);
+      } else {
+        th.textContent = col.label;
+      }
+
       headRow.appendChild(th);
     });
 
