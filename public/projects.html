@@ -199,9 +199,11 @@
               <div class="stack" style="--stack-gap:0.5rem;">
                 <h3>Options chain: most active contracts over a recent window</h3>
                 <p class="chart-subtitle">
-                  This table highlights the option contracts with the most trading activity over a recent window for AAPL, AMZN, GOOGL, MSFT, and NVDA.
-                  Each row rolls up total volume for a single contract across that window and shows where it sits on the chain.
-                  The table uses a static JSON export from my Snowflake marts for this demo.
+                  A sortable snapshot of the most heavily traded option contracts for the selected ticker
+                  over the same sample window. Each row represents a single contract aggregated across
+                  that window and shows where it sits on the chain: expiry, type, strike, last price,
+                  total volume, days to expiration, and average moneyness versus the underlying price.
+                  The table is powered by a static JSON export from the same Snowflake marts as the views above.
                 </p>
               </div>
 
@@ -209,7 +211,7 @@
                 id="tickers-options-chain-dashboard"
                 class="chart-shell"
                 role="region"
-                aria-label="Interactive table of the most active options contracts for the selected ticker over a recent trading window, including expiry, type, strike, last price, total volume, days to expiration, and moneyness."
+                aria-label="Interactive table of the most active options contracts for the selected ticker over the same recent trading window, including expiry, type, strike, last price, total volume, days to expiration, and moneyness."
               >
                 <noscript>Enable JavaScript to view the options table.</noscript>
               </div>
