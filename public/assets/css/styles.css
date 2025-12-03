@@ -1364,6 +1364,53 @@ figure, .card { overflow: hidden; }
   padding: 0.15rem 0.4rem;
 }
 
+/* Status line under options table intro */
+.options-table-status {
+  margin: 0.5rem 0 0.25rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* Pagination controls for options table */
+.options-table-pagination-root {
+  margin-top: 0.5rem;
+}
+
+.options-table-pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.options-table-pagination__controls {
+  display: inline-flex;
+  gap: 0.5rem;
+}
+
+.options-table-pagination__btn {
+  font-size: 0.8rem;
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-subtle, #e5e7eb);
+  background: #fff;
+  cursor: pointer;
+}
+
+.options-table-pagination__btn[disabled] {
+  opacity: 0.45;
+  cursor: default;
+}
+
+@media (max-width: 640px) {
+  .options-table-pagination {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
 /* === Ticker daily features snapshot (Projects page) =================== */
 /* Export 3: single daily snapshot card rendered inside .ticker-features-shell */
 
