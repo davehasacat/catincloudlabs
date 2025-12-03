@@ -128,12 +128,17 @@
               <li><strong>Built for:</strong> calm, production-like behavior rather than a one-off demo</li>
             </ul>
 
+            <p class="muted" style="margin-top:0.75rem;">
+              All three views below come from the same Snowflake marts that power this reference pipeline. For client work, those marts would typically sit behind a BI tool or custom app; here they're exposed as static JSON slices for the demo.
+            </p>
+
             <!-- Multi-ticker daily chart powered by Snowflake-exported JSON (Export 1) -->
             <div class="stack" style="--stack-gap:0.75rem; margin-top:1.5rem;">
               <div class="stack" style="--stack-gap:0.5rem;">
-                <h3>Daily price &amp; options volume (Sep 2 - Nov 28, 2025)</h3>
+                <h3>Daily price and options volume for AAPL, AMZN, GOOGL, MSFT, and NVDA (Sep 2 - Nov 28, 2025)</h3>
                 <p class="chart-subtitle">
-                  This chart is powered by a static JSON slice exported from Snowflake for five large-cap tickers, using the same marts that would back a client dashboard.
+                  See how each stock's closing price and total options volume moved over the same recent three-month window.
+                  The view is powered by a static JSON export from my Snowflake marts, so you're looking at the same data I use inside the warehouse.
                 </p>
                 <label for="daily-activity-ticker" class="ticker-label">
                   Ticker:
@@ -151,22 +156,25 @@
                 id="tickers-daily-activity-chart"
                 class="chart-shell"
                 role="img"
-                aria-label="Daily closing price with total options volume and a 7-day rolling average for the selected ticker between September 2 and November 28, 2025."
+                aria-label="Interactive chart of daily closing price, total options volume, and a 7-day rolling average for the selected ticker (AAPL, AMZN, GOOGL, MSFT, or NVDA) between September 2 and November 28, 2025."
               >
                 <noscript>Enable JavaScript to view the interactive chart.</noscript>
               </div>
               <p class="chart-footnote">
-                Tip: drag to zoom, pinch on touch devices, and use the toolbar to reset or download an image.
+                Tip: choose a ticker, then drag to zoom, pinch on touch devices, and use the toolbar to reset or download an image.
+                Each ticker uses the same dates and calculations, so comparisons stay apples-to-apples.
               </p>
             </div>
 
             <!-- Daily features snapshot (Export 3) -->
             <div class="stack" style="--stack-gap:0.75rem; margin-top:1.5rem;">
               <div class="stack" style="--stack-gap:0.5rem;">
-                <h3>Daily features: price, returns, and options activity</h3>
+                <h3>Daily snapshot for the selected ticker: price, returns, and options activity</h3>
                 <p class="chart-subtitle">
-                  This snapshot uses the same Snowflake marts to summarize short-horizon returns, realized volatility, underlying volume,
-                  options volume versus a 30-day baseline, and the call/put volume mix for the selected ticker.
+                  A compact daily dashboard for the selected ticker on the same recent window as the chart above.
+                  It surfaces short-term returns, recent volatility, stock volume versus a 30-day baseline,
+                  options volume versus a 30-day baseline, and the mix of call versus put volume for that day.
+                  Each tile is calculated directly from the Snowflake marts that power the other exports on this page.
                 </p>
               </div>
 
@@ -174,19 +182,24 @@
                 id="ticker-features-daily-dashboard"
                 class="ticker-features-shell"
                 role="region"
-                aria-label="Latest daily features for the selected ticker, including returns, volatility, volume, and options activity."
+                aria-label="Interactive daily snapshot for the selected ticker, showing returns, volatility, volume, and options activity for a single trading day in the same window as the chart above."
               >
                 <noscript>Enable JavaScript to view the daily features snapshot.</noscript>
               </div>
+              <p class="chart-footnote">
+                Switch tickers to see how the exact same daily metrics look for AAPL, AMZN, GOOGL, MSFT, and NVDA on the latest trading day in this window.
+                It's the same underlying data as the multi-ticker chart above, just flattened into tiles.
+              </p>
             </div>
 
             <!-- Multi-ticker options chain: aggregated top-contracts table (Export 2) -->
             <div class="stack" style="--stack-gap:0.75rem; margin-top:1.5rem;">
               <div class="stack" style="--stack-gap:0.5rem;">
-                <h3>Options chain: top contracts over a recent window</h3>
+                <h3>Options chain: most active contracts over a recent window</h3>
                 <p class="chart-subtitle">
-                  This table surfaces the option contracts that carried the most flow over a recent trading window, across five large-cap tickers.
-                  Each row rolls up total volume for a single contract across that window, with a snapshot of where it sits on the chain.
+                  This table highlights the option contracts with the most trading activity over a recent window for AAPL, AMZN, GOOGL, MSFT, and NVDA.
+                  Each row rolls up total volume for a single contract across that window and shows where it sits on the chain.
+                  The table uses a static JSON export from my Snowflake marts for this demo.
                 </p>
                 <label for="ticker-options-select" class="ticker-label">
                   Ticker:
@@ -204,14 +217,16 @@
                 id="tickers-options-chain-dashboard"
                 class="chart-shell"
                 role="region"
-                aria-label="Interactive table of the most active options contracts for the selected ticker over a recent trading window."
+                aria-label="Interactive table of the most active options contracts for the selected ticker over a recent trading window, including expiry, type, strike, last price, total volume, days to expiration, and moneyness."
               >
                 <noscript>Enable JavaScript to view the options table.</noscript>
               </div>
               <p class="chart-footnote">
-                Columns show expiry, option type, strike, latest close price observed in the window, total volume across the window,
-                days to expiration at the end of the window, and average moneyness versus the underlying price.
-                You can tap or click the column headers to re-sort (for example, by total volume, expiry, or moneyness).
+                Columns show expiry, option type, strike, the latest close price observed in the window, total volume across the window,
+                <abbr title="Days to Expiration at the end of the window">DTE</abbr>, and average moneyness versus the underlying price.
+                These are the most active contracts during that window; many were very short-dated and have since expired, so they now appear with
+                <strong>DTE = 0</strong> even though they were trading earlier in the window. You can tap or click the column headers to re-sort
+                (for example, by total volume, expiry, or moneyness) to find the contracts that matter most.
               </p>
             </div>
           </article>
@@ -255,7 +270,7 @@
             is a short discovery call.
           </p>
           <p class="muted">
-            We can walk through your current setup, compare it to this reference architecture, and decide whether an audit sprint or a focused build makes sense.
+            We can walk through your current setup together, compare it to this reference architecture, and help you decide whether an audit sprint or a focused build makes sense.
           </p>
           <div class="stack" style="--stack-gap:.75rem; margin-top:1.25rem; justify-content:center;">
             <a href="/contact#contact-form" class="button primary">Book a discovery call</a>

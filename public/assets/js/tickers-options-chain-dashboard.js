@@ -23,11 +23,16 @@
     { label: "Strike",       key: "strike_price",         type: "number" },
     { label: "Last price",   key: "latest_close_price",   type: "number" },
     { label: "Total volume", key: "total_volume",         type: "number" },
-    { label: "DTE",          key: "days_to_expiration",   type: "number" },
+    {
+      label: "DTE",
+      key: "days_to_expiration",
+      type: "number",
+      title: "DTE = Days to Expiration at the end of the window. Expired contracts show DTE = 0."
+    },
     { label: "Moneyness",    key: "signed_moneyness_pct", type: "number" }
   ];
 
-  // Formatting helpers (same as AAPL-only)
+  // Formatting helpers
   function fmtMoney(val) {
     if (val == null) return "";
     return "$" + Number(val).toFixed(2);
@@ -38,9 +43,13 @@
     return Number(val).toLocaleString("en-US");
   }
 
+  // Clamp display DTE at 0; keep raw value for sorting and JSON
   function fmtDte(val) {
     if (val == null) return "";
-    return Number(val);
+    var n = Number(val);
+    if (isNaN(n)) return "";
+    var display = n <= 0 ? 0 : n;
+    return String(display);
   }
 
   function fmtMoneyness(val) {
@@ -60,7 +69,7 @@
     });
   }
 
-  // Sorting helpers (adapted from AAPL-only)
+  // Sorting helpers
   var currentSortKey = "total_volume";
   var currentSortDir = "desc"; // "asc" | "desc"
 
@@ -70,36 +79,36 @@
   }
 
   function compareValues(a, b, type, dir) {
-  var va = a;
-  var vb = b;
+    var va = a;
+    var vb = b;
 
-  if (type === "number" || type === "date") {
-    if (type === "number") {
-      va = (va == null || va === "") ? NaN : Number(va);
-      vb = (vb == null || vb === "") ? NaN : Number(vb);
-    } else if (type === "date") {
-      va = va ? new Date(va).getTime() : NaN;
-      vb = vb ? new Date(vb).getTime() : NaN;
+    if (type === "number" || type === "date") {
+      if (type === "number") {
+        va = (va == null || va === "") ? NaN : Number(va);
+        vb = (vb == null || vb === "") ? NaN : Number(vb);
+      } else if (type === "date") {
+        va = va ? new Date(va).getTime() : NaN;
+        vb = vb ? new Date(vb).getTime() : NaN;
+      }
+
+      // Handle NaNs for numeric/date types
+      if (isNaN(va) && !isNaN(vb)) return dir === "asc" ? 1 : -1;
+      if (!isNaN(va) && isNaN(vb)) return dir === "asc" ? -1 : 1;
+      if (isNaN(va) && isNaN(vb)) return 0;
+
+      if (va < vb) return dir === "asc" ? -1 : 1;
+      if (va > vb) return dir === "asc" ? 1 : -1;
+      return 0;
     }
 
-    // Handle NaNs for numeric/date types
-    if (isNaN(va) && !isNaN(vb)) return dir === "asc" ? 1 : -1;
-    if (!isNaN(va) && isNaN(vb)) return dir === "asc" ? -1 : 1;
-    if (isNaN(va) && isNaN(vb)) return 0;
+    // String (and other) types: plain lexicographic compare
+    va = (va == null ? "" : String(va));
+    vb = (vb == null ? "" : String(vb));
 
     if (va < vb) return dir === "asc" ? -1 : 1;
     if (va > vb) return dir === "asc" ? 1 : -1;
     return 0;
   }
-
-  // String (and other) types: plain lexicographic compare
-  va = (va == null ? "" : String(va));
-  vb = (vb == null ? "" : String(vb));
-
-  if (va < vb) return dir === "asc" ? -1 : 1;
-  if (va > vb) return dir === "asc" ? 1 : -1;
-  return 0;
-}
 
   function sortRows(rows, key, type, dir) {
     rows.sort(function (a, b) {
@@ -140,6 +149,7 @@
       }
     );
     if (targetTh) {
+      th = targetTh;
       targetTh.setAttribute(
         "aria-sort",
         currentSortDir === "asc" ? "ascending" : "descending"
@@ -162,11 +172,21 @@
 
     columns.forEach(function (col, idx) {
       var th = document.createElement("th");
-      th.textContent = col.label;
       th.setAttribute("data-key", col.key);
       th.setAttribute("data-type", col.type);
       th.setAttribute("data-index", idx);
       th.setAttribute("aria-sort", "none");
+
+      // Special-case DTE to use an <abbr> with a tooltip
+      if (col.key === "days_to_expiration" && col.title) {
+        var abbr = document.createElement("abbr");
+        abbr.textContent = col.label;
+        abbr.title = col.title;
+        th.appendChild(abbr);
+      } else {
+        th.textContent = col.label;
+      }
+
       headRow.appendChild(th);
     });
 
@@ -274,7 +294,12 @@
         container.appendChild(build.table);
 
         // Initial render (default sort: total_volume desc)
-        renderBody(build.table, build.thead, build.tbody, build.thead.querySelector('th[data-key="total_volume"]'));
+        renderBody(
+          build.table,
+          build.thead,
+          build.tbody,
+          build.thead.querySelector('th[data-key="total_volume"]')
+        );
 
         // Wire dropdown
         selectEl.addEventListener("change", function (evt) {

@@ -262,50 +262,57 @@
     "trade_date": "2025-10-23",
     "ticker": "AAPL",
     "underlying_close_price": 259.58,
-    "total_option_volume": 1084780,
-    "volume_7d_avg": 1810546.571
+    "total_option_volume": 4881510,
+    "volume_7d_avg": 2352936.571
+  },
+  {
+    "trade_date": "2025-10-24",
+    "ticker": "AAPL",
+    "underlying_close_price": 262.82,
+    "total_option_volume": 1103700,
+    "volume_7d_avg": 2355664.857
   },
   {
     "trade_date": "2025-10-27",
     "ticker": "AAPL",
     "underlying_close_price": 268.81,
     "total_option_volume": 1393924,
-    "volume_7d_avg": 1854735.428
+    "volume_7d_avg": 2362064.0
   },
   {
     "trade_date": "2025-10-28",
     "ticker": "AAPL",
     "underlying_close_price": 269.0,
     "total_option_volume": 1181814,
-    "volume_7d_avg": 1830833.142
+    "volume_7d_avg": 2228302.857
   },
   {
     "trade_date": "2025-10-29",
     "ticker": "AAPL",
     "underlying_close_price": 269.7,
     "total_option_volume": 1333294,
-    "volume_7d_avg": 1718712.0
+    "volume_7d_avg": 1936307.714
   },
   {
     "trade_date": "2025-10-30",
     "ticker": "AAPL",
     "underlying_close_price": 271.4,
     "total_option_volume": 2416542,
-    "volume_7d_avg": 1581466.571
+    "volume_7d_avg": 1991325.714
   },
   {
     "trade_date": "2025-10-31",
     "ticker": "AAPL",
     "underlying_close_price": 270.37,
     "total_option_volume": 3676920,
-    "volume_7d_avg": 1816538.571
+    "volume_7d_avg": 2283957.714
   },
   {
     "trade_date": "2025-11-03",
     "ticker": "AAPL",
     "underlying_close_price": 269.05,
     "total_option_volume": 1874439,
-    "volume_7d_avg": 1851673.285
+    "volume_7d_avg": 1854376.142
   },
   {
     "trade_date": "2025-11-04",
@@ -404,6 +411,34 @@
     "underlying_close_price": 271.49,
     "total_option_volume": 2185922,
     "volume_7d_avg": 1567282.0
+  },
+  {
+    "trade_date": "2025-11-24",
+    "ticker": "AAPL",
+    "underlying_close_price": 275.92,
+    "total_option_volume": 1470238,
+    "volume_7d_avg": 1558890.571
+  },
+  {
+    "trade_date": "2025-11-25",
+    "ticker": "AAPL",
+    "underlying_close_price": 276.97,
+    "total_option_volume": 1791768,
+    "volume_7d_avg": 1545287.142
+  },
+  {
+    "trade_date": "2025-11-26",
+    "ticker": "AAPL",
+    "underlying_close_price": 277.55,
+    "total_option_volume": 1493082,
+    "volume_7d_avg": 1579371.428
+  },
+  {
+    "trade_date": "2025-11-28",
+    "ticker": "AAPL",
+    "underlying_close_price": 278.85,
+    "total_option_volume": 646998,
+    "volume_7d_avg": 1519344.857
   },
   {
     "trade_date": "2025-09-02",
@@ -668,50 +703,57 @@
     "trade_date": "2025-10-23",
     "ticker": "AMZN",
     "underlying_close_price": 221.09,
-    "total_option_volume": 944776,
-    "volume_7d_avg": 1288455.714
+    "total_option_volume": 4793658,
+    "volume_7d_avg": 1838296.0
+  },
+  {
+    "trade_date": "2025-10-24",
+    "ticker": "AMZN",
+    "underlying_close_price": 224.21,
+    "total_option_volume": 897191,
+    "volume_7d_avg": 1809556.142
   },
   {
     "trade_date": "2025-10-27",
     "ticker": "AMZN",
     "underlying_close_price": 226.97,
     "total_option_volume": 696462,
-    "volume_7d_avg": 1231040.285
+    "volume_7d_avg": 1714276.714
   },
   {
     "trade_date": "2025-10-28",
     "ticker": "AMZN",
     "underlying_close_price": 229.25,
     "total_option_volume": 695440,
-    "volume_7d_avg": 1135614.857
+    "volume_7d_avg": 1573497.571
   },
   {
     "trade_date": "2025-10-29",
     "ticker": "AMZN",
     "underlying_close_price": 230.3,
     "total_option_volume": 758698,
-    "volume_7d_avg": 1003872.571
+    "volume_7d_avg": 1527462.428
   },
   {
     "trade_date": "2025-10-30",
     "ticker": "AMZN",
     "underlying_close_price": 222.86,
     "total_option_volume": 1318758,
-    "volume_7d_avg": 1037846.0
+    "volume_7d_avg": 1463612.142
   },
   {
     "trade_date": "2025-10-31",
     "ticker": "AMZN",
     "underlying_close_price": 244.22,
     "total_option_volume": 2825960,
-    "volume_7d_avg": 1189310.285
+    "volume_7d_avg": 1712309.571
   },
   {
     "trade_date": "2025-11-03",
     "ticker": "AMZN",
     "underlying_close_price": 254.0,
     "total_option_volume": 1723110,
-    "volume_7d_avg": 1280457.714
+    "volume_7d_avg": 1273659.857
   },
   {
     "trade_date": "2025-11-04",
@@ -812,46 +854,382 @@
     "volume_7d_avg": 786717.428
   },
   {
+    "trade_date": "2025-11-24",
+    "ticker": "AMZN",
+    "underlying_close_price": 226.28,
+    "total_option_volume": 1275622,
+    "volume_7d_avg": 866716.0
+  },
+  {
+    "trade_date": "2025-11-25",
+    "ticker": "AMZN",
+    "underlying_close_price": 229.67,
+    "total_option_volume": 1315892,
+    "volume_7d_avg": 962518.857
+  },
+  {
+    "trade_date": "2025-11-26",
+    "ticker": "AMZN",
+    "underlying_close_price": 229.16,
+    "total_option_volume": 1177448,
+    "volume_7d_avg": 1025200.0
+  },
+  {
+    "trade_date": "2025-11-28",
+    "ticker": "AMZN",
+    "underlying_close_price": 233.22,
+    "total_option_volume": 434709,
+    "volume_7d_avg": 970379.571
+  },
+  {
+    "trade_date": "2025-09-02",
+    "ticker": "GOOGL",
+    "underlying_close_price": 211.35,
+    "total_option_volume": 809634,
+    "volume_7d_avg": 809634.0
+  },
+  {
+    "trade_date": "2025-09-03",
+    "ticker": "GOOGL",
+    "underlying_close_price": 230.66,
+    "total_option_volume": 3450638,
+    "volume_7d_avg": 2130136.0
+  },
+  {
+    "trade_date": "2025-09-04",
+    "ticker": "GOOGL",
+    "underlying_close_price": 232.3,
+    "total_option_volume": 1344626,
+    "volume_7d_avg": 1868299.333
+  },
+  {
+    "trade_date": "2025-09-05",
+    "ticker": "GOOGL",
+    "underlying_close_price": 235.0,
+    "total_option_volume": 1478074,
+    "volume_7d_avg": 1770743.0
+  },
+  {
+    "trade_date": "2025-09-08",
+    "ticker": "GOOGL",
+    "underlying_close_price": 234.04,
+    "total_option_volume": 804418,
+    "volume_7d_avg": 1577478.0
+  },
+  {
+    "trade_date": "2025-09-09",
+    "ticker": "GOOGL",
+    "underlying_close_price": 239.63,
+    "total_option_volume": 965406,
+    "volume_7d_avg": 1475466.0
+  },
+  {
+    "trade_date": "2025-09-10",
+    "ticker": "GOOGL",
+    "underlying_close_price": 239.17,
+    "total_option_volume": 907508,
+    "volume_7d_avg": 1394329.142
+  },
+  {
+    "trade_date": "2025-09-11",
+    "ticker": "GOOGL",
+    "underlying_close_price": 240.37,
+    "total_option_volume": 815252,
+    "volume_7d_avg": 1395131.714
+  },
+  {
+    "trade_date": "2025-09-12",
+    "ticker": "GOOGL",
+    "underlying_close_price": 240.8,
+    "total_option_volume": 766596,
+    "volume_7d_avg": 1011697.142
+  },
+  {
+    "trade_date": "2025-09-15",
+    "ticker": "GOOGL",
+    "underlying_close_price": 251.61,
+    "total_option_volume": 1613054,
+    "volume_7d_avg": 1050044.0
+  },
+  {
+    "trade_date": "2025-09-16",
+    "ticker": "GOOGL",
+    "underlying_close_price": 251.16,
+    "total_option_volume": 638658,
+    "volume_7d_avg": 930127.428
+  },
+  {
+    "trade_date": "2025-09-17",
+    "ticker": "GOOGL",
+    "underlying_close_price": 249.53,
+    "total_option_volume": 646854,
+    "volume_7d_avg": 907618.285
+  },
+  {
+    "trade_date": "2025-09-18",
+    "ticker": "GOOGL",
+    "underlying_close_price": 252.03,
+    "total_option_volume": 695874,
+    "volume_7d_avg": 869113.714
+  },
+  {
+    "trade_date": "2025-09-19",
+    "ticker": "GOOGL",
+    "underlying_close_price": 254.72,
+    "total_option_volume": 917540,
+    "volume_7d_avg": 870546.857
+  },
+  {
+    "trade_date": "2025-09-22",
+    "ticker": "GOOGL",
+    "underlying_close_price": 252.53,
+    "total_option_volume": 775566,
+    "volume_7d_avg": 864877.428
+  },
+  {
+    "trade_date": "2025-09-23",
+    "ticker": "GOOGL",
+    "underlying_close_price": 251.66,
+    "total_option_volume": 423354,
+    "volume_7d_avg": 815842.857
+  },
+  {
+    "trade_date": "2025-09-24",
+    "ticker": "GOOGL",
+    "underlying_close_price": 247.14,
+    "total_option_volume": 610510,
+    "volume_7d_avg": 672622.285
+  },
+  {
+    "trade_date": "2025-09-25",
+    "ticker": "GOOGL",
+    "underlying_close_price": 245.79,
+    "total_option_volume": 647922,
+    "volume_7d_avg": 673945.714
+  },
+  {
+    "trade_date": "2025-09-26",
+    "ticker": "GOOGL",
+    "underlying_close_price": 246.54,
+    "total_option_volume": 553692,
+    "volume_7d_avg": 660636.857
+  },
+  {
+    "trade_date": "2025-09-29",
+    "ticker": "GOOGL",
+    "underlying_close_price": 244.05,
+    "total_option_volume": 718102,
+    "volume_7d_avg": 663812.285
+  },
+  {
+    "trade_date": "2025-09-30",
+    "ticker": "GOOGL",
+    "underlying_close_price": 243.1,
+    "total_option_volume": 623512,
+    "volume_7d_avg": 621808.285
+  },
+  {
+    "trade_date": "2025-10-01",
+    "ticker": "GOOGL",
+    "underlying_close_price": 244.9,
+    "total_option_volume": 535226,
+    "volume_7d_avg": 587474.0
+  },
+  {
+    "trade_date": "2025-10-02",
+    "ticker": "GOOGL",
+    "underlying_close_price": 245.69,
+    "total_option_volume": 531182,
+    "volume_7d_avg": 602878.0
+  },
+  {
+    "trade_date": "2025-10-03",
+    "ticker": "GOOGL",
+    "underlying_close_price": 245.35,
+    "total_option_volume": 903144,
+    "volume_7d_avg": 644682.857
+  },
+  {
+    "trade_date": "2025-10-06",
+    "ticker": "GOOGL",
+    "underlying_close_price": 250.43,
+    "total_option_volume": 657992,
+    "volume_7d_avg": 646121.428
+  },
+  {
+    "trade_date": "2025-10-07",
+    "ticker": "GOOGL",
+    "underlying_close_price": 245.76,
+    "total_option_volume": 454864,
+    "volume_7d_avg": 632003.142
+  },
+  {
+    "trade_date": "2025-10-08",
+    "ticker": "GOOGL",
+    "underlying_close_price": 244.62,
+    "total_option_volume": 368240,
+    "volume_7d_avg": 582022.857
+  },
+  {
+    "trade_date": "2025-10-09",
+    "ticker": "GOOGL",
+    "underlying_close_price": 241.53,
+    "total_option_volume": 991944,
+    "volume_7d_avg": 634656.0
+  },
+  {
+    "trade_date": "2025-10-10",
+    "ticker": "GOOGL",
+    "underlying_close_price": 236.57,
+    "total_option_volume": 856890,
+    "volume_7d_avg": 680608.0
+  },
+  {
+    "trade_date": "2025-10-13",
+    "ticker": "GOOGL",
+    "underlying_close_price": 244.15,
+    "total_option_volume": 471858,
+    "volume_7d_avg": 672133.142
+  },
+  {
+    "trade_date": "2025-10-14",
+    "ticker": "GOOGL",
+    "underlying_close_price": 245.45,
+    "total_option_volume": 514482,
+    "volume_7d_avg": 616610.0
+  },
+  {
+    "trade_date": "2025-10-15",
+    "ticker": "GOOGL",
+    "underlying_close_price": 251.03,
+    "total_option_volume": 677464,
+    "volume_7d_avg": 619391.714
+  },
+  {
+    "trade_date": "2025-10-16",
+    "ticker": "GOOGL",
+    "underlying_close_price": 251.46,
+    "total_option_volume": 960840,
+    "volume_7d_avg": 691674.0
+  },
+  {
+    "trade_date": "2025-10-17",
+    "ticker": "GOOGL",
+    "underlying_close_price": 253.3,
+    "total_option_volume": 872442,
+    "volume_7d_avg": 763702.857
+  },
+  {
+    "trade_date": "2025-10-20",
+    "ticker": "GOOGL",
+    "underlying_close_price": 256.55,
+    "total_option_volume": 483388,
+    "volume_7d_avg": 691052.0
+  },
+  {
+    "trade_date": "2025-10-21",
+    "ticker": "GOOGL",
+    "underlying_close_price": 250.46,
+    "total_option_volume": 1363522,
+    "volume_7d_avg": 763428.0
+  },
+  {
+    "trade_date": "2025-10-22",
+    "ticker": "GOOGL",
+    "underlying_close_price": 251.69,
+    "total_option_volume": 793278,
+    "volume_7d_avg": 809345.142
+  },
+  {
+    "trade_date": "2025-10-23",
+    "ticker": "GOOGL",
+    "underlying_close_price": 253.08,
+    "total_option_volume": 723360,
+    "volume_7d_avg": 839184.857
+  },
+  {
+    "trade_date": "2025-10-24",
+    "ticker": "GOOGL",
+    "underlying_close_price": 259.92,
+    "total_option_volume": 631312,
+    "volume_7d_avg": 832591.714
+  },
+  {
+    "trade_date": "2025-10-27",
+    "ticker": "GOOGL",
+    "underlying_close_price": 269.27,
+    "total_option_volume": 815734,
+    "volume_7d_avg": 811862.285
+  },
+  {
+    "trade_date": "2025-10-28",
+    "ticker": "GOOGL",
+    "underlying_close_price": 267.47,
+    "total_option_volume": 581234,
+    "volume_7d_avg": 770261.142
+  },
+  {
+    "trade_date": "2025-10-29",
+    "ticker": "GOOGL",
+    "underlying_close_price": 274.57,
+    "total_option_volume": 1457920,
+    "volume_7d_avg": 909480.0
+  },
+  {
+    "trade_date": "2025-10-30",
+    "ticker": "GOOGL",
+    "underlying_close_price": 281.48,
+    "total_option_volume": 1971374,
+    "volume_7d_avg": 996316.0
+  },
+  {
+    "trade_date": "2025-10-31",
+    "ticker": "GOOGL",
+    "underlying_close_price": 281.19,
+    "total_option_volume": 1054004,
+    "volume_7d_avg": 1033562.571
+  },
+  {
     "trade_date": "2025-11-03",
     "ticker": "GOOGL",
     "underlying_close_price": 283.72,
     "total_option_volume": 769512,
-    "volume_7d_avg": 769512.0
+    "volume_7d_avg": 1040155.714
   },
   {
     "trade_date": "2025-11-04",
     "ticker": "GOOGL",
     "underlying_close_price": 277.54,
     "total_option_volume": 483660,
-    "volume_7d_avg": 626586.0
+    "volume_7d_avg": 1019062.571
   },
   {
     "trade_date": "2025-11-05",
     "ticker": "GOOGL",
     "underlying_close_price": 284.31,
     "total_option_volume": 697018,
-    "volume_7d_avg": 650063.333
+    "volume_7d_avg": 1002103.142
   },
   {
     "trade_date": "2025-11-06",
     "ticker": "GOOGL",
     "underlying_close_price": 284.75,
     "total_option_volume": 747244,
-    "volume_7d_avg": 674358.5
+    "volume_7d_avg": 1025818.857
   },
   {
     "trade_date": "2025-11-07",
     "ticker": "GOOGL",
     "underlying_close_price": 278.83,
     "total_option_volume": 1006630,
-    "volume_7d_avg": 740812.8
+    "volume_7d_avg": 961348.857
   },
   {
     "trade_date": "2025-11-10",
     "ticker": "GOOGL",
     "underlying_close_price": 290.1,
     "total_option_volume": 744632,
-    "volume_7d_avg": 741449.333
+    "volume_7d_avg": 786100.0
   },
   {
     "trade_date": "2025-11-11",
@@ -920,204 +1298,820 @@
     "trade_date": "2025-11-24",
     "ticker": "GOOGL",
     "underlying_close_price": 318.58,
-    "total_option_volume": 1020063,
-    "volume_7d_avg": 1436543.285
+    "total_option_volume": 2040126,
+    "volume_7d_avg": 1582266.571
   },
   {
     "trade_date": "2025-11-25",
     "ticker": "GOOGL",
     "underlying_close_price": 323.44,
-    "total_option_volume": 2397658,
-    "volume_7d_avg": 1665280.428
+    "total_option_volume": 4795316,
+    "volume_7d_avg": 2153526.285
   },
   {
     "trade_date": "2025-11-26",
     "ticker": "GOOGL",
     "underlying_close_price": 319.95,
-    "total_option_volume": 637409,
-    "volume_7d_avg": 1581834.857
+    "total_option_volume": 1274818,
+    "volume_7d_avg": 2161139.142
   },
   {
     "trade_date": "2025-11-28",
     "ticker": "GOOGL",
     "underlying_close_price": 320.18,
     "total_option_volume": 595605,
-    "volume_7d_avg": 1537614.142
+    "volume_7d_avg": 2116918.428
+  },
+  {
+    "trade_date": "2025-09-02",
+    "ticker": "MSFT",
+    "underlying_close_price": 505.12,
+    "total_option_volume": 805308,
+    "volume_7d_avg": 805308.0
+  },
+  {
+    "trade_date": "2025-09-03",
+    "ticker": "MSFT",
+    "underlying_close_price": 505.35,
+    "total_option_volume": 509004,
+    "volume_7d_avg": 657156.0
+  },
+  {
+    "trade_date": "2025-09-04",
+    "ticker": "MSFT",
+    "underlying_close_price": 507.97,
+    "total_option_volume": 773164,
+    "volume_7d_avg": 695825.333
+  },
+  {
+    "trade_date": "2025-09-05",
+    "ticker": "MSFT",
+    "underlying_close_price": 495.0,
+    "total_option_volume": 2309900,
+    "volume_7d_avg": 1099344.0
+  },
+  {
+    "trade_date": "2025-09-08",
+    "ticker": "MSFT",
+    "underlying_close_price": 498.2,
+    "total_option_volume": 774224,
+    "volume_7d_avg": 1034320.0
+  },
+  {
+    "trade_date": "2025-09-09",
+    "ticker": "MSFT",
+    "underlying_close_price": 498.41,
+    "total_option_volume": 672776,
+    "volume_7d_avg": 974062.666
+  },
+  {
+    "trade_date": "2025-09-10",
+    "ticker": "MSFT",
+    "underlying_close_price": 500.37,
+    "total_option_volume": 1113848,
+    "volume_7d_avg": 994032.0
+  },
+  {
+    "trade_date": "2025-09-11",
+    "ticker": "MSFT",
+    "underlying_close_price": 501.01,
+    "total_option_volume": 1148516,
+    "volume_7d_avg": 1043061.714
+  },
+  {
+    "trade_date": "2025-09-12",
+    "ticker": "MSFT",
+    "underlying_close_price": 509.9,
+    "total_option_volume": 2576680,
+    "volume_7d_avg": 1338444.0
+  },
+  {
+    "trade_date": "2025-09-15",
+    "ticker": "MSFT",
+    "underlying_close_price": 515.36,
+    "total_option_volume": 940192,
+    "volume_7d_avg": 1362305.142
+  },
+  {
+    "trade_date": "2025-09-16",
+    "ticker": "MSFT",
+    "underlying_close_price": 509.04,
+    "total_option_volume": 1000228,
+    "volume_7d_avg": 1175209.142
+  },
+  {
+    "trade_date": "2025-09-17",
+    "ticker": "MSFT",
+    "underlying_close_price": 510.02,
+    "total_option_volume": 976368,
+    "volume_7d_avg": 1204086.857
+  },
+  {
+    "trade_date": "2025-09-18",
+    "ticker": "MSFT",
+    "underlying_close_price": 508.45,
+    "total_option_volume": 1175044,
+    "volume_7d_avg": 1275839.428
+  },
+  {
+    "trade_date": "2025-09-19",
+    "ticker": "MSFT",
+    "underlying_close_price": 517.93,
+    "total_option_volume": 1782536,
+    "volume_7d_avg": 1371366.285
+  },
+  {
+    "trade_date": "2025-09-22",
+    "ticker": "MSFT",
+    "underlying_close_price": 514.45,
+    "total_option_volume": 968448,
+    "volume_7d_avg": 1345642.285
+  },
+  {
+    "trade_date": "2025-09-23",
+    "ticker": "MSFT",
+    "underlying_close_price": 509.23,
+    "total_option_volume": 906504,
+    "volume_7d_avg": 1107045.714
+  },
+  {
+    "trade_date": "2025-09-24",
+    "ticker": "MSFT",
+    "underlying_close_price": 510.15,
+    "total_option_volume": 781172,
+    "volume_7d_avg": 1084328.571
+  },
+  {
+    "trade_date": "2025-09-25",
+    "ticker": "MSFT",
+    "underlying_close_price": 507.03,
+    "total_option_volume": 1310672,
+    "volume_7d_avg": 1128677.714
+  },
+  {
+    "trade_date": "2025-09-26",
+    "ticker": "MSFT",
+    "underlying_close_price": 511.46,
+    "total_option_volume": 1431492,
+    "volume_7d_avg": 1193695.428
+  },
+  {
+    "trade_date": "2025-09-29",
+    "ticker": "MSFT",
+    "underlying_close_price": 514.6,
+    "total_option_volume": 846812,
+    "volume_7d_avg": 1146805.142
+  },
+  {
+    "trade_date": "2025-09-30",
+    "ticker": "MSFT",
+    "underlying_close_price": 517.95,
+    "total_option_volume": 820880,
+    "volume_7d_avg": 1009425.714
+  },
+  {
+    "trade_date": "2025-10-01",
+    "ticker": "MSFT",
+    "underlying_close_price": 519.71,
+    "total_option_volume": 1121608,
+    "volume_7d_avg": 1031305.714
+  },
+  {
+    "trade_date": "2025-10-02",
+    "ticker": "MSFT",
+    "underlying_close_price": 515.74,
+    "total_option_volume": 1663160,
+    "volume_7d_avg": 1139399.428
+  },
+  {
+    "trade_date": "2025-10-03",
+    "ticker": "MSFT",
+    "underlying_close_price": 517.35,
+    "total_option_volume": 1362408,
+    "volume_7d_avg": 1222433.142
+  },
+  {
+    "trade_date": "2025-10-06",
+    "ticker": "MSFT",
+    "underlying_close_price": 528.57,
+    "total_option_volume": 1865268,
+    "volume_7d_avg": 1301661.142
+  },
+  {
+    "trade_date": "2025-10-07",
+    "ticker": "MSFT",
+    "underlying_close_price": 523.98,
+    "total_option_volume": 1035024,
+    "volume_7d_avg": 1245022.857
+  },
+  {
+    "trade_date": "2025-10-08",
+    "ticker": "MSFT",
+    "underlying_close_price": 524.85,
+    "total_option_volume": 734364,
+    "volume_7d_avg": 1228958.857
+  },
+  {
+    "trade_date": "2025-10-09",
+    "ticker": "MSFT",
+    "underlying_close_price": 522.4,
+    "total_option_volume": 1341868,
+    "volume_7d_avg": 1303385.714
+  },
+  {
+    "trade_date": "2025-10-10",
+    "ticker": "MSFT",
+    "underlying_close_price": 510.96,
+    "total_option_volume": 1424580,
+    "volume_7d_avg": 1346667.428
+  },
+  {
+    "trade_date": "2025-10-13",
+    "ticker": "MSFT",
+    "underlying_close_price": 514.05,
+    "total_option_volume": 871796,
+    "volume_7d_avg": 1233615.428
+  },
+  {
+    "trade_date": "2025-10-14",
+    "ticker": "MSFT",
+    "underlying_close_price": 513.57,
+    "total_option_volume": 695732,
+    "volume_7d_avg": 1138376.0
+  },
+  {
+    "trade_date": "2025-10-15",
+    "ticker": "MSFT",
+    "underlying_close_price": 513.43,
+    "total_option_volume": 601484,
+    "volume_7d_avg": 957835.428
+  },
+  {
+    "trade_date": "2025-10-16",
+    "ticker": "MSFT",
+    "underlying_close_price": 511.61,
+    "total_option_volume": 802296,
+    "volume_7d_avg": 924588.571
+  },
+  {
+    "trade_date": "2025-10-17",
+    "ticker": "MSFT",
+    "underlying_close_price": 513.58,
+    "total_option_volume": 1131888,
+    "volume_7d_avg": 981377.714
+  },
+  {
+    "trade_date": "2025-10-20",
+    "ticker": "MSFT",
+    "underlying_close_price": 516.79,
+    "total_option_volume": 685440,
+    "volume_7d_avg": 887602.285
+  },
+  {
+    "trade_date": "2025-10-21",
+    "ticker": "MSFT",
+    "underlying_close_price": 517.66,
+    "total_option_volume": 712668,
+    "volume_7d_avg": 785900.571
+  },
+  {
+    "trade_date": "2025-10-22",
+    "ticker": "MSFT",
+    "underlying_close_price": 520.54,
+    "total_option_volume": 1223576,
+    "volume_7d_avg": 836154.857
+  },
+  {
+    "trade_date": "2025-10-23",
+    "ticker": "MSFT",
+    "underlying_close_price": 520.56,
+    "total_option_volume": 1175904,
+    "volume_7d_avg": 904750.857
+  },
+  {
+    "trade_date": "2025-10-24",
+    "ticker": "MSFT",
+    "underlying_close_price": 523.61,
+    "total_option_volume": 630774,
+    "volume_7d_avg": 908935.142
+  },
+  {
+    "trade_date": "2025-10-27",
+    "ticker": "MSFT",
+    "underlying_close_price": 531.52,
+    "total_option_volume": 1140620,
+    "volume_7d_avg": 957267.142
+  },
+  {
+    "trade_date": "2025-10-28",
+    "ticker": "MSFT",
+    "underlying_close_price": 542.07,
+    "total_option_volume": 1859944,
+    "volume_7d_avg": 1061275.142
+  },
+  {
+    "trade_date": "2025-10-29",
+    "ticker": "MSFT",
+    "underlying_close_price": 541.55,
+    "total_option_volume": 2294148,
+    "volume_7d_avg": 1291090.571
+  },
+  {
+    "trade_date": "2025-10-30",
+    "ticker": "MSFT",
+    "underlying_close_price": 525.76,
+    "total_option_volume": 3260720,
+    "volume_7d_avg": 1655098.0
+  },
+  {
+    "trade_date": "2025-10-31",
+    "ticker": "MSFT",
+    "underlying_close_price": 517.81,
+    "total_option_volume": 2403440,
+    "volume_7d_avg": 1823650.0
   },
   {
     "trade_date": "2025-11-03",
     "ticker": "MSFT",
     "underlying_close_price": 517.03,
-    "total_option_volume": 1041228,
-    "volume_7d_avg": 1041228.0
+    "total_option_volume": 2082456,
+    "volume_7d_avg": 1953157.428
   },
   {
     "trade_date": "2025-11-04",
     "ticker": "MSFT",
     "underlying_close_price": 514.33,
-    "total_option_volume": 542130,
-    "volume_7d_avg": 791679.0
+    "total_option_volume": 1084260,
+    "volume_7d_avg": 2017941.142
   },
   {
     "trade_date": "2025-11-05",
     "ticker": "MSFT",
     "underlying_close_price": 507.16,
-    "total_option_volume": 729934,
-    "volume_7d_avg": 771097.333
+    "total_option_volume": 1459868,
+    "volume_7d_avg": 2063548.0
   },
   {
     "trade_date": "2025-11-06",
     "ticker": "MSFT",
     "underlying_close_price": 497.1,
-    "total_option_volume": 1186652,
-    "volume_7d_avg": 874986.0
+    "total_option_volume": 2373304,
+    "volume_7d_avg": 2136885.142
   },
   {
     "trade_date": "2025-11-07",
     "ticker": "MSFT",
     "underlying_close_price": 496.82,
-    "total_option_volume": 921846,
-    "volume_7d_avg": 884358.0
+    "total_option_volume": 1843692,
+    "volume_7d_avg": 2072534.285
   },
   {
     "trade_date": "2025-11-10",
     "ticker": "MSFT",
     "underlying_close_price": 506.0,
-    "total_option_volume": 633616,
-    "volume_7d_avg": 842567.666
+    "total_option_volume": 1267232,
+    "volume_7d_avg": 1787750.285
   },
   {
     "trade_date": "2025-11-11",
     "ticker": "MSFT",
     "underlying_close_price": 508.68,
-    "total_option_volume": 506974,
-    "volume_7d_avg": 794625.714
+    "total_option_volume": 1013948,
+    "volume_7d_avg": 1589251.428
   },
   {
     "trade_date": "2025-11-12",
     "ticker": "MSFT",
     "underlying_close_price": 511.14,
-    "total_option_volume": 844724,
-    "volume_7d_avg": 766553.714
+    "total_option_volume": 1689448,
+    "volume_7d_avg": 1533107.428
   },
   {
     "trade_date": "2025-11-13",
     "ticker": "MSFT",
     "underlying_close_price": 503.29,
-    "total_option_volume": 704890,
-    "volume_7d_avg": 789805.142
+    "total_option_volume": 1409780,
+    "volume_7d_avg": 1579610.285
   },
   {
     "trade_date": "2025-11-14",
     "ticker": "MSFT",
     "underlying_close_price": 510.18,
-    "total_option_volume": 832298,
-    "volume_7d_avg": 804428.571
+    "total_option_volume": 1664596,
+    "volume_7d_avg": 1608857.142
   },
   {
     "trade_date": "2025-11-17",
     "ticker": "MSFT",
     "underlying_close_price": 507.49,
-    "total_option_volume": 414212,
-    "volume_7d_avg": 694080.0
+    "total_option_volume": 828424,
+    "volume_7d_avg": 1388160.0
   },
   {
     "trade_date": "2025-11-18",
     "ticker": "MSFT",
     "underlying_close_price": 493.79,
-    "total_option_volume": 874948,
-    "volume_7d_avg": 687380.285
+    "total_option_volume": 1749896,
+    "volume_7d_avg": 1374760.571
   },
   {
     "trade_date": "2025-11-19",
     "ticker": "MSFT",
     "underlying_close_price": 487.12,
-    "total_option_volume": 740358,
-    "volume_7d_avg": 702629.142
+    "total_option_volume": 1480716,
+    "volume_7d_avg": 1405258.285
   },
   {
     "trade_date": "2025-11-20",
     "ticker": "MSFT",
     "underlying_close_price": 478.43,
-    "total_option_volume": 1357010,
-    "volume_7d_avg": 824062.857
+    "total_option_volume": 2714020,
+    "volume_7d_avg": 1648125.714
   },
   {
     "trade_date": "2025-11-21",
     "ticker": "MSFT",
     "underlying_close_price": 472.12,
-    "total_option_volume": 954118,
-    "volume_7d_avg": 839690.571
+    "total_option_volume": 1908236,
+    "volume_7d_avg": 1679381.142
   },
   {
     "trade_date": "2025-11-24",
     "ticker": "MSFT",
     "underlying_close_price": 474.0,
-    "total_option_volume": 356992,
-    "volume_7d_avg": 789990.857
+    "total_option_volume": 1427968,
+    "volume_7d_avg": 1681979.428
   },
   {
     "trade_date": "2025-11-25",
     "ticker": "MSFT",
     "underlying_close_price": 476.99,
-    "total_option_volume": 367760,
-    "volume_7d_avg": 723628.285
+    "total_option_volume": 1471040,
+    "volume_7d_avg": 1654328.571
   },
   {
     "trade_date": "2025-11-26",
     "ticker": "MSFT",
     "underlying_close_price": 485.5,
-    "total_option_volume": 374787,
-    "volume_7d_avg": 717996.142
+    "total_option_volume": 1499148,
+    "volume_7d_avg": 1750146.285
   },
   {
     "trade_date": "2025-11-28",
     "ticker": "MSFT",
     "underlying_close_price": 492.01,
-    "total_option_volume": 260346,
-    "volume_7d_avg": 630195.857
+    "total_option_volume": 520692,
+    "volume_7d_avg": 1574545.714
+  },
+  {
+    "trade_date": "2025-09-02",
+    "ticker": "NVDA",
+    "underlying_close_price": 170.78,
+    "total_option_volume": 2764121,
+    "volume_7d_avg": 2764121.0
+  },
+  {
+    "trade_date": "2025-09-03",
+    "ticker": "NVDA",
+    "underlying_close_price": 170.62,
+    "total_option_volume": 1875041,
+    "volume_7d_avg": 2319581.0
+  },
+  {
+    "trade_date": "2025-09-04",
+    "ticker": "NVDA",
+    "underlying_close_price": 171.66,
+    "total_option_volume": 1902878,
+    "volume_7d_avg": 2180680.0
+  },
+  {
+    "trade_date": "2025-09-05",
+    "ticker": "NVDA",
+    "underlying_close_price": 167.02,
+    "total_option_volume": 3721409,
+    "volume_7d_avg": 2565862.25
+  },
+  {
+    "trade_date": "2025-09-08",
+    "ticker": "NVDA",
+    "underlying_close_price": 168.31,
+    "total_option_volume": 1924144,
+    "volume_7d_avg": 2437518.6
+  },
+  {
+    "trade_date": "2025-09-09",
+    "ticker": "NVDA",
+    "underlying_close_price": 170.76,
+    "total_option_volume": 1937688,
+    "volume_7d_avg": 2354213.5
+  },
+  {
+    "trade_date": "2025-09-10",
+    "ticker": "NVDA",
+    "underlying_close_price": 177.33,
+    "total_option_volume": 3394713,
+    "volume_7d_avg": 2502856.285
+  },
+  {
+    "trade_date": "2025-09-11",
+    "ticker": "NVDA",
+    "underlying_close_price": 177.17,
+    "total_option_volume": 1965517,
+    "volume_7d_avg": 2388770.0
+  },
+  {
+    "trade_date": "2025-09-12",
+    "ticker": "NVDA",
+    "underlying_close_price": 177.82,
+    "total_option_volume": 2291368,
+    "volume_7d_avg": 2448245.285
+  },
+  {
+    "trade_date": "2025-09-15",
+    "ticker": "NVDA",
+    "underlying_close_price": 177.75,
+    "total_option_volume": 1778399,
+    "volume_7d_avg": 2430462.571
+  },
+  {
+    "trade_date": "2025-09-16",
+    "ticker": "NVDA",
+    "underlying_close_price": 174.88,
+    "total_option_volume": 1228616,
+    "volume_7d_avg": 2074349.285
+  },
+  {
+    "trade_date": "2025-09-17",
+    "ticker": "NVDA",
+    "underlying_close_price": 170.29,
+    "total_option_volume": 2702804,
+    "volume_7d_avg": 2185586.428
+  },
+  {
+    "trade_date": "2025-09-18",
+    "ticker": "NVDA",
+    "underlying_close_price": 176.24,
+    "total_option_volume": 2585611,
+    "volume_7d_avg": 2278146.857
+  },
+  {
+    "trade_date": "2025-09-19",
+    "ticker": "NVDA",
+    "underlying_close_price": 176.67,
+    "total_option_volume": 2498117,
+    "volume_7d_avg": 2150061.714
+  },
+  {
+    "trade_date": "2025-09-22",
+    "ticker": "NVDA",
+    "underlying_close_price": 183.61,
+    "total_option_volume": 4350222,
+    "volume_7d_avg": 2490733.857
+  },
+  {
+    "trade_date": "2025-09-23",
+    "ticker": "NVDA",
+    "underlying_close_price": 178.43,
+    "total_option_volume": 2408259,
+    "volume_7d_avg": 2507432.571
+  },
+  {
+    "trade_date": "2025-09-24",
+    "ticker": "NVDA",
+    "underlying_close_price": 176.97,
+    "total_option_volume": 1891237,
+    "volume_7d_avg": 2523552.285
+  },
+  {
+    "trade_date": "2025-09-25",
+    "ticker": "NVDA",
+    "underlying_close_price": 177.69,
+    "total_option_volume": 2871226,
+    "volume_7d_avg": 2758210.857
+  },
+  {
+    "trade_date": "2025-09-26",
+    "ticker": "NVDA",
+    "underlying_close_price": 178.19,
+    "total_option_volume": 2741527,
+    "volume_7d_avg": 2763742.714
+  },
+  {
+    "trade_date": "2025-09-29",
+    "ticker": "NVDA",
+    "underlying_close_price": 181.85,
+    "total_option_volume": 2229093,
+    "volume_7d_avg": 2712811.571
+  },
+  {
+    "trade_date": "2025-09-30",
+    "ticker": "NVDA",
+    "underlying_close_price": 186.58,
+    "total_option_volume": 3471696,
+    "volume_7d_avg": 2851894.285
+  },
+  {
+    "trade_date": "2025-10-01",
+    "ticker": "NVDA",
+    "underlying_close_price": 187.24,
+    "total_option_volume": 2328301,
+    "volume_7d_avg": 2563048.428
+  },
+  {
+    "trade_date": "2025-10-02",
+    "ticker": "NVDA",
+    "underlying_close_price": 188.89,
+    "total_option_volume": 2495227,
+    "volume_7d_avg": 2575472.428
+  },
+  {
+    "trade_date": "2025-10-03",
+    "ticker": "NVDA",
+    "underlying_close_price": 187.62,
+    "total_option_volume": 2853923,
+    "volume_7d_avg": 2712999.0
+  },
+  {
+    "trade_date": "2025-10-06",
+    "ticker": "NVDA",
+    "underlying_close_price": 185.54,
+    "total_option_volume": 1784069,
+    "volume_7d_avg": 2557690.857
+  },
+  {
+    "trade_date": "2025-10-07",
+    "ticker": "NVDA",
+    "underlying_close_price": 185.04,
+    "total_option_volume": 1792127,
+    "volume_7d_avg": 2422062.285
+  },
+  {
+    "trade_date": "2025-10-08",
+    "ticker": "NVDA",
+    "underlying_close_price": 189.11,
+    "total_option_volume": 1853717,
+    "volume_7d_avg": 2368437.142
+  },
+  {
+    "trade_date": "2025-10-09",
+    "ticker": "NVDA",
+    "underlying_close_price": 192.57,
+    "total_option_volume": 3405159,
+    "volume_7d_avg": 2358931.857
+  },
+  {
+    "trade_date": "2025-10-10",
+    "ticker": "NVDA",
+    "underlying_close_price": 183.16,
+    "total_option_volume": 5144741,
+    "volume_7d_avg": 2761280.428
+  },
+  {
+    "trade_date": "2025-10-13",
+    "ticker": "NVDA",
+    "underlying_close_price": 188.32,
+    "total_option_volume": 1794648,
+    "volume_7d_avg": 2661197.714
+  },
+  {
+    "trade_date": "2025-10-14",
+    "ticker": "NVDA",
+    "underlying_close_price": 180.03,
+    "total_option_volume": 2391296,
+    "volume_7d_avg": 2595108.142
+  },
+  {
+    "trade_date": "2025-10-15",
+    "ticker": "NVDA",
+    "underlying_close_price": 179.83,
+    "total_option_volume": 2613138,
+    "volume_7d_avg": 2713546.571
+  },
+  {
+    "trade_date": "2025-10-16",
+    "ticker": "NVDA",
+    "underlying_close_price": 181.81,
+    "total_option_volume": 2332263,
+    "volume_7d_avg": 2790708.857
+  },
+  {
+    "trade_date": "2025-10-17",
+    "ticker": "NVDA",
+    "underlying_close_price": 183.22,
+    "total_option_volume": 2836858,
+    "volume_7d_avg": 2931157.571
+  },
+  {
+    "trade_date": "2025-10-20",
+    "ticker": "NVDA",
+    "underlying_close_price": 182.64,
+    "total_option_volume": 1409270,
+    "volume_7d_avg": 2646030.571
+  },
+  {
+    "trade_date": "2025-10-21",
+    "ticker": "NVDA",
+    "underlying_close_price": 181.16,
+    "total_option_volume": 1444001,
+    "volume_7d_avg": 2117353.428
+  },
+  {
+    "trade_date": "2025-10-22",
+    "ticker": "NVDA",
+    "underlying_close_price": 180.28,
+    "total_option_volume": 2172521,
+    "volume_7d_avg": 2171335.285
+  },
+  {
+    "trade_date": "2025-10-23",
+    "ticker": "NVDA",
+    "underlying_close_price": 182.16,
+    "total_option_volume": 3531060,
+    "volume_7d_avg": 2334158.714
+  },
+  {
+    "trade_date": "2025-10-24",
+    "ticker": "NVDA",
+    "underlying_close_price": 186.26,
+    "total_option_volume": 2917342,
+    "volume_7d_avg": 2377616.428
+  },
+  {
+    "trade_date": "2025-10-27",
+    "ticker": "NVDA",
+    "underlying_close_price": 191.49,
+    "total_option_volume": 2957551,
+    "volume_7d_avg": 2466943.285
+  },
+  {
+    "trade_date": "2025-10-28",
+    "ticker": "NVDA",
+    "underlying_close_price": 201.03,
+    "total_option_volume": 5021138,
+    "volume_7d_avg": 2778983.285
+  },
+  {
+    "trade_date": "2025-10-29",
+    "ticker": "NVDA",
+    "underlying_close_price": 207.04,
+    "total_option_volume": 5421150,
+    "volume_7d_avg": 3352109.0
+  },
+  {
+    "trade_date": "2025-10-30",
+    "ticker": "NVDA",
+    "underlying_close_price": 202.89,
+    "total_option_volume": 2930726,
+    "volume_7d_avg": 3564498.285
+  },
+  {
+    "trade_date": "2025-10-31",
+    "ticker": "NVDA",
+    "underlying_close_price": 202.49,
+    "total_option_volume": 3480193,
+    "volume_7d_avg": 3751308.571
   },
   {
     "trade_date": "2025-11-03",
     "ticker": "NVDA",
     "underlying_close_price": 206.88,
     "total_option_volume": 2379112,
-    "volume_7d_avg": 2379112.0
+    "volume_7d_avg": 3586744.571
   },
   {
     "trade_date": "2025-11-04",
     "ticker": "NVDA",
     "underlying_close_price": 198.69,
     "total_option_volume": 2209677,
-    "volume_7d_avg": 2294394.5
+    "volume_7d_avg": 3485649.571
   },
   {
     "trade_date": "2025-11-05",
     "ticker": "NVDA",
     "underlying_close_price": 195.21,
     "total_option_volume": 2081340,
-    "volume_7d_avg": 2223376.333
+    "volume_7d_avg": 3360476.571
   },
   {
     "trade_date": "2025-11-06",
     "ticker": "NVDA",
     "underlying_close_price": 188.08,
     "total_option_volume": 3962895,
-    "volume_7d_avg": 2658256.0
+    "volume_7d_avg": 3209299.0
   },
   {
     "trade_date": "2025-11-07",
     "ticker": "NVDA",
     "underlying_close_price": 188.15,
     "total_option_volume": 4985796,
-    "volume_7d_avg": 3123764.0
+    "volume_7d_avg": 3147105.571
   },
   {
     "trade_date": "2025-11-10",
     "ticker": "NVDA",
     "underlying_close_price": 199.05,
     "total_option_volume": 2518075,
-    "volume_7d_avg": 3022815.833
+    "volume_7d_avg": 3088155.428
   },
   {
     "trade_date": "2025-11-11",
@@ -1186,28 +2180,28 @@
     "trade_date": "2025-11-24",
     "ticker": "NVDA",
     "underlying_close_price": 182.55,
-    "total_option_volume": 2771196,
-    "volume_7d_avg": 3497233.0
+    "total_option_volume": 5542392,
+    "volume_7d_avg": 3893118.142
   },
   {
     "trade_date": "2025-11-25",
     "ticker": "NVDA",
     "underlying_close_price": 177.82,
-    "total_option_volume": 4494913,
-    "volume_7d_avg": 3661431.428
+    "total_option_volume": 8989826,
+    "volume_7d_avg": 4699447.0
   },
   {
     "trade_date": "2025-11-26",
     "ticker": "NVDA",
     "underlying_close_price": 180.26,
-    "total_option_volume": 2763986,
-    "volume_7d_avg": 3810991.285
+    "total_option_volume": 5527972,
+    "volume_7d_avg": 5243862.0
   },
   {
     "trade_date": "2025-11-28",
     "ticker": "NVDA",
     "underlying_close_price": 177.0,
     "total_option_volume": 2266736,
-    "volume_7d_avg": 3846500.714
+    "volume_7d_avg": 5279371.428
   }
 ]
