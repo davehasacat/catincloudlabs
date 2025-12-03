@@ -94,7 +94,7 @@
                 type="button"
                 class="proof-figure__button"
                 data-panel-open
-                data-caption="From scheduled Airflow runs to validated rows in Snowflake. The same pattern I’d adapt to your sources and your environment."
+                data-caption="From scheduled Airflow runs to validated rows in Snowflake. The same pattern I'd adapt to your sources and your environment."
                 aria-label="Click to zoom the end-to-end 3-panel pipeline screenshot"
               >
                 <img
@@ -128,17 +128,30 @@
               <li><strong>Built for:</strong> calm, production-like behavior rather than a one-off demo</li>
             </ul>
 
-            <!-- Inline AAPL chart powered by Snowflake-exported JSON -->
+            <!-- Multi-ticker daily chart powered by Snowflake-exported JSON (Export 1) -->
             <div class="stack" style="--stack-gap:0.75rem; margin-top:1.5rem;">
-              <h3>AAPL daily price &amp; options volume (last ~90 trading days)</h3>
-              <p class="chart-subtitle">
-                This chart is powered by a static JSON slice exported from Snowflake, using the same marts that would back a client dashboard.
-              </p>
+              <div class="stack" style="--stack-gap:0.5rem;">
+                <h3>Daily price &amp; options volume (Sep 2 - Nov 28, 2025)</h3>
+                <p class="chart-subtitle">
+                  This chart is powered by a static JSON slice exported from Snowflake for five large-cap tickers, using the same marts that would back a client dashboard.
+                </p>
+                <label for="daily-activity-ticker" class="ticker-label">
+                  Ticker:
+                  <select id="daily-activity-ticker">
+                    <option value="AAPL" selected>AAPL</option>
+                    <option value="AMZN">AMZN</option>
+                    <option value="GOOGL">GOOGL</option>
+                    <option value="MSFT">MSFT</option>
+                    <option value="NVDA">NVDA</option>
+                  </select>
+                </label>
+              </div>
+
               <div
-                id="aapl-daily-activity-chart"
+                id="tickers-daily-activity-chart"
                 class="chart-shell"
                 role="img"
-                aria-label="Daily AAPL closing price with total options volume and a 7-day rolling average, over roughly the last ninety trading days."
+                aria-label="Daily closing price with total options volume and a 7-day rolling average for the selected ticker between September 2 and November 28, 2025."
               >
                 <noscript>Enable JavaScript to view the interactive chart.</noscript>
               </div>
@@ -147,24 +160,57 @@
               </p>
             </div>
 
-            <!-- AAPL options chain: aggregated top-contracts table -->
+            <!-- Daily features snapshot (Export 3) -->
             <div class="stack" style="--stack-gap:0.75rem; margin-top:1.5rem;">
-              <h3>AAPL options chain: top contracts over a recent window</h3>
-              <p class="chart-subtitle">
-                This table surfaces the AAPL option contracts that carried the most flow over a recent trading window in the dev environment.
-                Each row rolls up total volume for a single contract across that window, with a snapshot of where it sits on the chain.
-              </p>
+              <div class="stack" style="--stack-gap:0.5rem;">
+                <h3>Daily features: price, returns, and options activity</h3>
+                <p class="chart-subtitle">
+                  This snapshot uses the same Snowflake marts to summarize short-horizon returns, realized volatility, underlying volume,
+                  options volume versus a 30-day baseline, and the call/put volume mix for the selected ticker.
+                </p>
+              </div>
+
               <div
-                id="aapl-options-chain-dashboard"
+                id="ticker-features-daily-dashboard"
+                class="ticker-features-shell"
+                role="region"
+                aria-label="Latest daily features for the selected ticker, including returns, volatility, volume, and options activity."
+              >
+                <noscript>Enable JavaScript to view the daily features snapshot.</noscript>
+              </div>
+            </div>
+
+            <!-- Multi-ticker options chain: aggregated top-contracts table (Export 2) -->
+            <div class="stack" style="--stack-gap:0.75rem; margin-top:1.5rem;">
+              <div class="stack" style="--stack-gap:0.5rem;">
+                <h3>Options chain: top contracts over a recent window</h3>
+                <p class="chart-subtitle">
+                  This table surfaces the option contracts that carried the most flow over a recent trading window, across five large-cap tickers.
+                  Each row rolls up total volume for a single contract across that window, with a snapshot of where it sits on the chain.
+                </p>
+                <label for="ticker-options-select" class="ticker-label">
+                  Ticker:
+                  <select id="ticker-options-select">
+                    <option value="AAPL" selected>AAPL</option>
+                    <option value="AMZN">AMZN</option>
+                    <option value="GOOGL">GOOGL</option>
+                    <option value="MSFT">MSFT</option>
+                    <option value="NVDA">NVDA</option>
+                  </select>
+                </label>
+              </div>
+
+              <div
+                id="tickers-options-chain-dashboard"
                 class="chart-shell"
                 role="region"
-                aria-label="Interactive table of the most active AAPL options over a recent trading window."
+                aria-label="Interactive table of the most active options contracts for the selected ticker over a recent trading window."
               >
                 <noscript>Enable JavaScript to view the options table.</noscript>
               </div>
               <p class="chart-footnote">
                 Columns show expiry, option type, strike, latest close price observed in the window, total volume across the window,
-                days to expiration at the end of the window, and average moneyness versus the underlying AAPL price.
+                days to expiration at the end of the window, and average moneyness versus the underlying price.
                 You can tap or click the column headers to re-sort (for example, by total volume, expiry, or moneyness).
               </p>
             </div>
@@ -250,8 +296,9 @@
     <script src="/assets/js/footer-year-theme.js" defer></script>
     <script src="/assets/js/proof-panel-lightbox.js" defer></script>
     <script src="/assets/js/plotly-2.35.3.min.js" defer></script>
-    <script src="/assets/js/aapl-daily-activity-chart.js" defer></script>
-    <script src="/assets/js/aapl-options-chain-dashboard.js" defer></script>
+    <script src="/assets/js/tickers-daily-activity-chart.js" defer></script>
+    <script src="/assets/js/ticker-features-daily-dashboard.js" defer></script>
+    <script src="/assets/js/tickers-options-chain-dashboard.js" defer></script>
   </footer>
 </body>
 </html>

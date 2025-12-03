@@ -1,3 +1,11 @@
+"""
+Export 3 (ticker feature grid) for catincloudlabs.com/projects.
+
+Reads from STOCKS_ELT_DB.PREP.INT_POLYGON__TICKER_FEATURES_DAILY
+for a fixed date window and a small set of tickers, then writes
+ticker_features_daily_5tickers.json under public/assets/data.
+"""
+
 import os
 import json
 from pathlib import Path
@@ -5,6 +13,13 @@ from decimal import Decimal
 
 import snowflake.connector
 from cryptography.hazmat.primitives import serialization
+
+
+TICKERS = ["AAPL", "AMZN", "GOOGL", "MSFT", "NVDA"]
+
+# Fixed dev window for Export 3 (can be adjusted later)
+START_DATE = "2025-09-02"
+END_DATE = "2025-11-28"
 
 
 def load_private_key():
@@ -40,17 +55,23 @@ def get_conn():
     return conn
 
 
-SQL = """
+SQL_TEMPLATE = """
 select
     trade_date,
-    ticker,
-    underlying_close_price,
-    total_option_volume,
-    volume_7d_avg
-from STOCKS_ELT_DB.PREP.INT_POLYGON__TICKER_DAILY_ACTIVITY
-where ticker = 'AAPL'
-  and trade_date >= dateadd(day, -90, current_date)
-order by trade_date
+    underlying_ticker,
+    underlying_close_price          as close_price,
+    return_1d,
+    return_5d,
+    realized_vol_20d_annualized,
+    underlying_volume,
+    option_volume_total,
+    option_volume_30d_avg,
+    option_volume_vs_30d,
+    call_put_ratio
+from STOCKS_ELT_DB.PREP.INT_POLYGON__TICKER_FEATURES_DAILY
+where underlying_ticker in ({tickers})
+  and trade_date between '{start_date}' and '{end_date}'
+order by trade_date, underlying_ticker
 """
 
 
@@ -59,26 +80,34 @@ def main():
     try:
         cur = conn.cursor()
 
-        # Optional: debug context so we know where we are
+        # Debug context
         cur.execute(
             "select current_role(), current_warehouse(), "
             "current_database(), current_schema()"
         )
         print("Context:", cur.fetchone())
 
-        # Run the actual query
-        cur.execute(SQL)
+        # Build IN (...) list for tickers
+        tickers_sql = ",".join("'{}'".format(t) for t in TICKERS)
+
+        sql = SQL_TEMPLATE.format(
+            tickers=tickers_sql,
+            start_date=START_DATE,
+            end_date=END_DATE,
+        )
+
+        cur.execute(sql)
         cols = [c[0].lower() for c in cur.description]
         rows = []
 
         for row in cur.fetchall():
             rec = dict(zip(cols, row))
 
-            # Convert DATE to ISO string for JSON
+            # Convert DATE -> ISO strings
             if rec.get("trade_date") is not None:
                 rec["trade_date"] = rec["trade_date"].isoformat()
 
-            # Convert Decimal -> float so json can serialize it
+            # Convert Decimal -> float
             for k, v in rec.items():
                 if isinstance(v, Decimal):
                     rec[k] = float(v)
@@ -87,13 +116,11 @@ def main():
     finally:
         conn.close()
 
-    # . . . /public/assets/scripts/export_aapl_daily_activity.py
-    # parents[1] => /public/assets
-    assets_dir = Path(__file__).resolve().parents[1]
+    assets_dir = Path(__file__).resolve().parents[1]  # .../public/assets
     data_dir = assets_dir / "data"
     data_dir.mkdir(parents=True, exist_ok=True)
 
-    out_path = data_dir / "aapl_daily_activity.json"
+    out_path = data_dir / "ticker_features_daily_5tickers.json"
 
     with out_path.open("w", encoding="utf-8") as f:
         json.dump(rows, f, indent=2)

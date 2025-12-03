@@ -1217,6 +1217,30 @@ figure, .card { overflow: hidden; }
   }
 }
 
+/* Ticker selector on Projects chart */
+.ticker-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.ticker-label select {
+  font: inherit;
+  padding: 0.25rem 0.5rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-subtle, #e5e7eb);
+  background-color: #fff;
+}
+
+@media (max-width: 640px) {
+  .ticker-label {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
 /* === Options top-contracts table ===================================== */
 
 .options-table {
@@ -1270,4 +1294,150 @@ figure, .card { overflow: hidden; }
 .options-table th[aria-sort="ascending"],
 .options-table th[aria-sort="descending"] {
   text-decoration: underline;
+}
+
+/* Optional: controls row above options table */
+.options-table-controls {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.85rem;
+}
+
+.options-table-controls label {
+  color: var(--text-muted);
+}
+
+.options-table-controls select {
+  font-size: 0.85rem;
+  padding: 0.15rem 0.4rem;
+}
+
+/* === Ticker daily features snapshot (Projects page) =================== */
+
+.ticker-features-wrapper {
+  margin-top: 1rem;
+  display: grid;
+  gap: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .ticker-features-wrapper {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.4fr);
+    align-items: flex-start;
+  }
+}
+
+.ticker-features-latest {
+  border-radius: 0.75rem;
+  border: 1px solid var(--border-subtle, #e5e7eb);
+  background: var(--bg-subtle, #f9fafb);
+  padding: 0.85rem 1rem;
+}
+
+.ticker-features-heading {
+  margin: 0 0 0.25rem;
+  font-size: 0.98rem;
+}
+
+.ticker-features-subtitle {
+  margin: 0 0 0.75rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* Definition-list grid for metrics */
+.ticker-features-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.4rem 1.25rem;
+  margin: 0;
+}
+
+.ticker-features-summary-grid dt {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--text-muted);
+}
+
+.ticker-features-summary-grid dd {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.ticker-features-history-heading {
+  margin: 0 0 0.35rem;
+  font-size: 0.92rem;
+}
+
+/* piggyback on .options-table for base styling */
+.ticker-features-table {
+  margin-top: 0.35rem;
+}
+
+/* Mobile tweaks */
+@media (max-width: 640px) {
+  .ticker-features-latest {
+    padding: 0.75rem 0.85rem;
+  }
+
+  .ticker-features-summary-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* === Ticker daily features snapshot =================================== */
+
+.ticker-features-shell {
+  width: 100%;
+  max-width: 480px;
+}
+
+.ticker-features-latest {
+  background: var(--bg-subtle, #f9fafb);
+  border-radius: 1rem;
+  padding: 1rem 1.25rem;
+  font-size: 0.86rem;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06);
+}
+
+.ticker-features-heading {
+  margin: 0 0 0.15rem;
+  font-size: 0.95rem;
+}
+
+.ticker-features-subtitle {
+  margin: 0 0 0.75rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.ticker-features-summary-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  row-gap: 0.4rem;
+  column-gap: 1.25rem;
+  margin: 0;
+}
+
+@media (min-width: 540px) {
+  .ticker-features-summary-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.ticker-features-summary-grid dt {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+
+.ticker-features-summary-grid dd {
+  margin: 0 0 0.4rem;
+  font-size: 0.88rem;
+  font-weight: 500;
 }
