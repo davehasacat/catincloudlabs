@@ -170,12 +170,13 @@
             <!-- Daily features snapshot (Export 3) -->
             <div class="stack" style="--stack-gap:0.75rem; margin-top:1.5rem;">
               <div class="stack" style="--stack-gap:0.5rem;">
-                <h3>Daily snapshot for the selected ticker: price, returns, and options activity</h3>
+                <h3>Daily snapshot for the selected ticker</h3>
                 <p class="chart-subtitle">
-                  A compact daily dashboard for the selected ticker on the same recent window as the chart above.
-                  It surfaces short-term returns, recent volatility, stock volume versus a 30-day baseline,
-                  options volume versus a 30-day baseline, and the mix of call versus put volume for that day.
-                  Each tile is calculated directly from the Snowflake marts that power the other exports on this page.
+                  <span class="chart-window-badge">Latest trading day in this window</span>
+                  A compact daily dashboard for the selected ticker. It summarizes short-term returns,
+                  recent volatility, stock volume, options volume versus a 30-day baseline, and the mix
+                  of call versus put volume for that day. The snapshot always uses the same trading
+                  window as the chart above.
                 </p>
               </div>
 
@@ -183,13 +184,13 @@
                 id="ticker-features-daily-dashboard"
                 class="ticker-features-shell"
                 role="region"
-                aria-label="Interactive daily snapshot for the selected ticker, showing returns, volatility, volume, and options activity for a single trading day in the same window as the chart above."
+                aria-label="Daily snapshot for the selected ticker, showing returns, volatility, volume, and options activity for the latest trading day in the window."
               >
                 <noscript>Enable JavaScript to view the daily features snapshot.</noscript>
               </div>
               <p class="chart-footnote">
-                Switch tickers to see how the exact same daily metrics look for AAPL, AMZN, GOOGL, MSFT, and NVDA on the latest trading day in this window.
-                It's the same underlying data as the multi-ticker chart above, just flattened into tiles.
+                Switch tickers in the selector above to see how the same daily metrics behave for AAPL,
+                AMZN, GOOGL, MSFT, and NVDA on the latest trading day in the window.
               </p>
             </div>
 
