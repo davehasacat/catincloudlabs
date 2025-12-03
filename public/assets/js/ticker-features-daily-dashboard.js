@@ -6,12 +6,8 @@
     return;
   }
 
-  // Prefer the options table selector so Export 2 + Export 3 stay in sync.
-  // Fall back to the daily activity selector if needed.
-  var selectEl =
-    document.getElementById("ticker-options-select") ||
-    document.getElementById("daily-activity-ticker");
-
+  // Keep the snapshot in sync with Export 1's ticker selector
+  var selectEl = document.getElementById("daily-activity-ticker");
   var DATA_URL = "/assets/data/ticker_features_daily_5tickers.json";
 
   var allRows = [];
@@ -38,14 +34,7 @@
   function fmtPct(val, decimals) {
     if (val == null || isNaN(val)) return "—";
     var pct = Number(val) * 100;
-    var places = (decimals != null ? decimals : 1);
-    var fixed = pct.toFixed(places);
-
-    // Add a + sign for positive values; keep 0 neutral.
-    if (pct > 0) {
-      return "+" + fixed + "%";
-    }
-    return fixed + "%";
+    return pct.toFixed(decimals != null ? decimals : 1) + "%";
   }
 
   function fmtInt(val) {
@@ -82,7 +71,6 @@
     });
 
     rows.sort(function (a, b) {
-      // sort by trade_date ascending
       var da = a.trade_date ? new Date(a.trade_date).getTime() : 0;
       var db = b.trade_date ? new Date(b.trade_date).getTime() : 0;
       return da - db;
@@ -120,8 +108,7 @@
 
     var sub = document.createElement("p");
     sub.className = "ticker-features-subtitle";
-    sub.textContent =
-      "Latest trading day in this window: " + fmtDateISO(latest.trade_date);
+    sub.textContent = "Latest trading day in this window: " + fmtDateISO(latest.trade_date);
 
     var grid = document.createElement("dl");
     grid.className = "ticker-features-summary-grid";
