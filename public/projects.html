@@ -135,10 +135,10 @@
             <!-- Multi-ticker daily chart powered by Snowflake-exported JSON (Export 1) -->
             <div class="stack" style="--stack-gap:0.75rem; margin-top:1.5rem;">
               <div class="stack" style="--stack-gap:0.5rem;">
-                <h3>Daily price &amp; options volume for five large-cap tickers (Sep 2 - Nov 28, 2025)</h3>
+                <h3>Daily price and options volume for AAPL, AMZN, GOOGL, MSFT, and NVDA (Sep 2 - Nov 28, 2025)</h3>
                 <p class="chart-subtitle">
-                  This chart shows how stock prices and total options volume moved together over a recent three-month window.
-                  The data comes from a static JSON slice exported from Snowflake marts.
+                  See how each stock's closing price and total options volume moved over the same recent three-month window.
+                  The view is powered by a static JSON export from our Snowflake marts, so you're looking at the same data we use inside the warehouse.
                 </p>
                 <label for="daily-activity-ticker" class="ticker-label">
                   Ticker:
@@ -156,22 +156,24 @@
                 id="tickers-daily-activity-chart"
                 class="chart-shell"
                 role="img"
-                aria-label="Daily closing price with total options volume and a 7-day rolling average for the selected ticker between September 2 and November 28, 2025."
+                aria-label="Interactive chart of daily closing price, total options volume, and a 7-day rolling average for the selected ticker (AAPL, AMZN, GOOGL, MSFT, or NVDA) between September 2 and November 28, 2025."
               >
                 <noscript>Enable JavaScript to view the interactive chart.</noscript>
               </div>
               <p class="chart-footnote">
                 Tip: choose a ticker, then drag to zoom, pinch on touch devices, and use the toolbar to reset or download an image.
+                Each ticker uses the same dates and calculations, so comparisons stay apples-to-apples.
               </p>
             </div>
 
             <!-- Daily features snapshot (Export 3) -->
             <div class="stack" style="--stack-gap:0.75rem; margin-top:1.5rem;">
               <div class="stack" style="--stack-gap:0.5rem;">
-                <h3>Daily features snapshot: price, returns, and options activity</h3>
+                <h3>Daily snapshot for the selected ticker: price, returns, and options activity</h3>
                 <p class="chart-subtitle">
-                  This snapshot uses the same Snowflake marts to summarize short-horizon returns, realized volatility, underlying volume,
-                  options volume versus a 30-day baseline, and the call/put volume mix for the selected ticker.
+                  A compact daily dashboard for the selected ticker. It summarizes short-term returns, recent volatility,
+                  stock volume, options volume versus a 30-day baseline, and the mix of call versus put volume for that day.
+                  These tiles are calculated from the same Snowflake marts that power the other exports on this page.
                 </p>
               </div>
 
@@ -179,20 +181,23 @@
                 id="ticker-features-daily-dashboard"
                 class="ticker-features-shell"
                 role="region"
-                aria-label="Latest daily features for the selected ticker, including returns, volatility, volume, and options activity."
+                aria-label="Interactive daily snapshot for the selected ticker, showing returns, volatility, volume, and options activity for a single trading day."
               >
                 <noscript>Enable JavaScript to view the daily features snapshot.</noscript>
               </div>
+              <p class="chart-footnote">
+                Switch tickers to see how the same set of daily metrics behaves for AAPL, AMZN, GOOGL, MSFT, and NVDA without leaving this view.
+              </p>
             </div>
 
             <!-- Multi-ticker options chain: aggregated top-contracts table (Export 2) -->
             <div class="stack" style="--stack-gap:0.75rem; margin-top:1.5rem;">
               <div class="stack" style="--stack-gap:0.5rem;">
-                <h3>Options chain: top contracts over a recent window</h3>
+                <h3>Options chain: most active contracts over a recent window</h3>
                 <p class="chart-subtitle">
-                  This table surfaces the option contracts that carried the most flow over a recent trading window, across five large-cap tickers.
-                  Each row rolls up total volume for a single contract across that window, with a snapshot of where it sits on the chain.
-                  The table is powered by data exported from the same Snowflake marts into a static JSON slice for this demo.
+                  This table highlights the option contracts with the most trading activity over a recent window for AAPL, AMZN, GOOGL, MSFT, and NVDA.
+                  Each row rolls up total volume for a single contract across that window and shows where it sits on the chain.
+                  The table uses a static JSON export from our Snowflake marts for this demo.
                 </p>
                 <label for="ticker-options-select" class="ticker-label">
                   Ticker:
@@ -215,9 +220,9 @@
                 <noscript>Enable JavaScript to view the options table.</noscript>
               </div>
               <p class="chart-footnote">
-                Columns show expiry, option type, strike, latest close price observed in the window, total volume across the window,
+                Columns show expiry, option type, strike, the latest close price observed in the window, total volume across the window,
                 days to expiration at the end of the window, and average moneyness versus the underlying price.
-                You can tap or click the column headers to re-sort (for example, by total volume, expiry, or moneyness).
+                You can tap or click the column headers to re-sort (for example, by total volume, expiry, or moneyness) to find the contracts that matter most.
               </p>
             </div>
           </article>
