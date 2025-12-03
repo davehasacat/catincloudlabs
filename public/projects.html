@@ -171,9 +171,10 @@
               <div class="stack" style="--stack-gap:0.5rem;">
                 <h3>Daily snapshot for the selected ticker: price, returns, and options activity</h3>
                 <p class="chart-subtitle">
-                  A compact daily dashboard for the selected ticker. It summarizes short-term returns, recent volatility,
-                  stock volume, options volume versus a 30-day baseline, and the mix of call versus put volume for that day.
-                  These tiles are calculated from the same Snowflake marts that power the other exports on this page.
+                  A compact daily dashboard for the selected ticker on the same recent window as the chart above.
+                  It surfaces short-term returns, recent volatility, stock volume versus a 30-day baseline,
+                  options volume versus a 30-day baseline, and the mix of call versus put volume for that day.
+                  Each tile is calculated directly from the Snowflake marts that power the other exports on this page.
                 </p>
               </div>
 
@@ -181,12 +182,13 @@
                 id="ticker-features-daily-dashboard"
                 class="ticker-features-shell"
                 role="region"
-                aria-label="Interactive daily snapshot for the selected ticker, showing returns, volatility, volume, and options activity for a single trading day."
+                aria-label="Interactive daily snapshot for the selected ticker, showing returns, volatility, volume, and options activity for a single trading day in the same window as the chart above."
               >
                 <noscript>Enable JavaScript to view the daily features snapshot.</noscript>
               </div>
               <p class="chart-footnote">
-                Switch tickers to see how the same set of daily metrics behaves for AAPL, AMZN, GOOGL, MSFT, and NVDA without leaving this view.
+                Switch tickers to see how the exact same daily metrics look for AAPL, AMZN, GOOGL, MSFT, and NVDA on the latest trading day in this window.
+                It's the same underlying data as the multi-ticker chart above, just flattened into tiles.
               </p>
             </div>
 
@@ -222,7 +224,7 @@
               <p class="chart-footnote">
                 Columns show expiry, option type, strike, the latest close price observed in the window, total volume across the window,
                 <abbr title="Days to Expiration at the end of the window">DTE</abbr>, and average moneyness versus the underlying price.
-                Many of the most active contracts in this sample were very short-dated and have since expired, so they now appear with
+                These are the most active contracts during that window; many were very short-dated and have since expired, so they now appear with
                 <strong>DTE = 0</strong> even though they were trading earlier in the window. You can tap or click the column headers to re-sort
                 (for example, by total volume, expiry, or moneyness) to find the contracts that matter most.
               </p>
