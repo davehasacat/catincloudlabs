@@ -1206,6 +1206,18 @@ figure, .card { overflow: hidden; }
   font-style: italic;
 }
 
+/* Small badge for the date window above Export 1 */
+.chart-window-badge {
+  display: inline-block;
+  margin-bottom: 0.25rem;
+  padding: 0.1rem 0.45rem;
+  border-radius: 999px;
+  background: var(--bg-subtle, #f3f4f6);
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
 .chart-subtitle {
   margin: 0 0 0.75rem;
   font-size: 0.95rem;
