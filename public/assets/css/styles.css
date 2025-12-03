@@ -1231,6 +1231,30 @@ figure, .card { overflow: hidden; }
   color: var(--text-muted);
 }
 
+/* Window badge above the chart (Export 1) */
+.chart-window-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.15rem 0.6rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0.15rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-subtle, #e5e7eb);
+  background: var(--bg-subtle, #f3f4f6);
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+  .chart-window-badge {
+    display: inline-block;
+    margin-right: 0;
+    margin-bottom: 0.4rem; /* stacks above the sentence on narrow screens */
+  }
+}
+
 /* Mobile tweaks */
 @media (max-width: 640px) {
   .chart-shell {
