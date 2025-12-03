@@ -12,13 +12,8 @@
     return;
   }
 
-  var DATA_URL = "/assets/data/tickers_daily_activity_5tickers.json";
-
-  // Simple loading state
-  var loadingMsg = document.createElement("p");
-  loadingMsg.className = "chart-empty";
-  loadingMsg.textContent = "Loading daily price and options volume…";
-  el.appendChild(loadingMsg);
+  // Correct data URL
+  var DATA_URL = "/assets/data/daily_activity_5tickers.json";
 
   // Layouts (same behavior as the original AAPL chart)
   var desktopLayout = {
@@ -149,7 +144,6 @@
 
   // Build Plotly traces for a specific ticker's rows
   function buildTraces(rows) {
-    // Expect lowercase keys in your JSON, fall back to uppercase for safety
     var dates   = rows.map(function (d) { return d.trade_date || d.TRADE_DATE; });
     var price   = rows.map(function (d) { return d.underlying_close_price || d.UNDERLYING_CLOSE_PRICE; });
     var volume  = rows.map(function (d) { return d.total_option_volume     || d.TOTAL_OPTION_VOLUME; });
@@ -163,8 +157,7 @@
         type: "scatter",
         mode: "lines",
         line: { width: 2 },
-        yaxis: "y",
-        hovertemplate: "%{x}<br>Close: %{y:$,.2f}<extra></extra>"
+        yaxis: "y"
       },
       {
         x: dates,
@@ -172,46 +165,18 @@
         name: "Options volume",
         type: "bar",
         marker: { opacity: 0.8 },
-        yaxis: "y2",
-        hovertemplate: "%{x}<br>Options volume: %{y:,}<extra></extra>"
+        yaxis: "y2"
       },
       {
         x: dates,
         y: vol7avg,
-        name: "Options volume (7-day avg)",
+        name: "Volume 7d avg",
         type: "scatter",
         mode: "lines",
         line: { dash: "dash", width: 2 },
-        yaxis: "y2",
-        hovertemplate: "%{x}<br>7-day avg volume: %{y:,}<extra></extra>"
+        yaxis: "y2"
       }
     ];
-  }
-
-  function renderForTicker(ticker, dataByTicker) {
-    var rows = dataByTicker[ticker] || [];
-
-    if (!rows.length) {
-      // If there is no data for this ticker, show a simple message
-      Plotly.purge(el);
-      el.innerHTML = "";
-      var msg = document.createElement("p");
-      msg.className = "chart-empty";
-      msg.textContent =
-        "No daily activity data available for " + ticker + " in this window.";
-      el.appendChild(msg);
-      return;
-    }
-
-    // We know we have data; make sure the container is clean
-    el.innerHTML = "";
-
-    Plotly.newPlot(
-      el,
-      buildTraces(rows),
-      chooseLayout(),
-      chooseConfig()
-    );
   }
 
   var dataByTicker = {};
@@ -219,51 +184,32 @@
   fetch(DATA_URL)
     .then(function (r) { return r.json(); })
     .then(function (data) {
-      if (!data || !data.length) {
-        el.innerHTML = "";
-        var msg = document.createElement("p");
-        msg.className = "chart-empty";
-        msg.textContent = "No daily activity data available for this sample window.";
-        el.appendChild(msg);
-        return;
-      }
-
       console.log("Loaded daily activity data:", data.length, "rows");
       dataByTicker = groupByTicker(data);
 
       var initialTicker = tickerSelect.value || "AAPL";
+      var initialRows = dataByTicker[initialTicker] || [];
+
       console.log(
         "Rendering daily activity chart for",
         initialTicker,
         "with",
-        (dataByTicker[initialTicker] || []).length,
+        initialRows.length,
         "rows"
       );
 
-      renderForTicker(initialTicker, dataByTicker);
+      Plotly.newPlot(
+        el,
+        buildTraces(initialRows),
+        chooseLayout(),
+        chooseConfig()
+      );
 
       // On ticker change, re-render with that ticker's data
       tickerSelect.addEventListener("change", function (evt) {
         var ticker = evt.target.value;
-        console.log(
-          "Switching to ticker",
-          ticker,
-          "with",
-          (dataByTicker[ticker] || []).length,
-          "rows"
-        );
-
         var rows = dataByTicker[ticker] || [];
-        if (!rows.length) {
-          Plotly.purge(el);
-          el.innerHTML = "";
-          var msg = document.createElement("p");
-          msg.className = "chart-empty";
-          msg.textContent =
-            "No daily activity data available for " + ticker + " in this window.";
-          el.appendChild(msg);
-          return;
-        }
+        console.log("Switching to ticker", ticker, "with", rows.length, "rows");
 
         Plotly.react(
           el,
@@ -277,7 +223,6 @@
       window.addEventListener("resize", function () {
         var ticker = tickerSelect.value || "AAPL";
         var rows = dataByTicker[ticker] || [];
-        if (!rows.length) return;
 
         Plotly.react(
           el,
