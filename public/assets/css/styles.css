@@ -1193,6 +1193,19 @@ figure, .card { overflow: hidden; }
   height: 100% !important;
 }
 
+/* Loading / empty states used by JS */
+.chart-loading,
+.chart-empty {
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* Slightly different tone for loading if you want */
+.chart-loading {
+  font-style: italic;
+}
+
 .chart-subtitle {
   margin: 0 0 0.75rem;
   font-size: 0.95rem;
@@ -1316,84 +1329,12 @@ figure, .card { overflow: hidden; }
 }
 
 /* === Ticker daily features snapshot (Projects page) =================== */
-
-.ticker-features-wrapper {
-  margin-top: 1rem;
-  display: grid;
-  gap: 1.25rem;
-}
-
-@media (min-width: 768px) {
-  .ticker-features-wrapper {
-    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.4fr);
-    align-items: flex-start;
-  }
-}
-
-.ticker-features-latest {
-  border-radius: 0.75rem;
-  border: 1px solid var(--border-subtle, #e5e7eb);
-  background: var(--bg-subtle, #f9fafb);
-  padding: 0.85rem 1rem;
-}
-
-.ticker-features-heading {
-  margin: 0 0 0.25rem;
-  font-size: 0.98rem;
-}
-
-.ticker-features-subtitle {
-  margin: 0 0 0.75rem;
-  font-size: 0.85rem;
-  color: var(--text-muted);
-}
-
-/* Definition-list grid for metrics */
-.ticker-features-summary-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 0.4rem 1.25rem;
-  margin: 0;
-}
-
-.ticker-features-summary-grid dt {
-  font-size: 0.78rem;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-  color: var(--text-muted);
-}
-
-.ticker-features-summary-grid dd {
-  margin: 0;
-  font-size: 0.9rem;
-}
-
-.ticker-features-history-heading {
-  margin: 0 0 0.35rem;
-  font-size: 0.92rem;
-}
-
-/* piggyback on .options-table for base styling */
-.ticker-features-table {
-  margin-top: 0.35rem;
-}
-
-/* Mobile tweaks */
-@media (max-width: 640px) {
-  .ticker-features-latest {
-    padding: 0.75rem 0.85rem;
-  }
-
-  .ticker-features-summary-grid {
-    grid-template-columns: minmax(0, 1fr);
-  }
-}
-
-/* === Ticker daily features snapshot =================================== */
+/* Export 3: single daily snapshot card rendered inside .ticker-features-shell */
 
 .ticker-features-shell {
   width: 100%;
   max-width: 480px;
+  margin-top: 1rem;
 }
 
 .ticker-features-latest {
@@ -1402,6 +1343,7 @@ figure, .card { overflow: hidden; }
   padding: 1rem 1.25rem;
   font-size: 0.86rem;
   box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06);
+  border: 1px solid var(--border-subtle, #e5e7eb);
 }
 
 .ticker-features-heading {
@@ -1415,6 +1357,7 @@ figure, .card { overflow: hidden; }
   color: var(--text-muted);
 }
 
+/* Definition-list grid for metrics */
 .ticker-features-summary-grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
