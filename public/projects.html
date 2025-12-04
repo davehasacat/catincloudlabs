@@ -101,7 +101,8 @@
                 <h3>Architecture and security posture</h3>
                 <p class="chart-subtitle">
                   The high-level architecture and security/observability diagrams below show how the pieces fit together: MWAA in a private VPC,
-                  KMS-encrypted S3 buckets, Snowflake, and dbt all wired through VPC endpoints and least-privilege access.
+                  KMS-encrypted S3 buckets, Snowflake, and dbt all wired through VPC endpoints and least-privilege access. From there, everything
+                  flows into a handful of Snowflake marts that power the interactive views below.
                 </p>
               </div>
 
@@ -163,11 +164,10 @@
             <!-- Multi-ticker daily chart powered by Snowflake-exported JSON (Export 1) -->
             <div class="stack" style="--stack-gap:0.75rem; margin-top:1.5rem;">
               <div class="stack" style="--stack-gap:0.5rem;">
-                <h3>Daily price and options volume for AAPL, AMZN, GOOGL, MSFT, and NVDA</h3>
+                <h3>Multi-ticker daily price and options volume</h3>
                 <p class="chart-subtitle">
                   <span class="chart-window-badge"><strong>Sep 2 - Nov 28, 2025 • one point per trading day.</strong></span>
-                  See how each stock's closing price and total options volume moved over the same three-month window, using a static JSON export
-                  from the Snowflake marts behind this pipeline.
+                  See how AAPL, AMZN, GOOGL, MSFT, and NVDA moved over the same three-month window, using a static JSON export from Snowflake.
                 </p>
                 <label for="daily-activity-ticker" class="ticker-label">
                   Selected ticker:
@@ -332,7 +332,8 @@
                 <ul>
                   <li>
                     <strong>One row per day, plenty of signal.</strong>
-                    The snapshot export gives each ticker a daily state: short-horizon returns, realized vol, underlying volume, options volume versus a 30-day baseline, and call/put mix.
+                    The snapshot export gives each ticker a daily state: short-horizon returns, realized vol, underlying volume,
+                    options volume versus a 30-day baseline, and call/put mix.
                   </li>
                   <li>
                     <strong>Designed for heads of data, not traders.</strong>
@@ -382,7 +383,7 @@
         <article class="card reveal" style="max-width: var(--maxw-readable); margin-inline:auto; text-align:center;">
           <h2>Interested in something similar?</h2>
           <p>
-            If these examples and the patterns above look close to what you need in your own AWS + Snowflake stack, the best next step
+            If these examples look close to what you need in your own stack, the next step
             is a short discovery call.
           </p>
           <p class="muted">
