@@ -1531,3 +1531,12 @@ figure, .card { overflow: hidden; }
   max-width: 65ch;
   margin-inline: auto;
 }
+
+/* === Insights Section (Projects page) =================== */
+.insights-panel {
+  background: var(--surface-subtle);
+  border-radius: 0.75rem;
+  padding: 1.5rem 1.75rem;
+  border: 1px solid var(--border-subtle);
+}
+.insights-panel h3 { margin-top: 0; }
