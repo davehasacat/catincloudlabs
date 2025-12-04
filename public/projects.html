@@ -262,61 +262,100 @@
             <div class="stack" style="--stack-gap:0.75rem; margin-top:2rem;">
               <h3>So what does this data tell us?</h3>
               <p>
-                Even in this small window, the combination of price, volume, and per-contract detail starts to look like something you can reason
-                about instead of just eyeballing a CSV. The goal here isn't to call a trade, but to make sure the plumbing gives you a clean, consistent
-                picture of what actually happened.
+                Taken together, the three views above are basically saying:
+                big-tech is grinding higher over this window, options flow is consistently heavy,
+                and the crowd is leaning hard into calls while volatility is elevated but not out of control.
               </p>
 
               <div class="stack" style="--stack-gap:0.5rem;">
-                <h4>Big-picture patterns</h4>
+                <h4>Trending up, with event-driven bursts</h4>
                 <ul>
                   <li>
-                    <strong>Cross-ticker consistency.</strong> Each name is running through the same ingest, modeling, and export pattern. Dates line up, calculations
-                    are shared, and you're comparing like-with-like instead of fighting mismatched time ranges or ad hoc spreadsheets.
+                    Across AAPL, AMZN, GOOGL, MSFT, and NVDA you see more +1-4% days than crash days.
+                    Drawdowns show up, but they tend to get bought back within a few sessions rather than
+                    turning into sustained downtrends.
                   </li>
                   <li>
-                    <strong>Options attention is often short-dated.</strong> Many of the highest-volume rows in the table are near expiry and end up closing at very low prices.
-                    That's normal for short-dated, out-of-the-money flow-and exactly the kind of pattern you want to see accurately reflected, not smoothed away.
-                  </li>
-                  <li>
-                    <strong>Features line up with intuition.</strong> Days with sharp moves tend to show elevated realized volatility, volume above the 30-day baseline,
-                    and call/put skews that match the story you'd tell about that day.
+                    The daily chart makes that clear for AAPL in particular: the stock walks from the
+                    high-220s into the high-270s through a series of choppy days rather than one giant
+                    gap. It's a “choppy uptrend with event-driven bursts,” not a calm drift or a crash regime.
                   </li>
                 </ul>
               </div>
 
               <div class="stack" style="--stack-gap:0.5rem;">
-                <h4>Reading the three views together</h4>
+                <h4>Options flow is where the crowd gets loud</h4>
                 <ul>
                   <li>
-                    <strong>Daily chart:</strong> shows how price and total options volume move over time for each name. It's where you spot clusters of activity,
-                    regime changes, or quiet periods across a handful of tickers at once.
+                    Options volume doesn't move randomly; it spikes in clusters around specific dates.
+                    For AAPL, “normal” options flow is about 1-1.5M contracts, but on hotspots like
+                    2025-09-19 and 09-22 it jumps into the 5M+ range.
                   </li>
                   <li>
-                    <strong>Daily snapshot:</strong> zooms into a single day for the selected ticker, summarizing returns, volatility, volume, and options flow versus
-                    a 30-day baseline. It's the quick “what kind of day was this?” view.
+                    The 7-day average line and the <code>option_volume_vs_30d</code> feature make it easy
+                    to see when today is just another day versus a “3× crowd day” where traders are
+                    clearly paying attention.
                   </li>
                   <li>
-                    <strong>Top contracts table:</strong> shows which specific contracts actually carried the most flow across the window-expiry, type, strike,
-                    and where they sat relative to the underlying price.
+                    Some names are structurally louder than others. NVDA routinely trades 5-9M contracts
+                    a day with 7-day averages north of 5M even when spot is oscillating in a relatively
+                    tight band. That's what a crowded options name looks like.
                   </li>
                 </ul>
               </div>
 
               <div class="stack" style="--stack-gap:0.5rem;">
-                <h4>How a client might use this</h4>
+                <h4>Volatility has a personality per ticker</h4>
                 <ul>
                   <li>
-                    <strong>Heads of Data/Analytics:</strong> plug these marts into your existing BI or product analytics stack and know that the same logic runs across names,
-                    desks, or business lines without one-off modeling for each.
+                    Realized volatility is elevated across the board, but it isn't chaos. AAPL, AMZN,
+                    and MSFT mostly live in the 20-30% annualized range; NVDA spends more time higher;
+                    MSFT is the relative “calm anchor” even as it grinds to new highs.
                   </li>
                   <li>
-                    <strong>Product, trading, or finance leads:</strong> quickly answer questions like “where is options attention clustering?” or “how have our typical days
-                    shifted in terms of volatility and flow?” without scraping together five different exports.
+                    That gives each ticker a distinct “vol personality”: NVDA is consistently punchier,
+                    MSFT is steadier, and GOOGL has a short early stretch of very high vol before settling
+                    into a more normal band.
+                  </li>
+                </ul>
+              </div>
+
+              <div class="stack" style="--stack-gap:0.5rem;">
+                <h4>Where risk and attention actually concentrated</h4>
+                <ul>
+                  <li>
+                    The top-contracts table cuts through the tape and shows where flow really went:
+                    short-dated calls clustered around nearby strikes (for example, 260-280 for AAPL,
+                    ~180-210 for NVDA, ~500-550 for MSFT).
                   </li>
                   <li>
-                    <strong>Data/platform engineers:</strong> treat this as a reference pattern for calm Monday mornings-pipelines that run on a schedule, land data into
-                    well-modeled marts, and feed downstream tools without surprise schema changes.
+                    Calls dominate the list. Puts appear, but they're the exception, which is a quick
+                    visual read that this window was skewed toward upside speculation or call-heavy hedging.
+                  </li>
+                  <li>
+                    Many of the most active contracts now show DTE = 0 and last price $0.01. That's not
+                    a bug-it just means they were heavily traded while “alive” and have since expired and
+                    decayed, exactly what you'd expect for short-dated out-of-the-money flow.
+                  </li>
+                </ul>
+              </div>
+
+              <div class="stack" style="--stack-gap:0.5rem;">
+                <h4>A compact “daily weather report” for non-quants</h4>
+                <ul>
+                  <li>
+                    The snapshot export gives each ticker a daily state vector: short-horizon returns,
+                    realized vol, underlying and options volume versus a 30-day baseline, and call/put mix.
+                  </li>
+                  <li>
+                    That's enough for a head of data or analytics to answer “Is today normal or weird?”,
+                    “Is this rally being chased in options?”, or “Is this selloff being hedged or faded?”
+                    without staring at raw trade logs.
+                  </li>
+                  <li>
+                    The point isn't to predict the market-it's to give downstream dashboards, alerts,
+                    and models a clean, consistent picture of price action and options behavior that lives
+                    inside the warehouse instead of scattered across one-off CSVs.
                   </li>
                 </ul>
               </div>
