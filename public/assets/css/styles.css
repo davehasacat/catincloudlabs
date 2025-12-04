@@ -538,6 +538,11 @@ main { flex: 1; } /* sticky footer support */
   overflow: visible;   /* allow the pill to sit a bit below the image */
 }
 
+/* Extra breathing room between stacked diagrams */
+.diagram-figure + .diagram-figure {
+  margin-top: 1.5rem;
+}
+
 @media (min-width: 1024px) {
   .diagram-figure .proof-zoom-pill {
     bottom: -1rem;   /* lower it a tad under the image edge */
@@ -554,10 +559,12 @@ main { flex: 1; } /* sticky footer support */
 }
 
 .diagram-caption {
-  margin-top: .5rem;
-  font-size: .875rem;
-  color: #6b7280;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
   text-align: center;
+  max-width: 60ch;
+  margin-inline: auto;
 }
 
 /* 1) Global, consistent focus styles (matches your button ring) */
@@ -1511,4 +1518,16 @@ figure, .card { overflow: hidden; }
     font-size: 0.86rem;
     margin-bottom: 0.35rem;
   }
+}
+
+/* Better spacing around the At a glance list */
+.card h3 + ul {
+  margin-top: 0.75rem;
+  margin-bottom: 1.75rem;
+}
+
+/* Keep long muted paragraphs comfortably readable inside cards */
+.card p.muted {
+  max-width: 65ch;
+  margin-inline: auto;
 }
