@@ -12,14 +12,13 @@
     return;
   }
 
-  // Correct data URL
   var DATA_URL = "/assets/data/daily_activity_5tickers.json";
 
   function isNarrow() {
     return window.innerWidth <= 640;
   }
 
-  // Layouts
+  // Desktop layout
   var desktopLayout = {
     margin: { l: 60, r: 70, t: 10, b: 50 },
     paper_bgcolor: "rgba(0,0,0,0)",
@@ -31,14 +30,16 @@
       showgrid: true,
       gridcolor: "#e5e7eb",
       tickfont: { size: 12 },
-      titlefont: { size: 13 }
+      titlefont: { size: 13 },
+      automargin: true
     },
     yaxis: {
       title: "Price (USD)",
       showgrid: true,
       gridcolor: "#e5e7eb",
       tickfont: { size: 12 },
-      titlefont: { size: 13 }
+      titlefont: { size: 13 },
+      automargin: true
     },
     yaxis2: {
       title: "Total options volume",
@@ -46,7 +47,8 @@
       side: "right",
       showgrid: false,
       tickfont: { size: 11 },
-      titlefont: { size: 12 }
+      titlefont: { size: 12 },
+      automargin: true
     },
     legend: {
       orientation: "h",
@@ -58,10 +60,9 @@
     }
   };
 
-  // Mobile: hide right-axis tick labels to avoid clipping,
-  // tighten margins, and shrink fonts slightly.
+  // Mobile layout: same axes, just tighter + smaller fonts
   var mobileLayout = {
-    margin: { l: 48, r: 12, t: 4, b: 40 },
+    margin: { l: 48, r: 70, t: 4, b: 40 },
     paper_bgcolor: "rgba(0,0,0,0)",
     plot_bgcolor: "rgba(0,0,0,0)",
     hovermode: "x unified",
@@ -71,22 +72,25 @@
       showgrid: true,
       gridcolor: "#e5e7eb",
       tickfont: { size: 10 },
-      titlefont: { size: 11 }
+      titlefont: { size: 11 },
+      automargin: true
     },
     yaxis: {
       title: "Price (USD)",
       showgrid: true,
       gridcolor: "#e5e7eb",
       tickfont: { size: 10 },
-      titlefont: { size: 11 }
+      titlefont: { size: 11 },
+      automargin: true
     },
     yaxis2: {
-      title: "",
+      title: "Total options volume",
       overlaying: "y",
       side: "right",
       showgrid: false,
-      showticklabels: false,
-      tickfont: { size: 10 }
+      tickfont: { size: 10 },
+      titlefont: { size: 11 },
+      automargin: true
     },
     legend: {
       orientation: "h",
@@ -109,7 +113,6 @@
     return {
       responsive: true,
       displaylogo: false,
-      // Hide modebar on narrow/mobile, show on hover for desktop
       displayModeBar: narrow ? false : "hover",
       modeBarButtonsToRemove: [
         "select2d",
