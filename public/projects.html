@@ -135,13 +135,14 @@
             <!-- Multi-ticker daily chart powered by Snowflake-exported JSON (Export 1) -->
             <div class="stack" style="--stack-gap:0.75rem; margin-top:1.5rem;">
               <div class="stack" style="--stack-gap:0.5rem;">
-                <h3>Daily price and options volume for AAPL, AMZN, GOOGL, MSFT, and NVDA (Sep 2 - Nov 28, 2025)</h3>
+                <h3>Daily price and options volume for AAPL, AMZN, GOOGL, MSFT, and NVDA</h3>
                 <p class="chart-subtitle">
+                  <span class="chart-window-badge">Sep 2 - Nov 28, 2025 • one point per trading day</span>
                   See how each stock's closing price and total options volume moved over the same recent three-month window.
                   The view is powered by a static JSON export from my Snowflake marts, so you're looking at the same data I use inside the warehouse.
                 </p>
                 <label for="daily-activity-ticker" class="ticker-label">
-                  Ticker:
+                  Selected ticker:
                   <select id="daily-activity-ticker">
                     <option value="AAPL" selected>AAPL</option>
                     <option value="AMZN">AMZN</option>
