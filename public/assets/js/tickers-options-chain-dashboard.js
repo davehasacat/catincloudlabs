@@ -6,15 +6,31 @@
     return;
   }
 
-  var selectEl = document.getElementById("ticker-options-select");
-  if (!selectEl) {
-    console.warn("ticker-options-select element not found");
-    return;
-  }
+  // Shared ticker selector used by Export 1 + Export 3
+  var controllerSelect = document.getElementById("daily-activity-ticker");
+
+  // Ticker label already present in the HTML copy
+  var tickerLabelEl = document.getElementById("options-table-ticker-label");
 
   var DATA_URL = "/assets/data/options_top_contracts_5tickers.json";
   var allRows = [];
-  var currentTicker = selectEl.value || "AAPL";
+
+  var currentTicker =
+    (controllerSelect && controllerSelect.value) ? controllerSelect.value : "AAPL";
+
+  // Sorting state
+  var currentSortKey = "total_volume";
+  var currentSortDir = "desc"; // "asc" | "desc"
+
+  // Pagination state
+  var pageSize = 10;
+  var currentPage = 0; // 0-based
+
+  // DOM refs we fill in during init
+  var tableRef = null;
+  var theadRef = null;
+  var tbodyRef = null;
+  var paginationRef = null;
 
   // Map headers to data keys + sort types
   var columns = [
@@ -32,7 +48,8 @@
     { label: "Moneyness",    key: "signed_moneyness_pct", type: "number" }
   ];
 
-  // Formatting helpers
+  // --- Formatting helpers --------------------------------------------------
+
   function fmtMoney(val) {
     if (val == null) return "";
     return "$" + Number(val).toFixed(2);
@@ -69,9 +86,7 @@
     });
   }
 
-  // Sorting helpers
-  var currentSortKey = "total_volume";
-  var currentSortDir = "desc"; // "asc" | "desc"
+  // --- Sorting helpers -----------------------------------------------------
 
   function getColumnType(key) {
     var col = columns.find(function (c) { return c.key === key; });
@@ -149,7 +164,6 @@
       }
     );
     if (targetTh) {
-      th = targetTh;
       targetTh.setAttribute(
         "aria-sort",
         currentSortDir === "asc" ? "ascending" : "descending"
@@ -157,11 +171,15 @@
     }
   }
 
+  // --- Data helpers --------------------------------------------------------
+
   function getFilteredRows() {
     return allRows.filter(function (row) {
       return row.underlying_ticker === currentTicker;
     });
   }
+
+  // --- DOM builders --------------------------------------------------------
 
   function buildTable() {
     var table = document.createElement("table");
@@ -218,42 +236,123 @@
         }
       }
 
-      renderBody(table, thead, tbody, th);
+      // When sort changes, go back to the first page
+      currentPage = 0;
+      renderBody(th);
     });
 
     return { table: table, thead: thead, tbody: tbody };
   }
 
-  function renderBody(table, thead, tbody, activeTh) {
-    var rowsToRender = getFilteredRows().slice();
+  // We now just update the bold ticker label in the existing HTML
+  function updateStatus(/* totalRows */) {
+    if (!tickerLabelEl) return;
+    tickerLabelEl.textContent = currentTicker;
+  }
 
-    tbody.innerHTML = "";
+  // Pagination controls
+  function renderPagination(totalRows, totalPages) {
+    if (!paginationRef) return;
 
-    if (!rowsToRender.length) {
+    paginationRef.innerHTML = "";
+
+    if (!totalRows || totalPages <= 1) {
+      return; // nothing to paginate
+    }
+
+    var wrapper = document.createElement("div");
+    wrapper.className = "options-table-pagination";
+
+    var start = currentPage * pageSize + 1;
+    var end = Math.min(totalRows, (currentPage + 1) * pageSize);
+
+    var summary = document.createElement("span");
+    summary.className = "options-table-pagination__summary";
+    summary.textContent = "Showing " + start + "–" + end + " of " + totalRows;
+
+    var controls = document.createElement("div");
+    controls.className = "options-table-pagination__controls";
+
+    function makeButton(label, disabled, delta) {
+      var btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "options-table-pagination__btn";
+      btn.textContent = label;
+      if (disabled) {
+        btn.disabled = true;
+      } else {
+        btn.addEventListener("click", function () {
+          currentPage += delta;
+          renderBody(null);
+        });
+      }
+      return btn;
+    }
+
+    var prevDisabled = currentPage === 0;
+    var nextDisabled = currentPage >= totalPages - 1;
+
+    var prevBtn = makeButton("← Previous 10", prevDisabled, -1);
+    var nextBtn = makeButton("Next 10 →", nextDisabled, +1);
+
+    controls.appendChild(prevBtn);
+    controls.appendChild(nextBtn);
+
+    wrapper.appendChild(summary);
+    wrapper.appendChild(controls);
+
+    paginationRef.appendChild(wrapper);
+  }
+
+  // --- Render body (honors sort + pagination) ------------------------------
+
+  function renderBody(activeTh) {
+    if (!tableRef || !theadRef || !tbodyRef) return;
+
+    var rows = getFilteredRows().slice();
+
+    tbodyRef.innerHTML = "";
+
+    if (!rows.length) {
       var emptyRow = document.createElement("tr");
       var td = document.createElement("td");
       td.colSpan = columns.length;
-      td.textContent = "No options data available for " + currentTicker + " in this window.";
+      td.textContent =
+        "No options data available for " + currentTicker + " in this window.";
       emptyRow.appendChild(td);
-      tbody.appendChild(emptyRow);
+      tbodyRef.appendChild(emptyRow);
 
-      updateAriaSort(thead, null);
+      updateAriaSort(theadRef, null);
+      updateStatus(0);
+      if (paginationRef) paginationRef.innerHTML = "";
       return;
     }
 
     var sortType = getColumnType(currentSortKey);
-    sortRows(rowsToRender, currentSortKey, sortType, currentSortDir);
+    sortRows(rows, currentSortKey, sortType, currentSortDir);
+
+    var totalRows = rows.length;
+    var totalPages = Math.ceil(totalRows / pageSize);
+    if (totalPages < 1) totalPages = 1;
+
+    // Clamp currentPage into valid range
+    if (currentPage >= totalPages) currentPage = totalPages - 1;
+    if (currentPage < 0) currentPage = 0;
+
+    var startIdx = currentPage * pageSize;
+    var endIdx = startIdx + pageSize;
+    var pageRows = rows.slice(startIdx, endIdx);
+
     updateAriaSort(
-      thead,
-      activeTh || thead.querySelector('th[data-key="' + currentSortKey + '"]')
+      theadRef,
+      activeTh || theadRef.querySelector('th[data-key="' + currentSortKey + '"]')
     );
 
-    rowsToRender.forEach(function (row) {
+    pageRows.forEach(function (row) {
       var tr = document.createElement("tr");
 
-      function addCell(text, className) {
+      function addCell(text) {
         var td = document.createElement("td");
-        if (className) td.className = className;
         td.textContent = text;
         tr.appendChild(td);
       }
@@ -274,9 +373,26 @@
       addCell(fmtDte(row.days_to_expiration));
       addCell(fmtMoneyness(row.signed_moneyness_pct));
 
-      tbody.appendChild(tr);
+      tbodyRef.appendChild(tr);
     });
+
+    updateStatus(totalRows);
+    renderPagination(totalRows, totalPages);
   }
+
+  // --- Ticker wiring -------------------------------------------------------
+
+  function onTickerChange(evt) {
+    var nextTicker = evt && evt.target && evt.target.value
+      ? evt.target.value
+      : currentTicker;
+
+    currentTicker = nextTicker || "AAPL";
+    currentPage = 0; // reset page when ticker changes
+    renderBody(null);
+  }
+
+  // --- Init ---------------------------------------------------------------
 
   function init() {
     fetch(DATA_URL)
@@ -289,23 +405,29 @@
 
         allRows = rows.slice();
 
-        var build = buildTable();
+        // Clear container and build table + pagination roots
         container.innerHTML = "";
-        container.appendChild(build.table);
 
-        // Initial render (default sort: total_volume desc)
+        var build = buildTable();
+        tableRef = build.table;
+        theadRef = build.thead;
+        tbodyRef = build.tbody;
+
+        container.appendChild(tableRef);
+
+        paginationRef = document.createElement("div");
+        paginationRef.className = "options-table-pagination-root";
+        container.appendChild(paginationRef);
+
+        // Initial render (default sort: total_volume desc, first page)
         renderBody(
-          build.table,
-          build.thead,
-          build.tbody,
-          build.thead.querySelector('th[data-key="total_volume"]')
+          theadRef.querySelector('th[data-key="total_volume"]')
         );
 
-        // Wire dropdown
-        selectEl.addEventListener("change", function (evt) {
-          currentTicker = evt.target.value;
-          renderBody(build.table, build.thead, build.tbody, null);
-        });
+        // Wire up shared ticker selector if present
+        if (controllerSelect) {
+          controllerSelect.addEventListener("change", onTickerChange);
+        }
       })
       .catch(function (err) {
         console.error("Error loading options table data", err);

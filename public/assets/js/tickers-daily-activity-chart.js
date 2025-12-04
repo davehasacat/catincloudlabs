@@ -12,6 +12,7 @@
     return;
   }
 
+  // Correct data URL
   var DATA_URL = "/assets/data/daily_activity_5tickers.json";
 
   // Layouts (same behavior as the original AAPL chart)
@@ -233,5 +234,10 @@
     })
     .catch(function (err) {
       console.error("Error loading daily activity data", err);
+      el.innerHTML = "";
+      var msg = document.createElement("p");
+      msg.className = "chart-empty";
+      msg.textContent = "Unable to load daily activity data right now.";
+      el.appendChild(msg);
     });
 })();

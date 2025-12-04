@@ -6,8 +6,8 @@
     return;
   }
 
-  // Reuse the same select as the options table so they stay in sync
-  var selectEl = document.getElementById("ticker-options-select");
+  // Keep the snapshot in sync with Export 1's ticker selector
+  var selectEl = document.getElementById("daily-activity-ticker");
   var DATA_URL = "/assets/data/ticker_features_daily_5tickers.json";
 
   var allRows = [];
@@ -71,7 +71,6 @@
     });
 
     rows.sort(function (a, b) {
-      // sort by trade_date ascending
       var da = a.trade_date ? new Date(a.trade_date).getTime() : 0;
       var db = b.trade_date ? new Date(b.trade_date).getTime() : 0;
       return da - db;
@@ -105,11 +104,11 @@
 
     var heading = document.createElement("h3");
     heading.className = "ticker-features-heading";
-    heading.textContent = currentTicker + " – Daily features snapshot";
+    heading.textContent = currentTicker + " – Latest daily snapshot";
 
     var sub = document.createElement("p");
     sub.className = "ticker-features-subtitle";
-    sub.textContent = "As of " + fmtDateISO(latest.trade_date);
+    sub.textContent = "Latest trading day in this window: " + fmtDateISO(latest.trade_date);
 
     var grid = document.createElement("dl");
     grid.className = "ticker-features-summary-grid";
