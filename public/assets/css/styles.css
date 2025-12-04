@@ -1538,5 +1538,37 @@ figure, .card { overflow: hidden; }
   border-radius: 0.75rem;
   padding: 1.5rem 1.75rem;
   border: 1px solid var(--border-subtle);
+  max-width: 64ch;
+  margin: 1.75rem auto 0;
 }
-.insights-panel h3 { margin-top: 0; }
+
+.insights-panel h3 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+.insights-panel > p {
+  margin-bottom: 1rem;
+}
+
+.insights-panel h4 {
+  font-size: 0.95rem;
+  margin-top: 0.75rem;
+  margin-bottom: 0.35rem;
+}
+
+.insights-panel ul {
+  margin: 0 0 0.75rem;
+  padding-left: 1.25rem;
+}
+
+.insights-panel li + li {
+  margin-top: 0.35rem;
+}
+
+@media (max-width: 640px) {
+  .insights-panel {
+    padding: 1.25rem 1.25rem;
+    margin-top: 1.5rem;
+  }
+}
