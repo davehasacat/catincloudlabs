@@ -149,65 +149,47 @@
             <div class="eyebrow">Flagship</div>
             <h2>Enterprise Stock Market ELT</h2>
             <p>
-              A production-grade data pipeline built on AWS, MWAA, Snowflake, and dbt Cloud,
-              designed to securely ingest, transform, and deliver market data at scale using
-              KMS encryption and enterprise best practices. The architecture supports both stocks
-              and options data and employs dbt's incremental loading strategy for efficient, maintainable transformations.
+              A production-grade pipeline built on AWS, MWAA, Snowflake, and dbt Cloud, designed to ingest and transform stock and options data
+              in a private VPC. It uses KMS-encrypted S3 buckets, VPC endpoints, and incremental dbt models to keep data flowing reliably
+              from raw JSON to analytics-ready marts.
             </p>
           </article>
 
-          <!-- Architecture diagram -->
+          <!-- Architecture diagram (homepage keeps just the data-flow view) -->
           <article id="architecture" class="card reveal proof-diagram" style="max-width: var(--maxw-readable); margin-inline:auto;">
-            <figure class="diagram-figure" style="margin:0;">
-              <button
-                type="button"
-                class="proof-figure__button"
-                data-panel-open
-                data-caption="High-level data flow: ingest market data, land it in S3, transform with dbt, &amp; serve from Snowflake."
-                aria-label="Click to zoom the architecture flow diagram"
-              >
-                <img
-                  src="/assets/diagrams/architecture-flow.v5.svg"
-                  alt="Architecture flow diagram showing MWAA orchestrating S3 to Snowflake via COPY, with dbt building marts"
-                  class="diagram"
-                  width="1160" height="300"
-                  loading="lazy" decoding="async"
-                  sizes="(max-width: 700px) 100vw, 1160px" />
-                <span class="proof-zoom-pill">
-                  Click to zoom
-                </span>
-              </button>
-              <figcaption class="diagram-caption">
-                High-level data flow: ingest market data, land it in S3, transform with dbt, &amp; serve from Snowflake.
-              </figcaption>
-            </figure>
-          </article>
+            <div class="stack" style="--stack-gap:0.75rem;">
+              <div class="eyebrow">Architecture</div>
+              <h2>How the pieces fit together</h2>
+              <p class="chart-subtitle">
+                High-level data flow for the reference pipeline: MWAA orchestrates ingest into a KMS-encrypted S3 RAW bucket,
+                Snowflake loads from there, and dbt builds marts on top. For a deeper walkthrough (including security details),
+                see the <a href="/projects">Projects</a> page.
+              </p>
 
-          <!-- Security/observability diagram -->
-          <article id="orchestration" class="card reveal proof-diagram" style="max-width: var(--maxw-readable); margin-inline:auto;">
-            <figure class="diagram-figure" style="margin:0;">
-              <button
-                type="button"
-                class="proof-figure__button"
-                data-panel-open
-                data-caption="High-level security view: client VPN into a private VPC; MWAA reaches encrypted S3 via gateway endpoint & orchestrates Snowflake via outbound NAT."
-                aria-label="Click to zoom the security and observability diagram"
-              >
-                <img
-                  src="/assets/diagrams/security-observability.v5.svg"
-                  alt="Private VPC with S3 Gateway Endpoint; MWAA orchestrates Snowflake load; outbound-only egress"
-                  class="diagram"
-                  width="1160" height="300"
-                  loading="lazy" decoding="async"
-                  sizes="(max-width: 700px) 100vw, 1160px" />
-                <span class="proof-zoom-pill">
-                  Click to zoom
-                </span>
-              </button>
-              <figcaption class="diagram-caption">
-                High-level security view: client VPN into a private VPC; MWAA reaches encrypted S3 via gateway endpoint &amp; orchestrates Snowflake via outbound NAT.
-              </figcaption>
-            </figure>
+              <figure class="diagram-figure" style="margin:0;">
+                <button
+                  type="button"
+                  class="proof-figure__button"
+                  data-panel-open
+                  data-caption="High-level data flow: ingest market data, land it in S3, transform with dbt, &amp; serve from Snowflake."
+                  aria-label="Click to zoom the architecture flow diagram"
+                >
+                  <img
+                    src="/assets/diagrams/architecture-flow.v5.svg"
+                    alt="Architecture flow diagram showing MWAA orchestrating S3 to Snowflake via COPY, with dbt building marts"
+                    class="diagram"
+                    width="1160" height="300"
+                    loading="lazy" decoding="async"
+                    sizes="(max-width: 700px) 100vw, 1160px" />
+                  <span class="proof-zoom-pill">
+                    Click to zoom
+                  </span>
+                </button>
+                <figcaption class="diagram-caption">
+                  High-level data flow: ingest market data, land it in S3, transform with dbt, &amp; serve from Snowflake.
+                </figcaption>
+              </figure>
+            </div>
           </article>
 
           <!-- Proof of Success: single-card carousel + click-to-zoom -->
@@ -309,7 +291,7 @@
               Ingest: write JSON files to S3
             </p>
 
-                        <!-- 3-panel end-to-end proof image -->
+            <!-- 3-panel end-to-end proof image -->
             <figure class="proof-figure">
               <button
                 type="button"
