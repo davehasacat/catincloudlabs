@@ -1256,7 +1256,7 @@ figure, .card { overflow: hidden; }
   .chart-shell {
     min-height: 220px;
     margin-top: 0.75rem;
-    margin-inline: -0.75rem; /* reclaim some horizontal space on phones */
+    margin-inline: 0; /* keep chart fully inside the card */
   }
 
   .chart-window-badge {

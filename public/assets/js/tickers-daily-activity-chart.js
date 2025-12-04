@@ -19,9 +19,9 @@
     return window.innerWidth <= 640;
   }
 
-  // Layouts (same behavior as the original AAPL chart, with tuned fonts)
+  // Layouts
   var desktopLayout = {
-    margin: { l: 60, r: 50, t: 10, b: 50 },
+    margin: { l: 60, r: 70, t: 10, b: 50 },
     paper_bgcolor: "rgba(0,0,0,0)",
     plot_bgcolor: "rgba(0,0,0,0)",
     hovermode: "x unified",
