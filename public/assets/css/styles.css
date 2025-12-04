@@ -3,6 +3,10 @@ CatInCloud Labs — Bright Theme (Blue Variant, modernized with color-mix)
 Purpose: pivot the site to a clean sky blue + blue + white scheme with token-driven scales.
 */
 
+/* ==================================================================== */
+/* 1. TOKENS & FALLBACKS                                                */
+/* ==================================================================== */
+
 :root {
   /* === Base brand colors === */
   --accent: #0ea5e9;         /* primary blue */
@@ -72,7 +76,7 @@ Purpose: pivot the site to a clean sky blue + blue + white scheme with token-dri
 
 /* Fallback for browsers without color-mix */
 @supports not (color: color-mix(in oklab, white 50%, black)) {
-  :root{
+  :root {
     --accent-50:  #f0f9ff;
     --accent-100: #e0f2fe;
     --accent-200: #bae6fd;
@@ -91,6 +95,10 @@ Purpose: pivot the site to a clean sky blue + blue + white scheme with token-dri
     --primary-pressed:#0369a1;
   }
 }
+
+/* ==================================================================== */
+/* 2. BASE / TYPOGRAPHY / LAYOUT / UTILITIES                            */
+/* ==================================================================== */
 
 /* Base */
 html { 
@@ -121,10 +129,10 @@ img, svg, video, canvas {
 }
 
 /* Skip link (single definition) */
-.skip-link{
+.skip-link {
   position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;
 }
-.skip-link:focus{
+.skip-link:focus {
   position:fixed;left:16px;top:16px;width:auto;height:auto;padding:.6rem .8rem;
   background:#fff;border:1px solid var(--gray-300);border-radius:10px;z-index:9999;
   color: var(--text); box-shadow: var(--shadow-sm);
@@ -176,7 +184,45 @@ a:hover {
 
 main { flex: 1; } /* sticky footer support */
 
-/* Components */
+/* Utilities */
+.badge   { display:inline-block; padding:.2rem .5rem; border-radius:999px; background: var(--accent-100); color: var(--accent-700); font-weight:600; }
+.border  { border: 1px solid var(--gray-200); }
+.rounded { border-radius: var(--radius-md); }
+.shadow  { box-shadow: var(--shadow-sm); }
+.center  { text-align:center; }
+
+/* Animations */
+.reveal { opacity: 0; transform: translateY(6px); animation: revealIn .5s var(--transition) forwards; }
+@keyframes revealIn { to { opacity: 1; transform: none; } }
+
+/* Respect reduced motion for your reveal animation too */
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; animation: none; }
+}
+
+/* Global focus styles (matches your button ring) */
+a:focus-visible,
+.button:focus-visible {
+  outline: 3px solid var(--ring);
+  outline-offset: 2px;
+}
+
+/* Stack spacing helpers */
+.stack--hero   { --stack-gap: 1.1rem; }
+.stack--section{ --stack-gap: 1.25rem; }
+.stack--tight  { --stack-gap: 0.75rem; }
+
+/* Common narrow card layout */
+.card--narrow {
+  max-width: var(--maxw-readable);
+  margin-inline: auto;
+}
+
+/* ==================================================================== */
+/* 3. GLOBAL COMPONENTS: HEADER / NAV / CARDS / BUTTONS / INPUTS / FOOTER*/
+/* ==================================================================== */
+
+/* Header & nav */
 .header {
   background: color-mix(in oklab, #fff 85%, transparent);
   border-bottom: 1px solid var(--gray-200);
@@ -190,391 +236,7 @@ main { flex: 1; } /* sticky footer support */
 .nav .menu a { color: var(--gray-700); padding: .5rem .6rem; border-radius: 8px; }
 .nav .menu a:hover { background: var(--gray-100); }
 
-/* Cards & buttons */
-.card { 
-  background: var(--bg-surface); 
-  border: 1px solid var(--gray-200); 
-  border-radius: var(--radius-lg); 
-  padding: 1.25rem; 
-  box-shadow: var(--shadow-sm); 
-}
-.card:hover { box-shadow: var(--shadow-md); }
-.eyebrow{ font-size:.8rem; font-weight:600; color: var(--accent-700); letter-spacing:.06em; text-transform:uppercase; }
-
-.button { 
-  display: inline-flex; 
-  align-items: center; 
-  justify-content: center; 
-  gap: .5rem; 
-  padding: .7rem 1rem; 
-  border-radius: var(--radius-md); 
-  border: 1px solid transparent; 
-  font-weight: 600; 
-  cursor: pointer; 
-  transition: transform var(--transition), background var(--transition); 
-}
-.button.primary { background: var(--primary); color: white; box-shadow: var(--shadow-md); }
-.button.primary:hover { background: var(--primary-hover); transform: translateY(-1px); }
-.button.primary:active { background: var(--primary-pressed); transform: translateY(0); }
-.button.ghost { background: white; border-color: var(--gray-200); color: var(--link); }
-.button.ghost:hover { border-color: var(--gray-300); box-shadow: var(--shadow-sm); color: var(--link-hover); }
-
-/* Footer */
-.footer { 
-  margin-top: 3rem; 
-  background: linear-gradient(0deg, color-mix(in oklab, var(--accent) 6%, white), transparent 70%); 
-  border-top: 1px solid var(--gray-200); 
-}
-.footer .inner { padding: 1.5rem 0; color: var(--gray-700); text-align: center; }
-
-/* Inputs */
-.input { 
-  width: 100%; 
-  padding: .7rem .9rem; 
-  border-radius: 12px; 
-  border: 1px solid var(--gray-300); 
-  background: white; 
-  color: var(--text); 
-}
-.input:focus { 
-  border-color: var(--accent-400); 
-  box-shadow: 0 0 0 4px color-mix(in oklab, var(--accent-400) 25%, transparent); 
-  outline: none; 
-}
-
-/* Utilities */
-.badge   { display:inline-block; padding:.2rem .5rem; border-radius:999px; background: var(--accent-100); color: var(--accent-700); font-weight:600; }
-.border  { border: 1px solid var(--gray-200); }
-.rounded { border-radius: var(--radius-md); }
-.shadow  { box-shadow: var(--shadow-sm); }
-.center  { text-align:center; }
-
-/* Animations */
-.reveal { opacity: 0; transform: translateY(6px); animation: revealIn .5s var(--transition) forwards; }
-@keyframes revealIn { to { opacity: 1; transform: none; } }
-
-/* === HERO (video) ===================================================== */
-/* Support both new (.hero) and previous (.ci-hero) class names */
-:is(.hero, .ci-hero){
-  position: relative;
-  min-height: clamp(420px, 72svh, 880px);
-  background: linear-gradient(180deg, color-mix(in oklab, var(--accent) 6%, white), #fff 60%);
-  overflow: hidden;
-}
-@supports (height: 72dvh) {
-  :is(.hero, .ci-hero){ min-height: 72dvh; }
-}
-
-/* Media fills the section */
-:is(.hero__media, .ci-hero__media){ position:absolute; inset:0; overflow:hidden; }
-:is(.hero__video, .ci-hero__video){
-  width:100%;
-  height:100%;
-  object-fit: cover;
-  display:block;
-  /* Light dim to reduce visual noise behind the text */
-  filter: brightness(0.78);
-}
-
-/* Content sits above the video */
-:is(.hero__content, .ci-hero__content){
-  position: relative; z-index: 1;
-  width: min(1100px, 92vw);
-  margin: 0 auto;
-  padding: clamp(56px, 10vh, 110px) 16px 16px;
-  text-align: center;
-  color: var(--text);
-}
-:is(.hero__content, .ci-hero__content) h1{
-  margin: 0 0 .5rem;
-  font-size: clamp(2rem, 1.2rem + 3vw, 3rem);
-  line-height: 1.12;
-}
-:is(.hero__content, .ci-hero__content) p{
-  margin: 0 0 1.25rem;
-  color: var(--text-muted);
-  font-size: clamp(1rem, .6rem + 1vw, 1.125rem);
-}
-
-/* Hero text widths */
-.hero__content .title {
-  max-width: 22ch;   /* tweak 20–24ch to taste */
-  margin-inline: auto;
-}
-
-.hero__content .subtitle {
-  max-width: 34rem;
-  margin-inline: auto;
-  margin-bottom: 0.75rem;
-  font-size: clamp(0.98rem, 0.7rem + 0.6vw, 1.05rem);
-  color: rgba(249, 250, 251, 0.92);
-}
-
-/* CTA buttons (namespaced) + footnote */
-.hero__cta,
-.ci-hero__cta {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.75rem;
-  flex-wrap: wrap;
-  width: 100%;
-  max-width: 36rem;       /* shared column with subtitle + footnote */
-  margin-inline: auto;    /* center the column */
-}
-
-/* Buttons */
-.ci-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.7rem 1rem;
-  border-radius: var(--radius-md);
-  border: 1px solid transparent;
-  font-weight: 600;
-  text-decoration: none;
-  transition:
-    transform var(--transition),
-    box-shadow var(--transition),
-    background var(--transition),
-    color var(--transition);
-}
-
-.ci-btn:focus-visible{
-  outline:3px solid var(--ring);
-  outline-offset:2px;
-}
-
-.ci-btn--primary{
-  background: var(--primary);
-  color:#fff;
-  box-shadow: var(--shadow-md);
-}
-.ci-btn--primary:hover{
-  background: var(--primary-hover);
-  transform: translateY(-1px);
-}
-.ci-btn--primary:active{
-  background: var(--primary-pressed);
-  transform: translateY(0);
-}
-
-.ci-btn--ghost{
-  background:#fff;
-  border-color: var(--gray-200);
-  color: var(--link);
-}
-.ci-btn--ghost:hover{
-  border-color: var(--gray-300);
-  box-shadow: var(--shadow-sm);
-  color: var(--link-hover);
-}
-
-/* Footnote: its own full-width row inside the CTA flex container */
-.hero-footnote {
-  flex: 0 0 100%;           /* take a full row under the buttons */
-  width: 100%;
-  max-width: 36rem;
-  margin: 0.75rem auto 0;
-  font-size: 0.88rem;
-  line-height: 1.5;
-  color: rgba(249, 250, 251, 0.78);
-  text-align: center;
-  text-wrap: balance;
-}
-
-/* Reduced motion */
-@media (prefers-reduced-motion: reduce){
-  :is(.hero__video, .ci-hero__video){ display:none; }
-  :is(.hero, .ci-hero){ background: url('/assets/video/hero-fallback.jpg') center/cover no-repeat, var(--bg-page); }
-}
-
-/* --- Mobile polish ---------------------------------------------------- */
-@media (max-width: 700px){
-  :is(.hero, .ci-hero){ min-height: clamp(520px, 84svh, 920px); }
-  :is(.hero__video, .ci-hero__video){ object-position: 47.5% 100%; } /* anchor the bottom on phones */
-  :is(.hero__content, .ci-hero__content){
-    padding-top: calc(var(--safe-top) + clamp(48px, 9vh, 96px));
-  }
-}
-@media (max-width: 430px){
-  :is(.hero__content, .ci-hero__content){
-    padding: calc(var(--safe-top) + clamp(40px, 9vh, 72px)) 14px 14px;
-  }
-  :is(.hero__content, .ci-hero__content) h1{
-    max-width: 16ch;
-    margin-inline: auto;
-    font-size: clamp(1.6rem, 5.2vw + .6rem, 2.1rem);
-    line-height: 1.12;
-    text-wrap: balance;
-  }
-  :is(.hero__content, .ci-hero__content) p{
-    font-size: .95rem;
-    margin-bottom: .9rem;
-    text-shadow:
-      0 0 2px rgba(0,0,0,.7),
-      0 0 6px rgba(0,0,0,.35);
-  }
-
-  .hero__cta,
-  .ci-hero__cta{
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .ci-btn{
-    width: max(220px, 72%);
-    max-width: 320px;
-    margin-inline: auto;
-    padding: 0.6rem 0.9rem;
-  }
-}
-
-/* Laptop + desktop: subtly zoom video to crop out Airflow UI chrome */
-@media (min-width: 768px) {
-  :is(.hero__video, .ci-hero__video){
-    transform: scale(1.07);
-    transform-origin: center center;
-    object-position: 50% 82%;
-  }
-}
-
-/* === HERO contrast + overlay ========================================= */
-
-/* Light text over video */
-:is(.hero, .ci-hero){
-  color: #f9fafb;
-}
-
-/* Dark overlay so text doesn't blend into the DAG video */
-:is(.hero, .ci-hero)::before{
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(
-      circle at center,
-      rgba(15, 23, 42, 0.45),
-      rgba(15, 23, 42, 0.90)
-    );
-  z-index: 1;
-  pointer-events: none;
-}
-
-/* Ensure stacking order: video → overlay → content */
-:is(.hero__media, .ci-hero__media){ z-index: 0; }
-:is(.hero__content, .ci-hero__content){
-  position: relative;
-  z-index: 2;
-}
-
-/* Stronger text styling over video */
-:is(.hero__content, .ci-hero__content) h1,
-:is(.hero__content, .ci-hero__content) p{
-  color: #f9fafb;
-  text-shadow:
-    0 0 8px rgba(15, 23, 42, 0.85),
-    0 0 18px rgba(15, 23, 42, 0.9);
-}
-
-/* Desktop hero polish (keep mobile as-is) */
-@media (min-width: 1024px) {
-  /* Desktop: still dimmed, but let a little more of the DAG peek through */
-  :is(.hero, .ci-hero)::before{
-    background:
-      radial-gradient(
-        circle at center,
-        rgba(15, 23, 42, 0.35),
-        rgba(15, 23, 42, 0.75)
-      );
-  }
-
-  :is(.hero__content, .ci-hero__content) h1{
-    text-shadow:
-      0 0 6px rgba(15, 23, 42, 0.8),
-      0 0 14px rgba(15, 23, 42, 0.85);
-  }
-
-  :is(.hero__content, .ci-hero__content) p{
-    text-shadow:
-      0 0 4px rgba(15, 23, 42, 0.7),
-      0 0 10px rgba(15, 23, 42, 0.75);
-  }
-
-  /* Slightly slimmer CTAs on desktop */
-  .ci-btn{
-    padding: 0.65rem 1.3rem;
-    font-size: 0.98rem;
-  }
-
-  /* Desktop: keep hero comfortably below sticky header, slightly lower in the frame */
-  :is(.hero__content, .ci-hero__content){
-    padding-top: clamp(56px, 7vh, 104px);
-    padding-bottom: clamp(48px, 11vh, 96px);
-  }
-}
-
-/* Large desktop (27"+): drop the hero text slightly for better balance */
-@media (min-width: 1440px) {
-  :is(.hero__content, .ci-hero__content){
-    padding-top: clamp(100px, 12.5vh, 144px);
-    padding-bottom: clamp(56px, 11vh, 120px);
-  }
-}
-
-/* === Diagrams ========================================================= */
-.proof-diagram.card {
-  border-radius: 1rem;
-  background: var(--bg-surface);
-  box-shadow: 0 2px 12px rgba(0,0,0,.06);
-  padding: clamp(16px, 3vw, 28px);
-  margin: clamp(16px, 3vw, 28px) auto;
-}
-
-.diagram-figure {
-  margin: 0;
-  position: relative;           /* allows a 'Click to zoom' pill if you add one */
-  text-align: center;
-  overflow: visible;   /* allow the pill to sit a bit below the image */
-}
-
-/* Extra breathing room between the two diagram cards */
-.diagram-figure + .diagram-figure {
-  margin-top: clamp(2rem, 4vw, 2.75rem);
-}
-
-@media (min-width: 1024px) {
-  .diagram-figure .proof-zoom-pill {
-    bottom: -1rem;   /* lower it a tad under the image edge */
-  }
-}
-
-.diagram {
-  width: 100%;
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin-inline: auto;
-  cursor: zoom-in;              /* key bit: shows it's clickable */
-}
-
-.diagram-caption {
-  margin-top: 0.5rem;
-  font-size: 0.9rem;
-  color: var(--text-muted);
-  text-align: center;
-  max-width: 60ch;
-  margin-inline: auto;
-}
-
-/* 1) Global, consistent focus styles (matches your button ring) */
-a:focus-visible,
-.button:focus-visible {
-  outline: 3px solid var(--ring);
-  outline-offset: 2px;
-}
-
-/* 2) Nav: visible active state + keyboard focus */
+/* Nav: visible active state + keyboard focus */
 .nav .menu a[aria-current="page"] {
   color: var(--accent-700);
   background: var(--accent-50);
@@ -586,539 +248,7 @@ a:focus-visible,
   border-radius: 8px;
 }
 
-/* 3) Footer link color consistency (inherit your link tokens) */
-.footer a { color: var(--link); }
-.footer a:hover { color: var(--link-hover); text-decoration: underline; }
-
-/* 4) Respect reduced motion for your reveal animation too */
-@media (prefers-reduced-motion: reduce) {
-  .reveal { opacity: 1; transform: none; animation: none; }
-}
-
-/* 5) Be kind to data savers: fall back to the hero image */
-@media (prefers-reduced-data: reduce) {
-  .hero__video, .ci-hero__video { display: none; }
-  .hero, .ci-hero {
-    background: url('/assets/video/hero-fallback.jpg') center/cover no-repeat, var(--bg-page);
-  }
-}
-
-/* 6) Slightly larger tap targets for main nav on touch screens */
-@media (pointer: coarse) {
-  .nav .menu a { padding: .65rem .7rem; }
-}
-
-/* --- Compact subpage heroes (Privacy/Terms/Security/Contact) --- */
-.hero:has(.hero-simple) {
-  position: relative;
-  min-height: clamp(160px, 22svh, 320px);
-  background: linear-gradient(
-    180deg,
-    color-mix(in oklab, var(--accent) 4%, white),
-    #fff 40%
-  );
-  color: var(--text);            /* back to normal dark text */
-}
-
-/* Kill the dark video overlay on simple heroes */
-.hero:has(.hero-simple)::before {
-  content: none;
-}
-
-/* Inner layout + text reset */
-.hero:has(.hero-simple) .hero-simple .stack {
-  padding-block: clamp(16px, 3vh, 24px);
-}
-
-.hero:has(.hero-simple) .title,
-.hero:has(.hero-simple) .subtitle {
-  color: var(--text);
-  text-shadow: none;             /* remove DAG-style glow */
-}
-
-.hero:has(.hero-simple) .title {
-  margin-bottom: 0.4rem;
-}
-
-.hero:has(.hero-simple) .subtitle {
-  max-width: 60ch;
-}
-
-/* ──────────────────────────────────────────────────────────────────── */
-/*  MOBILE HORIZONTAL OVERFLOW CLAMP (safe, scoped)                    */
-/*  Fixes the white gutter / grid peeking in on iOS/Chrome incognito. */
-/* ──────────────────────────────────────────────────────────────────── */
-:is(.hero, .ci-hero), [data-full-bleed] {
-  position: relative;
-  overflow-x: clip; /* only clamp the horizontal axis */
-}
-
-/* Let the subhead pill overlap upward without being clipped */
-:is(.hero, .ci-hero){
-  overflow-y: visible;
-}
-
-/* If decorative backgrounds use pseudo-elements, keep them inside */
-:is(.hero, .ci-hero)::before,
-:is(.hero, .ci-hero)::after {
-  left: 0 !important;
-  right: 0 !important;
-  width: auto !important;
-  max-width: 100% !important;
-  transform: none !important;
-}
-
-/* Figures/cards shouldn’t let children bleed past rounded corners */
-figure, .card { overflow: hidden; }
-
-/* Use dynamic viewport width when supported to avoid 100vw Safari quirks */
-@supports (width: 100dvw) {
-  :is(.hero, .ci-hero), [data-full-bleed] {
-    inline-size: 100dvw;
-    max-inline-size: 100dvw;
-  }
-}
-
-@media (max-width: 768px) {
-  .container { width: min(1100px, 94vw); }
-  .header .container {
-    width: min(1100px, 90vw);
-  }
-}
-
-/* === Proof of Success gallery ======================================= */
-.proof-gallery .section-title { margin-block: 1.5rem; }
-
-.proof-grid {
-  display: grid;
-  gap: clamp(0.75rem, 2vw, 1.25rem);
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
-  align-items: start;
-}
-
-.proof-card { margin: 0; }
-.proof-card figcaption {
-  font-size: 0.95rem;
-  line-height: 1.4;
-  opacity: 0.85;
-  margin-top: 0.5rem;
-}
-
-.proof-zoom {
-  display: block;
-  width: 100%;
-  padding: 0;
-  border: none;
-  background: transparent;
-  cursor: zoom-in;
-  position: relative;
-  border-radius: 0.75rem;
-  overflow: hidden;
-  box-shadow: 0 2px 10px rgb(0 0 0 / 0.08);
-}
-
-.proof-zoom img { display: block; width: 100%; height: auto; }
-
-.proof-zoom-badge {
-  position: absolute;
-  inset: auto 0.5rem 0.5rem auto;
-  background: color-mix(in oklab, var(--accent, #0ea5e9) 15%, white);
-  border: 1px solid color-mix(in oklab, var(--accent, #0ea5e9) 55%, white);
-  padding: 0.25rem 0.5rem;
-  border-radius: 0.5rem;
-  font-size: 0.75rem;
-  backdrop-filter: blur(4px);
-  pointer-events: none;
-}
-
-/* Lightbox base */
-.lb[aria-hidden="false"] { display: block; }
-.lb[hidden]             { display: none !important; }
-
-/* === Lightbox: centering, sizing, mobile behavior === */
-
-.lb {
-  position: fixed;
-  inset: 0;
-  z-index: 60;
-  display: flex !important;          /* force flex so we can center */
-  align-items: center;
-  justify-content: center;
-  padding: 1.5rem 0.75rem;           /* gutter around the card */
-  overflow-x: hidden;                /* avoid tiny horizontal scroll / cutoff */
-}
-
-.lb__backdrop {
-  position: absolute;
-  inset: 0;
-  background: rgba(15, 23, 42, 0.85);
-}
-
-/* The white card that holds the image + caption */
-.lb__stage {
-  position: relative;
-  z-index: 1;
-  box-sizing: border-box;            /* width includes padding */
-  flex: 1 1 auto;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;                    /* center horizontally */
-  padding: 1rem;
-  border-radius: 1.5rem;
-  background: #ffffff;
-  max-height: calc(100vh - 3rem);
-  display: flex;
-  flex-direction: column;
-}
-
-/* Zoomed image */
-.lb__img {
-  width: 100%;
-  max-height: calc(100vh - 7rem);
-  object-fit: contain;
-  border-radius: 1rem;
-}
-
-/* Close button */
-.lb__close {
-  position: absolute;
-  top: 6px; right: 8px;
-  font-size: 2rem; line-height: 1;
-  width: 2.25rem; height: 2.25rem;
-  border: none; background: transparent; color: #000;
-  cursor: pointer;
-}
-
-/* Caption */
-.lb__caption {
-  margin-top: 0.75rem;
-  font-size: 0.9rem;
-  color: #111827;
-  text-wrap: balance;
-}
-
-/* Optional nav arrows (currently disabled in your JS for panels) */
-.lb__nav {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  pointer-events: none;
-}
-
-.lb__prev, .lb__next {
-  pointer-events: auto;
-  border: none;
-  background: rgb(255 255 255 / 0.85);
-  width: 2.5rem; height: 2.5rem;
-  border-radius: 999px;
-  font-size: 1.25rem;
-  display: grid; place-items: center;
-  cursor: pointer;
-  margin: 0 0.5rem;
-}
-
-.proof-shell img[data-proof-img] {
-  width: 100%;
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Small-screen polish */
-@media (max-width: 768px) {
-  .lb {
-    padding: 2.25rem 0.75rem 2rem;
-  }
-
-  .lb__stage {
-    border-radius: 1.25rem;
-  }
-}
-
-/* === HERO SUBHEAD PILL ============================================= */
-/* Lives between the hero and the flagship card */
-
-.hero-subhead-pill {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 0.5rem;
-
-  padding: 0.6rem 1.1rem;
-  border-radius: 1rem;
-  background: rgba(15, 23, 42, 0.9);
-  color: #f9fafb;
-  font-size: 0.85rem;
-  line-height: 1.4;
-  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.4);
-
-  max-width: min(720px, 94vw);
-  margin: 0.85rem auto 1.75rem;      /* centered between hero + flagship */
-}
-
-.hero-subhead-kicker {
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  font-size: 0.78rem;
-  padding: 0.15rem 0.55rem;
-  border-radius: 999px;
-  background: var(--accent-600, #0284c7);
-  color: #f9fafb;
-  white-space: nowrap;
-}
-
-.hero-subhead-text {
-  font-weight: 400;
-}
-
-/* Tablet+: tuck it slightly up towards the hero */
-@media (min-width: 768px) {
-  .hero-subhead-pill {
-    margin-top: -1.75rem;            /* pulls into bottom of hero */
-    margin-bottom: 2.25rem;
-    border-radius: 999px;
-  }
-}
-
-/* Large desktop: a bit more overlap */
-@media (min-width: 1200px) {
-  .hero-subhead-pill {
-    margin-top: -2.5rem;
-  }
-}
-
-/* Make sure the subhead pill sits on top of hero + section */
-.hero-subhead-pill {
-  position: relative;   /* enable z-index */
-  z-index: 3;           /* above hero/section default stacking */
-}
-
-/* Laptop/desktop: lower the hero subhead pill so it doesn't cover the "load" task */
-@media (min-width: 1024px) {
-  .hero-subhead-pill {
-    margin-top: -0.85rem;     /* less overlap with hero */
-    margin-bottom: 2.25rem;   /* breathing room above flagship card */
-  }
-}
-
-/* === Contact form === */
-
-.contact-form {
-  --field-radius: 0.75rem;
-  --field-border-muted: color-mix(in oklab, var(--accent) 6%, #e5e7eb);
-  --field-border-strong: color-mix(in oklab, var(--accent) 25%, #d1d5db);
-  --field-bg: #ffffff;
-
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-
-  /* Mobile / base: let the card handle most of the padding */
-  padding-right: 0.5rem;
-}
-
-/* Desktop: give extra breathing room on the right so fields
-   don’t hug the card edge */
-@media (min-width: 1024px) {
-  .contact-form {
-    padding-right: 2.5rem;
-    max-width: 640px;   /* tweak to taste: 600–720px is a good range */
-    width: 100%;
-    margin-right: auto; /* align with left side of the card */
-  }
-}
-
-/* Slightly less padding on smaller screens so it doesn’t feel cramped */
-@media (max-width: 768px) {
-  .contact-form {
-    padding-right: 0.75rem;
-  }
-}
-
-.contact-form .field {
-  text-align: left;
-}
-
-.contact-form .field-label {
-  display: block;
-  margin-bottom: 0.25rem;
-  font-size: 0.95rem;
-  font-weight: 500;
-  color: var(--text-subtle, #374151);
-}
-
-.contact-form .required {
-  color: var(--accent-500, var(--accent));
-  font-weight: 600;
-}
-
-.contact-form .field-optional {
-  font-weight: 400;
-  font-size: 0.85rem;
-  color: var(--text-muted, #6b7280);
-}
-
-.contact-form input[type="text"],
-.contact-form input[type="email"],
-.contact-form select,
-.contact-form textarea {
-  width: 100%;
-  padding: 0.6rem 0.75rem;
-  border-radius: var(--field-radius);
-  border: 1px solid var(--field-border-muted);
-  background: var(--field-bg);
-  font: inherit;
-  line-height: 1.4;
-  transition:
-    border-color 120ms ease,
-    box-shadow 120ms ease,
-    background-color 120ms ease;
-}
-
-.contact-form textarea {
-  resize: vertical;
-  min-height: 6rem;
-}
-
-.contact-form input[type="text"]:focus-visible,
-.contact-form input[type="email"]:focus-visible,
-.contact-form select:focus-visible,
-.contact-form textarea:focus-visible {
-  outline: none;
-  border-color: var(--field-border-strong);
-  box-shadow: 0 0 0 1px var(--accent-200);
-}
-
-/* Make the select look a bit nicer cross-browser */
-.contact-form select {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  background-image:
-    linear-gradient(45deg, transparent 50%, var(--accent) 50%),
-    linear-gradient(135deg, var(--accent) 50%, transparent 50%);
-  background-position:
-    calc(100% - 14px) 50%,
-    calc(100% - 9px) 50%;
-  background-size: 6px 6px, 6px 6px;
-  background-repeat: no-repeat;
-  padding-right: 2rem;
-}
-
-.contact-form .form-footnote {
-  font-size: 0.85rem;
-  color: var(--text-muted, #6b7280);
-  margin-top: 0.25rem;
-}
-
-/* Contact page card: give the whole block more breathing room */
-.page--contact .card,
-.page--contact .contact-card {
-  padding-inline: clamp(1.75rem, 4vw, 2.5rem);
-}
-
-/* On smaller screens, don’t over-pad */
-@media (max-width: 640px) {
-  .page--contact .card,
-  .page--contact .contact-card {
-    padding-inline: 1.25rem;
-  }
-}
-
-/* === Proof of Success: 3-panel image === */
-
-.proof-figure {
-  margin-top: 2rem;
-  text-align: center;
-}
-
-.proof-figure__button {
-  border: 0;
-  padding: 0;
-  background: none;
-  cursor: pointer;
-  position: relative;
-  display: inline-block;
-}
-
-/* Slightly larger on desktop, but still responsive */
-.proof-figure__img {
-  width: 100%;
-  max-width: 960px; /* makes it a tad larger than the top proof image */
-  height: auto;
-  border-radius: 1.5rem;
-  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.26);
-}
-
-/* Reusable 'Click to zoom' pill (very subtle) */
-.proof-zoom-pill {
-  position: absolute;
-  right: 0.6rem;
-  bottom: 0.6rem;
-  padding: 0.22rem 0.65rem;
-  border-radius: 999px;
-  font-size: 0.72rem;
-
-  background: rgb(255 255 255 / 0.86);
-  color: #4b5563;
-  border: 1px solid rgb(148 163 184 / 0.6);
-  box-shadow: 0 4px 10px rgb(15 23 42 / 0.16);
-
-  pointer-events: none;               /* pill itself isn't clickable */
-  opacity: 0.2;                       /* very faint by default */
-  transition:
-    opacity 120ms ease,
-    transform 120ms ease;
-}
-
-/* On hover/focus, make it clear but still small */
-.proof-figure__button:hover .proof-zoom-pill,
-.proof-figure__button:focus-visible .proof-zoom-pill,
-.proof-thumb:hover .proof-zoom-pill,
-.proof-thumb:focus-visible .proof-zoom-pill {
-  opacity: 0.9;
-  transform: translateY(-1px);
-}
-
-/* On touch devices, hide the overlay pill entirely */
-@media (pointer: coarse) {
-  .proof-zoom-pill {
-    display: none;
-  }
-}
-
-/* Caption under the 3-panel image */
-.proof-figure__caption {
-  margin-top: 0.75rem;
-  margin-bottom: 0.25rem;
-  font-size: 0.9rem;
-  line-height: 1.5;
-  color: #4b5563;
-  max-width: 48rem;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-@media (max-width: 640px) {
-  .proof-figure {
-    margin-top: 1.5rem;
-  }
-
-  .proof-figure__caption {
-    font-size: 0.9rem;
-    line-height: 1.55;
-  }
-}
-
-/* Normalize eyebrow spacing inside cards */
-.card .eyebrow {
-  margin-top: 0;
-}
-
-/* --- Super-compact mobile header/nav --- */
+/* Super-compact mobile header/nav */
 @media (max-width: 640px) {
   .header {
     padding-block: 0;
@@ -1171,6 +301,732 @@ figure, .card { overflow: hidden; }
   }
 }
 
+/* Slightly larger tap targets for main nav on touch screens */
+@media (pointer: coarse) {
+  .nav .menu a { padding: .65rem .7rem; }
+}
+
+/* Cards & eyebrow */
+.card { 
+  background: var(--bg-surface); 
+  border: 1px solid var(--gray-200); 
+  border-radius: var(--radius-lg); 
+  padding: 1.25rem; 
+  box-shadow: var(--shadow-sm); 
+}
+.card:hover { box-shadow: var(--shadow-md); }
+
+.eyebrow {
+  font-size:.8rem;
+  font-weight:600;
+  color: var(--accent-700);
+  letter-spacing:.06em;
+  text-transform:uppercase;
+}
+
+/* Normalize eyebrow spacing inside cards */
+.card .eyebrow {
+  margin-top: 0;
+}
+
+/* Buttons */
+.button { 
+  display: inline-flex; 
+  align-items: center; 
+  justify-content: center; 
+  gap: .5rem; 
+  padding: .7rem 1rem; 
+  border-radius: var(--radius-md); 
+  border: 1px solid transparent; 
+  font-weight: 600; 
+  cursor: pointer; 
+  transition: transform var(--transition), background var(--transition); 
+}
+.button.primary { background: var(--primary); color: white; box-shadow: var(--shadow-md); }
+.button.primary:hover { background: var(--primary-hover); transform: translateY(-1px); }
+.button.primary:active { background: var(--primary-pressed); transform: translateY(0); }
+.button.ghost { background: white; border-color: var(--gray-200); color: var(--link); }
+.button.ghost:hover { border-color: var(--gray-300); box-shadow: var(--shadow-sm); color: var(--link-hover); }
+
+/* Generic CTA buttons (hero, etc.) */
+.ci-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 1rem;
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition),
+    background var(--transition),
+    color var(--transition);
+}
+.ci-btn:focus-visible {
+  outline:3px solid var(--ring);
+  outline-offset:2px;
+}
+.ci-btn--primary {
+  background: var(--primary);
+  color:#fff;
+  box-shadow: var(--shadow-md);
+}
+.ci-btn--primary:hover {
+  background: var(--primary-hover);
+  transform: translateY(-1px);
+}
+.ci-btn--primary:active {
+  background: var(--primary-pressed);
+  transform: translateY(0);
+}
+.ci-btn--ghost {
+  background:#fff;
+  border-color: var(--gray-200);
+  color: var(--link);
+}
+.ci-btn--ghost:hover {
+  border-color: var(--gray-300);
+  box-shadow: var(--shadow-sm);
+  color: var(--link-hover);
+}
+
+/* Inputs */
+.input { 
+  width: 100%; 
+  padding: .7rem .9rem; 
+  border-radius: 12px; 
+  border: 1px solid var(--gray-300); 
+  background: white; 
+  color: var(--text); 
+}
+.input:focus { 
+  border-color: var(--accent-400); 
+  box-shadow: 0 0 0 4px color-mix(in oklab, var(--accent-400) 25%, transparent); 
+  outline: none; 
+}
+
+/* Footer */
+.footer { 
+  margin-top: 3rem; 
+  background: linear-gradient(0deg, color-mix(in oklab, var(--accent) 6%, white), transparent 70%); 
+  border-top: 1px solid var(--gray-200); 
+}
+.footer .inner { padding: 1.5rem 0; color: var(--gray-700); text-align: center; }
+
+/* Footer link color consistency */
+.footer a { color: var(--link); }
+.footer a:hover { color: var(--link-hover); text-decoration: underline; }
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.25rem;
+  margin-top: 0.5rem;
+}
+
+/* Card content spacing helpers */
+.card h3 + ul {
+  margin-top: 0.75rem;
+  margin-bottom: 1.75rem;
+}
+.card p.muted {
+  max-width: 65ch;
+  margin-inline: auto;
+}
+
+/* ==================================================================== */
+/* 4. HERO (VIDEO) + SUBPAGE HERO + SUBHEAD PILL + OVERFLOW CLAMP       */
+/* ==================================================================== */
+
+/* Support both new (.hero) and previous (.ci-hero) class names */
+:is(.hero, .ci-hero){
+  position: relative;
+  min-height: clamp(420px, 72svh, 880px);
+  background: linear-gradient(180deg, color-mix(in oklab, var(--accent) 6%, white), #fff 60%);
+  overflow: hidden;
+}
+@supports (height: 72dvh) {
+  :is(.hero, .ci-hero){ min-height: 72dvh; }
+}
+
+/* Media fills the section */
+:is(.hero__media, .ci-hero__media){ position:absolute; inset:0; overflow:hidden; }
+:is(.hero__video, .ci-hero__video){
+  width:100%;
+  height:100%;
+  object-fit: cover;
+  display:block;
+  /* Light dim to reduce visual noise behind the text */
+  filter: brightness(0.78);
+}
+
+/* Content sits above the video */
+:is(.hero__content, .ci-hero__content){
+  position: relative; z-index: 1;
+  width: min(1100px, 92vw);
+  margin: 0 auto;
+  padding: clamp(56px, 10vh, 110px) 16px 16px;
+  text-align: center;
+  color: var(--text);
+}
+:is(.hero__content, .ci-hero__content) h1{
+  margin: 0 0 .5rem;
+  font-size: clamp(2rem, 1.2rem + 3vw, 3rem);
+  line-height: 1.12;
+}
+:is(.hero__content, .ci-hero__content) p{
+  margin: 0 0 1.25rem;
+  color: var(--text-muted);
+  font-size: clamp(1rem, .6rem + 1vw, 1.125rem);
+}
+
+/* Hero text widths */
+.hero__content .title {
+  max-width: 22ch;
+  margin-inline: auto;
+}
+
+.hero__content .subtitle {
+  max-width: 34rem;
+  margin-inline: auto;
+  margin-bottom: 0.75rem;
+  font-size: clamp(0.98rem, 0.7rem + 0.6vw, 1.05rem);
+  color: rgba(249, 250, 251, 0.92);
+}
+
+/* CTA buttons (namespaced) + footnote */
+.hero__cta,
+.ci-hero__cta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 36rem;
+  margin-inline: auto;
+}
+
+/* Footnote: its own full-width row inside the CTA flex container */
+.hero-footnote {
+  flex: 0 0 100%;
+  width: 100%;
+  max-width: 36rem;
+  margin: 0.75rem auto 0;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: rgba(249, 250, 251, 0.78);
+  text-align: center;
+  text-wrap: balance;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce){
+  :is(.hero__video, .ci-hero__video){ display:none; }
+  :is(.hero, .ci-hero){ background: url('/assets/video/hero-fallback.jpg') center/cover no-repeat, var(--bg-page); }
+}
+
+/* --- Mobile hero polish ------------------------------------------------ */
+@media (max-width: 700px){
+  :is(.hero, .ci-hero){ min-height: clamp(520px, 84svh, 920px); }
+  :is(.hero__video, .ci-hero__video){ object-position: 47.5% 100%; }
+  :is(.hero__content, .ci-hero__content){
+    padding-top: calc(var(--safe-top) + clamp(48px, 9vh, 96px));
+  }
+}
+@media (max-width: 430px){
+  :is(.hero__content, .ci-hero__content){
+    padding: calc(var(--safe-top) + clamp(40px, 9vh, 72px)) 14px 14px;
+  }
+  :is(.hero__content, .ci-hero__content) h1{
+    max-width: 16ch;
+    margin-inline: auto;
+    font-size: clamp(1.6rem, 5.2vw + .6rem, 2.1rem);
+    line-height: 1.12;
+    text-wrap: balance;
+  }
+  :is(.hero__content, .ci-hero__content) p{
+    font-size: .95rem;
+    margin-bottom: .9rem;
+    text-shadow:
+      0 0 2px rgba(0,0,0,.7),
+      0 0 6px rgba(0,0,0,.35);
+  }
+
+  .hero__cta,
+  .ci-hero__cta{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .ci-btn{
+    width: max(220px, 72%);
+    max-width: 320px;
+    margin-inline: auto;
+    padding: 0.6rem 0.9rem;
+  }
+}
+
+/* Laptop + desktop: subtly zoom video */
+@media (min-width: 768px) {
+  :is(.hero__video, .ci-hero__video){
+    transform: scale(1.07);
+    transform-origin: center center;
+    object-position: 50% 82%;
+  }
+}
+
+/* HERO contrast + overlay */
+
+/* Light text over video */
+:is(.hero, .ci-hero){
+  color: #f9fafb;
+}
+
+/* Dark overlay so text doesn't blend into the DAG video */
+:is(.hero, .ci-hero)::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(15, 23, 42, 0.45),
+      rgba(15, 23, 42, 0.90)
+    );
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Ensure stacking order: video → overlay → content */
+:is(.hero__media, .ci-hero__media){ z-index: 0; }
+:is(.hero__content, .ci-hero__content){
+  position: relative;
+  z-index: 2;
+}
+
+/* Stronger text styling over video */
+:is(.hero__content, .ci-hero__content) h1,
+:is(.hero__content, .ci-hero__content) p{
+  color: #f9fafb;
+  text-shadow:
+    0 0 8px rgba(15, 23, 42, 0.85),
+    0 0 18px rgba(15, 23, 42, 0.9);
+}
+
+/* Desktop hero polish */
+@media (min-width: 1024px) {
+  :is(.hero, .ci-hero)::before{
+    background:
+      radial-gradient(
+        circle at center,
+        rgba(15, 23, 42, 0.35),
+        rgba(15, 23, 42, 0.75)
+      );
+  }
+
+  :is(.hero__content, .ci-hero__content) h1{
+    text-shadow:
+      0 0 6px rgba(15, 23, 42, 0.8),
+      0 0 14px rgba(15, 23, 42, 0.85);
+  }
+
+  :is(.hero__content, .ci-hero__content) p{
+    text-shadow:
+      0 0 4px rgba(15, 23, 42, 0.7),
+      0 0 10px rgba(15, 23, 42, 0.75);
+  }
+
+  .ci-btn{
+    padding: 0.65rem 1.3rem;
+    font-size: 0.98rem;
+  }
+
+  :is(.hero__content, .ci-hero__content){
+    padding-top: clamp(56px, 7vh, 104px);
+    padding-bottom: clamp(48px, 11vh, 96px);
+  }
+}
+
+/* Large desktop (27"+): drop the hero text slightly for better balance */
+@media (min-width: 1440px) {
+  :is(.hero__content, .ci-hero__content){
+    padding-top: clamp(100px, 12.5vh, 144px);
+    padding-bottom: clamp(56px, 11vh, 120px);
+  }
+}
+
+/* Compact subpage heroes (Privacy/Terms/Security/Contact) */
+.hero:has(.hero-simple) {
+  position: relative;
+  min-height: clamp(160px, 22svh, 320px);
+  background: linear-gradient(
+    180deg,
+    color-mix(in oklab, var(--accent) 4%, white),
+    #fff 40%
+  );
+  color: var(--text);
+}
+
+/* Kill the dark video overlay on simple heroes */
+.hero:has(.hero-simple)::before {
+  content: none;
+}
+
+/* Inner layout + text reset */
+.hero:has(.hero-simple) .hero-simple .stack {
+  padding-block: clamp(16px, 3vh, 24px);
+}
+.hero:has(.hero-simple) .title,
+.hero:has(.hero-simple) .subtitle {
+  color: var(--text);
+  text-shadow: none;
+}
+.hero:has(.hero-simple) .title {
+  margin-bottom: 0.4rem;
+}
+.hero:has(.hero-simple) .subtitle {
+  max-width: 60ch;
+}
+
+/* HERO SUBHEAD PILL (between hero and flagship card) */
+.hero-subhead-pill {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+
+  padding: 0.6rem 1.1rem;
+  border-radius: 1rem;
+  background: rgba(15, 23, 42, 0.9);
+  color: #f9fafb;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.4);
+
+  max-width: min(720px, 94vw);
+  margin: 0.85rem auto 1.75rem;
+  position: relative;
+  z-index: 3;
+}
+
+.hero-subhead-kicker {
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.78rem;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  background: var(--accent-600, #0284c7);
+  color: #f9fafb;
+  white-space: nowrap;
+}
+
+.hero-subhead-text {
+  font-weight: 400;
+}
+
+/* Tablet+: tuck it slightly up towards the hero */
+@media (min-width: 768px) {
+  .hero-subhead-pill {
+    margin-top: -1.75rem;
+    margin-bottom: 2.25rem;
+    border-radius: 999px;
+  }
+}
+
+/* Large desktop: a bit more overlap */
+@media (min-width: 1200px) {
+  .hero-subhead-pill {
+    margin-top: -2.5rem;
+  }
+}
+
+/* Laptop/desktop: lower the hero subhead pill so it doesn't cover the "load" task */
+@media (min-width: 1024px) {
+  .hero-subhead-pill {
+    margin-top: -0.85rem;
+    margin-bottom: 2.25rem;
+  }
+}
+
+/* MOBILE HORIZONTAL OVERFLOW CLAMP
+   Fixes the white gutter / grid peeking in on iOS/Chrome incognito. */
+:is(.hero, .ci-hero), [data-full-bleed] {
+  position: relative;
+  overflow-x: clip;
+}
+
+/* Let the subhead pill overlap upward without being clipped */
+:is(.hero, .ci-hero){
+  overflow-y: visible;
+}
+
+/* If decorative backgrounds use pseudo-elements, keep them inside */
+:is(.hero, .ci-hero)::before,
+:is(.hero, .ci-hero)::after {
+  left: 0 !important;
+  right: 0 !important;
+  width: auto !important;
+  max-width: 100% !important;
+  transform: none !important;
+}
+
+/* Figures/cards shouldn’t let children bleed past rounded corners */
+figure, .card { overflow: hidden; }
+
+/* Use dynamic viewport width when supported */
+@supports (width: 100dvw) {
+  :is(.hero, .ci-hero), [data-full-bleed] {
+    inline-size: 100dvw;
+    max-inline-size: 100dvw;
+  }
+}
+
+/* Mobile container width tweaks */
+@media (max-width: 768px) {
+  .container { width: min(1100px, 94vw); }
+  .header .container {
+    width: min(1100px, 90vw);
+  }
+}
+
+/* Data saver: fall back to hero image */
+@media (prefers-reduced-data: reduce) {
+  .hero__video, .ci-hero__video { display: none; }
+  .hero, .ci-hero {
+    background: url('/assets/video/hero-fallback.jpg') center/cover no-repeat, var(--bg-page);
+  }
+}
+
+/* ==================================================================== */
+/* 5. DIAGRAMS / PROOF GALLERY / LIGHTBOX / PROOF SHELL                 */
+/* ==================================================================== */
+
+/* Diagrams */
+.proof-diagram.card {
+  border-radius: 1rem;
+  background: var(--bg-surface);
+  box-shadow: 0 2px 12px rgba(0,0,0,.06);
+  padding: clamp(16px, 3vw, 28px);
+  margin: clamp(16px, 3vw, 28px) auto;
+}
+
+.diagram-figure {
+  margin: 0;
+  position: relative;
+  text-align: center;
+  overflow: visible;
+}
+
+/* Extra breathing room between two diagram figures */
+.diagram-figure + .diagram-figure {
+  margin-top: clamp(2rem, 4vw, 2.75rem);
+}
+
+@media (min-width: 1024px) {
+  .diagram-figure .proof-zoom-pill {
+    bottom: -1rem;
+  }
+}
+
+.diagram {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-inline: auto;
+  cursor: zoom-in;
+}
+
+.diagram-caption {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  text-align: center;
+  max-width: 60ch;
+  margin-inline: auto;
+}
+
+/* Proof of Success gallery */
+.proof-gallery .section-title { margin-block: 1.5rem; }
+
+.proof-grid {
+  display: grid;
+  gap: clamp(0.75rem, 2vw, 1.25rem);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  align-items: start;
+}
+
+.proof-card { margin: 0; }
+.proof-card figcaption {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  opacity: 0.85;
+  margin-top: 0.5rem;
+}
+
+.proof-zoom {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: zoom-in;
+  position: relative;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgb(0 0 0 / 0.08);
+}
+
+.proof-zoom img { display: block; width: 100%; height: auto; }
+
+/* Reusable 'Click to zoom' pill */
+.proof-zoom-pill {
+  position: absolute;
+  right: 0.6rem;
+  bottom: 0.6rem;
+  padding: 0.22rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+
+  background: rgb(255 255 255 / 0.86);
+  color: #4b5563;
+  border: 1px solid rgb(148 163 184 / 0.6);
+  box-shadow: 0 4px 10px rgb(15 23 42 / 0.16);
+
+  pointer-events: none;
+  opacity: 0.2;
+  transition:
+    opacity 120ms ease,
+    transform 120ms ease;
+}
+
+/* On hover/focus, make it clear but still small */
+.proof-figure__button:hover .proof-zoom-pill,
+.proof-figure__button:focus-visible .proof-zoom-pill,
+.proof-thumb:hover .proof-zoom-pill,
+.proof-thumb:focus-visible .proof-zoom-pill {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* On touch devices, hide the overlay pill entirely */
+@media (pointer: coarse) {
+  .proof-zoom-pill {
+    display: none;
+  }
+}
+
+/* Proof of Success: 3-panel image */
+.proof-figure {
+  margin-top: 2rem;
+  text-align: center;
+}
+.proof-figure__button {
+  border: 0;
+  padding: 0;
+  background: none;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+}
+
+/* Slightly larger on desktop, but still responsive */
+.proof-figure__img {
+  width: 100%;
+  max-width: 960px;
+  height: auto;
+  border-radius: 1.5rem;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.26);
+}
+
+/* Caption under the 3-panel image */
+.proof-figure__caption {
+  margin-top: 0.75rem;
+  margin-bottom: 0.25rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #4b5563;
+  max-width: 48rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.proof-figure__caption ol {
+  margin: 0.35rem 0 0;
+  padding-left: 1.25rem;
+}
+
+@media (max-width: 640px) {
+  .proof-figure {
+    margin-top: 1.5rem;
+  }
+
+  .proof-figure__caption {
+    font-size: 0.9rem;
+    line-height: 1.55;
+  }
+}
+
+/* Proof shell container */
+.proof-shell {
+  position: relative;
+  max-width: 720px;
+  margin-inline: auto;
+  margin-top: 0.75rem;
+}
+
+/* Main proof image (deduped block) */
+.proof-shell img[data-proof-img] {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 1.5rem;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.26);
+}
+
+/* Carousel nav buttons (class version for re-use) */
+.proof-shell__nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 999px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  background: rgba(15, 23, 42, 0.9);
+  color: #f9fafb;
+  cursor: pointer;
+}
+.proof-shell__nav-btn--prev { left: 0.4rem; }
+.proof-shell__nav-btn--next { right: 0.4rem; }
+
+/* Thumbnail button wrapper */
+.proof-thumb {
+  border: 0;
+  padding: 0;
+  background: none;
+  display: block;
+  position: relative;
+}
+
+/* Caption under the main proof image */
+.proof-caption {
+  margin-top: 0.9rem;
+  font-size: 0.95rem;
+  color: #334155;
+}
+
 /* Anything that opens the lightbox should feel zoomable on desktop */
 @media (pointer: fine) {
   .proof-thumb,
@@ -1178,19 +1034,116 @@ figure, .card { overflow: hidden; }
   .diagram-figure .proof-figure__button {
     cursor: zoom-in;
   }
+}
 
-  .diagram {
-    cursor: zoom-in;
+/* Lightbox base */
+.lb[aria-hidden="false"] { display: block; }
+.lb[hidden]             { display: none !important; }
+
+/* Lightbox: centering, sizing, mobile behavior */
+
+.lb {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 0.75rem;
+  overflow-x: hidden;
+}
+
+.lb__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.85);
+}
+
+/* The white card that holds the image + caption */
+.lb__stage {
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+  flex: 1 1 auto;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+  border-radius: 1.5rem;
+  background: #ffffff;
+  max-height: calc(100vh - 3rem);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Zoomed image */
+.lb__img {
+  width: 100%;
+  max-height: calc(100vh - 7rem);
+  object-fit: contain;
+  border-radius: 1rem;
+}
+
+/* Close button */
+.lb__close {
+  position: absolute;
+  top: 6px; right: 8px;
+  font-size: 2rem; line-height: 1;
+  width: 2.25rem; height: 2.25rem;
+  border: none; background: transparent; color: #000;
+  cursor: pointer;
+}
+
+/* Caption */
+.lb__caption {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  color: #111827;
+  text-wrap: balance;
+}
+
+/* Optional nav arrows (currently disabled in JS for panels) */
+.lb__nav {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  pointer-events: none;
+}
+.lb__prev, .lb__next {
+  pointer-events: auto;
+  border: none;
+  background: rgb(255 255 255 / 0.85);
+  width: 2.5rem; height: 2.5rem;
+  border-radius: 999px;
+  font-size: 1.25rem;
+  display: grid; place-items: center;
+  cursor: pointer;
+  margin: 0 0.5rem;
+}
+
+/* Small-screen polish */
+@media (max-width: 768px) {
+  .lb {
+    padding: 2.25rem 0.75rem 2rem;
+  }
+
+  .lb__stage {
+    border-radius: 1.25rem;
   }
 }
 
-/* === Inline chart on Projects page =================================== */
+/* ==================================================================== */
+/* 6. PROJECTS PAGE: CHART / OPTIONS TABLE / TICKER SNAPSHOT / INSIGHTS */
+/* ==================================================================== */
 
+/* Inline chart (Export 1) */
 .chart-shell {
   width: 100%;
   max-width: 960px;
   margin: 1rem auto 0;
-  min-height: 260px;        /* gives Plotly space before it renders */
+  min-height: 260px;
 }
 
 /* Ensure Plotly figure fills the shell */
@@ -1200,14 +1153,13 @@ figure, .card { overflow: hidden; }
   height: 100% !important;
 }
 
-/* Loading / empty states used by JS */
+/* Loading / empty states */
 .chart-loading,
 .chart-empty {
   margin-top: 0.75rem;
   font-size: 0.85rem;
   color: var(--text-muted);
 }
-
 .chart-loading {
   font-style: italic;
 }
@@ -1249,7 +1201,6 @@ figure, .card { overflow: hidden; }
   font-size: 0.9rem;
   color: var(--text-muted);
 }
-
 .ticker-label select {
   font: inherit;
   padding: 0.25rem 0.5rem;
@@ -1258,18 +1209,18 @@ figure, .card { overflow: hidden; }
   background-color: #fff;
 }
 
-/* Mobile tweaks for Export 1 (chart + controls) */
+/* Mobile tweaks for Export 1 */
 @media (max-width: 640px) {
   .chart-shell {
     min-height: 220px;
     margin-top: 0.75rem;
-    margin-inline: 0; /* keep chart fully inside the card */
+    margin-inline: 0;
   }
 
   .chart-window-badge {
     display: inline-block;
     margin-right: 0;
-    margin-bottom: 0.4rem;   /* stacks above the sentence on narrow screens */
+    margin-bottom: 0.4rem;
   }
 
   .chart-subtitle {
@@ -1284,7 +1235,6 @@ figure, .card { overflow: hidden; }
     margin-top: 0.6rem;
   }
 
-  /* Stack "Selected ticker" label + dropdown instead of cramming inline */
   .ticker-label {
     display: flex;
     flex-direction: column;
@@ -1292,55 +1242,47 @@ figure, .card { overflow: hidden; }
     gap: 0.25rem;
     font-size: 0.9rem;
   }
-
   .ticker-label select {
     padding: 0.25rem 0.75rem;
   }
 }
 
-/* === Options top-contracts table ===================================== */
-
+/* Options top-contracts table (Export 2) */
 .options-table {
   width: 100%;
   border-collapse: collapse;
   font-size: 0.9rem;
 }
-
 .options-table thead {
   border-bottom: 1px solid var(--border-subtle, #e5e7eb);
 }
-
 .options-table th,
 .options-table td {
   padding: 0.35rem 0.5rem;
   text-align: right;
   white-space: nowrap;
 }
-
 .options-table th:first-child,
 .options-table td:first-child {
   text-align: left;
 }
-
 .options-table th:nth-child(2),
 .options-table td:nth-child(2) {
   text-align: left;
 }
-
 .options-table tbody tr:nth-child(even) {
   background: var(--bg-subtle, #f9fafb);
 }
 
-/* Mobile tweaks for Export 2 (top-contracts table) */
+/* Mobile tweaks for Export 2 */
 @media (max-width: 640px) {
   .options-table {
-    display: block;                 /* allow horizontal scroll */
+    display: block;
     width: 100%;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     font-size: 0.8rem;
   }
-
   .options-table th,
   .options-table td {
     padding: 0.3rem 0.4rem;
@@ -1351,7 +1293,6 @@ figure, .card { overflow: hidden; }
   cursor: pointer;
   user-select: none;
 }
-
 .options-table th[aria-sort="ascending"],
 .options-table th[aria-sort="descending"] {
   text-decoration: underline;
@@ -1366,11 +1307,9 @@ figure, .card { overflow: hidden; }
   margin-bottom: 0.5rem;
   font-size: 0.85rem;
 }
-
 .options-table-controls label {
   color: var(--text-muted);
 }
-
 .options-table-controls select {
   font-size: 0.85rem;
   padding: 0.15rem 0.4rem;
@@ -1387,7 +1326,6 @@ figure, .card { overflow: hidden; }
 .options-table-pagination-root {
   margin-top: 0.5rem;
 }
-
 .options-table-pagination {
   display: flex;
   justify-content: space-between;
@@ -1396,12 +1334,10 @@ figure, .card { overflow: hidden; }
   font-size: 0.8rem;
   color: var(--text-muted);
 }
-
 .options-table-pagination__controls {
   display: inline-flex;
   gap: 0.5rem;
 }
-
 .options-table-pagination__btn {
   font-size: 0.8rem;
   padding: 0.15rem 0.6rem;
@@ -1410,12 +1346,10 @@ figure, .card { overflow: hidden; }
   background: #fff;
   cursor: pointer;
 }
-
 .options-table-pagination__btn[disabled] {
   opacity: 0.45;
   cursor: default;
 }
-
 @media (max-width: 640px) {
   .options-table-pagination {
     flex-direction: column;
@@ -1423,16 +1357,13 @@ figure, .card { overflow: hidden; }
   }
 }
 
-/* === Ticker daily features snapshot (Projects page) =================== */
-/* Export 3: single daily snapshot card rendered inside .ticker-features-shell */
-
+/* Ticker daily features snapshot (Export 3) */
 .ticker-features-shell {
   width: 100%;
   max-width: 560px;
   margin-top: 1rem;
   margin-inline: auto;
 }
-
 .ticker-features-latest {
   background: var(--bg-subtle, #f9fafb);
   border-radius: 1rem;
@@ -1441,12 +1372,10 @@ figure, .card { overflow: hidden; }
   box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06);
   border: 1px solid var(--border-subtle, #e5e7eb);
 }
-
 .ticker-features-heading {
   margin: 0 0 0.15rem;
   font-size: 0.95rem;
 }
-
 .ticker-features-subtitle {
   margin: 0 0 0.75rem;
   font-size: 0.8rem;
@@ -1461,20 +1390,17 @@ figure, .card { overflow: hidden; }
   column-gap: 1.25rem;
   margin: 0;
 }
-
 @media (min-width: 540px) {
   .ticker-features-summary-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
-
 .ticker-features-summary-grid dt {
   font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   color: var(--text-muted);
 }
-
 .ticker-features-summary-grid dd {
   margin: 0 0 0.4rem;
   font-size: 0.88rem;
@@ -1483,79 +1409,59 @@ figure, .card { overflow: hidden; }
   font-variant-numeric: tabular-nums;
 }
 
-/* Mobile tweaks for Export 3 (snapshot card) */
+/* Mobile tweaks for Export 3 */
 @media (max-width: 640px) {
   .ticker-features-shell {
     margin-top: 0.85rem;
-    margin-inline: 0;         /* aligns nicely with page edges on mobile */
+    margin-inline: 0;
   }
-
   .ticker-features-latest {
     padding: 0.9rem 1rem;
     border-radius: 0.9rem;
     font-size: 0.84rem;
   }
-
   .ticker-features-heading {
     font-size: 0.93rem;
     margin-bottom: 0.2rem;
   }
-
   .ticker-features-subtitle {
     font-size: 0.78rem;
     margin-bottom: 0.7rem;
   }
-
   .ticker-features-summary-grid {
     row-gap: 0.45rem;
   }
-
   .ticker-features-summary-grid dt {
     font-size: 0.68rem;
   }
-
   .ticker-features-summary-grid dd {
     font-size: 0.86rem;
     margin-bottom: 0.35rem;
   }
 }
 
-/* Better spacing around the At a glance list */
-.card h3 + ul {
-  margin-top: 0.75rem;
-  margin-bottom: 1.75rem;
-}
-
-/* Keep long muted paragraphs comfortably readable inside cards */
-.card p.muted {
-  max-width: 65ch;
-  margin-inline: auto;
-}
-
-/* === Insights Section (Projects page) =================== */
+/* Insights Section */
 .insights-panel {
   background: var(--surface-subtle);
   border-radius: 0.75rem;
   padding: 1.75rem 2rem;
   border: 1px solid var(--border-subtle);
   max-width: 70ch;
-  margin: 2.5rem auto 0;      /* a bit more breathing room from the table above */
-  line-height: 1.6;           /* looser leading for easier reading */
+  margin: 2.5rem auto 0;
+  line-height: 1.6;
 }
-
 .insights-panel h3 {
   margin-top: 0;
   margin-bottom: 1rem;
 }
-
 .insights-panel > p {
   margin-bottom: 1.4rem;
 }
 
-/* Section labels inside insights (e.g. “Trending up…”). */
+/* Section labels inside insights */
 .insights-panel h4 {
   font-size: 0.78rem;
-  font-weight: 500; /* slightly softer than full bold */
+  font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.09em;
   color: var(--text-subtle-strong, #4b5563);
@@ -1567,7 +1473,7 @@ figure, .card { overflow: hidden; }
   background: var(--surface-strong, #f9fafb);
   border: 1px solid var(--border-subtle);
   margin-top: 1.4rem;
-  margin-bottom: 0.6rem; /* a bit more air before bullets */
+  margin-bottom: 0.6rem;
 }
 
 /* Bullet lists & spacing */
@@ -1575,12 +1481,9 @@ figure, .card { overflow: hidden; }
   margin: 0 0 1.15rem;
   padding-left: 1.35rem;
 }
-
 .insights-panel li + li {
   margin-top: 0.45rem;
 }
-
-/* Keep bold “lead-in” sentences readable */
 .insights-panel li strong {
   font-weight: 600;
 }
@@ -1591,15 +1494,12 @@ figure, .card { overflow: hidden; }
     margin-top: 2rem;
     max-width: 100%;
   }
-
   .insights-panel h3 {
     margin-bottom: 0.85rem;
   }
-
   .insights-panel > p {
     margin-bottom: 1rem;
   }
-
   .insights-panel h4 {
     font-size: 0.75rem;
     padding: 0.14rem 0.5rem;
@@ -1607,95 +1507,119 @@ figure, .card { overflow: hidden; }
   }
 }
 
-/* Stack spacing helpers */
-.stack--hero {
-  --stack-gap: 1.1rem;
-}
+/* ==================================================================== */
+/* 7. CONTACT FORM & PAGE-SPECIFIC CARD SPACING                         */
+/* ==================================================================== */
 
-.stack--section {
-  --stack-gap: 1.25rem;
-}
+.contact-form {
+  --field-radius: 0.75rem;
+  --field-border-muted: color-mix(in oklab, var(--accent) 6%, #e5e7eb);
+  --field-border-strong: color-mix(in oklab, var(--accent) 25%, #d1d5db);
+  --field-bg: #ffffff;
 
-.stack--tight {
-  --stack-gap: 0.75rem;
-}
-
-/* Common narrow card layout */
-.card--narrow {
-  max-width: var(--maxw-readable);
-  margin-inline: auto;
-}
-
-.footer-links {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.25rem;
-  margin-top: 0.5rem;
+  flex-direction: column;
+  box-sizing: border-box;
+
+  /* Mobile / base: let the card handle most of the padding */
+  padding-right: 0.5rem;
 }
 
-/* Proof shell container */
-.proof-shell {
-  position: relative;
-  max-width: 720px;
-  margin-inline: auto;
-  margin-top: 0.75rem;
+/* Desktop: extra breathing room */
+@media (min-width: 1024px) {
+  .contact-form {
+    padding-right: 2.5rem;
+    max-width: 640px;
+    width: 100%;
+    margin-right: auto;
+  }
 }
 
-/* Main proof image */
-.proof-shell img[data-proof-img] {
-  width: 100%;
-  max-width: 100%;
-  height: auto;
+/* Slightly less padding on smaller screens */
+@media (max-width: 768px) {
+  .contact-form {
+    padding-right: 0.75rem;
+  }
+}
+
+.contact-form .field {
+  text-align: left;
+}
+.contact-form .field-label {
   display: block;
-  border-radius: 1.5rem;
-  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.26);
-}
-
-/* Carousel nav buttons */
-.proof-shell__nav-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 2;
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 999px;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.4rem;
-  background: rgba(15, 23, 42, 0.9);
-  color: #f9fafb;
-  cursor: pointer;
-}
-
-.proof-shell__nav-btn--prev {
-  left: 0.4rem;
-}
-
-.proof-shell__nav-btn--next {
-  right: 0.4rem;
-}
-
-/* Thumbnail button wrapper */
-.proof-thumb {
-  border: 0;
-  padding: 0;
-  background: none;
-  display: block;
-  position: relative;
-}
-
-/* Caption under the main proof image */
-.proof-caption {
-  margin-top: 0.9rem;
+  margin-bottom: 0.25rem;
   font-size: 0.95rem;
-  color: #334155;
+  font-weight: 500;
+  color: var(--text-subtle, #374151);
+}
+.contact-form .required {
+  color: var(--accent-500, var(--accent));
+  font-weight: 600;
+}
+.contact-form .field-optional {
+  font-weight: 400;
+  font-size: 0.85rem;
+  color: var(--text-muted, #6b7280);
 }
 
-.proof-figure__caption ol {
-  margin: 0.35rem 0 0;
-  padding-left: 1.25rem;
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  border-radius: var(--field-radius);
+  border: 1px solid var(--field-border-muted);
+  background: var(--field-bg);
+  font: inherit;
+  line-height: 1.4;
+  transition:
+    border-color 120ms ease,
+    box-shadow 120ms ease,
+    background-color 120ms ease;
+}
+.contact-form textarea {
+  resize: vertical;
+  min-height: 6rem;
+}
+.contact-form input[type="text"]:focus-visible,
+.contact-form input[type="email"]:focus-visible,
+.contact-form select:focus-visible,
+.contact-form textarea:focus-visible {
+  outline: none;
+  border-color: var(--field-border-strong);
+  box-shadow: 0 0 0 1px var(--accent-200);
+}
+
+/* Make the select look a bit nicer cross-browser */
+.contact-form select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--accent) 50%),
+    linear-gradient(135deg, var(--accent) 50%, transparent 50%);
+  background-position:
+    calc(100% - 14px) 50%,
+    calc(100% - 9px) 50%;
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+  padding-right: 2rem;
+}
+.contact-form .form-footnote {
+  font-size: 0.85rem;
+  color: var(--text-muted, #6b7280);
+  margin-top: 0.25rem;
+}
+
+/* Contact page card spacing */
+.page--contact .card,
+.page--contact .contact-card {
+  padding-inline: clamp(1.75rem, 4vw, 2.5rem);
+}
+@media (max-width: 640px) {
+  .page--contact .card,
+  .page--contact .contact-card {
+    padding-inline: 1.25rem;
+  }
 }
