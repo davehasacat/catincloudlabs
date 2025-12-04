@@ -1201,37 +1201,11 @@ figure, .card { overflow: hidden; }
   color: var(--text-muted);
 }
 
-/* Slightly different tone for loading if you want */
 .chart-loading {
   font-style: italic;
 }
 
 /* Small badge for the date window above Export 1 */
-.chart-window-badge {
-  display: inline-block;
-  margin-bottom: 0.25rem;
-  padding: 0.1rem 0.45rem;
-  border-radius: 999px;
-  background: var(--bg-subtle, #f3f4f6);
-  font-size: 0.78rem;
-  font-weight: 500;
-  color: var(--text-muted);
-}
-
-.chart-subtitle {
-  margin: 0 0 0.75rem;
-  font-size: 0.95rem;
-  color: var(--text-muted);
-  max-width: 50ch;
-}
-
-.chart-footnote {
-  margin-top: 0.5rem;
-  font-size: 0.82rem;
-  color: var(--text-muted);
-}
-
-/* Window badge above the chart (Export 1) */
 .chart-window-badge {
   display: inline-flex;
   align-items: center;
@@ -1247,23 +1221,17 @@ figure, .card { overflow: hidden; }
   white-space: nowrap;
 }
 
-@media (max-width: 640px) {
-  .chart-window-badge {
-    display: inline-block;
-    margin-right: 0;
-    margin-bottom: 0.4rem; /* stacks above the sentence on narrow screens */
-  }
+.chart-subtitle {
+  margin: 0 0 0.75rem;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  max-width: 50ch;
 }
 
-/* Mobile tweaks */
-@media (max-width: 640px) {
-  .chart-shell {
-    min-height: 220px;
-  }
-
-  .chart-footnote {
-    font-size: 0.78rem;
-  }
+.chart-footnote {
+  margin-top: 0.5rem;
+  font-size: 0.82rem;
+  color: var(--text-muted);
 }
 
 /* Ticker selector on Projects chart */
@@ -1283,10 +1251,43 @@ figure, .card { overflow: hidden; }
   background-color: #fff;
 }
 
+/* Mobile tweaks for Export 1 (chart + controls) */
 @media (max-width: 640px) {
+  .chart-shell {
+    min-height: 220px;
+    margin-top: 0.75rem;
+    margin-inline: 0; /* keep chart fully inside the card */
+  }
+
+  .chart-window-badge {
+    display: inline-block;
+    margin-right: 0;
+    margin-bottom: 0.4rem;   /* stacks above the sentence on narrow screens */
+  }
+
+  .chart-subtitle {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 0.6rem;
+  }
+
+  .chart-footnote {
+    font-size: 0.78rem;
+    line-height: 1.5;
+    margin-top: 0.6rem;
+  }
+
+  /* Stack "Selected ticker" label + dropdown instead of cramming inline */
   .ticker-label {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+    font-size: 0.9rem;
+  }
+
+  .ticker-label select {
+    padding: 0.25rem 0.75rem;
   }
 }
 
@@ -1323,9 +1324,13 @@ figure, .card { overflow: hidden; }
   background: var(--bg-subtle, #f9fafb);
 }
 
-/* Mobile tweaks */
+/* Mobile tweaks for Export 2 (top-contracts table) */
 @media (max-width: 640px) {
   .options-table {
+    display: block;                 /* allow horizontal scroll */
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
     font-size: 0.8rem;
   }
 
@@ -1418,7 +1423,7 @@ figure, .card { overflow: hidden; }
   width: 100%;
   max-width: 560px;
   margin-top: 1rem;
-  margin-inline: auto; 
+  margin-inline: auto;
 }
 
 .ticker-features-latest {
@@ -1469,4 +1474,41 @@ figure, .card { overflow: hidden; }
   font-weight: 500;
   text-align: right;
   font-variant-numeric: tabular-nums;
+}
+
+/* Mobile tweaks for Export 3 (snapshot card) */
+@media (max-width: 640px) {
+  .ticker-features-shell {
+    margin-top: 0.85rem;
+    margin-inline: 0;         /* aligns nicely with page edges on mobile */
+  }
+
+  .ticker-features-latest {
+    padding: 0.9rem 1rem;
+    border-radius: 0.9rem;
+    font-size: 0.84rem;
+  }
+
+  .ticker-features-heading {
+    font-size: 0.93rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .ticker-features-subtitle {
+    font-size: 0.78rem;
+    margin-bottom: 0.7rem;
+  }
+
+  .ticker-features-summary-grid {
+    row-gap: 0.45rem;
+  }
+
+  .ticker-features-summary-grid dt {
+    font-size: 0.68rem;
+  }
+
+  .ticker-features-summary-grid dd {
+    font-size: 0.86rem;
+    margin-bottom: 0.35rem;
+  }
 }
