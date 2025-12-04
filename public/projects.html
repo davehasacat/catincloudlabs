@@ -167,7 +167,7 @@
                 <p class="chart-subtitle">
                   <span class="chart-window-badge"><strong>Sep 2 - Nov 28, 2025 • one point per trading day.</strong></span>
                   See how each stock's closing price and total options volume moved over the same three-month window, using a static JSON export
-                  from the same marts I use inside Snowflake.
+                  from the Snowflake marts behind this pipeline.
                 </p>
                 <label for="daily-activity-ticker" class="ticker-label">
                   Selected ticker:
@@ -200,11 +200,11 @@
               <div class="stack" style="--stack-gap:0.5rem;">
                 <h3>Daily snapshot for the selected ticker</h3>
                 <p class="chart-subtitle">
-                  <span class="chart-window-badge">Latest trading day in this window</span>
+                  <span class="chart-window-badge">Latest trading day in this window.</span>
                   A compact daily dashboard that always follows the ticker selected in the control above.
                   It summarizes short-term returns, recent volatility, stock volume, options volume versus
-                  a 30-day baseline, and the mix of call versus put volume for that day. The snapshot
-                  always uses the same trading window as the chart above.
+                  a 30-day baseline, and the mix of call versus put volume for that day, using the same trading
+                  window as the chart above.
                 </p>
               </div>
 
@@ -227,10 +227,10 @@
               <div class="stack" style="--stack-gap:0.5rem;">
                 <h3>Options chain: most active contracts over a recent window</h3>
                 <p class="chart-subtitle">
-                  <span class="chart-window-badge">Same window as the chart above</span>
-                  A sortable snapshot of the most heavily traded option contracts for the selected ticker over the same window.
+                  <span class="chart-window-badge">Same window as the chart above.</span>
+                  A sortable snapshot of the most heavily traded option contracts for the selected ticker.
                   Each row is a single contract aggregated across that period, with expiry, type, strike, last price, total volume,
-                  days to expiration, and average moneyness. For this demo, you're seeing the top 25 most active contracts for that window.
+                  days to expiration, and average moneyness. For this demo, you're seeing the top 25 most active contracts.
                 </p>
                 <p class="muted" style="margin:0.15rem 0 0;">
                   Currently showing contracts for:
@@ -259,7 +259,7 @@
             <div class="stack" style="--stack-gap:0.75rem; margin-top:2rem;">
               <h3>So what does this data tell us?</h3>
               <p>
-                High level, this window looks like big tech grinding higher, options flow staying loud, and traders leaning into calls
+                At a high level, this window looks like big tech grinding higher, options flow staying loud, and traders leaning into calls
                 while volatility is elevated but not chaotic.
               </p>
 
@@ -268,13 +268,13 @@
                 <ul>
                   <li>
                     Across AAPL, AMZN, GOOGL, MSFT, and NVDA you see more +1-4% days than crash days.
-                    Selloffs show up, but they tend to get bought back within a few sessions instead of
+                    Selloffs show up, but tend to get bought back within a few sessions rather than
                     turning into sustained downtrends.
                   </li>
                   <li>
                     For AAPL in particular, the stock walks from the high-220s into the high-270s through
-                    a series of choppy days rather than one giant gap - a “choppy uptrend with event-driven bursts”
-                    rather than a calm drift or crash regime.
+                    a series of choppy days rather than one giant gap. This shows a “choppy uptrend with event-driven bursts,”
+                    not a calm drift or a crash regime.
                   </li>
                 </ul>
               </div>
@@ -293,8 +293,8 @@
                   </li>
                   <li>
                     Some names are structurally louder than others. NVDA routinely trades 5-9M contracts a day,
-                    with 7-day averages north of 5M even when spot is oscillating in a relatively tight band.
-                    That's what a crowded options name looks like.
+                    with 7-day averages north of 5M even when spot is oscillating in a tight band. That's what
+                    a crowded options tape looks like.
                   </li>
                 </ul>
               </div>
@@ -308,7 +308,7 @@
                     even as it grinds to new highs.
                   </li>
                   <li>
-                    That gives each ticker a distinct “vol personality”: NVDA is consistently punchier, MSFT is steadier,
+                    This gives each ticker a distinct “vol personality”: NVDA is consistently punchier, MSFT is steadier,
                     and GOOGL has a brief early patch of very high vol before settling into a more normal band.
                   </li>
                 </ul>
@@ -344,7 +344,7 @@
                     chased in options?”, or “Is this selloff being hedged or faded?” without staring at raw trade logs.
                   </li>
                   <li>
-                    The goal isn't to predict the market. The goal is to give downstream dashboards, alerts, and models a clean,
+                    The goal isn't to predict the market; it's to give downstream dashboards, alerts, and models a clean,
                     warehouse-native view of price action and options behavior instead of one-off CSVs scattered across laptops.
                   </li>
                 </ul>
