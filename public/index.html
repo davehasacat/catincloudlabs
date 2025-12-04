@@ -111,7 +111,7 @@
       </div>
 
       <div class="hero__content">
-        <div class="stack" style="--stack-gap:1.1rem">
+        <div class="stack stack--hero">
           <div class="kicker">CatInCloud Labs</div>
           <h1 class="title">
             Secure, reliable data pipelines.
@@ -144,8 +144,8 @@
     <!-- Content -->
     <section class="section">
       <div class="container">
-        <div class="stack" style="--stack-gap:1.25rem">
-          <article class="card reveal" style="max-width: var(--maxw-readable); margin-inline:auto;">
+        <div class="stack stack--section">
+          <article class="card reveal card--narrow">
             <div class="eyebrow">Flagship</div>
             <h2>Enterprise Stock Market ELT</h2>
             <p>
@@ -156,8 +156,8 @@
           </article>
 
           <!-- Architecture diagram (homepage keeps just the data-flow view) -->
-          <article id="architecture" class="card reveal proof-diagram" style="max-width: var(--maxw-readable); margin-inline:auto;">
-            <div class="stack" style="--stack-gap:0.75rem;">
+          <article id="architecture" class="card reveal proof-diagram card--narrow">
+            <div class="stack stack--tight">
               <div class="eyebrow">Architecture</div>
               <h2>How the pieces fit together</h2>
               <p class="chart-subtitle">
@@ -166,7 +166,7 @@
                 see the <a href="/projects">Projects</a> page.
               </p>
 
-              <figure class="diagram-figure" style="margin:0;">
+              <figure class="diagram-figure">
                 <button
                   type="button"
                   class="proof-figure__button"
@@ -193,37 +193,17 @@
           </article>
 
           <!-- Proof of Success: single-card carousel + click-to-zoom -->
-          <article id="proof" class="card reveal" style="max-width: var(--maxw-readable); margin-inline:auto;">
+          <article id="proof" class="card reveal card--narrow">
             <div class="eyebrow">Proof of Success</div>
             <h2>End-to-End in Action</h2>
 
-            <div
-              class="proof-shell"
-              style="position:relative;max-width:720px;margin-inline:auto;margin-top:0.75rem;"
-            >
+            <div class="proof-shell">
               <!-- Card arrows: show previous/next screenshot -->
               <button
                 type="button"
                 aria-label="Previous screenshot"
                 data-proof-prev
-                style="
-                  position:absolute;
-                  left:0.4rem;
-                  top:50%;
-                  transform:translateY(-50%);
-                  z-index:2;
-                  width:2.5rem;
-                  height:2.5rem;
-                  border-radius:999px;
-                  border:none;
-                  display:flex;
-                  align-items:center;
-                  justify-content:center;
-                  font-size:1.4rem;
-                  background:rgba(15,23,42,0.9);
-                  color:#f9fafb;
-                  cursor:pointer;
-                "
+                class="proof-shell__nav-btn proof-shell__nav-btn--prev"
               >
                 ‹
               </button>
@@ -232,24 +212,7 @@
                 type="button"
                 aria-label="Next screenshot"
                 data-proof-next
-                style="
-                  position:absolute;
-                  right:0.4rem;
-                  top:50%;
-                  transform:translateY(-50%);
-                  z-index:2;
-                  width:2.5rem;
-                  height:2.5rem;
-                  border-radius:999px;
-                  border:none;
-                  display:flex;
-                  align-items:center;
-                  justify-content:center;
-                  font-size:1.4rem;
-                  background:rgba(15,23,42,0.9);
-                  color:#f9fafb;
-                  cursor:pointer;
-                "
+                class="proof-shell__nav-btn proof-shell__nav-btn--next"
               >
                 ›
               </button>
@@ -260,20 +223,11 @@
                 class="proof-thumb"
                 data-proof-open
                 aria-label="Click to zoom end-to-end pipeline screenshot"
-                style="border:0;padding:0;background:none;display:block;position:relative;"
               >
                 <img
                   data-proof-img
                   src="/assets/proof/proof-success-ingest.v2.1600w.webp"
                   alt="Ingest: Airflow DAG writing gzipped ticker JSON files to the S3 RAW bucket."
-                  style="
-                    display:block;
-                    width:100%;
-                    max-width:100%;
-                    height:auto;
-                    border-radius:1.5rem;
-                    box-shadow:0 18px 40px rgba(15,23,42,0.26);
-                  "
                   loading="lazy"
                   decoding="async"
                 />
@@ -283,11 +237,7 @@
               </button>
             </div>
 
-            <p
-              class="proof-caption"
-              data-proof-caption
-              style="margin-top:0.9rem;font-size:0.95rem;color:#334155;"
-            >
+            <p class="proof-caption" data-proof-caption>
               Ingest: write JSON files to S3
             </p>
 
@@ -316,7 +266,7 @@
 
               <figcaption class="proof-figure__caption">
                 <strong>From left to right:</strong>
-                <ol style="margin:0.35rem 0 0;padding-left:1.25rem;">
+                <ol>
                   <li>Daily Airflow runs for the stocks load.</li>
                   <li>A partitioned, validated load DAG.</li>
                   <li>Clean prices landed in Snowflake with trade and load dates.</li>
@@ -349,7 +299,7 @@
     <div class="container inner center">
       <small>© <span id="y"></span> CatInCloud Labs - DaveHasACat LLC</small>
       <p><em>Cats who cloud. Humans that stay grounded.</em></p>
-      <div class="stack" style="--stack-gap:.25rem; justify-content:center; margin-top:0.5rem;">
+      <div class="footer-links">
         <a href="/about">About</a> ·
         <a href="/security">Security</a> ·
         <a href="/privacy">Privacy</a> ·
