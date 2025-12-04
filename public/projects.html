@@ -250,11 +250,10 @@
                 <noscript>Enable JavaScript to view the options table.</noscript>
               </div>
               <p class="chart-footnote">
-                Columns show expiry, option type, strike, the latest close price observed in the window, total volume across the window,
+                Columns show expiry, option type, strike, the latest close price observed in the window, total volume,
                 <abbr title="Days to Expiration at the end of the window">DTE</abbr>, and average moneyness versus the underlying price.
-                Many of the most active contracts in this sample were very short-dated and have since expired, so they now appear with
-                <strong>DTE = 0</strong> even though they were trading earlier in the window. You can tap or click the column headers to re-sort
-                (for example, by total volume, expiry, or moneyness) to find the contracts that matter most.
+                Short-dated contracts that were very active during the window but have since expired will now show <strong>DTE = 0</strong>.
+                Tap or click the column headers to re-sort (for example, by total volume, expiry, or moneyness).
               </p>
             </div>
 
@@ -293,7 +292,7 @@
                   </li>
                   <li>
                     The 7-day average line and the <code>option_volume_vs_30d</code> feature make it easy
-                    to see when today is just another day versus a “3× crowd day” where traders are
+                    to see when today is just another day versus a “3x crowd day” where traders are
                     clearly paying attention.
                   </li>
                   <li>
