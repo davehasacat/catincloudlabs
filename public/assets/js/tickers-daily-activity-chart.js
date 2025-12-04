@@ -15,9 +15,13 @@
   // Correct data URL
   var DATA_URL = "/assets/data/daily_activity_5tickers.json";
 
-  // Layouts (same behavior as the original AAPL chart)
+  function isNarrow() {
+    return window.innerWidth <= 640;
+  }
+
+  // Layouts (same behavior as the original AAPL chart, with tuned fonts)
   var desktopLayout = {
-    margin: { l: 60, r: 50, t: 10, b: 40 },
+    margin: { l: 60, r: 50, t: 10, b: 50 },
     paper_bgcolor: "rgba(0,0,0,0)",
     plot_bgcolor: "rgba(0,0,0,0)",
     hovermode: "x unified",
@@ -25,29 +29,37 @@
       type: "date",
       title: "Trade date",
       showgrid: true,
-      gridcolor: "#e5e7eb"
+      gridcolor: "#e5e7eb",
+      tickfont: { size: 12 },
+      titlefont: { size: 13 }
     },
     yaxis: {
       title: "Price (USD)",
       showgrid: true,
-      gridcolor: "#e5e7eb"
+      gridcolor: "#e5e7eb",
+      tickfont: { size: 12 },
+      titlefont: { size: 13 }
     },
     yaxis2: {
       title: "Total options volume",
       overlaying: "y",
       side: "right",
-      showgrid: false
+      showgrid: false,
+      tickfont: { size: 11 },
+      titlefont: { size: 12 }
     },
     legend: {
       orientation: "h",
       yanchor: "top",
       y: -0.25,
       xanchor: "center",
-      x: 0.5
+      x: 0.5,
+      font: { size: 12 }
     }
   };
 
-  // Mobile: hide right-axis tick labels to avoid clipping
+  // Mobile: hide right-axis tick labels to avoid clipping,
+  // tighten margins, and shrink fonts slightly.
   var mobileLayout = {
     margin: { l: 48, r: 12, t: 4, b: 40 },
     paper_bgcolor: "rgba(0,0,0,0)",
@@ -86,10 +98,6 @@
     },
     height: 320
   };
-
-  function isNarrow() {
-    return window.innerWidth <= 640;
-  }
 
   function chooseLayout() {
     return isNarrow() ? mobileLayout : desktopLayout;

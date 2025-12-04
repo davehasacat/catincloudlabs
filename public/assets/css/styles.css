@@ -1470,3 +1470,100 @@ figure, .card { overflow: hidden; }
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
+
+/* === Exports: extra mobile polish ==================================== */
+/* Place this AFTER the existing exports styles block */
+
+@media (max-width: 640px) {
+  /* Export 1: chart & controls */
+
+  /* Let the chart breathe a bit more edge-to-edge */
+  .chart-shell {
+    min-height: 220px;
+    margin-top: 0.75rem;
+    margin-inline: -0.75rem; /* reclaims some side padding on phones */
+  }
+
+  .chart-subtitle {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 0.6rem;
+  }
+
+  /* Stack "Selected ticker" label + dropdown instead of cramming inline */
+  .ticker-label {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+    font-size: 0.9rem;
+  }
+
+  .ticker-label select {
+    padding: 0.25rem 0.75rem;
+  }
+
+  .chart-footnote {
+    font-size: 0.78rem;
+    line-height: 1.5;
+    margin-top: 0.6rem;
+  }
+
+  /* Export 2: options top-contracts table */
+
+  /* Make the table scroll horizontally instead of squishing columns */
+  .options-table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    font-size: 0.8rem;   /* keeps your existing mobile size */
+  }
+
+  .options-table th,
+  .options-table td {
+    padding: 0.3rem 0.4rem;
+  }
+
+  /* If you use the status line under the intro, nudge it smaller */
+  .options-table-status {
+    font-size: 0.78rem;
+    line-height: 1.4;
+  }
+
+  /* Export 3: daily features snapshot */
+
+  .ticker-features-shell {
+    margin-top: 0.85rem;
+    margin-inline: 0;         /* aligns nicely with page edges on mobile */
+  }
+
+  .ticker-features-latest {
+    padding: 0.9rem 1rem;
+    border-radius: 0.9rem;
+    font-size: 0.84rem;
+  }
+
+  .ticker-features-heading {
+    font-size: 0.93rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .ticker-features-subtitle {
+    font-size: 0.78rem;
+    margin-bottom: 0.7rem;
+  }
+
+  .ticker-features-summary-grid {
+    row-gap: 0.45rem;
+  }
+
+  .ticker-features-summary-grid dt {
+    font-size: 0.68rem;
+  }
+
+  .ticker-features-summary-grid dd {
+    font-size: 0.86rem;
+    margin-bottom: 0.35rem;
+  }
+}
