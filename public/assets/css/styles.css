@@ -1536,39 +1536,48 @@ figure, .card { overflow: hidden; }
 .insights-panel {
   background: var(--surface-subtle);
   border-radius: 0.75rem;
-  padding: 1.5rem 1.75rem;
+  padding: 1.75rem 2rem;
   border: 1px solid var(--border-subtle);
-  max-width: 64ch;
-  margin: 1.75rem auto 0;
+  max-width: 70ch;              /* a bit wider for easier reading */
+  margin: 2rem auto 0;          /* more space above the panel */
 }
 
 .insights-panel h3 {
   margin-top: 0;
-  margin-bottom: 0.75rem;
-}
-
-.insights-panel > p {
   margin-bottom: 1rem;
 }
 
+.insights-panel > p {
+  margin-bottom: 1.25rem;       /* extra space before the first sub-section */
+}
+
 .insights-panel h4 {
-  font-size: 0.95rem;
-  margin-top: 0.75rem;
-  margin-bottom: 0.35rem;
+  font-size: 1rem;
+  margin-top: 1.1rem;
+  margin-bottom: 0.4rem;
 }
 
 .insights-panel ul {
-  margin: 0 0 0.75rem;
-  padding-left: 1.25rem;
+  margin: 0 0 1.1rem;
+  padding-left: 1.35rem;
 }
 
 .insights-panel li + li {
-  margin-top: 0.35rem;
+  margin-top: 0.45rem;
 }
 
 @media (max-width: 640px) {
   .insights-panel {
-    padding: 1.25rem 1.25rem;
-    margin-top: 1.5rem;
+    padding: 1.5rem 1.35rem;
+    margin-top: 1.75rem;
+    max-width: 100%;
+  }
+
+  .insights-panel h3 {
+    margin-bottom: 0.85rem;
+  }
+
+  .insights-panel > p {
+    margin-bottom: 1rem;
   }
 }
