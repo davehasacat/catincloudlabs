@@ -88,45 +88,73 @@
               This is the same architecture pattern I adapt for client environments that want calm, well-understood data platforms.
             </p>
 
-            <!-- 3-panel end-to-end proof image -->
-            <figure class="proof-figure" style="margin-top:1.5rem;">
-              <button
-                type="button"
-                class="proof-figure__button"
-                data-panel-open
-                data-caption="From scheduled Airflow runs to validated rows in Snowflake. The same pattern I'd adapt to your sources and your environment."
-                aria-label="Click to zoom the end-to-end 3-panel pipeline screenshot"
-              >
-                <img
-                  src="/assets/proof/proof-end-to-end-panel.v2.1920w.webp"
-                  alt="Three panels: daily Airflow runs for the stocks load, a partitioned validation DAG, and Snowflake rows showing prices with trade and load dates."
-                  class="proof-figure__img"
-                  width="1920"
-                  height="1080"
-                  loading="lazy"
-                  decoding="async"
-                />
-                <span class="proof-zoom-pill">
-                  Click to zoom
-                </span>
-              </button>
-
-              <figcaption class="proof-figure__caption">
-                <strong>From left to right:</strong>
-                <ol style="margin:0.35rem 0 0;padding-left:1.25rem;">
-                  <li>Daily Airflow runs for the stocks load.</li>
-                  <li>A partitioned, validated load DAG.</li>
-                  <li>Clean prices landed in Snowflake with trade and load dates.</li>
-                </ol>
-              </figcaption>
-            </figure>
-
             <h3 style="margin-top:1.5rem;">At a glance</h3>
             <ul>
               <li><strong>Stack:</strong> AWS (VPC, S3, MWAA), Snowflake, dbt</li>
               <li><strong>Pattern:</strong> private networking, KMS encryption, incremental models</li>
               <li><strong>Built for:</strong> calm, production-like behavior rather than a one-off demo</li>
             </ul>
+
+            <!-- Architecture & security diagrams -->
+            <div class="stack" style="--stack-gap:1.25rem; margin-top:1.75rem;">
+              <div class="stack" style="--stack-gap:0.5rem;">
+                <h3>Architecture and security posture</h3>
+                <p class="chart-subtitle">
+                  The high-level architecture and security/observability diagrams below show how the pieces fit together: MWAA in a private VPC,
+                  KMS-encrypted S3 buckets, Snowflake, and dbt all wired through VPC endpoints and least-privilege access.
+                </p>
+              </div>
+
+              <!-- Architecture diagram (reusing homepage styles/assets) -->
+              <figure class="diagram-figure" style="margin:0;">
+                <button
+                  type="button"
+                  class="proof-figure__button"
+                  data-panel-open
+                  data-caption="High-level data flow: ingest market data, land it in S3, transform with dbt, &amp; serve from Snowflake."
+                  aria-label="Click to zoom the architecture flow diagram"
+                >
+                  <img
+                    src="/assets/diagrams/architecture-flow.v5.svg"
+                    alt="Architecture flow diagram showing MWAA orchestrating S3 to Snowflake via COPY, with dbt building marts"
+                    class="diagram"
+                    width="1160" height="300"
+                    loading="lazy" decoding="async"
+                    sizes="(max-width: 700px) 100vw, 1160px" />
+                  <span class="proof-zoom-pill">
+                    Click to zoom
+                  </span>
+                </button>
+                <figcaption class="diagram-caption">
+                  High-level data flow: ingest market data, land it in S3, transform with dbt, &amp; serve from Snowflake.
+                </figcaption>
+              </figure>
+
+              <!-- Security/observability diagram (reusing homepage styles/assets) -->
+              <figure class="diagram-figure" style="margin:0;">
+                <button
+                  type="button"
+                  class="proof-figure__button"
+                  data-panel-open
+                  data-caption="High-level security view: client VPN into a private VPC; MWAA reaches encrypted S3 via gateway endpoint &amp; orchestrates Snowflake via outbound NAT."
+                  aria-label="Click to zoom the security and observability diagram"
+                >
+                  <img
+                    src="/assets/diagrams/security-observability.v5.svg"
+                    alt="Private VPC with S3 Gateway Endpoint; MWAA orchestrates Snowflake load; outbound-only egress"
+                    class="diagram"
+                    width="1160" height="300"
+                    loading="lazy" decoding="async"
+                    sizes="(max-width: 700px) 100vw, 1160px" />
+                  <span class="proof-zoom-pill">
+                    Click to zoom
+                  </span>
+                </button>
+                <figcaption class="diagram-caption">
+                  High-level security view: client VPN into a private VPC; MWAA reaches encrypted S3 via gateway endpoint &amp; orchestrates Snowflake via outbound NAT.
+                </figcaption>
+              </figure>
+            </div>
 
             <p class="muted" style="margin-top:0.75rem;">
               All three views below come from the same Snowflake marts that power this reference pipeline. For client work, those marts would typically sit behind a BI tool or custom app; here they're exposed as static JSON slices for the demo.
@@ -229,6 +257,70 @@
                 (for example, by total volume, expiry, or moneyness) to find the contracts that matter most.
               </p>
             </div>
+
+            <!-- Interpretation: So what does this data tell us? -->
+            <div class="stack" style="--stack-gap:0.75rem; margin-top:2rem;">
+              <h3>So what does this data tell us?</h3>
+              <p>
+                Even in this small window, the combination of price, volume, and per-contract detail starts to look like something you can reason
+                about instead of just eyeballing a CSV. The goal here isn't to call a trade, but to make sure the plumbing gives you a clean, consistent
+                picture of what actually happened.
+              </p>
+
+              <div class="stack" style="--stack-gap:0.5rem;">
+                <h4>Big-picture patterns</h4>
+                <ul>
+                  <li>
+                    <strong>Cross-ticker consistency.</strong> Each name is running through the same ingest, modeling, and export pattern. Dates line up, calculations
+                    are shared, and you're comparing like-with-like instead of fighting mismatched time ranges or ad hoc spreadsheets.
+                  </li>
+                  <li>
+                    <strong>Options attention is often short-dated.</strong> Many of the highest-volume rows in the table are near expiry and end up closing at very low prices.
+                    That's normal for short-dated, out-of-the-money flow-and exactly the kind of pattern you want to see accurately reflected, not smoothed away.
+                  </li>
+                  <li>
+                    <strong>Features line up with intuition.</strong> Days with sharp moves tend to show elevated realized volatility, volume above the 30-day baseline,
+                    and call/put skews that match the story you'd tell about that day.
+                  </li>
+                </ul>
+              </div>
+
+              <div class="stack" style="--stack-gap:0.5rem;">
+                <h4>Reading the three views together</h4>
+                <ul>
+                  <li>
+                    <strong>Daily chart:</strong> shows how price and total options volume move over time for each name. It's where you spot clusters of activity,
+                    regime changes, or quiet periods across a handful of tickers at once.
+                  </li>
+                  <li>
+                    <strong>Daily snapshot:</strong> zooms into a single day for the selected ticker, summarizing returns, volatility, volume, and options flow versus
+                    a 30-day baseline. It's the quick “what kind of day was this?” view.
+                  </li>
+                  <li>
+                    <strong>Top contracts table:</strong> shows which specific contracts actually carried the most flow across the window-expiry, type, strike,
+                    and where they sat relative to the underlying price.
+                  </li>
+                </ul>
+              </div>
+
+              <div class="stack" style="--stack-gap:0.5rem;">
+                <h4>How a client might use this</h4>
+                <ul>
+                  <li>
+                    <strong>Heads of Data/Analytics:</strong> plug these marts into your existing BI or product analytics stack and know that the same logic runs across names,
+                    desks, or business lines without one-off modeling for each.
+                  </li>
+                  <li>
+                    <strong>Product, trading, or finance leads:</strong> quickly answer questions like “where is options attention clustering?” or “how have our typical days
+                    shifted in terms of volatility and flow?” without scraping together five different exports.
+                  </li>
+                  <li>
+                    <strong>Data/platform engineers:</strong> treat this as a reference pattern for calm Monday mornings-pipelines that run on a schedule, land data into
+                    well-modeled marts, and feed downstream tools without surprise schema changes.
+                  </li>
+                </ul>
+              </div>
+            </div>
           </article>
 
           <!-- MWAA Private Environment -->
@@ -266,7 +358,7 @@
         <article class="card reveal" style="max-width: var(--maxw-readable); margin-inline:auto; text-align:center;">
           <h2>Interested in something similar?</h2>
           <p>
-            If these examples look close to what you need, or resemble the pattern you want for your own stack, the best next step
+            If these examples and the patterns above look close to what you need in your own AWS + Snowflake stack, the best next step
             is a short discovery call.
           </p>
           <p class="muted">
