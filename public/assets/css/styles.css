@@ -1650,3 +1650,16 @@ figure, .card { overflow: hidden; }
     padding-inline: 1.25rem;
   }
 }
+
+/* Contact form: line fields up with readable content */
+.page--contact .contact-form {
+  max-width: 40rem;        /* tweak 36–42rem to taste */
+  margin-inline: auto;     /* center the form inside the card */
+}
+
+/* Make sure each control stretches to that width */
+.page--contact .contact-form .field,
+.page--contact .contact-form button,
+.page--contact .contact-form .form-footnote {
+  width: 100%;
+}
