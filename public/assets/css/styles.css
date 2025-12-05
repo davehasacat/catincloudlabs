@@ -698,6 +698,55 @@ a:focus-visible,
   margin-bottom: clamp(1.25rem, 3vh, 2rem); /* new: space before first card */
 }
 
+/* Mobile polish for simple subpage heroes (About / Projects / Services / Contact) */
+@media (max-width: 640px) {
+  /* Overall hero sizing & gap to first section */
+  .hero:has(.hero-simple) {
+    min-height: auto; /* let the content define the height */
+    margin-bottom: 1.4rem;
+  }
+
+  .hero:has(.hero-simple) .hero-simple .stack {
+    padding-block: 1.5rem 1.6rem;
+  }
+
+  /* Eyebrow label (ABOUT / PROJECTS / SERVICES / CONTACT) */
+  .hero:has(.hero-simple) .kicker {
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    margin-bottom: 0.3rem;
+  }
+
+  /* H1: slightly smaller + nicer wrap for long titles */
+  .hero:has(.hero-simple) h1 {
+    font-size: 1.9rem;
+    line-height: 1.18;
+    text-wrap: balance;
+    margin-bottom: 0.75rem;
+  }
+
+  /* Intro copy under the H1 */
+  .hero:has(.hero-simple) .subtitle,
+  .hero:has(.hero-simple) p {
+    font-size: 0.96rem;
+    line-height: 1.6;
+    max-width: var(--maxw-readable);
+    margin-bottom: 0.9rem;
+  }
+
+  /* Keep the first section/card close, but not cramped */
+  .hero:has(.hero-simple) + .section {
+    padding-top: 0.75rem;
+  }
+
+  /* Services hero CTA button: confident width on mobile */
+  .page--services .hero-simple .button.primary {
+    margin-top: 1.1rem;
+    width: 100%;
+    max-width: 260px;
+  }
+}
+
 /* Kill the dark video overlay on simple heroes */
 .hero:has(.hero-simple)::before {
   content: none;
