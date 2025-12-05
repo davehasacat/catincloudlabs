@@ -437,6 +437,18 @@ a:focus-visible,
   margin-inline: auto;
 }
 
+/* CTA card on Projects page */
+.card--cta {
+  margin-top: 2.25rem;
+  text-align: center;
+}
+
+@media (min-width: 1024px) {
+  .card--cta {
+    margin-top: 2.75rem;
+  }
+}
+
 /* ==================================================================== */
 /* 4. HERO (VIDEO) + SUBPAGE HERO + SUBHEAD PILL + OVERFLOW CLAMP       */
 /* ==================================================================== */
