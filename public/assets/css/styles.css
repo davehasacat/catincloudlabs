@@ -1547,10 +1547,22 @@ figure, .card { overflow: hidden; }
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
+}
 
-  /* Let the card control horizontal padding so text + fields line up */
-  padding: 0;
-  width: 100%;
+/* Desktop: just constrain width a bit if you like */
+@media (min-width: 1024px) {
+  .contact-form {
+    max-width: 640px;
+    width: 100%;
+    margin-right: auto;
+  }
+}
+
+/* Slightly less constraint on smaller screens if desired */
+@media (max-width: 768px) {
+  .contact-form {
+    max-width: 100%;
+  }
 }
 
 .contact-form .field {
@@ -1593,6 +1605,7 @@ figure, .card { overflow: hidden; }
   resize: vertical;
   min-height: 6rem;
 }
+
 .contact-form input[type="text"]:focus-visible,
 .contact-form input[type="email"]:focus-visible,
 .contact-form select:focus-visible,
@@ -1617,6 +1630,7 @@ figure, .card { overflow: hidden; }
   background-repeat: no-repeat;
   padding-right: 2rem;
 }
+
 .contact-form .form-footnote {
   font-size: 0.85rem;
   color: var(--text-muted, #6b7280);
@@ -1635,13 +1649,7 @@ figure, .card { overflow: hidden; }
   }
 }
 
-/* Contact form: line fields up with readable content */
-.page--contact .contact-form {
-  max-width: 40rem;        /* tweak 36–42rem to taste */
-  margin-inline: auto;     /* center the form inside the card */
-}
-
-/* Make sure each control stretches to that width */
+/* Keep everything full-width inside the form */
 .page--contact .contact-form .field,
 .page--contact .contact-form button,
 .page--contact .contact-form .form-footnote {
