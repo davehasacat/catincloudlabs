@@ -1548,25 +1548,9 @@ figure, .card { overflow: hidden; }
   flex-direction: column;
   box-sizing: border-box;
 
-  /* Mobile / base: let the card handle most of the padding */
-  padding-right: 0.5rem;
-}
-
-/* Desktop: extra breathing room */
-@media (min-width: 1024px) {
-  .contact-form {
-    padding-right: 2.5rem;
-    max-width: 640px;
-    width: 100%;
-    margin-right: auto;
-  }
-}
-
-/* Slightly less padding on smaller screens */
-@media (max-width: 768px) {
-  .contact-form {
-    padding-right: 0.75rem;
-  }
+  /* Let the card control horizontal padding so text + fields line up */
+  padding: 0;
+  width: 100%;
 }
 
 .contact-form .field {
