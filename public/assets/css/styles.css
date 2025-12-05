@@ -1677,3 +1677,21 @@ figure, .card { overflow: hidden; }
   width: 100%;
   box-sizing: border-box;
 }
+
+/* ==================================================================== */
+/* 8. FORMSPREE THANK YOU PAGE                                          */
+/* ==================================================================== */
+/* Thank-you page: tighten spacing around the confirmation card */
+.page--thank-you .hero:has(.hero-simple) {
+  margin-bottom: 0.85rem;
+}
+
+.page--thank-you .section {
+  padding-top: 0;
+  padding-bottom: 1.75rem;
+}
+
+.page--thank-you .card.card--narrow {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
