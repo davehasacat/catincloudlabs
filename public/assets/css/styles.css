@@ -1858,3 +1858,55 @@ figure, .card { overflow: hidden; }
 .page--thank-you .footer {
   margin-top: 0.75rem;
 }
+
+/* Thank-you page: mobile refinements */
+@media (max-width: 640px) {
+  /* Hero spacing + typography */
+  .page--thank-you .hero:has(.hero-simple) .hero-simple .stack {
+    padding-block: 1.5rem 1.6rem;
+  }
+
+  .page--thank-you .hero-simple h1 {
+    font-size: 1.9rem;
+    line-height: 1.18;
+    text-wrap: balance;
+    margin-bottom: 0.8rem;
+  }
+
+  .page--thank-you .hero-simple .subtitle {
+    font-size: 0.96rem;
+    line-height: 1.6;
+    max-width: var(--maxw-readable);
+    margin-bottom: 1rem;
+  }
+
+  /* Card padding + typography */
+  .page--thank-you .card.card--narrow {
+    padding-inline: 1.25rem;
+    padding-block: 1.4rem 1.5rem;
+  }
+
+  .page--thank-you .card.card--narrow h2 {
+    font-size: 1.55rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .page--thank-you .card.card--narrow p,
+  .page--thank-you .card.card--narrow li {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .page--thank-you .card.card--narrow ul {
+    padding-left: 1.25rem;
+    margin-bottom: 1.1rem;
+  }
+
+  /* CTA buttons: confident, centered, full-width-ish */
+  .page--thank-you .card.card--narrow .button {
+    width: 100%;
+    max-width: 260px;
+    margin-inline: auto;
+    justify-content: center;
+  }
+}
