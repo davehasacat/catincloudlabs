@@ -1071,10 +1071,10 @@ figure, .card { overflow: hidden; }
   transform: translateY(-1px);
 }
 
-/* On touch devices, hide the overlay pill entirely */
+/* "Click to zoom" pill on touch devices */
 @media (pointer: coarse) {
   .proof-zoom-pill {
-    display: none;
+    display: block;
   }
 }
 
