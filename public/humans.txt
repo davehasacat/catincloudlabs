@@ -5,11 +5,11 @@ Site: https://catincloudlabs.com
 Email: dave@catincloudlabs.com
 
 /* SITE */
-Last Updated: 2025-11-08
+Last Updated: 2025-12-04
 Language: English
 Standards: HTML5, CSS3
 Platform: Cloudflare Pages
-Region: US-East (us-east-2, Ohio)
+Primary Cloud Region: us-east-2 (Ohio, AWS)
 Design Philosophy: Minimal, secure, performance-driven.
 
 /* TECHNOLOGY */
