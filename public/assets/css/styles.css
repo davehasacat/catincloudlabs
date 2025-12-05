@@ -24,14 +24,6 @@ Purpose: pivot the site to a clean sky blue + blue + white scheme with token-dri
   --accent-800: color-mix(in oklab, var(--accent) 55%, black);
   --accent-900: color-mix(in oklab, var(--accent) 40%, black);
 
-  /* === Optional: brand-green tints === */
-  --brand-10: color-mix(in oklab, var(--brand) 10%, white);
-  --brand-20: color-mix(in oklab, var(--brand) 20%, white);
-  --brand-40: color-mix(in oklab, var(--brand) 40%, white);
-  --brand-60: color-mix(in oklab, var(--brand) 60%, white);
-  --brand-80: color-mix(in oklab, var(--brand) 80%, white);
-  --brand-95: color-mix(in oklab, var(--brand) 95%, white);
-
   /* === Neutrals === */
   --gray-50:  #f9fafb;
   --gray-100: #f3f4f6;
@@ -45,7 +37,7 @@ Purpose: pivot the site to a clean sky blue + blue + white scheme with token-dri
   --gray-900: #111827;
 
   /* === Semantic tokens === */
-  --bg-page:     var(--gray-50);
+  --bg-page:     color-mix(in oklab, var(--accent) 4%, #f9fafb);
   --bg-surface:  #ffffff;
   --bg-elevated: #ffffff;
 
@@ -77,6 +69,9 @@ Purpose: pivot the site to a clean sky blue + blue + white scheme with token-dri
 /* Fallback for browsers without color-mix */
 @supports not (color: color-mix(in oklab, white 50%, black)) {
   :root {
+    /* Subtle light blue page background fallback */
+    --bg-page:    #f3f7fb;
+
     --accent-50:  #f0f9ff;
     --accent-100: #e0f2fe;
     --accent-200: #bae6fd;
