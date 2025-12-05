@@ -62,11 +62,11 @@
     <!-- Hero -->
     <section class="hero">
       <div class="container hero-simple">
-        <div class="stack" style="--stack-gap:1rem">
+        <div class="stack stack--hero">
           <div class="kicker">Services</div>
           <h1 class="title">Help for real-world AWS + Snowflake + dbt stacks.</h1>
           <p class="subtitle">
-            CatInCloud Labs offers audit & hardening sprints, end-to-end AWS + Snowflake + dbt pipelines, and ongoing support for calmer, more predictable data platforms.
+            CatInCloud Labs offers audit &amp; hardening sprints, end-to-end AWS + Snowflake + dbt pipelines, and ongoing support for calmer, more predictable data platforms.
           </p>
           <p class="muted">
             Most work falls into one of three buckets: an audit &amp; hardening sprint, an end-to-end pipeline build, or ongoing operations and improvements.
@@ -78,126 +78,115 @@
       </div>
     </section>
 
-    <!-- How I help -->
+    <!-- Everything below the hero: cards + grid + CTA in one stacked section -->
     <section class="section">
       <div class="container">
-        <article class="card reveal" style="max-width: var(--maxw-readable); margin-inline:auto;">
-          <p class="eyebrow">How I help</p>
-          <h2>Stabilizing and evolving your data platform</h2>
-          <p>
-            I help teams build and stabilize <strong>AWS + Snowflake + dbt</strong> data platforms so they behave like real production systems:
-            predictable, observable, and easier to support.
-          </p>
-          <p>
-            Many engagements start with a focused <strong>audit &amp; hardening sprint</strong>: understanding how things actually work today,
-            identifying potential gaps, and agreeing on a short, prioritized list of improvements. From there, I can help implement the changes,
-            whether that means shoring up Airflow, restructuring dbt models, tightening IAM and networking, or improving observability.
-          </p>
-          <p>
-            The goal is straightforward: a stack that does what it's supposed to do with fewer surprises, and that your team feels comfortable owning.
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <!-- Core offerings -->
-    <section class="section">
-      <div class="container">
-        <div class="grid cols-3 reveal">
-          <!-- Audit & hardening sprint -->
-          <article class="card stack" style="--stack-gap:.75rem;">
-            <p class="eyebrow">Sprint</p>
-            <h2 style="font-size:1.25rem; margin:0;">Audit &amp; Hardening Sprint</h2>
-            <p class="muted">
-              A short, time-boxed review of your current stack to understand what's running today and where the biggest risks are.
+        <div class="stack stack--section">
+          <!-- How I help -->
+          <article class="card reveal card--narrow">
+            <p class="eyebrow">How I help</p>
+            <h2>Stabilizing and evolving your data platform</h2>
+            <p>
+              I help teams build and stabilize <strong>AWS + Snowflake + dbt</strong> data platforms so they behave like real production systems:
+              predictable, observable, and easier to support.
             </p>
-            <ul>
-              <li>Review of current AWS / Snowflake / dbt / Airflow setup</li>
-              <li>Check for gaps in security, reliability, and cost</li>
-              <li>Clear summary of findings and trade-offs</li>
-              <li>Short, prioritized list of recommended changes</li>
-            </ul>
-            <p class="muted">
-              <strong>Good starting point if:</strong> you want an honest view of where things stand before committing to larger changes.
+            <p>
+              Many engagements start with a focused <strong>audit &amp; hardening sprint</strong>: understanding how things actually work today,
+              identifying potential gaps, and agreeing on a short, prioritized list of improvements. From there, I can help implement the changes,
+              whether that means shoring up Airflow, restructuring dbt models, tightening IAM and networking, or improving observability.
+            </p>
+            <p>
+              The goal is straightforward: a stack that does what it's supposed to do with fewer surprises, and that your team feels comfortable owning.
             </p>
           </article>
 
-          <!-- End-to-end pipelines -->
-          <article class="card stack" style="--stack-gap:.75rem;">
-            <p class="eyebrow">Build</p>
-            <h2 style="font-size:1.25rem; margin:0;">End-to-End Pipeline Build</h2>
+          <!-- Core offerings -->
+          <div class="grid cols-3 reveal services-grid">
+            <!-- Audit & hardening sprint -->
+            <article class="card stack stack--tight">
+              <p class="eyebrow">Sprint</p>
+              <h3>Audit &amp; Hardening Sprint</h3>
+              <p class="muted services-intro">
+                A short, time-boxed review of your current stack to understand what's running today and where the biggest risks are.
+              </p>
+              <ul>
+                <li>Review of current AWS / Snowflake / dbt / Airflow setup</li>
+                <li>Check for gaps in security, reliability, and cost</li>
+                <li>Clear summary of findings and trade-offs</li>
+                <li>Short, prioritized list of recommended changes</li>
+              </ul>
+              <p class="muted">
+                <strong>Good starting point if:</strong> you want an honest view of where things stand before committing to larger changes.
+              </p>
+            </article>
+
+            <!-- End-to-end pipelines -->
+            <article class="card stack stack--tight">
+              <p class="eyebrow">Build</p>
+              <h3>End-to-End Pipeline Build</h3>
+              <p class="muted services-intro">
+                Design and implementation of AWS + Snowflake + dbt pipelines so data moves reliably from source to analytics-ready tables.
+              </p>
+              <ul>
+                <li>Architecture design for your AWS / warehouse stack</li>
+                <li>Ingestion, storage, and transformation patterns (dbt)</li>
+                <li>MWAA/Airflow orchestration and scheduling</li>
+                <li>Alerting, runbooks, and operating docs your team can follow</li>
+              </ul>
+              <p class="muted">
+                <strong>Good starting point if:</strong> you want a solid foundation your team can run day-to-day, with documentation they can actually use.
+              </p>
+            </article>
+
+            <!-- Ongoing support & advisory -->
+            <article class="card stack stack--tight">
+              <p class="eyebrow">Support</p>
+              <h3>Ongoing Ops &amp; Enhancements</h3>
+              <p class="muted services-intro">
+                Lightweight ongoing help to keep your platform stable and steadily improving without hiring a full team.
+              </p>
+              <ul>
+                <li>Monitoring, alerting, and small reliability improvements</li>
+                <li>New sources, models, and data quality checks over time</li>
+                <li>Support for releases, schema changes, and refactors</li>
+                <li>Regular reviews so nothing quietly drifts off course</li>
+              </ul>
+              <p class="muted">
+                <strong>Good starting point if:</strong> you'd like steady help keeping things healthy while your team focuses on product and stakeholders.
+              </p>
+            </article>
+          </div>
+
+          <!-- Working together -->
+          <article class="card reveal card--narrow">
+            <p class="eyebrow">Working together</p>
+            <h2>What working together looks like</h2>
+            <ol>
+              <li>
+                <strong>Discovery call.</strong> Short conversation to understand your stack, pain points, and constraints,
+                and to confirm there's a useful project to tackle.
+              </li>
+              <li>
+                <strong>Plan &amp; proposal.</strong> A clear, written outline of scope, approach, timeline, and pricing.
+                The focus is on the pieces that will make the biggest difference.
+              </li>
+              <li>
+                <strong>Implementation &amp; handoff.</strong> Work delivered in small, reviewable chunks with code, diagrams,
+                and operating docs your team owns, plus time for questions and knowledge transfer.
+              </li>
+            </ol>
             <p class="muted">
-              Design and implementation of AWS + Snowflake + dbt pipelines so data moves reliably from source to analytics-ready tables.
-            </p>
-            <ul>
-              <li>Architecture design for your AWS / warehouse stack</li>
-              <li>Ingestion, storage, and transformation patterns (dbt)</li>
-              <li>MWAA/Airflow orchestration and scheduling</li>
-              <li>Alerting, runbooks, and operating docs your team can follow</li>
-            </ul>
-            <p class="muted">
-              <strong>Good starting point if:</strong> you want a solid foundation your team can run day-to-day, with documentation they can actually use.
+              Most engagements are structured as a fixed-scope sprint or a short series of sprints, rather than open-ended hourly work.
             </p>
           </article>
 
-          <!-- Ongoing support & advisory -->
-          <article class="card stack" style="--stack-gap:.75rem;">
-            <p class="eyebrow">Support</p>
-            <h2 style="font-size:1.25rem; margin:0;">Ongoing Ops &amp; Enhancements</h2>
-            <p class="muted">
-              Lightweight ongoing help to keep your platform stable and steadily improving without hiring a full team.
-            </p>
-            <ul>
-              <li>Monitoring, alerting, and small reliability improvements</li>
-              <li>New sources, models, and data quality checks over time</li>
-              <li>Support for releases, schema changes, and refactors</li>
-              <li>Regular reviews so nothing quietly drifts off course</li>
-            </ul>
-            <p class="muted">
-              <strong>Good starting point if:</strong> you'd like steady help keeping things healthy while your team focuses on product and stakeholders.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Typical engagement shape -->
-    <section class="section">
-      <div class="container">
-        <article class="card reveal" style="max-width: var(--maxw-readable); margin-inline:auto;">
-          <p class="eyebrow">Working together</p>
-          <h2>What working together looks like</h2>
-          <ol>
-            <li>
-              <strong>Discovery call.</strong> Short conversation to understand your stack, pain points, and constraints,
-              and to confirm there's a useful project to tackle.
-            </li>
-            <li>
-              <strong>Plan &amp; proposal.</strong> A clear, written outline of scope, approach, timeline, and pricing.
-              The focus is on the pieces that will make the biggest difference.
-            </li>
-            <li>
-              <strong>Implementation &amp; handoff.</strong> Work delivered in small, reviewable chunks with code, diagrams,
-              and operating docs your team owns, plus time for questions and knowledge transfer.
-            </li>
-          </ol>
-          <p class="muted">
-            Most engagements are structured as a fixed-scope sprint or a short series of sprints, rather than open-ended hourly work.
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <!-- Who this is for -->
-    <section class="section">
-      <div class="container">
-        <article class="card reveal">
-          <h2>Is CatInCloud Labs a fit for you?</h2>
-          <div class="stack" style="--stack-gap:1rem; margin-top:1.5rem;">
+          <!-- Who this is for -->
+          <article class="card reveal card--narrow">
+            <h2>Is CatInCloud Labs a fit for you?</h2>
             <p class="muted">
               CatInCloud Labs is a good fit for teams that want reliable data systems they can explain, trust, and build on.
             </p>
-            <div class="stack" style="--stack-gap:.5rem;">
+            <div class="stack stack--tight">
               <h3>Best fit if you:</h3>
               <ul>
                 <li>Care about security, correctness, and maintainability as much as speed</li>
@@ -206,28 +195,24 @@
                 <li>Appreciate clear conversations about trade-offs, not just automatic agreement</li>
               </ul>
             </div>
-          </div>
-        </article>
-      </div>
-    </section>
+          </article>
 
-    <!-- CTA -->
-    <section class="section">
-      <div class="container">
-        <article class="card reveal" style="max-width: var(--maxw-readable); margin-inline:auto; text-align:center;">
-          <h2>Let's see if there's a good project to start with</h2>
-          <p>
-            If your AWS + Snowflake + dbt stack is mostly working but harder to live with than it should be,
-            a short discovery call is the easiest way to understand what's realistic and where I can help.
-          </p>
-          <p class="muted">
-            We'll walk through your current setup, clarify goals and constraints, and decide together whether an audit sprint,
-            a focused build, or something else makes the most sense.
-          </p>
-          <div class="stack" style="--stack-gap:.75rem; margin-top:1.25rem; justify-content:center;">
-            <a href="/contact#contact-form" class="button primary">Book a discovery call</a>
-          </div>
-        </article>
+          <!-- CTA -->
+          <article class="card reveal card--narrow card--cta">
+            <h2>Let's see if there's a good project to start with</h2>
+            <p>
+              If your AWS + Snowflake + dbt stack is mostly working but harder to live with than it should be,
+              a short discovery call is the easiest way to understand what's realistic and where I can help.
+            </p>
+            <p class="muted">
+              We'll walk through your current setup, clarify goals and constraints, and decide together whether an audit sprint,
+              a focused build, or something else makes the most sense.
+            </p>
+            <div class="stack stack--center">
+              <a href="/contact#contact-form" class="button primary">Book a discovery call</a>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
   </main>
@@ -237,7 +222,7 @@
     <div class="container inner center">
       <small>© <span id="y"></span> CatInCloud Labs - DaveHasACat LLC</small>
       <p><em>Cats who cloud. Humans that stay grounded.</em></p>
-      <div class="stack" style="--stack-gap:.25rem; justify-content:center; margin-top:0.5rem;">
+      <div class="footer-links">
         <a href="/about">About</a> ·
         <a href="/security">Security</a> ·
         <a href="/privacy">Privacy</a> ·

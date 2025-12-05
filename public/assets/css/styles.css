@@ -437,6 +437,32 @@ a:focus-visible,
   margin-inline: auto;
 }
 
+/* CTA card on Projects page */
+.card--cta {
+  margin-top: 2.25rem;
+  text-align: center;
+}
+
+@media (min-width: 1024px) {
+  .card--cta {
+    margin-top: 2.75rem;
+  }
+}
+
+/* Services grid: align intro copy so bullet lists start on the same row */
+@media (min-width: 900px) {
+  .services-grid .services-intro {
+    height: 6.75rem; /* tweak up/down after eyeballing on desktop */
+  }
+}
+
+/* Stacked/mobile layout: let intros size naturally */
+@media (max-width: 899.98px) {
+  .services-grid .services-intro {
+    height: auto;
+  }
+}
+
 /* ==================================================================== */
 /* 4. HERO (VIDEO) + SUBPAGE HERO + SUBHEAD PILL + OVERFLOW CLAMP       */
 /* ==================================================================== */
@@ -668,7 +694,8 @@ a:focus-visible,
     color-mix(in oklab, var(--accent) 4%, white),
     #fff 40%
   );
-  color: var(--text);
+  color: var(--text);            /* back to normal dark text */
+  margin-bottom: clamp(1.25rem, 3vh, 2rem); /* new: space before first card */
 }
 
 /* Kill the dark video overlay on simple heroes */
@@ -1520,25 +1547,12 @@ figure, .card { overflow: hidden; }
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-
-  /* Mobile / base: let the card handle most of the padding */
-  padding-right: 0.5rem;
 }
 
-/* Desktop: extra breathing room */
-@media (min-width: 1024px) {
-  .contact-form {
-    padding-right: 2.5rem;
-    max-width: 640px;
-    width: 100%;
-    margin-right: auto;
-  }
-}
-
-/* Slightly less padding on smaller screens */
+/* Slightly less constraint on smaller screens if desired */
 @media (max-width: 768px) {
   .contact-form {
-    padding-right: 0.75rem;
+    max-width: 100%;
   }
 }
 
@@ -1582,6 +1596,7 @@ figure, .card { overflow: hidden; }
   resize: vertical;
   min-height: 6rem;
 }
+
 .contact-form input[type="text"]:focus-visible,
 .contact-form input[type="email"]:focus-visible,
 .contact-form select:focus-visible,
@@ -1606,6 +1621,7 @@ figure, .card { overflow: hidden; }
   background-repeat: no-repeat;
   padding-right: 2rem;
 }
+
 .contact-form .form-footnote {
   font-size: 0.85rem;
   color: var(--text-muted, #6b7280);
@@ -1622,4 +1638,42 @@ figure, .card { overflow: hidden; }
   .page--contact .contact-card {
     padding-inline: 1.25rem;
   }
+}
+
+/* Keep everything full-width inside the form */
+.page--contact .contact-form .field,
+.page--contact .contact-form button,
+.page--contact .contact-form .form-footnote {
+  width: 100%;
+}
+
+/* Contact form: ensure all controls are the same width */
+.page--contact .contact-form select,
+.page--contact .contact-form button.button {
+  display: block;
+  width: 100% !important;
+  box-sizing: border-box;
+}
+
+/* ==================================================================== */
+/* 7b. CONTACT FORM – FINAL ALIGNMENT OVERRIDE                          */
+/* ==================================================================== */
+
+.page--contact .card.card--narrow .contact-form {
+  /* Let the form itself stretch to the full inner width of the card */
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  margin: 1.5rem 0 0;
+}
+
+.page--contact .card.card--narrow .contact-form .field,
+.page--contact .card.card--narrow .contact-form input[type="text"],
+.page--contact .card.card--narrow .contact-form input[type="email"],
+.page--contact .card.card--narrow .contact-form select,
+.page--contact .card.card--narrow .contact-form textarea,
+.page--contact .card.card--narrow .contact-form button {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
 }

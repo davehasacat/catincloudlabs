@@ -62,7 +62,7 @@
     <!-- Hero -->
     <section class="hero">
       <div class="container hero-simple">
-        <div class="stack" style="--stack-gap:1rem">
+        <div class="stack stack--hero">
           <div class="kicker">Projects</div>
           <h1 class="title">Examples of real-world AWS + Snowflake + dbt work.</h1>
           <p class="subtitle">
@@ -75,9 +75,9 @@
     <!-- Projects cards -->
     <section class="section">
       <div class="container">
-        <div class="stack" style="--stack-gap:1.25rem">
+        <div class="stack stack--section">
           <!-- Enterprise Stock Market ELT -->
-          <article class="card reveal" style="max-width: var(--maxw-readable); margin-inline:auto;">
+          <article class="card reveal card--narrow">
             <h2>Enterprise Stock Market ELT (reference implementation)</h2>
             <p>
               A production-grade pipeline built on AWS, MWAA, Snowflake, and dbt, designed to ingest and transform stock and options data
@@ -88,7 +88,7 @@
               This is the same architecture pattern I adapt for client environments that want calm, well-understood data platforms.
             </p>
 
-            <h3 style="margin-top:1.5rem;">At a glance</h3>
+            <h3>At a glance</h3>
             <ul>
               <li><strong>Stack:</strong> AWS (VPC, S3, MWAA), Snowflake, dbt</li>
               <li><strong>Pattern:</strong> private networking, KMS encryption, incremental models</li>
@@ -96,8 +96,8 @@
             </ul>
 
             <!-- Architecture & security diagrams -->
-            <div class="stack" style="--stack-gap:1.25rem; margin-top:1.75rem;">
-              <div class="stack" style="--stack-gap:0.5rem;">
+            <div class="stack stack--section">
+              <div class="stack stack--tight">
                 <h3>Architecture and security posture</h3>
                 <p class="chart-subtitle">
                   The high-level architecture and security/observability diagrams below show how the pieces fit together: MWAA in a private VPC,
@@ -157,13 +157,13 @@
               </figure>
             </div>
 
-            <p class="muted" style="margin-top:0.75rem;">
+            <p class="muted">
               All three views below come from the same Snowflake marts that power this reference pipeline. For client work, those marts would typically sit behind a BI tool or custom app; here they're exposed as static JSON slices for the demo.
             </p>
 
             <!-- Multi-ticker daily chart powered by Snowflake-exported JSON (Export 1) -->
-            <div class="stack" style="--stack-gap:0.75rem; margin-top:1.5rem;">
-              <div class="stack" style="--stack-gap:0.5rem;">
+            <div class="stack stack--tight">
+              <div class="stack stack--tight">
                 <h3>Multi-ticker daily price and options volume</h3>
                 <p class="chart-subtitle">
                   <span class="chart-window-badge"><strong>Sep 2 - Nov 28, 2025 • one point per trading day.</strong></span>
@@ -196,8 +196,8 @@
             </div>
 
             <!-- Daily features snapshot (Export 3) -->
-            <div class="stack" style="--stack-gap:0.75rem; margin-top:1.5rem;">
-              <div class="stack" style="--stack-gap:0.5rem;">
+            <div class="stack stack--tight">
+              <div class="stack stack--tight">
                 <h3>Daily snapshot for the selected ticker</h3>
                 <p class="chart-subtitle">
                   <span class="chart-window-badge">Latest trading day in this window.</span>
@@ -223,8 +223,8 @@
             </div>
 
             <!-- Multi-ticker options chain: aggregated top-contracts table (Export 2) -->
-            <div class="stack" style="--stack-gap:0.75rem; margin-top:1.5rem;">
-              <div class="stack" style="--stack-gap:0.5rem;">
+            <div class="stack stack--tight">
+              <div class="stack stack--tight">
                 <h3>Options chain: most active contracts over a recent window</h3>
                 <p class="chart-subtitle">
                   <span class="chart-window-badge">Same window as the chart above.</span>
@@ -232,7 +232,7 @@
                   Each row is a single contract aggregated across that period, with expiry, type, strike, last price, total volume,
                   days to expiration, and average moneyness. For this demo, you're seeing the top 25 most active contracts.
                 </p>
-                <p class="muted" style="margin:0.15rem 0 0;">
+                <p class="muted">
                   Currently showing contracts for:
                   <strong id="options-table-ticker-label">AAPL</strong>
                   (this always follows the ticker selector above)
@@ -256,14 +256,14 @@
             </div>
 
             <!-- Interpretation: So what does this data tell us? -->
-            <div class="insights-panel stack" style="--stack-gap:0.75rem; margin-top:2rem;">
+            <div class="insights-panel stack stack--tight">
               <h3>So what does this data tell us?</h3>
               <p>
                 High level, this window looks like big tech grinding higher, options flow staying loud, and traders leaning into calls
                 while volatility is elevated but not chaotic.
               </p>
 
-              <div class="stack" style="--stack-gap:0.5rem;">
+              <div class="stack stack--tight">
                 <h4>Trending up, with event-driven bursts</h4>
                 <ul>
                   <li>
@@ -277,7 +277,7 @@
                 </ul>
               </div>
 
-              <div class="stack" style="--stack-gap:0.5rem;">
+              <div class="stack stack--tight">
                 <h4>Options flow is where the crowd gets loud</h4>
                 <ul>
                   <li>
@@ -295,7 +295,7 @@
                 </ul>
               </div>
 
-              <div class="stack" style="--stack-gap:0.5rem;">
+              <div class="stack stack--tight">
                 <h4>Volatility has a personality per ticker</h4>
                 <ul>
                   <li>
@@ -309,7 +309,7 @@
                 </ul>
               </div>
 
-              <div class="stack" style="--stack-gap:0.5rem;">
+              <div class="stack stack--tight">
                 <h4>Where risk and attention actually concentrated</h4>
                 <ul>
                   <li>
@@ -327,7 +327,7 @@
                 </ul>
               </div>
 
-              <div class="stack" style="--stack-gap:0.5rem;">
+              <div class="stack stack--tight">
                 <h4>A compact “daily weather report” for non-quants</h4>
                 <ul>
                   <li>
@@ -349,7 +349,7 @@
           </article>
 
           <!-- MWAA Private Environment -->
-          <article class="card reveal" style="max-width: var(--maxw-readable); margin-inline:auto;">
+          <article class="card reveal card--narrow">
             <h2>Private MWAA Environment</h2>
             <p>
               A hardened Airflow deployment running on AWS MWAA inside a fully private VPC. MWAA connects to ECR, CloudWatch Logs, KMS,
@@ -363,7 +363,7 @@
           </article>
 
           <!-- Future dashboards -->
-          <article class="card reveal" style="max-width: var(--maxw-readable); margin-inline:auto;">
+          <article class="card reveal card--narrow">
             <h2>In progress: Dashboards &amp; apps on top</h2>
             <p>
               A browser-based analytics layer built with tools like Plotly Dash on top of Snowflake marts. The goal is to provide
@@ -380,7 +380,7 @@
     <!-- CTA -->
     <section class="section">
       <div class="container">
-        <article class="card reveal" style="max-width: var(--maxw-readable); margin-inline:auto; text-align:center;">
+        <article class="card reveal card--narrow card--cta">
           <h2>Interested in something similar?</h2>
           <p>
             If these examples look close to what you need in your own stack, the next step
@@ -389,7 +389,7 @@
           <p class="muted">
             We can walk through your current setup together, compare it to this reference architecture, and help you decide whether an audit sprint or a focused build makes sense.
           </p>
-          <div class="stack" style="--stack-gap:.75rem; margin-top:1.25rem; justify-content:center;">
+          <div class="stack stack--tight">
             <a href="/contact#contact-form" class="button primary">Book a discovery call</a>
           </div>
         </article>
@@ -416,7 +416,7 @@
     <div class="container inner center">
       <small>© <span id="y"></span> CatInCloud Labs - DaveHasACat LLC</small>
       <p><em>Cats who cloud. Humans that stay grounded.</em></p>
-      <div class="stack" style="--stack-gap:.25rem; justify-content:center; margin-top:0.5rem;">
+      <div class="footer-links">
         <a href="/about">About</a> ·
         <a href="/security">Security</a> ·
         <a href="/privacy">Privacy</a> ·
