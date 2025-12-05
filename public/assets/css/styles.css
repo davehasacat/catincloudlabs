@@ -1343,7 +1343,21 @@ figure, .card { overflow: hidden; }
   line-height: 1.5;
   color: var(--text-muted);
   max-width: 60ch;
-  margin-inline: auto;   /* visually narrower on desktop */
+  margin-inline: auto;
+}
+
+/* Bridge paragraph between diagrams and exports */
+.chart-bridge {
+  max-width: 60ch;
+  margin: 0.9rem auto 0;
+  color: var(--text-muted);
+}
+
+@media (min-width: 768px) {
+  .chart-bridge {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
 }
 
 /* Ticker selector on Projects chart */
