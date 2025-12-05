@@ -1654,3 +1654,26 @@ figure, .card { overflow: hidden; }
   width: 100% !important;
   box-sizing: border-box;
 }
+
+/* ==================================================================== */
+/* 7b. CONTACT FORM – FINAL ALIGNMENT OVERRIDE                          */
+/* ==================================================================== */
+
+.page--contact .card.card--narrow .contact-form {
+  /* Let the form itself stretch to the full inner width of the card */
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  margin: 1.5rem 0 0;
+}
+
+.page--contact .card.card--narrow .contact-form .field,
+.page--contact .card.card--narrow .contact-form input[type="text"],
+.page--contact .card.card--narrow .contact-form input[type="email"],
+.page--contact .card.card--narrow .contact-form select,
+.page--contact .card.card--narrow .contact-form textarea,
+.page--contact .card.card--narrow .contact-form button {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+}
