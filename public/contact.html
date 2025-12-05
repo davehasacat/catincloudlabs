@@ -62,7 +62,7 @@
     <!-- Hero -->
     <section class="hero">
       <div class="container hero-simple">
-        <div class="stack" style="--stack-gap:1rem">
+        <div class="stack stack--hero">
           <div class="kicker">Contact</div>
           <h1 class="title">Book a discovery call.</h1>
           <p class="subtitle">
@@ -75,15 +75,14 @@
     <!-- Contact card -->
     <section class="section" id="contact-form">
       <div class="container">
-        <article class="card reveal" style="max-width: var(--maxw-readable); margin-inline:auto;">
+        <article class="card reveal card--narrow">
           <h2>Get in touch</h2>
           <p>Tell me a bit about your project, and I'll follow up with next steps and a time to talk.</p>
 
           <form
             action="https://formspree.io/f/xwpavlwn"
             method="POST"
-            class="stack contact-form"
-            style="--stack-gap:1rem; margin-top:1.5rem;"
+            class="stack stack--section contact-form"
           >
             <!-- Honeypot field (spam protection) -->
             <div style="position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden;">
@@ -154,7 +153,7 @@
               ></textarea>
             </label>
 
-            <button type="submit" class="button primary" style="margin-top:0.5rem;">
+            <button type="submit" class="button primary">
               Send message
             </button>
 
@@ -163,7 +162,7 @@
             </p>
           </form>
 
-          <p style="margin-top:1.5rem; font-size:0.9rem;">
+          <p class="form-footnote">
             Prefer email? You can always reach me directly at
             <a href="mailto:dave@catincloudlabs.com" aria-label="Email CatInCloud Labs">dave@catincloudlabs.com</a>.
           </p>
@@ -177,7 +176,7 @@
     <div class="container inner center">
       <small>© <span id="y"></span> CatInCloud Labs - DaveHasACat LLC</small>
       <p><em>Cats who cloud. Humans that stay grounded.</em></p>
-      <div class="stack" style="--stack-gap:.25rem; justify-content:center; margin-top:0.5rem;">
+      <div class="footer-links">
         <a href="/about">About</a> ·
         <a href="/security">Security</a> ·
         <a href="/privacy">Privacy</a> ·
