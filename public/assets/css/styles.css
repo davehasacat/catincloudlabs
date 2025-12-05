@@ -993,9 +993,11 @@ figure, .card { overflow: hidden; }
   margin-inline: auto;
 }
 
-/* Extra breathing room under the security diagram caption on Projects */
-.page--projects .diagram-figure:last-of-type .diagram-caption {
-  margin-bottom: 1rem; /* tweak up/down after eyeballing */
+/* Extra breathing room under the security diagram on Projects (mobile) */
+@media (max-width: 640px) {
+  .page--projects .diagram-figure:last-of-type {
+    margin-bottom: 1.75rem;
+  }
 }
 
 /* Proof of Success gallery */
