@@ -747,6 +747,38 @@ a:focus-visible,
   }
 }
 
+/* Services page hero – mobile refinements */
+@media (max-width: 640px) {
+  .page--services .hero:has(.hero-simple) {
+    /* Slightly shorter hero, bring the card a bit closer */
+    margin-bottom: 1.1rem;
+  }
+
+  /* Headline: a hair smaller + balanced wrap */
+  .page--services .hero-simple h1 {
+    font-size: 1.8rem;
+    line-height: 1.18;
+    text-wrap: balance;
+    max-width: 20ch;
+  }
+
+  /* Intro paragraphs under the H1 */
+  .page--services .hero-simple .subtitle,
+  .page--services .hero-simple p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    max-width: var(--maxw-readable);
+  }
+
+  /* CTA button spacing + width */
+  .page--services .hero-simple .button.primary {
+    margin-top: 1.25rem;  /* a bit more breathing room above the button */
+    margin-bottom: 0.2rem;
+    width: 100%;
+    max-width: 260px;
+  }
+}
+
 /* Kill the dark video overlay on simple heroes */
 .hero:has(.hero-simple)::before {
   content: none;
