@@ -74,7 +74,7 @@
   Accept-Ranges: bytes
   Content-Disposition: inline
 
-/assets/brand/social-card.png
+/assets/brand/social-card.v2.png
   Cache-Control: public, max-age=604800
 
 /assets/video/hero-fallback.jpg

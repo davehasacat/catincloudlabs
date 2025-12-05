@@ -38,7 +38,7 @@
   <link rel="stylesheet" href="/assets/css/styles.css" />
 </head>
 
-<body>
+<body class="page--projects">
   <!-- Accessibility: skip link -->
   <a href="#main" class="skip-link">Skip to content</a>
 
@@ -157,8 +157,8 @@
               </figure>
             </div>
 
-            <p class="muted">
-              All three views below come from the same Snowflake marts that power this reference pipeline. For client work, those marts would typically sit behind a BI tool or custom app; here they're exposed as static JSON slices for the demo.
+            <p class="chart-bridge">
+              <strong>All three views below</strong> come from the same Snowflake marts that power this reference pipeline. For client work, those marts would typically sit behind a BI tool or custom app; here they're exposed as static JSON slices for the demo.
             </p>
 
             <!-- Multi-ticker daily chart powered by Snowflake-exported JSON (Export 1) -->
@@ -247,6 +247,11 @@
               >
                 <noscript>Enable JavaScript to view the options table.</noscript>
               </div>
+
+              <p class="table-scroll-hint">
+                On smaller screens, swipe left or right inside the table to see all columns.
+              </p>
+
               <p class="chart-footnote">
                 Columns show expiry, option type, strike, the latest close price observed in the window, total volume,
                 <abbr title="Days to Expiration at the end of the window">DTE</abbr>, and average moneyness versus the underlying price.

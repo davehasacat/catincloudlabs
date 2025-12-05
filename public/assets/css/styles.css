@@ -698,6 +698,121 @@ a:focus-visible,
   margin-bottom: clamp(1.25rem, 3vh, 2rem); /* new: space before first card */
 }
 
+/* Mobile polish for simple subpage heroes (About / Projects / Services / Contact) */
+@media (max-width: 640px) {
+  /* Overall hero sizing & gap to first section */
+  .hero:has(.hero-simple) {
+    min-height: auto; /* let the content define the height */
+    margin-bottom: 1.4rem;
+  }
+
+  .hero:has(.hero-simple) .hero-simple .stack {
+    padding-block: 1.5rem 1.6rem;
+  }
+
+  /* Eyebrow label (ABOUT / PROJECTS / SERVICES / CONTACT) */
+  .hero:has(.hero-simple) .kicker {
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    margin-bottom: 0.3rem;
+  }
+
+  /* H1: slightly smaller + nicer wrap for long titles */
+  .hero:has(.hero-simple) h1 {
+    font-size: 1.9rem;
+    line-height: 1.18;
+    text-wrap: balance;
+    margin-bottom: 0.75rem;
+  }
+
+  /* Intro copy under the H1 */
+  .hero:has(.hero-simple) .subtitle,
+  .hero:has(.hero-simple) p {
+    font-size: 0.96rem;
+    line-height: 1.6;
+    max-width: var(--maxw-readable);
+    margin-bottom: 0.9rem;
+  }
+
+  /* Keep the first section/card close, but not cramped */
+  .hero:has(.hero-simple) + .section {
+    padding-top: 0.75rem;
+  }
+
+  /* Services hero CTA button: confident width on mobile */
+  .page--services .hero-simple .button.primary {
+    margin-top: 1.1rem;
+    width: 100%;
+    max-width: 260px;
+  }
+}
+
+/* Services page hero – mobile refinements */
+@media (max-width: 640px) {
+  .page--services .hero:has(.hero-simple) {
+    /* Slightly shorter hero, bring the card a bit closer */
+    margin-bottom: 1.1rem;
+  }
+
+  /* Headline: a hair smaller + balanced wrap */
+  .page--services .hero-simple h1 {
+    font-size: 1.8rem;
+    line-height: 1.18;
+    text-wrap: balance;
+    max-width: 20ch;
+  }
+
+  /* Intro paragraphs under the H1 */
+  .page--services .hero-simple .subtitle,
+  .page--services .hero-simple p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    max-width: var(--maxw-readable);
+  }
+
+  /* CTA button spacing + width */
+  .page--services .hero-simple .button.primary {
+    margin-top: 1.25rem;  /* a bit more breathing room above the button */
+    margin-bottom: 0.2rem;
+    width: 100%;
+    max-width: 260px;
+  }
+}
+
+@media (max-width: 640px) {
+  .page--services .hero-simple .subtitle {
+    margin-bottom: 0.55rem;
+  }
+
+  .page--services .hero-simple p.muted {
+    margin-bottom: 0.85rem;
+  }
+}
+
+/* Projects page hero – mobile refinements */
+@media (max-width: 640px) {
+  .page--projects .hero:has(.hero-simple) {
+    /* Slightly tighter gap before the first card */
+    margin-bottom: 1.2rem;
+  }
+
+  /* Headline: a touch smaller + balanced wrap */
+  .page--projects .hero-simple h1 {
+    font-size: 1.8rem;
+    line-height: 1.18;
+    text-wrap: balance;
+    max-width: 22ch;
+  }
+
+  /* Intro copy under the H1 */
+  .page--projects .hero-simple .subtitle {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    max-width: var(--maxw-readable);
+    margin-bottom: 0.8rem;
+  }
+}
+
 /* Kill the dark video overlay on simple heroes */
 .hero:has(.hero-simple)::before {
   content: none;
@@ -876,6 +991,13 @@ figure, .card { overflow: hidden; }
   text-align: center;
   max-width: 60ch;
   margin-inline: auto;
+}
+
+/* Extra breathing room under the security diagram on Projects (mobile) */
+@media (max-width: 640px) {
+  .page--projects .diagram-figure:last-of-type {
+    margin-bottom: 1.75rem;
+  }
 }
 
 /* Proof of Success gallery */
@@ -1214,10 +1336,30 @@ figure, .card { overflow: hidden; }
   max-width: 50ch;
 }
 
+/* Shared footnote style (used under charts *and* the bridge text) */
 .chart-footnote {
-  margin-top: 0.5rem;
+  margin-top: 0.6rem;
   font-size: 0.82rem;
+  line-height: 1.5;
   color: var(--text-muted);
+  max-width: 60ch;
+  margin-inline: auto;
+}
+
+/* Bridge paragraph between diagrams and exports */
+.chart-bridge {
+  max-width: 60ch;
+  margin: 1.1rem auto 0;
+  font-size: 0.96rem;
+  line-height: 1.65;
+  color: var(--text); /* normal body color so it reads as core copy */
+}
+
+@media (max-width: 640px) {
+  .chart-bridge {
+    font-size: 0.94rem;
+    line-height: 1.65;
+  }
 }
 
 /* Ticker selector on Projects chart */
@@ -1377,10 +1519,18 @@ figure, .card { overflow: hidden; }
   opacity: 0.45;
   cursor: default;
 }
+
+/* Mobile-only hint to swipe table */
+.table-scroll-hint {
+  display: none;
+  margin-top: 0.4rem;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
 @media (max-width: 640px) {
-  .options-table-pagination {
-    flex-direction: column;
-    align-items: flex-start;
+  .table-scroll-hint {
+    display: block;
   }
 }
 
@@ -1707,4 +1857,56 @@ figure, .card { overflow: hidden; }
 /* Tighten the footer gap on this page only */
 .page--thank-you .footer {
   margin-top: 0.75rem;
+}
+
+/* Thank-you page: mobile refinements */
+@media (max-width: 640px) {
+  /* Hero spacing + typography */
+  .page--thank-you .hero:has(.hero-simple) .hero-simple .stack {
+    padding-block: 1.5rem 1.6rem;
+  }
+
+  .page--thank-you .hero-simple h1 {
+    font-size: 1.9rem;
+    line-height: 1.18;
+    text-wrap: balance;
+    margin-bottom: 0.8rem;
+  }
+
+  .page--thank-you .hero-simple .subtitle {
+    font-size: 0.96rem;
+    line-height: 1.6;
+    max-width: var(--maxw-readable);
+    margin-bottom: 1rem;
+  }
+
+  /* Card padding + typography */
+  .page--thank-you .card.card--narrow {
+    padding-inline: 1.25rem;
+    padding-block: 1.4rem 1.5rem;
+  }
+
+  .page--thank-you .card.card--narrow h2 {
+    font-size: 1.55rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .page--thank-you .card.card--narrow p,
+  .page--thank-you .card.card--narrow li {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .page--thank-you .card.card--narrow ul {
+    padding-left: 1.25rem;
+    margin-bottom: 1.1rem;
+  }
+
+  /* CTA buttons: confident, centered, full-width-ish */
+  .page--thank-you .card.card--narrow .button {
+    width: 100%;
+    max-width: 260px;
+    margin-inline: auto;
+    justify-content: center;
+  }
 }
