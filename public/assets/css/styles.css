@@ -1655,3 +1655,11 @@ figure, .card { overflow: hidden; }
 .page--contact .contact-form .form-footnote {
   width: 100%;
 }
+
+/* Contact form: ensure all controls are the same width */
+.page--contact .contact-form select,
+.page--contact .contact-form button.button {
+  display: block;
+  width: 100% !important;
+  box-sizing: border-box;
+}
