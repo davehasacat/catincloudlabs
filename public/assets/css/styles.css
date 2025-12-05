@@ -789,6 +789,30 @@ a:focus-visible,
   }
 }
 
+/* Projects page hero – mobile refinements */
+@media (max-width: 640px) {
+  .page--projects .hero:has(.hero-simple) {
+    /* Slightly tighter gap before the first card */
+    margin-bottom: 1.2rem;
+  }
+
+  /* Headline: a touch smaller + balanced wrap */
+  .page--projects .hero-simple h1 {
+    font-size: 1.8rem;
+    line-height: 1.18;
+    text-wrap: balance;
+    max-width: 22ch;
+  }
+
+  /* Intro copy under the H1 */
+  .page--projects .hero-simple .subtitle {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    max-width: var(--maxw-readable);
+    margin-bottom: 0.8rem;
+  }
+}
+
 /* Kill the dark video overlay on simple heroes */
 .hero:has(.hero-simple)::before {
   content: none;
