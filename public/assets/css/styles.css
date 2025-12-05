@@ -1349,14 +1349,16 @@ figure, .card { overflow: hidden; }
 /* Bridge paragraph between diagrams and exports */
 .chart-bridge {
   max-width: 60ch;
-  margin: 0.9rem auto 0;
-  color: var(--text-muted);
+  margin: 1.1rem auto 0;
+  font-size: 0.96rem;
+  line-height: 1.65;
+  color: var(--text); /* normal body color so it reads as core copy */
 }
 
-@media (min-width: 768px) {
+@media (max-width: 640px) {
   .chart-bridge {
-    font-size: 0.9rem;
-    line-height: 1.6;
+    font-size: 0.94rem;
+    line-height: 1.65;
   }
 }
 
