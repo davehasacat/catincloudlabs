@@ -10,7 +10,7 @@ Purpose: pivot the site to a clean sky blue + blue + white scheme with token-dri
 :root {
   /* === Base brand colors === */
   --accent: #0ea5e9;         /* primary blue */
-  --brand:  #138200;         /* supporting green (used on .home) */
+  --brand:  #0ea5e9;
 
   /* === Accent scale generated with color-mix (perceptual OKLab) === */
   --accent-50:  color-mix(in oklab, var(--accent) 6%,  white);
@@ -37,7 +37,7 @@ Purpose: pivot the site to a clean sky blue + blue + white scheme with token-dri
   --gray-900: #111827;
 
   /* === Semantic tokens === */
-  --bg-page:     color-mix(in oklab, var(--accent) 4%, #f9fafb);
+  --bg-page:     color-mix(in oklab, var(--accent) 8%, #f9fafb);
   --bg-surface:  #ffffff;
   --bg-elevated: #ffffff;
 
@@ -178,6 +178,18 @@ a:hover {
 .grid.cols-3 { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
 
 main { flex: 1; } /* sticky footer support */
+
+/* Mobile: make section + container gutters perfectly even */
+@media (max-width: 640px) {
+  .section {
+    padding-inline: 1rem;        /* ~16px page gutter */
+  }
+
+  .section > .container {
+    width: 100%;                 /* fill the padded area */
+    margin-inline: 0;
+  }
+}
 
 /* Utilities */
 .badge   { display:inline-block; padding:.2rem .5rem; border-radius:999px; background: var(--accent-100); color: var(--accent-700); font-weight:600; }
@@ -1050,6 +1062,15 @@ figure, .card { overflow: hidden; }
     transform 120ms ease;
 }
 
+/* Mobile: adjust zoom pill placement only on the architecture diagram */
+@media (max-width: 640px) {
+  #diagram-architecture .proof-zoom-pill {
+    top: 0.4rem;
+    bottom: auto;      /* move from bottom-right to top-right */
+    right: 0.5rem;
+  }
+}
+
 /* On hover/focus, make it clear but still small */
 .proof-figure__button:hover .proof-zoom-pill,
 .proof-figure__button:focus-visible .proof-zoom-pill,
@@ -1059,10 +1080,10 @@ figure, .card { overflow: hidden; }
   transform: translateY(-1px);
 }
 
-/* On touch devices, hide the overlay pill entirely */
+/* "Click to zoom" pill on touch devices */
 @media (pointer: coarse) {
   .proof-zoom-pill {
-    display: none;
+    display: block;
   }
 }
 
