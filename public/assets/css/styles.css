@@ -1677,3 +1677,34 @@ figure, .card { overflow: hidden; }
   width: 100%;
   box-sizing: border-box;
 }
+
+/* ==================================================================== */
+/* 8. FORMSPREE THANK YOU PAGE                                          */
+/* ==================================================================== */
+
+/* Let the hero be as tall as its content (no extra vertical stretch) */
+.page--thank-you .hero {
+  min-height: auto;
+}
+
+/* Small, consistent gap between hero and card */
+.page--thank-you .hero:has(.hero-simple) {
+  margin-bottom: 1rem;
+}
+
+/* Keep the card close to both hero and footer */
+.page--thank-you .section {
+  padding-top: 0;
+  padding-bottom: 0.75rem;
+}
+
+/* Remove extra vertical margin around the card itself */
+.page--thank-you .card.card--narrow {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* Tighten the footer gap on this page only */
+.page--thank-you .footer {
+  margin-top: 0.75rem;
+}
