@@ -779,6 +779,16 @@ a:focus-visible,
   }
 }
 
+@media (max-width: 640px) {
+  .page--services .hero-simple .subtitle {
+    margin-bottom: 0.55rem;
+  }
+
+  .page--services .hero-simple p.muted {
+    margin-bottom: 0.85rem;
+  }
+}
+
 /* Kill the dark video overlay on simple heroes */
 .hero:has(.hero-simple)::before {
   content: none;
