@@ -407,7 +407,7 @@ a:focus-visible,
   margin-top: 3rem; 
   background: var(--bg-surface);  /* solid white footer on light-blue page */
   border-top: 1px solid var(--gray-200);
-  /* box-shadow: 0 -4px 12px rgba(15, 23, 42, 0.04); */
+  box-shadow: 0 -4px 12px rgba(15, 23, 42, 0.04);
 }
 .footer .inner { padding: 1.5rem 0; color: var(--gray-700); text-align: center; }
 
