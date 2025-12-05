@@ -1689,13 +1689,13 @@ figure, .card { overflow: hidden; }
 
 /* Compact gap between the hero and the card */
 .page--thank-you .hero:has(.hero-simple) {
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
 }
 
-/* Keep the section tight so the card sits closer to the hero/footer */
+/* Keep the section tight so the card sits closer to hero + footer */
 .page--thank-you .section {
   padding-top: 0;
-  padding-bottom: 1.25rem;
+  padding-bottom: 0.25rem;
 }
 
 /* Remove extra vertical margin around the card itself */
@@ -1704,7 +1704,7 @@ figure, .card { overflow: hidden; }
   margin-bottom: 0;
 }
 
-/* Slightly tighter footer spacing on this page only */
+/* Tighten the footer spacing on this page only */
 .page--thank-you .footer {
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
