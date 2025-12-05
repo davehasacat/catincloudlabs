@@ -449,6 +449,18 @@ a:focus-visible,
   }
 }
 
+/* Services grid: align intro copy so bullet lists start on the same row */
+.services-grid .services-intro {
+  min-height: 4.5rem; /* tweak if needed after eyeballing on desktop */
+}
+
+/* Don’t force height on stacked/mobile layout */
+@media (max-width: 900px) {
+  .services-grid .services-intro {
+    min-height: 0;
+  }
+}
+
 /* ==================================================================== */
 /* 4. HERO (VIDEO) + SUBPAGE HERO + SUBHEAD PILL + OVERFLOW CLAMP       */
 /* ==================================================================== */
