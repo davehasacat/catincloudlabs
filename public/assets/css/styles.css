@@ -450,14 +450,16 @@ a:focus-visible,
 }
 
 /* Services grid: align intro copy so bullet lists start on the same row */
-.services-grid .services-intro {
-  min-height: 4.5rem; /* tweak if needed after eyeballing on desktop */
+@media (min-width: 900px) {
+  .services-grid .services-intro {
+    height: 6.75rem; /* tweak up/down after eyeballing on desktop */
+  }
 }
 
-/* Don’t force height on stacked/mobile layout */
-@media (max-width: 900px) {
+/* Stacked/mobile layout: let intros size naturally */
+@media (max-width: 899.98px) {
   .services-grid .services-intro {
-    min-height: 0;
+    height: auto;
   }
 }
 
