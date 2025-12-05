@@ -1681,17 +1681,30 @@ figure, .card { overflow: hidden; }
 /* ==================================================================== */
 /* 8. FORMSPREE THANK YOU PAGE                                          */
 /* ==================================================================== */
-/* Thank-you page: tighten spacing around the confirmation card */
-.page--thank-you .hero:has(.hero-simple) {
-  margin-bottom: 0.85rem;
+
+/* Let the hero shrink to just its content on the thank-you page */
+.page--thank-you .hero {
+  min-height: auto;
 }
 
+/* Compact gap between the hero and the card */
+.page--thank-you .hero:has(.hero-simple) {
+  margin-bottom: 0.75rem;
+}
+
+/* Keep the section tight so the card sits closer to the hero/footer */
 .page--thank-you .section {
   padding-top: 0;
-  padding-bottom: 1.75rem;
+  padding-bottom: 1.25rem;
 }
 
+/* Remove extra vertical margin around the card itself */
 .page--thank-you .card.card--narrow {
-  margin-top: 0.25rem;
-  margin-bottom: 0.25rem;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* Slightly tighter footer spacing on this page only */
+.page--thank-you .footer {
+  margin-top: 2rem;
 }
