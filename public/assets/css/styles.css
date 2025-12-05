@@ -1499,10 +1499,18 @@ figure, .card { overflow: hidden; }
   opacity: 0.45;
   cursor: default;
 }
+
+/* Mobile-only hint to swipe table */
+.table-scroll-hint {
+  display: none;
+  margin-top: 0.4rem;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
 @media (max-width: 640px) {
-  .options-table-pagination {
-    flex-direction: column;
-    align-items: flex-start;
+  .table-scroll-hint {
+    display: block;
   }
 }
 
