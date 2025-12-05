@@ -668,7 +668,8 @@ a:focus-visible,
     color-mix(in oklab, var(--accent) 4%, white),
     #fff 40%
   );
-  color: var(--text);
+  color: var(--text);            /* back to normal dark text */
+  margin-bottom: clamp(1.25rem, 3vh, 2rem); /* new: space before first card */
 }
 
 /* Kill the dark video overlay on simple heroes */
