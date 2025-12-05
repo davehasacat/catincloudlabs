@@ -1062,6 +1062,15 @@ figure, .card { overflow: hidden; }
     transform 120ms ease;
 }
 
+/* Mobile: adjust zoom pill placement only on the architecture diagram */
+@media (max-width: 640px) {
+  #diagram-architecture .proof-zoom-pill {
+    top: 0.4rem;
+    bottom: auto;      /* move from bottom-right to top-right */
+    right: 0.5rem;
+  }
+}
+
 /* On hover/focus, make it clear but still small */
 .proof-figure__button:hover .proof-zoom-pill,
 .proof-figure__button:focus-visible .proof-zoom-pill,
