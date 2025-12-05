@@ -1337,10 +1337,51 @@ figure, .card { overflow: hidden; }
 }
 
 .chart-footnote {
-  margin-top: 0.5rem;
+  margin-top: 0.6rem;
   font-size: 0.82rem;
+  line-height: 1.5;
   color: var(--text-muted);
+  max-width: 60ch;
 }
+
+/* Mobile tweaks for Export 1 */
+@media (max-width: 640px) {
+  .chart-shell {
+    min-height: 220px;
+    margin-top: 0.75rem;
+    margin-inline: 0;
+  }
+
+  .chart-window-badge {
+    display: inline-block;
+    margin-right: 0;
+    margin-bottom: 0.4rem;
+  }
+
+  .chart-subtitle {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 0.6rem;
+  }
+
+  .chart-footnote {
+    font-size: 0.78rem;
+    line-height: 1.5;
+    margin-top: 0.6rem;
+  }
+
+  .ticker-label {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+    font-size: 0.9rem;
+  }
+  .ticker-label select {
+    padding: 0.25rem 0.75rem;
+  }
+}
+
 
 /* Ticker selector on Projects chart */
 .ticker-label {
