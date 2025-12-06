@@ -10,7 +10,7 @@ Language: English
 Standards: HTML5, CSS3
 Platform: Cloudflare Pages
 Primary Cloud Region: us-east-2 (Ohio, AWS)
-Design Philosophy: Minimal, secure, performance-driven.
+Design Philosophy: Minimal, calm, secure, performance-driven.
 
 /* TECHNOLOGY */
 Stack: AWS MWAA • Snowflake • dbt Cloud • S3 • KMS
