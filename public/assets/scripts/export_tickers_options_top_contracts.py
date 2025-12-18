@@ -12,7 +12,7 @@ from cryptography.hazmat.primitives import serialization
 
 # --- CONFIGURATION ---
 # TODO: Update these placeholders with your actual new tickers
-TICKERS = ["AAPL", "AMZN", "GOOGL", "MSFT", "NVDA", "TICKER6", "TICKER7", "TICKER8"]
+TICKERS = ["AAPL", "AMZN", "GME", "GOOGL", "MSFT", "NVDA", "QQQ", "SPY"]
 OUTPUT_FILENAME = "options_top_contracts_8tickers.json"
 
 # Snowflake Settings
