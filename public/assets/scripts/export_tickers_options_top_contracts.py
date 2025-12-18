@@ -1,48 +1,57 @@
+"""
+Export 2 (options chain top contracts) for 8 tickers.
+Output: /public/assets/data/options_top_contracts_8tickers.json
+"""
+
 import os
 import json
 from pathlib import Path
 from decimal import Decimal
-
 import snowflake.connector
 from cryptography.hazmat.primitives import serialization
 
+# --- CONFIGURATION ---
+# TODO: Update these placeholders with your actual new tickers
+TICKERS = ["AAPL", "AMZN", "GOOGL", "MSFT", "NVDA", "TICKER6", "TICKER7", "TICKER8"]
+OUTPUT_FILENAME = "options_top_contracts_8tickers.json"
 
-TICKERS = ["AAPL", "AMZN", "GOOGL", "MSFT", "NVDA"]
-
+# Snowflake Settings
+SF_ACCOUNT = "OQCLMEX-MX55012"
+SF_USER = "AIRFLOW_STOCKS_USER"
+SF_ROLE = "STOCKS_ELT_ROLE"
+SF_WAREHOUSE = "STOCKS_ELT_WH"
+SF_DATABASE = "STOCKS_ELT_DB"
+SF_SCHEMA = "RAW"
+# ---------------------
 
 def load_private_key():
-    """
-    Load the encrypted PKCS#8 private key from disk using the passphrase
-    in SNOWFLAKE_PRIVATE_KEY_PASSPHRASE and return a key object that
-    the Snowflake connector can use.
-    """
-    key_path = os.environ["SNOWFLAKE_PRIVATE_KEY_PATH"]
-    passphrase = os.environ["SNOWFLAKE_PRIVATE_KEY_PASSPHRASE"].encode("utf-8")
-
+    key_path = os.environ.get("SNOWFLAKE_PRIVATE_KEY_PATH")
+    if not key_path:
+        raise ValueError("Please set SNOWFLAKE_PRIVATE_KEY_PATH environment variable.")
+    
     with open(key_path, "rb") as f:
-        private_key = serialization.load_pem_private_key(
-            f.read(),
-            password=passphrase,
-        )
-
-    return private_key
-
+        p_key = serialization.load_pem_private_key(f.read(), password=None)
+    
+    pkb = p_key.private_bytes(
+        encoding=serialization.Encoding.DER,
+        format=serialization.PrivateFormat.PKCS8,
+        encryption_algorithm=serialization.NoEncryption()
+    )
+    return pkb
 
 def get_conn():
-    private_key = load_private_key()
-
     conn = snowflake.connector.connect(
-        account=os.environ["SNOWFLAKE_ACCOUNT"],
-        user=os.environ["SNOWFLAKE_USER"],
-        role=os.environ["SNOWFLAKE_ROLE"],
-        warehouse=os.environ["SNOWFLAKE_WAREHOUSE"],
-        database=os.environ["SNOWFLAKE_DATABASE"],
-        schema=os.environ["SNOWFLAKE_SCHEMA"],
-        private_key=private_key,
+        account=SF_ACCOUNT,
+        user=SF_USER,
+        role=SF_ROLE,
+        warehouse=SF_WAREHOUSE,
+        database=SF_DATABASE,
+        schema=SF_SCHEMA,
+        private_key=load_private_key(),
     )
     return conn
 
-
+# (SQL_TEMPLATE remains the same as previously discussed)
 SQL_TEMPLATE = """
 with bounds as (
     select
@@ -109,14 +118,7 @@ joined as (
         a.strike_price,
         lc.latest_close_price,
         a.total_volume,
-
-        -- DTE relative to the window end (max_trade_date per contract).
-        -- This will be:
-        --   > 0  for contracts that expire after the window end
-        --   = 0  when expiration_date = max_trade_date
-        --   < 0  for contracts already past expiration by the window end
         datediff('day', a.max_trade_date, a.expiration_date) as days_to_expiration,
-
         a.avg_signed_moneyness_pct as signed_moneyness_pct
     from agg a
     join last_close lc
@@ -125,15 +127,7 @@ joined as (
 ),
 ranked as (
     select
-        option_symbol,
-        underlying_ticker,
-        expiration_date,
-        option_type,
-        strike_price,
-        latest_close_price,
-        total_volume,
-        days_to_expiration,
-        signed_moneyness_pct,
+        *,
         row_number() over (
             partition by underlying_ticker
             order by total_volume desc, expiration_date, strike_price
@@ -155,56 +149,35 @@ where rn <= 25
 order by underlying_ticker, total_volume desc, expiration_date, strike_price
 """
 
-
-
 def main():
     conn = get_conn()
     try:
         cur = conn.cursor()
-
-        # Debug context
-        cur.execute(
-            "select current_role(), current_warehouse(), "
-            "current_database(), current_schema()"
-        )
-        print("Context:", cur.fetchone())
-
-        # Build IN (...) list
         tickers_sql = ",".join("'{}'".format(t) for t in TICKERS)
         sql = SQL_TEMPLATE.format(tickers=tickers_sql)
-
-        # Run the actual query
         cur.execute(sql)
         cols = [c[0].lower() for c in cur.description]
         rows = []
-
         for row in cur.fetchall():
             rec = dict(zip(cols, row))
-
-            # Convert DATE -> ISO strings
             if rec.get("expiration_date") is not None:
                 rec["expiration_date"] = rec["expiration_date"].isoformat()
-
-            # Convert Decimal -> float
             for k, v in rec.items():
                 if isinstance(v, Decimal):
                     rec[k] = float(v)
-
             rows.append(rec)
     finally:
         conn.close()
 
-    assets_dir = Path(__file__).resolve().parents[1]  # .../public/assets
+    assets_dir = Path(__file__).resolve().parents[1]
     data_dir = assets_dir / "data"
     data_dir.mkdir(parents=True, exist_ok=True)
-
-    out_path = data_dir / "options_top_contracts_5tickers.json"
+    out_path = data_dir / OUTPUT_FILENAME
 
     with out_path.open("w", encoding="utf-8") as f:
         json.dump(rows, f, indent=2)
 
     print(f"Wrote {len(rows)} rows to {out_path}")
-
 
 if __name__ == "__main__":
     main()
