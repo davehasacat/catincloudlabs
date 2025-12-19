@@ -12,7 +12,8 @@
     return;
   }
 
-  var DATA_URL = "/assets/data/daily_activity_5tickers.json";
+  // UPDATED: Pointing to the new 8-ticker data file
+  var DATA_URL = "/assets/data/daily_activity_8tickers.json";
 
   function isNarrow() {
     return window.innerWidth <= 640;

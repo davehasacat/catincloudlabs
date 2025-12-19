@@ -5,12 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Projects - CatInCloud Labs</title>
 
-  <!-- SEO -->
   <meta name="description" content="See how CatInCloud Labs builds calm, reliable, enterprise-grade stock-market ELT pipelines on AWS, MWAA, Snowflake, and dbt, from raw ingest to analytics-ready marts." />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <link rel="canonical" href="https://catincloudlabs.com/projects" />
 
-  <!-- Open Graph -->
   <meta property="og:title" content="Projects - CatInCloud Labs" />
   <meta property="og:description" content="See how CatInCloud Labs builds calm, reliable, enterprise-grade stock-market ELT pipelines on AWS, MWAA, Snowflake, and dbt, from raw ingest to analytics-ready marts." />
   <meta property="og:type" content="website" />
@@ -21,32 +19,37 @@
   <meta property="og:site_name" content="CatInCloud Labs" />
   <meta property="og:locale" content="en_US" />
 
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Projects - CatInCloud Labs" />
   <meta name="twitter:description" content="See how CatInCloud Labs builds calm, reliable, enterprise-grade stock-market ELT pipelines on AWS, MWAA, Snowflake, and dbt, from raw ingest to analytics-ready marts." />
   <meta name="twitter:image" content="https://catincloudlabs.com/assets/brand/social-card.v2.png" />
 
-  <!-- Icons & theme -->
-  <link rel="icon" href="/assets/favicons/favicon.svg" type="image/svg+xml" />
-  <link rel="alternate icon" href="/assets/favicons/favicon.png" type="image/png" />
-  <link rel="apple-touch-icon" href="/assets/favicons/favicon.png" />
+  <link rel="icon" href="assets/favicons/favicon.svg" type="image/svg+xml" />
+  <link rel="alternate icon" href="assets/favicons/favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" href="assets/favicons/favicon.png" />
   <meta name="theme-color" content="#f3f4f6" />
   <meta name="color-scheme" content="light" />
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="/assets/css/styles.css" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+
+  <style>
+    @media (min-width: 1400px) {
+      .container {
+        max-width: 1200px; /* Caps width to a readable size */
+        margin-left: auto;  /* Centers the content */
+        margin-right: auto;
+      }
+    }
+  </style>
 </head>
 
 <body class="page--projects">
-  <!-- Accessibility: skip link -->
   <a href="#main" class="skip-link">Skip to content</a>
 
-  <!-- Header -->
   <header class="header">
     <div class="container nav">
       <a class="brand" href="/" aria-label="CatInCloud Labs">
-        <img src="/assets/brand/logo-wordmark-light.svg" alt="CatInCloud Labs" height="32" />
+        <img src="assets/brand/logo-wordmark-light.svg" alt="CatInCloud Labs" height="32" />
       </a>
       <nav class="menu" aria-label="Primary">
         <a href="/">Home</a>
@@ -59,7 +62,6 @@
   </header>
 
   <main id="main">
-    <!-- Hero -->
     <section class="hero">
       <div class="container hero-simple">
         <div class="stack stack--hero">
@@ -72,11 +74,9 @@
       </div>
     </section>
 
-    <!-- Projects cards -->
     <section class="section">
       <div class="container">
         <div class="stack stack--section">
-          <!-- Enterprise Stock Market ELT -->
           <article class="card reveal card--narrow">
             <h2>Enterprise Stock Market ELT (reference implementation)</h2>
             <p>
@@ -95,7 +95,6 @@
               <li><strong>Built for:</strong> calm, production-like behavior</li>
             </ul>
 
-            <!-- Architecture & security diagrams -->
             <div class="stack stack--section">
               <div class="stack stack--tight">
                 <h3>Architecture and security posture</h3>
@@ -106,7 +105,6 @@
                 </p>
               </div>
 
-              <!-- Architecture diagram (reusing homepage styles/assets) -->
               <figure id="diagram-architecture" class="diagram-figure">
                 <button
                   type="button"
@@ -116,7 +114,7 @@
                   aria-label="Click to zoom the architecture flow diagram"
                 >
                   <img
-                    src="/assets/diagrams/architecture-flow.v5.svg"
+                    src="assets/diagrams/architecture-flow.v5.svg"
                     alt="Architecture flow diagram showing MWAA orchestrating S3 to Snowflake via COPY, with dbt building marts"
                     class="diagram"
                     width="1160" height="300"
@@ -131,7 +129,6 @@
                 </figcaption>
               </figure>
 
-              <!-- Security/observability diagram (reusing homepage styles/assets) -->
               <figure class="diagram-figure">
                 <button
                   type="button"
@@ -141,7 +138,7 @@
                   aria-label="Click to zoom the security and observability diagram"
                 >
                   <img
-                    src="/assets/diagrams/security-observability.v5.svg"
+                    src="assets/diagrams/security-observability.v5.svg"
                     alt="Private VPC with S3 Gateway Endpoint; MWAA orchestrates Snowflake load; outbound-only egress"
                     class="diagram"
                     width="1160" height="300"
@@ -161,22 +158,24 @@
               <strong>All three views below</strong> come from the same Snowflake marts that power this reference pipeline. For client work, those marts would typically sit behind a BI tool or custom app; here they're exposed as static JSON slices for the demo.
             </p>
 
-            <!-- Multi-ticker daily chart powered by Snowflake-exported JSON (Export 1) -->
             <div class="stack stack--tight">
               <div class="stack stack--tight">
                 <h3>Multi-ticker daily price and options volume</h3>
                 <p class="chart-subtitle">
-                  <span class="chart-window-badge"><strong>Sep 2 - Nov 27, 2025 • one point per trading day.</strong></span>
-                  See how AAPL, AMZN, GOOGL, MSFT, and NVDA moved over the same three-month window, using a static JSON export from Snowflake.
+                  <span class="chart-window-badge"><strong>Sep 2 - Nov 28, 2025 • one point per trading day.</strong></span>
+                  See how 8 major tickers—including AAPL, NVDA, GME, and market indices—moved over the same three-month window, using a static JSON export from Snowflake.
                 </p>
                 <label for="daily-activity-ticker" class="ticker-label">
                   Selected ticker:
                   <select id="daily-activity-ticker">
                     <option value="AAPL" selected>AAPL</option>
                     <option value="AMZN">AMZN</option>
+                    <option value="GME">GME</option>
                     <option value="GOOGL">GOOGL</option>
                     <option value="MSFT">MSFT</option>
                     <option value="NVDA">NVDA</option>
+                    <option value="QQQ">QQQ</option>
+                    <option value="SPY">SPY</option>
                   </select>
                 </label>
               </div>
@@ -185,7 +184,7 @@
                 id="tickers-daily-activity-chart"
                 class="chart-shell"
                 role="img"
-                aria-label="Interactive chart of daily closing price, total options volume, and a 7-day rolling average for the selected ticker (AAPL, AMZN, GOOGL, MSFT, or NVDA) between September 2 and November 27, 2025."
+                aria-label="Interactive chart of daily closing price, total options volume, and a 7-day rolling average for the selected ticker (e.g., AAPL, GME, SPY) between September 2 and November 28, 2025."
               >
                 <noscript>Enable JavaScript to view the interactive chart.</noscript>
               </div>
@@ -195,7 +194,6 @@
               </p>
             </div>
 
-            <!-- Daily features snapshot (Export 3) -->
             <div class="stack stack--tight">
               <div class="stack stack--tight">
                 <h3>Daily snapshot for the selected ticker</h3>
@@ -217,12 +215,11 @@
                 <noscript>Enable JavaScript to view the daily features snapshot.</noscript>
               </div>
               <p class="chart-footnote">
-                Switch tickers in the selector above to see how the same daily metrics behave for AAPL,
-                AMZN, GOOGL, MSFT, and NVDA on the latest trading day in the window.
+                Switch tickers in the selector above to see how the same daily metrics behave for the 8 tickers in this list
+                on the latest trading day in the window.
               </p>
             </div>
 
-            <!-- Multi-ticker options chain: aggregated top-contracts table (Export 2) -->
             <div class="stack stack--tight">
               <div class="stack stack--tight">
                 <h3>Options chain: most active contracts over a recent window</h3>
@@ -260,100 +257,65 @@
               </p>
             </div>
 
-            <!-- Interpretation: So what does this data tell us? -->
             <div class="insights-panel stack stack--tight">
               <h3>So what does this data tell us?</h3>
               <p>
-                High level, this window looks like big tech grinding higher, options flow staying loud, and traders leaning into calls
-                while volatility is elevated but not chaotic.
+                With the addition of market benchmarks (SPY, QQQ) and a retail outlier (GME), the dashboard now tells the full story of the market structure: 
+                Indices are for hedging, Meme stocks are for gambling, and NVDA has become a market of its own.
               </p>
 
               <div class="stack stack--tight">
-                <h4>Trending up, with event-driven bursts</h4>
+                <h4>1. Flow proves the "Role" of the ticker</h4>
                 <ul>
                   <li>
-                    <strong>More up days than crash days.</strong>
-                    Across AAPL, AMZN, GOOGL, MSFT, and NVDA you see more +1-4% days than sharp selloffs, and most pullbacks get bought back within a few sessions.
+                    <strong>QQQ is used for protection.</strong>
+                    Look at the Options Chain table for QQQ. The top active contracts are frequently <strong>Puts</strong> (betting on downside). 
+                    Institutions use these liquid indices to hedge their portfolios against tech selloffs.
                   </li>
                   <li>
-                    <strong>AAPL climbs through choppy sessions, not one giant move.</strong>
-                    It walks from the high-220s into the high-270s through a series of noisy days, which reads as a “choppy uptrend with event-driven bursts” rather than a calm drift or crash regime.
+                    <strong>GME is pure speculation.</strong>
+                    Switch the selector to GME. The top contracts are almost exclusively <strong>Calls</strong>. 
+                    There is virtually no hedging visible here; the flow is entirely focused on speculative upside bursts.
                   </li>
                 </ul>
               </div>
 
               <div class="stack stack--tight">
-                <h4>Options flow is where the crowd gets loud</h4>
+                <h4>2. NVDA rivals the S&P 500</h4>
                 <ul>
                   <li>
-                    <strong>Volume spikes in clusters, not randomly.</strong>
-                    For AAPL, “normal” options flow is about 1-1.5M contracts a day; on hotspots like 2025-09-19 and 09-22 it jumps into the 5M+ range.
-                  </li>
-                  <li>
-                    <strong>“3× crowd days” stand out quickly.</strong>
-                    The 7-day average line and the <code>option_volume_vs_30d</code> feature make it easy to see when today is two to three times louder than the recent baseline without having to remember what “normal” looks like.
-                  </li>
-                  <li>
-                    <strong>NVDA is structurally loud.</strong>
-                    It routinely trades 5-9M contracts a day with 7-day averages north of 5M even when spot is oscillating in a tight band—that's what a crowded options tape looks like.
+                    <strong>The "New Index" behavior.</strong>
+                    Historically, SPY volumes dwarf single stocks. But in this window, <strong>NVDA's top contracts often traded higher volume than SPY's.</strong> 
+                    This signals that for many traders, NVDA has effectively become the market proxy—the center of gravity for liquidity and attention.
                   </li>
                 </ul>
               </div>
 
               <div class="stack stack--tight">
-                <h4>Volatility has a personality per ticker</h4>
+                <h4>3. Volatility Regimes</h4>
                 <ul>
                   <li>
-                    <strong>Elevated but not chaotic.</strong>
-                    AAPL, AMZN, and MSFT mostly live in the 20-30% annualized realized-vol range; NVDA tends to run hotter; MSFT is the relative “calm anchor” even as it grinds to new highs.
-                  </li>
-                  <li>
-                    <strong>Distinct “vol personalities.”</strong>
-                    NVDA is consistently punchier, MSFT is steadier, and GOOGL has a brief early patch of very high vol before settling into a more normal band.
+                    <strong>Benchmarks anchor the room.</strong>
+                    SPY and QQQ maintain a steady, lower volatility profile (typically 10-15% annualized). They act as the "control group" 
+                    against which the idiosyncratic risk of single names like GME (which lives in its own disconnected volatility reality) is measured.
                   </li>
                 </ul>
               </div>
 
               <div class="stack stack--tight">
-                <h4>Where risk and attention actually concentrated</h4>
+                <h4>Why this matters for Data Engineering</h4>
                 <ul>
                   <li>
-                    <strong>Flow clusters in short-dated calls near the money.</strong>
-                    The top-contracts table shows activity focused in short-dated calls around nearby strikes (for example, 260-280 for AAPL, ~180-210 for NVDA, ~500-550 for MSFT), with puts showing up as the exception.
-                  </li>
-                  <li>
-                    <strong>Upside speculation dominates.</strong>
-                    That mix suggests a window skewed toward upside speculation or call-heavy hedging rather than quiet downside protection in puts.
-                  </li>
-                  <li>
-                    <strong>Expired but important contracts remain visible.</strong>
-                    Many of the most active contracts now show DTE = 0 and a last price of $0.01, which is exactly what you'd expect for short-dated options that were heavily traded during the window and have since expired.
-                  </li>
-                </ul>
-              </div>
-
-              <div class="stack stack--tight">
-                <h4>A compact “daily weather report” for non-quants</h4>
-                <ul>
-                  <li>
-                    <strong>One row per day, plenty of signal.</strong>
-                    The snapshot export gives each ticker a daily state: short-horizon returns, realized vol, underlying volume,
-                    options volume versus a 30-day baseline, and call/put mix.
-                  </li>
-                  <li>
-                    <strong>Designed for heads of data, not traders.</strong>
-                    It's enough to answer “Is today normal or weird?”, “Is this rally being chased in options?”, or “Is this selloff being hedged or faded?” without staring at raw trade logs.
-                  </li>
-                  <li>
-                    <strong>Built for downstream dashboards and models.</strong>
-                    The goal isn't to predict the market; it's to give dashboards, alerts, and models a clean, warehouse-native view of price action and options behavior instead of one-off CSVs scattered across laptops.
+                    <strong>Handling scale and skew.</strong>
+                    This pipeline handles tickers with massively different profiles—from the 1M+ daily contracts of NVDA/SPY to the 
+                    bursty, erratic flow of GME—without manual intervention. It proves the ELT architecture can scale across the 
+                    full "Market Weather" spectrum, from calm institutional flows to retail storms.
                   </li>
                 </ul>
               </div>
             </div>
           </article>
 
-          <!-- MWAA Private Environment -->
           <article class="card reveal card--narrow">
             <h2>Private MWAA Environment</h2>
             <p>
@@ -367,7 +329,6 @@
             </p>
           </article>
 
-          <!-- Future dashboards -->
           <article class="card reveal card--narrow">
             <h2>In progress: Dashboards &amp; apps on top</h2>
             <p>
@@ -379,7 +340,6 @@
             </p>
           </article>
 
-          <!-- Future ML layer -->
           <article class="card reveal card--narrow">
             <h2>Future: Machine learning on top of calm pipelines</h2>
             <p>
@@ -401,7 +361,6 @@
       </div>
     </section>
 
-    <!-- CTA -->
     <section class="section">
       <div class="container">
         <article class="card reveal card--narrow card--cta">
@@ -421,7 +380,6 @@
     </section>
   </main>
 
-  <!-- Lightbox root (one per page) -->
   <div id="lightbox" class="lb" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-label="Image viewer">
     <div class="lb__backdrop" data-close></div>
     <div class="lb__stage" role="document">
@@ -435,7 +393,6 @@
     </div>
   </div>
 
-  <!-- Footer -->
   <footer class="footer">
     <div class="container inner center">
       <small>© <span id="y"></span> CatInCloud Labs - DaveHasACat LLC</small>
@@ -449,12 +406,12 @@
       </div>
     </div>
 
-    <script src="/assets/js/footer-year-theme.js" defer></script>
-    <script src="/assets/js/proof-panel-lightbox.js" defer></script>
-    <script src="/assets/js/plotly-2.35.3.min.js" defer></script>
-    <script src="/assets/js/tickers-daily-activity-chart.js" defer></script>
-    <script src="/assets/js/ticker-features-daily-dashboard.js" defer></script>
-    <script src="/assets/js/tickers-options-chain-dashboard.js" defer></script>
+    <script src="assets/js/footer-year-theme.js" defer></script>
+    <script src="assets/js/proof-panel-lightbox.js" defer></script>
+    <script src="assets/js/plotly-2.35.3.min.js" defer></script>
+    <script src="assets/js/tickers-daily-activity-chart.js" defer></script>
+    <script src="assets/js/ticker-features-daily-dashboard.js" defer></script>
+    <script src="assets/js/tickers-options-chain-dashboard.js" defer></script>
   </footer>
 </body>
 </html>
