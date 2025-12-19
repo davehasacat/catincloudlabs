@@ -24,13 +24,23 @@
   <meta name="twitter:description" content="See how CatInCloud Labs builds calm, reliable, enterprise-grade stock-market ELT pipelines on AWS, MWAA, Snowflake, and dbt, from raw ingest to analytics-ready marts." />
   <meta name="twitter:image" content="https://catincloudlabs.com/assets/brand/social-card.v2.png" />
 
-  <link rel="icon" href="/assets/favicons/favicon.svg" type="image/svg+xml" />
-  <link rel="alternate icon" href="/assets/favicons/favicon.png" type="image/png" />
-  <link rel="apple-touch-icon" href="/assets/favicons/favicon.png" />
+  <link rel="icon" href="assets/favicons/favicon.svg" type="image/svg+xml" />
+  <link rel="alternate icon" href="assets/favicons/favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" href="assets/favicons/favicon.png" />
   <meta name="theme-color" content="#f3f4f6" />
   <meta name="color-scheme" content="light" />
 
-  <link rel="stylesheet" href="/assets/css/styles.css" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+
+  <style>
+    @media (min-width: 1400px) {
+      .container {
+        max-width: 1200px; /* Caps width to a readable size */
+        margin-left: auto;  /* Centers the content */
+        margin-right: auto;
+      }
+    }
+  </style>
 </head>
 
 <body class="page--projects">
@@ -39,7 +49,7 @@
   <header class="header">
     <div class="container nav">
       <a class="brand" href="/" aria-label="CatInCloud Labs">
-        <img src="/assets/brand/logo-wordmark-light.svg" alt="CatInCloud Labs" height="32" />
+        <img src="assets/brand/logo-wordmark-light.svg" alt="CatInCloud Labs" height="32" />
       </a>
       <nav class="menu" aria-label="Primary">
         <a href="/">Home</a>
@@ -104,7 +114,7 @@
                   aria-label="Click to zoom the architecture flow diagram"
                 >
                   <img
-                    src="/assets/diagrams/architecture-flow.v5.svg"
+                    src="assets/diagrams/architecture-flow.v5.svg"
                     alt="Architecture flow diagram showing MWAA orchestrating S3 to Snowflake via COPY, with dbt building marts"
                     class="diagram"
                     width="1160" height="300"
@@ -128,7 +138,7 @@
                   aria-label="Click to zoom the security and observability diagram"
                 >
                   <img
-                    src="/assets/diagrams/security-observability.v5.svg"
+                    src="assets/diagrams/security-observability.v5.svg"
                     alt="Private VPC with S3 Gateway Endpoint; MWAA orchestrates Snowflake load; outbound-only egress"
                     class="diagram"
                     width="1160" height="300"
@@ -396,12 +406,12 @@
       </div>
     </div>
 
-    <script src="/assets/js/footer-year-theme.js" defer></script>
-    <script src="/assets/js/proof-panel-lightbox.js" defer></script>
-    <script src="/assets/js/plotly-2.35.3.min.js" defer></script>
-    <script src="/assets/js/tickers-daily-activity-chart.js" defer></script>
-    <script src="/assets/js/ticker-features-daily-dashboard.js" defer></script>
-    <script src="/assets/js/tickers-options-chain-dashboard.js" defer></script>
+    <script src="assets/js/footer-year-theme.js" defer></script>
+    <script src="assets/js/proof-panel-lightbox.js" defer></script>
+    <script src="assets/js/plotly-2.35.3.min.js" defer></script>
+    <script src="assets/js/tickers-daily-activity-chart.js" defer></script>
+    <script src="assets/js/ticker-features-daily-dashboard.js" defer></script>
+    <script src="assets/js/tickers-options-chain-dashboard.js" defer></script>
   </footer>
 </body>
 </html>
