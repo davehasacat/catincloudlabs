@@ -12,7 +12,7 @@ from cryptography.hazmat.primitives import serialization
 
 # --- CONFIGURATION ---
 # TODO: Update these placeholders with your actual new tickers
-TICKERS = ["AAPL", "AMZN", "GME", "GOOGL", "MSFT", "NVDA", "QQQ", "SPY"]
+TICKERS = ["AAPL", "AMZN", "GME", "GOOGL", "IWM", "MSFT", "NVDA", "QQQ", "SPY", "TSLA"]
 START_DATE = "2025-09-01"
 END_DATE = "2025-11-30"
 OUTPUT_FILENAME = "daily_activity_8tickers.json"
