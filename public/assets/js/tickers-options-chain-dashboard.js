@@ -12,7 +12,9 @@
   // Ticker label already present in the HTML copy
   var tickerLabelEl = document.getElementById("options-table-ticker-label");
 
-  var DATA_URL = "/assets/data/options_top_contracts_5tickers.json";
+  // UPDATED: Pointing to the new 8-ticker data file
+  var DATA_URL = "/assets/data/options_top_contracts_8tickers.json";
+  
   var allRows = [];
 
   var currentTicker =

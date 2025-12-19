@@ -8,7 +8,9 @@
 
   // Keep the snapshot in sync with Export 1's ticker selector
   var selectEl = document.getElementById("daily-activity-ticker");
-  var DATA_URL = "/assets/data/ticker_features_daily_5tickers.json";
+  
+  // UPDATED: Pointing to the new 8-ticker data file
+  var DATA_URL = "/assets/data/ticker_features_daily_8tickers.json";
 
   var allRows = [];
   var currentTicker = (selectEl && selectEl.value) ? selectEl.value : "AAPL";
