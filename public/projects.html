@@ -163,7 +163,7 @@
                 <h3>Multi-ticker daily price and options volume</h3>
                 <p class="chart-subtitle">
                   <span class="chart-window-badge"><strong>Sep 2 - Nov 28, 2025 • one point per trading day.</strong></span>
-                  See how 8 major tickers—including AAPL, NVDA, GME, and market indices—moved over the same three-month window, using a static JSON export from Snowflake.
+                  See how 8 major tickers moved over the same three-month window, using a static JSON export from Snowflake.
                 </p>
                 <label for="daily-activity-ticker" class="ticker-label">
                   Selected ticker:
@@ -286,7 +286,7 @@
                   <li>
                     <strong>The "New Index" behavior.</strong>
                     Historically, SPY volumes dwarf single stocks. But in this window, <strong>NVDA's top contracts often traded higher volume than SPY's.</strong> 
-                    This signals that for many traders, NVDA has effectively become the market proxy—the center of gravity for liquidity and attention.
+                    This signals that for many traders, NVDA has effectively become the market proxy. NVDA is the center of gravity for liquidity and attention.
                   </li>
                 </ul>
               </div>
@@ -307,8 +307,8 @@
                 <ul>
                   <li>
                     <strong>Handling scale and skew.</strong>
-                    This pipeline handles tickers with massively different profiles—from the 1M+ daily contracts of NVDA/SPY to the 
-                    bursty, erratic flow of GME—without manual intervention. It proves the ELT architecture can scale across the 
+                    This pipeline handles tickers with massively different profiles. It ingests data from the 1M+ daily contracts of NVDA/SPY to the 
+                    bursty, erratic flow of GME, without manual intervention. It proves the ELT architecture can scale across the 
                     full "Market Weather" spectrum, from calm institutional flows to retail storms.
                   </li>
                 </ul>
