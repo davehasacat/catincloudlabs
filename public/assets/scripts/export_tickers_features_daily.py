@@ -66,7 +66,7 @@ select
     option_volume_30d_avg,
     option_volume_vs_30d,
     call_put_ratio
-from STOCKS_ELT_DB.PREP.INT_POLYGON__TICKER_FEATURES_DAILY
+from STOCKS_ELT_DB.PREP.INT_MASSIVE__TICKER_FEATURES_DAILY
 where underlying_ticker in ({tickers})
   and trade_date between '{start_date}' and '{end_date}'
 order by trade_date, underlying_ticker

@@ -58,7 +58,7 @@ with bounds as (
         underlying_ticker,
         max(trade_date) as max_trade_date,
         dateadd(day, -59, max(trade_date)) as min_trade_date
-    from STOCKS_ELT_DB.PREP.INT_POLYGON__OPTIONS_CHAIN_DAILY
+    from STOCKS_ELT_DB.PREP.INT_MASSIVE__OPTIONS_CHAIN_DAILY
     where underlying_ticker in ({tickers})
     group by underlying_ticker
 ),
@@ -74,7 +74,7 @@ base as (
         t.signed_moneyness_pct,
         t.trade_date,
         b.max_trade_date
-    from STOCKS_ELT_DB.PREP.INT_POLYGON__OPTIONS_CHAIN_DAILY t
+    from STOCKS_ELT_DB.PREP.INT_MASSIVE__OPTIONS_CHAIN_DAILY t
     join bounds b
       on t.underlying_ticker = b.underlying_ticker
      and t.trade_date between b.min_trade_date and b.max_trade_date

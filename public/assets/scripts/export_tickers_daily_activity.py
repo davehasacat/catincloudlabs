@@ -71,7 +71,7 @@ select
     underlying_close_price,
     total_option_volume,
     volume_7d_avg
-from STOCKS_ELT_DB.PREP.INT_POLYGON__TICKER_DAILY_ACTIVITY
+from STOCKS_ELT_DB.PREP.INT_MASSIVE__TICKER_VOLUME_DAILY
 where ticker in ({ticker_list})
   and trade_date between date '{start_date}' and date '{end_date}'
 order by ticker, trade_date
