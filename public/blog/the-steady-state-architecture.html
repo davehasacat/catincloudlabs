@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>The Heavyweight Architecture - CatInCloud Labs</title>
+  <title>The Steady State Architecture - CatInCloud Labs</title>
 
   <meta name="description" content="Handling scale (SPY) and chaos (GME) using boring tools: MWAA, Snowflake, and dbt. Why predictability beats complexity in data engineering." />
   <meta name="robots" content="index,follow" />
-  <link rel="canonical" href="https://catincloudlabs.com/blog/the-heavyweight-architecture" />
+  <link rel="canonical" href="https://catincloudlabs.com/blog/the-steady-state-architecture" />
 
-  <meta property="og:title" content="The Heavyweight Architecture" />
-  <meta property="og:description" content="Why I chose AWS MWAA, Snowflake, and dbt to handle the 'Perfect 14' portfolio." />
+  <meta property="og:title" content="The Steady State Architecture" />
+  <meta property="og:description" content="Why I chose AWS MWAA, Snowflake, and dbt to handle 'The Perfect 15' portfolio." />
   <meta property="og:image" content="https://catincloudlabs.com/assets/brand/social-card.v2.png" />
   <meta name="twitter:card" content="summary_large_image" />
 
@@ -49,7 +49,7 @@
           <div class="kicker">
             <a href="/blog" style="color: inherit; text-decoration: none;">&larr; Engineering Log</a>
           </div>
-          <h1 class="title">The Heavyweight Architecture</h1>
+          <h1 class="title">The Steady State Architecture</h1>
           <p class="subtitle">
             Dec 22, 2025 · Architecture
           </p>
@@ -63,9 +63,9 @@
           
           <article class="card card--narrow article-body">
             
-            <p>I just updated the CatInCloud Labs project page with a massive expansion: <strong>The "Perfect 14" portfolio is live. 🚀</strong></p>
+            <p>I just updated the CatInCloud Labs project page with a massive expansion: <strong>"The Perfect 15" portfolio is live. 🚀</strong></p>
 
-            <p>I am now modeling options chains for the entire Magnificent Seven (NVDA, AAPL, MSFT...), the Macro heavyweights (SPY, QQQ, IWM, TLT), plus the Chaos engines (GME, VIX, and IBIT).</p>
+            <p>I am now modeling options chains for the entire Magnificent Seven (NVDA, AAPL, MSFT...), the Macro heavyweights (SPY, QQQ, IWM, TLT), plus the Chaos engines (GME, VIX, IBIT, and RDDT).</p>
 
             <p>When market data needs to cover the most traded ETFs, the biggest tech giants, and the most volatile meme assets simultaneously, "fragile" data pipelines don't cut it. This brings me back to the core architectural decision for this project: <strong>Why choose a "boring" stack like AWS MWAA + Snowflake + dbt?</strong></p>
 
@@ -83,7 +83,7 @@
             <p>To handle this, I needed an architecture that provided the ultimate engineering luxury: <strong>predictability</strong>.</p>
 
             <h3>1. Orchestration: Why AWS MWAA?</h3>
-            <p>A simple cron job is too fragile to handle complex dependencies across 14 asset classes. If the raw data for NVDA lands late, I need the transformation layer to wait, not fail silently.</p>
+            <p>A simple cron job is too fragile to handle complex dependencies across 15 asset classes. If the raw data for NVDA lands late, I need the transformation layer to wait, not fail silently.</p>
             
             <p>On the other hand, managing a Kubernetes cluster just to run Airflow adds massive operational overhead. I chose <strong>Amazon Managed Workflows for Apache Airflow (MWAA)</strong> because it decouples infrastructure maintenance from business logic:</p>
             <ul>
@@ -127,7 +127,7 @@
 
             <p>Calm engineering isn't about refusing to scale. It's about building a foundation strong enough to hold the entire market today, but flexible enough to evolve tomorrow.</p>
 
-            <p>Check out the full 14-ticker dashboard live on the site: <a href="/projects">🐈 catincloudlabs.com/projects</a></p>
+            <p>Check out the full 15-ticker dashboard live on the site: <a href="/projects">🐈 catincloudlabs.com/projects</a></p>
 
             <div class="pro-tip">
                 <h3>⚡ Engineering Note: MWAA Dependency Hell</h3>
