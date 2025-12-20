@@ -65,7 +65,7 @@
             
             <p>I just updated the CatInCloud Labs project page with a massive expansion: The "Core &amp; Chaos" portfolio is live. 😼</p>
 
-            <p>I'm now modeling options chains for the entire Magnificent Seven (NVDA, AAPL, MSFT...), the Macro heavyweights (SPY, QQQ, IWM, TLT), plus the Chaos engines (GME, VIX, IBIT, and RDDT).</p>
+            <p>I'm now modeling options chains for the entire Magnificent Seven (NVDA, AAPL, MSFT...), the Macro heavyweights (SPY, QQQ, IWM, TLT), plus the chaos engines (GME, VIX, IBIT, and RDDT).</p>
 
             <p>When market data needs to cover the most traded ETFs, the biggest tech giants, and the most volatile meme assets simultaneously, "fragile" data pipelines don't cut it. This brings me back to the core architectural decision for this project: Why choose a "boring" stack like AWS MWAA + Snowflake + dbt?</p>
 
@@ -78,9 +78,9 @@
             
             <h3>The Problem: Scale meets Chaos</h3>
 
-            <p>Market data is a unique engineering challenge because it combines predictable massive volume with unpredictable spikes. SPY churns out millions of rows every day. GME will be dormant for months, then explode with 10x volume in a single afternoon.</p>
+            <p>Market data is a unique engineering challenge because it combines massive daily volume with explosive volatility. SPY churns out millions of rows every day. GME will be dormant for months, then burst with 10x volume in a single afternoon.</p>
 
-            <p>To handle this, I needed an architecture that provided the ultimate engineering luxury: predictability.</p>
+            <p>To handle this, I needed a stack that provided the ultimate engineering luxury: predictability.</p>
 
             <h3>1. Orchestration: Why AWS MWAA?</h3>
             <p>A simple cron job is too fragile to handle complex dependencies across 15 asset classes. If the raw data for NVDA lands late, I need the transformation layer to wait, not fail silently.</p>
@@ -93,9 +93,9 @@
             </ul>
 
             <h3>2. Compute: Why Snowflake?</h3>
-            <p>When you are ingesting full options chains, the row counts get heavy fast. Managing the compute resources for that ingest locally or on an EC2 instance is a constant balancing act between over-provisioning (wasting money) and under-provisioning (crashing pipelines).</p>
+            <p>When you are ingesting full options chains, the row counts get heavy. Fast. Managing the compute resources for a local ingest or on an EC2 instance is a constant balancing act between over-provisioning (wasting money) and under-provisioning (crashing pipelines).</p>
             
-            <p>Snowflake solves this via the separation of storage and compute. I use a dedicated Virtual Warehouse for ingestion that scales up instantly to chew through the massive SPY/NVDA files, and then immediately spins down. It doesn't matter if GME has 1 record or 1 million records today; Snowflake scales to fit the load without human intervention, and I only pay for the seconds the warehouse is running.</p>
+            <p>Snowflake solves this via the separation of storage and compute. I use a dedicated virtual warehouse for ingestion that scales up instantly to chew through the massive SPY/NVDA files, and then immediately spins down. It doesn't matter if GME has 1 record or 1 million records today; Snowflake scales to fit the load without human intervention, and I only pay for the seconds the warehouse is running.</p>
 
             <h3>3. The Engineering Superpower: Idempotency in Design</h3>
             
@@ -103,15 +103,15 @@
 
             <p>In a fragile system, a failure usually requires manual cleanup: "Did step 3 finish? Do I need to delete the partial rows for today? If I re-run this, will I get duplicates?"</p>
 
-            <p>I designed this architecture around idempotency at the DAG level. This means I can clear any task in Airflow, re-run it, and guarantee the result will be exactly the same as if it had run perfectly the first time.</p>
+            <p>I designed this architecture around idempotency downb to the DAG level. This means I can clear any Airflow task, re-run it, and be certain the result will be exactly the same as if it had run perfectly the first time.</p>
 
             <p><strong>How this works in practice:</strong></p>
             <ul>
-                <li><strong>Airflow Tasks:</strong> Every task is templated using the execution date. When the ingestion task runs for <code>2025-12-22</code>, it doesn't just "append" data. It explicitly targets the partition for that specific date. If I re-run the task, it overwrites that specific slice of time. It is impossible to accidentally double-load data by clicking "Clear" in the UI.</li>
-                <li><strong>dbt Transformations:</strong> dbt (data build tool) is the other half of this equation. Because dbt models are declarative (<code>SELECT</code> statements) rather than imperative (<code>INSERT/UPDATE</code> scripts), dbt handles the complexity of replacing tables or merging incremental data cleanly.</li>
+                <li><strong>Airflow Tasks:</strong> Every task is templated using the execution date. When the ingestion task runs for <code>2025-12-22</code>, it doesn't just "append" data. It explicitly targets the partition for that specific date. If I re-run the task, it overwrites that specific slice of time. It is impossible to accidentally double-load data by clicking "clear" in the UI.</li>
+                <li><strong>dbt Transformations:</strong> dbt (data build tool) is the other half of this equation. Because dbt models are declarative (<code>SELECT</code> statements) rather than imperative (<code>INSERT/UPDATE</code> scripts), it can handle the complexity of replacing tables or merging incremental data cleanly.</li>
             </ul>
 
-            <p>This design choice drastically reduces the "Mean Time To Recovery." If a pipeline fails at 3:00 AM, I don't have to perform surgery on the database. I fix the upstream issue, clear the DAG, and go back to sleep. The system heals itself.</p>
+            <p>This design choice drastically reduces the "mean time to recovery." If a pipeline fails at 3:00 AM, I don't have to perform surgery on the database. I fix the upstream issue, clear the DAG, and go back to sleep. The system heals itself.</p>
 
             <h3>Looking Ahead: What happens when we need it faster?</h3>
 
@@ -132,7 +132,7 @@
             <div class="pro-tip">
                 <h3>⚡ Engineering Note: MWAA Dependency Hell</h3>
                 <p class="muted">
-                    Speaking of "dependency hell": if anyone else is currently fighting with Python library conflicts in MWAA, I’m happy to save you a weekend of debugging.
+                    Speaking of "dependency hell": if anyone else is currently fighting with Python library conflicts in MWAA, I'm happy to save you a weekend of debugging.
                 </p>
                 <p class="muted">
                     Here is the constraints file I built to keep the environment stable (MWAA 3.0.6 / Python 3.12). It took two days of trial and error to get this right. Feel free to steal it 😸
@@ -143,7 +143,7 @@
                 </a>
                 
                 <p class="muted" style="font-size: 0.85rem; margin-top: 1rem;">
-                    If you try it and it’s still not working for you, don't hesitate to reach out!
+                    If you try it and it's still not working for you, don't hesitate to reach out!
                 </p>
             </div>
 
