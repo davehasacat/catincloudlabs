@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Heavyweight Architecture - CatInCloud Labs</title>
+
+  <meta name="description" content="Handling scale (SPY) and chaos (GME) using boring tools: MWAA, Snowflake, and dbt. Why predictability beats complexity in data engineering." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://catincloudlabs.com/blog/the-heavyweight-architecture" />
+
+  <meta property="og:title" content="The Heavyweight Architecture" />
+  <meta property="og:description" content="Why I chose AWS MWAA, Snowflake, and dbt to handle the 'Perfect 14' portfolio." />
+  <meta property="og:image" content="https://catincloudlabs.com/assets/brand/social-card.v2.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" href="/assets/favicons/favicon.svg" type="image/svg+xml" />
+  <link rel="alternate icon" href="/assets/favicons/favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" href="/assets/favicons/favicon.png" />
+  <meta name="theme-color" content="#f3f4f6" />
+  <meta name="color-scheme" content="light" />
+
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+</head>
+
+<body class="page--blog-post">
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="/" aria-label="CatInCloud Labs">
+        <img src="/assets/brand/logo-wordmark-light.svg" alt="CatInCloud Labs" height="32" />
+      </a>
+      <nav class="menu" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/projects">Projects</a>
+        <a href="/services">Services</a>
+        <a href="/blog" class="button ghost active" aria-current="page">Blog</a>
+        <a href="/contact#contact-form" class="button ghost">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container hero-simple">
+        <div class="stack stack--hero">
+          <div class="kicker">
+            <a href="/blog" style="color: inherit; text-decoration: none;">&larr; Engineering Log</a>
+          </div>
+          <h1 class="title">The Heavyweight Architecture</h1>
+          <p class="subtitle">
+            Dec 22, 2025 · Architecture
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="stack stack--section">
+          
+          <article class="card card--narrow article-body">
+            
+            <p>I just updated the CatInCloud Labs project page with a massive expansion: <strong>The "Perfect 14" portfolio is live. 🚀</strong></p>
+
+            <p>I am now modeling options chains for the entire Magnificent Seven (NVDA, AAPL, MSFT...), the Macro heavyweights (SPY, QQQ, IWM, TLT), plus the Chaos engines (GME, VIX, and IBIT).</p>
+
+            <p>When market data needs to cover the most traded ETFs, the biggest tech giants, and the most volatile meme assets simultaneously, "fragile" data pipelines don't cut it. This brings me back to the core architectural decision for this project.</p>
+
+            <img 
+                src="/assets/diagrams/topology-dark-mode.png" 
+                alt="Architecture Diagram: AWS MWAA, Snowflake, and dbt" 
+                class="article-img"
+                loading="lazy"
+            >
+            
+            <h3>Why did I choose a "boring" stack like AWS MWAA (Airflow) + Snowflake + dbt?</h3>
+
+            <p>Because SPY brings massive volume, and GME brings chaos.</p>
+
+            <p>A cron job is too fragile to handle that pressure. A Kubernetes cluster handles the pressure, but adds massive complexity. This stack sits perfectly in the middle, providing the ultimate engineering luxury: <strong>predictability</strong>.</p>
+
+            <ul>
+                <li><strong>MWAA:</strong> Orchestrating complex dependencies across 14 distinct asset classes requires a locked-down environment. MWAA ensures the infrastructure never changes without me knowing.</li>
+                <li><strong>Snowflake:</strong> NVDA and SPY generate massive row counts. Snowflake scales up instantly to chew through the ingest, then spins back down.</li>
+                <li><strong>dbt:</strong> Idempotency is king. Whether the pipeline runs once or three times due to retries, dbt ensures the data is accurate and never duplicated.</li>
+            </ul>
+
+            <h3>But what happens when we need it faster?</h3>
+
+            <p>If a client needs real-time Gammas, a reactive architect tears this down to switch to a new "streaming data warehouse". A <em>calm</em> architect evolves:</p>
+
+            <ol>
+                <li><strong>Ingest:</strong> Swap S3 batch loads for Snowpipe Streaming.</li>
+                <li><strong>Transform:</strong> Swap hourly dbt jobs for Snowflake Dynamic Tables.</li>
+                <li><strong>Result:</strong> Latency drops from 24 hours to 60 seconds, using the same SQL logic.</li>
+            </ol>
+
+            <p>Calm engineering isn't about refusing to scale. It's about building a foundation strong enough to hold the entire market, but flexible enough to evolve.</p>
+
+            <p>Check out the full 14-ticker dashboard live on the site: <a href="/projects">🐈 catincloudlabs.com/projects</a></p>
+
+            <div class="pro-tip">
+                <h3>⚡ Engineering Note: MWAA Dependency Hell</h3>
+                <p class="muted">
+                    Speaking of "dependency hell": if anyone else is currently fighting with Python library conflicts in MWAA, I'm happy to save you a weekend of debugging.
+                </p>
+                <p class="muted">
+                    Here is the constraints file I built to keep the environment stable (MWAA 3.0.6 / Python 3.12). It took two days of trial and error to get this right. Feel free to steal it 😸
+                </p>
+                
+                <a href="/constraints/constraints-mwaa-3.0.6-py312-protobuf6.txt" class="file-link" download>
+                   📄 Download Constraints File (MWAA 3.0.6 / Py3.12)
+                </a>
+                
+                <p class="muted" style="font-size: 0.85rem; margin-top: 1rem;">
+                    If you try it and it's still not working for you, don't hesitate to reach out!
+                </p>
+            </div>
+
+          </article>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container inner center">
+      <small>© <span id="y"></span> CatInCloud Labs - DaveHasACat LLC</small>
+      <p><em>Cats who cloud. Humans that stay grounded.</em></p>
+      <div class="footer-links">
+        <a href="/about">About</a> ·
+        <a href="/security">Security</a> ·
+        <a href="/privacy">Privacy</a> ·
+        <a href="/terms">Terms</a> ·
+        <a href="/contact#contact-form">Contact</a>
+      </div>
+    </div>
+    <script src="/assets/js/footer-year-theme.js" defer></script>
+  </footer>
+</body>
+</html>
