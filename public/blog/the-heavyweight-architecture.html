@@ -1,4 +1,4 @@
-<!doctype html>
+\<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -65,11 +65,16 @@
             
             <p>I just updated the CatInCloud Labs project page with a massive expansion: <strong>The "Perfect 14" portfolio is live. 🚀</strong></p>
 
-            <p>I am now modeling options chains for the entire Magnificent Seven (NVDA, AAPL, MSFT...), the Macro heavyweights (SPY, QQQ, IWM, TLT), plus the Chaos engines (GME, VIX, and IBIT). When your market data needs to cover the most traded ETFs, the biggest tech giants, and the most volatile meme assets simultaneously, "fragile" data pipelines don't cut it.</p> 
-            
-            <p>This brings me back to the core architectural decision for this project: <strong>Why choose a "boring" stack like AWS MWAA + Snowflake + dbt?</strong></p>
+            <p>I am now modeling options chains for the entire Magnificent Seven (NVDA, AAPL, MSFT...), the Macro heavyweights (SPY, QQQ, IWM, TLT), plus the Chaos engines (GME, VIX, and IBIT).</p>
 
-            
+            <p>When market data needs to cover the most traded ETFs, the biggest tech giants, and the most volatile meme assets simultaneously, "fragile" data pipelines don't cut it. This brings me back to the core architectural decision for this project: <strong>Why choose a "boring" stack like AWS MWAA + Snowflake + dbt?</strong></p>
+
+            <img 
+                src="/assets/diagrams/topology-dark-mode.png" 
+                alt="Architecture Diagram: AWS MWAA, Snowflake, and dbt" 
+                class="article-img"
+                loading="lazy"
+            >
             
             <h3>The Problem: Scale meets Chaos</h3>
 
@@ -92,10 +97,21 @@
             
             <p>Snowflake solves this via the separation of storage and compute. I use a dedicated Virtual Warehouse for ingestion that scales up instantly to chew through the massive SPY/NVDA files, and then immediately spins down. It doesn't matter if GME has 1 record or 1 million records today; Snowflake scales to fit the load without me waking up.</p>
 
-            <h3>3. Transformation: Why dbt?</h3>
-            <p>In data engineering, <strong>idempotency is king</strong>. If a pipeline crashes halfway through, I need to be able to restart it without creating duplicate records or corrupting the history.</p>
+            <h3>3. The Engineering Superpower: Idempotency in Design</h3>
             
-            <p>I chose dbt (data build tool) because it forces a declarative style of transformation. I define <em>what</em> the data should look like, and dbt handles the <code>CREATE</code>, <code>REPLACE</code>, or <code>MERGE</code> logic to make it happen. Whether the pipeline runs once or three times due to retries, dbt ensures the final tables are accurate.</p>
+            <p>In data engineering, things break. APIs timeout, files arrive corrupted, or business logic changes mid-flight. The difference between a "fragile" pipeline and a "calm" one is what happens <em>after</em> the break.</p>
+
+            <p>In a fragile system, a failure usually requires manual cleanup: "Did step 3 finish? Do I need to delete the partial rows for today? If I re-run this, will I get duplicates?"</p>
+
+            <p>I designed this architecture around <strong>idempotency at the DAG level</strong>. This means I can clear any task in Airflow, re-run it, and guarantee the result will be exactly the same as if it had run perfectly the first time.</p>
+
+            <p><strong>How this works in practice:</strong></p>
+            <ul>
+                <li><strong>Airflow Tasks:</strong> Every task is templated using the execution date. When the ingestion task runs for <code>2025-12-22</code>, it doesn't just "append" data. It explicitly targets the partition for that specific date. If I re-run the task, it overwrites that specific slice of time. It is impossible to accidentally double-load data by clicking "Clear" in the UI.</li>
+                <li><strong>dbt Transformations:</strong> dbt (data build tool) is the other half of this equation. Because dbt models are declarative (<code>SELECT</code> statements) rather than imperative (<code>INSERT/UPDATE</code> scripts), dbt handles the complexity of replacing tables or merging incremental data.</li>
+            </ul>
+
+            <p>This design choice drastically reduces the "Mean Time To Recovery." If a pipeline fails at 3:00 AM, I don't have to perform surgery on the database. I fix the upstream issue, clear the DAG, and go back to sleep. The system heals itself.</p>
 
             <h3>Looking Ahead: What happens when we need it faster?</h3>
 
