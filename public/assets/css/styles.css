@@ -1927,3 +1927,84 @@ figure, .card { overflow: hidden; }
     justify-content: center;
   }
 }
+
+/* ==================================================================== */
+/* 9. BLOG & ARTICLES                                                   */
+/* ==================================================================== */
+
+/* Blog Index: Card Links */
+.blog-link-wrapper {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+/* Hover: highlight the title, keep the rest neutral */
+.blog-link-wrapper:hover h2 {
+  color: var(--link-hover);
+  text-decoration: underline;
+}
+
+.read-more {
+  margin-top: 1rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--link);
+}
+
+/* Blog Post: Typography Overrides */
+.article-body ul, 
+.article-body ol {
+  padding-left: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.article-body li {
+  margin-bottom: 0.5rem;
+}
+
+.article-body li strong {
+  color: var(--gray-800);
+}
+
+/* Blog Post: Images */
+.article-img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--gray-200);
+  margin: 1.5rem 0 2rem 0;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Component: Pro-Tip / Engineering Note Box */
+.pro-tip {
+  background-color: var(--gray-50);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.pro-tip h3 {
+  margin-top: 0;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--gray-800);
+}
+
+.file-link {
+  display: inline-block;
+  margin-top: 0.75rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.85rem;
+  color: var(--link);
+  text-decoration: underline;
+  word-break: break-all;
+}
+
+.file-link:hover {
+  color: var(--link-hover);
+}
