@@ -67,7 +67,7 @@
 
             <p>I'm now modeling options chains for the entire Magnificent Seven (NVDA, AAPL, MSFT...), the Macro heavyweights (SPY, QQQ, IWM, TLT), plus the Chaos engines (GME, VIX, IBIT, and RDDT).</p>
 
-            <p>When market data needs to cover the most traded ETFs, the biggest tech giants, and the most volatile meme assets simultaneously, "fragile" data pipelines don't cut it. This brings me back to the core architectural decision for this project: <strong>Why choose a "boring" stack like AWS MWAA + Snowflake + dbt?</strong></p>
+            <p>When market data needs to cover the most traded ETFs, the biggest tech giants, and the most volatile meme assets simultaneously, "fragile" data pipelines don't cut it. This brings me back to the core architectural decision for this project: Why choose a "boring" stack like AWS MWAA + Snowflake + dbt?</p>
 
             <img 
                 src="/assets/diagrams/security-observability.v5.svg" 
@@ -80,12 +80,12 @@
 
             <p>Market data is a unique engineering challenge because it combines predictable massive volume with unpredictable spikes. SPY churns out millions of rows every day. GME will be dormant for months, then explode with 10x volume in a single afternoon.</p>
 
-            <p>To handle this, I needed an architecture that provided the ultimate engineering luxury: <strong>predictability</strong>.</p>
+            <p>To handle this, I needed an architecture that provided the ultimate engineering luxury: predictability.</p>
 
             <h3>1. Orchestration: Why AWS MWAA?</h3>
             <p>A simple cron job is too fragile to handle complex dependencies across 15 asset classes. If the raw data for NVDA lands late, I need the transformation layer to wait, not fail silently.</p>
             
-            <p>On the other hand, managing a Kubernetes cluster just to run Airflow adds massive operational overhead. I chose <strong>Amazon Managed Workflows for Apache Airflow (MWAA)</strong> because it decouples infrastructure maintenance from business logic:</p>
+            <p>On the other hand, managing a Kubernetes cluster just to run Airflow adds massive operational overhead. I chose Amazon Managed Workflows for Apache Airflow (MWAA) because it decouples infrastructure maintenance from business logic:</p>
             <ul>
                 <li><strong>Managed Environment:</strong> AWS handles the scaling of the scheduler and web server. I don't patch servers; I just deploy DAGs.</li>
                 <li><strong>Complex Dependencies:</strong> Airflow allows me to define strict sensors and triggers. The pipeline knows exactly what data is required before it attempts a run.</li>
