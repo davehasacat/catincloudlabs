@@ -5,44 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Services - CatInCloud Labs</title>
 
-  <!-- SEO -->
   <meta name="description" content="CatInCloud Labs offers audit & hardening sprints, end-to-end AWS + Snowflake + dbt pipelines, and ongoing support for calm, reliable data platforms." />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <link rel="canonical" href="https://catincloudlabs.com/services" />
 
-  <!-- Open Graph -->
   <meta property="og:title" content="Services - CatInCloud Labs" />
   <meta property="og:description" content="CatInCloud Labs offers audit & hardening sprints, end-to-end AWS + Snowflake + dbt pipelines, and ongoing support for calm, reliable data platforms." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://catincloudlabs.com/services" />
   <meta property="og:image" content="https://catincloudlabs.com/assets/brand/social-card.v2.png" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:site_name" content="CatInCloud Labs" />
-  <meta property="og:locale" content="en_US" />
-
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Services - CatInCloud Labs" />
-  <meta name="twitter:description" content="CatInCloud Labs offers audit & hardening sprints, end-to-end AWS + Snowflake + dbt pipelines, and ongoing support for calm, reliable data platforms." />
-  <meta name="twitter:image" content="https://catincloudlabs.com/assets/brand/social-card.v2.png" />
 
-  <!-- Icons & theme -->
   <link rel="icon" href="/assets/favicons/favicon.svg" type="image/svg+xml" />
   <link rel="alternate icon" href="/assets/favicons/favicon.png" type="image/png" />
   <link rel="apple-touch-icon" href="/assets/favicons/favicon.png" />
   <meta name="theme-color" content="#f3f4f6" />
   <meta name="color-scheme" content="light" />
 
-  <!-- Styles -->
   <link rel="stylesheet" href="/assets/css/styles.css" />
 </head>
 
 <body class="page--services">
-  <!-- Accessibility: skip link -->
   <a href="#main" class="skip-link">Skip to content</a>
 
-  <!-- Header -->
   <header class="header">
     <div class="container nav">
       <a class="brand" href="/" aria-label="CatInCloud Labs">
@@ -53,13 +36,13 @@
         <a href="/about">About</a>
         <a href="/projects">Projects</a>
         <a href="/services" class="button ghost active" aria-current="page">Services</a>
+        <a href="/blog">Blog</a>
         <a href="/contact#contact-form" class="button ghost">Contact</a>
       </nav>
     </div>
   </header>
 
   <main id="main">
-    <!-- Hero -->
     <section class="hero">
       <div class="container hero-simple">
         <div class="stack stack--hero">
@@ -71,18 +54,16 @@
           <p class="muted">
             Most work falls into one of three buckets: an audit &amp; hardening sprint, an end-to-end pipeline build, or ongoing operations and improvements.
           </p>
-          <a href="/contact#contact-form" class="button primary">
-            Book a discovery call
-          </a>
+          <div class="hero__cta">
+             <a href="/contact#contact-form" class="button primary">Book a discovery call</a>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Everything below the hero: cards + grid + CTA in one stacked section -->
     <section class="section">
       <div class="container">
         <div class="stack stack--section">
-          <!-- How I help -->
           <article class="card reveal card--narrow">
             <p class="eyebrow">How I help</p>
             <h2>Stabilizing and evolving your data platform</h2>
@@ -92,17 +73,11 @@
             </p>
             <p>
               Many engagements start with a focused <strong>audit &amp; hardening sprint</strong>: understanding how things actually work today,
-              identifying potential gaps, and agreeing on a short, prioritized list of improvements. From there, I can help implement the changes,
-              whether that means shoring up Airflow, restructuring dbt models, tightening IAM and networking, or improving observability.
-            </p>
-            <p>
-              The goal is straightforward: a stack that does what it's supposed to do with fewer surprises, and that your team feels comfortable owning.
+              identifying potential gaps, and agreeing on a short, prioritized list of improvements.
             </p>
           </article>
 
-          <!-- Core offerings -->
           <div class="grid cols-3 reveal services-grid">
-            <!-- Audit & hardening sprint -->
             <article class="card stack stack--tight">
               <p class="eyebrow">Sprint</p>
               <h3>Audit &amp; Hardening Sprint</h3>
@@ -115,12 +90,8 @@
                 <li>Clear summary of findings and trade-offs</li>
                 <li>Short, prioritized list of recommended changes</li>
               </ul>
-              <p class="muted">
-                <strong>Good starting point if:</strong> you want an honest view of where things stand before committing to larger changes.
-              </p>
             </article>
 
-            <!-- End-to-end pipelines -->
             <article class="card stack stack--tight">
               <p class="eyebrow">Build</p>
               <h3>End-to-End Pipeline Build</h3>
@@ -133,12 +104,8 @@
                 <li>MWAA/Airflow orchestration and scheduling</li>
                 <li>Alerting, runbooks, and operating docs your team can follow</li>
               </ul>
-              <p class="muted">
-                <strong>Good starting point if:</strong> you want a solid foundation your team can run day-to-day, with documentation they can actually use.
-              </p>
             </article>
 
-            <!-- Ongoing support & advisory -->
             <article class="card stack stack--tight">
               <p class="eyebrow">Support</p>
               <h3>Ongoing Ops &amp; Enhancements</h3>
@@ -151,62 +118,37 @@
                 <li>Support for releases, schema changes, and refactors</li>
                 <li>Regular reviews so nothing quietly drifts off course</li>
               </ul>
-              <p class="muted">
-                <strong>Good starting point if:</strong> you'd like steady help keeping things healthy while your team focuses on product and stakeholders.
-              </p>
             </article>
           </div>
 
-          <!-- Working together -->
           <article class="card reveal card--narrow">
             <p class="eyebrow">Working together</p>
             <h2>What working together looks like</h2>
             <ol>
-              <li>
-                <strong>Discovery call.</strong> Short conversation to understand your stack, pain points, and constraints,
-                and to confirm there's a useful project to tackle.
-              </li>
-              <li>
-                <strong>Plan &amp; proposal.</strong> A clear, written outline of scope, approach, timeline, and pricing.
-                The focus is on the pieces that will make the biggest difference.
-              </li>
-              <li>
-                <strong>Implementation &amp; handoff.</strong> Work delivered in small, reviewable chunks with code, diagrams,
-                and operating docs your team owns, plus time for questions and knowledge transfer.
-              </li>
+              <li><strong>Discovery call.</strong> Short conversation to understand your stack, pain points, and constraints.</li>
+              <li><strong>Plan &amp; proposal.</strong> A clear, written outline of scope, approach, timeline, and pricing.</li>
+              <li><strong>Implementation &amp; handoff.</strong> Work delivered in small, reviewable chunks with code and docs.</li>
             </ol>
-            <p class="muted">
-              Most engagements are structured as a fixed-scope sprint or a short series of sprints, rather than open-ended hourly work.
-            </p>
           </article>
 
-          <!-- Who this is for -->
           <article class="card reveal card--narrow">
             <h2>Is CatInCloud Labs a fit for you?</h2>
-            <p class="muted">
-              CatInCloud Labs is a good fit for teams that want reliable data systems they can explain, trust, and build on.
-            </p>
+            <p class="muted">CatInCloud Labs is a good fit for teams that want reliable data systems they can explain, trust, and build on.</p>
             <div class="stack stack--tight">
               <h3>Best fit if you:</h3>
               <ul>
                 <li>Care about security, correctness, and maintainability as much as speed</li>
                 <li>Are using (or planning to use) AWS, Snowflake, dbt, and Airflow</li>
-                <li>Want one person who can cover architecture, data engineering, and DevOps instead of several separate vendors</li>
-                <li>Appreciate clear conversations about trade-offs, not just automatic agreement</li>
+                <li>Want one person who can cover architecture, data engineering, and DevOps</li>
               </ul>
             </div>
           </article>
 
-          <!-- CTA -->
           <article class="card reveal card--narrow card--cta">
             <h2>Let's see if there's a good project to start with</h2>
             <p>
               If your AWS + Snowflake + dbt stack is mostly working but harder to live with than it should be,
               a short discovery call is the easiest way to understand what's realistic and where I can help.
-            </p>
-            <p class="muted">
-              We'll walk through your current setup, clarify goals and constraints, and decide together whether an audit sprint,
-              a focused build, or something else makes the most sense.
             </p>
             <div class="stack stack--center">
               <a href="/contact#contact-form" class="button primary">Book a discovery call</a>
@@ -217,11 +159,9 @@
     </section>
   </main>
 
-  <!-- Footer -->
   <footer class="footer">
     <div class="container inner center">
       <small>© <span id="y"></span> CatInCloud Labs - DaveHasACat LLC</small>
-      <p><em>Cats who cloud. Humans that stay grounded.</em></p>
       <div class="footer-links">
         <a href="/about">About</a> ·
         <a href="/security">Security</a> ·
@@ -230,7 +170,6 @@
         <a href="/contact#contact-form" aria-label="Contact CatInCloud Labs">Contact</a>
       </div>
     </div>
-
     <script src="/assets/js/footer-year-theme.js" defer></script>
   </footer>
 </body>

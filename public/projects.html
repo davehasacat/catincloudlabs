@@ -5,43 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Projects - CatInCloud Labs</title>
 
-  <meta name="description" content="See how CatInCloud Labs builds calm, reliable, enterprise-grade stock-market ELT pipelines on AWS, MWAA, Snowflake, and dbt, from raw ingest to analytics-ready marts." />
+  <meta name="description" content="See how CatInCloud Labs builds calm, reliable, enterprise-grade stock-market ELT pipelines on AWS, MWAA, Snowflake, and dbt." />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <link rel="canonical" href="https://catincloudlabs.com/projects" />
 
   <meta property="og:title" content="Projects - CatInCloud Labs" />
-  <meta property="og:description" content="See how CatInCloud Labs builds calm, reliable, enterprise-grade stock-market ELT pipelines on AWS, MWAA, Snowflake, and dbt, from raw ingest to analytics-ready marts." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://catincloudlabs.com/projects" />
+  <meta property="og:description" content="See how CatInCloud Labs builds calm, reliable, enterprise-grade stock-market ELT pipelines on AWS, MWAA, Snowflake, and dbt." />
   <meta property="og:image" content="https://catincloudlabs.com/assets/brand/social-card.v2.png" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:site_name" content="CatInCloud Labs" />
-  <meta property="og:locale" content="en_US" />
-
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Projects - CatInCloud Labs" />
-  <meta name="twitter:description" content="See how CatInCloud Labs builds calm, reliable, enterprise-grade stock-market ELT pipelines on AWS, MWAA, Snowflake, and dbt, from raw ingest to analytics-ready marts." />
-  <meta name="twitter:image" content="https://catincloudlabs.com/assets/brand/social-card.v2.png" />
 
-  <link rel="icon" href="assets/favicons/favicon.svg" type="image/svg+xml" />
-  <link rel="alternate icon" href="assets/favicons/favicon.png" type="image/png" />
-  <link rel="apple-touch-icon" href="assets/favicons/favicon.png" />
+  <link rel="icon" href="/assets/favicons/favicon.svg" type="image/svg+xml" />
+  <link rel="alternate icon" href="/assets/favicons/favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" href="/assets/favicons/favicon.png" />
   <meta name="theme-color" content="#f3f4f6" />
   <meta name="color-scheme" content="light" />
 
-  <link rel="stylesheet" href="assets/css/styles.css" />
-
-  <style>
-    @media (min-width: 1400px) {
-      .container {
-        max-width: 1200px; /* Caps width to a readable size */
-        margin-left: auto;  /* Centers the content */
-        margin-right: auto;
-      }
-    }
-  </style>
-</head>
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+  </head>
 
 <body class="page--projects">
   <a href="#main" class="skip-link">Skip to content</a>
@@ -49,13 +29,14 @@
   <header class="header">
     <div class="container nav">
       <a class="brand" href="/" aria-label="CatInCloud Labs">
-        <img src="assets/brand/logo-wordmark-light.svg" alt="CatInCloud Labs" height="32" />
+        <img src="/assets/brand/logo-wordmark-light.svg" alt="CatInCloud Labs" height="32" />
       </a>
       <nav class="menu" aria-label="Primary">
         <a href="/">Home</a>
         <a href="/about">About</a>
         <a href="/projects" class="button ghost active" aria-current="page">Projects</a>
         <a href="/services">Services</a>
+        <a href="/blog">Blog</a>
         <a href="/contact#contact-form" class="button ghost">Contact</a>
       </nav>
     </div>
@@ -100,234 +81,34 @@
                 <h3>Architecture and security posture</h3>
                 <p class="chart-subtitle">
                   The high-level architecture and security/observability diagrams below show how the pieces fit together: MWAA in a private VPC,
-                  KMS-encrypted S3 buckets, Snowflake, and dbt all wired through VPC endpoints and least-privilege access. From there, everything
-                  flows into a handful of Snowflake marts that power the interactive views below.
+                  KMS-encrypted S3 buckets, Snowflake, and dbt all wired through VPC endpoints and least-privilege access.
                 </p>
               </div>
 
               <figure id="diagram-architecture" class="diagram-figure">
-                <button
-                  type="button"
-                  class="proof-figure__button"
-                  data-panel-open
-                  data-caption="High-level data flow: ingest market data, land it in S3, transform with dbt, &amp; serve from Snowflake."
-                  aria-label="Click to zoom the architecture flow diagram"
-                >
-                  <img
-                    src="assets/diagrams/architecture-flow.v5.svg"
-                    alt="Architecture flow diagram showing MWAA orchestrating S3 to Snowflake via COPY, with dbt building marts"
-                    class="diagram"
-                    width="1160" height="300"
-                    loading="lazy" decoding="async"
-                    sizes="(max-width: 700px) 100vw, 1160px" />
-                  <span class="proof-zoom-pill">
-                    Click to zoom
-                  </span>
+                <button type="button" class="proof-figure__button" data-panel-open data-caption="High-level data flow: ingest market data, land it in S3, transform with dbt, &amp; serve from Snowflake." aria-label="Click to zoom the architecture flow diagram">
+                  <img src="/assets/diagrams/architecture-flow.v5.svg" alt="Architecture flow diagram showing MWAA orchestrating S3 to Snowflake via COPY, with dbt building marts" class="diagram" width="1160" height="300" loading="lazy" decoding="async" sizes="(max-width: 700px) 100vw, 1160px" />
+                  <span class="proof-zoom-pill">Click to zoom</span>
                 </button>
-                <figcaption class="diagram-caption">
-                  High-level data flow: ingest market data, land it in S3, transform with dbt, &amp; serve from Snowflake.
-                </figcaption>
+                <figcaption class="diagram-caption">High-level data flow: ingest market data, land it in S3, transform with dbt, &amp; serve from Snowflake.</figcaption>
               </figure>
 
               <figure class="diagram-figure">
-                <button
-                  type="button"
-                  class="proof-figure__button"
-                  data-panel-open
-                  data-caption="High-level security view: client VPN into a private VPC; MWAA reaches encrypted S3 via gateway endpoint &amp; orchestrates Snowflake via outbound NAT."
-                  aria-label="Click to zoom the security and observability diagram"
-                >
-                  <img
-                    src="assets/diagrams/security-observability.v5.svg"
-                    alt="Private VPC with S3 Gateway Endpoint; MWAA orchestrates Snowflake load; outbound-only egress"
-                    class="diagram"
-                    width="1160" height="300"
-                    loading="lazy" decoding="async"
-                    sizes="(max-width: 700px) 100vw, 1160px" />
-                  <span class="proof-zoom-pill">
-                    Click to zoom
-                  </span>
+                <button type="button" class="proof-figure__button" data-panel-open data-caption="High-level security view: client VPN into a private VPC; MWAA reaches encrypted S3 via gateway endpoint &amp; orchestrates Snowflake via outbound NAT." aria-label="Click to zoom the security and observability diagram">
+                  <img src="/assets/diagrams/security-observability.v5.svg" alt="Private VPC with S3 Gateway Endpoint; MWAA orchestrates Snowflake load; outbound-only egress" class="diagram" width="1160" height="300" loading="lazy" decoding="async" sizes="(max-width: 700px) 100vw, 1160px" />
+                  <span class="proof-zoom-pill">Click to zoom</span>
                 </button>
-                <figcaption class="diagram-caption">
-                  High-level security view: client VPN into a private VPC; MWAA reaches encrypted S3 via gateway endpoint &amp; orchestrates Snowflake via outbound NAT.
-                </figcaption>
+                <figcaption class="diagram-caption">High-level security view: client VPN into a private VPC.</figcaption>
               </figure>
             </div>
 
-            <p class="chart-bridge">
-              <strong>All three views below</strong> come from the same Snowflake marts that power this reference pipeline. For client work, those marts would typically sit behind a BI tool or custom app; here they're exposed as static JSON slices for the demo.
-            </p>
-
-            <div class="stack stack--tight">
-              <div class="stack stack--tight">
-                <h3>Multi-ticker daily price and options volume</h3>
-                <p class="chart-subtitle">
-                  <span class="chart-window-badge"><strong>Jun 30 - Dec 11, 2025 • one point per trading day.</strong></span>
-                  See how 8 major tickers moved over the same three-month window, using a static JSON export from Snowflake.
-                </p>
-                <label for="daily-activity-ticker" class="ticker-label">
-                  Selected ticker:
-                  <select id="daily-activity-ticker">
-                    <option value="AAPL" selected>AAPL</option>
-                    <option value="AMZN">AMZN</option>
-                    <option value="GME">GME</option>
-                    <option value="GOOGL">GOOGL</option>
-                    <option value="IWM">IWM</option>
-                    <option value="MSFT">MSFT</option>
-                    <option value="NVDA">NVDA</option>
-                    <option value="QQQ">QQQ</option>
-                    <option value="SPY">SPY</option>
-                    <option value="TSLA">TSLA</option>
-                  </select>
-                </label>
-              </div>
-
-              <div
-                id="tickers-daily-activity-chart"
-                class="chart-shell"
-                role="img"
-                aria-label="Interactive chart of daily closing price, total options volume, and a 7-day rolling average for the selected ticker (e.g., AAPL, GME, SPY) between September 2 and November 28, 2025."
-              >
-                <noscript>Enable JavaScript to view the interactive chart.</noscript>
-              </div>
-              <p class="chart-footnote">
-                Tip: choose a ticker, then drag to zoom, pinch on touch devices, and use the toolbar to reset or download an image.
-                Each ticker uses the same dates and calculations, so comparisons stay apples-to-apples.
-              </p>
-            </div>
-
-            <div class="stack stack--tight">
-              <div class="stack stack--tight">
-                <h3>Daily snapshot for the selected ticker</h3>
-                <p class="chart-subtitle">
-                  <span class="chart-window-badge">Latest trading day in this window.</span>
-                  A compact daily dashboard that always follows the ticker selected in the control above.
-                  It summarizes short-term returns, recent volatility, stock volume, options volume versus
-                  a 30-day baseline, and the mix of call versus put volume for that day, using the same trading
-                  window as the chart above.
-                </p>
-              </div>
-
-              <div
-                id="ticker-features-daily-dashboard"
-                class="ticker-features-shell"
-                role="region"
-                aria-label="Daily snapshot for the selected ticker, showing returns, volatility, volume, and options activity for the latest trading day in the window."
-              >
-                <noscript>Enable JavaScript to view the daily features snapshot.</noscript>
-              </div>
-              <p class="chart-footnote">
-                Switch tickers in the selector above to see how the same daily metrics behave for the 8 tickers in this list
-                on the latest trading day in the window.
-              </p>
-            </div>
-
-            <div class="stack stack--tight">
-              <div class="stack stack--tight">
-                <h3>Options chain: most active contracts over a recent window</h3>
-                <p class="chart-subtitle">
-                  <span class="chart-window-badge">Same window as the chart above.</span>
-                  A sortable snapshot of the most heavily traded option contracts for the selected ticker.
-                  Each row is a single contract aggregated across that period, with expiry, type, strike, last price, total volume,
-                  days to expiration, and average moneyness. For this demo, you're seeing the top 25 most active contracts.
-                </p>
-                <p class="muted">
-                  Currently showing contracts for:
-                  <strong id="options-table-ticker-label">AAPL</strong>
-                  (this always follows the ticker selector above)
-                </p>
-              </div>
-
-              <div
-                id="tickers-options-chain-dashboard"
-                class="chart-shell"
-                role="region"
-                aria-label="Interactive table of the most active options contracts for the selected ticker over a recent trading window, including expiry, type, strike, last price, total volume, days to expiration, and moneyness."
-              >
-                <noscript>Enable JavaScript to view the options table.</noscript>
-              </div>
-
-              <p class="table-scroll-hint">
-                On smaller screens, swipe left or right inside the table to see all columns.
-              </p>
-
-              <p class="chart-footnote">
-                Columns show expiry, option type, strike, the latest close price observed in the window, total volume,
-                <abbr title="Days to Expiration at the end of the window">DTE</abbr>, and average moneyness versus the underlying price.
-                Short-dated contracts that were very active during the window but have since expired will now show <strong>DTE = 0</strong>.
-                Tap or click the column headers to re-sort (for example, by total volume, expiry, or moneyness).
-              </p>
-            </div>
-
-            <div class="insights-panel stack stack--tight">
-              <h3>So what does this data tell us?</h3>
-              <p>
-                By comparing tickers to market benchmarks (SPY, QQQ) and a retail outlier (GME) the dashboard tells the full story of the market structure:
-                Indices are for hedging, Meme stocks are for gambling, and NVDA has become a market of its own.
-              </p>
-
-              <div class="stack stack--tight">
-                <h4>1. Flow proves the "Role" of the ticker</h4>
-                <ul>
-                  <li>
-                    <strong>QQQ is used for protection.</strong>
-                    Look at the Options Chain table for QQQ. The top active contracts are frequently <strong>Puts</strong> (betting on downside). 
-                    Institutions use these liquid indices to hedge their portfolios against tech selloffs.
-                  </li>
-                  <li>
-                    <strong>GME is pure speculation.</strong>
-                    Switch the selector to GME. The top contracts are almost exclusively <strong>Calls</strong>. 
-                    There is virtually no hedging visible here; the flow is entirely focused on speculative upside bursts.
-                  </li>
-                </ul>
-              </div>
-
-              <div class="stack stack--tight">
-                <h4>2. NVDA rivals the S&P 500</h4>
-                <ul>
-                  <li>
-                    <strong>The "New Index" behavior.</strong>
-                    Historically, SPY volumes dwarf single stocks. But in this window, <strong>NVDA's top contracts often traded higher volume than SPY's.</strong> 
-                    This signals that for many traders, NVDA has effectively become the market proxy. NVDA is the center of gravity for liquidity and attention.
-                  </li>
-                </ul>
-              </div>
-
-              <div class="stack stack--tight">
-                <h4>3. Volatility Regimes</h4>
-                <ul>
-                  <li>
-                    <strong>Benchmarks anchor the room.</strong>
-                    SPY and QQQ maintain a steady, lower volatility profile (typically 10-15% annualized). They act as the "control group" 
-                    against which the idiosyncratic risk of single names like GME (which lives in its own disconnected volatility reality) is measured.
-                  </li>
-                </ul>
-              </div>
-
-              <div class="stack stack--tight">
-                <h4>Why this matters for Data Engineering</h4>
-                <ul>
-                  <li>
-                    <strong>Handling scale and skew.</strong>
-                    This pipeline handles tickers with massively different profiles. It ingests data from the 1M+ daily contracts of NVDA/SPY to the 
-                    bursty, erratic flow of GME, without manual intervention. It proves the ELT architecture can scale across the 
-                    full "Market Weather" spectrum, from calm institutional flows to retail storms.
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </article>
+            </article>
 
           <article class="card reveal card--narrow">
             <h2>Private MWAA Environment</h2>
             <p>
               A hardened Airflow deployment running on AWS MWAA inside a fully private VPC. MWAA connects to ECR, CloudWatch Logs, KMS,
-              Secrets Manager, and S3 through VPC endpoints. This ensures orchestration, logging, and image pulls all happen without public internet
-              access.
-            </p>
-            <p class="muted">
-              The same approach can be used to keep your schedulers and control plane traffic private while still integrating cleanly with
-              AWS services and your data warehouse.
+              Secrets Manager, and S3 through VPC endpoints.
             </p>
           </article>
 
@@ -337,26 +118,12 @@
               A browser-based analytics layer built with tools like Plotly Dash on top of Snowflake marts. The goal is to provide
               straightforward views into pipeline health and market data without adding another brittle surface area to maintain.
             </p>
-            <p class="muted">
-              As the core platform stabilizes, these kinds of dashboards and lightweight apps become much easier to add safely.
-            </p>
           </article>
 
           <article class="card reveal card--narrow">
             <h2>Future: Machine learning on top of calm pipelines</h2>
             <p>
               The same stock + options pipeline that powers these charts is already keeping months of joined history in clean Snowflake marts.
-              When it's the right time, that foundation can support light-weight machine learning without changing the core stack or adding
-              a lot of moving parts.
-            </p>
-            <ul>
-              <li>Detect unusual options flow or volatility regimes for a given ticker, based on recent behavior.</li>
-              <li>Generate “what changed this week and why it matters” summaries directly from the daily features snapshot.</li>
-              <li>Build simple, well-behaved models to forecast volume, volatility, or regimes using only the data the pipeline already maintains.</li>
-            </ul>
-            <p class="muted">
-              Status: Not actively building yet. The focus today is on keeping the pipeline calm, explainable, and easy to operate, with the option
-              to layer in ML later where it clearly helps decision making.
             </p>
           </article>
         </div>
@@ -367,13 +134,7 @@
       <div class="container">
         <article class="card reveal card--narrow card--cta">
           <h2>Interested in something similar?</h2>
-          <p>
-            If these examples look close to what you need in your own stack, the next step
-            is a short discovery call.
-          </p>
-          <p class="muted">
-            We can walk through your current setup together, compare it to this reference architecture, and help you decide whether an audit sprint or a focused build makes sense.
-          </p>
+          <p>If these examples look close to what you need in your own stack, the next step is a short discovery call.</p>
           <div class="stack stack--tight">
             <a href="/contact#contact-form" class="button primary">Book a discovery call</a>
           </div>
@@ -398,7 +159,6 @@
   <footer class="footer">
     <div class="container inner center">
       <small>© <span id="y"></span> CatInCloud Labs - DaveHasACat LLC</small>
-      <p><em>Cats who cloud. Humans that stay grounded.</em></p>
       <div class="footer-links">
         <a href="/about">About</a> ·
         <a href="/security">Security</a> ·
@@ -407,13 +167,12 @@
         <a href="/contact#contact-form" aria-label="Contact CatInCloud Labs">Contact</a>
       </div>
     </div>
-
-    <script src="assets/js/footer-year-theme.js" defer></script>
-    <script src="assets/js/proof-panel-lightbox.js" defer></script>
-    <script src="assets/js/plotly-2.35.3.min.js" defer></script>
-    <script src="assets/js/tickers-daily-activity-chart.js" defer></script>
-    <script src="assets/js/ticker-features-daily-dashboard.js" defer></script>
-    <script src="assets/js/tickers-options-chain-dashboard.js" defer></script>
+    <script src="/assets/js/footer-year-theme.js" defer></script>
+    <script src="/assets/js/proof-panel-lightbox.js" defer></script>
+    <script src="/assets/js/plotly-2.35.3.min.js" defer></script>
+    <script src="/assets/js/tickers-daily-activity-chart.js" defer></script>
+    <script src="/assets/js/ticker-features-daily-dashboard.js" defer></script>
+    <script src="/assets/js/tickers-options-chain-dashboard.js" defer></script>
   </footer>
 </body>
 </html>

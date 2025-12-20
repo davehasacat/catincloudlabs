@@ -2008,3 +2008,34 @@ figure, .card { overflow: hidden; }
 .file-link:hover {
   color: var(--link-hover);
 }
+
+/* ==================================================================== */
+/* 10. SUBPAGE LAYOUT POLISH (All Pages)                                */
+/* ==================================================================== */
+
+/* Forces the "Simple Hero" (used on About, Projects, Services, Blog)
+   to be centered. This fixes the "left-heavy" feel on wide screens.
+*/
+.hero-simple .stack {
+  text-align: center;
+  align-items: center; /* Centers flex items vertically/horizontally depending on dir */
+  margin-inline: auto;
+  max-width: 800px;    /* Prevents header text from getting unreadably wide */
+}
+
+.hero-simple .subtitle {
+  margin-inline: auto;
+}
+
+/* Ensures the content cards (About cards, Project cards) 
+   are strictly centered in the viewport.
+*/
+.card--narrow {
+  margin-inline: auto !important;
+}
+
+/* Optional: Center the CTA buttons in the hero if they wrap */
+.hero__cta,
+.ci-hero__cta {
+  justify-content: center;
+}
