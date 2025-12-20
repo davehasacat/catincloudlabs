@@ -103,7 +103,7 @@
 
             <p>In a fragile system, a failure usually requires manual cleanup: "Did step 3 finish? Do I need to delete the partial rows for today? If I re-run this, will I get duplicates?"</p>
 
-            <p>I designed this architecture around <strong>idempotency at the DAG level</strong>. This means I can clear any task in Airflow, re-run it, and guarantee the result will be exactly the same as if it had run perfectly the first time.</p>
+            <p>I designed this architecture around idempotency at the DAG level. This means I can clear any task in Airflow, re-run it, and guarantee the result will be exactly the same as if it had run perfectly the first time.</p>
 
             <p><strong>How this works in practice:</strong></p>
             <ul>
