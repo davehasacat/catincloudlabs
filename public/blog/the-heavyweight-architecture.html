@@ -1,4 +1,4 @@
-\<!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -69,12 +69,7 @@
 
             <p>When market data needs to cover the most traded ETFs, the biggest tech giants, and the most volatile meme assets simultaneously, "fragile" data pipelines don't cut it. This brings me back to the core architectural decision for this project: <strong>Why choose a "boring" stack like AWS MWAA + Snowflake + dbt?</strong></p>
 
-            <img 
-                src="/assets/diagrams/topology-dark-mode.png" 
-                alt="Architecture Diagram: AWS MWAA, Snowflake, and dbt" 
-                class="article-img"
-                loading="lazy"
-            >
+            
             
             <h3>The Problem: Scale meets Chaos</h3>
 
@@ -85,7 +80,7 @@
             <h3>1. Orchestration: Why AWS MWAA?</h3>
             <p>A simple cron job is too fragile to handle complex dependencies across 14 asset classes. If the raw data for NVDA lands late, I need the transformation layer to wait, not fail silently.</p>
             
-            <p>On the other hand, managing a Kubernetes cluster just to run Airflow adds massive operational overhead. I chose <strong>Amazon Managed Workflows for Apache Airflow (MWAA)</strong> because it sits perfectly in the middle:</p>
+            <p>On the other hand, managing a Kubernetes cluster just to run Airflow adds massive operational overhead. I chose <strong>Amazon Managed Workflows for Apache Airflow (MWAA)</strong> because it decouples infrastructure maintenance from business logic:</p>
             <ul>
                 <li><strong>Managed Environment:</strong> AWS handles the scaling of the scheduler and web server. I don't patch servers; I just deploy DAGs.</li>
                 <li><strong>Complex Dependencies:</strong> Airflow allows me to define strict sensors and triggers. The pipeline knows exactly what data is required before it attempts a run.</li>
@@ -95,7 +90,7 @@
             <h3>2. Compute: Why Snowflake?</h3>
             <p>When you are ingesting full options chains, the row counts get heavy fast. Managing the compute resources for that ingest locally or on an EC2 instance is a constant balancing act between over-provisioning (wasting money) and under-provisioning (crashing pipelines).</p>
             
-            <p>Snowflake solves this via the separation of storage and compute. I use a dedicated Virtual Warehouse for ingestion that scales up instantly to chew through the massive SPY/NVDA files, and then immediately spins down. It doesn't matter if GME has 1 record or 1 million records today; Snowflake scales to fit the load without me waking up.</p>
+            <p>Snowflake solves this via the separation of storage and compute. I use a dedicated Virtual Warehouse for ingestion that scales up instantly to chew through the massive SPY/NVDA files, and then immediately spins down. It doesn't matter if GME has 1 record or 1 million records today; Snowflake scales to fit the load without human intervention, and I only pay for the seconds the warehouse is running.</p>
 
             <h3>3. The Engineering Superpower: Idempotency in Design</h3>
             
@@ -108,7 +103,7 @@
             <p><strong>How this works in practice:</strong></p>
             <ul>
                 <li><strong>Airflow Tasks:</strong> Every task is templated using the execution date. When the ingestion task runs for <code>2025-12-22</code>, it doesn't just "append" data. It explicitly targets the partition for that specific date. If I re-run the task, it overwrites that specific slice of time. It is impossible to accidentally double-load data by clicking "Clear" in the UI.</li>
-                <li><strong>dbt Transformations:</strong> dbt (data build tool) is the other half of this equation. Because dbt models are declarative (<code>SELECT</code> statements) rather than imperative (<code>INSERT/UPDATE</code> scripts), dbt handles the complexity of replacing tables or merging incremental data.</li>
+                <li><strong>dbt Transformations:</strong> dbt (data build tool) is the other half of this equation. Because dbt models are declarative (<code>SELECT</code> statements) rather than imperative (<code>INSERT/UPDATE</code> scripts), dbt handles the complexity of replacing tables or merging incremental data cleanly.</li>
             </ul>
 
             <p>This design choice drastically reduces the "Mean Time To Recovery." If a pipeline fails at 3:00 AM, I don't have to perform surgery on the database. I fix the upstream issue, clear the DAG, and go back to sleep. The system heals itself.</p>
@@ -122,7 +117,7 @@
             <ol>
                 <li><strong>Ingest:</strong> Swap S3 batch loads for <strong>Snowpipe Streaming</strong>.</li>
                 <li><strong>Transform:</strong> Swap hourly dbt jobs for <strong>Snowflake Dynamic Tables</strong>.</li>
-                <li><strong>Result:</strong> Latency drops from 24 hours to 60 seconds, using the exact same SQL logic and business rules.</li>
+                <li><strong>Result:</strong> Latency drops from 24 hours to 60 seconds, using largely the same SQL semantics and business rules.</li>
             </ol>
 
             <p>Calm engineering isn't about refusing to scale. It's about building a foundation strong enough to hold the entire market today, but flexible enough to evolve tomorrow.</p>
