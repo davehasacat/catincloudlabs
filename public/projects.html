@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Projects - CatInCloud Labs</title>
 
-  <meta name="description" content="See how CatInCloud Labs builds calm, reliable, enterprise-grade stock-market ELT pipelines on AWS, MWAA, Snowflake, and dbt." />
+  <meta name="description" content="See how CatInCloud Labs builds calm, reliable, enterprise-grade data pipelines on AWS, MWAA, Snowflake, and dbt." />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <link rel="canonical" href="https://catincloudlabs.com/projects" />
 
   <meta property="og:title" content="Projects - CatInCloud Labs" />
-  <meta property="og:description" content="See how CatInCloud Labs builds calm, reliable, enterprise-grade stock-market ELT pipelines on AWS, MWAA, Snowflake, and dbt." />
+  <meta property="og:description" content="Production-ready data engineering on AWS and Snowflake." />
   <meta property="og:image" content="https://catincloudlabs.com/assets/brand/social-card.v2.png" />
   <meta name="twitter:card" content="summary_large_image" />
 
@@ -46,9 +46,9 @@
     <section class="hero">
       <div class="container hero-simple">
         <div class="stack stack--hero">
-          <h1 class="title">Examples of real-world AWS + Snowflake + dbt work.</h1>
+          <h1 class="title">Enterprise-Grade Data Engineering. <br>Calm, Reliable, & Scalable.</h1>
           <p class="subtitle">
-            See how CatInCloud Labs builds calm, reliable, enterprise-grade stock-market ELT pipelines on AWS, MWAA, Snowflake, and dbt, from raw ingest to analytics-ready marts.
+            I build production-ready data platforms on AWS, Snowflake, and dbt that turn messy raw streams into trusted analytics—without the chaos.
           </p>
         </div>
       </div>
@@ -59,21 +59,19 @@
         <div class="stack stack--section">
           
           <article class="card reveal card--narrow">
-            <h2>Enterprise Stock Market ELT (reference implementation)</h2>
+            <h2>Secure, Private, & Automated ELT</h2>
             <p>
-              A production-grade pipeline built on AWS, MWAA, Snowflake, and dbt, designed to ingest and transform stock and options data
-              in a private VPC. It uses KMS-encrypted S3 buckets, VPC endpoints, and incremental dbt models to keep data flowing reliably
-              from raw JSON to analytics-ready marts.
+              This reference architecture demonstrates a fully private data plane. It ingests high-velocity market data into a hardened Virtual Private Cloud (VPC), orchestrates transformations via Airflow (MWAA), and delivers audit-ready datasets in Snowflake. Zero public exposure, 100% automated.
             </p>
             <p class="muted">
-              This is the same architecture pattern I adapt for client environments that want calm, well-understood data platforms.
+              I adapt this exact pattern for clients who need a data platform that is secure by default and easy to maintain.
             </p>
 
             <div class="stack stack--section">
               <div class="stack stack--tight">
                 <h3>Architecture and security posture</h3>
                 <p class="chart-subtitle">
-                  The high-level architecture and security/observability diagrams below show how the pieces fit together.
+                  The high-level architecture and security/observability diagrams below show how the pieces fit together: Private VPC endpoints, KMS encryption, and least-privilege IAM roles.
                 </p>
               </div>
 
@@ -165,18 +163,17 @@
             </article>
 
           <article class="card reveal card--narrow">
-            <h2>Private MWAA Environment</h2>
+            <h2>Hardened Infrastructure</h2>
             <p>
-              A hardened Airflow deployment running on AWS MWAA inside a fully private VPC. MWAA connects to ECR, CloudWatch Logs, KMS,
-              Secrets Manager, and S3 through VPC endpoints.
+              The platform runs on a hardened Airflow deployment inside AWS MWAA. It connects securely to ECR, CloudWatch Logs, KMS,
+              Secrets Manager, and S3 exclusively through VPC endpoints, ensuring data never traverses the public internet.
             </p>
           </article>
 
           <article class="card reveal card--narrow">
-            <h2>Future: Machine learning on top of calm pipelines</h2>
+            <h2>AI-Ready Foundation</h2>
             <p>
-              The same stock + options pipeline that powers these charts is already keeping months of joined history in clean Snowflake marts, 
-              ready for future predictive modeling.
+              The cleanest ML models start with clean data. This pipeline's rigorous "Silver" and "Gold" modeling layers in dbt provide the structured, history-preserving datasets required for predictive modeling and backtesting strategies immediately.
             </p>
           </article>
         </div>
