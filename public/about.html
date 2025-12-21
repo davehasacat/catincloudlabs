@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>About - CatInCloud Labs</title>
 
-  <meta name="description" content="CatInCloud Labs is a solo cloud and data engineering practice focused on calm, reliable AWS, Snowflake, and dbt data pipelines in production." />
+  <meta name="description" content="CatInCloud Labs is a solo cloud architecture practice. I build hardened, audit-ready data platforms on AWS, Snowflake, and dbt that scale quietly." />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <link rel="canonical" href="https://catincloudlabs.com/about" />
 
   <meta property="og:title" content="About - CatInCloud Labs" />
-  <meta property="og:description" content="CatInCloud Labs is a solo cloud and data engineering practice focused on calm, reliable AWS, Snowflake, and dbt data pipelines in production." />
+  <meta property="og:description" content="I build hardened, audit-ready data platforms on AWS, Snowflake, and dbt that scale quietly." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://catincloudlabs.com/about" />
   <meta property="og:image" content="https://catincloudlabs.com/assets/brand/social-card.v2.png" />
@@ -48,9 +48,9 @@
     <section class="hero">
       <div class="container hero-simple">
         <div class="stack stack--hero">
-          <h1 class="title">Calm, reliable data platforms.</h1>
+          <h1 class="title">Reliability is a feature.</h1>
           <p class="subtitle">
-            CatInCloud Labs is a solo cloud and data engineering practice focused on calm, reliable AWS, Snowflake, and dbt pipelines that are practical to run in production.
+            CatInCloud Labs is a solo architecture practice run by Dave Anaya. I design data platforms that are private by default, easy to audit, and boring to run.
           </p>
         </div>
       </div>
@@ -61,50 +61,42 @@
         <div class="stack stack--section">
           
           <article class="card reveal card--narrow">
-            <h2>How I think about the work</h2>
+            <h2>The Philosophy</h2>
             <p>
-              I care about systems that actually work in production: clear architecture, predictable behavior, and a level of
-              complexity that matches the team operating it. CatInCloud Labs is run by me, Dave Anaya, a cloud and data engineer
-              who tries to make platforms understandable, documented, and practical to live with.
+              I believe that a data platform's primary job is to be predictable. When a pipeline fails, it should fail loudly and cleanly. When it succeeds, the data should be fully auditable.
             </p>
             <p>
-              I'm not trying to chase every new tool. I'd rather help you get more value out of what you already have, add structure
-              where it's missing, and leave behind patterns your team feels comfortable owning.
+              I prioritize idempotency over speed and private networking over public endpoints. I don't chase the latest modern data stack hype cycles. I stick to patterns that have survived production at scale: hardened VPCs, version-controlled business logic, and rigorous data testing.
             </p>
           </article>
 
           <article class="card reveal card--narrow">
-            <h2>Private by default, built to be lived with</h2>
+            <h2>The Reference Stack</h2>
             <p>
-              A lot of my work starts with foundations: private networking, least-privilege IAM, KMS-encrypted storage, and
-              observability that makes it clear when something is off. The aim is a stack you can rely on in day-to-day operations,
-              not just during a demo.
+              I work exclusively within a specific, high-leverage stack where I can guarantee results. I don't dabble; I architect deep solutions using these core components:
             </p>
-            <p>
-              From there, it's about steady, deliberate improvements, with a focus on well-scoped changes that fit your constraints and
-              make life easier, rather than create technical debt.
-            </p>
+            <ul>
+              <li><strong>Orchestration:</strong> AWS MWAA (Airflow) in a private VPC.</li>
+              <li><strong>Compute & Storage:</strong> Snowflake (PrivateLink) and S3 (KMS Encrypted).</li>
+              <li><strong>Transformation:</strong> dbt Core/Cloud with rigorous testing and documentation.</li>
+              <li><strong>Version Control:</strong> Git-backed workflows for all business logic and pipelines.</li>
+            </ul>
           </article>
 
           <article class="card reveal card--narrow">
-            <h2>The stack I focus on</h2>
+            <h2>Security & Operations</h2>
             <p>
-              I focus on AWS + Snowflake + dbt pipelines, often orchestrated with AWS MWAA (Airflow). That usually means:
-              S3-based ingestion, Snowflake as the warehouse, dbt for transformations and tests, and Airflow for scheduling and
-              coordination.
+              A pipeline isn't finished until it can be handed over to an operations team. That means the "Day 2" problems are solved on Day 1.
             </p>
             <p>
-              Those are the tools I know best, so I lean on patterns I've tested in my own reference stack and adapt them to your
-              environment, team, and roadmap.
+              My deliverables always include properly scoped IAM roles, least-privilege networking, and clear observability hooks (CloudWatch). I build systems that are designed to be lived with, not just demoed.
             </p>
           </article>
 
           <article class="card reveal card--narrow card--cta">
-            <h2>Want to talk through your stack?</h2>
+            <h2>Need a senior perspective?</h2>
             <p>
-              If you're working with or thinking of adopting some version of this stack, and want things to feel calmer
-              and more predictable, a short discovery call is a good place to start. We can walk through what you have today and see
-              whether there's a useful project to tackle together.
+              If your current data environment feels fragile, opaque, or overly complex, let's talk. I can help you stabilize your existing stack or architect a new one from the ground up.
             </p>
             <div class="stack stack--tight">
               <a href="/contact#contact-form" class="button primary">Book a discovery call</a>
@@ -118,7 +110,6 @@
   <footer class="footer">
     <div class="container inner center">
       <small>© <span id="y"></span> CatInCloud Labs - DaveHasACat LLC</small>
-      <p><em>Cats who cloud. Humans that stay grounded.</em></p>
       <div class="footer-links">
         <a href="/about" aria-current="page">About</a> ·
         <a href="/security">Security</a> ·
