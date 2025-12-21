@@ -65,7 +65,7 @@
             
             <p>I just updated the CatInCloud Labs project page with a major expansion: The "Core &amp; Chaos" portfolio is live. 😼</p>
 
-            <p>I'm now modeling options chains for the entire magnificent seven (NVDA, AAPL, MSFT...), the macro heavyweights (SPY, QQQ, IWM, TLT), plus the chaos engines (GME, VIX, IBIT, and RDDT).</p>
+            <p>I'm now modeling options chains for the entire Magnificent Seven (NVDA, AAPL, MSFT...), the Macro Heavyweights (SPY, QQQ, IWM, TLT), plus the Chaos Engines (GME, VIX, IBIT, and RDDT).</p>
 
             <p>When market data needs to cover the most traded ETFs, the biggest tech giants, and the most volatile meme assets simultaneously, a fragile data pipeline isn't gonna cut it. This brings me back to the core architectural decision for this project: Why choose a "boring" stack like AWS MWAA + Snowflake + dbt?</p>
 
@@ -108,10 +108,10 @@
             <p><strong>How this works in practice:</strong></p>
             <ul>
                 <li><strong>Airflow Tasks:</strong> Every task is templated using the execution date. When the ingestion task runs for <code>2025-12-22</code>, it doesn't just append data. It explicitly targets the partition for that specific date. If I re-run the task, it overwrites that specific slice of time. It is impossible to accidentally double-load data by clicking "clear" in the UI.</li>
-                <li><strong>dbt Transformations:</strong> dbt (data build tool) is the other half of this equation. Because dbt models are declarative (<code>SELECT</code> statements) rather than imperative (<code>INSERT/UPDATE</code> scripts), it's able to the complexity of replacing tables or cleanly merging incremental data.</li>
+                <li><strong>dbt Transformations:</strong> dbt (data build tool) is the other half of this equation. Because dbt models are declarative (<code>SELECT</code> statements) rather than imperative (<code>INSERT/UPDATE</code> scripts), it handles the complexity of replacing tables or cleanly merging incremental data.</li>
             </ul>
 
-            <p>This design choice drastically reduces the "mean time to recovery." If a pipeline fails at 3:00 AM, I don't have to perform surgery on the database. I fix the upstream issue, clear the DAG, and go back to sleep. The system heals itself.</p>
+            <p>This design choice drastically reduces the mean time to recovery. If a pipeline fails at 3:00 AM, I don't have to perform surgery on the database. I fix the upstream issue, clear the DAG, and go back to sleep. The system heals itself.</p>
 
             <h3>Looking Ahead: What happens when we need it faster?</h3>
 
