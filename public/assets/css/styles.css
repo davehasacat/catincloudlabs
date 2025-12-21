@@ -2102,6 +2102,21 @@ figure, .card { overflow: hidden; }
   color: var(--link-hover);
 }
 
+/* Fix for the "Back to Blog" link in the Kicker */
+.kicker a {
+  color: inherit;
+  text-decoration: none;
+}
+.kicker a:hover {
+  text-decoration: underline;
+}
+
+/* Small footer note inside Pro-Tip box */
+.pro-tip-footer {
+  font-size: 0.85rem;
+  margin-top: 1rem;
+}
+
 /* ==================================================================== */
 /* 10. SUBPAGE LAYOUT POLISH (All Pages)                                */
 /* ==================================================================== */
