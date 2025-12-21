@@ -21,7 +21,8 @@
   <meta name="color-scheme" content="light" />
 
   <link rel="stylesheet" href="/assets/css/styles.css" />
-  </head>
+</head>
+
 <body class="page--projects">
   <a href="#main" class="skip-link">Skip to content</a>
 
@@ -64,7 +65,10 @@
               in a private VPC. It uses KMS-encrypted S3 buckets, VPC endpoints, and incremental dbt models to keep data flowing reliably
               from raw JSON to analytics-ready marts.
             </p>
-            
+            <p class="muted">
+              This is the same architecture pattern I adapt for client environments that want calm, well-understood data platforms.
+            </p>
+
             <div class="stack stack--section">
               <div class="stack stack--tight">
                 <h3>Architecture and security posture</h3>
@@ -79,6 +83,14 @@
                   <span class="proof-zoom-pill">Click to zoom</span>
                 </button>
                 <figcaption class="diagram-caption">High-level data flow: ingest market data, land it in S3, transform with dbt, &amp; serve from Snowflake.</figcaption>
+              </figure>
+
+              <figure class="diagram-figure">
+                <button type="button" class="proof-figure__button" data-panel-open data-caption="High-level security view: client VPN into a private VPC; MWAA reaches encrypted S3 via gateway endpoint &amp; orchestrates Snowflake via outbound NAT." aria-label="Click to zoom the security and observability diagram">
+                  <img src="/assets/diagrams/security-observability.v5.svg" alt="Private VPC with S3 Gateway Endpoint; MWAA orchestrates Snowflake load; outbound-only egress" class="diagram" width="1160" height="300" loading="lazy" decoding="async" sizes="(max-width: 700px) 100vw, 1160px" />
+                  <span class="proof-zoom-pill">Click to zoom</span>
+                </button>
+                <figcaption class="diagram-caption">High-level security view: client VPN into a private VPC.</figcaption>
               </figure>
             </div>
           </article>
@@ -115,7 +127,42 @@
                 <div id="top-contracts-chart" class="chart-target"></div>
               </div>
             </div>
-          </article>
+
+            <div class="insights-panel">
+              <h3>⚡ Automated Regime Detection: Late 2025 Snapshot</h3>
+              <p>
+                Beyond simply moving data, this pipeline quantifies market behavior using custom dbt logic. 
+                Here are three algorithmic signals detected in the Q3-Q4 2025 snapshot:
+              </p>
+            
+              <h4>1. The "Mag 7" Trade is Fractured</h4>
+              <ul>
+                <li>
+                  <strong>Divergence:</strong> While the basket is often treated as a monolith, performance varied wildly. 
+                  <strong>GOOGL</strong> rallied <strong>+74%</strong> with "Bullish (Confirmed)" signals on 59% of trading days. 
+                  Meanwhile, <strong>META</strong> fell <strong>-10%</strong>, flagged repeatedly by the model for "Bearish Divergence" (rising price vs. falling flow).
+                </li>
+              </ul>
+            
+              <h4>2. Flight-to-Safety Validation</h4>
+              <ul>
+                <li>
+                  <strong>Bonds as Hedge:</strong> During the "Peak Fear" event on Oct 20 (Put/Call Ratio spiked to 1.79), 
+                  <strong>TLT</strong> (Treasuries) showed a correlation of <strong>-0.59</strong> against SPY. 
+                  The "Macro Gravity" model correctly identified this as a risk-off regime where bonds act as a valid hedge.
+                </li>
+              </ul>
+            
+              <h4>3. The "YOLO" Index</h4>
+              <ul>
+                <li>
+                  <strong>Gamma Risk:</strong> A staggering <strong>67.1%</strong> of top-tier options volume was concentrated in contracts expiring in 
+                  <strong>less than 7 days</strong>. The single most active contract wasn't a hedge, but a speculative 
+                  <strong>TSLA $500 Call</strong> (1.5M contracts), highlighting extreme structural fragility.
+                </li>
+              </ul>
+            </div>
+            </article>
 
           <article class="card reveal card--narrow">
             <h2>Private MWAA Environment</h2>
