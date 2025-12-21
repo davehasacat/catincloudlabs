@@ -270,7 +270,7 @@ a:focus-visible,
   /* 2. Logo: Keep it top-left */
   .header .brand {
     display: block;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.2rem; /* Reduced from 0.5rem for tighter vertical spacing */
   }
   .header .brand img {
     height: 28px; /* Slightly larger for touch targets */
@@ -279,18 +279,19 @@ a:focus-visible,
   /* 3. "Contact" Button: Promote to Top-Right CTA */
   .nav .menu a[href*="contact"] {
     position: absolute;
-    top: 0.6rem;
+    top: 0.25rem;   /* Aligns with logo text center */
     right: 1rem;
     
-    /* Make it look like a button */
-    background-color: var(--gray-100);
-    color: var(--gray-900);
-    border: 1px solid var(--gray-200);
-    padding: 0.35rem 0.85rem;
+    /* Force the pill button look */
+    background-color: var(--gray-100) !important;
+    color: var(--gray-900) !important;
+    border: 1px solid var(--gray-200) !important;
+    padding: 0.35rem 0.85rem !important;
     border-radius: 999px;
     font-size: 0.8rem;
     font-weight: 600;
     box-shadow: none;
+    line-height: 1;
   }
 
   /* 4. Navigation Menu: Convert to Horizontal Scroll Strip */
