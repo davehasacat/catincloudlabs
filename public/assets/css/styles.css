@@ -255,9 +255,9 @@ a:focus-visible,
   border-radius: 8px;
 }
 
-/* MOBILE HEADER: LEFT-ALIGNED "APP" LAYOUT
+/* MOBILE HEADER: LEFT-ALIGNED LOGO + FULL-WIDTH NAV STRIP
    Top Row: Logo (Left) ......... Contact (Right)
-   Btm Row: [About] [Projects] [Services] [Blog] (Scrollable)
+   Btm Row: [About] [Projects] [Services] [Blog] (Justified)
 */
 @media (max-width: 640px) {
   /* 1. Container */
@@ -267,13 +267,13 @@ a:focus-visible,
     padding: 0.85rem 1rem 0; 
   }
 
-  /* 2. Logo: Left Aligned & Compact */
+  /* 2. Logo: Left Aligned */
   .header .brand {
-    display: inline-block; /* Left align */
-    margin-bottom: 0.15rem; /* Tiny gap before nav row */
+    display: inline-block;
+    margin-bottom: 0.2rem; /* Tight gap to the nav row */
   }
   .header .brand img {
-    height: 28px; /* Classic size */
+    height: 28px;
   }
 
   /* 3. "Contact" Button: Pinned Top-Right */
@@ -295,25 +295,28 @@ a:focus-visible,
     line-height: 1;
   }
 
-  /* 4. Navigation Menu: Left-Aligned Scroll Strip */
+  /* 4. Navigation Menu: "Tab Bar" Style */
   .menu {
     display: flex;
     flex-wrap: nowrap;
     overflow-x: auto;
-    gap: 1.25rem;
+    width: 100%;
     
-    /* Left Align the links */
-    justify-content: flex-start; 
+    /* "space-between" fills the width, removing side white space. 
+       "center" clumps them in the middle. 
+       space-between is best for that "filled" app feel. */
+    justify-content: space-between; 
     
     /* Layout tweaks */
-    margin-left: -1rem;
-    margin-right: -1rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    gap: 0; /* Let space-between handle the gaps */
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0.2rem;  /* Tiny buffer from edge */
+    padding-right: 0.2rem; 
     padding-bottom: 0.85rem;
-    padding-top: 0.15rem; /* Tight to the logo */
+    padding-top: 0.35rem; 
     
-    /* Scroll polish */
+    /* Scroll polish (hidden but functional if text gets huge) */
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
   }
@@ -330,7 +333,7 @@ a:focus-visible,
   /* 6. Style the Links */
   .menu a {
     white-space: nowrap;
-    font-size: 0.95rem;
+    font-size: 1rem; /* Increased size to fill space better (16px) */
     color: var(--text-muted);
     font-weight: 500;
     padding: 0.25rem 0;
