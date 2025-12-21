@@ -63,10 +63,10 @@
           <article class="card reveal card--narrow">
             <h2>The Philosophy</h2>
             <p>
-              I believe that a data platform's primary job is to be predictable. When a pipeline fails, it should fail loudly and cleanly. When it succeeds, the data should be auditable.
+              I believe that a data platform's primary job is to be predictable. When a pipeline fails, it should fail loudly and cleanly. When it succeeds, the data should be fully auditable.
             </p>
             <p>
-              I prioritize <strong>idempotency over speed</strong> and <strong>private networking over public endpoints</strong>. I don't chase the latest "Modern Data Stack" hype cycles. I stick to patterns that have survived production at scale: strict IaC, hardened VPCs, and clean data modeling.
+              I prioritize <strong>idempotency over speed</strong> and <strong>private networking over public endpoints</strong>. I don't chase the latest "Modern Data Stack" hype cycles. I stick to patterns that have survived production at scale: hardened VPCs, version-controlled business logic, and rigorous data testing.
             </p>
           </article>
 
@@ -79,7 +79,7 @@
               <li><strong>Orchestration:</strong> AWS MWAA (Airflow) in a private VPC.</li>
               <li><strong>Compute & Storage:</strong> Snowflake (PrivateLink) and S3 (KMS Encrypted).</li>
               <li><strong>Transformation:</strong> dbt Core/Cloud with rigorous testing and documentation.</li>
-              <li><strong>Infrastructure:</strong> Terraform or CloudFormation for repeatable deployments.</li>
+              <li><strong>Version Control:</strong> Git-backed workflows for all business logic and pipelines.</li>
             </ul>
           </article>
 
