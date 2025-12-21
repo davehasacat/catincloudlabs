@@ -255,56 +255,114 @@ a:focus-visible,
   border-radius: 8px;
 }
 
-/* Super-compact mobile header/nav */
+/* MOBILE HEADER: HORIZONTAL SCROLL LAYOUT 
+   Pins logo (left) and Contact button (right).
+   Puts nav links in a scrollable strip below.
+*/
 @media (max-width: 640px) {
-  .header {
-    padding-block: 0;
-  }
-
+  /* 1. Reset the container to block so we can position elements absolutely */
   .header .nav {
-    padding: 0.35rem 1rem;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    gap: 0.2rem 0.5rem;
+    display: block;
+    position: relative;
+    padding: 0.75rem 1rem 0; /* Add bottom padding via the menu instead */
   }
 
-  /* Smaller logo on phones */
+  /* 2. Logo: Keep it top-left */
+  .header .brand {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
   .header .brand img {
-    height: 24px;
+    height: 28px; /* Slightly larger for touch targets */
   }
 
+  /* 3. "Contact" Button: Promote to Top-Right CTA */
+  .nav .menu a[href*="contact"] {
+    position: absolute;
+    top: 0.6rem;
+    right: 1rem;
+    
+    /* Make it look like a button */
+    background-color: var(--gray-100);
+    color: var(--gray-900);
+    border: 1px solid var(--gray-200);
+    padding: 0.35rem 0.85rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    box-shadow: none;
+  }
+
+  /* 4. Navigation Menu: Convert to Horizontal Scroll Strip */
   .menu {
-    margin-left: auto;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    gap: 0.4rem 0.6rem;
-    font-size: 0.85rem;
+    flex-wrap: nowrap;       /* Force single line */
+    overflow-x: auto;        /* Enable horizontal scrolling */
+    gap: 1.5rem;             /* More space between links */
+    
+    /* Layout tweaks */
+    margin-left: -1rem;      /* Bleed to left edge */
+    margin-right: -1rem;     /* Bleed to right edge */
+    padding-left: 1rem;      /* Restore left padding */
+    padding-right: 1rem;     /* Restore right padding */
+    padding-bottom: 0.75rem; /* Space for touch interaction */
+    padding-top: 0.5rem;     /* Separate from Logo */
+    
+    /* Hide scrollbar but keep functionality */
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;   /* Firefox */
+  }
+  
+  /* Hide scrollbar for Chrome/Safari */
+  .menu::-webkit-scrollbar {
+    display: none;
   }
 
-  /* Strip pill styling completely in the nav */
+  /* 5. Hide "Home" link (Redundant on mobile since Logo does the same) */
+  .menu a[href="/"] {
+    display: none;
+  }
+
+  /* 6. Style the Links */
   .menu a {
+    white-space: nowrap;     /* Prevent text wrapping */
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    font-weight: 500;
     padding: 0;
+    margin: 0;
     border: 0;
     background: transparent;
     box-shadow: none;
   }
 
-  /* Also neutralize the .button.ghost on Contact */
+  /* Active State Indicator */
+  .nav .menu a[aria-current="page"] {
+    color: var(--accent-700);
+    background: transparent;
+    position: relative;
+  }
+  
+  /* Optional: Little dot or line under active link */
+  .nav .menu a[aria-current="page"]::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: var(--accent-500);
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    border-radius: 2px;
+  }
+  
+  /* Neutralize button styles if any linger on non-contact links */
   .menu a.button,
   .menu a.button.ghost {
     padding: 0;
     border: 0;
     background: transparent;
     box-shadow: none;
-  }
-
-  /* Active page: just color + slight weight */
-  .nav .menu a[aria-current="page"] {
-    background: transparent;
-    color: var(--accent-700);
-    font-weight: 600;
   }
 }
 
