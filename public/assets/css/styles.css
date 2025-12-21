@@ -1700,7 +1700,6 @@ figure, .card { overflow: hidden; }
 
 /* Insights Section */
 .insights-panel {
-  /* CHANGED: Mapped to standard tokens to ensure visibility */
   background: var(--gray-50); 
   border: 1px solid var(--gray-200);
   
@@ -1742,7 +1741,7 @@ figure, .card { overflow: hidden; }
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.09em;
-  color: var(--gray-600); /* Fixed variable name */
+  color: var(--gray-600);
   
   display: inline-flex;
   align-items: center;
@@ -1750,58 +1749,9 @@ figure, .card { overflow: hidden; }
   padding: 0.16rem 0.6rem;
   border-radius: 999px;
   
-  background: #ffffff;      /* Hardened for contrast against gray panel */
+  background: #ffffff;
   border: 1px solid var(--gray-200);
   
-  margin-top: 1.4rem;
-  margin-bottom: 0.6rem;
-}
-
-/* Bullet lists & spacing */
-.insights-panel ul {
-  margin: 0 0 1.15rem;
-  padding-left: 1.35rem;
-}
-.insights-panel li + li {
-  margin-top: 0.45rem;
-}
-.insights-panel li strong {
-  font-weight: 600;
-}
-
-@media (max-width: 640px) {
-  .insights-panel {
-    padding: 1.5rem 1.35rem;
-    margin-top: 2rem;
-    max-width: 100%;
-  }
-  .insights-panel h3 {
-    margin-bottom: 0.85rem;
-  }
-  .insights-panel > p {
-    margin-bottom: 1rem;
-  }
-  .insights-panel h4 {
-    font-size: 0.75rem;
-    padding: 0.14rem 0.5rem;
-    margin-top: 1.15rem;
-  }
-}
-
-/* Section labels inside insights */
-.insights-panel h4 {
-  font-size: 0.78rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.09em;
-  color: var(--text-subtle-strong, #4b5563);
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.16rem 0.6rem;
-  border-radius: 999px;
-  background: var(--surface-strong, #f9fafb);
-  border: 1px solid var(--border-subtle);
   margin-top: 1.4rem;
   margin-bottom: 0.6rem;
 }
