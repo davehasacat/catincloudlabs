@@ -47,7 +47,7 @@
       <div class="container hero-simple">
         <div class="stack stack--hero">
           <div class="kicker">
-            <a href="/blog" style="color: inherit; text-decoration: none;">&larr; Engineering Log</a>
+            <a href="/blog">&larr; Engineering Log</a>
           </div>
           <h1 class="title">The Steady State Architecture</h1>
           <p class="subtitle">
@@ -70,7 +70,7 @@
             <p>When market data needs to cover the most traded ETFs, the biggest tech giants, and the most volatile meme assets simultaneously, a fragile data pipeline isn't gonna cut it. This brings me back to the core architectural decision for this project: Why choose a "boring" stack like AWS MWAA + Snowflake + dbt?</p>
 
             <img 
-                src="/assets/diagrams/security-observability.v5.svg" 
+                src="/assets/diagrams/topology-dark-mode.png" 
                 alt="Architecture Diagram: AWS MWAA, Snowflake, and dbt" 
                 class="article-img diagram-clean"
                 loading="lazy"
@@ -111,7 +111,7 @@
                 <li><strong>dbt Transformations:</strong> dbt (data build tool) is the other half of this equation. Because dbt models are declarative (<code>SELECT</code> statements) rather than imperative (<code>INSERT/UPDATE</code> scripts), it handles the complexity of replacing tables or cleanly merging incremental data.</li>
             </ul>
 
-            <p>This design choice drastically reduces the mean time to recovery. If a pipeline fails at 3:00 AM, I don't have to perform surgery on the database. I fix the upstream issue, clear the DAG, and go back to sleep. The system heals itself.</p>
+            <p>This design choice drastically reduces the Mean Time To Recovery. If a pipeline fails at 3:00 AM, I don't have to perform surgery on the database. I fix the upstream issue, clear the DAG, and go back to sleep. The system heals itself.</p>
 
             <h3>Looking Ahead: What happens when we need it faster?</h3>
 
@@ -132,17 +132,17 @@
             <div class="pro-tip">
                 <h3>Engineering Note: MWAA Dependency Hell</h3>
                 <p class="muted">
-                    I got caught in"dependency hell" spinning up the MWAA environment for this project. If anyone is currently fighting with Python library conflicts in MWAA, I'm happy to save you a weekend of debugging.
+                    Speaking of "dependency hell": if anyone else is currently fighting with Python library conflicts in MWAA, I'm happy to save you a weekend of debugging.
                 </p>
                 <p class="muted">
                     Here is the constraints file I built to keep the environment stable (MWAA 3.0.6 / Python 3.12). It took two days of trial and error to get this right. Feel free to steal it 😸
                 </p>
                 
                 <a href="/constraints/constraints-mwaa-3.0.6-py312-protobuf6.txt" class="file-link" download>
-                   Download Constraints File (MWAA 3.0.6 / Py3.12)
+                   📄 Download Constraints File (MWAA 3.0.6 / Py3.12)
                 </a>
                 
-                <p class="muted" style="font-size: 0.85rem; margin-top: 1rem;">
+                <p class="muted pro-tip-footer">
                     If you try it and it's still not working for you, don't hesitate to reach out!
                 </p>
             </div>
