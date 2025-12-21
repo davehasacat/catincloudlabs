@@ -255,58 +255,55 @@ a:focus-visible,
   border-radius: 8px;
 }
 
-/* MOBILE HEADER: CENTERED LOGO LAYOUT 
-   Logo: Centered & Larger (Fills the "middle" gap)
-   Contact: Pinned Top-Right
-   Nav: Centered Scroll Strip below
+/* MOBILE HEADER: LEFT-ALIGNED "APP" LAYOUT
+   Top Row: Logo (Left) ......... Contact (Right)
+   Btm Row: [About] [Projects] [Services] [Blog] (Scrollable)
 */
 @media (max-width: 640px) {
-  /* 1. Reset the container */
+  /* 1. Container */
   .header .nav {
     display: block;
     position: relative;
     padding: 0.85rem 1rem 0; 
   }
 
-  /* 2. Logo: Center it and make it bigger */
+  /* 2. Logo: Left Aligned & Compact */
   .header .brand {
-    display: flex;
-    justify-content: center; /* Center the image */
-    width: 100%;             /* Allow centering within full width */
-    margin-bottom: 0.5rem;   /* Space before the nav links */
+    display: inline-block; /* Left align */
+    margin-bottom: 0.15rem; /* Tiny gap before nav row */
   }
   .header .brand img {
-    height: 32px; /* Increased from 28px to fill space better */
+    height: 28px; /* Classic size */
   }
 
-  /* 3. "Contact" Button: Top-Right CTA */
+  /* 3. "Contact" Button: Pinned Top-Right */
   .nav .menu a[href*="contact"] {
     position: absolute;
-    top: 0.75rem;   /* Align center with the 32px logo */
+    top: 0.7rem;   /* Aligns with logo baseline */
     right: 1rem;
-    z-index: 2;     /* Ensure clickable above any overlaps */
+    z-index: 2;
     
     /* Button Styling */
     background-color: var(--gray-100) !important;
     color: var(--gray-900) !important;
     border: 1px solid var(--gray-200) !important;
-    padding: 0.4rem 0.9rem !important; 
+    padding: 0.35rem 0.85rem !important; 
     border-radius: 999px;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     font-weight: 600;
     box-shadow: none;
     line-height: 1;
   }
 
-  /* 4. Navigation Menu: Centered Scroll Strip */
+  /* 4. Navigation Menu: Left-Aligned Scroll Strip */
   .menu {
     display: flex;
     flex-wrap: nowrap;
     overflow-x: auto;
     gap: 1.25rem;
     
-    /* Center the links */
-    justify-content: center; 
+    /* Left Align the links */
+    justify-content: flex-start; 
     
     /* Layout tweaks */
     margin-left: -1rem;
@@ -314,7 +311,7 @@ a:focus-visible,
     padding-left: 1rem;
     padding-right: 1rem;
     padding-bottom: 0.85rem;
-    padding-top: 0.25rem;
+    padding-top: 0.15rem; /* Tight to the logo */
     
     /* Scroll polish */
     -webkit-overflow-scrolling: touch;
