@@ -224,6 +224,7 @@ a:focus-visible,
   max-width: var(--maxw-readable);
   margin-inline: auto;
 }
+
 /* ==================================================================== */
 /* 3. GLOBAL COMPONENTS: HEADER / NAV / CARDS / BUTTONS / INPUTS / FOOTER*/
 /* ==================================================================== */
@@ -254,53 +255,57 @@ a:focus-visible,
   border-radius: 8px;
 }
 
-/* MOBILE HEADER: HORIZONTAL SCROLL LAYOUT 
-   Pins logo (left) and Contact button (right).
-   Puts nav links in a centered, scrollable strip below.
+/* MOBILE HEADER: CENTERED LOGO LAYOUT 
+   Logo: Centered & Larger (Fills the "middle" gap)
+   Contact: Pinned Top-Right
+   Nav: Centered Scroll Strip below
 */
 @media (max-width: 640px) {
   /* 1. Reset the container */
   .header .nav {
     display: block;
     position: relative;
-    padding: 0.85rem 1rem 0; /* Slightly more top padding */
+    padding: 0.85rem 1rem 0; 
   }
 
-  /* 2. Logo: Keep it top-left */
+  /* 2. Logo: Center it and make it bigger */
   .header .brand {
-    display: block;
-    margin-bottom: 0.5rem; /* Add breathing room before the menu row */
+    display: flex;
+    justify-content: center; /* Center the image */
+    width: 100%;             /* Allow centering within full width */
+    margin-bottom: 0.5rem;   /* Space before the nav links */
   }
   .header .brand img {
-    height: 28px;
+    height: 32px; /* Increased from 28px to fill space better */
   }
 
-  /* 3. "Contact" Button: Bigger, bolder, aligned */
+  /* 3. "Contact" Button: Top-Right CTA */
   .nav .menu a[href*="contact"] {
     position: absolute;
-    top: 0.5rem;   /* Push down to align with Logo baseline */
+    top: 0.75rem;   /* Align center with the 32px logo */
     right: 1rem;
+    z-index: 2;     /* Ensure clickable above any overlaps */
     
-    /* Bigger touch target and font */
+    /* Button Styling */
     background-color: var(--gray-100) !important;
     color: var(--gray-900) !important;
     border: 1px solid var(--gray-200) !important;
-    padding: 0.45rem 1rem !important; /* Increased padding */
+    padding: 0.4rem 0.9rem !important; 
     border-radius: 999px;
-    font-size: 0.85rem;  /* Increased from 0.8rem */
+    font-size: 0.85rem;
     font-weight: 600;
     box-shadow: none;
     line-height: 1;
   }
 
-  /* 4. Navigation Menu: Centered Row */
+  /* 4. Navigation Menu: Centered Scroll Strip */
   .menu {
     display: flex;
     flex-wrap: nowrap;
     overflow-x: auto;
-    gap: 1.25rem;          /* Balanced spacing */
+    gap: 1.25rem;
     
-    /* Center the links! */
+    /* Center the links */
     justify-content: center; 
     
     /* Layout tweaks */
@@ -308,7 +313,7 @@ a:focus-visible,
     margin-right: -1rem;
     padding-left: 1rem;
     padding-right: 1rem;
-    padding-bottom: 0.85rem; /* Touch space */
+    padding-bottom: 0.85rem;
     padding-top: 0.25rem;
     
     /* Scroll polish */
@@ -320,7 +325,7 @@ a:focus-visible,
     display: none;
   }
 
-  /* 5. Hide "Home" */
+  /* 5. Hide "Home" link */
   .menu a[href="/"] {
     display: none;
   }
@@ -331,7 +336,7 @@ a:focus-visible,
     font-size: 0.95rem;
     color: var(--text-muted);
     font-weight: 500;
-    padding: 0.25rem 0; /* Vertical breathing room */
+    padding: 0.25rem 0;
     margin: 0;
     border: 0;
     background: transparent;
@@ -345,7 +350,6 @@ a:focus-visible,
     position: relative;
   }
   
-  /* Active line */
   .nav .menu a[aria-current="page"]::after {
     content: "";
     display: block;
@@ -358,7 +362,7 @@ a:focus-visible,
     border-radius: 2px;
   }
   
-  /* Neutralize button styles */
+  /* Neutralize button styles on standard links */
   .menu a.button,
   .menu a.button.ghost {
     padding: 0;
