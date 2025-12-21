@@ -11,10 +11,9 @@ import snowflake.connector
 from cryptography.hazmat.primitives import serialization
 
 # --- CONFIGURATION ---
-# TODO: Update these placeholders with your actual new tickers
-TICKERS = ["AAPL", "AMZN", "GME", "GOOGL", "MSFT", "NVDA", "QQQ", "SPY"]
-START_DATE = "2025-09-02"
-END_DATE = "2025-11-28"
+TICKERS = ["AAPL", "AMZN", "GME", "GOOGL", "IWM", "MSFT", "NVDA", "QQQ", "SPY", "TSLA"]
+START_DATE = "2025-06-30"
+END_DATE = "2025-12-12"
 OUTPUT_FILENAME = "ticker_features_daily_8tickers.json"
 
 # Snowflake Settings

@@ -6,8 +6,8 @@
     "option_type": "C",
     "strike_price": 265.0,
     "latest_close_price": 0.01,
-    "total_volume": 605065,
-    "days_to_expiration": -54,
+    "total_volume": 1210130,
+    "days_to_expiration": -55,
     "signed_moneyness_pct": 0.01470582916
   },
   {
@@ -17,8 +17,8 @@
     "option_type": "C",
     "strike_price": 280.0,
     "latest_close_price": 0.01,
-    "total_volume": 543771,
-    "days_to_expiration": -5,
+    "total_volume": 1087542,
+    "days_to_expiration": -6,
     "signed_moneyness_pct": 0.020791433397
   },
   {
@@ -28,8 +28,8 @@
     "option_type": "C",
     "strike_price": 280.0,
     "latest_close_price": 0.01,
-    "total_volume": 509262,
-    "days_to_expiration": -19,
+    "total_volume": 1018524,
+    "days_to_expiration": -20,
     "signed_moneyness_pct": 0.039167153021
   },
   {
@@ -39,8 +39,8 @@
     "option_type": "C",
     "strike_price": 275.0,
     "latest_close_price": 0.01,
-    "total_volume": 480618,
-    "days_to_expiration": -33,
+    "total_volume": 961236,
+    "days_to_expiration": -34,
     "signed_moneyness_pct": 0.02524585637
   },
   {
@@ -50,8 +50,8 @@
     "option_type": "C",
     "strike_price": 275.0,
     "latest_close_price": 0.01,
-    "total_volume": 429408,
-    "days_to_expiration": -26,
+    "total_volume": 858816,
+    "days_to_expiration": -27,
     "signed_moneyness_pct": 0.025245941124
   },
   {
@@ -61,8 +61,8 @@
     "option_type": "C",
     "strike_price": 270.0,
     "latest_close_price": 0.01,
-    "total_volume": 402824,
-    "days_to_expiration": -40,
+    "total_volume": 805648,
+    "days_to_expiration": -41,
     "signed_moneyness_pct": 0.01209346808
   },
   {
@@ -72,9 +72,20 @@
     "option_type": "C",
     "strike_price": 285.0,
     "latest_close_price": 0.01,
-    "total_volume": 390831,
-    "days_to_expiration": -12,
+    "total_volume": 781662,
+    "days_to_expiration": -13,
     "signed_moneyness_pct": 0.044837266013
+  },
+  {
+    "option_symbol": "O:AAPL251219C00280000",
+    "underlying_ticker": "AAPL",
+    "expiration_date": "2025-12-19",
+    "option_type": "C",
+    "strike_price": 280.0,
+    "latest_close_price": 0.02,
+    "total_volume": 757358,
+    "days_to_expiration": 1,
+    "signed_moneyness_pct": 0.028504352479
   },
   {
     "option_symbol": "O:AAPL251024C00260000",
@@ -83,20 +94,9 @@
     "option_type": "C",
     "strike_price": 260.0,
     "latest_close_price": 2.83,
-    "total_volume": 364737,
-    "days_to_expiration": -54,
+    "total_volume": 729474,
+    "days_to_expiration": -55,
     "signed_moneyness_pct": -0.00443956384
-  },
-  {
-    "option_symbol": "O:AAPL251219C00280000",
-    "underlying_ticker": "AAPL",
-    "expiration_date": "2025-12-19",
-    "option_type": "C",
-    "strike_price": 280.0,
-    "latest_close_price": 0.12,
-    "total_volume": 362689,
-    "days_to_expiration": 2,
-    "signed_moneyness_pct": 0.028502104386
   },
   {
     "option_symbol": "O:AAPL251121C00270000",
@@ -105,8 +105,8 @@
     "option_type": "C",
     "strike_price": 270.0,
     "latest_close_price": 1.47,
-    "total_volume": 338060,
-    "days_to_expiration": -26,
+    "total_volume": 676120,
+    "days_to_expiration": -27,
     "signed_moneyness_pct": 0.006605105836
   },
   {
@@ -116,8 +116,8 @@
     "option_type": "C",
     "strike_price": 280.0,
     "latest_close_price": 0.01,
-    "total_volume": 336148,
-    "days_to_expiration": -12,
+    "total_volume": 672296,
+    "days_to_expiration": -13,
     "signed_moneyness_pct": 0.026506787667
   },
   {
@@ -127,8 +127,8 @@
     "option_type": "C",
     "strike_price": 262.5,
     "latest_close_price": 0.28,
-    "total_volume": 325832,
-    "days_to_expiration": -54,
+    "total_volume": 651664,
+    "days_to_expiration": -55,
     "signed_moneyness_pct": 0.00513313264
   },
   {
@@ -138,8 +138,8 @@
     "option_type": "C",
     "strike_price": 282.5,
     "latest_close_price": 0.01,
-    "total_volume": 314942,
-    "days_to_expiration": -12,
+    "total_volume": 629884,
+    "days_to_expiration": -13,
     "signed_moneyness_pct": 0.024265145893
   },
   {
@@ -149,8 +149,8 @@
     "option_type": "C",
     "strike_price": 287.5,
     "latest_close_price": 0.01,
-    "total_volume": 297577,
-    "days_to_expiration": -12,
+    "total_volume": 595154,
+    "days_to_expiration": -13,
     "signed_moneyness_pct": 0.04239373255
   },
   {
@@ -160,8 +160,8 @@
     "option_type": "C",
     "strike_price": 272.5,
     "latest_close_price": 0.01,
-    "total_volume": 294506,
-    "days_to_expiration": -26,
+    "total_volume": 589012,
+    "days_to_expiration": -27,
     "signed_moneyness_pct": 0.01592552348
   },
   {
@@ -171,8 +171,8 @@
     "option_type": "C",
     "strike_price": 290.0,
     "latest_close_price": 0.01,
-    "total_volume": 291148,
-    "days_to_expiration": -12,
+    "total_volume": 582296,
+    "days_to_expiration": -13,
     "signed_moneyness_pct": 0.063167744377
   },
   {
@@ -181,10 +181,10 @@
     "expiration_date": "2026-01-16",
     "option_type": "C",
     "strike_price": 290.0,
-    "latest_close_price": 0.95,
-    "total_volume": 277166,
-    "days_to_expiration": 30,
-    "signed_moneyness_pct": 0.065234322407
+    "latest_close_price": 0.91,
+    "total_volume": 563222,
+    "days_to_expiration": 29,
+    "signed_moneyness_pct": 0.065236650788
   },
   {
     "option_symbol": "O:AAPL251121C00280000",
@@ -193,8 +193,8 @@
     "option_type": "C",
     "strike_price": 280.0,
     "latest_close_price": 0.01,
-    "total_volume": 274125,
-    "days_to_expiration": -26,
+    "total_volume": 548250,
+    "days_to_expiration": -27,
     "signed_moneyness_pct": 0.04388677642
   },
   {
@@ -204,9 +204,20 @@
     "option_type": "C",
     "strike_price": 272.5,
     "latest_close_price": 0.01,
-    "total_volume": 262785,
-    "days_to_expiration": -40,
+    "total_volume": 525570,
+    "days_to_expiration": -41,
     "signed_moneyness_pct": 0.02146470388
+  },
+  {
+    "option_symbol": "O:AAPL251219C00275000",
+    "underlying_ticker": "AAPL",
+    "expiration_date": "2025-12-19",
+    "option_type": "C",
+    "strike_price": 275.0,
+    "latest_close_price": 0.46,
+    "total_volume": 524686,
+    "days_to_expiration": 1,
+    "signed_moneyness_pct": 0.010138203329
   },
   {
     "option_symbol": "O:AAPL251031C00270000",
@@ -215,8 +226,8 @@
     "option_type": "C",
     "strike_price": 270.0,
     "latest_close_price": 0.3,
-    "total_volume": 256264,
-    "days_to_expiration": -47,
+    "total_volume": 512528,
+    "days_to_expiration": -48,
     "signed_moneyness_pct": 0.01719859161
   },
   {
@@ -226,8 +237,8 @@
     "option_type": "C",
     "strike_price": 280.0,
     "latest_close_price": 0.01,
-    "total_volume": 254733,
-    "days_to_expiration": -33,
+    "total_volume": 509466,
+    "days_to_expiration": -34,
     "signed_moneyness_pct": 0.043886690125
   },
   {
@@ -237,8 +248,8 @@
     "option_type": "C",
     "strike_price": 277.5,
     "latest_close_price": 1.39,
-    "total_volume": 250843,
-    "days_to_expiration": -19,
+    "total_volume": 501686,
+    "days_to_expiration": -20,
     "signed_moneyness_pct": 0.018833552743
   },
   {
@@ -248,8 +259,8 @@
     "option_type": "C",
     "strike_price": 275.0,
     "latest_close_price": 0.01,
-    "total_volume": 248508,
-    "days_to_expiration": -40,
+    "total_volume": 497016,
+    "days_to_expiration": -41,
     "signed_moneyness_pct": 0.030835939693
   },
   {
@@ -259,20 +270,9 @@
     "option_type": "P",
     "strike_price": 265.0,
     "latest_close_price": 0.01,
-    "total_volume": 246924,
-    "days_to_expiration": -26,
+    "total_volume": 493848,
+    "days_to_expiration": -27,
     "signed_moneyness_pct": -0.01203572946
-  },
-  {
-    "option_symbol": "O:AAPL251031C00272500",
-    "underlying_ticker": "AAPL",
-    "expiration_date": "2025-10-31",
-    "option_type": "C",
-    "strike_price": 272.5,
-    "latest_close_price": 0.01,
-    "total_volume": 245329,
-    "days_to_expiration": -47,
-    "signed_moneyness_pct": 0.02661709706
   },
   {
     "option_symbol": "O:AMZN251024C00225000",
@@ -281,8 +281,8 @@
     "option_type": "C",
     "strike_price": 225.0,
     "latest_close_price": 0.02,
-    "total_volume": 322367,
-    "days_to_expiration": -54,
+    "total_volume": 644734,
+    "days_to_expiration": -55,
     "signed_moneyness_pct": 0.02125780234
   },
   {
@@ -292,9 +292,9 @@
     "option_type": "C",
     "strike_price": 235.0,
     "latest_close_price": 0.06,
-    "total_volume": 315608,
-    "days_to_expiration": 2,
-    "signed_moneyness_pct": 0.017927893007
+    "total_volume": 640199,
+    "days_to_expiration": 1,
+    "signed_moneyness_pct": 0.018144482248
   },
   {
     "option_symbol": "O:AMZN251024C00220000",
@@ -303,9 +303,20 @@
     "option_type": "C",
     "strike_price": 220.0,
     "latest_close_price": 4.26,
-    "total_volume": 302094,
-    "days_to_expiration": -54,
+    "total_volume": 604188,
+    "days_to_expiration": -55,
     "signed_moneyness_pct": -0.00143681548
+  },
+  {
+    "option_symbol": "O:AMZN260116C00250000",
+    "underlying_ticker": "AMZN",
+    "expiration_date": "2026-01-16",
+    "option_type": "C",
+    "strike_price": 250.0,
+    "latest_close_price": 0.88,
+    "total_volume": 577268,
+    "days_to_expiration": 29,
+    "signed_moneyness_pct": 0.083132427931
   },
   {
     "option_symbol": "O:AMZN251031C00250000",
@@ -314,20 +325,9 @@
     "option_type": "C",
     "strike_price": 250.0,
     "latest_close_price": 0.01,
-    "total_volume": 285834,
-    "days_to_expiration": -47,
+    "total_volume": 571668,
+    "days_to_expiration": -48,
     "signed_moneyness_pct": 0.10966224273
-  },
-  {
-    "option_symbol": "O:AMZN260116C00250000",
-    "underlying_ticker": "AMZN",
-    "expiration_date": "2026-01-16",
-    "option_type": "C",
-    "strike_price": 250.0,
-    "latest_close_price": 0.59,
-    "total_volume": 282743,
-    "days_to_expiration": 30,
-    "signed_moneyness_pct": 0.082902013845
   },
   {
     "option_symbol": "O:AMZN251024C00222500",
@@ -336,9 +336,20 @@
     "option_type": "C",
     "strike_price": 222.5,
     "latest_close_price": 1.73,
-    "total_volume": 273987,
-    "days_to_expiration": -54,
+    "total_volume": 547974,
+    "days_to_expiration": -55,
     "signed_moneyness_pct": 0.00991049344
+  },
+  {
+    "option_symbol": "O:AMZN251219C00230000",
+    "underlying_ticker": "AMZN",
+    "expiration_date": "2025-12-19",
+    "option_type": "C",
+    "strike_price": 230.0,
+    "latest_close_price": 0.43,
+    "total_volume": 523762,
+    "days_to_expiration": 1,
+    "signed_moneyness_pct": -0.003518166312
   },
   {
     "option_symbol": "O:AMZN251121C00250000",
@@ -347,8 +358,8 @@
     "option_type": "C",
     "strike_price": 250.0,
     "latest_close_price": 0.01,
-    "total_volume": 247808,
-    "days_to_expiration": -26,
+    "total_volume": 495616,
+    "days_to_expiration": -27,
     "signed_moneyness_pct": 0.075572417416
   },
   {
@@ -357,10 +368,10 @@
     "expiration_date": "2025-12-19",
     "option_type": "C",
     "strike_price": 240.0,
-    "latest_close_price": 0.04,
-    "total_volume": 243524,
-    "days_to_expiration": 2,
-    "signed_moneyness_pct": 0.039585933283
+    "latest_close_price": 0.03,
+    "total_volume": 493028,
+    "days_to_expiration": 1,
+    "signed_moneyness_pct": 0.039807130806
   },
   {
     "option_symbol": "O:AMZN251219C00250000",
@@ -369,9 +380,9 @@
     "option_type": "C",
     "strike_price": 250.0,
     "latest_close_price": 0.02,
-    "total_volume": 243070,
-    "days_to_expiration": 2,
-    "signed_moneyness_pct": 0.082902013845
+    "total_volume": 489106,
+    "days_to_expiration": 1,
+    "signed_moneyness_pct": 0.083132427931
   },
   {
     "option_symbol": "O:AMZN251205C00235000",
@@ -380,20 +391,9 @@
     "option_type": "C",
     "strike_price": 235.0,
     "latest_close_price": 0.01,
-    "total_volume": 241752,
-    "days_to_expiration": -12,
+    "total_volume": 483504,
+    "days_to_expiration": -13,
     "signed_moneyness_pct": 0.00512594765
-  },
-  {
-    "option_symbol": "O:AMZN251219C00230000",
-    "underlying_ticker": "AMZN",
-    "expiration_date": "2025-12-19",
-    "option_type": "C",
-    "strike_price": 230.0,
-    "latest_close_price": 0.18,
-    "total_volume": 235283,
-    "days_to_expiration": 2,
-    "signed_moneyness_pct": -0.003730147271
   },
   {
     "option_symbol": "O:AMZN260116C00240000",
@@ -401,10 +401,10 @@
     "expiration_date": "2026-01-16",
     "option_type": "C",
     "strike_price": 240.0,
-    "latest_close_price": 1.44,
-    "total_volume": 220617,
-    "days_to_expiration": 30,
-    "signed_moneyness_pct": 0.039585933283
+    "latest_close_price": 2.32,
+    "total_volume": 450022,
+    "days_to_expiration": 29,
+    "signed_moneyness_pct": 0.039807130806
   },
   {
     "option_symbol": "O:AMZN251107C00250000",
@@ -413,8 +413,8 @@
     "option_type": "C",
     "strike_price": 250.0,
     "latest_close_price": 0.01,
-    "total_volume": 213088,
-    "days_to_expiration": -40,
+    "total_volume": 426176,
+    "days_to_expiration": -41,
     "signed_moneyness_pct": 0.075620741327
   },
   {
@@ -424,8 +424,8 @@
     "option_type": "C",
     "strike_price": 230.0,
     "latest_close_price": 0.01,
-    "total_volume": 212272,
-    "days_to_expiration": -12,
+    "total_volume": 424544,
+    "days_to_expiration": -13,
     "signed_moneyness_pct": -0.016259710807
   },
   {
@@ -435,8 +435,8 @@
     "option_type": "C",
     "strike_price": 260.0,
     "latest_close_price": 0.01,
-    "total_volume": 208394,
-    "days_to_expiration": -40,
+    "total_volume": 416788,
+    "days_to_expiration": -41,
     "signed_moneyness_pct": 0.118645570967
   },
   {
@@ -445,10 +445,10 @@
     "expiration_date": "2025-12-19",
     "option_type": "C",
     "strike_price": 255.0,
-    "latest_close_price": 0.01,
-    "total_volume": 207269,
-    "days_to_expiration": 2,
-    "signed_moneyness_pct": 0.104560054117
+    "latest_close_price": 0.02,
+    "total_volume": 416490,
+    "days_to_expiration": 1,
+    "signed_moneyness_pct": 0.104795076485
   },
   {
     "option_symbol": "O:AMZN251121C00230000",
@@ -457,8 +457,8 @@
     "option_type": "C",
     "strike_price": 230.0,
     "latest_close_price": 0.01,
-    "total_volume": 206388,
-    "days_to_expiration": -26,
+    "total_volume": 412776,
+    "days_to_expiration": -27,
     "signed_moneyness_pct": -0.010473375976
   },
   {
@@ -468,9 +468,9 @@
     "option_type": "C",
     "strike_price": 260.0,
     "latest_close_price": 0.01,
-    "total_volume": 205598,
-    "days_to_expiration": 2,
-    "signed_moneyness_pct": 0.12621809439
+    "total_volume": 411526,
+    "days_to_expiration": 1,
+    "signed_moneyness_pct": 0.12645772504
   },
   {
     "option_symbol": "O:AMZN251128C00230000",
@@ -479,8 +479,8 @@
     "option_type": "C",
     "strike_price": 230.0,
     "latest_close_price": 3.15,
-    "total_volume": 204994,
-    "days_to_expiration": -19,
+    "total_volume": 409988,
+    "days_to_expiration": -20,
     "signed_moneyness_pct": -0.008762030724
   },
   {
@@ -490,8 +490,8 @@
     "option_type": "C",
     "strike_price": 240.0,
     "latest_close_price": 0.01,
-    "total_volume": 199799,
-    "days_to_expiration": -12,
+    "total_volume": 399598,
+    "days_to_expiration": -13,
     "signed_moneyness_pct": 0.026511606113
   },
   {
@@ -501,8 +501,8 @@
     "option_type": "C",
     "strike_price": 240.0,
     "latest_close_price": 0.01,
-    "total_volume": 189335,
-    "days_to_expiration": -26,
+    "total_volume": 378670,
+    "days_to_expiration": -27,
     "signed_moneyness_pct": 0.032549520712
   },
   {
@@ -512,9 +512,20 @@
     "option_type": "C",
     "strike_price": 235.0,
     "latest_close_price": 0.01,
-    "total_volume": 184185,
-    "days_to_expiration": -5,
+    "total_volume": 368370,
+    "days_to_expiration": -6,
     "signed_moneyness_pct": 0.005320367016
+  },
+  {
+    "option_symbol": "O:AMZN260116C00260000",
+    "underlying_ticker": "AMZN",
+    "expiration_date": "2026-01-16",
+    "option_type": "C",
+    "strike_price": 260.0,
+    "latest_close_price": 0.38,
+    "total_volume": 367381,
+    "days_to_expiration": 29,
+    "signed_moneyness_pct": 0.12645772504
   },
   {
     "option_symbol": "O:AMZN251114C00250000",
@@ -523,20 +534,9 @@
     "option_type": "C",
     "strike_price": 250.0,
     "latest_close_price": 0.01,
-    "total_volume": 183290,
-    "days_to_expiration": -33,
+    "total_volume": 366580,
+    "days_to_expiration": -34,
     "signed_moneyness_pct": 0.06428142464
-  },
-  {
-    "option_symbol": "O:AMZN260116C00260000",
-    "underlying_ticker": "AMZN",
-    "expiration_date": "2026-01-16",
-    "option_type": "C",
-    "strike_price": 260.0,
-    "latest_close_price": 0.29,
-    "total_volume": 182224,
-    "days_to_expiration": 30,
-    "signed_moneyness_pct": 0.12621809439
   },
   {
     "option_symbol": "O:AMZN251031C00230000",
@@ -545,8 +545,8 @@
     "option_type": "C",
     "strike_price": 230.0,
     "latest_close_price": 14.66,
-    "total_volume": 181762,
-    "days_to_expiration": -47,
+    "total_volume": 363524,
+    "days_to_expiration": -48,
     "signed_moneyness_pct": 0.02088926332
   },
   {
@@ -556,8 +556,8 @@
     "option_type": "C",
     "strike_price": 23.0,
     "latest_close_price": 0.01,
-    "total_volume": 143727,
-    "days_to_expiration": -12,
+    "total_volume": 287454,
+    "days_to_expiration": -13,
     "signed_moneyness_pct": 0.055657206617
   },
   {
@@ -566,10 +566,10 @@
     "expiration_date": "2025-12-19",
     "option_type": "C",
     "strike_price": 25.0,
-    "latest_close_price": 0.04,
-    "total_volume": 122961,
-    "days_to_expiration": 2,
-    "signed_moneyness_pct": 0.135777342714
+    "latest_close_price": 0.03,
+    "total_volume": 253281,
+    "days_to_expiration": 1,
+    "signed_moneyness_pct": 0.135452386075
   },
   {
     "option_symbol": "O:GME251114C00025000",
@@ -578,9 +578,20 @@
     "option_type": "C",
     "strike_price": 25.0,
     "latest_close_price": 0.01,
-    "total_volume": 118908,
-    "days_to_expiration": -33,
+    "total_volume": 237816,
+    "days_to_expiration": -34,
     "signed_moneyness_pct": 0.12410138296
+  },
+  {
+    "option_symbol": "O:GME260116C00025000",
+    "underlying_ticker": "GME",
+    "expiration_date": "2026-01-16",
+    "option_type": "C",
+    "strike_price": 25.0,
+    "latest_close_price": 0.43,
+    "total_volume": 226403,
+    "days_to_expiration": 29,
+    "signed_moneyness_pct": 0.135452386075
   },
   {
     "option_symbol": "O:GME251121C00025000",
@@ -589,20 +600,9 @@
     "option_type": "C",
     "strike_price": 25.0,
     "latest_close_price": 0.01,
-    "total_volume": 109705,
-    "days_to_expiration": -26,
+    "total_volume": 219410,
+    "days_to_expiration": -27,
     "signed_moneyness_pct": 0.145616562776
-  },
-  {
-    "option_symbol": "O:GME260116C00025000",
-    "underlying_ticker": "GME",
-    "expiration_date": "2026-01-16",
-    "option_type": "C",
-    "strike_price": 25.0,
-    "latest_close_price": 0.56,
-    "total_volume": 108282,
-    "days_to_expiration": 30,
-    "signed_moneyness_pct": 0.135777342714
   },
   {
     "option_symbol": "O:GME251031C00024000",
@@ -611,9 +611,20 @@
     "option_type": "C",
     "strike_price": 24.0,
     "latest_close_price": 0.01,
-    "total_volume": 103619,
-    "days_to_expiration": -47,
+    "total_volume": 207238,
+    "days_to_expiration": -48,
     "signed_moneyness_pct": 0.04085704869
+  },
+  {
+    "option_symbol": "O:GME251219C00023000",
+    "underlying_ticker": "GME",
+    "expiration_date": "2025-12-19",
+    "option_type": "C",
+    "strike_price": 23.0,
+    "latest_close_price": 0.07,
+    "total_volume": 200653,
+    "days_to_expiration": 1,
+    "signed_moneyness_pct": 0.044616195187
   },
   {
     "option_symbol": "O:GME251024C00023500",
@@ -622,8 +633,8 @@
     "option_type": "C",
     "strike_price": 23.5,
     "latest_close_price": 0.01,
-    "total_volume": 98582,
-    "days_to_expiration": -54,
+    "total_volume": 197164,
+    "days_to_expiration": -55,
     "signed_moneyness_pct": 0.01685109996
   },
   {
@@ -633,8 +644,8 @@
     "option_type": "C",
     "strike_price": 24.0,
     "latest_close_price": 0.01,
-    "total_volume": 97445,
-    "days_to_expiration": -12,
+    "total_volume": 194890,
+    "days_to_expiration": -13,
     "signed_moneyness_pct": 0.10155534604
   },
   {
@@ -644,20 +655,9 @@
     "option_type": "C",
     "strike_price": 25.0,
     "latest_close_price": 0.01,
-    "total_volume": 95410,
-    "days_to_expiration": -47,
+    "total_volume": 190820,
+    "days_to_expiration": -48,
     "signed_moneyness_pct": 0.08422609238
-  },
-  {
-    "option_symbol": "O:GME251219C00023000",
-    "underlying_ticker": "GME",
-    "expiration_date": "2025-12-19",
-    "option_type": "C",
-    "strike_price": 23.0,
-    "latest_close_price": 0.33,
-    "total_volume": 94633,
-    "days_to_expiration": 2,
-    "signed_moneyness_pct": 0.044915155295
   },
   {
     "option_symbol": "O:GME251205C00023500",
@@ -666,8 +666,8 @@
     "option_type": "C",
     "strike_price": 23.5,
     "latest_close_price": 0.01,
-    "total_volume": 90924,
-    "days_to_expiration": -12,
+    "total_volume": 181848,
+    "days_to_expiration": -13,
     "signed_moneyness_pct": 0.092911007071
   },
   {
@@ -677,8 +677,8 @@
     "option_type": "C",
     "strike_price": 25.0,
     "latest_close_price": 0.01,
-    "total_volume": 88120,
-    "days_to_expiration": -5,
+    "total_volume": 176240,
+    "days_to_expiration": -6,
     "signed_moneyness_pct": 0.153218843345
   },
   {
@@ -688,8 +688,8 @@
     "option_type": "C",
     "strike_price": 23.0,
     "latest_close_price": 0.01,
-    "total_volume": 85484,
-    "days_to_expiration": -40,
+    "total_volume": 170968,
+    "days_to_expiration": -41,
     "signed_moneyness_pct": 0.016904634753
   },
   {
@@ -699,8 +699,8 @@
     "option_type": "C",
     "strike_price": 24.0,
     "latest_close_price": 0.01,
-    "total_volume": 84943,
-    "days_to_expiration": -5,
+    "total_volume": 169886,
+    "days_to_expiration": -6,
     "signed_moneyness_pct": 0.108563508897
   },
   {
@@ -709,10 +709,10 @@
     "expiration_date": "2026-01-16",
     "option_type": "C",
     "strike_price": 30.0,
-    "latest_close_price": 0.21,
-    "total_volume": 76612,
-    "days_to_expiration": 30,
-    "signed_moneyness_pct": 0.362932811252
+    "latest_close_price": 0.17,
+    "total_volume": 154169,
+    "days_to_expiration": 29,
+    "signed_moneyness_pct": 0.362542863285
   },
   {
     "option_symbol": "O:GME251128C00022000",
@@ -721,8 +721,8 @@
     "option_type": "C",
     "strike_price": 22.0,
     "latest_close_price": 0.52,
-    "total_volume": 76031,
-    "days_to_expiration": -19,
+    "total_volume": 152062,
+    "days_to_expiration": -20,
     "signed_moneyness_pct": 0.013360610389
   },
   {
@@ -732,8 +732,8 @@
     "option_type": "C",
     "strike_price": 24.0,
     "latest_close_price": 0.01,
-    "total_volume": 75672,
-    "days_to_expiration": -54,
+    "total_volume": 151344,
+    "days_to_expiration": -55,
     "signed_moneyness_pct": 0.03848622974
   },
   {
@@ -742,10 +742,10 @@
     "expiration_date": "2025-12-19",
     "option_type": "C",
     "strike_price": 22.0,
-    "latest_close_price": 1.08,
-    "total_volume": 72572,
-    "days_to_expiration": 2,
-    "signed_moneyness_pct": -0.000515938407
+    "latest_close_price": 0.62,
+    "total_volume": 148016,
+    "days_to_expiration": 1,
+    "signed_moneyness_pct": -0.000801900249
   },
   {
     "option_symbol": "O:GME251114C00022000",
@@ -754,8 +754,8 @@
     "option_type": "C",
     "strike_price": 22.0,
     "latest_close_price": 0.01,
-    "total_volume": 71898,
-    "days_to_expiration": -33,
+    "total_volume": 143796,
+    "days_to_expiration": -34,
     "signed_moneyness_pct": -0.01079078299
   },
   {
@@ -765,8 +765,8 @@
     "option_type": "C",
     "strike_price": 23.0,
     "latest_close_price": 0.01,
-    "total_volume": 68022,
-    "days_to_expiration": -5,
+    "total_volume": 136044,
+    "days_to_expiration": -6,
     "signed_moneyness_pct": 0.060961335877
   },
   {
@@ -776,8 +776,8 @@
     "option_type": "C",
     "strike_price": 25.0,
     "latest_close_price": 0.01,
-    "total_volume": 67734,
-    "days_to_expiration": -12,
+    "total_volume": 135468,
+    "days_to_expiration": -13,
     "signed_moneyness_pct": 0.147453485453
   },
   {
@@ -787,9 +787,20 @@
     "option_type": "C",
     "strike_price": 22.0,
     "latest_close_price": 0.01,
-    "total_volume": 65318,
-    "days_to_expiration": -5,
+    "total_volume": 130636,
+    "days_to_expiration": -6,
     "signed_moneyness_pct": 0.014832582148
+  },
+  {
+    "option_symbol": "O:GME251219C00024000",
+    "underlying_ticker": "GME",
+    "expiration_date": "2025-12-19",
+    "option_type": "C",
+    "strike_price": 24.0,
+    "latest_close_price": 0.02,
+    "total_volume": 128625,
+    "days_to_expiration": 1,
+    "signed_moneyness_pct": 0.090034290633
   },
   {
     "option_symbol": "O:GME251121C00021000",
@@ -798,20 +809,9 @@
     "option_type": "C",
     "strike_price": 21.0,
     "latest_close_price": 0.01,
-    "total_volume": 63652,
-    "days_to_expiration": -26,
+    "total_volume": 127304,
+    "days_to_expiration": -27,
     "signed_moneyness_pct": -0.037682087272
-  },
-  {
-    "option_symbol": "O:GME251219C00024000",
-    "underlying_ticker": "GME",
-    "expiration_date": "2025-12-19",
-    "option_type": "C",
-    "strike_price": 24.0,
-    "latest_close_price": 0.09,
-    "total_volume": 62133,
-    "days_to_expiration": 2,
-    "signed_moneyness_pct": 0.090346249007
   },
   {
     "option_symbol": "O:GME260116C00022000",
@@ -819,10 +819,10 @@
     "expiration_date": "2026-01-16",
     "option_type": "C",
     "strike_price": 22.0,
-    "latest_close_price": 1.7,
-    "total_volume": 62115,
-    "days_to_expiration": 30,
-    "signed_moneyness_pct": -0.000515938407
+    "latest_close_price": 1.35,
+    "total_volume": 124982,
+    "days_to_expiration": 29,
+    "signed_moneyness_pct": -0.000801900249
   },
   {
     "option_symbol": "O:GOOGL251121C00300000",
@@ -831,8 +831,8 @@
     "option_type": "C",
     "strike_price": 300.0,
     "latest_close_price": 0.12,
-    "total_volume": 394542,
-    "days_to_expiration": -26,
+    "total_volume": 789084,
+    "days_to_expiration": -27,
     "signed_moneyness_pct": 0.085011950408
   },
   {
@@ -842,8 +842,8 @@
     "option_type": "C",
     "strike_price": 320.0,
     "latest_close_price": 0.3,
-    "total_volume": 194979,
-    "days_to_expiration": -19,
+    "total_volume": 389958,
+    "days_to_expiration": -20,
     "signed_moneyness_pct": 0.126234896426
   },
   {
@@ -853,8 +853,8 @@
     "option_type": "C",
     "strike_price": 305.0,
     "latest_close_price": 0.01,
-    "total_volume": 186535,
-    "days_to_expiration": -26,
+    "total_volume": 373070,
+    "days_to_expiration": -27,
     "signed_moneyness_pct": 0.103095482912
   },
   {
@@ -864,8 +864,8 @@
     "option_type": "C",
     "strike_price": 320.0,
     "latest_close_price": 1.35,
-    "total_volume": 183745,
-    "days_to_expiration": -12,
+    "total_volume": 367490,
+    "days_to_expiration": -13,
     "signed_moneyness_pct": 0.092045373562
   },
   {
@@ -875,8 +875,8 @@
     "option_type": "C",
     "strike_price": 290.0,
     "latest_close_price": 9.36,
-    "total_volume": 177072,
-    "days_to_expiration": -26,
+    "total_volume": 354144,
+    "days_to_expiration": -27,
     "signed_moneyness_pct": 0.0488448854
   },
   {
@@ -886,9 +886,20 @@
     "option_type": "C",
     "strike_price": 260.0,
     "latest_close_price": 0.11,
-    "total_volume": 166252,
-    "days_to_expiration": -54,
+    "total_volume": 332504,
+    "days_to_expiration": -55,
     "signed_moneyness_pct": 0.02244106232
+  },
+  {
+    "option_symbol": "O:GOOGL260116C00300000",
+    "underlying_ticker": "GOOGL",
+    "expiration_date": "2026-01-16",
+    "option_type": "C",
+    "strike_price": 300.0,
+    "latest_close_price": 11.4,
+    "total_volume": 326055,
+    "days_to_expiration": 29,
+    "signed_moneyness_pct": 0.030989025018
   },
   {
     "option_symbol": "O:GOOGL251205C00325000",
@@ -897,20 +908,9 @@
     "option_type": "C",
     "strike_price": 325.0,
     "latest_close_price": 0.01,
-    "total_volume": 162287,
-    "days_to_expiration": -12,
+    "total_volume": 324574,
+    "days_to_expiration": -13,
     "signed_moneyness_pct": 0.109108582534
-  },
-  {
-    "option_symbol": "O:GOOGL260116C00300000",
-    "underlying_ticker": "GOOGL",
-    "expiration_date": "2026-01-16",
-    "option_type": "C",
-    "strike_price": 300.0,
-    "latest_close_price": 8.9,
-    "total_volume": 161720,
-    "days_to_expiration": 30,
-    "signed_moneyness_pct": 0.031454767064
   },
   {
     "option_symbol": "O:GOOGL251128C00330000",
@@ -919,8 +919,8 @@
     "option_type": "C",
     "strike_price": 330.0,
     "latest_close_price": 0.01,
-    "total_volume": 156949,
-    "days_to_expiration": -19,
+    "total_volume": 313898,
+    "days_to_expiration": -20,
     "signed_moneyness_pct": 0.149483668888
   },
   {
@@ -930,8 +930,8 @@
     "option_type": "C",
     "strike_price": 330.0,
     "latest_close_price": 0.01,
-    "total_volume": 155515,
-    "days_to_expiration": -12,
+    "total_volume": 311030,
+    "days_to_expiration": -13,
     "signed_moneyness_pct": 0.122623080196
   },
   {
@@ -940,10 +940,10 @@
     "expiration_date": "2025-12-19",
     "option_type": "C",
     "strike_price": 300.0,
-    "latest_close_price": 1.69,
-    "total_volume": 149435,
-    "days_to_expiration": 2,
-    "signed_moneyness_pct": 0.031454767064
+    "latest_close_price": 3.61,
+    "total_volume": 307704,
+    "days_to_expiration": 1,
+    "signed_moneyness_pct": 0.030989025018
   },
   {
     "option_symbol": "O:GOOGL251024C00255000",
@@ -952,8 +952,8 @@
     "option_type": "C",
     "strike_price": 255.0,
     "latest_close_price": 4.99,
-    "total_volume": 148755,
-    "days_to_expiration": -54,
+    "total_volume": 297510,
+    "days_to_expiration": -55,
     "signed_moneyness_pct": 0.0027787342
   },
   {
@@ -963,8 +963,8 @@
     "option_type": "C",
     "strike_price": 325.0,
     "latest_close_price": 0.01,
-    "total_volume": 148301,
-    "days_to_expiration": -19,
+    "total_volume": 296602,
+    "days_to_expiration": -20,
     "signed_moneyness_pct": 0.153157005086
   },
   {
@@ -974,8 +974,8 @@
     "option_type": "C",
     "strike_price": 320.0,
     "latest_close_price": 0.01,
-    "total_volume": 144830,
-    "days_to_expiration": -5,
+    "total_volume": 289660,
+    "days_to_expiration": -6,
     "signed_moneyness_pct": 0.071177134926
   },
   {
@@ -984,10 +984,10 @@
     "expiration_date": "2025-12-19",
     "option_type": "C",
     "strike_price": 320.0,
-    "latest_close_price": 0.06,
-    "total_volume": 143285,
-    "days_to_expiration": 2,
-    "signed_moneyness_pct": 0.100218418202
+    "latest_close_price": 0.01,
+    "total_volume": 289260,
+    "days_to_expiration": 1,
+    "signed_moneyness_pct": 0.099721626686
   },
   {
     "option_symbol": "O:GOOGL251121C00295000",
@@ -996,8 +996,8 @@
     "option_type": "C",
     "strike_price": 295.0,
     "latest_close_price": 4.6,
-    "total_volume": 139852,
-    "days_to_expiration": -26,
+    "total_volume": 279704,
+    "days_to_expiration": -27,
     "signed_moneyness_pct": 0.0669284179
   },
   {
@@ -1007,8 +1007,8 @@
     "option_type": "C",
     "strike_price": 290.0,
     "latest_close_price": 0.01,
-    "total_volume": 136071,
-    "days_to_expiration": -33,
+    "total_volume": 272142,
+    "days_to_expiration": -34,
     "signed_moneyness_pct": 0.06117308577
   },
   {
@@ -1017,10 +1017,21 @@
     "expiration_date": "2025-12-19",
     "option_type": "C",
     "strike_price": 330.0,
-    "latest_close_price": 0.03,
-    "total_volume": 133580,
-    "days_to_expiration": 2,
-    "signed_moneyness_pct": 0.134600243776
+    "latest_close_price": 0.01,
+    "total_volume": 267731,
+    "days_to_expiration": 1,
+    "signed_moneyness_pct": 0.134087927525
+  },
+  {
+    "option_symbol": "O:GOOGL251219C00310000",
+    "underlying_ticker": "GOOGL",
+    "expiration_date": "2025-12-19",
+    "option_type": "C",
+    "strike_price": 310.0,
+    "latest_close_price": 0.16,
+    "total_volume": 260696,
+    "days_to_expiration": 1,
+    "signed_moneyness_pct": 0.065355325852
   },
   {
     "option_symbol": "O:GOOGL251128P00315000",
@@ -1029,8 +1040,8 @@
     "option_type": "P",
     "strike_price": 315.0,
     "latest_close_price": 0.01,
-    "total_volume": 128943,
-    "days_to_expiration": -19,
+    "total_volume": 257886,
+    "days_to_expiration": -20,
     "signed_moneyness_pct": 0.0500254779
   },
   {
@@ -1040,9 +1051,20 @@
     "option_type": "C",
     "strike_price": 310.0,
     "latest_close_price": 10.1,
-    "total_volume": 127556,
-    "days_to_expiration": -19,
+    "total_volume": 255112,
+    "days_to_expiration": -20,
     "signed_moneyness_pct": 0.099934374069
+  },
+  {
+    "option_symbol": "O:GOOGL260116C00305000",
+    "underlying_ticker": "GOOGL",
+    "expiration_date": "2026-01-16",
+    "option_type": "C",
+    "strike_price": 305.0,
+    "latest_close_price": 8.7,
+    "total_volume": 251604,
+    "days_to_expiration": 29,
+    "signed_moneyness_pct": 0.036174629895
   },
   {
     "option_symbol": "O:GOOGL251121C00310000",
@@ -1051,31 +1073,9 @@
     "option_type": "C",
     "strike_price": 310.0,
     "latest_close_price": 0.01,
-    "total_volume": 125073,
-    "days_to_expiration": -26,
+    "total_volume": 250146,
+    "days_to_expiration": -27,
     "signed_moneyness_pct": 0.12117901542
-  },
-  {
-    "option_symbol": "O:GOOGL260116C00305000",
-    "underlying_ticker": "GOOGL",
-    "expiration_date": "2026-01-16",
-    "option_type": "C",
-    "strike_price": 305.0,
-    "latest_close_price": 6.75,
-    "total_volume": 124574,
-    "days_to_expiration": 30,
-    "signed_moneyness_pct": 0.036530743038
-  },
-  {
-    "option_symbol": "O:GOOGL251219C00310000",
-    "underlying_ticker": "GOOGL",
-    "expiration_date": "2025-12-19",
-    "option_type": "C",
-    "strike_price": 310.0,
-    "latest_close_price": 0.19,
-    "total_volume": 123395,
-    "days_to_expiration": 2,
-    "signed_moneyness_pct": 0.065836592633
   },
   {
     "option_symbol": "O:GOOGL260116C00280000",
@@ -1083,10 +1083,10 @@
     "expiration_date": "2026-01-16",
     "option_type": "C",
     "strike_price": 280.0,
-    "latest_close_price": 21.8,
-    "total_volume": 119602,
-    "days_to_expiration": 30,
-    "signed_moneyness_pct": -0.037308884069
+    "latest_close_price": 26.5,
+    "total_volume": 239409,
+    "days_to_expiration": 29,
+    "signed_moneyness_pct": -0.037743576646
   },
   {
     "option_symbol": "O:GOOGL251128C00300000",
@@ -1095,9 +1095,284 @@
     "option_type": "C",
     "strike_price": 300.0,
     "latest_close_price": 20.39,
-    "total_volume": 118631,
-    "days_to_expiration": -19,
+    "total_volume": 237262,
+    "days_to_expiration": -20,
     "signed_moneyness_pct": 0.064452620069
+  },
+  {
+    "option_symbol": "O:IWM260116P00239000",
+    "underlying_ticker": "IWM",
+    "expiration_date": "2026-01-16",
+    "option_type": "P",
+    "strike_price": 239.0,
+    "latest_close_price": 2.07,
+    "total_volume": 97154,
+    "days_to_expiration": 29,
+    "signed_moneyness_pct": -0.0390414539
+  },
+  {
+    "option_symbol": "O:IWM251218P00248000",
+    "underlying_ticker": "IWM",
+    "expiration_date": "2025-12-18",
+    "option_type": "P",
+    "strike_price": 248.0,
+    "latest_close_price": 0.01,
+    "total_volume": 96591,
+    "days_to_expiration": 0,
+    "signed_moneyness_pct": -0.0028547304
+  },
+  {
+    "option_symbol": "O:IWM251218C00251000",
+    "underlying_ticker": "IWM",
+    "expiration_date": "2025-12-18",
+    "option_type": "C",
+    "strike_price": 251.0,
+    "latest_close_price": 0.01,
+    "total_volume": 89379,
+    "days_to_expiration": 0,
+    "signed_moneyness_pct": 0.0092075108
+  },
+  {
+    "option_symbol": "O:IWM251218C00252000",
+    "underlying_ticker": "IWM",
+    "expiration_date": "2025-12-18",
+    "option_type": "C",
+    "strike_price": 252.0,
+    "latest_close_price": 0.01,
+    "total_volume": 87458,
+    "days_to_expiration": 0,
+    "signed_moneyness_pct": 0.0132282578
+  },
+  {
+    "option_symbol": "O:IWM251218P00249000",
+    "underlying_ticker": "IWM",
+    "expiration_date": "2025-12-18",
+    "option_type": "P",
+    "strike_price": 249.0,
+    "latest_close_price": 0.48,
+    "total_volume": 86526,
+    "days_to_expiration": 0,
+    "signed_moneyness_pct": 0.0011660166
+  },
+  {
+    "option_symbol": "O:IWM251218C00250000",
+    "underlying_ticker": "IWM",
+    "expiration_date": "2025-12-18",
+    "option_type": "C",
+    "strike_price": 250.0,
+    "latest_close_price": 0.01,
+    "total_volume": 57605,
+    "days_to_expiration": 0,
+    "signed_moneyness_pct": 0.0051867637
+  },
+  {
+    "option_symbol": "O:IWM251218P00250000",
+    "underlying_ticker": "IWM",
+    "expiration_date": "2025-12-18",
+    "option_type": "P",
+    "strike_price": 250.0,
+    "latest_close_price": 1.4,
+    "total_volume": 47883,
+    "days_to_expiration": 0,
+    "signed_moneyness_pct": 0.0051867637
+  },
+  {
+    "option_symbol": "O:IWM251218P00247000",
+    "underlying_ticker": "IWM",
+    "expiration_date": "2025-12-18",
+    "option_type": "P",
+    "strike_price": 247.0,
+    "latest_close_price": 0.01,
+    "total_volume": 46420,
+    "days_to_expiration": 0,
+    "signed_moneyness_pct": -0.0068754775
+  },
+  {
+    "option_symbol": "O:IWM260116P00237000",
+    "underlying_ticker": "IWM",
+    "expiration_date": "2026-01-16",
+    "option_type": "P",
+    "strike_price": 237.0,
+    "latest_close_price": 1.71,
+    "total_volume": 43577,
+    "days_to_expiration": 29,
+    "signed_moneyness_pct": -0.047082948
+  },
+  {
+    "option_symbol": "O:IWM260116P00236000",
+    "underlying_ticker": "IWM",
+    "expiration_date": "2026-01-16",
+    "option_type": "P",
+    "strike_price": 236.0,
+    "latest_close_price": 1.4,
+    "total_volume": 38418,
+    "days_to_expiration": 29,
+    "signed_moneyness_pct": -0.0511036951
+  },
+  {
+    "option_symbol": "O:IWM251219C00250000",
+    "underlying_ticker": "IWM",
+    "expiration_date": "2025-12-19",
+    "option_type": "C",
+    "strike_price": 250.0,
+    "latest_close_price": 0.5,
+    "total_volume": 30860,
+    "days_to_expiration": 1,
+    "signed_moneyness_pct": 0.0051867637
+  },
+  {
+    "option_symbol": "O:IWM251218C00253000",
+    "underlying_ticker": "IWM",
+    "expiration_date": "2025-12-18",
+    "option_type": "C",
+    "strike_price": 253.0,
+    "latest_close_price": 0.01,
+    "total_volume": 27502,
+    "days_to_expiration": 0,
+    "signed_moneyness_pct": 0.0172490049
+  },
+  {
+    "option_symbol": "O:IWM251218C00249000",
+    "underlying_ticker": "IWM",
+    "expiration_date": "2025-12-18",
+    "option_type": "C",
+    "strike_price": 249.0,
+    "latest_close_price": 0.01,
+    "total_volume": 22924,
+    "days_to_expiration": 0,
+    "signed_moneyness_pct": 0.0011660166
+  },
+  {
+    "option_symbol": "O:IWM251219P00250000",
+    "underlying_ticker": "IWM",
+    "expiration_date": "2025-12-19",
+    "option_type": "P",
+    "strike_price": 250.0,
+    "latest_close_price": 1.97,
+    "total_volume": 20537,
+    "days_to_expiration": 1,
+    "signed_moneyness_pct": 0.0051867637
+  },
+  {
+    "option_symbol": "O:IWM251219C00252000",
+    "underlying_ticker": "IWM",
+    "expiration_date": "2025-12-19",
+    "option_type": "C",
+    "strike_price": 252.0,
+    "latest_close_price": 0.13,
+    "total_volume": 19907,
+    "days_to_expiration": 1,
+    "signed_moneyness_pct": 0.0132282578
+  },
+  {
+    "option_symbol": "O:IWM251219P00249000",
+    "underlying_ticker": "IWM",
+    "expiration_date": "2025-12-19",
+    "option_type": "P",
+    "strike_price": 249.0,
+    "latest_close_price": 1.31,
+    "total_volume": 17048,
+    "days_to_expiration": 1,
+    "signed_moneyness_pct": 0.0011660166
+  },
+  {
+    "option_symbol": "O:IWM251218P00246000",
+    "underlying_ticker": "IWM",
+    "expiration_date": "2025-12-18",
+    "option_type": "P",
+    "strike_price": 246.0,
+    "latest_close_price": 0.01,
+    "total_volume": 15341,
+    "days_to_expiration": 0,
+    "signed_moneyness_pct": -0.0108962245
+  },
+  {
+    "option_symbol": "O:IWM251219P00248000",
+    "underlying_ticker": "IWM",
+    "expiration_date": "2025-12-19",
+    "option_type": "P",
+    "strike_price": 248.0,
+    "latest_close_price": 0.8,
+    "total_volume": 14179,
+    "days_to_expiration": 1,
+    "signed_moneyness_pct": -0.0028547304
+  },
+  {
+    "option_symbol": "O:IWM251219P00247000",
+    "underlying_ticker": "IWM",
+    "expiration_date": "2025-12-19",
+    "option_type": "P",
+    "strike_price": 247.0,
+    "latest_close_price": 0.5,
+    "total_volume": 13118,
+    "days_to_expiration": 1,
+    "signed_moneyness_pct": -0.0068754775
+  },
+  {
+    "option_symbol": "O:IWM251219C00251000",
+    "underlying_ticker": "IWM",
+    "expiration_date": "2025-12-19",
+    "option_type": "C",
+    "strike_price": 251.0,
+    "latest_close_price": 0.25,
+    "total_volume": 12157,
+    "days_to_expiration": 1,
+    "signed_moneyness_pct": 0.0092075108
+  },
+  {
+    "option_symbol": "O:IWM251219C00253000",
+    "underlying_ticker": "IWM",
+    "expiration_date": "2025-12-19",
+    "option_type": "C",
+    "strike_price": 253.0,
+    "latest_close_price": 0.07,
+    "total_volume": 12146,
+    "days_to_expiration": 1,
+    "signed_moneyness_pct": 0.0172490049
+  },
+  {
+    "option_symbol": "O:IWM251218P00251000",
+    "underlying_ticker": "IWM",
+    "expiration_date": "2025-12-18",
+    "option_type": "P",
+    "strike_price": 251.0,
+    "latest_close_price": 2.46,
+    "total_volume": 11348,
+    "days_to_expiration": 0,
+    "signed_moneyness_pct": 0.0092075108
+  },
+  {
+    "option_symbol": "O:IWM251219P00245000",
+    "underlying_ticker": "IWM",
+    "expiration_date": "2025-12-19",
+    "option_type": "P",
+    "strike_price": 245.0,
+    "latest_close_price": 0.18,
+    "total_volume": 10860,
+    "days_to_expiration": 1,
+    "signed_moneyness_pct": -0.0149169716
+  },
+  {
+    "option_symbol": "O:IWM251219C00265000",
+    "underlying_ticker": "IWM",
+    "expiration_date": "2025-12-19",
+    "option_type": "C",
+    "strike_price": 265.0,
+    "latest_close_price": 0.01,
+    "total_volume": 10327,
+    "days_to_expiration": 1,
+    "signed_moneyness_pct": 0.0654979695
+  },
+  {
+    "option_symbol": "O:IWM251231P00245000",
+    "underlying_ticker": "IWM",
+    "expiration_date": "2025-12-31",
+    "option_type": "P",
+    "strike_price": 245.0,
+    "latest_close_price": 1.83,
+    "total_volume": 9693,
+    "days_to_expiration": 13,
+    "signed_moneyness_pct": -0.0149169716
   },
   {
     "option_symbol": "O:MSFT251114C00510000",
@@ -1106,8 +1381,8 @@
     "option_type": "C",
     "strike_price": 510.0,
     "latest_close_price": 0.41,
-    "total_volume": 176377,
-    "days_to_expiration": -33,
+    "total_volume": 352754,
+    "days_to_expiration": -34,
     "signed_moneyness_pct": -0.01200585133
   },
   {
@@ -1116,10 +1391,21 @@
     "expiration_date": "2026-01-16",
     "option_type": "C",
     "strike_price": 500.0,
-    "latest_close_price": 3.8,
-    "total_volume": 129319,
-    "days_to_expiration": 30,
-    "signed_moneyness_pct": 0.00309780231
+    "latest_close_price": 5.41,
+    "total_volume": 263956,
+    "days_to_expiration": 29,
+    "signed_moneyness_pct": 0.003450775709
+  },
+  {
+    "option_symbol": "O:MSFT251219C00500000",
+    "underlying_ticker": "MSFT",
+    "expiration_date": "2025-12-19",
+    "option_type": "C",
+    "strike_price": 500.0,
+    "latest_close_price": 0.03,
+    "total_volume": 222431,
+    "days_to_expiration": 1,
+    "signed_moneyness_pct": 0.003450775709
   },
   {
     "option_symbol": "O:MSFT251212C00485000",
@@ -1128,20 +1414,20 @@
     "option_type": "C",
     "strike_price": 485.0,
     "latest_close_price": 0.01,
-    "total_volume": 107055,
-    "days_to_expiration": -5,
+    "total_volume": 214110,
+    "days_to_expiration": -6,
     "signed_moneyness_pct": -0.015377091886
   },
   {
-    "option_symbol": "O:MSFT251219C00500000",
+    "option_symbol": "O:MSFT251219P00510000",
     "underlying_ticker": "MSFT",
     "expiration_date": "2025-12-19",
-    "option_type": "C",
-    "strike_price": 500.0,
-    "latest_close_price": 0.04,
-    "total_volume": 106175,
-    "days_to_expiration": 2,
-    "signed_moneyness_pct": 0.00309780231
+    "option_type": "P",
+    "strike_price": 510.0,
+    "latest_close_price": 24.41,
+    "total_volume": 211149,
+    "days_to_expiration": 1,
+    "signed_moneyness_pct": 0.023519791226
   },
   {
     "option_symbol": "O:MSFT251114C00515000",
@@ -1150,8 +1436,8 @@
     "option_type": "C",
     "strike_price": 515.0,
     "latest_close_price": 0.01,
-    "total_volume": 103063,
-    "days_to_expiration": -33,
+    "total_volume": 206126,
+    "days_to_expiration": -34,
     "signed_moneyness_pct": -0.00231963418
   },
   {
@@ -1161,8 +1447,8 @@
     "option_type": "C",
     "strike_price": 525.0,
     "latest_close_price": 0.01,
-    "total_volume": 101656,
-    "days_to_expiration": -54,
+    "total_volume": 203312,
+    "days_to_expiration": -55,
     "signed_moneyness_pct": 0.0099635341
   },
   {
@@ -1172,8 +1458,8 @@
     "option_type": "C",
     "strike_price": 485.0,
     "latest_close_price": 0.01,
-    "total_volume": 99149,
-    "days_to_expiration": -12,
+    "total_volume": 198298,
+    "days_to_expiration": -13,
     "signed_moneyness_pct": -0.023702473927
   },
   {
@@ -1183,8 +1469,8 @@
     "option_type": "C",
     "strike_price": 490.0,
     "latest_close_price": 0.01,
-    "total_volume": 92926,
-    "days_to_expiration": -5,
+    "total_volume": 185852,
+    "days_to_expiration": -6,
     "signed_moneyness_pct": -0.005584799376
   },
   {
@@ -1194,8 +1480,8 @@
     "option_type": "C",
     "strike_price": 520.0,
     "latest_close_price": 0.01,
-    "total_volume": 91421,
-    "days_to_expiration": -26,
+    "total_volume": 182842,
+    "days_to_expiration": -27,
     "signed_moneyness_pct": 0.019234546484
   },
   {
@@ -1205,8 +1491,8 @@
     "option_type": "C",
     "strike_price": 510.0,
     "latest_close_price": 0.01,
-    "total_volume": 90574,
-    "days_to_expiration": -26,
+    "total_volume": 181148,
+    "days_to_expiration": -27,
     "signed_moneyness_pct": -0.000366117864
   },
   {
@@ -1216,8 +1502,8 @@
     "option_type": "C",
     "strike_price": 480.0,
     "latest_close_price": 0.01,
-    "total_volume": 89840,
-    "days_to_expiration": -5,
+    "total_volume": 179680,
+    "days_to_expiration": -6,
     "signed_moneyness_pct": -0.025329033657
   },
   {
@@ -1227,20 +1513,9 @@
     "option_type": "C",
     "strike_price": 530.0,
     "latest_close_price": 0.01,
-    "total_volume": 87274,
-    "days_to_expiration": -40,
+    "total_volume": 174548,
+    "days_to_expiration": -41,
     "signed_moneyness_pct": 0.021107958113
-  },
-  {
-    "option_symbol": "O:MSFT251219P00510000",
-    "underlying_ticker": "MSFT",
-    "expiration_date": "2025-12-19",
-    "option_type": "P",
-    "strike_price": 510.0,
-    "latest_close_price": 31.6,
-    "total_volume": 86349,
-    "days_to_expiration": 2,
-    "signed_moneyness_pct": 0.023159758357
   },
   {
     "option_symbol": "O:MSFT251205C00490000",
@@ -1249,8 +1524,8 @@
     "option_type": "C",
     "strike_price": 490.0,
     "latest_close_price": 0.01,
-    "total_volume": 85852,
-    "days_to_expiration": -12,
+    "total_volume": 171704,
+    "days_to_expiration": -13,
     "signed_moneyness_pct": -0.016486188807
   },
   {
@@ -1260,8 +1535,8 @@
     "option_type": "C",
     "strike_price": 500.0,
     "latest_close_price": 0.02,
-    "total_volume": 77160,
-    "days_to_expiration": -12,
+    "total_volume": 154320,
+    "days_to_expiration": -13,
     "signed_moneyness_pct": -0.00118149477
   },
   {
@@ -1271,8 +1546,8 @@
     "option_type": "C",
     "strike_price": 520.0,
     "latest_close_price": 0.01,
-    "total_volume": 76995,
-    "days_to_expiration": -33,
+    "total_volume": 153990,
+    "days_to_expiration": -34,
     "signed_moneyness_pct": 0.007366582955
   },
   {
@@ -1282,8 +1557,8 @@
     "option_type": "C",
     "strike_price": 480.0,
     "latest_close_price": 3.0,
-    "total_volume": 76891,
-    "days_to_expiration": -12,
+    "total_volume": 153782,
+    "days_to_expiration": -13,
     "signed_moneyness_pct": -0.034043701835
   },
   {
@@ -1293,20 +1568,20 @@
     "option_type": "C",
     "strike_price": 550.0,
     "latest_close_price": 0.01,
-    "total_volume": 74935,
-    "days_to_expiration": 2,
-    "signed_moneyness_pct": 0.103407582533
+    "total_volume": 149926,
+    "days_to_expiration": 1,
+    "signed_moneyness_pct": 0.103795853274
   },
   {
-    "option_symbol": "O:MSFT251121C00530000",
+    "option_symbol": "O:MSFT251219P00505000",
     "underlying_ticker": "MSFT",
-    "expiration_date": "2025-11-21",
-    "option_type": "C",
-    "strike_price": 530.0,
-    "latest_close_price": 0.01,
-    "total_volume": 72289,
-    "days_to_expiration": -26,
-    "signed_moneyness_pct": 0.038835210836
+    "expiration_date": "2025-12-19",
+    "option_type": "P",
+    "strike_price": 505.0,
+    "latest_close_price": 20.2,
+    "total_volume": 147184,
+    "days_to_expiration": 1,
+    "signed_moneyness_pct": 0.013485283468
   },
   {
     "option_symbol": "O:MSFT260116C00600000",
@@ -1315,9 +1590,31 @@
     "option_type": "C",
     "strike_price": 600.0,
     "latest_close_price": 0.02,
-    "total_volume": 71987,
-    "days_to_expiration": 30,
-    "signed_moneyness_pct": 0.203717362769
+    "total_volume": 144770,
+    "days_to_expiration": 29,
+    "signed_moneyness_pct": 0.204140930849
+  },
+  {
+    "option_symbol": "O:MSFT251121C00530000",
+    "underlying_ticker": "MSFT",
+    "expiration_date": "2025-11-21",
+    "option_type": "C",
+    "strike_price": 530.0,
+    "latest_close_price": 0.01,
+    "total_volume": 144578,
+    "days_to_expiration": -27,
+    "signed_moneyness_pct": 0.038835210836
+  },
+  {
+    "option_symbol": "O:MSFT251219C00480000",
+    "underlying_ticker": "MSFT",
+    "expiration_date": "2025-12-19",
+    "option_type": "C",
+    "strike_price": 480.0,
+    "latest_close_price": 5.38,
+    "total_volume": 142964,
+    "days_to_expiration": 1,
+    "signed_moneyness_pct": -0.036687255319
   },
   {
     "option_symbol": "O:MSFT251212C00500000",
@@ -1326,20 +1623,9 @@
     "option_type": "C",
     "strike_price": 500.0,
     "latest_close_price": 0.03,
-    "total_volume": 68658,
-    "days_to_expiration": -5,
+    "total_volume": 137316,
+    "days_to_expiration": -6,
     "signed_moneyness_pct": 0.012311193584
-  },
-  {
-    "option_symbol": "O:MSFT251219C00480000",
-    "underlying_ticker": "MSFT",
-    "expiration_date": "2025-12-19",
-    "option_type": "C",
-    "strike_price": 480.0,
-    "latest_close_price": 2.19,
-    "total_volume": 68376,
-    "days_to_expiration": 2,
-    "signed_moneyness_pct": -0.037026109783
   },
   {
     "option_symbol": "O:MSFT251107C00525000",
@@ -1348,8 +1634,8 @@
     "option_type": "C",
     "strike_price": 525.0,
     "latest_close_price": 0.01,
-    "total_volume": 67719,
-    "days_to_expiration": -40,
+    "total_volume": 135438,
+    "days_to_expiration": -41,
     "signed_moneyness_pct": 0.011474864173
   },
   {
@@ -1359,20 +1645,9 @@
     "option_type": "C",
     "strike_price": 500.0,
     "latest_close_price": 0.01,
-    "total_volume": 67395,
-    "days_to_expiration": -26,
+    "total_volume": 134790,
+    "days_to_expiration": -27,
     "signed_moneyness_pct": -0.01996678222
-  },
-  {
-    "option_symbol": "O:MSFT251219C00530000",
-    "underlying_ticker": "MSFT",
-    "expiration_date": "2025-12-19",
-    "option_type": "C",
-    "strike_price": 530.0,
-    "latest_close_price": 0.01,
-    "total_volume": 66516,
-    "days_to_expiration": 2,
-    "signed_moneyness_pct": 0.063283670445
   },
   {
     "option_symbol": "O:NVDA251121C00200000",
@@ -1381,8 +1656,8 @@
     "option_type": "C",
     "strike_price": 200.0,
     "latest_close_price": 0.01,
-    "total_volume": 1312612,
-    "days_to_expiration": -26,
+    "total_volume": 2625224,
+    "days_to_expiration": -27,
     "signed_moneyness_pct": 0.049977318732
   },
   {
@@ -1392,8 +1667,8 @@
     "option_type": "C",
     "strike_price": 185.0,
     "latest_close_price": 0.01,
-    "total_volume": 1276859,
-    "days_to_expiration": -12,
+    "total_volume": 2553718,
+    "days_to_expiration": -13,
     "signed_moneyness_pct": -0.018965758713
   },
   {
@@ -1403,8 +1678,8 @@
     "option_type": "C",
     "strike_price": 185.0,
     "latest_close_price": 0.01,
-    "total_volume": 1182011,
-    "days_to_expiration": -5,
+    "total_volume": 2364022,
+    "days_to_expiration": -6,
     "signed_moneyness_pct": -0.008347431319
   },
   {
@@ -1414,8 +1689,8 @@
     "option_type": "C",
     "strike_price": 205.0,
     "latest_close_price": 0.01,
-    "total_volume": 1179480,
-    "days_to_expiration": -47,
+    "total_volume": 2358960,
+    "days_to_expiration": -48,
     "signed_moneyness_pct": 0.0720381884
   },
   {
@@ -1425,8 +1700,8 @@
     "option_type": "C",
     "strike_price": 190.0,
     "latest_close_price": 0.37,
-    "total_volume": 1115034,
-    "days_to_expiration": -33,
+    "total_volume": 2230068,
+    "days_to_expiration": -34,
     "signed_moneyness_pct": -0.013076869425
   },
   {
@@ -1436,8 +1711,8 @@
     "option_type": "C",
     "strike_price": 195.0,
     "latest_close_price": 0.01,
-    "total_volume": 1097123,
-    "days_to_expiration": -33,
+    "total_volume": 2194246,
+    "days_to_expiration": -34,
     "signed_moneyness_pct": 0.012894791885
   },
   {
@@ -1447,8 +1722,8 @@
     "option_type": "C",
     "strike_price": 200.0,
     "latest_close_price": 2.5,
-    "total_volume": 1052374,
-    "days_to_expiration": -47,
+    "total_volume": 2104748,
+    "days_to_expiration": -48,
     "signed_moneyness_pct": 0.0458909155
   },
   {
@@ -1458,8 +1733,8 @@
     "option_type": "C",
     "strike_price": 190.0,
     "latest_close_price": 0.01,
-    "total_volume": 1012318,
-    "days_to_expiration": -5,
+    "total_volume": 2024636,
+    "days_to_expiration": -6,
     "signed_moneyness_pct": 0.018453989455
   },
   {
@@ -1469,8 +1744,8 @@
     "option_type": "C",
     "strike_price": 182.5,
     "latest_close_price": 0.01,
-    "total_volume": 967001,
-    "days_to_expiration": -12,
+    "total_volume": 1934002,
+    "days_to_expiration": -13,
     "signed_moneyness_pct": 0.006772056614
   },
   {
@@ -1480,8 +1755,8 @@
     "option_type": "C",
     "strike_price": 200.0,
     "latest_close_price": 0.01,
-    "total_volume": 958412,
-    "days_to_expiration": -33,
+    "total_volume": 1916824,
+    "days_to_expiration": -34,
     "signed_moneyness_pct": 0.038866453235
   },
   {
@@ -1491,8 +1766,8 @@
     "option_type": "C",
     "strike_price": 180.0,
     "latest_close_price": 0.01,
-    "total_volume": 936592,
-    "days_to_expiration": -19,
+    "total_volume": 1873184,
+    "days_to_expiration": -20,
     "signed_moneyness_pct": -0.046955611186
   },
   {
@@ -1502,8 +1777,8 @@
     "option_type": "C",
     "strike_price": 210.0,
     "latest_close_price": 0.01,
-    "total_volume": 913017,
-    "days_to_expiration": -47,
+    "total_volume": 1826034,
+    "days_to_expiration": -48,
     "signed_moneyness_pct": 0.09818546129
   },
   {
@@ -1513,8 +1788,8 @@
     "option_type": "C",
     "strike_price": 185.0,
     "latest_close_price": 1.21,
-    "total_volume": 903476,
-    "days_to_expiration": -54,
+    "total_volume": 1806952,
+    "days_to_expiration": -55,
     "signed_moneyness_pct": 0.01382515482
   },
   {
@@ -1524,8 +1799,8 @@
     "option_type": "C",
     "strike_price": 195.0,
     "latest_close_price": 0.01,
-    "total_volume": 845938,
-    "days_to_expiration": -26,
+    "total_volume": 1691876,
+    "days_to_expiration": -27,
     "signed_moneyness_pct": 0.023727885752
   },
   {
@@ -1535,8 +1810,8 @@
     "option_type": "C",
     "strike_price": 185.0,
     "latest_close_price": 0.01,
-    "total_volume": 844071,
-    "days_to_expiration": -26,
+    "total_volume": 1688142,
+    "days_to_expiration": -27,
     "signed_moneyness_pct": -0.028770980168
   },
   {
@@ -1546,8 +1821,8 @@
     "option_type": "C",
     "strike_price": 190.0,
     "latest_close_price": 0.01,
-    "total_volume": 836253,
-    "days_to_expiration": -19,
+    "total_volume": 1672506,
+    "days_to_expiration": -20,
     "signed_moneyness_pct": 0.005991299307
   },
   {
@@ -1557,8 +1832,8 @@
     "option_type": "C",
     "strike_price": 190.0,
     "latest_close_price": 0.01,
-    "total_volume": 831949,
-    "days_to_expiration": -12,
+    "total_volume": 1663898,
+    "days_to_expiration": -13,
     "signed_moneyness_pct": 0.007548680237
   },
   {
@@ -1568,8 +1843,8 @@
     "option_type": "C",
     "strike_price": 190.0,
     "latest_close_price": 0.01,
-    "total_volume": 825794,
-    "days_to_expiration": -26,
+    "total_volume": 1651588,
+    "days_to_expiration": -27,
     "signed_moneyness_pct": -0.002521547204
   },
   {
@@ -1579,8 +1854,8 @@
     "option_type": "C",
     "strike_price": 210.0,
     "latest_close_price": 0.01,
-    "total_volume": 816986,
-    "days_to_expiration": -40,
+    "total_volume": 1633972,
+    "days_to_expiration": -41,
     "signed_moneyness_pct": 0.090820008167
   },
   {
@@ -1590,8 +1865,8 @@
     "option_type": "C",
     "strike_price": 190.0,
     "latest_close_price": 12.7,
-    "total_volume": 775669,
-    "days_to_expiration": -47,
+    "total_volume": 1551338,
+    "days_to_expiration": -48,
     "signed_moneyness_pct": -0.00640363026
   },
   {
@@ -1601,8 +1876,8 @@
     "option_type": "C",
     "strike_price": 180.0,
     "latest_close_price": 2.33,
-    "total_volume": 759828,
-    "days_to_expiration": -12,
+    "total_volume": 1519656,
+    "days_to_expiration": -13,
     "signed_moneyness_pct": -0.04548019767
   },
   {
@@ -1612,8 +1887,8 @@
     "option_type": "C",
     "strike_price": 207.5,
     "latest_close_price": 0.01,
-    "total_volume": 748579,
-    "days_to_expiration": -47,
+    "total_volume": 1497158,
+    "days_to_expiration": -48,
     "signed_moneyness_pct": 0.08511182484
   },
   {
@@ -1623,8 +1898,8 @@
     "option_type": "P",
     "strike_price": 180.0,
     "latest_close_price": 1.1,
-    "total_volume": 743168,
-    "days_to_expiration": -26,
+    "total_volume": 1486336,
+    "days_to_expiration": -27,
     "signed_moneyness_pct": -0.05502041314
   },
   {
@@ -1634,9 +1909,9 @@
     "option_type": "C",
     "strike_price": 200.0,
     "latest_close_price": 0.01,
-    "total_volume": 741745,
-    "days_to_expiration": 2,
-    "signed_moneyness_pct": 0.074977933431
+    "total_volume": 1485075,
+    "days_to_expiration": 1,
+    "signed_moneyness_pct": 0.075842913107
   },
   {
     "option_symbol": "O:NVDA251121C00180000",
@@ -1645,8 +1920,8 @@
     "option_type": "C",
     "strike_price": 180.0,
     "latest_close_price": 0.02,
-    "total_volume": 727591,
-    "days_to_expiration": -26,
+    "total_volume": 1455182,
+    "days_to_expiration": -27,
     "signed_moneyness_pct": -0.05502041314
   },
   {
@@ -1656,8 +1931,8 @@
     "option_type": "P",
     "strike_price": 600.0,
     "latest_close_price": 10.0,
-    "total_volume": 561993,
-    "days_to_expiration": -26,
+    "total_volume": 1123986,
+    "days_to_expiration": -27,
     "signed_moneyness_pct": -0.023171549148
   },
   {
@@ -1666,10 +1941,10 @@
     "expiration_date": "2025-12-19",
     "option_type": "P",
     "strike_price": 600.0,
-    "latest_close_price": 3.35,
-    "total_volume": 521856,
-    "days_to_expiration": 2,
-    "signed_moneyness_pct": -0.025200186531
+    "latest_close_price": 0.61,
+    "total_volume": 1105180,
+    "days_to_expiration": 1,
+    "signed_moneyness_pct": -0.025079669602
   },
   {
     "option_symbol": "O:QQQ251209C00625000",
@@ -1678,8 +1953,8 @@
     "option_type": "C",
     "strike_price": 625.0,
     "latest_close_price": 0.02,
-    "total_volume": 493346,
-    "days_to_expiration": -8,
+    "total_volume": 986692,
+    "days_to_expiration": -9,
     "signed_moneyness_pct": 0.00767078332
   },
   {
@@ -1689,8 +1964,8 @@
     "option_type": "C",
     "strike_price": 625.0,
     "latest_close_price": 0.8,
-    "total_volume": 490952,
-    "days_to_expiration": -12,
+    "total_volume": 981904,
+    "days_to_expiration": -13,
     "signed_moneyness_pct": 0.014956279483
   },
   {
@@ -1700,8 +1975,8 @@
     "option_type": "P",
     "strike_price": 590.0,
     "latest_close_price": 0.16,
-    "total_volume": 477485,
-    "days_to_expiration": -26,
+    "total_volume": 954970,
+    "days_to_expiration": -27,
     "signed_moneyness_pct": -0.039452023324
   },
   {
@@ -1711,8 +1986,8 @@
     "option_type": "C",
     "strike_price": 615.0,
     "latest_close_price": 0.01,
-    "total_volume": 474533,
-    "days_to_expiration": -21,
+    "total_volume": 949066,
+    "days_to_expiration": -22,
     "signed_moneyness_pct": 0.0216094684
   },
   {
@@ -1722,8 +1997,8 @@
     "option_type": "P",
     "strike_price": 580.0,
     "latest_close_price": 0.01,
-    "total_volume": 465718,
-    "days_to_expiration": -26,
+    "total_volume": 931436,
+    "days_to_expiration": -27,
     "signed_moneyness_pct": -0.055732497504
   },
   {
@@ -1733,8 +2008,8 @@
     "option_type": "C",
     "strike_price": 623.0,
     "latest_close_price": 0.07,
-    "total_volume": 460398,
-    "days_to_expiration": -13,
+    "total_volume": 920796,
+    "days_to_expiration": -14,
     "signed_moneyness_pct": 0.010404653738
   },
   {
@@ -1744,8 +2019,8 @@
     "option_type": "C",
     "strike_price": 626.0,
     "latest_close_price": 0.02,
-    "total_volume": 450796,
-    "days_to_expiration": -12,
+    "total_volume": 901592,
+    "days_to_expiration": -13,
     "signed_moneyness_pct": 0.016580209534
   },
   {
@@ -1755,8 +2030,8 @@
     "option_type": "C",
     "strike_price": 622.0,
     "latest_close_price": 1.0,
-    "total_volume": 432123,
-    "days_to_expiration": -13,
+    "total_volume": 864246,
+    "days_to_expiration": -14,
     "signed_moneyness_pct": 0.0087828164
   },
   {
@@ -1766,8 +2041,8 @@
     "option_type": "C",
     "strike_price": 622.0,
     "latest_close_price": 0.14,
-    "total_volume": 423818,
-    "days_to_expiration": -15,
+    "total_volume": 847636,
+    "days_to_expiration": -16,
     "signed_moneyness_pct": 0.023794127613
   },
   {
@@ -1777,8 +2052,8 @@
     "option_type": "P",
     "strike_price": 625.0,
     "latest_close_price": 0.01,
-    "total_volume": 420744,
-    "days_to_expiration": -12,
+    "total_volume": 841488,
+    "days_to_expiration": -13,
     "signed_moneyness_pct": 0.014956279483
   },
   {
@@ -1788,8 +2063,8 @@
     "option_type": "P",
     "strike_price": 600.0,
     "latest_close_price": 0.01,
-    "total_volume": 420473,
-    "days_to_expiration": -33,
+    "total_volume": 840946,
+    "days_to_expiration": -34,
     "signed_moneyness_pct": -0.03104633494
   },
   {
@@ -1799,8 +2074,8 @@
     "option_type": "C",
     "strike_price": 623.0,
     "latest_close_price": 0.01,
-    "total_volume": 416302,
-    "days_to_expiration": -15,
+    "total_volume": 832604,
+    "days_to_expiration": -16,
     "signed_moneyness_pct": 0.025440098888
   },
   {
@@ -1810,8 +2085,8 @@
     "option_type": "C",
     "strike_price": 612.0,
     "latest_close_price": 0.01,
-    "total_volume": 414937,
-    "days_to_expiration": -2,
+    "total_volume": 829874,
+    "days_to_expiration": -3,
     "signed_moneyness_pct": -0.015840914111
   },
   {
@@ -1821,8 +2096,8 @@
     "option_type": "P",
     "strike_price": 610.0,
     "latest_close_price": 0.58,
-    "total_volume": 401841,
-    "days_to_expiration": -33,
+    "total_volume": 803682,
+    "days_to_expiration": -34,
     "signed_moneyness_pct": -0.014897107205
   },
   {
@@ -1832,8 +2107,8 @@
     "option_type": "C",
     "strike_price": 625.0,
     "latest_close_price": 0.01,
-    "total_volume": 401612,
-    "days_to_expiration": -9,
+    "total_volume": 803224,
+    "days_to_expiration": -10,
     "signed_moneyness_pct": 0.01095725449
   },
   {
@@ -1843,8 +2118,8 @@
     "option_type": "C",
     "strike_price": 622.0,
     "latest_close_price": 0.02,
-    "total_volume": 380609,
-    "days_to_expiration": -35,
+    "total_volume": 761218,
+    "days_to_expiration": -36,
     "signed_moneyness_pct": 0.002954309513
   },
   {
@@ -1854,8 +2129,8 @@
     "option_type": "C",
     "strike_price": 622.0,
     "latest_close_price": 0.27,
-    "total_volume": 379600,
-    "days_to_expiration": -36,
+    "total_volume": 759200,
+    "days_to_expiration": -37,
     "signed_moneyness_pct": 0.002549073625
   },
   {
@@ -1865,8 +2140,8 @@
     "option_type": "C",
     "strike_price": 616.0,
     "latest_close_price": 0.01,
-    "total_volume": 374420,
-    "days_to_expiration": -21,
+    "total_volume": 748840,
+    "days_to_expiration": -22,
     "signed_moneyness_pct": 0.026060950575
   },
   {
@@ -1876,8 +2151,8 @@
     "option_type": "P",
     "strike_price": 585.0,
     "latest_close_price": 0.01,
-    "total_volume": 373972,
-    "days_to_expiration": -26,
+    "total_volume": 747944,
+    "days_to_expiration": -27,
     "signed_moneyness_pct": -0.047592260428
   },
   {
@@ -1887,8 +2162,8 @@
     "option_type": "C",
     "strike_price": 621.0,
     "latest_close_price": 1.22,
-    "total_volume": 369251,
-    "days_to_expiration": -36,
+    "total_volume": 738502,
+    "days_to_expiration": -37,
     "signed_moneyness_pct": 0.0015519357
   },
   {
@@ -1898,8 +2173,8 @@
     "option_type": "C",
     "strike_price": 624.0,
     "latest_close_price": 0.1,
-    "total_volume": 363839,
-    "days_to_expiration": -9,
+    "total_volume": 727678,
+    "days_to_expiration": -10,
     "signed_moneyness_pct": 0.006918329589
   },
   {
@@ -1909,8 +2184,8 @@
     "option_type": "P",
     "strike_price": 610.0,
     "latest_close_price": 0.14,
-    "total_volume": 362263,
-    "days_to_expiration": -57,
+    "total_volume": 724526,
+    "days_to_expiration": -58,
     "signed_moneyness_pct": -0.0023877107
   },
   {
@@ -1919,10 +2194,10 @@
     "expiration_date": "2025-12-19",
     "option_type": "C",
     "strike_price": 630.0,
-    "latest_close_price": 0.05,
-    "total_volume": 358233,
-    "days_to_expiration": 2,
-    "signed_moneyness_pct": 0.02353980414
+    "latest_close_price": 0.01,
+    "total_volume": 720425,
+    "days_to_expiration": 1,
+    "signed_moneyness_pct": 0.023666346915
   },
   {
     "option_symbol": "O:SPY251204C00684000",
@@ -1931,8 +2206,8 @@
     "option_type": "C",
     "strike_price": 684.0,
     "latest_close_price": 0.27,
-    "total_volume": 1078599,
-    "days_to_expiration": -13,
+    "total_volume": 2157198,
+    "days_to_expiration": -14,
     "signed_moneyness_pct": 0.006510561
   },
   {
@@ -1942,8 +2217,8 @@
     "option_type": "C",
     "strike_price": 683.0,
     "latest_close_price": 0.01,
-    "total_volume": 1006545,
-    "days_to_expiration": -15,
+    "total_volume": 2013090,
+    "days_to_expiration": -16,
     "signed_moneyness_pct": 0.015838953413
   },
   {
@@ -1953,8 +2228,8 @@
     "option_type": "C",
     "strike_price": 685.0,
     "latest_close_price": 0.01,
-    "total_volume": 997744,
-    "days_to_expiration": -8,
+    "total_volume": 1995488,
+    "days_to_expiration": -9,
     "signed_moneyness_pct": 0.00433940886
   },
   {
@@ -1964,8 +2239,8 @@
     "option_type": "C",
     "strike_price": 685.0,
     "latest_close_price": 0.01,
-    "total_volume": 981580,
-    "days_to_expiration": -13,
+    "total_volume": 1963160,
+    "days_to_expiration": -14,
     "signed_moneyness_pct": 0.011473660178
   },
   {
@@ -1975,8 +2250,8 @@
     "option_type": "C",
     "strike_price": 687.0,
     "latest_close_price": 0.01,
-    "total_volume": 955541,
-    "days_to_expiration": -12,
+    "total_volume": 1911082,
+    "days_to_expiration": -13,
     "signed_moneyness_pct": 0.01597758189
   },
   {
@@ -1986,8 +2261,8 @@
     "option_type": "P",
     "strike_price": 650.0,
     "latest_close_price": 0.01,
-    "total_volume": 939680,
-    "days_to_expiration": -26,
+    "total_volume": 1879360,
+    "days_to_expiration": -27,
     "signed_moneyness_pct": -0.035439240124
   },
   {
@@ -1997,8 +2272,8 @@
     "option_type": "C",
     "strike_price": 682.0,
     "latest_close_price": 0.01,
-    "total_volume": 928542,
-    "days_to_expiration": -15,
+    "total_volume": 1857084,
+    "days_to_expiration": -16,
     "signed_moneyness_pct": 0.014351634313
   },
   {
@@ -2008,8 +2283,8 @@
     "option_type": "C",
     "strike_price": 681.0,
     "latest_close_price": 0.01,
-    "total_volume": 927780,
-    "days_to_expiration": -21,
+    "total_volume": 1855560,
+    "days_to_expiration": -22,
     "signed_moneyness_pct": 0.023570221288
   },
   {
@@ -2019,8 +2294,8 @@
     "option_type": "C",
     "strike_price": 684.0,
     "latest_close_price": 0.01,
-    "total_volume": 901909,
-    "days_to_expiration": -8,
+    "total_volume": 1803818,
+    "days_to_expiration": -9,
     "signed_moneyness_pct": 0.0017143211
   },
   {
@@ -2030,8 +2305,8 @@
     "option_type": "C",
     "strike_price": 686.0,
     "latest_close_price": 0.06,
-    "total_volume": 897089,
-    "days_to_expiration": -12,
+    "total_volume": 1794178,
+    "days_to_expiration": -13,
     "signed_moneyness_pct": 0.014498720779
   },
   {
@@ -2041,8 +2316,8 @@
     "option_type": "P",
     "strike_price": 684.0,
     "latest_close_price": 1.21,
-    "total_volume": 890265,
-    "days_to_expiration": -8,
+    "total_volume": 1780530,
+    "days_to_expiration": -9,
     "signed_moneyness_pct": 0.0017143211
   },
   {
@@ -2052,8 +2327,8 @@
     "option_type": "P",
     "strike_price": 660.0,
     "latest_close_price": 0.54,
-    "total_volume": 873854,
-    "days_to_expiration": -26,
+    "total_volume": 1747708,
+    "days_to_expiration": -27,
     "signed_moneyness_pct": -0.020599843824
   },
   {
@@ -2063,8 +2338,8 @@
     "option_type": "C",
     "strike_price": 682.0,
     "latest_close_price": 0.01,
-    "total_volume": 838301,
-    "days_to_expiration": -16,
+    "total_volume": 1676602,
+    "days_to_expiration": -17,
     "signed_moneyness_pct": 0.017919431188
   },
   {
@@ -2074,8 +2349,8 @@
     "option_type": "P",
     "strike_price": 683.0,
     "latest_close_price": 0.1,
-    "total_volume": 821688,
-    "days_to_expiration": -8,
+    "total_volume": 1643376,
+    "days_to_expiration": -9,
     "signed_moneyness_pct": 0.000249826478
   },
   {
@@ -2085,8 +2360,8 @@
     "option_type": "C",
     "strike_price": 672.0,
     "latest_close_price": 0.01,
-    "total_volume": 815553,
-    "days_to_expiration": -57,
+    "total_volume": 1631106,
+    "days_to_expiration": -58,
     "signed_moneyness_pct": 0.001050209
   },
   {
@@ -2096,8 +2371,8 @@
     "option_type": "P",
     "strike_price": 680.0,
     "latest_close_price": 0.01,
-    "total_volume": 795929,
-    "days_to_expiration": -2,
+    "total_volume": 1591858,
+    "days_to_expiration": -3,
     "signed_moneyness_pct": -0.005524794791
   },
   {
@@ -2107,8 +2382,8 @@
     "option_type": "C",
     "strike_price": 680.0,
     "latest_close_price": 0.15,
-    "total_volume": 793721,
-    "days_to_expiration": -21,
+    "total_volume": 1587442,
+    "days_to_expiration": -22,
     "signed_moneyness_pct": 0.02003921632
   },
   {
@@ -2118,8 +2393,8 @@
     "option_type": "P",
     "strike_price": 683.0,
     "latest_close_price": 0.01,
-    "total_volume": 783702,
-    "days_to_expiration": -13,
+    "total_volume": 1567404,
+    "days_to_expiration": -14,
     "signed_moneyness_pct": 0.005039054313
   },
   {
@@ -2129,8 +2404,8 @@
     "option_type": "P",
     "strike_price": 686.0,
     "latest_close_price": 0.07,
-    "total_volume": 783122,
-    "days_to_expiration": -12,
+    "total_volume": 1566244,
+    "days_to_expiration": -13,
     "signed_moneyness_pct": 0.013756941125
   },
   {
@@ -2140,8 +2415,8 @@
     "option_type": "C",
     "strike_price": 682.0,
     "latest_close_price": 0.01,
-    "total_volume": 770407,
-    "days_to_expiration": -2,
+    "total_volume": 1540814,
+    "days_to_expiration": -3,
     "signed_moneyness_pct": -0.00311416528
   },
   {
@@ -2151,8 +2426,8 @@
     "option_type": "C",
     "strike_price": 686.0,
     "latest_close_price": 0.01,
-    "total_volume": 769581,
-    "days_to_expiration": -9,
+    "total_volume": 1539162,
+    "days_to_expiration": -10,
     "signed_moneyness_pct": 0.005969156689
   },
   {
@@ -2162,8 +2437,8 @@
     "option_type": "C",
     "strike_price": 678.0,
     "latest_close_price": 0.01,
-    "total_volume": 768858,
-    "days_to_expiration": -54,
+    "total_volume": 1537716,
+    "days_to_expiration": -55,
     "signed_moneyness_pct": 0.00912936004
   },
   {
@@ -2173,8 +2448,8 @@
     "option_type": "P",
     "strike_price": 671.0,
     "latest_close_price": 0.25,
-    "total_volume": 767554,
-    "days_to_expiration": -57,
+    "total_volume": 1535108,
+    "days_to_expiration": -58,
     "signed_moneyness_pct": -0.0004394491
   },
   {
@@ -2184,8 +2459,8 @@
     "option_type": "C",
     "strike_price": 680.0,
     "latest_close_price": 1.87,
-    "total_volume": 764080,
-    "days_to_expiration": -37,
+    "total_volume": 1528160,
+    "days_to_expiration": -38,
     "signed_moneyness_pct": 8.222018e-06
   },
   {
@@ -2195,8 +2470,283 @@
     "option_type": "P",
     "strike_price": 685.0,
     "latest_close_price": 0.01,
-    "total_volume": 761934,
-    "days_to_expiration": -12,
+    "total_volume": 1523868,
+    "days_to_expiration": -13,
     "signed_moneyness_pct": 0.013019859669
+  },
+  {
+    "option_symbol": "O:TSLA251219C00500000",
+    "underlying_ticker": "TSLA",
+    "expiration_date": "2025-12-19",
+    "option_type": "C",
+    "strike_price": 500.0,
+    "latest_close_price": 0.81,
+    "total_volume": 179016,
+    "days_to_expiration": 1,
+    "signed_moneyness_pct": 0.0344042866
+  },
+  {
+    "option_symbol": "O:TSLA251219C00490000",
+    "underlying_ticker": "TSLA",
+    "expiration_date": "2025-12-19",
+    "option_type": "C",
+    "strike_price": 490.0,
+    "latest_close_price": 2.77,
+    "total_volume": 131421,
+    "days_to_expiration": 1,
+    "signed_moneyness_pct": 0.0137162008
+  },
+  {
+    "option_symbol": "O:TSLA251219C00480000",
+    "underlying_ticker": "TSLA",
+    "expiration_date": "2025-12-19",
+    "option_type": "C",
+    "strike_price": 480.0,
+    "latest_close_price": 7.15,
+    "total_volume": 99945,
+    "days_to_expiration": 1,
+    "signed_moneyness_pct": -0.0069718849
+  },
+  {
+    "option_symbol": "O:TSLA251219P00470000",
+    "underlying_ticker": "TSLA",
+    "expiration_date": "2025-12-19",
+    "option_type": "P",
+    "strike_price": 470.0,
+    "latest_close_price": 1.28,
+    "total_volume": 98929,
+    "days_to_expiration": 1,
+    "signed_moneyness_pct": -0.0276599706
+  },
+  {
+    "option_symbol": "O:TSLA251219C00485000",
+    "underlying_ticker": "TSLA",
+    "expiration_date": "2025-12-19",
+    "option_type": "C",
+    "strike_price": 485.0,
+    "latest_close_price": 4.6,
+    "total_volume": 90657,
+    "days_to_expiration": 1,
+    "signed_moneyness_pct": 0.003372158
+  },
+  {
+    "option_symbol": "O:TSLA251219P00480000",
+    "underlying_ticker": "TSLA",
+    "expiration_date": "2025-12-19",
+    "option_type": "P",
+    "strike_price": 480.0,
+    "latest_close_price": 3.65,
+    "total_volume": 81550,
+    "days_to_expiration": 1,
+    "signed_moneyness_pct": -0.0069718849
+  },
+  {
+    "option_symbol": "O:TSLA251226C00510000",
+    "underlying_ticker": "TSLA",
+    "expiration_date": "2025-12-26",
+    "option_type": "C",
+    "strike_price": 510.0,
+    "latest_close_price": 3.7,
+    "total_volume": 61979,
+    "days_to_expiration": 8,
+    "signed_moneyness_pct": 0.0550923723
+  },
+  {
+    "option_symbol": "O:TSLA251219P00485000",
+    "underlying_ticker": "TSLA",
+    "expiration_date": "2025-12-19",
+    "option_type": "P",
+    "strike_price": 485.0,
+    "latest_close_price": 5.95,
+    "total_volume": 59955,
+    "days_to_expiration": 1,
+    "signed_moneyness_pct": 0.003372158
+  },
+  {
+    "option_symbol": "O:TSLA251219P00475000",
+    "underlying_ticker": "TSLA",
+    "expiration_date": "2025-12-19",
+    "option_type": "P",
+    "strike_price": 475.0,
+    "latest_close_price": 2.15,
+    "total_volume": 56896,
+    "days_to_expiration": 1,
+    "signed_moneyness_pct": -0.0173159278
+  },
+  {
+    "option_symbol": "O:TSLA251219C00495000",
+    "underlying_ticker": "TSLA",
+    "expiration_date": "2025-12-19",
+    "option_type": "C",
+    "strike_price": 495.0,
+    "latest_close_price": 1.54,
+    "total_volume": 53882,
+    "days_to_expiration": 1,
+    "signed_moneyness_pct": 0.0240602437
+  },
+  {
+    "option_symbol": "O:TSLA260220C00650000",
+    "underlying_ticker": "TSLA",
+    "expiration_date": "2026-02-20",
+    "option_type": "C",
+    "strike_price": 650.0,
+    "latest_close_price": 7.85,
+    "total_volume": 49655,
+    "days_to_expiration": 64,
+    "signed_moneyness_pct": 0.3447255725
+  },
+  {
+    "option_symbol": "O:TSLA251226C00500000",
+    "underlying_ticker": "TSLA",
+    "expiration_date": "2025-12-26",
+    "option_type": "C",
+    "strike_price": 500.0,
+    "latest_close_price": 5.93,
+    "total_volume": 46635,
+    "days_to_expiration": 8,
+    "signed_moneyness_pct": 0.0344042866
+  },
+  {
+    "option_symbol": "O:TSLA251219C00510000",
+    "underlying_ticker": "TSLA",
+    "expiration_date": "2025-12-19",
+    "option_type": "C",
+    "strike_price": 510.0,
+    "latest_close_price": 0.19,
+    "total_volume": 44252,
+    "days_to_expiration": 1,
+    "signed_moneyness_pct": 0.0550923723
+  },
+  {
+    "option_symbol": "O:TSLA251219C00470000",
+    "underlying_ticker": "TSLA",
+    "expiration_date": "2025-12-19",
+    "option_type": "C",
+    "strike_price": 470.0,
+    "latest_close_price": 15.04,
+    "total_volume": 42362,
+    "days_to_expiration": 1,
+    "signed_moneyness_pct": -0.0276599706
+  },
+  {
+    "option_symbol": "O:TSLA251219C00487500",
+    "underlying_ticker": "TSLA",
+    "expiration_date": "2025-12-19",
+    "option_type": "C",
+    "strike_price": 487.5,
+    "latest_close_price": 3.57,
+    "total_volume": 41551,
+    "days_to_expiration": 1,
+    "signed_moneyness_pct": 0.0085441794
+  },
+  {
+    "option_symbol": "O:TSLA251219P00490000",
+    "underlying_ticker": "TSLA",
+    "expiration_date": "2025-12-19",
+    "option_type": "P",
+    "strike_price": 490.0,
+    "latest_close_price": 9.06,
+    "total_volume": 38044,
+    "days_to_expiration": 1,
+    "signed_moneyness_pct": 0.0137162008
+  },
+  {
+    "option_symbol": "O:TSLA251219P00465000",
+    "underlying_ticker": "TSLA",
+    "expiration_date": "2025-12-19",
+    "option_type": "P",
+    "strike_price": 465.0,
+    "latest_close_price": 0.81,
+    "total_volume": 37754,
+    "days_to_expiration": 1,
+    "signed_moneyness_pct": -0.0380040135
+  },
+  {
+    "option_symbol": "O:TSLA251219P00460000",
+    "underlying_ticker": "TSLA",
+    "expiration_date": "2025-12-19",
+    "option_type": "P",
+    "strike_price": 460.0,
+    "latest_close_price": 0.58,
+    "total_volume": 36389,
+    "days_to_expiration": 1,
+    "signed_moneyness_pct": -0.0483480564
+  },
+  {
+    "option_symbol": "O:TSLA251219P00487500",
+    "underlying_ticker": "TSLA",
+    "expiration_date": "2025-12-19",
+    "option_type": "P",
+    "strike_price": 487.5,
+    "latest_close_price": 7.45,
+    "total_volume": 36323,
+    "days_to_expiration": 1,
+    "signed_moneyness_pct": 0.0085441794
+  },
+  {
+    "option_symbol": "O:TSLA251219C00482500",
+    "underlying_ticker": "TSLA",
+    "expiration_date": "2025-12-19",
+    "option_type": "C",
+    "strike_price": 482.5,
+    "latest_close_price": 5.85,
+    "total_volume": 33596,
+    "days_to_expiration": 1,
+    "signed_moneyness_pct": -0.0017998635
+  },
+  {
+    "option_symbol": "O:TSLA251219C00505000",
+    "underlying_ticker": "TSLA",
+    "expiration_date": "2025-12-19",
+    "option_type": "C",
+    "strike_price": 505.0,
+    "latest_close_price": 0.39,
+    "total_volume": 28568,
+    "days_to_expiration": 1,
+    "signed_moneyness_pct": 0.0447483294
+  },
+  {
+    "option_symbol": "O:TSLA251219P00477500",
+    "underlying_ticker": "TSLA",
+    "expiration_date": "2025-12-19",
+    "option_type": "P",
+    "strike_price": 477.5,
+    "latest_close_price": 2.85,
+    "total_volume": 28544,
+    "days_to_expiration": 1,
+    "signed_moneyness_pct": -0.0121439063
+  },
+  {
+    "option_symbol": "O:TSLA251219C00475000",
+    "underlying_ticker": "TSLA",
+    "expiration_date": "2025-12-19",
+    "option_type": "C",
+    "strike_price": 475.0,
+    "latest_close_price": 10.7,
+    "total_volume": 28081,
+    "days_to_expiration": 1,
+    "signed_moneyness_pct": -0.0173159278
+  },
+  {
+    "option_symbol": "O:TSLA251219C00492500",
+    "underlying_ticker": "TSLA",
+    "expiration_date": "2025-12-19",
+    "option_type": "C",
+    "strike_price": 492.5,
+    "latest_close_price": 2.08,
+    "total_volume": 28002,
+    "days_to_expiration": 1,
+    "signed_moneyness_pct": 0.0188882223
+  },
+  {
+    "option_symbol": "O:TSLA251219P00450000",
+    "underlying_ticker": "TSLA",
+    "expiration_date": "2025-12-19",
+    "option_type": "P",
+    "strike_price": 450.0,
+    "latest_close_price": 0.39,
+    "total_volume": 27226,
+    "days_to_expiration": 1,
+    "signed_moneyness_pct": -0.0690361421
   }
 ]
