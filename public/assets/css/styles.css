@@ -1977,6 +1977,13 @@ figure, .card { overflow: hidden; }
   box-shadow: var(--shadow-sm);
 }
 
+/* Remove border from architecture diagrams in blog posts */
+.article-img.diagram-clean {
+  border: none;
+  box-shadow: none;
+  background: transparent;
+}
+
 /* Component: Pro-Tip / Engineering Note Box */
 .pro-tip {
   background-color: var(--gray-50);
