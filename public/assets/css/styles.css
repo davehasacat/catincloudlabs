@@ -1700,10 +1700,11 @@ figure, .card { overflow: hidden; }
 
 /* Insights Section */
 .insights-panel {
-  background: var(--surface-subtle);
+  background: var(--gray-50); 
+  border: 1px solid var(--gray-200);
+  
   border-radius: 0.75rem;
   padding: 1.75rem 2rem;
-  border: 1px solid var(--border-subtle);
   max-width: 70ch;
   margin: 2.5rem auto 0;
   line-height: 1.6;
@@ -1716,20 +1717,41 @@ figure, .card { overflow: hidden; }
   margin-bottom: 1.4rem;
 }
 
+/* 1. The pseudo-code metadata block */
+.insights-code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.9rem;
+  margin-top: -0.5rem;
+  display: block;
+  color: var(--text-muted);
+}
+
+/* 2. The legal/risk disclaimer */
+.insights-disclaimer {
+  font-size: 0.8rem;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--gray-200);
+  color: var(--text-muted);
+}
+
 /* Section labels inside insights */
 .insights-panel h4 {
   font-size: 0.78rem;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.09em;
-  color: var(--text-subtle-strong, #4b5563);
+  color: var(--gray-600);
+  
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
   padding: 0.16rem 0.6rem;
   border-radius: 999px;
-  background: var(--surface-strong, #f9fafb);
-  border: 1px solid var(--border-subtle);
+  
+  background: #ffffff;
+  border: 1px solid var(--gray-200);
+  
   margin-top: 1.4rem;
   margin-bottom: 0.6rem;
 }
@@ -2109,4 +2131,92 @@ figure, .card { overflow: hidden; }
 .hero__cta,
 .ci-hero__cta {
   justify-content: center;
+}
+
+/* ==================================================================== */
+/* 11. DASHBOARD GRID & CHARTS (Projects Page)                          */
+/* ==================================================================== */
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 900px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  /* Span both columns for wide tables */
+  .dashboard-grid .full-width {
+    grid-column: span 2;
+  }
+}
+
+.chart-container {
+  background: var(--bg-surface);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  box-shadow: var(--shadow-sm);
+  min-height: 420px; /* Prevents visual collapse while fetching data */
+  display: flex;
+  flex-direction: column;
+}
+
+.chart-header {
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--gray-100);
+  padding-bottom: 0.75rem;
+}
+
+.chart-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--gray-900);
+  margin: 0 0 0.25rem 0;
+}
+
+.chart-meta {
+  font-size: 0.85rem;
+  color: var(--gray-500);
+  display: block;
+}
+
+/* "Snapshot" Badge - Amber color to signify static/cached data */
+.snapshot-badge {
+  display: inline-block;
+  background: #fef3c7; /* Amber-100 */
+  color: #92400e;       /* Amber-800 */
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  font-weight: 600;
+  margin-left: 0.5rem;
+  vertical-align: middle;
+}
+
+/* Target div for Plotly/JS injection */
+.chart-target {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+}
+
+/* Loading & Empty States */
+.chart-loading,
+.chart-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-style: italic;
+  background: var(--gray-50);
+  border-radius: var(--radius-sm);
 }
