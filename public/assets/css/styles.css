@@ -224,7 +224,6 @@ a:focus-visible,
   max-width: var(--maxw-readable);
   margin-inline: auto;
 }
-
 /* ==================================================================== */
 /* 3. GLOBAL COMPONENTS: HEADER / NAV / CARDS / BUTTONS / INPUTS / FOOTER*/
 /* ==================================================================== */
@@ -257,80 +256,82 @@ a:focus-visible,
 
 /* MOBILE HEADER: HORIZONTAL SCROLL LAYOUT 
    Pins logo (left) and Contact button (right).
-   Puts nav links in a scrollable strip below.
+   Puts nav links in a centered, scrollable strip below.
 */
 @media (max-width: 640px) {
-  /* 1. Reset the container to block so we can position elements absolutely */
+  /* 1. Reset the container */
   .header .nav {
     display: block;
     position: relative;
-    padding: 0.75rem 1rem 0; /* Add bottom padding via the menu instead */
+    padding: 0.85rem 1rem 0; /* Slightly more top padding */
   }
 
   /* 2. Logo: Keep it top-left */
   .header .brand {
     display: block;
-    margin-bottom: 0.2rem; /* Reduced from 0.5rem for tighter vertical spacing */
+    margin-bottom: 0.5rem; /* Add breathing room before the menu row */
   }
   .header .brand img {
-    height: 28px; /* Slightly larger for touch targets */
+    height: 28px;
   }
 
-  /* 3. "Contact" Button: Promote to Top-Right CTA */
+  /* 3. "Contact" Button: Bigger, bolder, aligned */
   .nav .menu a[href*="contact"] {
     position: absolute;
-    top: 0.25rem;   /* Aligns with logo text center */
+    top: 0.5rem;   /* Push down to align with Logo baseline */
     right: 1rem;
     
-    /* Force the pill button look */
+    /* Bigger touch target and font */
     background-color: var(--gray-100) !important;
     color: var(--gray-900) !important;
     border: 1px solid var(--gray-200) !important;
-    padding: 0.35rem 0.85rem !important;
+    padding: 0.45rem 1rem !important; /* Increased padding */
     border-radius: 999px;
-    font-size: 0.8rem;
+    font-size: 0.85rem;  /* Increased from 0.8rem */
     font-weight: 600;
     box-shadow: none;
     line-height: 1;
   }
 
-  /* 4. Navigation Menu: Convert to Horizontal Scroll Strip */
+  /* 4. Navigation Menu: Centered Row */
   .menu {
     display: flex;
-    flex-wrap: nowrap;       /* Force single line */
-    overflow-x: auto;        /* Enable horizontal scrolling */
-    gap: 1.5rem;             /* More space between links */
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 1.25rem;          /* Balanced spacing */
+    
+    /* Center the links! */
+    justify-content: center; 
     
     /* Layout tweaks */
-    margin-left: -1rem;      /* Bleed to left edge */
-    margin-right: -1rem;     /* Bleed to right edge */
-    padding-left: 1rem;      /* Restore left padding */
-    padding-right: 1rem;     /* Restore right padding */
-    padding-bottom: 0.75rem; /* Space for touch interaction */
-    padding-top: 0.5rem;     /* Separate from Logo */
+    margin-left: -1rem;
+    margin-right: -1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 0.85rem; /* Touch space */
+    padding-top: 0.25rem;
     
-    /* Hide scrollbar but keep functionality */
+    /* Scroll polish */
     -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;   /* Firefox */
+    scrollbar-width: none;
   }
   
-  /* Hide scrollbar for Chrome/Safari */
   .menu::-webkit-scrollbar {
     display: none;
   }
 
-  /* 5. Hide "Home" link (Redundant on mobile since Logo does the same) */
+  /* 5. Hide "Home" */
   .menu a[href="/"] {
     display: none;
   }
 
   /* 6. Style the Links */
   .menu a {
-    white-space: nowrap;     /* Prevent text wrapping */
+    white-space: nowrap;
     font-size: 0.95rem;
     color: var(--text-muted);
     font-weight: 500;
-    padding: 0;
+    padding: 0.25rem 0; /* Vertical breathing room */
     margin: 0;
     border: 0;
     background: transparent;
@@ -344,7 +345,7 @@ a:focus-visible,
     position: relative;
   }
   
-  /* Optional: Little dot or line under active link */
+  /* Active line */
   .nav .menu a[aria-current="page"]::after {
     content: "";
     display: block;
@@ -352,12 +353,12 @@ a:focus-visible,
     height: 2px;
     background: var(--accent-500);
     position: absolute;
-    bottom: -4px;
+    bottom: -2px;
     left: 0;
     border-radius: 2px;
   }
   
-  /* Neutralize button styles if any linger on non-contact links */
+  /* Neutralize button styles */
   .menu a.button,
   .menu a.button.ghost {
     padding: 0;
