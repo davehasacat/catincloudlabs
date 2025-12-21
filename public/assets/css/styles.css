@@ -255,56 +255,120 @@ a:focus-visible,
   border-radius: 8px;
 }
 
-/* Super-compact mobile header/nav */
+/* MOBILE HEADER: LEFT-ALIGNED LOGO + FULL-WIDTH NAV STRIP
+   Top Row: Logo (Left) ......... Contact (Right)
+   Btm Row: [About] [Projects] [Services] [Blog] (Justified)
+*/
 @media (max-width: 640px) {
-  .header {
-    padding-block: 0;
-  }
-
+  /* 1. Container */
   .header .nav {
-    padding: 0.35rem 1rem;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    gap: 0.2rem 0.5rem;
+    display: block;
+    position: relative;
+    padding: 0.85rem 1rem 0; 
   }
 
-  /* Smaller logo on phones */
+  /* 2. Logo: Left Aligned */
+  .header .brand {
+    display: inline-block;
+    margin-bottom: 0.2rem; /* Tight gap to the nav row */
+  }
   .header .brand img {
-    height: 24px;
+    height: 28px;
   }
 
+  /* 3. "Contact" Button: Pinned Top-Right */
+  .nav .menu a[href*="contact"] {
+    position: absolute;
+    top: 0.7rem;   /* Aligns with logo baseline */
+    right: 1rem;
+    z-index: 2;
+    
+    /* Button Styling */
+    background-color: var(--gray-100) !important;
+    color: var(--gray-900) !important;
+    border: 1px solid var(--gray-200) !important;
+    padding: 0.35rem 0.85rem !important; 
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    box-shadow: none;
+    line-height: 1;
+  }
+
+  /* 4. Navigation Menu: "Tab Bar" Style */
   .menu {
-    margin-left: auto;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    gap: 0.4rem 0.6rem;
-    font-size: 0.85rem;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    width: 100%;
+    
+    /* "space-between" fills the width, removing side white space. 
+       "center" clumps them in the middle. 
+       space-between is best for that "filled" app feel. */
+    justify-content: space-between; 
+    
+    /* Layout tweaks */
+    gap: 0; /* Let space-between handle the gaps */
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0.2rem;  /* Tiny buffer from edge */
+    padding-right: 0.2rem; 
+    padding-bottom: 0.85rem;
+    padding-top: 0.35rem; 
+    
+    /* Scroll polish (hidden but functional if text gets huge) */
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  
+  .menu::-webkit-scrollbar {
+    display: none;
   }
 
-  /* Strip pill styling completely in the nav */
+  /* 5. Hide "Home" link */
+  .menu a[href="/"] {
+    display: none;
+  }
+
+  /* 6. Style the Links */
   .menu a {
-    padding: 0;
+    white-space: nowrap;
+    font-size: 1rem; /* Increased size to fill space better (16px) */
+    color: var(--text-muted);
+    font-weight: 500;
+    padding: 0.25rem 0;
+    margin: 0;
     border: 0;
     background: transparent;
     box-shadow: none;
   }
 
-  /* Also neutralize the .button.ghost on Contact */
+  /* Active State Indicator */
+  .nav .menu a[aria-current="page"] {
+    color: var(--accent-700);
+    background: transparent;
+    position: relative;
+  }
+  
+  .nav .menu a[aria-current="page"]::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: var(--accent-500);
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    border-radius: 2px;
+  }
+  
+  /* Neutralize button styles on standard links */
   .menu a.button,
   .menu a.button.ghost {
     padding: 0;
     border: 0;
     background: transparent;
     box-shadow: none;
-  }
-
-  /* Active page: just color + slight weight */
-  .nav .menu a[aria-current="page"] {
-    background: transparent;
-    color: var(--accent-700);
-    font-weight: 600;
   }
 }
 
