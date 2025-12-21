@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>CatInCloud Labs - Cloud Engineering & Data Pipelines</title>
+  <title>CatInCloud Labs - Enterprise Data Platform Architect</title>
 
-  <meta name="description" content="CatInCloud Labs designs and builds calm, reliable AWS + Snowflake + dbt data pipelines that are calm to run in production." />
+  <meta name="description" content="I build hardened, audit-ready data platforms on AWS, MWAA, Snowflake, and dbt. Stop fighting fires and start shipping features with a private-VPC data plane." />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <link rel="canonical" href="https://catincloudlabs.com/" />
 
   <meta property="og:title" content="CatInCloud Labs" />
-  <meta property="og:description" content="Calm, reliable AWS + Snowflake + dbt data pipelines, built with MWAA, Snowflake, and dbt Cloud." />
+  <meta property="og:description" content="Hardened, audit-ready data platforms built on AWS, MWAA, Snowflake, and dbt." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://catincloudlabs.com/" />
   <meta property="og:image" content="https://catincloudlabs.com/assets/brand/social-card.v2.png" />
@@ -21,7 +21,7 @@
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="CatInCloud Labs" />
-  <meta name="twitter:description" content="Calm, reliable AWS + Snowflake + dbt data pipelines, built on MWAA, Snowflake, and dbt Cloud." />
+  <meta name="twitter:description" content="Hardened, audit-ready data platforms built on AWS, MWAA, Snowflake, and dbt." />
   <meta name="twitter:image" content="https://catincloudlabs.com/assets/brand/social-card.v2.png" />
 
   <link rel="icon" href="/assets/favicons/favicon.ico" sizes="any" />
@@ -106,14 +106,14 @@
             Calm, reliable data pipelines.
           </h1>
           <p class="subtitle">
-            I'll wrestle with messy data. You keep shipping features.
+            Stop fighting fires. Start shipping features. I build hardened, private-VPC data platforms that scale quietly.
           </p>
           <div class="hero__cta">
             <a class="ci-btn ci-btn--primary" href="/contact#contact-form">
               Book a discovery call
             </a>
             <a class="ci-btn ci-btn--ghost" href="/projects">
-              See proof of success
+              See the architecture
             </a>
             <p class="hero-footnote">
               30 minutes to chat through your current stack and priorities.
@@ -135,11 +135,9 @@
         <div class="stack stack--section">
           <article class="card reveal card--narrow">
             <div class="eyebrow">Flagship</div>
-            <h2>Enterprise Stock Market ELT</h2>
+            <h2>Reference Architecture: Private Data Plane</h2>
             <p>
-              A production-grade pipeline built on AWS, MWAA, Snowflake, and dbt Cloud, designed to ingest and transform stock and options data
-              in a private VPC. It uses KMS-encrypted S3 buckets, VPC endpoints, and incremental dbt models to keep data flowing reliably
-              from raw JSON to analytics-ready marts.
+              A production-grade pipeline built on AWS, MWAA, Snowflake, and dbt Cloud. It demonstrates secure ingestion within a hardened Virtual Private Cloud (VPC), using KMS-encrypted buckets and VPC endpoints to deliver analytics-ready financial data without public exposure.
             </p>
           </article>
 
@@ -149,7 +147,7 @@
               <h2>How the pieces fit together</h2>
               <p class="chart-subtitle">
                 High-level data flow for the reference pipeline: MWAA orchestrates ingest into a KMS-encrypted S3 RAW bucket,
-                Snowflake loads from there, and dbt builds marts on top. For a deeper walkthrough (including security details),
+                Snowflake loads from there, and dbt builds marts on top. For the full <strong>Security & Network</strong> view,
                 see the <a href="/projects">Projects</a> page.
               </p>
 
@@ -279,7 +277,6 @@
   <footer class="footer">
     <div class="container inner center">
       <small>© <span id="y"></span> CatInCloud Labs - DaveHasACat LLC</small>
-      <p><em>Cats who cloud. Humans that stay grounded.</em></p>
       <div class="footer-links">
         <a href="/about">About</a> ·
         <a href="/security">Security</a> ·
