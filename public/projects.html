@@ -129,41 +129,38 @@
 
             <div class="insights-panel">
               <div class="stack stack--tight">
-                <h3>Automated Regime Detection: Late 2025 Snapshot</h3>
+                <h3>Pipeline Discoveries: 2025 Year in Review</h3>
                 <p class="insights-code">
-                  // Logic: Statistical anomaly detection (Z-Score > 2.5)
+                  // Logic: Cross-asset correlation & Regime detection (Z-Score > 2.5)
                 </p>
               </div>
               
               <p>
                 The following observations are not editorial opinions. They are the natural-language outputs of the pipeline's 
-                anomaly detection logic, flagged when <strong>dbt data tests</strong> breached their defined thresholds during the snapshot window:
+                anomaly detection logic, flagged when <strong>dbt data tests</strong> breached their defined thresholds during the 2025 window:
               </p>
             
-              <h4>1. The "Mag 7" Trade is Fractured</h4>
+              <h4>1. Mag 7 Fracture: The Basket Trade is Dead</h4>
               <ul>
                 <li>
-                  <strong>Divergence:</strong> While the basket is often treated as a monolith, performance varied wildly. 
-                  <strong>GOOGL</strong> rallied <strong>+74%</strong> with "Bullish (Confirmed)" signals on 59% of trading days. 
-                  Meanwhile, <strong>META</strong> fell <strong>-10%</strong>, flagged repeatedly by the model for "Bearish Divergence" (rising price vs. falling flow).
+                  <strong>Insight:</strong> Returns varied wildly across the cohort. <strong>GOOGL (+62%)</strong> and <strong>NVDA (+31%)</strong> did the heavy lifting, while <strong>AMZN (+3%)</strong> effectively flatlined. 
+                  The pipeline's momentum logic correctly identified <strong>META</strong>'s lagging strength early, flagging "Bearish Divergence" on 112 separate trading days.
                 </li>
               </ul>
             
-              <h4>2. Flight-to-Safety Validation</h4>
+              <h4>2. The "Wall of Worry" Rally</h4>
               <ul>
                 <li>
-                  <strong>Bonds as Hedge:</strong> During the "Peak Fear" event on Oct 20 (Put/Call Ratio spiked to 1.79), 
-                  <strong>TLT</strong> (Treasuries) showed a correlation of <strong>-0.59</strong> against SPY. 
-                  The "Macro Gravity" model correctly identified this as a risk-off regime where bonds act as a valid hedge.
+                  <strong>Insight:</strong> The sentiment model flagged <strong>105 days of "Fear"</strong> (High Put/Call Ratios) for SPY, versus only <strong>1 day of "Greed."</strong> 
+                  Despite this persistent hedging activity, the S&P 500 rallied <strong>+16.4%</strong>. The data portrays a market that climbed higher specifically <em>because</em> investors remained defensive.
                 </li>
               </ul>
             
-              <h4>3. The "YOLO" Index</h4>
+              <h4>3. Structural Shift: The 7-Day Horizon</h4>
               <ul>
                 <li>
-                  <strong>Gamma Risk:</strong> A staggering <strong>67.1%</strong> of top-tier options volume was concentrated in contracts expiring in 
-                  <strong>less than 7 days</strong>. The single most active contract wasn't a hedge, but a speculative 
-                  <strong>TSLA $500 Call</strong> (1.5M contracts), highlighting extreme structural fragility.
+                  <strong>Insight:</strong> Long-dated investment is being replaced by short-dated speculation. <strong>61.3%</strong> of top-tier options volume expired in <strong>less than 7 days</strong>.
+                  This "Gamma dominance" requires pipelines capable of ingesting and aggregating millions of ephemeral contract rows daily—a key stress test this platform passed.
                 </li>
               </ul>
 
