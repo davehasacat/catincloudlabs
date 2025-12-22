@@ -101,7 +101,7 @@
       // Annotations for Quadrants
       annotations: [
         {
-          x: 5, y: 60, 
+          x: 5, y: 70, 
           xref: 'x', yref: 'y',
           text: "<b>The Gamma Casino</b><br>(0-DTE Speculation)",
           showarrow: true,
