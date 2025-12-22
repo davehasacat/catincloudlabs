@@ -101,7 +101,8 @@
         y: 1.15, 
         x: 0.5,
         xanchor: 'center',
-        font: { size: isMobile ? 9 : 11 }
+        font: { size: isMobile ? 10 : 11 }, // Slightly bumped size
+        itemsizing: 'constant'              // KEY FIX: Keeps legend dots readable!
       },
       plot_bgcolor: "transparent",
       paper_bgcolor: "transparent",
