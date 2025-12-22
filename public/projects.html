@@ -98,15 +98,34 @@
             
             <div class="callout-alert">
               <span class="callout-alert-title">2025 Year in Review Snapshot</span>
-              The dashboards below are not live feeds. They render a static dataset covering <strong>Jan 1 - Dec 19, 2025</strong>.
-              This demonstrates the pipeline's ability to aggregate high-velocity historical data into finalized "Gold" reporting layers.
+              The dashboards below are not live feeds. They render a static dataset covering 
+              <strong>Jan 1 - Dec 19, 2025</strong>. This demonstrates the pipeline's ability 
+              to aggregate high-velocity historical data into finalized "Gold" reporting layers.
             </div>
 
             <p class="chart-bridge">
               The data flows from <code>S3 (Raw) &rarr; Snowflake (Staging/Int) &rarr; dbt Marts &rarr; S3 (JSON)</code>.
             </p>
+
+            <div class="ticker-features-shell">
+              <div class="ticker-features-latest">
+                <h3 class="ticker-features-heading">Pipeline Scale</h3>
+                <p class="ticker-features-subtitle">Processing metrics for the 2025 fiscal year</p>
+                <dl class="ticker-features-summary-grid">
+                  <dt>Total Volume Analyzed</dt>
+                  <dd>1.99 Billion</dd>
+                  <dt>Trading Days</dt>
+                  <dd>235</dd>
+                  <dt>Aggregated Rows</dt>
+                  <dd>2,960</dd>
+                  <dt>Tickers Tracked</dt>
+                  <dd>15</dd>
+                </dl>
+              </div>
+            </div>
             
             <div class="dashboard-grid">
+              
               <div class="chart-container">
                 <div class="chart-header">
                   <h3 class="chart-title">Mag 7 Momentum <span class="snapshot-badge">Snapshot</span></h3>
@@ -162,7 +181,7 @@
               <h4>1. Mag 7 Fracture: The Basket Trade is Dead</h4>
               <ul>
                 <li>
-                  Returns varied wildly across the cohort. <strong>GOOGL (+62%)</strong> and <strong>NVDA (+31%)</strong> did the heavy lifting, while <strong>AMZN (+3%)</strong> effectively flatlined. 
+                  <strong>Insight:</strong> Returns varied wildly across the cohort. <strong>GOOGL (+62%)</strong> and <strong>NVDA (+31%)</strong> did the heavy lifting, while <strong>AMZN (+3%)</strong> effectively flatlined. 
                   The pipeline's momentum logic correctly identified <strong>META</strong>'s lagging strength early, flagging "Bearish Divergence" on 112 separate trading days.
                 </li>
               </ul>
@@ -170,7 +189,7 @@
               <h4>2. The "Wall of Worry" Rally</h4>
               <ul>
                 <li>
-                  The sentiment model flagged <strong>105 days of "Fear"</strong> (High Put/Call Ratios) for SPY, versus only <strong>1 day of "Greed."</strong> 
+                  <strong>Insight:</strong> The sentiment model flagged <strong>105 days of "Fear"</strong> (High Put/Call Ratios) for SPY, versus only <strong>1 day of "Greed."</strong> 
                   Despite this persistent hedging activity, the S&P 500 rallied <strong>+16.4%</strong>. The data portrays a market that climbed higher specifically <em>because</em> investors remained defensive.
                 </li>
               </ul>
@@ -178,7 +197,7 @@
               <h4>3. Structural Shift: The 7-Day Horizon</h4>
               <ul>
                 <li>
-                  Long-dated investment is being replaced by short-dated speculation. <strong>61.3%</strong> of top-tier options volume expired in <strong>less than 7 days</strong>.
+                  <strong>Insight:</strong> Long-dated investment is being replaced by short-dated speculation. <strong>61.3%</strong> of top-tier options volume expired in <strong>less than 7 days</strong>.
                   This "Gamma dominance" requires pipelines capable of ingesting and aggregating millions of ephemeral contract rows daily—a key stress test this platform passed.
                 </li>
               </ul>
