@@ -2272,7 +2272,6 @@ figure, .card { overflow: hidden; }
   line-height: 1.5;
   max-width: 65ch;
 }
-
 /* ==================================================================== */
 /* 12. PROJECT ALERTS & CHART EXPLAINERS                                */
 /* ==================================================================== */
@@ -2291,7 +2290,9 @@ figure, .card { overflow: hidden; }
   box-shadow: var(--shadow-sm);
 }
 
-/* CHANGED: Use a specific class instead of generic 'strong' tag */
+/* Specific class for the Header 
+   We use this class so we don't accidentally target all <strong> tags 
+*/
 .callout-alert-title {
   display: block;
   color: #b45309; /* Amber-700 */
@@ -2299,6 +2300,15 @@ figure, .card { overflow: hidden; }
   margin-bottom: 0.35rem;
   font-size: 1.05rem;
   letter-spacing: -0.01em;
+}
+
+/* Reset for standard bold text inside the alert 
+   Ensures the date range stays inline 
+*/
+.callout-alert strong {
+  font-weight: 600;
+  color: inherit;
+  display: inline; /* Forces inline behavior */
 }
 
 /* Descriptive blurb under chart headers */
