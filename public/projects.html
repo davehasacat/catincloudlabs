@@ -125,7 +125,15 @@
                 <p class="ticker-features-footer">
                   <strong>Unified Lineage:</strong> All downstream marts originate from a single intermediate join (<code>int_massive__stocks_options_joined</code>), consolidating <strong>6.6 million rows</strong> of harmonized data into a consistent source of truth.
                 </p>
-              </div>
+
+                <div class="code-snapshot">
+                  <div class="code-snapshot-label">DAG Lineage Snapshot</div>
+                  <button type="button" class="code-snapshot-btn" data-panel-open data-caption="Unified dbt DAG: Merging Stocks and Options into a single granular fact table." aria-label="Click to zoom the dbt lineage graph">
+                    <img src="/assets/diagrams/dbt-stocks-options-joined.png" alt="dbt lineage graph showing the join of stocks and options models" class="code-snapshot-img" width="1080" height="1350" loading="lazy" decoding="async">
+                    <span class="proof-zoom-pill">Click to zoom</span>
+                  </button>
+                </div>
+                </div>
             </div>
             
             <div class="dashboard-grid">
