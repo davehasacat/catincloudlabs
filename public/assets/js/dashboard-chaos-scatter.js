@@ -101,12 +101,17 @@
       // Annotations for Quadrants
       annotations: [
         {
-          x: 2, y: 30, 
+          x: 5, y: 60, 
           xref: 'x', yref: 'y',
           text: "<b>The Gamma Casino</b><br>(0-DTE Speculation)",
-          showarrow: false,
-          font: { color: "#ef4444", size: 10 },
-          align: "left"
+          showarrow: true,
+          arrowhead: 2,
+          ax: -40,       // tail of arrow moves left towards the cluster
+          ay: 10,
+          font: { color: "#ef4444", size: 11 },
+          align: "left",
+          bgcolor: "rgba(255, 255, 255, 0.8)", // Optional: adds readability over grid lines
+          borderpad: 4
         }
       ]
     };
