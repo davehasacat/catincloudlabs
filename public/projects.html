@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Projects - CatInCloud Labs</title>
 
-  <meta name="description" content="See how CatInCloud Labs builds calm, reliable, enterprise-grade stock-market ELT pipelines on AWS, MWAA, Snowflake, and dbt." />
-  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta name="description" content="Live data engineering projects: Options market data pipelines (SPY, GME, NVDA), real-time dashboards, and 'Core & Chaos' architecture demos." />
+  <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://catincloudlabs.com/projects" />
 
   <meta property="og:title" content="Projects - CatInCloud Labs" />
-  <meta property="og:description" content="See how CatInCloud Labs builds calm, reliable, enterprise-grade stock-market ELT pipelines on AWS, MWAA, Snowflake, and dbt." />
+  <meta property="og:description" content="Live data dashboards and engineering demos. See the 'Core & Chaos' architecture in action." />
   <meta property="og:image" content="https://catincloudlabs.com/assets/brand/social-card.v2.png" />
   <meta name="twitter:card" content="summary_large_image" />
 
@@ -21,6 +21,12 @@
   <meta name="color-scheme" content="light" />
 
   <link rel="stylesheet" href="/assets/css/styles.css" />
+  
+  <script src="https://cdn.plot.ly/plotly-2.27.0.min.js" defer></script>
+  <script src="/assets/js/dashboard-mag7-momentum.js" defer></script>
+  <script src="/assets/js/dashboard-macro-gravity.js" defer></script>
+  <script src="/assets/js/dashboard-top-contracts.js" defer></script>
+  <script src="/assets/js/footer-year-theme.js" defer></script>
 </head>
 
 <body class="page--projects">
@@ -34,7 +40,7 @@
       <nav class="menu" aria-label="Primary">
         <a href="/">Home</a>
         <a href="/about">About</a>
-        <a href="/projects" class="button ghost active" aria-current="page">Projects</a>
+        <a href="/projects" class="active" aria-current="page">Projects</a>
         <a href="/services">Services</a>
         <a href="/blog">Blog</a>
         <a href="/contact#contact-form" class="button ghost">Contact</a>
@@ -46,176 +52,137 @@
     <section class="hero">
       <div class="container hero-simple">
         <div class="stack stack--hero">
-          <h1 class="title">Enterprise-Grade Data Engineering. <br>Calm, Reliable, & Scalable.</h1>
+          <div class="kicker">Projects</div>
+          <h1 class="title">The Core &amp; Chaos Portfolio</h1>
           <p class="subtitle">
-            I take data environments from zero to production. Whether building from scratch or untangling code, I deliver calm, audit-ready pipelines on a modern stack.
+            Live data pipelines modeling the stability of the S&P 500 (Core) alongside the unpredictability of Meme stocks (Chaos).
           </p>
+          <div class="actions">
+            <a href="/blog/the-steady-state-architecture" class="button ghost">Read the Architecture Log &rarr;</a>
+          </div>
         </div>
       </div>
     </section>
 
+    <div class="hero-subhead-pill reveal">
+      <div class="hero-subhead-kicker">Status</div>
+      <div class="hero-subhead-text">
+        Pipeline Active · <strong>15 Tickers</strong> · Daily Ingest (02:30 CST)
+      </div>
+    </div>
+
     <section class="section">
       <div class="container">
+        
         <div class="stack stack--section">
-          
-          <article class="card reveal card--narrow">
-            <h2>Private-VPC Data Plane Architecture</h2>
-            <p>
-              This reference architecture demonstrates a fully private data plane. It ingests high-velocity market data into a hardened Virtual Private Cloud (VPC), orchestrates transformations via Airflow (MWAA), and delivers audit-ready datasets in Snowflake. Zero public exposure, 100% automated.
-            </p>
-            <p class="muted">
-              I adapt this exact pattern for clients who need a data platform that is secure by default and easy to maintain.
-            </p>
-
-            <div class="stack stack--section">
-              <div class="stack stack--tight">
-                <h3>Architecture and security posture</h3>
-                <p class="chart-subtitle">
-                  The high-level architecture and security/observability diagrams below show how the pieces fit together: Private VPC endpoints, KMS encryption, and least-privilege IAM roles.
-                </p>
-              </div>
-
-              <figure id="diagram-architecture" class="diagram-figure">
-                <button type="button" class="proof-figure__button" data-panel-open data-caption="High-level data flow: ingest market data, land it in S3, transform with dbt, &amp; serve from Snowflake." aria-label="Click to zoom the architecture flow diagram">
-                  <img src="/assets/diagrams/architecture-flow.v5.svg" alt="Architecture flow diagram showing MWAA orchestrating S3 to Snowflake via COPY, with dbt building marts" class="diagram" width="1160" height="300" loading="lazy" decoding="async" sizes="(max-width: 700px) 100vw, 1160px" />
-                  <span class="proof-zoom-pill">Click to zoom</span>
-                </button>
-                <figcaption class="diagram-caption">High-level data flow: ingest market data, land it in S3, transform with dbt, &amp; serve from Snowflake.</figcaption>
-              </figure>
-
-              <figure class="diagram-figure">
-                <button type="button" class="proof-figure__button" data-panel-open data-caption="High-level security view: client VPN into a private VPC; MWAA reaches encrypted S3 via gateway endpoint &amp; orchestrates Snowflake via outbound NAT." aria-label="Click to zoom the security and observability diagram">
-                  <img src="/assets/diagrams/security-observability.v5.svg" alt="Private VPC with S3 Gateway Endpoint; MWAA orchestrates Snowflake load; outbound-only egress" class="diagram" width="1160" height="300" loading="lazy" decoding="async" sizes="(max-width: 700px) 100vw, 1160px" />
-                  <span class="proof-zoom-pill">Click to zoom</span>
-                </button>
-                <figcaption class="diagram-caption">High-level security view: client VPN into a private VPC.</figcaption>
-              </figure>
-            </div>
-          </article>
-
-          <article class="card reveal card--narrow full-width">
+          <div class="section-intro">
             <h2>Live Data Snapshots</h2>
-            <p>
-              The charts below are rendered from <strong>static JSON snapshots</strong> generated by the Airflow pipeline. 
-              The data flows from <code>S3 (Raw) &rarr; Snowflake (Staging/Int) &rarr; dbt Marts &rarr; S3 (JSON)</code>.
+            <p class="muted">
+              The charts below are rendered from <strong>static JSON snapshots</strong> generated by the Airflow pipeline.
+              The data flows from S3 (Raw) &rarr; Snowflake (Staging/Int) &rarr; dbt Marts &rarr; S3 (JSON).
             </p>
+          </div>
+
+          <div class="dashboard-grid">
             
-            <div class="dashboard-grid">
-              <div class="chart-container">
-                <div class="chart-header">
-                  <h3 class="chart-title">Mag 7 Momentum <span class="snapshot-badge">Snapshot</span></h3>
-                  <span class="chart-meta">Bullish/Bearish Flow Signals vs. Price</span>
-                </div>
-                <div id="mag7-chart" class="chart-target"></div>
+            <div class="chart-container reveal">
+              <div class="chart-header">
+                <h3 class="chart-title">
+                  Mag 7 Momentum <span class="snapshot-badge">Snapshot</span>
+                </h3>
+                <span class="chart-meta">Bullish/Bearish Flow Signals vs. Price</span>
               </div>
-
-              <div class="chart-container">
-                <div class="chart-header">
-                  <h3 class="chart-title">Macro Gravity <span class="snapshot-badge">Snapshot</span></h3>
-                  <span class="chart-meta">SPY Correlation & Put/Call Regimes</span>
-                </div>
-                <div id="macro-chart" class="chart-target"></div>
-              </div>
-
-              <div class="chart-container full-width">
-                <div class="chart-header">
-                  <h3 class="chart-title">Top 25 Options Contracts <span class="snapshot-badge">Snapshot</span></h3>
-                  <span class="chart-meta">Highest volume contracts across Mag 7, Macro, and Chaos tickers</span>
-                </div>
-                <div id="top-contracts-chart" class="chart-target"></div>
+              <div id="mag7-chart" class="chart-target">
+                <div class="chart-loading">Loading market data...</div>
               </div>
             </div>
 
-            <div class="insights-panel">
-              <div class="stack stack--tight">
-                <h3>Automated Regime Detection: Late 2025 Snapshot</h3>
-                <p class="insights-code">
-                  // Source: dbt_prod.marts.market_regime_signals<br>
-                  // Logic: Statistical anomaly detection (Z-Score > 2.5)
-                </p>
+            <div class="chart-container reveal delay-100">
+              <div class="chart-header">
+                <h3 class="chart-title">
+                  Macro Gravity <span class="snapshot-badge">Snapshot</span>
+                </h3>
+                <span class="chart-meta">SPY Correlation &amp; Put/Call Regimes</span>
+              </div>
+              <div id="macro-chart" class="chart-target">
+                <div class="chart-loading">Loading market data...</div>
+              </div>
+            </div>
+
+            <div class="chart-container full-width reveal delay-200">
+              <div class="chart-header">
+                <h3 class="chart-title">
+                  Top 25 Options Contracts <span class="snapshot-badge">Snapshot</span>
+                </h3>
+                <span class="chart-meta">Highest volume contracts across Mag 7, Macro, and Meme tickers</span>
               </div>
               
-              <p>
-                The following observations are not editorial opinions. They are the natural-language outputs of the pipeline's 
-                anomaly detection logic, flagged when <strong>dbt data tests</strong> breached their defined thresholds during the snapshot window:
-              </p>
-            
-              <h4>1. The "Mag 7" Trade is Fractured</h4>
-              <ul>
-                <li>
-                  <strong>Divergence:</strong> While the basket is often treated as a monolith, performance varied wildly. 
-                  <strong>GOOGL</strong> rallied <strong>+74%</strong> with "Bullish (Confirmed)" signals on 59% of trading days. 
-                  Meanwhile, <strong>META</strong> fell <strong>-10%</strong>, flagged repeatedly by the model for "Bearish Divergence" (rising price vs. falling flow).
-                </li>
-              </ul>
-            
-              <h4>2. Flight-to-Safety Validation</h4>
-              <ul>
-                <li>
-                  <strong>Bonds as Hedge:</strong> During the "Peak Fear" event on Oct 20 (Put/Call Ratio spiked to 1.79), 
-                  <strong>TLT</strong> (Treasuries) showed a correlation of <strong>-0.59</strong> against SPY. 
-                  The "Macro Gravity" model correctly identified this as a risk-off regime where bonds act as a valid hedge.
-                </li>
-              </ul>
-            
-              <h4>3. The "YOLO" Index</h4>
-              <ul>
-                <li>
-                  <strong>Gamma Risk:</strong> A staggering <strong>67.1%</strong> of top-tier options volume was concentrated in contracts expiring in 
-                  <strong>less than 7 days</strong>. The single most active contract wasn't a hedge, but a speculative 
-                  <strong>TSLA $500 Call</strong> (1.5M contracts), highlighting extreme structural fragility.
-                </li>
-              </ul>
+              <div class="options-table-controls">
+                <label for="ticker-filter">Filter Ticker:</label>
+                <select id="ticker-filter" class="input input-filter">
+                  <option value="ALL">All Tickers</option>
+                  <option value="NVDA">NVDA</option>
+                  <option value="SPY">SPY</option>
+                  <option value="GME">GME</option>
+                  <option value="TSLA">TSLA</option>
+                  <option value="AAPL">AAPL</option>
+                  <option value="AMD">AMD</option>
+                  <option value="AMZN">AMZN</option>
+                  <option value="MSFT">MSFT</option>
+                </select>
+              </div>
 
-              <p class="insights-disclaimer">
-                <strong>Disclaimer:</strong> None of this is to be taken as financial advice. All data and signals presented are strictly for technical demonstration of data pipeline capabilities.
-              </p>
+              <div class="options-table-wrapper">
+                <table class="options-table" id="options-table">
+                  <thead>
+                    <tr>
+                      <th>Ticker</th>
+                      <th>Expiry</th>
+                      <th>Type</th>
+                      <th>Strike</th>
+                      <th>Last Price</th>
+                      <th>Volume</th>
+                      <th>Open Int</th>
+                      <th>IV</th>
+                    </tr>
+                  </thead>
+                  <tbody id="options-table-body">
+                    <tr><td colspan="8" class="table-loading-cell">Loading table data...</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              
+              <div class="table-scroll-hint center">
+                <small>&larr; Swipe table to view columns &rarr;</small>
+              </div>
+
+              <div class="options-table-pagination-root">
+                <div class="options-table-pagination">
+                  <span id="table-status">Showing 0-0 of 0</span>
+                  <div class="options-table-pagination__controls">
+                    <button class="options-table-pagination__btn" id="btn-prev" disabled>&larr; Prev</button>
+                    <button class="options-table-pagination__btn" id="btn-next" disabled>Next &rarr;</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div> <article class="card card--cta reveal">
+            <h3>Want to build this?</h3>
+            <p>
+              This entire stack (Airflow, Snowflake, dbt) is designed to run with minimal maintenance.
+              I help FinTech startups build similar "Core & Chaos" architectures.
+            </p>
+            <div class="stack center mt-6">
+               <a href="/contact#contact-form" class="button primary">Book a Strategy Call</a>
+               <a href="/services" class="button ghost">View Services</a>
             </div>
           </article>
 
-          <article class="card reveal card--narrow">
-            <h2>Infrastructure as Code & Compliance</h2>
-            <p>
-              The platform runs on a hardened Airflow deployment inside AWS MWAA. It connects securely to ECR, CloudWatch Logs, KMS,
-              Secrets Manager, and S3 exclusively through VPC endpoints, ensuring data never traverses the public internet.
-            </p>
-          </article>
-
-          <article class="card reveal card--narrow">
-            <h2>AI-Ready Foundation</h2>
-            <p>
-              The cleanest ML models start with clean data. This pipeline's rigorous "Silver" and "Gold" modeling layers in dbt provide the structured, history-preserving datasets required for predictive modeling and backtesting strategies immediately.
-            </p>
-          </article>
         </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <article class="card reveal card--narrow card--cta">
-          <h2>Interested in something similar?</h2>
-          <p>If these examples look close to what you need in your own stack, the next step is a short discovery call.</p>
-          <div class="stack stack--tight">
-            <a href="/contact#contact-form" class="button primary">Book a discovery call</a>
-          </div>
-        </article>
       </div>
     </section>
   </main>
-
-  <div id="lightbox" class="lb" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-label="Image viewer">
-    <div class="lb__backdrop" data-close></div>
-    <div class="lb__stage" role="document">
-      <button class="lb__close" type="button" title="Close (Esc)" aria-label="Close" data-close>&times;</button>
-      <img class="lb__img" alt="" />
-      <p class="lb__caption" id="lb-caption"></p>
-      <div class="lb__nav" aria-hidden="true">
-        <button class="lb__prev" type="button" title="Previous (←)" aria-label="Previous image">&#10094;</button>
-        <button class="lb__next" type="button" title="Next (→)" aria-label="Next image">&#10095;</button>
-      </div>
-    </div>
-  </div>
 
   <footer class="footer">
     <div class="container inner center">
@@ -225,16 +192,9 @@
         <a href="/security">Security</a> ·
         <a href="/privacy">Privacy</a> ·
         <a href="/terms">Terms</a> ·
-        <a href="/contact#contact-form" aria-label="Contact CatInCloud Labs">Contact</a>
+        <a href="/contact#contact-form">Contact</a>
       </div>
     </div>
-    <script src="/assets/js/footer-year-theme.js" defer></script>
-    <script src="/assets/js/proof-panel-lightbox.js" defer></script>
-    <script src="/assets/js/plotly-2.35.3.min.js" defer></script>
-    
-    <script src="/assets/js/dashboard-mag7-momentum.js" defer></script>
-    <script src="/assets/js/dashboard-macro-gravity.js" defer></script>
-    <script src="/assets/js/dashboard-top-contracts.js" defer></script>
   </footer>
 </body>
 </html>
