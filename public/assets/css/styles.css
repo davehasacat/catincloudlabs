@@ -2319,3 +2319,28 @@ figure, .card { overflow: hidden; }
   line-height: 1.5;
   max-width: 65ch;
 }
+
+/* ==================================================================== */
+/* 13. COMPONENT UPDATES (Ticker Footer)                                */
+/* ==================================================================== */
+
+.ticker-features-footer {
+  margin-top: 1.1rem;
+  padding-top: 0.85rem;
+  border-top: 1px solid var(--gray-200); /* Matches existing border tokens */
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+.ticker-features-footer strong {
+  font-weight: 600;
+  color: var(--gray-700); /* Slightly darker than muted text for contrast */
+}
+
+.ticker-features-summary-grid .unit {
+  font-size: 0.85em;
+  font-weight: 400;
+  color: var(--text-muted);
+  margin-left: 0.2rem;
+}
