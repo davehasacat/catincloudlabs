@@ -38,16 +38,15 @@
     uniqueTickers.forEach(function(ticker) {
       var tickerRows = rawData.filter(d => d.underlying_ticker === ticker);
       
-      // We only want to plot if there's significant volume to avoid noise? 
-      // No, let's plot everything but size bubbles by volume.
-      
       var x = tickerRows.map(d => calculateDTE(d.expiration_date));
       var y = tickerRows.map(d => d.signed_moneyness_pct * 100); // Convert to %
       var sizes = tickerRows.map(d => d.total_volume);
+      
+      // Formatting Updates: Commas for volume, Currency for strike
       var text = tickerRows.map(d => 
         `<b>${d.option_symbol}</b><br>` +
         `Vol: ${d.total_volume.toLocaleString()}<br>` +
-        `Strike: $${d.strike_price}<br>` +
+        `Strike: $${d.strike_price.toFixed(2)}<br>` +
         `Expiry: ${d.expiration_date}`
       );
 
@@ -129,7 +128,7 @@
       .then(function(json) {
         rawData = json;
         
-        // Extract unique tickers and sort (put Chaos tickers first if possible, or just alpha)
+        // Extract unique tickers and sort
         var set = new Set(rawData.map(function(d) { return d.underlying_ticker; }));
         uniqueTickers = Array.from(set).sort();
 
