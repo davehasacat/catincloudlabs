@@ -3300,7 +3300,7 @@
     "underlying_ticker": "IWM",
     "close_price": 221.43,
     "put_call_ratio": 1.622483,
-    "correlation_to_spy_20d": 0.7950441686009837,
+    "correlation_to_spy_20d": 0.8000032371497373,
     "sentiment_regime": "Fear (High Hedging)"
   },
   {
@@ -3308,7 +3308,7 @@
     "underlying_ticker": "QQQ",
     "close_price": 564.17,
     "put_call_ratio": 1.489304,
-    "correlation_to_spy_20d": 0.8593173056606154,
+    "correlation_to_spy_20d": 0.8637688699592675,
     "sentiment_regime": "Fear (High Hedging)"
   },
   {
@@ -3316,7 +3316,7 @@
     "underlying_ticker": "SPY",
     "close_price": 628.77,
     "put_call_ratio": 1.459015,
-    "correlation_to_spy_20d": 0.9999999999999998,
+    "correlation_to_spy_20d": 1.0,
     "sentiment_regime": "Fear (High Hedging)"
   },
   {
@@ -3324,7 +3324,7 @@
     "underlying_ticker": "TLT",
     "close_price": 86.0,
     "put_call_ratio": 0.775977,
-    "correlation_to_spy_20d": 0.5360699117929092,
+    "correlation_to_spy_20d": 0.5420533730138545,
     "sentiment_regime": "Neutral"
   },
   {
@@ -3332,7 +3332,7 @@
     "underlying_ticker": "IWM",
     "close_price": 222.33,
     "put_call_ratio": 1.789615,
-    "correlation_to_spy_20d": 0.7991321890975698,
+    "correlation_to_spy_20d": 0.7841616990753238,
     "sentiment_regime": "Fear (High Hedging)"
   },
   {
@@ -3340,7 +3340,7 @@
     "underlying_ticker": "QQQ",
     "close_price": 561.26,
     "put_call_ratio": 1.032417,
-    "correlation_to_spy_20d": 0.8651828127822642,
+    "correlation_to_spy_20d": 0.8789833438213691,
     "sentiment_regime": "Neutral"
   },
   {
@@ -3348,7 +3348,7 @@
     "underlying_ticker": "SPY",
     "close_price": 627.58,
     "put_call_ratio": 1.167209,
-    "correlation_to_spy_20d": 1.0,
+    "correlation_to_spy_20d": 1.0000000000000002,
     "sentiment_regime": "Neutral"
   },
   {
@@ -3356,7 +3356,7 @@
     "underlying_ticker": "TLT",
     "close_price": 85.24,
     "put_call_ratio": 0.699841,
-    "correlation_to_spy_20d": 0.5789119603659529,
+    "correlation_to_spy_20d": 0.5633005669815722,
     "sentiment_regime": "Neutral"
   },
   {
@@ -3364,7 +3364,7 @@
     "underlying_ticker": "IWM",
     "close_price": 223.92,
     "put_call_ratio": 1.655772,
-    "correlation_to_spy_20d": 0.7924723851464412,
+    "correlation_to_spy_20d": 0.7790810707806602,
     "sentiment_regime": "Fear (High Hedging)"
   },
   {
@@ -3372,7 +3372,7 @@
     "underlying_ticker": "QQQ",
     "close_price": 561.8,
     "put_call_ratio": 1.400888,
-    "correlation_to_spy_20d": 0.8613644055098845,
+    "correlation_to_spy_20d": 0.8762507910274396,
     "sentiment_regime": "Fear (High Hedging)"
   },
   {
@@ -3380,7 +3380,7 @@
     "underlying_ticker": "SPY",
     "close_price": 628.04,
     "put_call_ratio": 1.261807,
-    "correlation_to_spy_20d": 0.9999999999999997,
+    "correlation_to_spy_20d": 0.9999999999999999,
     "sentiment_regime": "Fear (High Hedging)"
   },
   {
@@ -3388,7 +3388,7 @@
     "underlying_ticker": "TLT",
     "close_price": 85.11,
     "put_call_ratio": 1.152675,
-    "correlation_to_spy_20d": 0.6063704961382911,
+    "correlation_to_spy_20d": 0.5846576514156584,
     "sentiment_regime": "Neutral"
   },
   {
@@ -3396,7 +3396,7 @@
     "underlying_ticker": "IWM",
     "close_price": 221.02,
     "put_call_ratio": 1.593981,
-    "correlation_to_spy_20d": 0.7843328144341547,
+    "correlation_to_spy_20d": 0.7605567979172009,
     "sentiment_regime": "Fear (High Hedging)"
   },
   {
@@ -3404,7 +3404,7 @@
     "underlying_ticker": "QQQ",
     "close_price": 557.29,
     "put_call_ratio": 1.099102,
-    "correlation_to_spy_20d": 0.8562108375825945,
+    "correlation_to_spy_20d": 0.8743816490995742,
     "sentiment_regime": "Neutral"
   },
   {
@@ -3420,7 +3420,7 @@
     "underlying_ticker": "TLT",
     "close_price": 85.13,
     "put_call_ratio": 0.963737,
-    "correlation_to_spy_20d": 0.6107800847962561,
+    "correlation_to_spy_20d": 0.5707355042958553,
     "sentiment_regime": "Neutral"
   },
   {
@@ -3428,7 +3428,7 @@
     "underlying_ticker": "IWM",
     "close_price": 218.82,
     "put_call_ratio": 1.579436,
-    "correlation_to_spy_20d": 0.7886054000126832,
+    "correlation_to_spy_20d": 0.7804443107527848,
     "sentiment_regime": "Fear (High Hedging)"
   },
   {
@@ -3436,7 +3436,7 @@
     "underlying_ticker": "QQQ",
     "close_price": 556.72,
     "put_call_ratio": 1.017551,
-    "correlation_to_spy_20d": 0.8640516150339985,
+    "correlation_to_spy_20d": 0.9027739348281424,
     "sentiment_regime": "Neutral"
   },
   {
@@ -3444,7 +3444,7 @@
     "underlying_ticker": "SPY",
     "close_price": 622.14,
     "put_call_ratio": 0.935737,
-    "correlation_to_spy_20d": 1.0000000000000002,
+    "correlation_to_spy_20d": 0.9999999999999998,
     "sentiment_regime": "Neutral"
   },
   {
@@ -3452,7 +3452,7 @@
     "underlying_ticker": "TLT",
     "close_price": 85.01,
     "put_call_ratio": 0.635726,
-    "correlation_to_spy_20d": 0.6097318607521665,
+    "correlation_to_spy_20d": 0.28381733200994747,
     "sentiment_regime": "Neutral"
   },
   {
@@ -3460,7 +3460,7 @@
     "underlying_ticker": "IWM",
     "close_price": 223.19,
     "put_call_ratio": 1.089542,
-    "correlation_to_spy_20d": 0.7529789951887853,
+    "correlation_to_spy_20d": 0.774624705330127,
     "sentiment_regime": "Neutral"
   },
   {
@@ -3468,7 +3468,7 @@
     "underlying_ticker": "QQQ",
     "close_price": 556.21,
     "put_call_ratio": 1.385659,
-    "correlation_to_spy_20d": 0.8955701991725602,
+    "correlation_to_spy_20d": 0.9279897991521333,
     "sentiment_regime": "Fear (High Hedging)"
   },
   {
@@ -3484,7 +3484,7 @@
     "underlying_ticker": "TLT",
     "close_price": 85.61,
     "put_call_ratio": 0.969987,
-    "correlation_to_spy_20d": 0.5836419637885405,
+    "correlation_to_spy_20d": 0.12292791932873569,
     "sentiment_regime": "Neutral"
   },
   {
@@ -3492,7 +3492,7 @@
     "underlying_ticker": "IWM",
     "close_price": 221.7,
     "put_call_ratio": 1.881888,
-    "correlation_to_spy_20d": 0.7614285117951912,
+    "correlation_to_spy_20d": 0.807660670824034,
     "sentiment_regime": "Fear (High Hedging)"
   },
   {
@@ -3500,7 +3500,7 @@
     "underlying_ticker": "QQQ",
     "close_price": 554.2,
     "put_call_ratio": 1.197168,
-    "correlation_to_spy_20d": 0.898137533783282,
+    "correlation_to_spy_20d": 0.9384259949321153,
     "sentiment_regime": "Neutral"
   },
   {
@@ -3508,7 +3508,7 @@
     "underlying_ticker": "SPY",
     "close_price": 623.62,
     "put_call_ratio": 1.141773,
-    "correlation_to_spy_20d": 0.9999999999999997,
+    "correlation_to_spy_20d": 1.0,
     "sentiment_regime": "Neutral"
   },
   {
@@ -3516,7 +3516,7 @@
     "underlying_ticker": "TLT",
     "close_price": 85.79,
     "put_call_ratio": 0.75714,
-    "correlation_to_spy_20d": 0.5826166788344262,
+    "correlation_to_spy_20d": 0.08502973592474412,
     "sentiment_regime": "Neutral"
   },
   {
@@ -3524,7 +3524,7 @@
     "underlying_ticker": "IWM",
     "close_price": 224.8,
     "put_call_ratio": 1.067773,
-    "correlation_to_spy_20d": 0.7127646258849399,
+    "correlation_to_spy_20d": 0.800066530918604,
     "sentiment_regime": "Neutral"
   },
   {
@@ -3532,7 +3532,7 @@
     "underlying_ticker": "QQQ",
     "close_price": 555.45,
     "put_call_ratio": 0.871631,
-    "correlation_to_spy_20d": 0.8996255874265894,
+    "correlation_to_spy_20d": 0.9396167922612849,
     "sentiment_regime": "Neutral"
   },
   {
@@ -3548,7 +3548,7 @@
     "underlying_ticker": "TLT",
     "close_price": 86.99,
     "put_call_ratio": 0.707043,
-    "correlation_to_spy_20d": 0.4869588520881213,
+    "correlation_to_spy_20d": -0.011949639411507807,
     "sentiment_regime": "Neutral"
   },
   {
@@ -3556,7 +3556,7 @@
     "underlying_ticker": "IWM",
     "close_price": 223.65,
     "put_call_ratio": 1.517848,
-    "correlation_to_spy_20d": 0.7136528647387951,
+    "correlation_to_spy_20d": 0.8047078978263422,
     "sentiment_regime": "Fear (High Hedging)"
   },
   {
@@ -3564,7 +3564,7 @@
     "underlying_ticker": "QQQ",
     "close_price": 556.25,
     "put_call_ratio": 0.876311,
-    "correlation_to_spy_20d": 0.9147414916713529,
+    "correlation_to_spy_20d": 0.950902942305853,
     "sentiment_regime": "Neutral"
   },
   {
@@ -3580,7 +3580,7 @@
     "underlying_ticker": "TLT",
     "close_price": 86.93,
     "put_call_ratio": 0.506101,
-    "correlation_to_spy_20d": 0.4884950604234094,
+    "correlation_to_spy_20d": -0.027967215086095884,
     "sentiment_regime": "Greed (Complacency)"
   },
   {
@@ -3588,7 +3588,7 @@
     "underlying_ticker": "IWM",
     "close_price": 221.25,
     "put_call_ratio": 1.015476,
-    "correlation_to_spy_20d": 0.7053500807000896,
+    "correlation_to_spy_20d": 0.7991273615802287,
     "sentiment_regime": "Neutral"
   },
   {
@@ -3596,7 +3596,7 @@
     "underlying_ticker": "QQQ",
     "close_price": 552.34,
     "put_call_ratio": 1.084706,
-    "correlation_to_spy_20d": 0.9130836984062207,
+    "correlation_to_spy_20d": 0.9506999592273099,
     "sentiment_regime": "Neutral"
   },
   {
@@ -3604,7 +3604,7 @@
     "underlying_ticker": "SPY",
     "close_price": 620.34,
     "put_call_ratio": 1.127717,
-    "correlation_to_spy_20d": 0.9999999999999999,
+    "correlation_to_spy_20d": 0.9999999999999998,
     "sentiment_regime": "Neutral"
   },
   {
@@ -3612,7 +3612,7 @@
     "underlying_ticker": "TLT",
     "close_price": 86.03,
     "put_call_ratio": 0.508421,
-    "correlation_to_spy_20d": 0.47664630228785554,
+    "correlation_to_spy_20d": -0.0626878812848305,
     "sentiment_regime": "Greed (Complacency)"
   },
   {
@@ -3620,7 +3620,7 @@
     "underlying_ticker": "IWM",
     "close_price": 219.73,
     "put_call_ratio": 1.794699,
-    "correlation_to_spy_20d": 0.7533524144423623,
+    "correlation_to_spy_20d": 0.8081360430018074,
     "sentiment_regime": "Fear (High Hedging)"
   },
   {
@@ -3628,7 +3628,7 @@
     "underlying_ticker": "QQQ",
     "close_price": 552.03,
     "put_call_ratio": 1.061515,
-    "correlation_to_spy_20d": 0.9145702659007601,
+    "correlation_to_spy_20d": 0.9513094072100796,
     "sentiment_regime": "Neutral"
   },
   {
@@ -3636,7 +3636,7 @@
     "underlying_ticker": "SPY",
     "close_price": 620.68,
     "put_call_ratio": 1.096388,
-    "correlation_to_spy_20d": 1.0,
+    "correlation_to_spy_20d": 1.0000000000000004,
     "sentiment_regime": "Neutral"
   },
   {
@@ -3644,7 +3644,7 @@
     "underlying_ticker": "TLT",
     "close_price": 86.14,
     "put_call_ratio": 0.810458,
-    "correlation_to_spy_20d": 0.48694817148607566,
+    "correlation_to_spy_20d": -0.07010487195756793,
     "sentiment_regime": "Neutral"
   },
   {
@@ -3652,7 +3652,7 @@
     "underlying_ticker": "IWM",
     "close_price": 223.08,
     "put_call_ratio": 0.806189,
-    "correlation_to_spy_20d": 0.5329530741564015,
+    "correlation_to_spy_20d": 0.7805803696355812,
     "sentiment_regime": "Neutral"
   },
   {
@@ -3660,7 +3660,7 @@
     "underlying_ticker": "QQQ",
     "close_price": 556.22,
     "put_call_ratio": 1.140763,
-    "correlation_to_spy_20d": 0.9107304718113856,
+    "correlation_to_spy_20d": 0.9515215915796859,
     "sentiment_regime": "Neutral"
   },
   {
@@ -3668,7 +3668,7 @@
     "underlying_ticker": "SPY",
     "close_price": 625.34,
     "put_call_ratio": 1.215319,
-    "correlation_to_spy_20d": 0.9999999999999999,
+    "correlation_to_spy_20d": 1.0,
     "sentiment_regime": "Fear (High Hedging)"
   },
   {
@@ -3676,7 +3676,7 @@
     "underlying_ticker": "TLT",
     "close_price": 86.97,
     "put_call_ratio": 0.44197,
-    "correlation_to_spy_20d": 0.2240772794697357,
+    "correlation_to_spy_20d": -0.3437887675551735,
     "sentiment_regime": "Greed (Complacency)"
   },
   {
@@ -3684,7 +3684,7 @@
     "underlying_ticker": "IWM",
     "close_price": 221.03,
     "put_call_ratio": 1.020756,
-    "correlation_to_spy_20d": 0.5245344353617857,
+    "correlation_to_spy_20d": 0.7788177983733369,
     "sentiment_regime": "Neutral"
   },
   {
@@ -3692,7 +3692,7 @@
     "underlying_ticker": "QQQ",
     "close_price": 550.8,
     "put_call_ratio": 1.204967,
-    "correlation_to_spy_20d": 0.9052585915213169,
+    "correlation_to_spy_20d": 0.9435764000783412,
     "sentiment_regime": "Fear (High Hedging)"
   },
   {
@@ -3708,7 +3708,7 @@
     "underlying_ticker": "TLT",
     "close_price": 87.58,
     "put_call_ratio": 0.97333,
-    "correlation_to_spy_20d": 0.41174750051771697,
+    "correlation_to_spy_20d": -0.3115561658359457,
     "sentiment_regime": "Neutral"
   },
   {
@@ -3716,7 +3716,7 @@
     "underlying_ticker": "IWM",
     "close_price": 218.01,
     "put_call_ratio": 0.937191,
-    "correlation_to_spy_20d": 0.5671595618937983,
+    "correlation_to_spy_20d": 0.7819632567047999,
     "sentiment_regime": "Neutral"
   },
   {
@@ -3724,7 +3724,7 @@
     "underlying_ticker": "QQQ",
     "close_price": 546.99,
     "put_call_ratio": 1.006605,
-    "correlation_to_spy_20d": 0.9145097947254407,
+    "correlation_to_spy_20d": 0.944800389557327,
     "sentiment_regime": "Neutral"
   },
   {
@@ -3732,7 +3732,7 @@
     "underlying_ticker": "SPY",
     "close_price": 617.65,
     "put_call_ratio": 1.010565,
-    "correlation_to_spy_20d": 1.0000000000000002,
+    "correlation_to_spy_20d": 1.0,
     "sentiment_regime": "Neutral"
   },
   {
@@ -3740,7 +3740,7 @@
     "underlying_ticker": "TLT",
     "close_price": 88.14,
     "put_call_ratio": 0.564798,
-    "correlation_to_spy_20d": 0.4697838856849919,
+    "correlation_to_spy_20d": -0.3101343230652122,
     "sentiment_regime": "Greed (Complacency)"
   },
   {
@@ -3748,7 +3748,7 @@
     "underlying_ticker": "IWM",
     "close_price": 215.79,
     "put_call_ratio": 0.933428,
-    "correlation_to_spy_20d": 0.9175397832503004,
+    "correlation_to_spy_20d": 0.8084026227987263,
     "sentiment_regime": "Neutral"
   },
   {
@@ -3756,7 +3756,7 @@
     "underlying_ticker": "QQQ",
     "close_price": 551.64,
     "put_call_ratio": 1.002765,
-    "correlation_to_spy_20d": 0.9327122626377549,
+    "correlation_to_spy_20d": 0.9720683007667288,
     "sentiment_regime": "Neutral"
   },
   {
@@ -3764,7 +3764,7 @@
     "underlying_ticker": "SPY",
     "close_price": 617.85,
     "put_call_ratio": 1.128015,
-    "correlation_to_spy_20d": 1.0000000000000002,
+    "correlation_to_spy_20d": 0.9999999999999998,
     "sentiment_regime": "Neutral"
   },
   {
@@ -3772,7 +3772,3751 @@
     "underlying_ticker": "TLT",
     "close_price": 88.25,
     "put_call_ratio": 0.220895,
-    "correlation_to_spy_20d": 0.368842303747755,
+    "correlation_to_spy_20d": -0.3426038866754705,
     "sentiment_regime": "Greed (Complacency)"
+  },
+  {
+    "trade_date": "2025-06-27",
+    "underlying_ticker": "IWM",
+    "close_price": 215.48,
+    "put_call_ratio": 0.608857,
+    "correlation_to_spy_20d": 0.8179660965695368,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-06-27",
+    "underlying_ticker": "QQQ",
+    "close_price": 548.09,
+    "put_call_ratio": 1.207823,
+    "correlation_to_spy_20d": 0.9723604803640552,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-06-27",
+    "underlying_ticker": "SPY",
+    "close_price": 614.91,
+    "put_call_ratio": 1.088868,
+    "correlation_to_spy_20d": 1.0000000000000002,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-06-27",
+    "underlying_ticker": "TLT",
+    "close_price": 87.39,
+    "put_call_ratio": 0.447575,
+    "correlation_to_spy_20d": -0.381829550039467,
+    "sentiment_regime": "Greed (Complacency)"
+  },
+  {
+    "trade_date": "2025-06-26",
+    "underlying_ticker": "IWM",
+    "close_price": 215.41,
+    "put_call_ratio": 0.945651,
+    "correlation_to_spy_20d": 0.8274642655881703,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-06-26",
+    "underlying_ticker": "QQQ",
+    "close_price": 546.22,
+    "put_call_ratio": 1.484641,
+    "correlation_to_spy_20d": 0.971665352984503,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-06-26",
+    "underlying_ticker": "SPY",
+    "close_price": 611.87,
+    "put_call_ratio": 1.30945,
+    "correlation_to_spy_20d": 1.0000000000000004,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-06-26",
+    "underlying_ticker": "TLT",
+    "close_price": 87.95,
+    "put_call_ratio": 0.558971,
+    "correlation_to_spy_20d": -0.3391462708431801,
+    "sentiment_regime": "Greed (Complacency)"
+  },
+  {
+    "trade_date": "2025-06-25",
+    "underlying_ticker": "IWM",
+    "close_price": 211.97,
+    "put_call_ratio": 0.924976,
+    "correlation_to_spy_20d": 0.8289692245004816,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-06-25",
+    "underlying_ticker": "QQQ",
+    "close_price": 541.16,
+    "put_call_ratio": 1.135928,
+    "correlation_to_spy_20d": 0.9762072095613085,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-06-25",
+    "underlying_ticker": "SPY",
+    "close_price": 607.12,
+    "put_call_ratio": 1.090525,
+    "correlation_to_spy_20d": 0.9999999999999999,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-06-25",
+    "underlying_ticker": "TLT",
+    "close_price": 87.51,
+    "put_call_ratio": 0.442373,
+    "correlation_to_spy_20d": -0.21929850173798446,
+    "sentiment_regime": "Greed (Complacency)"
+  },
+  {
+    "trade_date": "2025-06-24",
+    "underlying_ticker": "IWM",
+    "close_price": 214.47,
+    "put_call_ratio": 1.881355,
+    "correlation_to_spy_20d": 0.8559144147854513,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-06-24",
+    "underlying_ticker": "QQQ",
+    "close_price": 539.78,
+    "put_call_ratio": 1.465417,
+    "correlation_to_spy_20d": 0.9774268377797503,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-06-24",
+    "underlying_ticker": "SPY",
+    "close_price": 606.78,
+    "put_call_ratio": 1.314182,
+    "correlation_to_spy_20d": 0.9999999999999999,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-06-24",
+    "underlying_ticker": "TLT",
+    "close_price": 87.4,
+    "put_call_ratio": 0.497995,
+    "correlation_to_spy_20d": -0.22106865534575496,
+    "sentiment_regime": "Greed (Complacency)"
+  },
+  {
+    "trade_date": "2025-06-23",
+    "underlying_ticker": "IWM",
+    "close_price": 211.77,
+    "put_call_ratio": 1.91644,
+    "correlation_to_spy_20d": 0.8471204135512974,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-06-23",
+    "underlying_ticker": "QQQ",
+    "close_price": 531.65,
+    "put_call_ratio": 1.506565,
+    "correlation_to_spy_20d": 0.9760415267719369,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-06-23",
+    "underlying_ticker": "SPY",
+    "close_price": 600.15,
+    "put_call_ratio": 1.375135,
+    "correlation_to_spy_20d": 1.0,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-06-23",
+    "underlying_ticker": "TLT",
+    "close_price": 86.77,
+    "put_call_ratio": 0.646939,
+    "correlation_to_spy_20d": -0.29019748910489174,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-06-20",
+    "underlying_ticker": "IWM",
+    "close_price": 209.21,
+    "put_call_ratio": 1.52448,
+    "correlation_to_spy_20d": 0.8293696098743272,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-06-20",
+    "underlying_ticker": "QQQ",
+    "close_price": 526.83,
+    "put_call_ratio": 0.983302,
+    "correlation_to_spy_20d": 0.9806075913165995,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-06-20",
+    "underlying_ticker": "SPY",
+    "close_price": 594.28,
+    "put_call_ratio": 1.01794,
+    "correlation_to_spy_20d": 0.9999999999999999,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-06-20",
+    "underlying_ticker": "TLT",
+    "close_price": 86.49,
+    "put_call_ratio": 0.442293,
+    "correlation_to_spy_20d": -0.3080232199872037,
+    "sentiment_regime": "Greed (Complacency)"
+  },
+  {
+    "trade_date": "2025-06-18",
+    "underlying_ticker": "IWM",
+    "close_price": 209.65,
+    "put_call_ratio": 1.605911,
+    "correlation_to_spy_20d": 0.8894690894063719,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-06-18",
+    "underlying_ticker": "QQQ",
+    "close_price": 528.99,
+    "put_call_ratio": 1.076026,
+    "correlation_to_spy_20d": 0.9722936242161572,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-06-18",
+    "underlying_ticker": "SPY",
+    "close_price": 597.44,
+    "put_call_ratio": 0.791186,
+    "correlation_to_spy_20d": 1.0000000000000002,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-06-18",
+    "underlying_ticker": "TLT",
+    "close_price": 86.65,
+    "put_call_ratio": 0.65497,
+    "correlation_to_spy_20d": 0.03073362367599237,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-06-17",
+    "underlying_ticker": "IWM",
+    "close_price": 208.55,
+    "put_call_ratio": 2.834245,
+    "correlation_to_spy_20d": 0.8890872914554349,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-06-17",
+    "underlying_ticker": "QQQ",
+    "close_price": 529.08,
+    "put_call_ratio": 1.079059,
+    "correlation_to_spy_20d": 0.972705010219991,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-06-17",
+    "underlying_ticker": "SPY",
+    "close_price": 597.53,
+    "put_call_ratio": 1.195247,
+    "correlation_to_spy_20d": 1.0,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-06-17",
+    "underlying_ticker": "TLT",
+    "close_price": 86.5,
+    "put_call_ratio": 0.829044,
+    "correlation_to_spy_20d": 0.05399651058437928,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-06-16",
+    "underlying_ticker": "IWM",
+    "close_price": 210.77,
+    "put_call_ratio": 1.342252,
+    "correlation_to_spy_20d": 0.8785801380702939,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-06-16",
+    "underlying_ticker": "QQQ",
+    "close_price": 534.29,
+    "put_call_ratio": 1.387712,
+    "correlation_to_spy_20d": 0.9700642785358657,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-06-16",
+    "underlying_ticker": "SPY",
+    "close_price": 602.68,
+    "put_call_ratio": 1.445363,
+    "correlation_to_spy_20d": 1.0000000000000002,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-06-16",
+    "underlying_ticker": "TLT",
+    "close_price": 85.46,
+    "put_call_ratio": 0.656253,
+    "correlation_to_spy_20d": 0.15796914931342243,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-06-13",
+    "underlying_ticker": "IWM",
+    "close_price": 208.89,
+    "put_call_ratio": 1.241069,
+    "correlation_to_spy_20d": 0.8807283841417896,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-06-13",
+    "underlying_ticker": "QQQ",
+    "close_price": 526.96,
+    "put_call_ratio": 1.195179,
+    "correlation_to_spy_20d": 0.9665536918057793,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-06-13",
+    "underlying_ticker": "SPY",
+    "close_price": 597.0,
+    "put_call_ratio": 1.297431,
+    "correlation_to_spy_20d": 1.0,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-06-13",
+    "underlying_ticker": "TLT",
+    "close_price": 86.33,
+    "put_call_ratio": 0.657812,
+    "correlation_to_spy_20d": 0.26655429994636065,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-06-11",
+    "underlying_ticker": "IWM",
+    "close_price": 213.63,
+    "put_call_ratio": 1.022414,
+    "correlation_to_spy_20d": 0.8663466502468775,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-06-11",
+    "underlying_ticker": "QQQ",
+    "close_price": 532.41,
+    "put_call_ratio": 1.029768,
+    "correlation_to_spy_20d": 0.9475761708589935,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-06-11",
+    "underlying_ticker": "SPY",
+    "close_price": 601.36,
+    "put_call_ratio": 0.864663,
+    "correlation_to_spy_20d": 0.9999999999999999,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-06-11",
+    "underlying_ticker": "TLT",
+    "close_price": 86.14,
+    "put_call_ratio": 1.006305,
+    "correlation_to_spy_20d": 0.30778707531783167,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-06-10",
+    "underlying_ticker": "IWM",
+    "close_price": 214.51,
+    "put_call_ratio": 0.865656,
+    "correlation_to_spy_20d": 0.8586919017904144,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-06-10",
+    "underlying_ticker": "QQQ",
+    "close_price": 534.21,
+    "put_call_ratio": 1.067543,
+    "correlation_to_spy_20d": 0.9269819391841881,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-06-10",
+    "underlying_ticker": "SPY",
+    "close_price": 603.08,
+    "put_call_ratio": 0.998741,
+    "correlation_to_spy_20d": 1.0,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-06-10",
+    "underlying_ticker": "TLT",
+    "close_price": 85.88,
+    "put_call_ratio": 1.65563,
+    "correlation_to_spy_20d": 0.29938679986075484,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-06-09",
+    "underlying_ticker": "IWM",
+    "close_price": 213.36,
+    "put_call_ratio": 1.336137,
+    "correlation_to_spy_20d": 0.9088098119306409,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-06-09",
+    "underlying_ticker": "QQQ",
+    "close_price": 530.7,
+    "put_call_ratio": 1.020965,
+    "correlation_to_spy_20d": 0.9649783930703467,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-06-09",
+    "underlying_ticker": "SPY",
+    "close_price": 599.68,
+    "put_call_ratio": 0.994023,
+    "correlation_to_spy_20d": 1.0000000000000002,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-06-09",
+    "underlying_ticker": "TLT",
+    "close_price": 85.44,
+    "put_call_ratio": 1.354804,
+    "correlation_to_spy_20d": 0.025310643494562374,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-06-06",
+    "underlying_ticker": "IWM",
+    "close_price": 211.9,
+    "put_call_ratio": 1.174,
+    "correlation_to_spy_20d": 0.9171463222630554,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-06-06",
+    "underlying_ticker": "QQQ",
+    "close_price": 529.92,
+    "put_call_ratio": 1.284892,
+    "correlation_to_spy_20d": 0.9652446355122207,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-06-06",
+    "underlying_ticker": "SPY",
+    "close_price": 599.14,
+    "put_call_ratio": 1.483322,
+    "correlation_to_spy_20d": 0.9999999999999999,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-06-06",
+    "underlying_ticker": "TLT",
+    "close_price": 85.35,
+    "put_call_ratio": 0.618676,
+    "correlation_to_spy_20d": 0.02111611963961537,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-06-05",
+    "underlying_ticker": "IWM",
+    "close_price": 208.53,
+    "put_call_ratio": 0.947515,
+    "correlation_to_spy_20d": 0.899486712350104,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-06-05",
+    "underlying_ticker": "QQQ",
+    "close_price": 524.79,
+    "put_call_ratio": 1.247583,
+    "correlation_to_spy_20d": 0.9666682833802928,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-06-05",
+    "underlying_ticker": "SPY",
+    "close_price": 593.05,
+    "put_call_ratio": 1.109955,
+    "correlation_to_spy_20d": 0.9999999999999997,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-06-05",
+    "underlying_ticker": "TLT",
+    "close_price": 86.45,
+    "put_call_ratio": 1.692744,
+    "correlation_to_spy_20d": 0.05128941721185025,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-06-04",
+    "underlying_ticker": "IWM",
+    "close_price": 208.44,
+    "put_call_ratio": 1.121524,
+    "correlation_to_spy_20d": 0.9083289780808269,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-06-04",
+    "underlying_ticker": "QQQ",
+    "close_price": 528.77,
+    "put_call_ratio": 1.17477,
+    "correlation_to_spy_20d": 0.9656896424261446,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-06-04",
+    "underlying_ticker": "SPY",
+    "close_price": 595.93,
+    "put_call_ratio": 1.036354,
+    "correlation_to_spy_20d": 1.0,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-06-04",
+    "underlying_ticker": "TLT",
+    "close_price": 86.39,
+    "put_call_ratio": 0.679522,
+    "correlation_to_spy_20d": 0.06311621327185019,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-06-03",
+    "underlying_ticker": "IWM",
+    "close_price": 209.03,
+    "put_call_ratio": 1.184061,
+    "correlation_to_spy_20d": 0.9136039023892947,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-06-03",
+    "underlying_ticker": "QQQ",
+    "close_price": 527.3,
+    "put_call_ratio": 1.177068,
+    "correlation_to_spy_20d": 0.9691553361532612,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-06-03",
+    "underlying_ticker": "SPY",
+    "close_price": 596.09,
+    "put_call_ratio": 1.226642,
+    "correlation_to_spy_20d": 1.0,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-06-03",
+    "underlying_ticker": "TLT",
+    "close_price": 85.01,
+    "put_call_ratio": 1.23777,
+    "correlation_to_spy_20d": 0.07435872009041594,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-06-02",
+    "underlying_ticker": "IWM",
+    "close_price": 205.71,
+    "put_call_ratio": 2.099656,
+    "correlation_to_spy_20d": 0.9300657425054334,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-06-02",
+    "underlying_ticker": "QQQ",
+    "close_price": 523.21,
+    "put_call_ratio": 1.2442,
+    "correlation_to_spy_20d": 0.9701720177962364,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-06-02",
+    "underlying_ticker": "SPY",
+    "close_price": 592.71,
+    "put_call_ratio": 1.099186,
+    "correlation_to_spy_20d": 0.9999999999999999,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-06-02",
+    "underlying_ticker": "TLT",
+    "close_price": 85.16,
+    "put_call_ratio": 0.971722,
+    "correlation_to_spy_20d": 0.09747612100087577,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-05-30",
+    "underlying_ticker": "IWM",
+    "close_price": 205.07,
+    "put_call_ratio": 3.158994,
+    "correlation_to_spy_20d": 0.9345678310060712,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-05-30",
+    "underlying_ticker": "QQQ",
+    "close_price": 519.11,
+    "put_call_ratio": 1.260559,
+    "correlation_to_spy_20d": 0.9698348961035247,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-05-30",
+    "underlying_ticker": "SPY",
+    "close_price": 589.39,
+    "put_call_ratio": 1.120718,
+    "correlation_to_spy_20d": 1.0,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-05-30",
+    "underlying_ticker": "TLT",
+    "close_price": 86.28,
+    "put_call_ratio": 0.358616,
+    "correlation_to_spy_20d": 0.041736402023971914,
+    "sentiment_regime": "Greed (Complacency)"
+  },
+  {
+    "trade_date": "2025-05-29",
+    "underlying_ticker": "IWM",
+    "close_price": 206.12,
+    "put_call_ratio": 1.82114,
+    "correlation_to_spy_20d": 0.9344381519400133,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-05-29",
+    "underlying_ticker": "QQQ",
+    "close_price": 519.93,
+    "put_call_ratio": 0.977699,
+    "correlation_to_spy_20d": 0.9673723102144369,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-05-29",
+    "underlying_ticker": "SPY",
+    "close_price": 590.05,
+    "put_call_ratio": 0.915895,
+    "correlation_to_spy_20d": 1.0000000000000002,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-05-29",
+    "underlying_ticker": "TLT",
+    "close_price": 86.15,
+    "put_call_ratio": 0.680285,
+    "correlation_to_spy_20d": 0.03102994181994755,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-05-28",
+    "underlying_ticker": "IWM",
+    "close_price": 205.51,
+    "put_call_ratio": 1.356624,
+    "correlation_to_spy_20d": 0.9312165831986162,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-05-28",
+    "underlying_ticker": "QQQ",
+    "close_price": 518.91,
+    "put_call_ratio": 0.972048,
+    "correlation_to_spy_20d": 0.9694440310792694,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-05-28",
+    "underlying_ticker": "SPY",
+    "close_price": 587.73,
+    "put_call_ratio": 0.947765,
+    "correlation_to_spy_20d": 0.9999999999999998,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-05-28",
+    "underlying_ticker": "TLT",
+    "close_price": 85.36,
+    "put_call_ratio": 0.466702,
+    "correlation_to_spy_20d": 0.03738809220044333,
+    "sentiment_regime": "Greed (Complacency)"
+  },
+  {
+    "trade_date": "2025-05-23",
+    "underlying_ticker": "IWM",
+    "close_price": 202.56,
+    "put_call_ratio": 2.49744,
+    "correlation_to_spy_20d": 0.9166979395220871,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-05-23",
+    "underlying_ticker": "QQQ",
+    "close_price": 509.24,
+    "put_call_ratio": 1.392323,
+    "correlation_to_spy_20d": 0.9661905932777402,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-05-23",
+    "underlying_ticker": "SPY",
+    "close_price": 579.11,
+    "put_call_ratio": 1.314217,
+    "correlation_to_spy_20d": 1.0,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-05-23",
+    "underlying_ticker": "TLT",
+    "close_price": 84.55,
+    "put_call_ratio": 0.361479,
+    "correlation_to_spy_20d": -0.022565081051954573,
+    "sentiment_regime": "Greed (Complacency)"
+  },
+  {
+    "trade_date": "2025-05-22",
+    "underlying_ticker": "IWM",
+    "close_price": 203.2,
+    "put_call_ratio": 2.29413,
+    "correlation_to_spy_20d": 0.9275442877612758,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-05-22",
+    "underlying_ticker": "QQQ",
+    "close_price": 514.0,
+    "put_call_ratio": 1.029473,
+    "correlation_to_spy_20d": 0.9696065012008109,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-05-22",
+    "underlying_ticker": "SPY",
+    "close_price": 583.09,
+    "put_call_ratio": 1.086006,
+    "correlation_to_spy_20d": 0.9999999999999999,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-05-22",
+    "underlying_ticker": "TLT",
+    "close_price": 84.41,
+    "put_call_ratio": 0.598344,
+    "correlation_to_spy_20d": 0.13260692437284574,
+    "sentiment_regime": "Greed (Complacency)"
+  },
+  {
+    "trade_date": "2025-05-21",
+    "underlying_ticker": "IWM",
+    "close_price": 203.21,
+    "put_call_ratio": 3.338645,
+    "correlation_to_spy_20d": 0.9295003489200251,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-05-21",
+    "underlying_ticker": "QQQ",
+    "close_price": 513.04,
+    "put_call_ratio": 1.212362,
+    "correlation_to_spy_20d": 0.9700867160689812,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-05-21",
+    "underlying_ticker": "SPY",
+    "close_price": 582.86,
+    "put_call_ratio": 1.088806,
+    "correlation_to_spy_20d": 0.9999999999999999,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-05-21",
+    "underlying_ticker": "TLT",
+    "close_price": 83.97,
+    "put_call_ratio": 0.500975,
+    "correlation_to_spy_20d": 0.21215660463819735,
+    "sentiment_regime": "Greed (Complacency)"
+  },
+  {
+    "trade_date": "2025-05-20",
+    "underlying_ticker": "IWM",
+    "close_price": 209.08,
+    "put_call_ratio": 1.288474,
+    "correlation_to_spy_20d": 0.9201213704411058,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-05-20",
+    "underlying_ticker": "QQQ",
+    "close_price": 520.27,
+    "put_call_ratio": 1.051897,
+    "correlation_to_spy_20d": 0.9681869457037734,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-05-20",
+    "underlying_ticker": "SPY",
+    "close_price": 592.85,
+    "put_call_ratio": 0.909533,
+    "correlation_to_spy_20d": 1.0,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-05-20",
+    "underlying_ticker": "TLT",
+    "close_price": 85.43,
+    "put_call_ratio": 0.525044,
+    "correlation_to_spy_20d": 0.07908459792178776,
+    "sentiment_regime": "Greed (Complacency)"
+  },
+  {
+    "trade_date": "2025-05-19",
+    "underlying_ticker": "IWM",
+    "close_price": 208.97,
+    "put_call_ratio": 2.194341,
+    "correlation_to_spy_20d": 0.932515534663152,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-05-19",
+    "underlying_ticker": "QQQ",
+    "close_price": 522.01,
+    "put_call_ratio": 1.218101,
+    "correlation_to_spy_20d": 0.9755366094104664,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-05-19",
+    "underlying_ticker": "SPY",
+    "close_price": 594.85,
+    "put_call_ratio": 1.049567,
+    "correlation_to_spy_20d": 1.0,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-05-19",
+    "underlying_ticker": "TLT",
+    "close_price": 86.05,
+    "put_call_ratio": 0.701362,
+    "correlation_to_spy_20d": 0.28754966138741145,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-05-16",
+    "underlying_ticker": "IWM",
+    "close_price": 209.85,
+    "put_call_ratio": 1.414009,
+    "correlation_to_spy_20d": 0.93409861770262,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-05-16",
+    "underlying_ticker": "QQQ",
+    "close_price": 521.51,
+    "put_call_ratio": 1.21515,
+    "correlation_to_spy_20d": 0.9754754938632509,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-05-16",
+    "underlying_ticker": "SPY",
+    "close_price": 594.2,
+    "put_call_ratio": 1.026045,
+    "correlation_to_spy_20d": 1.0,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-05-16",
+    "underlying_ticker": "TLT",
+    "close_price": 86.3,
+    "put_call_ratio": 0.504532,
+    "correlation_to_spy_20d": 0.2839916631943043,
+    "sentiment_regime": "Greed (Complacency)"
+  },
+  {
+    "trade_date": "2025-05-15",
+    "underlying_ticker": "IWM",
+    "close_price": 208.13,
+    "put_call_ratio": 2.089518,
+    "correlation_to_spy_20d": 0.9274787601728468,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-05-15",
+    "underlying_ticker": "QQQ",
+    "close_price": 519.25,
+    "put_call_ratio": 1.272963,
+    "correlation_to_spy_20d": 0.9767656206775909,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-05-15",
+    "underlying_ticker": "SPY",
+    "close_price": 590.46,
+    "put_call_ratio": 1.191382,
+    "correlation_to_spy_20d": 1.0,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-05-15",
+    "underlying_ticker": "TLT",
+    "close_price": 86.07,
+    "put_call_ratio": 1.292184,
+    "correlation_to_spy_20d": 0.29493070796130094,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-05-14",
+    "underlying_ticker": "IWM",
+    "close_price": 206.78,
+    "put_call_ratio": 1.84207,
+    "correlation_to_spy_20d": 0.9123342325833262,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-05-14",
+    "underlying_ticker": "QQQ",
+    "close_price": 518.68,
+    "put_call_ratio": 1.25335,
+    "correlation_to_spy_20d": 0.9831572710866876,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-05-14",
+    "underlying_ticker": "SPY",
+    "close_price": 587.59,
+    "put_call_ratio": 1.035109,
+    "correlation_to_spy_20d": 1.0,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-05-14",
+    "underlying_ticker": "TLT",
+    "close_price": 85.32,
+    "put_call_ratio": 1.228395,
+    "correlation_to_spy_20d": 0.1833049231941004,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-05-13",
+    "underlying_ticker": "IWM",
+    "close_price": 208.63,
+    "put_call_ratio": 1.376401,
+    "correlation_to_spy_20d": 0.9264836001976293,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-05-13",
+    "underlying_ticker": "QQQ",
+    "close_price": 515.59,
+    "put_call_ratio": 1.309831,
+    "correlation_to_spy_20d": 0.9832317827403307,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-05-13",
+    "underlying_ticker": "SPY",
+    "close_price": 586.84,
+    "put_call_ratio": 1.124251,
+    "correlation_to_spy_20d": 1.0000000000000002,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-05-13",
+    "underlying_ticker": "TLT",
+    "close_price": 85.89,
+    "put_call_ratio": 0.704435,
+    "correlation_to_spy_20d": 0.16028120519186842,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-05-12",
+    "underlying_ticker": "IWM",
+    "close_price": 207.87,
+    "put_call_ratio": 1.629828,
+    "correlation_to_spy_20d": 0.9296202583101282,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-05-12",
+    "underlying_ticker": "QQQ",
+    "close_price": 507.85,
+    "put_call_ratio": 1.215518,
+    "correlation_to_spy_20d": 0.9844908724580813,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-05-12",
+    "underlying_ticker": "SPY",
+    "close_price": 582.99,
+    "put_call_ratio": 1.125501,
+    "correlation_to_spy_20d": 0.9999999999999997,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-05-12",
+    "underlying_ticker": "TLT",
+    "close_price": 86.24,
+    "put_call_ratio": 0.825542,
+    "correlation_to_spy_20d": 0.17844062211628223,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-05-09",
+    "underlying_ticker": "IWM",
+    "close_price": 200.81,
+    "put_call_ratio": 0.963043,
+    "correlation_to_spy_20d": 0.9101892062534896,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-05-09",
+    "underlying_ticker": "QQQ",
+    "close_price": 487.97,
+    "put_call_ratio": 1.005798,
+    "correlation_to_spy_20d": 0.9801450722533804,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-05-09",
+    "underlying_ticker": "SPY",
+    "close_price": 564.34,
+    "put_call_ratio": 0.922127,
+    "correlation_to_spy_20d": 1.0,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-05-09",
+    "underlying_ticker": "TLT",
+    "close_price": 87.05,
+    "put_call_ratio": 0.624652,
+    "correlation_to_spy_20d": 0.3658474539930098,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-05-08",
+    "underlying_ticker": "IWM",
+    "close_price": 201.18,
+    "put_call_ratio": 1.397925,
+    "correlation_to_spy_20d": 0.9261529523550386,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-05-08",
+    "underlying_ticker": "QQQ",
+    "close_price": 488.29,
+    "put_call_ratio": 1.145967,
+    "correlation_to_spy_20d": 0.988610477885785,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-05-08",
+    "underlying_ticker": "SPY",
+    "close_price": 565.06,
+    "put_call_ratio": 1.032448,
+    "correlation_to_spy_20d": 1.0000000000000002,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-05-08",
+    "underlying_ticker": "TLT",
+    "close_price": 86.92,
+    "put_call_ratio": 0.612043,
+    "correlation_to_spy_20d": -0.10418682120196009,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-05-07",
+    "underlying_ticker": "IWM",
+    "close_price": 197.42,
+    "put_call_ratio": 1.389614,
+    "correlation_to_spy_20d": 0.9431123513298378,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-05-07",
+    "underlying_ticker": "QQQ",
+    "close_price": 483.3,
+    "put_call_ratio": 1.08031,
+    "correlation_to_spy_20d": 0.988787657078759,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-05-07",
+    "underlying_ticker": "SPY",
+    "close_price": 561.15,
+    "put_call_ratio": 1.128289,
+    "correlation_to_spy_20d": 0.9999999999999998,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-05-07",
+    "underlying_ticker": "TLT",
+    "close_price": 87.9,
+    "put_call_ratio": 0.554028,
+    "correlation_to_spy_20d": -0.10590285782656707,
+    "sentiment_regime": "Greed (Complacency)"
+  },
+  {
+    "trade_date": "2025-05-06",
+    "underlying_ticker": "IWM",
+    "close_price": 196.77,
+    "put_call_ratio": 2.025375,
+    "correlation_to_spy_20d": 0.9309953590129214,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-05-06",
+    "underlying_ticker": "QQQ",
+    "close_price": 481.41,
+    "put_call_ratio": 1.209394,
+    "correlation_to_spy_20d": 0.98966209277076,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-05-06",
+    "underlying_ticker": "SPY",
+    "close_price": 558.8,
+    "put_call_ratio": 1.157162,
+    "correlation_to_spy_20d": 1.0000000000000002,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-05-06",
+    "underlying_ticker": "TLT",
+    "close_price": 87.53,
+    "put_call_ratio": 0.56286,
+    "correlation_to_spy_20d": 0.021836121857232826,
+    "sentiment_regime": "Greed (Complacency)"
+  },
+  {
+    "trade_date": "2025-05-05",
+    "underlying_ticker": "IWM",
+    "close_price": 198.94,
+    "put_call_ratio": 1.877486,
+    "correlation_to_spy_20d": 0.9251222016191831,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-05-05",
+    "underlying_ticker": "QQQ",
+    "close_price": 485.93,
+    "put_call_ratio": 1.307156,
+    "correlation_to_spy_20d": 0.988339663159844,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-05-05",
+    "underlying_ticker": "SPY",
+    "close_price": 563.51,
+    "put_call_ratio": 1.167583,
+    "correlation_to_spy_20d": 1.0,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-05-05",
+    "underlying_ticker": "TLT",
+    "close_price": 87.24,
+    "put_call_ratio": 0.520388,
+    "correlation_to_spy_20d": 0.0897514422004781,
+    "sentiment_regime": "Greed (Complacency)"
+  },
+  {
+    "trade_date": "2025-05-02",
+    "underlying_ticker": "IWM",
+    "close_price": 200.48,
+    "put_call_ratio": 1.690663,
+    "correlation_to_spy_20d": 0.9508515329870362,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-05-02",
+    "underlying_ticker": "QQQ",
+    "close_price": 488.83,
+    "put_call_ratio": 1.158959,
+    "correlation_to_spy_20d": 0.9911988354423168,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-05-02",
+    "underlying_ticker": "SPY",
+    "close_price": 566.76,
+    "put_call_ratio": 1.307339,
+    "correlation_to_spy_20d": 0.9999999999999998,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-05-02",
+    "underlying_ticker": "TLT",
+    "close_price": 87.73,
+    "put_call_ratio": 0.507786,
+    "correlation_to_spy_20d": -0.10087483921931624,
+    "sentiment_regime": "Greed (Complacency)"
+  },
+  {
+    "trade_date": "2025-05-01",
+    "underlying_ticker": "IWM",
+    "close_price": 196.07,
+    "put_call_ratio": 1.92765,
+    "correlation_to_spy_20d": 0.9486434926149669,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-05-01",
+    "underlying_ticker": "QQQ",
+    "close_price": 481.68,
+    "put_call_ratio": 1.087278,
+    "correlation_to_spy_20d": 0.9931009601962165,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-05-01",
+    "underlying_ticker": "SPY",
+    "close_price": 558.47,
+    "put_call_ratio": 1.128396,
+    "correlation_to_spy_20d": 1.0,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-05-01",
+    "underlying_ticker": "TLT",
+    "close_price": 88.69,
+    "put_call_ratio": 0.726883,
+    "correlation_to_spy_20d": -0.12722442789548716,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-04-30",
+    "underlying_ticker": "IWM",
+    "close_price": 194.86,
+    "put_call_ratio": 3.302881,
+    "correlation_to_spy_20d": 0.9441261883768728,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-04-30",
+    "underlying_ticker": "QQQ",
+    "close_price": 475.47,
+    "put_call_ratio": 1.189442,
+    "correlation_to_spy_20d": 0.9934516692787623,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-04-30",
+    "underlying_ticker": "SPY",
+    "close_price": 554.54,
+    "put_call_ratio": 1.285263,
+    "correlation_to_spy_20d": 1.0000000000000002,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-04-30",
+    "underlying_ticker": "TLT",
+    "close_price": 89.47,
+    "put_call_ratio": 0.552271,
+    "correlation_to_spy_20d": -0.11819742456042388,
+    "sentiment_regime": "Greed (Complacency)"
+  },
+  {
+    "trade_date": "2025-04-29",
+    "underlying_ticker": "IWM",
+    "close_price": 196.09,
+    "put_call_ratio": 2.091304,
+    "correlation_to_spy_20d": 0.9455645016136819,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-04-29",
+    "underlying_ticker": "QQQ",
+    "close_price": 475.53,
+    "put_call_ratio": 1.223902,
+    "correlation_to_spy_20d": 0.9931564846340681,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-04-29",
+    "underlying_ticker": "SPY",
+    "close_price": 554.32,
+    "put_call_ratio": 1.12488,
+    "correlation_to_spy_20d": 1.0000000000000002,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-04-29",
+    "underlying_ticker": "TLT",
+    "close_price": 90.2,
+    "put_call_ratio": 0.476928,
+    "correlation_to_spy_20d": -0.1140761012216114,
+    "sentiment_regime": "Greed (Complacency)"
+  },
+  {
+    "trade_date": "2025-04-28",
+    "underlying_ticker": "IWM",
+    "close_price": 194.94,
+    "put_call_ratio": 2.279702,
+    "correlation_to_spy_20d": 0.9406723435778707,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-04-28",
+    "underlying_ticker": "QQQ",
+    "close_price": 472.41,
+    "put_call_ratio": 1.254309,
+    "correlation_to_spy_20d": 0.9908703999359194,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-04-28",
+    "underlying_ticker": "SPY",
+    "close_price": 550.85,
+    "put_call_ratio": 1.13392,
+    "correlation_to_spy_20d": 1.0,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-04-28",
+    "underlying_ticker": "TLT",
+    "close_price": 89.45,
+    "put_call_ratio": 0.339019,
+    "correlation_to_spy_20d": -0.11112867165761993,
+    "sentiment_regime": "Greed (Complacency)"
+  },
+  {
+    "trade_date": "2025-04-25",
+    "underlying_ticker": "IWM",
+    "close_price": 194.12,
+    "put_call_ratio": 2.375041,
+    "correlation_to_spy_20d": 0.9434007681154236,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-04-25",
+    "underlying_ticker": "QQQ",
+    "close_price": 472.56,
+    "put_call_ratio": 1.093805,
+    "correlation_to_spy_20d": 0.9907847178718777,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-04-25",
+    "underlying_ticker": "SPY",
+    "close_price": 550.64,
+    "put_call_ratio": 1.125291,
+    "correlation_to_spy_20d": 1.0,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-04-25",
+    "underlying_ticker": "TLT",
+    "close_price": 88.89,
+    "put_call_ratio": 0.612,
+    "correlation_to_spy_20d": -0.15137534278598783,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-04-24",
+    "underlying_ticker": "IWM",
+    "close_price": 194.06,
+    "put_call_ratio": 1.824534,
+    "correlation_to_spy_20d": 0.9451030287705718,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-04-24",
+    "underlying_ticker": "QQQ",
+    "close_price": 467.35,
+    "put_call_ratio": 1.44386,
+    "correlation_to_spy_20d": 0.9892987528430329,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-04-24",
+    "underlying_ticker": "SPY",
+    "close_price": 546.69,
+    "put_call_ratio": 1.263598,
+    "correlation_to_spy_20d": 1.0000000000000002,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-04-24",
+    "underlying_ticker": "TLT",
+    "close_price": 88.24,
+    "put_call_ratio": 0.685483,
+    "correlation_to_spy_20d": -0.1439097372624603,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-04-23",
+    "underlying_ticker": "IWM",
+    "close_price": 190.25,
+    "put_call_ratio": 2.769116,
+    "correlation_to_spy_20d": 0.942419405283844,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-04-23",
+    "underlying_ticker": "QQQ",
+    "close_price": 454.56,
+    "put_call_ratio": 1.105845,
+    "correlation_to_spy_20d": 0.9890638525655775,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-04-23",
+    "underlying_ticker": "SPY",
+    "close_price": 535.42,
+    "put_call_ratio": 1.297562,
+    "correlation_to_spy_20d": 1.0000000000000002,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-04-23",
+    "underlying_ticker": "TLT",
+    "close_price": 87.32,
+    "put_call_ratio": 0.410611,
+    "correlation_to_spy_20d": -0.19780672114694736,
+    "sentiment_regime": "Greed (Complacency)"
+  },
+  {
+    "trade_date": "2025-04-22",
+    "underlying_ticker": "IWM",
+    "close_price": 187.47,
+    "put_call_ratio": 1.625263,
+    "correlation_to_spy_20d": 0.938599485829873,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-04-22",
+    "underlying_ticker": "QQQ",
+    "close_price": 444.48,
+    "put_call_ratio": 1.153186,
+    "correlation_to_spy_20d": 0.9890983915646139,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-04-22",
+    "underlying_ticker": "SPY",
+    "close_price": 527.25,
+    "put_call_ratio": 1.133771,
+    "correlation_to_spy_20d": 1.0,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-04-22",
+    "underlying_ticker": "TLT",
+    "close_price": 86.48,
+    "put_call_ratio": 0.504556,
+    "correlation_to_spy_20d": -0.24237557315480265,
+    "sentiment_regime": "Greed (Complacency)"
+  },
+  {
+    "trade_date": "2025-04-21",
+    "underlying_ticker": "IWM",
+    "close_price": 182.74,
+    "put_call_ratio": 2.1377,
+    "correlation_to_spy_20d": 0.9337094584927997,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-04-21",
+    "underlying_ticker": "QQQ",
+    "close_price": 433.11,
+    "put_call_ratio": 1.161422,
+    "correlation_to_spy_20d": 0.9892624937209659,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-04-21",
+    "underlying_ticker": "SPY",
+    "close_price": 513.88,
+    "put_call_ratio": 1.185951,
+    "correlation_to_spy_20d": 1.0,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-04-21",
+    "underlying_ticker": "TLT",
+    "close_price": 86.0,
+    "put_call_ratio": 0.908714,
+    "correlation_to_spy_20d": -0.32176812231676766,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-04-17",
+    "underlying_ticker": "IWM",
+    "close_price": 186.48,
+    "put_call_ratio": 1.767309,
+    "correlation_to_spy_20d": 0.9322735118753347,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-04-17",
+    "underlying_ticker": "QQQ",
+    "close_price": 444.1,
+    "put_call_ratio": 1.060171,
+    "correlation_to_spy_20d": 0.9879721072765861,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-04-17",
+    "underlying_ticker": "SPY",
+    "close_price": 526.41,
+    "put_call_ratio": 1.338214,
+    "correlation_to_spy_20d": 1.0,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-04-17",
+    "underlying_ticker": "TLT",
+    "close_price": 87.53,
+    "put_call_ratio": 0.535157,
+    "correlation_to_spy_20d": -0.39503556431661524,
+    "sentiment_regime": "Greed (Complacency)"
+  },
+  {
+    "trade_date": "2025-04-16",
+    "underlying_ticker": "IWM",
+    "close_price": 184.97,
+    "put_call_ratio": 2.550351,
+    "correlation_to_spy_20d": 0.9348659879722708,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-04-16",
+    "underlying_ticker": "QQQ",
+    "close_price": 444.18,
+    "put_call_ratio": 1.210079,
+    "correlation_to_spy_20d": 0.988348711320645,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-04-16",
+    "underlying_ticker": "SPY",
+    "close_price": 525.66,
+    "put_call_ratio": 1.367947,
+    "correlation_to_spy_20d": 0.9999999999999998,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-04-16",
+    "underlying_ticker": "TLT",
+    "close_price": 88.31,
+    "put_call_ratio": 0.644927,
+    "correlation_to_spy_20d": -0.3666660697118801,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-04-15",
+    "underlying_ticker": "IWM",
+    "close_price": 186.76,
+    "put_call_ratio": 1.497453,
+    "correlation_to_spy_20d": 0.943446194672426,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-04-15",
+    "underlying_ticker": "QQQ",
+    "close_price": 457.99,
+    "put_call_ratio": 1.175477,
+    "correlation_to_spy_20d": 0.9879248783967932,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-04-15",
+    "underlying_ticker": "SPY",
+    "close_price": 537.61,
+    "put_call_ratio": 1.354501,
+    "correlation_to_spy_20d": 1.0000000000000002,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-04-15",
+    "underlying_ticker": "TLT",
+    "close_price": 87.82,
+    "put_call_ratio": 0.753359,
+    "correlation_to_spy_20d": -0.35280750452084925,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-04-14",
+    "underlying_ticker": "IWM",
+    "close_price": 186.53,
+    "put_call_ratio": 1.703222,
+    "correlation_to_spy_20d": 0.9437925087965834,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-04-14",
+    "underlying_ticker": "QQQ",
+    "close_price": 457.48,
+    "put_call_ratio": 1.169965,
+    "correlation_to_spy_20d": 0.9882976547034665,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-04-14",
+    "underlying_ticker": "SPY",
+    "close_price": 539.12,
+    "put_call_ratio": 1.288543,
+    "correlation_to_spy_20d": 1.0000000000000002,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-04-14",
+    "underlying_ticker": "TLT",
+    "close_price": 87.51,
+    "put_call_ratio": 0.73336,
+    "correlation_to_spy_20d": -0.3370999777456693,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-04-11",
+    "underlying_ticker": "IWM",
+    "close_price": 184.36,
+    "put_call_ratio": 1.324931,
+    "correlation_to_spy_20d": 0.9453570851191445,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-04-11",
+    "underlying_ticker": "QQQ",
+    "close_price": 454.4,
+    "put_call_ratio": 0.980427,
+    "correlation_to_spy_20d": 0.9894257701706812,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-04-11",
+    "underlying_ticker": "SPY",
+    "close_price": 533.94,
+    "put_call_ratio": 1.190608,
+    "correlation_to_spy_20d": 1.0,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-04-11",
+    "underlying_ticker": "TLT",
+    "close_price": 86.89,
+    "put_call_ratio": 0.585225,
+    "correlation_to_spy_20d": -0.37017329074281313,
+    "sentiment_regime": "Greed (Complacency)"
+  },
+  {
+    "trade_date": "2025-04-10",
+    "underlying_ticker": "IWM",
+    "close_price": 181.71,
+    "put_call_ratio": 2.154457,
+    "correlation_to_spy_20d": 0.9440824535217567,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-04-10",
+    "underlying_ticker": "QQQ",
+    "close_price": 446.18,
+    "put_call_ratio": 1.123482,
+    "correlation_to_spy_20d": 0.9892146263979918,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-04-10",
+    "underlying_ticker": "SPY",
+    "close_price": 524.58,
+    "put_call_ratio": 1.384654,
+    "correlation_to_spy_20d": 0.9999999999999998,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-04-10",
+    "underlying_ticker": "TLT",
+    "close_price": 86.42,
+    "put_call_ratio": 0.697424,
+    "correlation_to_spy_20d": -0.42118171231547075,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-04-08",
+    "underlying_ticker": "IWM",
+    "close_price": 174.82,
+    "put_call_ratio": 2.349654,
+    "correlation_to_spy_20d": 0.9375731504143906,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-04-08",
+    "underlying_ticker": "QQQ",
+    "close_price": 416.06,
+    "put_call_ratio": 1.230504,
+    "correlation_to_spy_20d": 0.9822494466627467,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-04-08",
+    "underlying_ticker": "SPY",
+    "close_price": 496.48,
+    "put_call_ratio": 1.561143,
+    "correlation_to_spy_20d": 0.9999999999999999,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-04-08",
+    "underlying_ticker": "TLT",
+    "close_price": 88.35,
+    "put_call_ratio": 0.681364,
+    "correlation_to_spy_20d": -0.2576679200181768,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-04-07",
+    "underlying_ticker": "IWM",
+    "close_price": 179.55,
+    "put_call_ratio": 1.807682,
+    "correlation_to_spy_20d": 0.9429497344919973,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-04-07",
+    "underlying_ticker": "QQQ",
+    "close_price": 423.69,
+    "put_call_ratio": 1.059536,
+    "correlation_to_spy_20d": 0.9798422463670127,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-04-07",
+    "underlying_ticker": "SPY",
+    "close_price": 504.38,
+    "put_call_ratio": 1.483655,
+    "correlation_to_spy_20d": 1.0000000000000002,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-04-07",
+    "underlying_ticker": "TLT",
+    "close_price": 90.05,
+    "put_call_ratio": 0.80906,
+    "correlation_to_spy_20d": -0.36615887044657813,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-04-04",
+    "underlying_ticker": "IWM",
+    "close_price": 181.19,
+    "put_call_ratio": 2.437514,
+    "correlation_to_spy_20d": 0.946191480536664,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-04-04",
+    "underlying_ticker": "QQQ",
+    "close_price": 422.67,
+    "put_call_ratio": 1.168084,
+    "correlation_to_spy_20d": 0.9809136463472787,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-04-04",
+    "underlying_ticker": "SPY",
+    "close_price": 505.28,
+    "put_call_ratio": 1.683425,
+    "correlation_to_spy_20d": 1.0000000000000002,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-04-04",
+    "underlying_ticker": "TLT",
+    "close_price": 92.85,
+    "put_call_ratio": 0.237257,
+    "correlation_to_spy_20d": -0.47357660457903883,
+    "sentiment_regime": "Greed (Complacency)"
+  },
+  {
+    "trade_date": "2025-04-03",
+    "underlying_ticker": "IWM",
+    "close_price": 189.65,
+    "put_call_ratio": 3.034522,
+    "correlation_to_spy_20d": 0.9591609578768218,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-04-03",
+    "underlying_ticker": "QQQ",
+    "close_price": 450.66,
+    "put_call_ratio": 1.257302,
+    "correlation_to_spy_20d": 0.9743465239883597,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-04-03",
+    "underlying_ticker": "SPY",
+    "close_price": 536.7,
+    "put_call_ratio": 1.551838,
+    "correlation_to_spy_20d": 1.0000000000000002,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-04-03",
+    "underlying_ticker": "TLT",
+    "close_price": 91.85,
+    "put_call_ratio": 0.459514,
+    "correlation_to_spy_20d": -0.3437344622942395,
+    "sentiment_regime": "Greed (Complacency)"
+  },
+  {
+    "trade_date": "2025-04-02",
+    "underlying_ticker": "IWM",
+    "close_price": 202.66,
+    "put_call_ratio": 2.457029,
+    "correlation_to_spy_20d": 0.9323111780600364,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-04-02",
+    "underlying_ticker": "QQQ",
+    "close_price": 476.15,
+    "put_call_ratio": 1.140868,
+    "correlation_to_spy_20d": 0.9709101620374008,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-04-02",
+    "underlying_ticker": "SPY",
+    "close_price": 564.52,
+    "put_call_ratio": 1.280405,
+    "correlation_to_spy_20d": 1.0,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-04-02",
+    "underlying_ticker": "TLT",
+    "close_price": 91.43,
+    "put_call_ratio": 0.625805,
+    "correlation_to_spy_20d": -0.378223687084683,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-04-01",
+    "underlying_ticker": "IWM",
+    "close_price": 199.51,
+    "put_call_ratio": 1.842619,
+    "correlation_to_spy_20d": 0.940801868336107,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-04-01",
+    "underlying_ticker": "QQQ",
+    "close_price": 472.7,
+    "put_call_ratio": 1.03906,
+    "correlation_to_spy_20d": 0.9561712076452914,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-04-01",
+    "underlying_ticker": "SPY",
+    "close_price": 560.97,
+    "put_call_ratio": 1.176024,
+    "correlation_to_spy_20d": 0.9999999999999999,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-04-01",
+    "underlying_ticker": "TLT",
+    "close_price": 91.49,
+    "put_call_ratio": 0.423783,
+    "correlation_to_spy_20d": -0.283488689766463,
+    "sentiment_regime": "Greed (Complacency)"
+  },
+  {
+    "trade_date": "2025-03-31",
+    "underlying_ticker": "IWM",
+    "close_price": 199.49,
+    "put_call_ratio": 2.396647,
+    "correlation_to_spy_20d": 0.9396763322855683,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-03-31",
+    "underlying_ticker": "QQQ",
+    "close_price": 468.92,
+    "put_call_ratio": 1.215115,
+    "correlation_to_spy_20d": 0.9596076009120604,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-03-31",
+    "underlying_ticker": "SPY",
+    "close_price": 559.39,
+    "put_call_ratio": 1.374898,
+    "correlation_to_spy_20d": 1.0,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-03-31",
+    "underlying_ticker": "TLT",
+    "close_price": 91.03,
+    "put_call_ratio": 0.359745,
+    "correlation_to_spy_20d": -0.31116830235643855,
+    "sentiment_regime": "Greed (Complacency)"
+  },
+  {
+    "trade_date": "2025-03-28",
+    "underlying_ticker": "IWM",
+    "close_price": 200.45,
+    "put_call_ratio": 2.583154,
+    "correlation_to_spy_20d": 0.9543775761462061,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-03-28",
+    "underlying_ticker": "QQQ",
+    "close_price": 468.94,
+    "put_call_ratio": 0.961132,
+    "correlation_to_spy_20d": 0.9664694259753641,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-03-28",
+    "underlying_ticker": "SPY",
+    "close_price": 555.66,
+    "put_call_ratio": 1.101388,
+    "correlation_to_spy_20d": 1.0,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-03-28",
+    "underlying_ticker": "TLT",
+    "close_price": 90.14,
+    "put_call_ratio": 0.281982,
+    "correlation_to_spy_20d": -0.22784358704847366,
+    "sentiment_regime": "Greed (Complacency)"
+  },
+  {
+    "trade_date": "2025-03-27",
+    "underlying_ticker": "IWM",
+    "close_price": 204.61,
+    "put_call_ratio": 1.216989,
+    "correlation_to_spy_20d": 0.9524623888102609,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-03-27",
+    "underlying_ticker": "QQQ",
+    "close_price": 481.62,
+    "put_call_ratio": 1.177479,
+    "correlation_to_spy_20d": 0.962452631327972,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-03-27",
+    "underlying_ticker": "SPY",
+    "close_price": 567.08,
+    "put_call_ratio": 1.206623,
+    "correlation_to_spy_20d": 1.0000000000000002,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-03-27",
+    "underlying_ticker": "TLT",
+    "close_price": 88.91,
+    "put_call_ratio": 0.445723,
+    "correlation_to_spy_20d": -0.06698000149179859,
+    "sentiment_regime": "Greed (Complacency)"
+  },
+  {
+    "trade_date": "2025-03-25",
+    "underlying_ticker": "IWM",
+    "close_price": 207.7,
+    "put_call_ratio": 1.161642,
+    "correlation_to_spy_20d": 0.9504122377383231,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-03-25",
+    "underlying_ticker": "QQQ",
+    "close_price": 493.46,
+    "put_call_ratio": 1.068511,
+    "correlation_to_spy_20d": 0.9592035128662808,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-03-25",
+    "underlying_ticker": "SPY",
+    "close_price": 575.46,
+    "put_call_ratio": 1.122977,
+    "correlation_to_spy_20d": 1.0000000000000002,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-03-25",
+    "underlying_ticker": "TLT",
+    "close_price": 89.76,
+    "put_call_ratio": 0.27017,
+    "correlation_to_spy_20d": -0.12920780369438906,
+    "sentiment_regime": "Greed (Complacency)"
+  },
+  {
+    "trade_date": "2025-03-24",
+    "underlying_ticker": "IWM",
+    "close_price": 208.86,
+    "put_call_ratio": 1.130223,
+    "correlation_to_spy_20d": 0.9581557841310232,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-03-24",
+    "underlying_ticker": "QQQ",
+    "close_price": 490.66,
+    "put_call_ratio": 1.190293,
+    "correlation_to_spy_20d": 0.9573677966455721,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-03-24",
+    "underlying_ticker": "SPY",
+    "close_price": 574.08,
+    "put_call_ratio": 1.235426,
+    "correlation_to_spy_20d": 1.0000000000000002,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-03-24",
+    "underlying_ticker": "TLT",
+    "close_price": 89.77,
+    "put_call_ratio": 0.37485,
+    "correlation_to_spy_20d": -0.1323849407521221,
+    "sentiment_regime": "Greed (Complacency)"
+  },
+  {
+    "trade_date": "2025-03-21",
+    "underlying_ticker": "IWM",
+    "close_price": 203.79,
+    "put_call_ratio": 1.778845,
+    "correlation_to_spy_20d": 0.9468682099790949,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-03-21",
+    "underlying_ticker": "QQQ",
+    "close_price": 480.84,
+    "put_call_ratio": 0.945602,
+    "correlation_to_spy_20d": 0.9550659261722334,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-03-21",
+    "underlying_ticker": "SPY",
+    "close_price": 563.98,
+    "put_call_ratio": 1.031963,
+    "correlation_to_spy_20d": 0.9999999999999998,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-03-21",
+    "underlying_ticker": "TLT",
+    "close_price": 90.7,
+    "put_call_ratio": 0.415585,
+    "correlation_to_spy_20d": -0.10536860047664433,
+    "sentiment_regime": "Greed (Complacency)"
+  },
+  {
+    "trade_date": "2025-03-20",
+    "underlying_ticker": "IWM",
+    "close_price": 205.06,
+    "put_call_ratio": 4.55621,
+    "correlation_to_spy_20d": 0.9454618977795473,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-03-20",
+    "underlying_ticker": "QQQ",
+    "close_price": 479.26,
+    "put_call_ratio": 1.071536,
+    "correlation_to_spy_20d": 0.9590493183972179,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-03-20",
+    "underlying_ticker": "SPY",
+    "close_price": 565.49,
+    "put_call_ratio": 1.099667,
+    "correlation_to_spy_20d": 1.0000000000000004,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-03-20",
+    "underlying_ticker": "TLT",
+    "close_price": 91.24,
+    "put_call_ratio": 0.549394,
+    "correlation_to_spy_20d": -0.10370443827688924,
+    "sentiment_regime": "Greed (Complacency)"
+  },
+  {
+    "trade_date": "2025-03-19",
+    "underlying_ticker": "IWM",
+    "close_price": 206.37,
+    "put_call_ratio": 1.09583,
+    "correlation_to_spy_20d": 0.94272911616693,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-03-19",
+    "underlying_ticker": "QQQ",
+    "close_price": 480.89,
+    "put_call_ratio": 1.107614,
+    "correlation_to_spy_20d": 0.9590273935411858,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-03-19",
+    "underlying_ticker": "SPY",
+    "close_price": 567.13,
+    "put_call_ratio": 1.156882,
+    "correlation_to_spy_20d": 1.0000000000000002,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-03-19",
+    "underlying_ticker": "TLT",
+    "close_price": 91.18,
+    "put_call_ratio": 0.791462,
+    "correlation_to_spy_20d": -0.10390090272965281,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-03-18",
+    "underlying_ticker": "IWM",
+    "close_price": 203.21,
+    "put_call_ratio": 1.374477,
+    "correlation_to_spy_20d": 0.9397977426684437,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-03-18",
+    "underlying_ticker": "QQQ",
+    "close_price": 474.54,
+    "put_call_ratio": 0.763711,
+    "correlation_to_spy_20d": 0.956727126181244,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-03-18",
+    "underlying_ticker": "SPY",
+    "close_price": 561.02,
+    "put_call_ratio": 0.973216,
+    "correlation_to_spy_20d": 0.9999999999999997,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-03-18",
+    "underlying_ticker": "TLT",
+    "close_price": 90.71,
+    "put_call_ratio": 0.416873,
+    "correlation_to_spy_20d": -0.17096124656757122,
+    "sentiment_regime": "Greed (Complacency)"
+  },
+  {
+    "trade_date": "2025-03-17",
+    "underlying_ticker": "IWM",
+    "close_price": 205.45,
+    "put_call_ratio": 1.448124,
+    "correlation_to_spy_20d": 0.9394725688908632,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-03-17",
+    "underlying_ticker": "QQQ",
+    "close_price": 482.77,
+    "put_call_ratio": 1.055305,
+    "correlation_to_spy_20d": 0.9562220329560079,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-03-17",
+    "underlying_ticker": "SPY",
+    "close_price": 567.15,
+    "put_call_ratio": 1.279246,
+    "correlation_to_spy_20d": 1.0000000000000004,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-03-17",
+    "underlying_ticker": "TLT",
+    "close_price": 90.62,
+    "put_call_ratio": 0.598672,
+    "correlation_to_spy_20d": -0.17178543000819527,
+    "sentiment_regime": "Greed (Complacency)"
+  },
+  {
+    "trade_date": "2025-03-14",
+    "underlying_ticker": "IWM",
+    "close_price": 202.89,
+    "put_call_ratio": 2.206722,
+    "correlation_to_spy_20d": 0.9390555790500861,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-03-14",
+    "underlying_ticker": "QQQ",
+    "close_price": 479.66,
+    "put_call_ratio": 1.243629,
+    "correlation_to_spy_20d": 0.9542494491105631,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-03-14",
+    "underlying_ticker": "SPY",
+    "close_price": 562.81,
+    "put_call_ratio": 1.595084,
+    "correlation_to_spy_20d": 1.0,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-03-14",
+    "underlying_ticker": "TLT",
+    "close_price": 90.17,
+    "put_call_ratio": 0.452234,
+    "correlation_to_spy_20d": -0.19049750940138682,
+    "sentiment_regime": "Greed (Complacency)"
+  },
+  {
+    "trade_date": "2025-03-13",
+    "underlying_ticker": "IWM",
+    "close_price": 198.1,
+    "put_call_ratio": 1.703209,
+    "correlation_to_spy_20d": 0.9292466193044596,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-03-13",
+    "underlying_ticker": "QQQ",
+    "close_price": 468.34,
+    "put_call_ratio": 0.946518,
+    "correlation_to_spy_20d": 0.950239602531044,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-03-13",
+    "underlying_ticker": "SPY",
+    "close_price": 551.42,
+    "put_call_ratio": 1.151088,
+    "correlation_to_spy_20d": 1.0,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-03-13",
+    "underlying_ticker": "TLT",
+    "close_price": 90.65,
+    "put_call_ratio": 0.4614,
+    "correlation_to_spy_20d": 0.0028909550997918846,
+    "sentiment_regime": "Greed (Complacency)"
+  },
+  {
+    "trade_date": "2025-03-12",
+    "underlying_ticker": "IWM",
+    "close_price": 201.1,
+    "put_call_ratio": 0.983261,
+    "correlation_to_spy_20d": 0.9237754331631525,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-03-12",
+    "underlying_ticker": "QQQ",
+    "close_price": 476.92,
+    "put_call_ratio": 1.035086,
+    "correlation_to_spy_20d": 0.9463731615878217,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-03-12",
+    "underlying_ticker": "SPY",
+    "close_price": 558.87,
+    "put_call_ratio": 1.141264,
+    "correlation_to_spy_20d": 1.0,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-03-12",
+    "underlying_ticker": "TLT",
+    "close_price": 89.86,
+    "put_call_ratio": 0.322706,
+    "correlation_to_spy_20d": 0.02832154104550233,
+    "sentiment_regime": "Greed (Complacency)"
+  },
+  {
+    "trade_date": "2025-03-11",
+    "underlying_ticker": "IWM",
+    "close_price": 200.75,
+    "put_call_ratio": 1.512888,
+    "correlation_to_spy_20d": 0.9182739759188459,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-03-11",
+    "underlying_ticker": "QQQ",
+    "close_price": 471.6,
+    "put_call_ratio": 0.82233,
+    "correlation_to_spy_20d": 0.9439989100870012,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-03-11",
+    "underlying_ticker": "SPY",
+    "close_price": 555.92,
+    "put_call_ratio": 1.200506,
+    "correlation_to_spy_20d": 1.0,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-03-11",
+    "underlying_ticker": "TLT",
+    "close_price": 90.4,
+    "put_call_ratio": 0.307541,
+    "correlation_to_spy_20d": 0.04274837552303652,
+    "sentiment_regime": "Greed (Complacency)"
+  },
+  {
+    "trade_date": "2025-03-10",
+    "underlying_ticker": "IWM",
+    "close_price": 200.77,
+    "put_call_ratio": 2.323799,
+    "correlation_to_spy_20d": 0.9411179259284448,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-03-10",
+    "underlying_ticker": "QQQ",
+    "close_price": 472.73,
+    "put_call_ratio": 0.79624,
+    "correlation_to_spy_20d": 0.9550469763156434,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-03-10",
+    "underlying_ticker": "SPY",
+    "close_price": 560.58,
+    "put_call_ratio": 0.939703,
+    "correlation_to_spy_20d": 1.0000000000000002,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-03-10",
+    "underlying_ticker": "TLT",
+    "close_price": 91.05,
+    "put_call_ratio": 0.50163,
+    "correlation_to_spy_20d": 0.004441725041088449,
+    "sentiment_regime": "Greed (Complacency)"
+  },
+  {
+    "trade_date": "2025-03-07",
+    "underlying_ticker": "IWM",
+    "close_price": 205.95,
+    "put_call_ratio": 2.422553,
+    "correlation_to_spy_20d": 0.9379516872503111,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-03-07",
+    "underlying_ticker": "QQQ",
+    "close_price": 491.79,
+    "put_call_ratio": 0.934773,
+    "correlation_to_spy_20d": 0.9420077316777015,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-03-07",
+    "underlying_ticker": "SPY",
+    "close_price": 575.92,
+    "put_call_ratio": 1.157133,
+    "correlation_to_spy_20d": 1.0,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-03-07",
+    "underlying_ticker": "TLT",
+    "close_price": 90.11,
+    "put_call_ratio": 0.383618,
+    "correlation_to_spy_20d": 0.16178584936271123,
+    "sentiment_regime": "Greed (Complacency)"
+  },
+  {
+    "trade_date": "2025-03-06",
+    "underlying_ticker": "IWM",
+    "close_price": 205.28,
+    "put_call_ratio": 1.8896,
+    "correlation_to_spy_20d": 0.9318775822134373,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-03-06",
+    "underlying_ticker": "QQQ",
+    "close_price": 488.2,
+    "put_call_ratio": 0.860466,
+    "correlation_to_spy_20d": 0.941136967269063,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-03-06",
+    "underlying_ticker": "SPY",
+    "close_price": 572.71,
+    "put_call_ratio": 1.066903,
+    "correlation_to_spy_20d": 0.9999999999999999,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-03-06",
+    "underlying_ticker": "TLT",
+    "close_price": 90.4,
+    "put_call_ratio": 0.488471,
+    "correlation_to_spy_20d": 0.17736308034181356,
+    "sentiment_regime": "Greed (Complacency)"
+  },
+  {
+    "trade_date": "2025-03-05",
+    "underlying_ticker": "IWM",
+    "close_price": 208.47,
+    "put_call_ratio": 1.6894,
+    "correlation_to_spy_20d": 0.9290344309758617,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-03-05",
+    "underlying_ticker": "QQQ",
+    "close_price": 502.01,
+    "put_call_ratio": 0.906945,
+    "correlation_to_spy_20d": 0.9338932079594773,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-03-05",
+    "underlying_ticker": "SPY",
+    "close_price": 583.06,
+    "put_call_ratio": 1.134603,
+    "correlation_to_spy_20d": 0.9999999999999999,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-03-05",
+    "underlying_ticker": "TLT",
+    "close_price": 90.7,
+    "put_call_ratio": 0.495857,
+    "correlation_to_spy_20d": 0.19443446853880955,
+    "sentiment_regime": "Greed (Complacency)"
+  },
+  {
+    "trade_date": "2025-03-04",
+    "underlying_ticker": "IWM",
+    "close_price": 206.42,
+    "put_call_ratio": 2.429245,
+    "correlation_to_spy_20d": 0.9193884741066493,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-03-04",
+    "underlying_ticker": "QQQ",
+    "close_price": 495.55,
+    "put_call_ratio": 1.030424,
+    "correlation_to_spy_20d": 0.9305975003590787,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-03-04",
+    "underlying_ticker": "SPY",
+    "close_price": 576.86,
+    "put_call_ratio": 1.279806,
+    "correlation_to_spy_20d": 1.0,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-03-04",
+    "underlying_ticker": "TLT",
+    "close_price": 91.43,
+    "put_call_ratio": 0.481751,
+    "correlation_to_spy_20d": 0.2822110519186047,
+    "sentiment_regime": "Greed (Complacency)"
+  },
+  {
+    "trade_date": "2025-03-03",
+    "underlying_ticker": "IWM",
+    "close_price": 208.78,
+    "put_call_ratio": 1.992495,
+    "correlation_to_spy_20d": 0.9244820054068725,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-03-03",
+    "underlying_ticker": "QQQ",
+    "close_price": 497.05,
+    "put_call_ratio": 1.079218,
+    "correlation_to_spy_20d": 0.9599846479821038,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-03-03",
+    "underlying_ticker": "SPY",
+    "close_price": 583.77,
+    "put_call_ratio": 1.309077,
+    "correlation_to_spy_20d": 1.0,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-03-03",
+    "underlying_ticker": "TLT",
+    "close_price": 92.57,
+    "put_call_ratio": 0.46274,
+    "correlation_to_spy_20d": 0.20309746047114974,
+    "sentiment_regime": "Greed (Complacency)"
+  },
+  {
+    "trade_date": "2025-02-28",
+    "underlying_ticker": "IWM",
+    "close_price": 214.65,
+    "put_call_ratio": 1.802523,
+    "correlation_to_spy_20d": 0.908418632332975,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-02-28",
+    "underlying_ticker": "QQQ",
+    "close_price": 508.17,
+    "put_call_ratio": 1.120406,
+    "correlation_to_spy_20d": 0.9467933773613566,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-02-28",
+    "underlying_ticker": "SPY",
+    "close_price": 594.18,
+    "put_call_ratio": 1.291373,
+    "correlation_to_spy_20d": 1.0,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-02-28",
+    "underlying_ticker": "TLT",
+    "close_price": 92.43,
+    "put_call_ratio": 0.259389,
+    "correlation_to_spy_20d": 0.23217840481923946,
+    "sentiment_regime": "Greed (Complacency)"
+  },
+  {
+    "trade_date": "2025-02-27",
+    "underlying_ticker": "IWM",
+    "close_price": 212.39,
+    "put_call_ratio": 2.501881,
+    "correlation_to_spy_20d": 0.9140773473029407,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-02-27",
+    "underlying_ticker": "QQQ",
+    "close_price": 500.27,
+    "put_call_ratio": 1.054423,
+    "correlation_to_spy_20d": 0.9456288791653721,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-02-27",
+    "underlying_ticker": "SPY",
+    "close_price": 585.05,
+    "put_call_ratio": 1.361813,
+    "correlation_to_spy_20d": 1.0,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-02-27",
+    "underlying_ticker": "TLT",
+    "close_price": 91.31,
+    "put_call_ratio": 0.552411,
+    "correlation_to_spy_20d": 0.14036934135787713,
+    "sentiment_regime": "Greed (Complacency)"
+  },
+  {
+    "trade_date": "2025-02-26",
+    "underlying_ticker": "IWM",
+    "close_price": 215.68,
+    "put_call_ratio": 1.752172,
+    "correlation_to_spy_20d": 0.9174080826781131,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-02-26",
+    "underlying_ticker": "QQQ",
+    "close_price": 514.56,
+    "put_call_ratio": 0.944064,
+    "correlation_to_spy_20d": 0.9283496380301285,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-02-26",
+    "underlying_ticker": "SPY",
+    "close_price": 594.54,
+    "put_call_ratio": 1.09532,
+    "correlation_to_spy_20d": 1.0000000000000004,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-02-26",
+    "underlying_ticker": "TLT",
+    "close_price": 91.96,
+    "put_call_ratio": 0.320561,
+    "correlation_to_spy_20d": 0.0498734143941494,
+    "sentiment_regime": "Greed (Complacency)"
+  },
+  {
+    "trade_date": "2025-02-25",
+    "underlying_ticker": "IWM",
+    "close_price": 215.41,
+    "put_call_ratio": 1.715559,
+    "correlation_to_spy_20d": 0.8956231673458146,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-02-25",
+    "underlying_ticker": "QQQ",
+    "close_price": 513.32,
+    "put_call_ratio": 1.027936,
+    "correlation_to_spy_20d": 0.9352055011269951,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-02-25",
+    "underlying_ticker": "SPY",
+    "close_price": 594.24,
+    "put_call_ratio": 1.168114,
+    "correlation_to_spy_20d": 1.0000000000000002,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-02-25",
+    "underlying_ticker": "TLT",
+    "close_price": 91.42,
+    "put_call_ratio": 0.231836,
+    "correlation_to_spy_20d": 0.02284360726394958,
+    "sentiment_regime": "Greed (Complacency)"
+  },
+  {
+    "trade_date": "2025-02-24",
+    "underlying_ticker": "IWM",
+    "close_price": 216.23,
+    "put_call_ratio": 1.709397,
+    "correlation_to_spy_20d": 0.8740642660309419,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-02-24",
+    "underlying_ticker": "QQQ",
+    "close_price": 519.87,
+    "put_call_ratio": 1.098226,
+    "correlation_to_spy_20d": 0.9398031603494791,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-02-24",
+    "underlying_ticker": "SPY",
+    "close_price": 597.21,
+    "put_call_ratio": 1.360592,
+    "correlation_to_spy_20d": 1.0000000000000002,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-02-24",
+    "underlying_ticker": "TLT",
+    "close_price": 89.87,
+    "put_call_ratio": 0.369324,
+    "correlation_to_spy_20d": -0.0371271097425716,
+    "sentiment_regime": "Greed (Complacency)"
+  },
+  {
+    "trade_date": "2025-02-21",
+    "underlying_ticker": "IWM",
+    "close_price": 217.8,
+    "put_call_ratio": 2.110649,
+    "correlation_to_spy_20d": 0.8710317322883889,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-02-21",
+    "underlying_ticker": "QQQ",
+    "close_price": 526.08,
+    "put_call_ratio": 0.96354,
+    "correlation_to_spy_20d": 0.943820300837987,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-02-21",
+    "underlying_ticker": "SPY",
+    "close_price": 599.94,
+    "put_call_ratio": 1.166875,
+    "correlation_to_spy_20d": 1.0,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-02-21",
+    "underlying_ticker": "TLT",
+    "close_price": 89.61,
+    "put_call_ratio": 0.269187,
+    "correlation_to_spy_20d": -0.03808588762566232,
+    "sentiment_regime": "Greed (Complacency)"
+  },
+  {
+    "trade_date": "2025-02-20",
+    "underlying_ticker": "IWM",
+    "close_price": 224.26,
+    "put_call_ratio": 1.288888,
+    "correlation_to_spy_20d": 0.822841224964909,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-02-20",
+    "underlying_ticker": "QQQ",
+    "close_price": 537.23,
+    "put_call_ratio": 0.970677,
+    "correlation_to_spy_20d": 0.9244546591539426,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-02-20",
+    "underlying_ticker": "SPY",
+    "close_price": 610.38,
+    "put_call_ratio": 0.911111,
+    "correlation_to_spy_20d": 1.0,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-02-20",
+    "underlying_ticker": "TLT",
+    "close_price": 88.54,
+    "put_call_ratio": 0.280984,
+    "correlation_to_spy_20d": 0.08864965904783029,
+    "sentiment_regime": "Greed (Complacency)"
+  },
+  {
+    "trade_date": "2025-02-19",
+    "underlying_ticker": "IWM",
+    "close_price": 226.43,
+    "put_call_ratio": 0.914886,
+    "correlation_to_spy_20d": 0.7648843629223255,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-02-19",
+    "underlying_ticker": "QQQ",
+    "close_price": 539.52,
+    "put_call_ratio": 1.102263,
+    "correlation_to_spy_20d": 0.9246064370497743,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-02-19",
+    "underlying_ticker": "SPY",
+    "close_price": 612.93,
+    "put_call_ratio": 1.132262,
+    "correlation_to_spy_20d": 1.0,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-02-19",
+    "underlying_ticker": "TLT",
+    "close_price": 88.21,
+    "put_call_ratio": 0.443407,
+    "correlation_to_spy_20d": 0.07588773020861758,
+    "sentiment_regime": "Greed (Complacency)"
+  },
+  {
+    "trade_date": "2025-02-18",
+    "underlying_ticker": "IWM",
+    "close_price": 227.21,
+    "put_call_ratio": 1.493771,
+    "correlation_to_spy_20d": 0.7852275023141524,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-02-18",
+    "underlying_ticker": "QQQ",
+    "close_price": 539.37,
+    "put_call_ratio": 0.973681,
+    "correlation_to_spy_20d": 0.913226352729261,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-02-18",
+    "underlying_ticker": "SPY",
+    "close_price": 611.49,
+    "put_call_ratio": 0.953944,
+    "correlation_to_spy_20d": 0.9999999999999999,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-02-18",
+    "underlying_ticker": "TLT",
+    "close_price": 88.1,
+    "put_call_ratio": 0.380917,
+    "correlation_to_spy_20d": 0.13354329954579913,
+    "sentiment_regime": "Greed (Complacency)"
+  },
+  {
+    "trade_date": "2025-02-14",
+    "underlying_ticker": "IWM",
+    "close_price": 225.97,
+    "put_call_ratio": 1.439719,
+    "correlation_to_spy_20d": 0.7779482892033487,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-02-14",
+    "underlying_ticker": "QQQ",
+    "close_price": 538.15,
+    "put_call_ratio": 1.054073,
+    "correlation_to_spy_20d": 0.9215218799029467,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-02-14",
+    "underlying_ticker": "SPY",
+    "close_price": 609.7,
+    "put_call_ratio": 1.071704,
+    "correlation_to_spy_20d": 1.0000000000000002,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-02-14",
+    "underlying_ticker": "TLT",
+    "close_price": 89.15,
+    "put_call_ratio": 0.36672,
+    "correlation_to_spy_20d": 0.16224966049119505,
+    "sentiment_regime": "Greed (Complacency)"
+  },
+  {
+    "trade_date": "2025-02-13",
+    "underlying_ticker": "IWM",
+    "close_price": 226.14,
+    "put_call_ratio": 1.233713,
+    "correlation_to_spy_20d": 0.7679744797651376,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-02-13",
+    "underlying_ticker": "QQQ",
+    "close_price": 535.9,
+    "put_call_ratio": 1.197675,
+    "correlation_to_spy_20d": 0.924406016303232,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-02-13",
+    "underlying_ticker": "SPY",
+    "close_price": 609.73,
+    "put_call_ratio": 1.241042,
+    "correlation_to_spy_20d": 1.0000000000000002,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-02-13",
+    "underlying_ticker": "TLT",
+    "close_price": 88.68,
+    "put_call_ratio": 0.817945,
+    "correlation_to_spy_20d": 0.16156652305738683,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-02-12",
+    "underlying_ticker": "IWM",
+    "close_price": 223.62,
+    "put_call_ratio": 2.177241,
+    "correlation_to_spy_20d": 0.8016657067560151,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-02-12",
+    "underlying_ticker": "QQQ",
+    "close_price": 528.3,
+    "put_call_ratio": 1.291511,
+    "correlation_to_spy_20d": 0.9307619326759734,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-02-12",
+    "underlying_ticker": "SPY",
+    "close_price": 603.36,
+    "put_call_ratio": 1.144599,
+    "correlation_to_spy_20d": 1.0000000000000002,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-02-12",
+    "underlying_ticker": "TLT",
+    "close_price": 87.23,
+    "put_call_ratio": 0.753656,
+    "correlation_to_spy_20d": 0.2520428175486361,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-02-11",
+    "underlying_ticker": "IWM",
+    "close_price": 225.7,
+    "put_call_ratio": 1.205487,
+    "correlation_to_spy_20d": 0.7722266653525602,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-02-11",
+    "underlying_ticker": "QQQ",
+    "close_price": 527.99,
+    "put_call_ratio": 1.245284,
+    "correlation_to_spy_20d": 0.9364854433185733,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-02-11",
+    "underlying_ticker": "SPY",
+    "close_price": 605.31,
+    "put_call_ratio": 1.350012,
+    "correlation_to_spy_20d": 1.0,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-02-11",
+    "underlying_ticker": "TLT",
+    "close_price": 88.43,
+    "put_call_ratio": 0.341794,
+    "correlation_to_spy_20d": 0.20966573586791545,
+    "sentiment_regime": "Greed (Complacency)"
+  },
+  {
+    "trade_date": "2025-02-10",
+    "underlying_ticker": "IWM",
+    "close_price": 227.02,
+    "put_call_ratio": 1.047733,
+    "correlation_to_spy_20d": 0.7792253044310931,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-02-10",
+    "underlying_ticker": "QQQ",
+    "close_price": 529.25,
+    "put_call_ratio": 1.389235,
+    "correlation_to_spy_20d": 0.933783235537965,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-02-10",
+    "underlying_ticker": "SPY",
+    "close_price": 604.85,
+    "put_call_ratio": 1.456198,
+    "correlation_to_spy_20d": 1.0,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-02-10",
+    "underlying_ticker": "TLT",
+    "close_price": 89.0,
+    "put_call_ratio": 0.445788,
+    "correlation_to_spy_20d": 0.207432687519833,
+    "sentiment_regime": "Greed (Complacency)"
+  },
+  {
+    "trade_date": "2025-02-07",
+    "underlying_ticker": "IWM",
+    "close_price": 226.0,
+    "put_call_ratio": 2.083015,
+    "correlation_to_spy_20d": 0.8292395502772041,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-02-07",
+    "underlying_ticker": "QQQ",
+    "close_price": 522.92,
+    "put_call_ratio": 0.965078,
+    "correlation_to_spy_20d": 0.932435952535758,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-02-07",
+    "underlying_ticker": "SPY",
+    "close_price": 600.77,
+    "put_call_ratio": 1.01848,
+    "correlation_to_spy_20d": 0.9999999999999998,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-02-07",
+    "underlying_ticker": "TLT",
+    "close_price": 89.27,
+    "put_call_ratio": 0.596193,
+    "correlation_to_spy_20d": 0.3280598274893233,
+    "sentiment_regime": "Greed (Complacency)"
+  },
+  {
+    "trade_date": "2025-02-06",
+    "underlying_ticker": "IWM",
+    "close_price": 228.65,
+    "put_call_ratio": 0.90041,
+    "correlation_to_spy_20d": 0.8153084824082707,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-02-06",
+    "underlying_ticker": "QQQ",
+    "close_price": 529.6,
+    "put_call_ratio": 0.977611,
+    "correlation_to_spy_20d": 0.927470157809887,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-02-06",
+    "underlying_ticker": "SPY",
+    "close_price": 606.32,
+    "put_call_ratio": 1.051802,
+    "correlation_to_spy_20d": 1.0000000000000002,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-02-06",
+    "underlying_ticker": "TLT",
+    "close_price": 89.85,
+    "put_call_ratio": 0.66345,
+    "correlation_to_spy_20d": 0.27302458956181186,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-02-05",
+    "underlying_ticker": "IWM",
+    "close_price": 229.4,
+    "put_call_ratio": 1.592986,
+    "correlation_to_spy_20d": 0.8199487640523467,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-02-05",
+    "underlying_ticker": "QQQ",
+    "close_price": 526.85,
+    "put_call_ratio": 1.059957,
+    "correlation_to_spy_20d": 0.9270545140560796,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-02-05",
+    "underlying_ticker": "SPY",
+    "close_price": 604.22,
+    "put_call_ratio": 1.054005,
+    "correlation_to_spy_20d": 1.0,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-02-05",
+    "underlying_ticker": "TLT",
+    "close_price": 89.89,
+    "put_call_ratio": 0.396641,
+    "correlation_to_spy_20d": 0.27966898374786653,
+    "sentiment_regime": "Greed (Complacency)"
+  },
+  {
+    "trade_date": "2025-02-04",
+    "underlying_ticker": "IWM",
+    "close_price": 226.93,
+    "put_call_ratio": 1.752373,
+    "correlation_to_spy_20d": 0.8265644889984665,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-02-04",
+    "underlying_ticker": "QQQ",
+    "close_price": 524.47,
+    "put_call_ratio": 1.189878,
+    "correlation_to_spy_20d": 0.9348284368255516,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-02-04",
+    "underlying_ticker": "SPY",
+    "close_price": 601.78,
+    "put_call_ratio": 1.092796,
+    "correlation_to_spy_20d": 0.9999999999999998,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-02-04",
+    "underlying_ticker": "TLT",
+    "close_price": 88.43,
+    "put_call_ratio": 0.661375,
+    "correlation_to_spy_20d": 0.3757058116733484,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-02-03",
+    "underlying_ticker": "IWM",
+    "close_price": 223.83,
+    "put_call_ratio": 2.600831,
+    "correlation_to_spy_20d": 0.8176578901537325,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-02-03",
+    "underlying_ticker": "QQQ",
+    "close_price": 518.11,
+    "put_call_ratio": 1.237897,
+    "correlation_to_spy_20d": 0.9336553039755151,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-02-03",
+    "underlying_ticker": "SPY",
+    "close_price": 597.77,
+    "put_call_ratio": 1.316021,
+    "correlation_to_spy_20d": 0.9999999999999998,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-02-03",
+    "underlying_ticker": "TLT",
+    "close_price": 88.16,
+    "put_call_ratio": 0.550012,
+    "correlation_to_spy_20d": 0.33560133362030403,
+    "sentiment_regime": "Greed (Complacency)"
+  },
+  {
+    "trade_date": "2025-01-31",
+    "underlying_ticker": "IWM",
+    "close_price": 226.48,
+    "put_call_ratio": 2.100127,
+    "correlation_to_spy_20d": 0.826570600075131,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-01-31",
+    "underlying_ticker": "QQQ",
+    "close_price": 522.29,
+    "put_call_ratio": 1.272157,
+    "correlation_to_spy_20d": 0.9380927302212674,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-01-31",
+    "underlying_ticker": "SPY",
+    "close_price": 601.82,
+    "put_call_ratio": 1.277378,
+    "correlation_to_spy_20d": 0.9999999999999998,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-01-31",
+    "underlying_ticker": "TLT",
+    "close_price": 87.76,
+    "put_call_ratio": 0.361962,
+    "correlation_to_spy_20d": 0.3220588632989084,
+    "sentiment_regime": "Greed (Complacency)"
+  },
+  {
+    "trade_date": "2025-01-30",
+    "underlying_ticker": "IWM",
+    "close_price": 228.53,
+    "put_call_ratio": 1.471533,
+    "correlation_to_spy_20d": 0.8169017462475608,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-01-30",
+    "underlying_ticker": "QQQ",
+    "close_price": 523.05,
+    "put_call_ratio": 0.933584,
+    "correlation_to_spy_20d": 0.9453806237994946,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-01-30",
+    "underlying_ticker": "SPY",
+    "close_price": 605.04,
+    "put_call_ratio": 1.009017,
+    "correlation_to_spy_20d": 1.0000000000000002,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-01-30",
+    "underlying_ticker": "TLT",
+    "close_price": 88.34,
+    "put_call_ratio": 0.474263,
+    "correlation_to_spy_20d": 0.2811517734733407,
+    "sentiment_regime": "Greed (Complacency)"
+  },
+  {
+    "trade_date": "2025-01-29",
+    "underlying_ticker": "IWM",
+    "close_price": 226.23,
+    "put_call_ratio": 0.809377,
+    "correlation_to_spy_20d": 0.8171465030694536,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-01-29",
+    "underlying_ticker": "QQQ",
+    "close_price": 520.83,
+    "put_call_ratio": 0.946951,
+    "correlation_to_spy_20d": 0.9460170781129241,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-01-29",
+    "underlying_ticker": "SPY",
+    "close_price": 601.81,
+    "put_call_ratio": 0.978707,
+    "correlation_to_spy_20d": 1.0000000000000002,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-01-29",
+    "underlying_ticker": "TLT",
+    "close_price": 88.01,
+    "put_call_ratio": 0.575469,
+    "correlation_to_spy_20d": 0.27314070226932574,
+    "sentiment_regime": "Greed (Complacency)"
+  },
+  {
+    "trade_date": "2025-01-28",
+    "underlying_ticker": "IWM",
+    "close_price": 226.75,
+    "put_call_ratio": 0.814384,
+    "correlation_to_spy_20d": 0.8095202200868516,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-01-28",
+    "underlying_ticker": "QQQ",
+    "close_price": 521.81,
+    "put_call_ratio": 1.032709,
+    "correlation_to_spy_20d": 0.9522990222654879,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-01-28",
+    "underlying_ticker": "SPY",
+    "close_price": 604.52,
+    "put_call_ratio": 1.038789,
+    "correlation_to_spy_20d": 1.0,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-01-28",
+    "underlying_ticker": "TLT",
+    "close_price": 88.19,
+    "put_call_ratio": 0.558355,
+    "correlation_to_spy_20d": 0.2834593520446281,
+    "sentiment_regime": "Greed (Complacency)"
+  },
+  {
+    "trade_date": "2025-01-27",
+    "underlying_ticker": "IWM",
+    "close_price": 226.5,
+    "put_call_ratio": 1.213515,
+    "correlation_to_spy_20d": 0.82714491595146,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-01-27",
+    "underlying_ticker": "QQQ",
+    "close_price": 514.21,
+    "put_call_ratio": 1.096849,
+    "correlation_to_spy_20d": 0.9517427606400041,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-01-27",
+    "underlying_ticker": "SPY",
+    "close_price": 599.37,
+    "put_call_ratio": 1.194702,
+    "correlation_to_spy_20d": 1.0,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-01-27",
+    "underlying_ticker": "TLT",
+    "close_price": 88.25,
+    "put_call_ratio": 0.356992,
+    "correlation_to_spy_20d": 0.2954672666871751,
+    "sentiment_regime": "Greed (Complacency)"
+  },
+  {
+    "trade_date": "2025-01-24",
+    "underlying_ticker": "IWM",
+    "close_price": 228.69,
+    "put_call_ratio": 0.838908,
+    "correlation_to_spy_20d": 0.8183247727729536,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-01-24",
+    "underlying_ticker": "QQQ",
+    "close_price": 529.63,
+    "put_call_ratio": 1.014845,
+    "correlation_to_spy_20d": 0.9485685012131133,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-01-24",
+    "underlying_ticker": "SPY",
+    "close_price": 607.97,
+    "put_call_ratio": 1.11267,
+    "correlation_to_spy_20d": 1.0000000000000002,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-01-24",
+    "underlying_ticker": "TLT",
+    "close_price": 87.22,
+    "put_call_ratio": 0.398683,
+    "correlation_to_spy_20d": 0.565627778480042,
+    "sentiment_regime": "Greed (Complacency)"
+  },
+  {
+    "trade_date": "2025-01-23",
+    "underlying_ticker": "IWM",
+    "close_price": 229.33,
+    "put_call_ratio": 0.857615,
+    "correlation_to_spy_20d": 0.8150498839605377,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-01-23",
+    "underlying_ticker": "QQQ",
+    "close_price": 532.64,
+    "put_call_ratio": 0.986201,
+    "correlation_to_spy_20d": 0.9472533015527391,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-01-23",
+    "underlying_ticker": "SPY",
+    "close_price": 609.75,
+    "put_call_ratio": 1.28156,
+    "correlation_to_spy_20d": 0.9999999999999997,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-01-23",
+    "underlying_ticker": "TLT",
+    "close_price": 86.83,
+    "put_call_ratio": 0.390031,
+    "correlation_to_spy_20d": 0.6128366495439505,
+    "sentiment_regime": "Greed (Complacency)"
+  },
+  {
+    "trade_date": "2025-01-22",
+    "underlying_ticker": "IWM",
+    "close_price": 228.29,
+    "put_call_ratio": 1.082527,
+    "correlation_to_spy_20d": 0.8150280219511266,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-01-22",
+    "underlying_ticker": "QQQ",
+    "close_price": 531.51,
+    "put_call_ratio": 1.179308,
+    "correlation_to_spy_20d": 0.9518007596200486,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-01-22",
+    "underlying_ticker": "SPY",
+    "close_price": 606.44,
+    "put_call_ratio": 1.275842,
+    "correlation_to_spy_20d": 1.0000000000000002,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-01-22",
+    "underlying_ticker": "TLT",
+    "close_price": 87.51,
+    "put_call_ratio": 0.471447,
+    "correlation_to_spy_20d": 0.6680274975050192,
+    "sentiment_regime": "Greed (Complacency)"
+  },
+  {
+    "trade_date": "2025-01-21",
+    "underlying_ticker": "IWM",
+    "close_price": 229.79,
+    "put_call_ratio": 1.043205,
+    "correlation_to_spy_20d": 0.8681399485981173,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-01-21",
+    "underlying_ticker": "QQQ",
+    "close_price": 524.8,
+    "put_call_ratio": 1.095236,
+    "correlation_to_spy_20d": 0.959489939194122,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-01-21",
+    "underlying_ticker": "SPY",
+    "close_price": 603.05,
+    "put_call_ratio": 1.442825,
+    "correlation_to_spy_20d": 1.0000000000000002,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-01-21",
+    "underlying_ticker": "TLT",
+    "close_price": 87.97,
+    "put_call_ratio": 0.415279,
+    "correlation_to_spy_20d": 0.7091738656188277,
+    "sentiment_regime": "Greed (Complacency)"
+  },
+  {
+    "trade_date": "2025-01-17",
+    "underlying_ticker": "IWM",
+    "close_price": 225.46,
+    "put_call_ratio": 1.343674,
+    "correlation_to_spy_20d": 0.8726850198681375,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-01-17",
+    "underlying_ticker": "QQQ",
+    "close_price": 521.74,
+    "put_call_ratio": 1.150899,
+    "correlation_to_spy_20d": 0.9664490056320396,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-01-17",
+    "underlying_ticker": "SPY",
+    "close_price": 597.58,
+    "put_call_ratio": 1.195839,
+    "correlation_to_spy_20d": 1.0,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-01-17",
+    "underlying_ticker": "TLT",
+    "close_price": 87.19,
+    "put_call_ratio": 0.449868,
+    "correlation_to_spy_20d": 0.6895533690129798,
+    "sentiment_regime": "Greed (Complacency)"
+  },
+  {
+    "trade_date": "2025-01-16",
+    "underlying_ticker": "IWM",
+    "close_price": 224.49,
+    "put_call_ratio": 1.48044,
+    "correlation_to_spy_20d": 0.8917407633852589,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-01-16",
+    "underlying_ticker": "QQQ",
+    "close_price": 513.08,
+    "put_call_ratio": 0.911568,
+    "correlation_to_spy_20d": 0.9672791333670929,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-01-16",
+    "underlying_ticker": "SPY",
+    "close_price": 591.64,
+    "put_call_ratio": 1.200087,
+    "correlation_to_spy_20d": 1.0000000000000002,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-01-16",
+    "underlying_ticker": "TLT",
+    "close_price": 87.04,
+    "put_call_ratio": 0.986203,
+    "correlation_to_spy_20d": 0.6928135995783055,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-01-15",
+    "underlying_ticker": "IWM",
+    "close_price": 224.04,
+    "put_call_ratio": 1.545009,
+    "correlation_to_spy_20d": 0.8962247241945097,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-01-15",
+    "underlying_ticker": "QQQ",
+    "close_price": 516.7,
+    "put_call_ratio": 1.072345,
+    "correlation_to_spy_20d": 0.9704974819432995,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-01-15",
+    "underlying_ticker": "SPY",
+    "close_price": 592.78,
+    "put_call_ratio": 1.190245,
+    "correlation_to_spy_20d": 0.9999999999999999,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-01-15",
+    "underlying_ticker": "TLT",
+    "close_price": 86.76,
+    "put_call_ratio": 0.305422,
+    "correlation_to_spy_20d": 0.722873226607814,
+    "sentiment_regime": "Greed (Complacency)"
+  },
+  {
+    "trade_date": "2025-01-14",
+    "underlying_ticker": "IWM",
+    "close_price": 219.72,
+    "put_call_ratio": 1.442053,
+    "correlation_to_spy_20d": 0.853263747018627,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-01-14",
+    "underlying_ticker": "QQQ",
+    "close_price": 505.08,
+    "put_call_ratio": 0.766855,
+    "correlation_to_spy_20d": 0.9537246268864877,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-01-14",
+    "underlying_ticker": "SPY",
+    "close_price": 582.19,
+    "put_call_ratio": 0.936834,
+    "correlation_to_spy_20d": 1.0,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-01-14",
+    "underlying_ticker": "TLT",
+    "close_price": 85.29,
+    "put_call_ratio": 0.567721,
+    "correlation_to_spy_20d": 0.4941605239222455,
+    "sentiment_regime": "Greed (Complacency)"
+  },
+  {
+    "trade_date": "2025-01-13",
+    "underlying_ticker": "IWM",
+    "close_price": 217.25,
+    "put_call_ratio": 1.659396,
+    "correlation_to_spy_20d": 0.8906521001361312,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-01-13",
+    "underlying_ticker": "QQQ",
+    "close_price": 505.56,
+    "put_call_ratio": 1.143291,
+    "correlation_to_spy_20d": 0.9556842423604407,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-01-13",
+    "underlying_ticker": "SPY",
+    "close_price": 581.39,
+    "put_call_ratio": 1.209111,
+    "correlation_to_spy_20d": 1.0,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-01-13",
+    "underlying_ticker": "TLT",
+    "close_price": 85.43,
+    "put_call_ratio": 0.415815,
+    "correlation_to_spy_20d": 0.48642323471953536,
+    "sentiment_regime": "Greed (Complacency)"
+  },
+  {
+    "trade_date": "2025-01-10",
+    "underlying_ticker": "IWM",
+    "close_price": 216.83,
+    "put_call_ratio": 2.046753,
+    "correlation_to_spy_20d": 0.8884692792436191,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-01-10",
+    "underlying_ticker": "QQQ",
+    "close_price": 507.19,
+    "put_call_ratio": 1.155497,
+    "correlation_to_spy_20d": 0.9684584456103694,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-01-10",
+    "underlying_ticker": "SPY",
+    "close_price": 580.49,
+    "put_call_ratio": 1.215337,
+    "correlation_to_spy_20d": 1.0,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-01-10",
+    "underlying_ticker": "TLT",
+    "close_price": 85.46,
+    "put_call_ratio": 0.53022,
+    "correlation_to_spy_20d": 0.47144679156516384,
+    "sentiment_regime": "Greed (Complacency)"
+  },
+  {
+    "trade_date": "2025-01-08",
+    "underlying_ticker": "IWM",
+    "close_price": 221.71,
+    "put_call_ratio": 1.820023,
+    "correlation_to_spy_20d": 0.8215697399628662,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-01-08",
+    "underlying_ticker": "QQQ",
+    "close_price": 515.27,
+    "put_call_ratio": 1.105478,
+    "correlation_to_spy_20d": 0.981906131468463,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-01-08",
+    "underlying_ticker": "SPY",
+    "close_price": 589.49,
+    "put_call_ratio": 1.235901,
+    "correlation_to_spy_20d": 1.0,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-01-08",
+    "underlying_ticker": "TLT",
+    "close_price": 86.03,
+    "put_call_ratio": 0.729352,
+    "correlation_to_spy_20d": 0.411410882614023,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-01-07",
+    "underlying_ticker": "IWM",
+    "close_price": 222.72,
+    "put_call_ratio": 1.435465,
+    "correlation_to_spy_20d": 0.8973183970582367,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-01-07",
+    "underlying_ticker": "QQQ",
+    "close_price": 515.18,
+    "put_call_ratio": 0.99549,
+    "correlation_to_spy_20d": 0.9833608374005834,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-01-07",
+    "underlying_ticker": "SPY",
+    "close_price": 588.63,
+    "put_call_ratio": 1.085161,
+    "correlation_to_spy_20d": 1.0,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-01-07",
+    "underlying_ticker": "TLT",
+    "close_price": 85.92,
+    "put_call_ratio": 0.635069,
+    "correlation_to_spy_20d": 0.4290324816324427,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-01-06",
+    "underlying_ticker": "IWM",
+    "close_price": 224.52,
+    "put_call_ratio": 1.403555,
+    "correlation_to_spy_20d": 0.805920188451139,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-01-06",
+    "underlying_ticker": "QQQ",
+    "close_price": 524.54,
+    "put_call_ratio": 1.03716,
+    "correlation_to_spy_20d": 0.9669989429902904,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-01-06",
+    "underlying_ticker": "SPY",
+    "close_price": 595.36,
+    "put_call_ratio": 1.260545,
+    "correlation_to_spy_20d": 1.0,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-01-06",
+    "underlying_ticker": "TLT",
+    "close_price": 86.9,
+    "put_call_ratio": 0.513966,
+    "correlation_to_spy_20d": -0.2616364330460073,
+    "sentiment_regime": "Greed (Complacency)"
+  },
+  {
+    "trade_date": "2025-01-03",
+    "underlying_ticker": "IWM",
+    "close_price": 224.43,
+    "put_call_ratio": 1.288898,
+    "correlation_to_spy_20d": 0.9955093516084399,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-01-03",
+    "underlying_ticker": "QQQ",
+    "close_price": 518.58,
+    "put_call_ratio": 1.096098,
+    "correlation_to_spy_20d": 0.9814522593510918,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-01-03",
+    "underlying_ticker": "SPY",
+    "close_price": 591.95,
+    "put_call_ratio": 1.229704,
+    "correlation_to_spy_20d": 1.0000000000000002,
+    "sentiment_regime": "Fear (High Hedging)"
+  },
+  {
+    "trade_date": "2025-01-03",
+    "underlying_ticker": "TLT",
+    "close_price": 87.29,
+    "put_call_ratio": 0.468687,
+    "correlation_to_spy_20d": -0.19549647613302057,
+    "sentiment_regime": "Greed (Complacency)"
+  },
+  {
+    "trade_date": "2025-01-02",
+    "underlying_ticker": "IWM",
+    "close_price": 221.14,
+    "put_call_ratio": 0.83497,
+    "correlation_to_spy_20d": -1.000000000000001,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-01-02",
+    "underlying_ticker": "QQQ",
+    "close_price": 510.23,
+    "put_call_ratio": 0.894271,
+    "correlation_to_spy_20d": 0.9999999999999996,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-01-02",
+    "underlying_ticker": "SPY",
+    "close_price": 584.64,
+    "put_call_ratio": 0.94582,
+    "correlation_to_spy_20d": 1.0,
+    "sentiment_regime": "Neutral"
+  },
+  {
+    "trade_date": "2025-01-02",
+    "underlying_ticker": "TLT",
+    "close_price": 87.57,
+    "put_call_ratio": 1.033026,
+    "correlation_to_spy_20d": 0.9999999999999998,
+    "sentiment_regime": "Neutral"
   }
 ]
