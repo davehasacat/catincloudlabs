@@ -1738,19 +1738,20 @@ figure, .card { overflow: hidden; }
 /* Section labels inside insights */
 .insights-panel h4 {
   font-size: 0.78rem;
-  font-weight: 500;
+  font-weight: 600; /* Increased weight slightly for better contrast */
   text-transform: uppercase;
   letter-spacing: 0.09em;
-  color: var(--gray-600);
+  
+  /* Cloud Theme: Matching the Snapshot Badge style */
+  color: var(--accent-800);             /* Deep Blue text */
+  background: var(--accent-100);        /* Light Blue Cloud background */
+  border: 1px solid var(--accent-200);  /* Soft Blue border for definition */
   
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
   padding: 0.16rem 0.6rem;
   border-radius: 999px;
-  
-  background: #ffffff;
-  border: 1px solid var(--gray-200);
   
   margin-top: 1.4rem;
   margin-bottom: 0.6rem;
@@ -2199,11 +2200,11 @@ figure, .card { overflow: hidden; }
   display: block;
 }
 
-/* "Snapshot" Badge - Amber color to signify static/cached data */
+/* "Snapshot" Badge */
 .snapshot-badge {
   display: inline-block;
-  background: #fef3c7; /* Amber-100 */
-  color: #92400e;       /* Amber-800 */
+  background: var(--accent-100); /* Light blue */
+  color: var(--accent-800);      /* Dark blue text */
   font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -2272,16 +2273,18 @@ figure, .card { overflow: hidden; }
   line-height: 1.5;
   max-width: 65ch;
 }
+
 /* ==================================================================== */
 /* 12. PROJECT ALERTS & CHART EXPLAINERS                                */
 /* ==================================================================== */
 
 .callout-alert {
-  /* Match the .snapshot-badge Amber theme */
-  background-color: #fffbeb; /* Amber-50 */
-  border-left: 4px solid #f59e0b; /* Amber-500 */
-  color: #92400e; /* Amber-800 */
+  /* Cloud Theme: Using the site's defined blue variables */
+  background-color: var(--accent-50);   /* Very light blue tint */
+  border-left: 4px solid var(--accent); /* Primary Brand Blue (#0ea5e9) */
+  color: var(--accent-900);             /* Deep Blue text for readability */
   
+  /* Keep existing layout styles */
   padding: 1.25rem 1.5rem;
   margin-bottom: 2rem;
   border-radius: var(--radius-md);
@@ -2290,25 +2293,20 @@ figure, .card { overflow: hidden; }
   box-shadow: var(--shadow-sm);
 }
 
-/* Specific class for the Header 
-   We use this class so we don't accidentally target all <strong> tags 
-*/
 .callout-alert-title {
   display: block;
-  color: #b45309; /* Amber-700 */
+  color: var(--accent-700); /* Slightly brighter deep blue for the headline */
   font-weight: 700;
   margin-bottom: 0.35rem;
   font-size: 1.05rem;
   letter-spacing: -0.01em;
 }
 
-/* Reset for standard bold text inside the alert 
-   Ensures the date range stays inline 
-*/
+/* Reset for standard bold text inside the alert */
 .callout-alert strong {
   font-weight: 600;
-  color: inherit;
-  display: inline; /* Forces inline behavior */
+  color: inherit; /* Inherits the deep blue from parent */
+  display: inline;
 }
 
 /* Descriptive blurb under chart headers */
