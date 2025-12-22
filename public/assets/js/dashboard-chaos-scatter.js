@@ -49,10 +49,10 @@
         `Expiry: ${d.expiration_date}`
       );
 
-      // RESPONSIVE TWEAK 1: Smaller bubbles on mobile to reduce clutter
+      // RESPONSIVE TWEAK 1: Drastically smaller bubbles on mobile to clear space
       var maxVol = Math.max(...rawData.map(d => d.total_volume));
-      var maxBubblePx = isMobile ? 35 : 50; 
-      var markerSizes = sizes.map(s => Math.max(5, (s / maxVol) * maxBubblePx)); 
+      var maxBubblePx = isMobile ? 25 : 50; 
+      var markerSizes = sizes.map(s => Math.max(3, (s / maxVol) * maxBubblePx)); 
 
       var trace = {
         x: x,
@@ -76,32 +76,32 @@
     });
 
     // RESPONSIVE TWEAK 2: Annotation placement
-    // Point AT the chaos (x=0), but push text INTO the whitespace (ax=100)
+    // Point arrow High (y=100) where it's empty, instead of y=50 (crowded)
     var annotation = {
-      x: 0, y: 50,      // Arrow head points here (top of the chaos cluster)
+      x: 0, y: 100,     // Arrow head points to the top of the risk curve
       xref: 'x', yref: 'y',
       text: "<b>The Gamma Casino</b><br>(0-DTE Speculation)",
       showarrow: true,
       arrowhead: 2,
-      ax: isMobile ? 100 : 120, // Push text 100px to the right
-      ay: -40,                  // And slightly up
+      ax: isMobile ? 60 : 120,  // Tighter offset on mobile
+      ay: isMobile ? -20 : -40, // Slight lift
       font: { color: "#ef4444", size: isMobile ? 10 : 11 },
       align: "left",
-      bgcolor: "rgba(255, 255, 255, 0.9)", // Opaque background
+      bgcolor: "rgba(255, 255, 255, 0.9)", 
       borderpad: 4,
       arrowcolor: "#ef4444"
     };
 
     var layout = {
       font: { family: "ui-sans-serif, system-ui, sans-serif", size: 11 },
-      margin: { t: 60, r: 20, l: 40, b: 50 }, // More top margin for legend
+      margin: { t: 60, r: 20, l: 40, b: 50 },
       showlegend: true,
       legend: { 
         orientation: "h", 
         y: 1.15, 
         x: 0.5,
         xanchor: 'center',
-        font: { size: isMobile ? 9 : 11 } // Smaller legend on mobile
+        font: { size: isMobile ? 9 : 11 }
       },
       plot_bgcolor: "transparent",
       paper_bgcolor: "transparent",
@@ -110,8 +110,7 @@
         title: { text: "Days to Expiration (DTE)", font: { size: 12, color: "#6b7280" } },
         gridcolor: "#f3f4f6",
         zeroline: true,
-        // Zoom slightly wider on mobile to fit the bubbles
-        range: isMobile ? [-5, 40] : [-2, 45] 
+        range: isMobile ? [-3, 40] : [-2, 45] 
       },
       
       yaxis: {
