@@ -2222,6 +2222,14 @@ figure, .card { overflow: hidden; }
   min-height: 300px;
 }
 
+/* Mobile: Allow charts/tables to shrink below content width so they can scroll */
+@media (max-width: 640px) {
+  .chart-container,
+  .chart-target {
+    min-width: 0;
+  }
+}
+
 /* Loading & Empty States */
 .chart-loading,
 .chart-empty {
