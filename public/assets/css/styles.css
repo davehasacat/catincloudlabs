@@ -2243,3 +2243,79 @@ figure, .card { overflow: hidden; }
   background: var(--gray-50);
   border-radius: var(--radius-sm);
 }
+
+/* "Year in Review" Alert Box */
+/* Using distinct orange tones to differentiate from the blue brand theme */
+.callout-alert {
+  background-color: #fff7ed; /* Orange-50 */
+  border-left: 4px solid #f97316; /* Orange-500 */
+  color: #9a3412; /* Orange-900 */
+  padding: 1rem;
+  margin-bottom: 2rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.callout-alert strong {
+  font-weight: 600;
+  color: #c2410c; /* Orange-700 */
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+/* Descriptive blurb under chart headers (e.g. Chaos Scatter) */
+.chart-explainer {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin: 0.5rem 0 1rem 0;
+  line-height: 1.5;
+  max-width: 65ch;
+}
+/* ==================================================================== */
+/* 12. PROJECT ALERTS & CHART EXPLAINERS                                */
+/* ==================================================================== */
+
+.callout-alert {
+  /* Match the .snapshot-badge Amber theme */
+  background-color: #fffbeb; /* Amber-50 */
+  border-left: 4px solid #f59e0b; /* Amber-500 */
+  color: #92400e; /* Amber-800 */
+  
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 2rem;
+  border-radius: var(--radius-md);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Specific class for the Header 
+   We use this class so we don't accidentally target all <strong> tags 
+*/
+.callout-alert-title {
+  display: block;
+  color: #b45309; /* Amber-700 */
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+  font-size: 1.05rem;
+  letter-spacing: -0.01em;
+}
+
+/* Reset for standard bold text inside the alert 
+   Ensures the date range stays inline 
+*/
+.callout-alert strong {
+  font-weight: 600;
+  color: inherit;
+  display: inline; /* Forces inline behavior */
+}
+
+/* Descriptive blurb under chart headers */
+.chart-explainer {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin: 0.5rem 0 1.25rem 0;
+  line-height: 1.5;
+  max-width: 65ch;
+}
