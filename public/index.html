@@ -122,7 +122,6 @@
         </div>
       </div>
     </section>
-
     <div class="hero-subhead-pill">
       <span class="hero-subhead-kicker">Cloud &amp; Data Engineering</span>
       <span class="hero-subhead-text">
@@ -141,8 +140,8 @@
             </p>
           </article>
 
-          <article id="architecture" class="card reveal proof-diagram card--narrow">
-            <div class="stack stack--tight">
+          <article id="architecture" class="card reveal proof-diagram">
+            <div class="stack stack--tight card-content-constraint">
               <div class="eyebrow">Architecture</div>
               <h2>How the pieces fit together</h2>
               <p class="chart-subtitle">
@@ -150,78 +149,38 @@
                 Snowflake loads from there, and dbt builds marts on top. For the full <strong>Security & Network</strong> view,
                 see the <a href="/projects">Projects</a> page.
               </p>
-
-              <figure id="diagram-architecture" class="diagram-figure">
-                <button
-                  type="button"
-                  class="proof-figure__button"
-                  data-panel-open
-                  data-caption="High-level data flow: ingest market data, land it in S3, transform with dbt, &amp; serve from Snowflake."
-                  aria-label="Click to zoom the architecture flow diagram"
-                >
-                  <img
-                    src="/assets/diagrams/architecture-flow.v5.svg"
-                    alt="Architecture flow diagram showing MWAA orchestrating S3 to Snowflake via COPY, with dbt building marts"
-                    class="diagram"
-                    width="1160" height="300"
-                    loading="lazy" decoding="async"
-                    sizes="(max-width: 700px) 100vw, 1160px" />
-                  <span class="proof-zoom-pill">
-                    Click to zoom
-                  </span>
-                </button>
-                <figcaption class="diagram-caption">
-                  High-level data flow: ingest market data, land it in S3, transform with dbt, &amp; serve from Snowflake.
-                </figcaption>
-              </figure>
             </div>
-          </article>
 
-          <article id="proof" class="card reveal card--narrow">
-            <div class="eyebrow">Proof of Success</div>
-            <h2>End-to-End in Action</h2>
-
-            <div class="proof-shell">
+            <figure id="diagram-architecture" class="diagram-figure">
               <button
                 type="button"
-                aria-label="Previous screenshot"
-                data-proof-prev
-                class="proof-shell__nav-btn proof-shell__nav-btn--prev"
-              >
-                ‹
-              </button>
-
-              <button
-                type="button"
-                aria-label="Next screenshot"
-                data-proof-next
-                class="proof-shell__nav-btn proof-shell__nav-btn--next"
-              >
-                ›
-              </button>
-
-              <button
-                type="button"
-                class="proof-thumb"
-                data-proof-open
-                aria-label="Click to zoom end-to-end pipeline screenshot"
+                class="proof-figure__button"
+                data-panel-open
+                data-caption="High-level data flow: ingest market data, land it in S3, transform with dbt, &amp; serve from Snowflake."
+                aria-label="Click to zoom the architecture flow diagram"
               >
                 <img
-                  data-proof-img
-                  src="/assets/proof/proof-success-ingest.v2.1600w.webp"
-                  alt="Ingest: Airflow DAG writing gzipped ticker JSON files to the S3 RAW bucket."
-                  loading="lazy"
-                  decoding="async"
-                />
+                  src="/assets/diagrams/architecture-flow.v5.svg"
+                  alt="Architecture flow diagram showing MWAA orchestrating S3 to Snowflake via COPY, with dbt building marts"
+                  class="diagram"
+                  width="1160" height="300"
+                  loading="lazy" decoding="async"
+                  sizes="(max-width: 700px) 100vw, 1160px" />
                 <span class="proof-zoom-pill">
                   Click to zoom
                 </span>
               </button>
-            </div>
+              <figcaption class="diagram-caption">
+                High-level data flow: ingest market data, land it in S3, transform with dbt, &amp; serve from Snowflake.
+              </figcaption>
+            </figure>
+          </article>
 
-            <p class="proof-caption" data-proof-caption>
-              Ingest: write JSON files to S3
-            </p>
+          <article id="proof" class="card reveal">
+            <div class="stack stack--tight card-content-constraint">
+              <div class="eyebrow">Proof of Success</div>
+              <h2>End-to-End in Action</h2>
+            </div>
 
             <figure class="proof-figure">
               <button
@@ -254,7 +213,6 @@
                 </ol>
               </figcaption>
             </figure>
-
           </article>
         </div>
       </div>

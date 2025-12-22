@@ -2443,3 +2443,30 @@ figure, .card { overflow: hidden; }
     animation: none !important;
   }
 }
+
+/* ==================================================================== */
+/* HOME PAGE LAYOUT UPDATES                                             */
+/* ==================================================================== */
+
+/* Constrains text width inside full-width cards so it remains readable */
+.card-content-constraint {
+  max-width: var(--maxw-readable); /* ~72ch */
+  margin-inline: auto;
+}
+
+/* Update diagram visuals: Dark images on White cards need definition */
+.proof-figure__img,
+.diagram {
+  width: 100%;
+  max-width: 1200px; /* Allow wider presentation on desktop */
+  height: auto;
+  border-radius: 1.5rem;
+  
+  /* Subtle border to frame dark screenshots */
+  border: 1px solid var(--gray-200);
+  
+  /* Clean shadow to lift image off the card */
+  box-shadow: 
+    0 20px 25px -5px rgba(0, 0, 0, 0.1), 
+    0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
