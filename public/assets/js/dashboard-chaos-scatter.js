@@ -8,7 +8,6 @@
   var DATA_URL = "/assets/data/dashboard_top_contracts.json";
   
   // HARDCODED SNAPSHOT DATE (End of 2025 data window)
-  // Essential for calculating DTE correctly in a static historical snapshot
   var SNAPSHOT_DATE = new Date("2025-12-19T00:00:00"); 
 
   // 3. State
@@ -31,18 +30,19 @@
   function renderChart() {
     if (rawData.length === 0) return;
 
-    // Process data for Plotly
+    // Mobile Detection
+    var isMobile = window.innerWidth < 768;
+
     var traces = [];
     
-    // Group data by ticker to create separate traces (allows legend toggling)
     uniqueTickers.forEach(function(ticker) {
       var tickerRows = rawData.filter(d => d.underlying_ticker === ticker);
       
       var x = tickerRows.map(d => calculateDTE(d.expiration_date));
-      var y = tickerRows.map(d => d.signed_moneyness_pct * 100); // Convert to %
+      var y = tickerRows.map(d => d.signed_moneyness_pct * 100); 
       var sizes = tickerRows.map(d => d.total_volume);
       
-      // Formatting Updates: Commas for volume, Currency for strike
+      // Formatting: Commas for volume, currency for strike
       var text = tickerRows.map(d => 
         `<b>${d.option_symbol}</b><br>` +
         `Vol: ${d.total_volume.toLocaleString()}<br>` +
@@ -50,10 +50,10 @@
         `Expiry: ${d.expiration_date}`
       );
 
-      // Normalize bubble sizes
-      // Find max volume in entire dataset for scaling
+      // RESPONSIVE TWEAK 1: Drastically smaller bubbles on mobile to clear space
       var maxVol = Math.max(...rawData.map(d => d.total_volume));
-      var markerSizes = sizes.map(s => Math.max(5, (s / maxVol) * 50)); // Min size 5, Max 50
+      var maxBubblePx = isMobile ? 25 : 50; 
+      var markerSizes = sizes.map(s => Math.max(3, (s / maxVol) * maxBubblePx)); 
 
       var trace = {
         x: x,
@@ -76,11 +76,35 @@
       traces.push(trace);
     });
 
+    // RESPONSIVE TWEAK 2: Annotation placement
+    // Point arrow at the bottom of the heat (y=10) and push text DOWN (ay=50)
+    var annotation = {
+      x: 0, y: 10,      // Arrow head points to the bottom of the main cluster
+      xref: 'x', yref: 'y',
+      text: "<b>The Gamma Casino</b><br>(0-DTE Speculation)",
+      showarrow: true,
+      arrowhead: 2,
+      ax: isMobile ? 50 : 60,    // Shift text Right
+      ay: isMobile ? 50 : 60,    // Shift text Down (Positive = Down)
+      font: { color: "#ef4444", size: isMobile ? 10 : 11 },
+      align: "left",
+      bgcolor: "rgba(255, 255, 255, 0.9)", 
+      borderpad: 4,
+      arrowcolor: "#ef4444"
+    };
+
     var layout = {
       font: { family: "ui-sans-serif, system-ui, sans-serif", size: 11 },
-      margin: { t: 40, r: 20, l: 50, b: 50 },
+      margin: { t: 60, r: 20, l: 40, b: 50 },
       showlegend: true,
-      legend: { orientation: "h", y: 1.1 }, // Horizontal legend on top
+      legend: { 
+        orientation: "h", 
+        y: 1.15, 
+        x: 0.5,
+        xanchor: 'center',
+        font: { size: isMobile ? 10 : 11 }, 
+        itemsizing: 'constant' // Keeps legend dots readable
+      },
       plot_bgcolor: "transparent",
       paper_bgcolor: "transparent",
       
@@ -88,7 +112,7 @@
         title: { text: "Days to Expiration (DTE)", font: { size: 12, color: "#6b7280" } },
         gridcolor: "#f3f4f6",
         zeroline: true,
-        range: [-2, 45] // Zoom in on the "Chaos Zone" (< 45 days)
+        range: isMobile ? [-3, 40] : [-2, 45] 
       },
       
       yaxis: {
@@ -98,22 +122,7 @@
         ticksuffix: "%"
       },
       
-      // Annotations for Quadrants
-      annotations: [
-        {
-          x: 5, y: 93, 
-          xref: 'x', yref: 'y',
-          text: "<b>The Gamma Casino</b><br>(0-DTE Speculation)",
-          showarrow: true,
-          arrowhead: 2,
-          ax: -40,       // tail of arrow moves left towards the cluster
-          ay: 10,
-          font: { color: "#ef4444", size: 11 },
-          align: "left",
-          bgcolor: "rgba(255, 255, 255, 0.8)", // Optional: adds readability over grid lines
-          borderpad: 4
-        }
-      ]
+      annotations: [annotation]
     };
 
     var config = {
