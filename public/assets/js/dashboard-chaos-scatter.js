@@ -42,6 +42,7 @@
       var y = tickerRows.map(d => d.signed_moneyness_pct * 100); 
       var sizes = tickerRows.map(d => d.total_volume);
       
+      // Formatting: Commas for volume, currency for strike
       var text = tickerRows.map(d => 
         `<b>${d.option_symbol}</b><br>` +
         `Vol: ${d.total_volume.toLocaleString()}<br>` +
@@ -49,7 +50,7 @@
         `Expiry: ${d.expiration_date}`
       );
 
-      // RESPONSIVE TWEAK 1: Drastically smaller bubbles on mobile to clear space
+      // RESPONSIVE TWEAK 1: Smaller bubbles on mobile to clear space
       var maxVol = Math.max(...rawData.map(d => d.total_volume));
       var maxBubblePx = isMobile ? 25 : 50; 
       var markerSizes = sizes.map(s => Math.max(3, (s / maxVol) * maxBubblePx)); 
@@ -76,15 +77,15 @@
     });
 
     // RESPONSIVE TWEAK 2: Annotation placement
-    // Point arrow High (y=100) where it's empty, instead of y=50 (crowded)
+    // Point arrow at the "Heat" (y=40), but push text High up (ay=-80)
     var annotation = {
-      x: 0, y: 100,     // Arrow head points to the top of the risk curve
+      x: 0, y: 40,      // Arrow head points to the center of the volume cluster
       xref: 'x', yref: 'y',
       text: "<b>The Gamma Casino</b><br>(0-DTE Speculation)",
       showarrow: true,
       arrowhead: 2,
-      ax: isMobile ? 60 : 120,  // Tighter offset on mobile
-      ay: isMobile ? -20 : -40, // Slight lift
+      ax: isMobile ? 60 : 120,   // Keep text to the right
+      ay: isMobile ? -60 : -80,  // Push text UP into the empty white space
       font: { color: "#ef4444", size: isMobile ? 10 : 11 },
       align: "left",
       bgcolor: "rgba(255, 255, 255, 0.9)", 
@@ -101,8 +102,8 @@
         y: 1.15, 
         x: 0.5,
         xanchor: 'center',
-        font: { size: isMobile ? 10 : 11 }, // Slightly bumped size
-        itemsizing: 'constant'              // KEY FIX: Keeps legend dots readable!
+        font: { size: isMobile ? 10 : 11 }, 
+        itemsizing: 'constant' // KEY FIX: Keeps legend dots readable regardless of chart bubble size
       },
       plot_bgcolor: "transparent",
       paper_bgcolor: "transparent",
