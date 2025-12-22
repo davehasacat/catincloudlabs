@@ -50,7 +50,7 @@
         `Expiry: ${d.expiration_date}`
       );
 
-      // RESPONSIVE TWEAK 1: Smaller bubbles on mobile to clear space
+      // RESPONSIVE TWEAK 1: Drastically smaller bubbles on mobile to clear space
       var maxVol = Math.max(...rawData.map(d => d.total_volume));
       var maxBubblePx = isMobile ? 25 : 50; 
       var markerSizes = sizes.map(s => Math.max(3, (s / maxVol) * maxBubblePx)); 
@@ -77,15 +77,15 @@
     });
 
     // RESPONSIVE TWEAK 2: Annotation placement
-    // Point arrow at the "Heat" (y=40), but push text High up (ay=-80)
+    // Point arrow at the bottom of the heat (y=10) and push text DOWN (ay=50)
     var annotation = {
-      x: 0, y: 40,      // Arrow head points to the center of the volume cluster
+      x: 0, y: 10,      // Arrow head points to the bottom of the main cluster
       xref: 'x', yref: 'y',
       text: "<b>The Gamma Casino</b><br>(0-DTE Speculation)",
       showarrow: true,
       arrowhead: 2,
-      ax: isMobile ? 60 : 120,   // Keep text to the right
-      ay: isMobile ? -60 : -80,  // Push text UP into the empty white space
+      ax: isMobile ? 50 : 60,    // Shift text Right
+      ay: isMobile ? 50 : 60,    // Shift text Down (Positive = Down)
       font: { color: "#ef4444", size: isMobile ? 10 : 11 },
       align: "left",
       bgcolor: "rgba(255, 255, 255, 0.9)", 
@@ -103,7 +103,7 @@
         x: 0.5,
         xanchor: 'center',
         font: { size: isMobile ? 10 : 11 }, 
-        itemsizing: 'constant' // KEY FIX: Keeps legend dots readable regardless of chart bubble size
+        itemsizing: 'constant' // Keeps legend dots readable
       },
       plot_bgcolor: "transparent",
       paper_bgcolor: "transparent",
