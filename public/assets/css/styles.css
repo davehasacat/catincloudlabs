@@ -2337,3 +2337,10 @@ figure, .card { overflow: hidden; }
   font-weight: 600;
   color: var(--gray-700); /* Slightly darker than muted text for contrast */
 }
+
+.ticker-features-summary-grid .unit {
+  font-size: 0.85em;
+  font-weight: 400;
+  color: var(--text-muted);
+  margin-left: 0.2rem;
+}
