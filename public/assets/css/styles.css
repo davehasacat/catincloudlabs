@@ -2393,3 +2393,53 @@ figure, .card { overflow: hidden; }
   border: none;
   opacity: 0.9; /* More visible by default on this complex image */
 }
+
+/* ==================================================================== */
+/* 14. ACCESSIBILITY: HIGH CONTRAST / FORCED COLORS FIX                 */
+/* ==================================================================== */
+
+@media (forced-colors: active) {
+  /* 1. Force borders on containers so structure is visible without shadows/backgrounds */
+  .card, 
+  .proof-diagram, 
+  .hero-subhead-pill,
+  .ticker-features-latest,
+  .insights-panel,
+  .callout-alert,
+  .ticker-features-footer,
+  .code-snapshot {
+    border: 2px solid CanvasText !important;
+    box-shadow: none !important;
+    background: Canvas !important; /* Ensures strictly opaque background */
+  }
+
+  /* 2. Ensure interactive elements have clear, distinct boundaries */
+  .button, 
+  .ci-btn, 
+  .proof-zoom-pill,
+  .input,
+  select {
+    border: 2px solid ButtonText !important;
+  }
+
+  /* 3. Fix Hero Section: Strip video and overlay so text sits on plain system background */
+  .hero, .ci-hero {
+    background: Canvas !important;
+    color: CanvasText !important;
+  }
+  
+  /* Hide the video media AND the dark overlay */
+  .hero::before, .ci-hero::before,
+  .hero__media, .ci-hero__media,
+  .hero__video, .ci-hero__video {
+    display: none !important;
+  }
+
+  /* 4. Safety Check: Force revealed state */
+  /* Ensures content is visible even if animations fail or are suppressed by the OS */
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
+}
