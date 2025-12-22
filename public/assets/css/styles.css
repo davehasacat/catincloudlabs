@@ -1738,19 +1738,20 @@ figure, .card { overflow: hidden; }
 /* Section labels inside insights */
 .insights-panel h4 {
   font-size: 0.78rem;
-  font-weight: 500;
+  font-weight: 600; /* Increased weight slightly for better contrast */
   text-transform: uppercase;
   letter-spacing: 0.09em;
-  color: var(--gray-600);
+  
+  /* Cloud Theme: Matching the Snapshot Badge style */
+  color: var(--accent-800);             /* Deep Blue text */
+  background: var(--accent-100);        /* Light Blue Cloud background */
+  border: 1px solid var(--accent-200);  /* Soft Blue border for definition */
   
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
   padding: 0.16rem 0.6rem;
   border-radius: 999px;
-  
-  background: #ffffff;
-  border: 1px solid var(--gray-200);
   
   margin-top: 1.4rem;
   margin-bottom: 0.6rem;
