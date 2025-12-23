@@ -2502,6 +2502,13 @@ figure, .card { overflow: hidden; }
 }
 
 /* --- Pain Points Grid --- */
+
+/* Add specific spacing to this section to prevent overlap with the Flagship card */
+.pain-points-section {
+  padding-top: 2rem;
+  padding-bottom: 5rem;
+}
+
 .section-intro {
   text-align: center;
   max-width: 600px;
