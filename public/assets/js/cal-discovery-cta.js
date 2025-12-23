@@ -1,6 +1,8 @@
-/* * Cal.com Embed Initialization & Manual Trigger
- * Handles both auto-init and manual click events for robustness.
+/* * Cal.com Embed Initialization & Robust Trigger
+ * Version: 2.0 (Hardcoded Config)
  */
+
+// 1. Core Cal.com Loader (The Engine)
 (function (C, A, L) { 
   let p = function (a, ar) { a.q.push(ar); }; 
   d = C.document; 
@@ -24,41 +26,55 @@
   }; 
 })(window, "https://app.cal.com/embed/embed.js", "init");
 
-// 1. Initialize the library
+// 2. Initialize
 Cal("init", {origin: "https://cal.com"});
 
-// 2. Configure the UI (Black branding, Month view)
+// 3. Global UI Styles
 Cal("ui", {
   "styles": {
     "branding": {
-      "brandColor": "#000000" 
+      "brandColor": "#000000"
     }
   },
   "hideEventTypeDetails": false,
   "layout": "month_view"
 });
 
-// 3. Manual Trigger Logic (The Fix)
-// This ensures that even if the auto-observer misses the button, 
-// our click listener will catch it and fire the modal command.
-document.addEventListener("DOMContentLoaded", () => {
-  const triggers = document.querySelectorAll('[data-cal-link]');
+// 4. Click Listener (Debugged)
+// We wait for the element to exist, then force the modal open.
+const initCalBtn = () => {
+  const trigger = document.querySelector('[data-cal-link]');
   
-  triggers.forEach((trigger) => {
-    trigger.addEventListener('click', (e) => {
-      // Prevent any default button behavior
-      e.preventDefault();
-      
-      const link = trigger.getAttribute('data-cal-link');
-      // Parse the config if it exists, otherwise empty object
-      const configString = trigger.getAttribute('data-cal-config');
-      const config = configString ? JSON.parse(configString) : {};
+  if (!trigger) {
+    console.warn("Cal.com: Button not found yet.");
+    return;
+  }
 
-      // Explicitly tell Cal.com to open the modal
-      Cal("modal", { 
-        calLink: link,
-        config: config
-      });
+  // Remove old listeners (clone node) to ensure no duplicate firings
+  const newTrigger = trigger.cloneNode(true);
+  trigger.parentNode.replaceChild(newTrigger, trigger);
+
+  newTrigger.addEventListener('click', (e) => {
+    e.preventDefault();
+    console.log("Cal.com: Button clicked. Opening modal...");
+    
+    const link = newTrigger.getAttribute('data-cal-link');
+    
+    // Direct command to open modal with specific config
+    Cal("modal", { 
+      calLink: link,
+      config: {
+        "layout": "month_view"
+      }
     });
   });
-});
+  
+  console.log("Cal.com: Event listener attached successfully.");
+};
+
+// Run immediately if at bottom of body, otherwise wait for DOM
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initCalBtn);
+} else {
+  initCalBtn();
+}
