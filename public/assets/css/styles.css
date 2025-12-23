@@ -2556,25 +2556,22 @@ figure, .card { overflow: hidden; }
 }
 
 /* The Stack of Cards (Right Side) */
-/* Changed to single-column stack for rectangular cards */
 .split-grid {
   display: grid;
   grid-template-columns: 1fr; 
-  gap: 1.25rem;
+  gap: 1rem; /* Slightly tighter gap between cards */
 }
 
-/* Card Internals */
+/* Card Internals - Tighter for Rectangular Look */
 .card--feature {
-  height: 100%;
   display: flex;
   flex-direction: column;
-  padding: 1.25rem 1.5rem; /* Tighter vertical padding for rectangular feel */
-  /* Ensure it uses standard card styling from base theme */
+  padding: 1rem 1.25rem; /* Reduced padding height */
 }
 
 .feature-title {
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem; /* Tighter margin */
   color: var(--gray-900);
   font-weight: 700;
   display: flex;
@@ -2586,7 +2583,7 @@ figure, .card { overflow: hidden; }
 .feature-text {
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
+  gap: 0.35rem; /* Tighter gap between rows */
 }
 
 .feature-row {
