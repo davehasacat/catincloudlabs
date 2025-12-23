@@ -1,5 +1,5 @@
-/* * Cal.com Embed Initialization (Version 4.0 - Namespaced & Debugged)
- * Uses explicit namespacing "discovery" to prevent global conflicts.
+/* * Cal.com Embed Initialization
+ * Version: Production (Event Delegation)
  */
 
 (function (C, A, L) { 
@@ -11,15 +11,7 @@
     if (!cal.loaded) { 
       cal.ns = {}; 
       cal.q = cal.q || []; 
-      
-      // Explicit Script Injection with Logging
-      let s = d.createElement("script");
-      s.src = A;
-      s.async = true;
-      s.onload = () => console.log("Cal.com: Engine (embed.js) loaded successfully.");
-      s.onerror = () => console.error("Cal.com: Engine failed to load. Check Network/AdBlock.");
-      d.head.appendChild(s);
-      
+      d.head.appendChild(d.createElement("script")).src = A; 
       cal.loaded = true; 
     } 
     if (ar[0] === L) { 
@@ -33,11 +25,11 @@
   }; 
 })(window, "https://app.cal.com/embed/embed.js", "init");
 
-// 1. Initialize a named instance "discovery"
-Cal("init", "discovery", {origin: "https://cal.com"});
+// Initialize
+Cal("init", {origin: "https://cal.com"});
 
-// 2. Configure UI for this specific instance
-Cal.ns.discovery("ui", {
+// Styling
+Cal("ui", {
   "styles": {
     "branding": {
       "brandColor": "#000000"
@@ -47,19 +39,15 @@ Cal.ns.discovery("ui", {
   "layout": "month_view"
 });
 
-// 3. Global Click Listener using the Named Instance
+// Click Listener
 document.addEventListener('click', (e) => {
   const trigger = e.target.closest('[data-cal-link]');
   
   if (trigger) {
     e.preventDefault();
-    let link = trigger.getAttribute('data-cal-link');
+    const link = trigger.getAttribute('data-cal-link');
     
-    // Safety: Ensure no double slashes, but ensure leading slash is handled by Cal
-    console.log("Cal.com: Click detected. Attempting to open:", link);
-
-    // Trigger the modal on our specific namespace
-    Cal.ns.discovery("modal", { 
+    Cal("modal", { 
       calLink: link,
       config: {
         "layout": "month_view"
@@ -67,5 +55,3 @@ document.addEventListener('click', (e) => {
     });
   }
 });
-
-console.log("Cal.com: Listener (v4.0) active.");
