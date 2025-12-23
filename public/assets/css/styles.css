@@ -2501,71 +2501,124 @@ figure, .card { overflow: hidden; }
   }
 }
 
-/* --- Pain Points Grid --- */
-
-/* Add specific spacing to this section to prevent overlap with the Flagship card */
+/* --- Asymmetric Pain Points Section --- */
 .pain-points-section {
-  padding-top: 2rem;
+  padding-top: 4rem;
   padding-bottom: 5rem;
 }
 
-.section-intro {
-  text-align: center;
-  max-width: 600px;
-  margin: 0 auto 3rem;
-}
-
-.grid-thirds {
+/* The Layout Wrapper */
+.split-layout {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.5rem;
+  gap: 3rem;
+  align-items: start;
 }
 
-@media (min-width: 768px) {
-  .grid-thirds {
-    grid-template-columns: repeat(3, 1fr);
+/* Desktop: Side-by-Side */
+@media (min-width: 900px) {
+  .split-layout {
+    grid-template-columns: 1fr 1.6fr; /* Text takes ~35%, Cards take ~65% */
+    gap: 4rem;
+  }
+  
+  /* Sticky effect: Keeps the headline visible while scrolling past cards */
+  .split-content {
+    position: sticky;
+    top: 6rem; 
   }
 }
 
-/* We removed border/background/radius from here.
-   Now we rely on the .card class to handle the visuals.
-   This class strictly handles internal layout.
-*/
+/* Typography Polish */
+.split-content h2 {
+  font-size: clamp(2rem, 3vw, 2.75rem);
+  line-height: 1.1;
+  font-weight: 800;
+  letter-spacing: -0.03em; /* Tighter for "editorial" look */
+  color: var(--gray-900);
+  margin-bottom: 1.25rem;
+  text-wrap: balance; /* Prevents orphaned words */
+}
+
+.split-content h2 em {
+  color: var(--gray-500);
+  font-style: italic;
+  font-weight: 400;
+  font-family: serif; /* Adds the sophisticated contrast */
+}
+
+.split-content .intro-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--gray-600);
+  max-width: 40ch;
+}
+
+/* The Grid of Cards (Right Side) */
+.split-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+/* On wider screens, let cards sit 2-up if space permits, or 1-up if sidebar is wide */
+@media (min-width: 600px) and (max-width: 899px) {
+  .split-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (min-width: 1100px) {
+  .split-grid {
+    grid-template-columns: 1fr 1fr; /* 2x2 grid on large screens */
+  }
+}
+
+/* Card Internals */
 .card--feature {
   height: 100%;
   display: flex;
   flex-direction: column;
+  padding: 1.5rem;
+  /* Ensure it uses standard card styling from base theme */
 }
 
 .feature-title {
   font-size: 1.1rem;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1.25rem;
   color: var(--gray-900);
   font-weight: 700;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.6rem;
 }
 
+/* The Pain/Fix Rows */
 .feature-text {
-  font-size: 0.95rem;
-  line-height: 1.5;
-  color: var(--text-muted);
-  flex: 1; /* Pushes the footer/fix label down if needed */
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
-.feature-label {
-  display: block;
+.feature-row {
+  display: grid;
+  grid-template-columns: 3rem 1fr; /* Fixed width for label, rest for text */
+  gap: 0.75rem;
+  align-items: baseline;
+  font-size: 0.92rem;
+  line-height: 1.4;
+}
+
+.f-label {
   font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   font-weight: 700;
-  margin-top: 1rem;
-  margin-bottom: 0.25rem;
-  color: var(--gray-400); 
+  text-align: right;
 }
 
-.feature-label--fix {
-  margin-top: 1.25rem;
-  color: #059669; /* Emerald Green for "The Fix" */
+.f-pain { color: var(--gray-400); }
+.f-fix  { color: #059669; } /* Emerald Green */
+
+.f-content {
+  color: var(--gray-700);
 }
