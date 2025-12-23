@@ -2449,7 +2449,7 @@ figure, .card { overflow: hidden; }
 /* ==================================================================== */
 
 .tech-stack-bar {
-  padding: 0.1rem 0 2rem;
+  padding: 0 0 2rem;
   background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.02));
   border-bottom: 1px solid rgba(0,0,0,0.05);
 }
