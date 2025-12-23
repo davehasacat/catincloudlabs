@@ -1,8 +1,8 @@
-/* * Cal.com Embed Initialization & Robust Trigger
- * Version: 2.0 (Hardcoded Config)
+/* * Cal.com Embed Initialization & Event Delegation
+ * Version: 3.0 (Bulletproof)
  */
 
-// 1. Core Cal.com Loader (The Engine)
+// 1. Core Cal.com Loader
 (function (C, A, L) { 
   let p = function (a, ar) { a.q.push(ar); }; 
   d = C.document; 
@@ -29,7 +29,7 @@
 // 2. Initialize
 Cal("init", {origin: "https://cal.com"});
 
-// 3. Global UI Styles
+// 3. UI Styles
 Cal("ui", {
   "styles": {
     "branding": {
@@ -40,41 +40,26 @@ Cal("ui", {
   "layout": "month_view"
 });
 
-// 4. Click Listener (Debugged)
-// We wait for the element to exist, then force the modal open.
-const initCalBtn = () => {
-  const trigger = document.querySelector('[data-cal-link]');
+// 4. Global Click Listener (Event Delegation)
+// This catches the click at the document level, so it never misses.
+document.addEventListener('click', (e) => {
+  // Check if the clicked element (or its parent) has the data-cal-link attribute
+  const trigger = e.target.closest('[data-cal-link]');
   
-  if (!trigger) {
-    console.warn("Cal.com: Button not found yet.");
-    return;
-  }
-
-  // Remove old listeners (clone node) to ensure no duplicate firings
-  const newTrigger = trigger.cloneNode(true);
-  trigger.parentNode.replaceChild(newTrigger, trigger);
-
-  newTrigger.addEventListener('click', (e) => {
-    e.preventDefault();
-    console.log("Cal.com: Button clicked. Opening modal...");
+  if (trigger) {
+    e.preventDefault(); // Stop it from acting like a normal link
     
-    const link = newTrigger.getAttribute('data-cal-link');
-    
-    // Direct command to open modal with specific config
+    const link = trigger.getAttribute('data-cal-link');
+    console.log("Cal.com: Click detected on", link);
+
+    // Open the modal
     Cal("modal", { 
       calLink: link,
       config: {
         "layout": "month_view"
       }
     });
-  });
-  
-  console.log("Cal.com: Event listener attached successfully.");
-};
+  }
+});
 
-// Run immediately if at bottom of body, otherwise wait for DOM
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", initCalBtn);
-} else {
-  initCalBtn();
-}
+console.log("Cal.com: Global listener active.");
