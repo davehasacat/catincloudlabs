@@ -35,7 +35,7 @@
   <link rel="preload" as="video" href="/assets/video/hero.webm" type="video/webm" media="(min-width: 769px), (orientation: landscape)" />
 
   <link rel="stylesheet" href="/assets/css/styles.css" />
-  
+
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -49,6 +49,18 @@
       "addressLocality":"Minneapolis",
       "addressRegion":"MN",
       "addressCountry":"US"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebSite",
+    "name":"CatInCloud Labs",
+    "url":"https://catincloudlabs.com/",
+    "potentialAction":{
+      "@type":"ContactAction",
+      "target":"https://catincloudlabs.com/contact#contact-form"
     }
   }
   </script>
@@ -198,22 +210,14 @@
     <section class="section">
       <div class="container">
         <div class="stack stack--section">
-          <article class="card reveal card--narrow">
-            <div class="eyebrow">Flagship</div>
-            <h2>The Blueprint: Private Data Plane</h2>
-            <p>
-              A production-grade pipeline built on AWS, MWAA, Snowflake, and dbt Core. It demonstrates secure ingestion within a hardened Virtual Private Cloud (VPC), using KMS-encrypted buckets and VPC endpoints to deliver analytics-ready financial data without public exposure.
-            </p>
-          </article>
-
+          
           <article id="architecture" class="card reveal proof-diagram card--narrow">
             <div class="stack stack--tight">
-              <div class="eyebrow">Architecture</div>
+              <div class="eyebrow">The Blueprint</div>
               <h2>Orchestrated for silence</h2>
               <p class="chart-subtitle">
-                High-level data flow for the reference pipeline: MWAA orchestrates ingest into a KMS-encrypted S3 RAW bucket,
-                Snowflake loads from there, and dbt builds marts on top. For the full <strong>Security & Network</strong> view,
-                see the <a href="/projects">Projects</a> page.
+                A production-grade pipeline built on AWS, MWAA, Snowflake, and dbt Core. 
+                It demonstrates secure ingestion within a hardened VPC, using KMS-encrypted buckets and PrivateLink to deliver analytics-ready data without public exposure.
               </p>
 
               <figure id="diagram-architecture" class="diagram-figure">
@@ -277,7 +281,9 @@
                 </ol>
               </figcaption>
             </figure>
+
           </article>
+
           <article class="card reveal card--narrow">
             <div class="eyebrow">The Architect</div>
             <h2>5 roles in 1. Zero overhead.</h2>
@@ -298,6 +304,7 @@
               <a href="/about" class="button ghost">Read my philosophy &rarr;</a>
             </div>
           </article>
+
         </div>
       </div>
     </section>
