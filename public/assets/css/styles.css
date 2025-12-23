@@ -2520,8 +2520,10 @@ figure, .card { overflow: hidden; }
   }
 }
 
-/* We use the base .card class for visuals (border, shadow, radius).
-   This class now only handles internal layout/height. */
+/* We removed border/background/radius from here.
+   Now we rely on the .card class to handle the visuals.
+   This class strictly handles internal layout.
+*/
 .card--feature {
   height: 100%;
   display: flex;
@@ -2542,7 +2544,7 @@ figure, .card { overflow: hidden; }
   font-size: 0.95rem;
   line-height: 1.5;
   color: var(--text-muted);
-  flex: 1;
+  flex: 1; /* Pushes the footer/fix label down if needed */
 }
 
 .feature-label {
@@ -2553,10 +2555,10 @@ figure, .card { overflow: hidden; }
   font-weight: 700;
   margin-top: 1rem;
   margin-bottom: 0.25rem;
-  color: var(--gray-400); /* Muted for the "Pain" label */
+  color: var(--gray-400); 
 }
 
 .feature-label--fix {
   margin-top: 1.25rem;
-  color: #059669; /* Keep the Emerald Green for "The Fix" contrast */
+  color: #059669; /* Emerald Green for "The Fix" */
 }
