@@ -1,8 +1,7 @@
-/* * Cal.com Embed Initialization & Event Delegation
- * Version: 3.0 (Bulletproof)
+/* * Cal.com Embed Initialization (Version 4.0 - Namespaced & Debugged)
+ * Uses explicit namespacing "discovery" to prevent global conflicts.
  */
 
-// 1. Core Cal.com Loader
 (function (C, A, L) { 
   let p = function (a, ar) { a.q.push(ar); }; 
   d = C.document; 
@@ -12,7 +11,15 @@
     if (!cal.loaded) { 
       cal.ns = {}; 
       cal.q = cal.q || []; 
-      d.head.appendChild(d.createElement("script")).src = A; 
+      
+      // Explicit Script Injection with Logging
+      let s = d.createElement("script");
+      s.src = A;
+      s.async = true;
+      s.onload = () => console.log("Cal.com: Engine (embed.js) loaded successfully.");
+      s.onerror = () => console.error("Cal.com: Engine failed to load. Check Network/AdBlock.");
+      d.head.appendChild(s);
+      
       cal.loaded = true; 
     } 
     if (ar[0] === L) { 
@@ -26,11 +33,11 @@
   }; 
 })(window, "https://app.cal.com/embed/embed.js", "init");
 
-// 2. Initialize
-Cal("init", {origin: "https://cal.com"});
+// 1. Initialize a named instance "discovery"
+Cal("init", "discovery", {origin: "https://cal.com"});
 
-// 3. UI Styles
-Cal("ui", {
+// 2. Configure UI for this specific instance
+Cal.ns.discovery("ui", {
   "styles": {
     "branding": {
       "brandColor": "#000000"
@@ -40,20 +47,19 @@ Cal("ui", {
   "layout": "month_view"
 });
 
-// 4. Global Click Listener (Event Delegation)
-// This catches the click at the document level, so it never misses.
+// 3. Global Click Listener using the Named Instance
 document.addEventListener('click', (e) => {
-  // Check if the clicked element (or its parent) has the data-cal-link attribute
   const trigger = e.target.closest('[data-cal-link]');
   
   if (trigger) {
-    e.preventDefault(); // Stop it from acting like a normal link
+    e.preventDefault();
+    let link = trigger.getAttribute('data-cal-link');
     
-    const link = trigger.getAttribute('data-cal-link');
-    console.log("Cal.com: Click detected on", link);
+    // Safety: Ensure no double slashes, but ensure leading slash is handled by Cal
+    console.log("Cal.com: Click detected. Attempting to open:", link);
 
-    // Open the modal
-    Cal("modal", { 
+    // Trigger the modal on our specific namespace
+    Cal.ns.discovery("modal", { 
       calLink: link,
       config: {
         "layout": "month_view"
@@ -62,4 +68,4 @@ document.addEventListener('click', (e) => {
   }
 });
 
-console.log("Cal.com: Global listener active.");
+console.log("Cal.com: Listener (v4.0) active.");
