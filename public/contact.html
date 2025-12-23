@@ -47,7 +47,7 @@
         <a href="/projects">Projects</a>
         <a href="/services">Services</a>
         <a href="/blog">Blog</a>
-        <a href="/contact#contact-form" class="button ghost active" aria-current="page">Contact</a>
+        <a href="/contact" class="button ghost active" aria-current="page">Contact</a>
       </nav>
     </div>
   </header>
@@ -65,100 +65,120 @@
       </div>
     </section>
 
-    <section class="section" id="contact-form">
+    <section class="section">
       <div class="container">
-        <article class="card reveal card--narrow contact-card">
-          <h2>Get in touch</h2>
-          <p>
-            Tell me about your infrastructure challenges. I typically work with teams running (or moving to) AWS, Snowflake, and dbt.
-          </p>
-
-          <form
-            action="https://formspree.io/f/xwpavlwn"
-            method="POST"
-            class="stack stack--section contact-form"
-          >
-            <div style="position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden;">
-              <label>
-                If you are a human, leave this field blank:
-                <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" />
-              </label>
+        <div class="stack stack--section">
+          
+          <article class="card reveal card--narrow card--cta">
+            <p class="eyebrow">Option 1: The Fast Lane</p>
+            <h2>Ready to start?</h2>
+            <p>
+              If you have an active project or a pressing stability issue, skip the email tag. Book a 30-minute discovery slot directly on my calendar.
+            </p>
+            <div class="stack stack--tight">
+              <button 
+                class="ci-btn ci-btn--primary" 
+                data-cal-link="catincloud-labs/discovery"
+              >
+                Book a discovery call
+              </button>
             </div>
+          </article>
 
-            <input type="hidden" name="_subject" value="New inquiry from catincloudlabs.com" />
-            <input type="hidden" name="_redirect" value="https://catincloudlabs.com/thank-you" />
+          <article id="contact-form" class="card reveal card--narrow contact-card">
+            <p class="eyebrow">Option 2: General Inquiries</p>
+            <h2>Send a message</h2>
+            <p>
+              Tell me about your infrastructure challenges. I typically work with teams running (or moving to) AWS, Snowflake, and dbt.
+            </p>
 
-            <label class="field">
-              <span class="field-label">
-                Name <span class="required" aria-hidden="true">*</span>
-              </span>
-              <input
-                type="text"
-                name="name"
-                autocomplete="name"
-                required
-              />
-            </label>
+            <form
+              action="https://formspree.io/f/xwpavlwn"
+              method="POST"
+              class="stack stack--section contact-form"
+            >
+              <div style="position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden;">
+                <label>
+                  If you are a human, leave this field blank:
+                  <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" />
+                </label>
+              </div>
 
-            <label class="field">
-              <span class="field-label">
-                Work email <span class="required" aria-hidden="true">*</span>
-              </span>
-              <input
-                type="email"
-                name="email"
-                autocomplete="email"
-                required
-              />
-            </label>
+              <input type="hidden" name="_subject" value="New inquiry from catincloudlabs.com" />
+              <input type="hidden" name="_redirect" value="https://catincloudlabs.com/thank-you" />
 
-            <label class="field">
-              <span class="field-label">Company <span class="field-optional">(optional)</span></span>
-              <input
-                type="text"
-                name="company"
-                autocomplete="organization"
-              />
-            </label>
+              <label class="field">
+                <span class="field-label">
+                  Name <span class="required" aria-hidden="true">*</span>
+                </span>
+                <input
+                  type="text"
+                  name="name"
+                  autocomplete="name"
+                  required
+                />
+              </label>
 
-            <label class="field">
-              <span class="field-label">What are you exploring? <span class="field-optional">(optional)</span></span>
-              <select name="interest">
-                <option value="">Select an option</option>
-                <option value="audit">Platform Audit &amp; Hardening</option>
-                <option value="pipeline">Green-Field Pipeline Build</option>
-                <option value="modernization">Modernizing Legacy Stack</option>
-                <option value="discovery">Discovery Call / Not Sure Yet</option>
-                <option value="other">Other / Custom Engagement</option>
-              </select>
-            </label>
+              <label class="field">
+                <span class="field-label">
+                  Work email <span class="required" aria-hidden="true">*</span>
+                </span>
+                <input
+                  type="email"
+                  name="email"
+                  autocomplete="email"
+                  required
+                />
+              </label>
 
-            <label class="field">
-              <span class="field-label">
-                How can I help? <span class="required" aria-hidden="true">*</span>
-              </span>
-              <textarea
-                name="message"
-                rows="6"
-                required
-                placeholder="Share a bit about your current stack, goals, and timeline."
-              ></textarea>
-            </label>
+              <label class="field">
+                <span class="field-label">Company <span class="field-optional">(optional)</span></span>
+                <input
+                  type="text"
+                  name="company"
+                  autocomplete="organization"
+                />
+              </label>
 
-            <button type="submit" class="button primary">
-              Send message
-            </button>
+              <label class="field">
+                <span class="field-label">What are you exploring? <span class="field-optional">(optional)</span></span>
+                <select name="interest">
+                  <option value="">Select an option</option>
+                  <option value="audit">Platform Audit &amp; Hardening</option>
+                  <option value="pipeline">Green-Field Pipeline Build</option>
+                  <option value="modernization">Modernizing Legacy Stack</option>
+                  <option value="discovery">Discovery Call / Not Sure Yet</option>
+                  <option value="other">Other / Custom Engagement</option>
+                </select>
+              </label>
+
+              <label class="field">
+                <span class="field-label">
+                  How can I help? <span class="required" aria-hidden="true">*</span>
+                </span>
+                <textarea
+                  name="message"
+                  rows="6"
+                  required
+                  placeholder="Share a bit about your current stack, goals, and timeline."
+                ></textarea>
+              </label>
+
+              <button type="submit" class="button primary">
+                Send message
+              </button>
+
+              <p class="form-footnote">
+                I respect your time and inbox. You'll hear back from a human (Dave), usually within 24 hours.
+              </p>
+            </form>
 
             <p class="form-footnote">
-              I respect your time and inbox. You'll hear back from a human (Dave), usually within 24 hours.
+              Prefer email? You can always reach me directly at
+              <a href="mailto:dave@catincloudlabs.com" aria-label="Email CatInCloud Labs">dave@catincloudlabs.com</a>.
             </p>
-          </form>
-
-          <p class="form-footnote">
-            Prefer email? You can always reach me directly at
-            <a href="mailto:dave@catincloudlabs.com" aria-label="Email CatInCloud Labs">dave@catincloudlabs.com</a>.
-          </p>
-        </article>
+          </article>
+        </div>
       </div>
     </section>
   </main>
@@ -176,6 +196,7 @@
     </div>
 
     <script src="/assets/js/footer-year-theme.js" defer></script>
+    <script src="/assets/js/cal-discovery-cta.js" defer></script>
   </footer>
 </body>
 </html>
