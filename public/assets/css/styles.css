@@ -2445,7 +2445,7 @@ figure, .card { overflow: hidden; }
 }
 
 /* ==================================================================== */
-/* 14. TECH STACK BAR                                                   */
+/* 14. TECH STACK BAR + PAIN POINTS GRID                                */
 /* ==================================================================== */
 
 .tech-stack-bar {
@@ -2499,4 +2499,58 @@ figure, .card { overflow: hidden; }
   .tech-stack-logo {
     height: 28px;
   }
+}
+
+/* --- Pain Points Grid --- */
+.section-intro {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 3rem;
+}
+
+.grid-thirds {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .grid-thirds {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card--feature {
+  padding: 1.5rem;
+  background: white;
+  border: 1px solid rgba(0,0,0,0.05);
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  height: 100%; /* Ensures cards are same height */
+}
+
+.feature-title {
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+  color: #111827;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.feature-text {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #4b5563;
+}
+
+.feature-label {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  margin-top: 0.75rem;
+  color: #6b7280;
 }
