@@ -103,10 +103,10 @@
         <div class="stack stack--hero">
           <div class="kicker">CatInCloud Labs</div>
           <h1 class="title">
-            Calm, reliable data pipelines.
+            Reliability is a feature.
           </h1>
           <p class="subtitle">
-            Stop fighting fires. Start shipping features. I build hardened, private-VPC data platforms that scale quietly.
+            I build hardened data platforms that are private by default and boring to run. Stop fighting fires. Start shipping features.
           </p>
           <div class="hero__cta">
             <a class="ci-btn ci-btn--primary" href="/contact#contact-form">
@@ -130,25 +130,94 @@
       </span>
     </div>
 
+    <section class="tech-stack-bar" aria-label="Supported Technologies">
+      <div class="container center">
+        <p class="tech-stack-label">Specializing in modern enterprise stacks</p>
+        <div class="tech-stack-grid">
+          <img src="/assets/logos/aws.svg" alt="Amazon Web Services" class="tech-stack-logo" loading="lazy" />
+          <img src="/assets/logos/snowflake.svg" alt="Snowflake Data Cloud" class="tech-stack-logo" loading="lazy" />
+          <img src="/assets/logos/dbt.svg" alt="dbt" class="tech-stack-logo" loading="lazy" />
+          <img src="/assets/logos/airflow.svg" alt="Apache Airflow / MWAA" class="tech-stack-logo" loading="lazy" />
+        </div>
+      </div>
+    </section>
+
+    <section class="section pain-points-section">
+      <div class="container">
+        <div class="split-layout">
+          
+          <div class="split-content">
+            <h2>Stability first, <br><em>evolution second.</em></h2>
+            <p class="intro-text">
+              Scale breaks fragile systems. I help teams transition from ad-hoc scripts to hardened architectures that scale quietly.
+            </p>
+          </div>
+
+          <div class="split-grid">            
+            <article class="card reveal card--feature">
+              <h3 class="feature-title">
+                <span aria-hidden="true">😼</span> Resilience
+              </h3>
+              <div class="feature-text">
+                <div class="feature-row">
+                  <span class="f-label f-pain">Pain</span>
+                  <span class="f-content">Silent failures &amp; manual backfills.</span>
+                </div>
+                <div class="feature-row">
+                  <span class="f-label f-fix">Fix</span>
+                  <span class="f-content">Idempotent DAGs &amp; "fail-loud" data tests.</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="card reveal card--feature">
+              <h3 class="feature-title">
+                <span aria-hidden="true">🐅</span> Security
+              </h3>
+              <div class="feature-text">
+                <div class="feature-row">
+                  <span class="f-label f-pain">Pain</span>
+                  <span class="f-content">Public endpoints &amp; loose IAM roles.</span>
+                </div>
+                <div class="feature-row">
+                  <span class="f-label f-fix">Fix</span>
+                  <span class="f-content">PrivateLink, KMS encryption &amp; hardened IAM.</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="card reveal card--feature">
+              <h3 class="feature-title">
+                <span aria-hidden="true">💸</span> Operations
+              </h3>
+              <div class="feature-text">
+                <div class="feature-row">
+                  <span class="f-label f-pain">Pain</span>
+                  <span class="f-content">Unpredictable, spiraling compute costs.</span>
+                </div>
+                <div class="feature-row">
+                  <span class="f-label f-fix">Fix</span>
+                  <span class="f-content">Strict warehouse sizing &amp; resource tagging.</span>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section">
       <div class="container">
         <div class="stack stack--section">
-          <article class="card reveal card--narrow">
-            <div class="eyebrow">Flagship</div>
-            <h2>Reference Architecture: Private Data Plane</h2>
-            <p>
-              A production-grade pipeline built on AWS, MWAA, Snowflake, and dbt Core. It demonstrates secure ingestion within a hardened Virtual Private Cloud (VPC), using KMS-encrypted buckets and VPC endpoints to deliver analytics-ready financial data without public exposure.
-            </p>
-          </article>
-
+          
           <article id="architecture" class="card reveal proof-diagram card--narrow">
             <div class="stack stack--tight">
-              <div class="eyebrow">Architecture</div>
-              <h2>How the pieces fit together</h2>
+              <div class="eyebrow">The Blueprint</div>
+              <h2>Orchestrated for silence</h2>
               <p class="chart-subtitle">
-                High-level data flow for the reference pipeline: MWAA orchestrates ingest into a KMS-encrypted S3 RAW bucket,
-                Snowflake loads from there, and dbt builds marts on top. For the full <strong>Security & Network</strong> view,
-                see the <a href="/projects">Projects</a> page.
+                A production-grade pipeline built on AWS, MWAA, Snowflake, and dbt Core. 
+                It demonstrates secure ingestion within a hardened VPC, using KMS-encrypted buckets and PrivateLink to deliver analytics-ready data without public exposure.
               </p>
 
               <figure id="diagram-architecture" class="diagram-figure">
@@ -179,49 +248,7 @@
 
           <article id="proof" class="card reveal card--narrow">
             <div class="eyebrow">Proof of Success</div>
-            <h2>End-to-End in Action</h2>
-
-            <div class="proof-shell">
-              <button
-                type="button"
-                aria-label="Previous screenshot"
-                data-proof-prev
-                class="proof-shell__nav-btn proof-shell__nav-btn--prev"
-              >
-                ‹
-              </button>
-
-              <button
-                type="button"
-                aria-label="Next screenshot"
-                data-proof-next
-                class="proof-shell__nav-btn proof-shell__nav-btn--next"
-              >
-                ›
-              </button>
-
-              <button
-                type="button"
-                class="proof-thumb"
-                data-proof-open
-                aria-label="Click to zoom end-to-end pipeline screenshot"
-              >
-                <img
-                  data-proof-img
-                  src="/assets/proof/proof-success-ingest.v2.1600w.webp"
-                  alt="Ingest: Airflow DAG writing gzipped ticker JSON files to the S3 RAW bucket."
-                  loading="lazy"
-                  decoding="async"
-                />
-                <span class="proof-zoom-pill">
-                  Click to zoom
-                </span>
-              </button>
-            </div>
-
-            <p class="proof-caption" data-proof-caption>
-              Ingest: write JSON files to S3
-            </p>
+            <h2>Production Reality</h2>
 
             <figure class="proof-figure">
               <button
@@ -256,6 +283,28 @@
             </figure>
 
           </article>
+
+          <article class="card reveal card--narrow">
+            <div class="eyebrow">The Architect</div>
+            <h2>5 roles in 1. Zero overhead.</h2>
+            <p>
+              I'm Dave Anaya. CatInCloud Labs is a solo practice designed to eliminate the silos that break data teams. I operate across the full stack:
+            </p>
+            <ul style="margin-bottom: 1.5rem; display: grid; gap: 0.5rem;">
+               <li><strong>1. Cloud Architect:</strong> Secure networking (AWS/GCP), IAM, and cost control.</li>
+               <li><strong>2. Data Engineer:</strong> Hardened Airflow DAGs and Python ingestion.</li>
+               <li><strong>3. Analytics Engineer:</strong> Clean, tested dbt models (Snowflake/BigQuery).</li>
+               <li><strong>4. DevOps Lead:</strong> CI/CD, rigorous PR reviews, and Jira hygiene.</li>
+               <li><strong>5. Tech Writer:</strong> Documentation that ensures the system outlives me.</li>
+            </ul>
+            <p>
+              I don't sell open-ended consulting hours; I sell <strong>specific outcomes</strong>. When you hire me, you get the senior engineer who designed the system, wrote the code, and deployed the stack.
+            </p>
+            <div class="stack stack--tight" style="margin-top: 1.25rem;">
+              <a href="/about" class="button ghost">Read my philosophy &rarr;</a>
+            </div>
+          </article>
+
         </div>
       </div>
     </section>
@@ -288,7 +337,6 @@
 
     <script src="/assets/js/footer-year-theme.js" defer></script>
     <script src="/assets/js/hero-auto-pause.js" defer></script>
-    <script src="/assets/js/proof-lightbox.js" defer></script>
     <script src="/assets/js/proof-panel-lightbox.js" defer></script>
   </footer>
 </body>

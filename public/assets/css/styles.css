@@ -2443,3 +2443,181 @@ figure, .card { overflow: hidden; }
     animation: none !important;
   }
 }
+
+/* ==================================================================== */
+/* 14. TECH STACK BAR + PAIN POINTS GRID                                */
+/* ==================================================================== */
+
+.tech-stack-bar {
+  padding: 0 0 2rem;
+  background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.02));
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.tech-stack-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 700;
+  color: #9ca3af; /* Slightly lighter to reduce visual noise */
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.tech-stack-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem 3rem; 
+}
+
+.tech-stack-logo {
+  height: 36px; /* Bumps size up for better legibility */
+  width: auto;
+  
+  /* The Fixes */
+  filter: grayscale(100%);
+  opacity: 0.6;
+  mix-blend-mode: multiply; /* REMOVES THE WHITE BOX on the AWS logo */
+  
+  transition: all 0.3s ease;
+}
+
+.tech-stack-logo:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+  mix-blend-mode: normal; /* Restores color/white on hover if needed */
+  transform: translateY(-1px); /* Subtle lift */
+}
+
+/* Mobile tweak */
+@media (max-width: 600px) {
+  .tech-stack-grid {
+    gap: 1.5rem 2rem;
+  }
+  .tech-stack-logo {
+    height: 28px;
+  }
+}
+
+/* --- Asymmetric Pain Points Section --- */
+
+.pain-points-section {
+  padding-top: 4rem;
+  padding-bottom: 5rem;
+}
+
+/* The Layout Wrapper */
+.split-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+/* Desktop: Side-by-Side */
+@media (min-width: 900px) {
+  .split-layout {
+    grid-template-columns: 1fr 1.6fr; /* Text takes ~35%, Cards take ~65% */
+    gap: 4rem;
+  }
+  
+  /* Sticky effect: Keeps the headline visible while scrolling past cards */
+  .split-content {
+    position: sticky;
+    top: 6rem; 
+  }
+}
+
+/* Typography Polish */
+/* .split-content h2 {
+  font-family: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif;
+  font-size: clamp(2rem, 3vw, 2.75rem);
+  line-height: 1.1;
+  font-weight: 700;
+  letter-spacing: -0.02em; 
+  color: var(--gray-900);
+  margin-bottom: 1.25rem;
+  text-wrap: balance; 
+}
+
+.split-content h2 em {
+  color: var(--gray-500);
+  font-style: italic;
+  font-weight: 400;
+} */
+
+/* Typography Polish (Mixed Font) */
+.split-content h2 {
+  font-size: clamp(2rem, 3vw, 2.75rem);
+  line-height: 1.1;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--gray-900);
+  margin-bottom: 1.25rem;
+  text-wrap: balance; 
+  /* Default sans-serif inherited from body */
+}
+
+.split-content h2 em {
+  color: var(--gray-500);
+  font-style: italic;
+  font-weight: 400;
+  font-family: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif; /* ONLY the italics get the serif */
+}
+
+/* The Stack of Cards (Right Side) */
+.split-grid {
+  display: grid;
+  grid-template-columns: 1fr; 
+  gap: 1rem; /* Slightly tighter gap between cards */
+}
+
+/* Card Internals - Tighter for Rectangular Look */
+.card--feature {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 1.25rem; /* Reduced padding height */
+}
+
+.feature-title {
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem; /* Tighter margin */
+  color: var(--gray-900);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+/* The Pain/Fix Rows */
+.feature-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem; /* Tighter gap between rows */
+}
+
+.feature-row {
+  display: grid;
+  grid-template-columns: 3rem 1fr; /* Fixed width for label, rest for text */
+  gap: 0.75rem;
+  align-items: baseline;
+  font-size: 0.92rem;
+  line-height: 1.4;
+}
+
+.f-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  text-align: right;
+}
+
+.f-pain { color: var(--gray-400); }
+.f-fix  { color: #059669; } /* Emerald Green */
+
+.f-content {
+  color: var(--gray-700);
+}
