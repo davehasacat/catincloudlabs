@@ -2685,3 +2685,112 @@ figure, .card { overflow: hidden; }
   color: #ffffff; 
   font-weight: 500;
 }
+
+/* ==================================================================== */
+/* 15. PROOF OF SUCCESS: SYSTEM CONSOLE STYLE                           */
+/* ==================================================================== */
+
+/* Container for the whole "Console" look */
+.proof-console {
+  margin-top: 1.5rem;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  overflow: hidden; /* Clips the children to the border radius */
+  background-color: var(--bg-subtle, #f9fafb);
+}
+
+/* 1. Status Bar (Top) */
+.proof-status-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.5rem;
+  padding: 0.75rem 1rem;
+  background-color: #f1f5f9; /* Slate-100 */
+  border-bottom: 1px solid var(--gray-200);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
+  font-size: 0.75rem;
+  color: var(--gray-600);
+  letter-spacing: 0.05em;
+}
+
+.status-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #10b981; /* Emerald-500 */
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* "Live" pulsing animation */
+.status-dot.pulse {
+  box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  animation: statusPulse 2s infinite;
+}
+
+@keyframes statusPulse {
+  0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+  70% { box-shadow: 0 0 0 4px rgba(16, 185, 129, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+/* 2. Image Tweaks */
+.proof-console .proof-figure {
+  margin: 0; /* Remove default margins inside this container */
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.proof-console .proof-figure__img {
+  border-radius: 0; /* Remove rounded corners since it's inside the console */
+  box-shadow: none; /* Remove shadow, the container has the border */
+  display: block;
+}
+
+/* 3. Breakdown Grid (Bottom) */
+.proof-breakdown-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background-color: #fff;
+}
+
+.proof-point {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.proof-num {
+  display: block;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
+  font-size: 0.7rem;
+  color: var(--accent-600);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.proof-point strong {
+  color: var(--gray-900);
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.proof-point p {
+  color: var(--gray-600);
+  margin: 0;
+  font-size: 0.88rem;
+}
+
+/* Mobile Tweak: Ensure status bar wraps nicely */
+@media (max-width: 600px) {
+  .proof-breakdown-grid {
+    grid-template-columns: 1fr; /* Stack vertically on small screens */
+    gap: 1.25rem;
+  }
+}
