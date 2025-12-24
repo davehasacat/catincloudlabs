@@ -557,7 +557,6 @@ a:focus-visible,
   height:100%;
   object-fit: cover;
   display:block;
-  /* Light dim to reduce visual noise behind the text */
   filter: brightness(0.78);
 }
 
@@ -613,6 +612,7 @@ a:focus-visible,
 .ci-hero__cta .ci-btn {
   min-width: 260px; 
   justify-content: center;
+  box-sizing: border-box; /* Ensures padding/borders don't break width calcs */
 }
 
 /* Footnote: its own full-width row inside the CTA flex container */
@@ -635,19 +635,16 @@ a:focus-visible,
 }
 
 /* --- Mobile hero polish ------------------------------------------------ */
-@media (max-width: 700px){
+/* FIX 2: Increased breakpoint from 430px to 640px to catch ALL phones */
+@media (max-width: 640px){
   :is(.hero, .ci-hero){ min-height: clamp(520px, 84svh, 920px); }
   :is(.hero__video, .ci-hero__video){ object-position: 47.5% 100%; }
+  
   :is(.hero__content, .ci-hero__content){
     padding-top: calc(var(--safe-top) + clamp(48px, 9vh, 96px));
+    padding-inline: 14px;
   }
-}
-
-/* FIX 2: Increased breakpoint to 640px to catch large phones */
-@media (max-width: 640px){
-  :is(.hero__content, .ci-hero__content){
-    padding: calc(var(--safe-top) + clamp(40px, 9vh, 72px)) 14px 14px;
-  }
+  
   :is(.hero__content, .ci-hero__content) h1{
     max-width: 16ch;
     margin-inline: auto;
@@ -655,6 +652,7 @@ a:focus-visible,
     line-height: 1.12;
     text-wrap: balance;
   }
+  
   :is(.hero__content, .ci-hero__content) p{
     font-size: .95rem;
     margin-bottom: .9rem;
@@ -663,7 +661,7 @@ a:focus-visible,
       0 0 6px rgba(0,0,0,.35);
   }
 
-  /* Force stack and consistent width */
+  /* Force stack and consistent width on mobile */
   .hero__cta,
   .ci-hero__cta{
     flex-direction: column;
