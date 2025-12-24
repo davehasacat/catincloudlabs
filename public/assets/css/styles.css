@@ -614,10 +614,23 @@ a:focus-visible,
   /* Locks both buttons to the same substantial width */
   min-width: 260px; 
   justify-content: center;
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  white-space: nowrap; /* Prevents wrapping on smaller laptops */
+  
+  /* TUNING: Taller padding for a premium feel */
+  padding: 0.95rem 1.5rem; 
+  
+  /* TUNING: Slightly larger text to match the button size */
+  font-size: 1.05rem; 
+  letter-spacing: 0.01em; /* Tiny bit of air for readability */
+  
+  white-space: nowrap; 
   box-sizing: border-box;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+/* Optional: Add a subtle lift on hover to make them feel tactile */
+.hero__cta .ci-btn:hover,
+.ci-hero__cta .ci-btn:hover {
+  transform: translateY(-2px);
 }
 
 /* Footnote: its own full-width row inside the CTA flex container */
