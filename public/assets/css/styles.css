@@ -2540,24 +2540,6 @@ figure, .card { overflow: hidden; }
 }
 
 /* Typography Polish */
-/* .split-content h2 {
-  font-family: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif;
-  font-size: clamp(2rem, 3vw, 2.75rem);
-  line-height: 1.1;
-  font-weight: 700;
-  letter-spacing: -0.02em; 
-  color: var(--gray-900);
-  margin-bottom: 1.25rem;
-  text-wrap: balance; 
-}
-
-.split-content h2 em {
-  color: var(--gray-500);
-  font-style: italic;
-  font-weight: 400;
-} */
-
-/* Typography Polish (Mixed Font) */
 .split-content h2 {
   font-size: clamp(2rem, 3vw, 2.75rem);
   line-height: 1.1;
@@ -2566,67 +2548,111 @@ figure, .card { overflow: hidden; }
   color: var(--gray-900);
   margin-bottom: 1.25rem;
   text-wrap: balance; 
-  /* Default sans-serif inherited from body */
 }
 
 .split-content h2 em {
   color: var(--gray-500);
   font-style: italic;
   font-weight: 400;
-  font-family: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif; /* ONLY the italics get the serif */
+  font-family: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif; /* Serif italic for contrast */
 }
 
 /* The Stack of Cards (Right Side) */
 .split-grid {
   display: grid;
   grid-template-columns: 1fr; 
-  gap: 1rem; /* Slightly tighter gap between cards */
+  gap: 1rem; /* Tighter gap between cards */
 }
 
-/* Card Internals - Tighter for Rectangular Look */
+/* Card Internals */
 .card--feature {
   display: flex;
   flex-direction: column;
-  padding: 1rem 1.25rem; /* Reduced padding height */
+  padding: 1.25rem 1.5rem;
+  border-left: 4px solid transparent; /* Prepare for hover accent */
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
 }
 
+.card--feature:hover {
+  border-left-color: var(--accent); /* Subtle branded accent on hover */
+  transform: translateY(-2px);
+}
+
+/* Title with Icon */
 .feature-title {
-  font-size: 1.05rem;
-  margin-bottom: 0.5rem; /* Tighter margin */
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
   color: var(--gray-900);
   font-weight: 700;
   display: flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.75rem;
+}
+
+/* Icon Bubble Style */
+.feature-title span[aria-hidden="true"] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  background-color: var(--accent-100);
+  border-radius: 50%;
+  font-size: 1.2rem;
+  line-height: 1;
 }
 
 /* The Pain/Fix Rows */
 .feature-text {
   display: flex;
   flex-direction: column;
-  gap: 0.35rem; /* Tighter gap between rows */
+  gap: 0.6rem;
 }
 
 .feature-row {
   display: grid;
-  grid-template-columns: 3rem 1fr; /* Fixed width for label, rest for text */
+  grid-template-columns: 3.5rem 1fr; /* Fixed width for label */
   gap: 0.75rem;
   align-items: baseline;
-  font-size: 0.92rem;
-  line-height: 1.4;
+  font-size: 0.95rem;
+  line-height: 1.5;
 }
 
 .f-label {
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
   font-weight: 700;
   text-align: right;
+  padding-top: 0.15rem; /* Optical alignment with text */
 }
 
-.f-pain { color: var(--gray-400); }
-.f-fix  { color: #059669; } /* Emerald Green */
+/* Pain Row Styling */
+.f-pain { 
+  color: #ef4444; /* Red-500 */
+}
+.feature-row:has(.f-pain) .f-content {
+  color: var(--gray-500);
+  text-decoration: line-through; /* Optional: Strike-through old way */
+  text-decoration-color: var(--gray-300);
+}
 
-.f-content {
-  color: var(--gray-700);
+/* Fix Row Styling */
+.f-fix { 
+  color: #10b981; /* Emerald-500 */
+}
+.feature-row:has(.f-fix) .f-content {
+  color: var(--gray-900);
+  font-weight: 500;
+}
+
+/* Technical Monospace for Specific Terms */
+/* You can apply this manually in HTML like <span class="code">PrivateLink</span> */
+.feature-row .code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.9em;
+  color: var(--accent-700);
+  background: var(--accent-50);
+  padding: 0.1rem 0.3rem;
+  border-radius: 4px;
 }
