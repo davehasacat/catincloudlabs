@@ -1707,6 +1707,86 @@ figure, .card { overflow: hidden; }
   }
 }
 
+/* Code Snapshot inside Project Stats Card */
+.code-snapshot {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--gray-200);
+}
+
+.code-snapshot-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.code-snapshot-btn {
+  width: 100%;
+  display: block;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--gray-200);
+  background: var(--gray-900); /* Dark bg matches code theme */
+  position: relative; 
+  cursor: zoom-in;
+  transition: transform var(--transition-fast), border-color var(--transition-fast);
+  
+  /* --- NEW: VERTICAL SPACE SAVER --- */
+  max-height: 380px; /* Controls the visible height. Tweak this if you want more/less. */
+  overflow: hidden;  /* Cuts off the rest of the long image */
+}
+
+/* --- NEW: FADE OUT GRADIENT --- */
+.code-snapshot-btn::after {
+  content: "";
+  position: absolute;
+  bottom: 0; 
+  left: 0; 
+  right: 0;
+  height: 140px; /* How tall the fade is */
+  /* Gradient from transparent to dark (matching the code image background) */
+  background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.2) 40%, rgba(0,0,0,0.9));
+  pointer-events: none; /* Ensures clicks still register on the button */
+  z-index: 1;
+}
+
+.code-snapshot-btn:hover {
+  transform: translateY(-1px);
+  border-color: var(--accent-400);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Ensure the zoom pill on the button is clearly visible */
+.code-snapshot-btn:hover .proof-zoom-pill,
+.code-snapshot-btn:focus-visible .proof-zoom-pill {
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+.code-snapshot-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: contrast(1.05);
+  /* Ensures we see the top of the SQL logic (the CTEs) first */
+  object-position: top center; 
+}
+
+/* Positioning the zoom pill */
+.code-snapshot-btn .proof-zoom-pill {
+  bottom: 0.6rem;
+  right: 0.6rem;
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--gray-900);
+  border: none;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.35);
+  opacity: 0.9; 
+  z-index: 2; /* IMPORTANT: Keeps the button above the fade layer */
+}
+
 /* Insights Section */
 .insights-panel {
   background: var(--gray-50); 
