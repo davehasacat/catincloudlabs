@@ -1727,12 +1727,29 @@ figure, .card { overflow: hidden; }
   width: 100%;
   display: block;
   border-radius: var(--radius-sm);
-  overflow: hidden;
   border: 1px solid var(--gray-200);
-  background: var(--gray-900); /* Dark bg prevents white flashes */
-  transition: transform var(--transition-fast), border-color var(--transition-fast);
-  position: relative; /* Context for the zoom pill */
+  background: var(--gray-900); /* Dark bg matches code theme */
+  position: relative; 
   cursor: zoom-in;
+  transition: transform var(--transition-fast), border-color var(--transition-fast);
+  
+  /* --- NEW: VERTICAL SPACE SAVER --- */
+  max-height: 380px; /* Controls the visible height. Tweak this if you want more/less. */
+  overflow: hidden;  /* Cuts off the rest of the long image */
+}
+
+/* --- NEW: FADE OUT GRADIENT --- */
+.code-snapshot-btn::after {
+  content: "";
+  position: absolute;
+  bottom: 0; 
+  left: 0; 
+  right: 0;
+  height: 140px; /* How tall the fade is */
+  /* Gradient from transparent to dark (matching the code image background) */
+  background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.6) 40%, rgba(0,0,0,0.9));
+  pointer-events: none; /* Ensures clicks still register on the button */
+  z-index: 1;
 }
 
 .code-snapshot-btn:hover {
@@ -1752,22 +1769,22 @@ figure, .card { overflow: hidden; }
   width: 100%;
   height: auto;
   display: block;
-  /* Slight contrast boost makes code highlight syntax pop */
   filter: contrast(1.05);
-  /* Ensures we focus on the top of the query if you ever decide to set a fixed height */
+  /* Ensures we see the top of the SQL logic (the CTEs) first */
   object-position: top center; 
 }
 
-/* Positioning the zoom pill specifically for code snapshots */
+/* Positioning the zoom pill */
 .code-snapshot-btn .proof-zoom-pill {
-  bottom: 0.5rem;
-  right: 0.5rem;
+  bottom: 0.6rem;
+  right: 0.6rem;
   background: rgba(255, 255, 255, 0.95);
   color: var(--gray-900);
   border: none;
   font-weight: 600;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.35);
   opacity: 0.9; 
+  z-index: 2; /* IMPORTANT: Keeps the button above the fade layer */
 }
 
 /* Insights Section */
