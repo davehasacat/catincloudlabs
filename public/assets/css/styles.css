@@ -518,10 +518,16 @@ a:focus-visible,
 /* Make the footer CTA button match the Hero button styles (Desktop) */
 .card--cta .ci-btn {
   min-width: 260px;        /* Match hero width */
-  padding: 0.95rem 1.5rem; /* Match hero height */
-  font-size: 1.05rem;      /* Match hero text size */
   justify-content: center;
-  letter-spacing: 0.025em;
+  
+  /* MATCHING HERO TUNING */
+  padding: 0.95rem 1.5rem; 
+  font-size: 1.05rem;      
+  letter-spacing: 0.01em;  /* Adjusted to match hero */
+  
+  white-space: nowrap;     /* Prevents wrapping on tablets */
+  box-sizing: border-box;  /* Ensures padding doesn't break width */
+  
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
