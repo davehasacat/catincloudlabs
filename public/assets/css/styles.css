@@ -614,6 +614,7 @@ a:focus-visible,
   /* Locks both buttons to the same substantial width */
   min-width: 260px; 
   justify-content: center;
+  letter-spacing: 0.025em;
   
   /* TUNING: Taller padding for a premium feel */
   padding: 0.95rem 1.5rem; 
