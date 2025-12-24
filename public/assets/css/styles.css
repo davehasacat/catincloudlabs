@@ -1408,12 +1408,11 @@ figure, .card { overflow: hidden; }
   white-space: nowrap;
 }
 
-/* === MODIFIED: Center-align the subtitle and bridge text === */
+/* === Center-align the subtitle and bridge text === */
 .chart-bridge {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
-  max-width: 60ch;
   margin-bottom: 2rem;
 }
 
