@@ -2511,15 +2511,18 @@ figure, .card { overflow: hidden; }
 }
 
 /* ==================================================================== */
-/* 14. DARK MODE PAIN POINTS SECTION (The "Terminal" Look)              */
+/* 14. DARK MODE PAIN POINTS SECTION (Refined "Terminal" Look)          */
 /* ==================================================================== */
 
 /* Full-width dark container */
 .pain-points-section {
-  background-color: #111827; /* Gray-900 (matches generic dark mode bg) */
+  background-color: #111827; /* Gray-900 */
   color: #f3f4f6;            /* Gray-100 text */
-  padding-block: 6rem;       /* Vertical breathing room */
-  position: relative;        /* Context for any potential pseudo-elements */
+  padding-block: 6rem;       
+  position: relative;
+  
+  /* TWEAK 1: A subtle seam line to separate from the white section above */
+  border-top: 1px solid #374151; 
 }
 
 /* The Layout Wrapper */
@@ -2533,7 +2536,7 @@ figure, .card { overflow: hidden; }
 /* Desktop: Side-by-Side */
 @media (min-width: 900px) {
   .split-layout {
-    grid-template-columns: 1fr 1.5fr; /* Text takes ~40%, Cards take ~60% */
+    grid-template-columns: 1fr 1.5fr; 
     gap: 5rem;
   }
   
@@ -2543,18 +2546,17 @@ figure, .card { overflow: hidden; }
   }
 }
 
-/* Typography: High Contrast & Authoritative */
+/* Typography */
 .split-content h2 {
   font-size: clamp(2.5rem, 4vw, 3.5rem);
   line-height: 1.05;
   font-weight: 800;
   letter-spacing: -0.04em;
-  color: #ffffff; /* Pure white for headline */
+  color: #ffffff; 
   margin-bottom: 1.5rem;
   text-wrap: balance; 
 }
 
-/* The Italic Subhead */
 .split-content h2 em {
   display: block;
   color: #9ca3af; /* Gray-400 */
@@ -2564,7 +2566,6 @@ figure, .card { overflow: hidden; }
   margin-top: 0.1rem;
 }
 
-/* Intro Text */
 .intro-text {
   font-size: 1.125rem;
   line-height: 1.6;
@@ -2573,18 +2574,18 @@ figure, .card { overflow: hidden; }
   font-weight: 450;
 }
 
-/* Kicker Line (Brand Blue) */
+/* Kicker Line */
 .split-content::before {
   content: "";
   display: block;
   width: 3rem;
   height: 4px;
-  background: var(--accent); /* Keeps brand identity in the dark */
+  background: var(--accent); 
   margin-bottom: 1.5rem;
   border-radius: 2px;
 }
 
-/* The Stack of Cards (Right Side) */
+/* Right Side Stack */
 .split-grid {
   display: grid;
   grid-template-columns: 1fr; 
@@ -2597,11 +2598,14 @@ figure, .card { overflow: hidden; }
   flex-direction: column;
   padding: 1.5rem;
   
-  /* Dark Surface overrides */
   background-color: #1f2937; /* Gray-800 */
   border: 1px solid #374151; /* Gray-700 */
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5); /* Deeper shadow */
   border-radius: var(--radius-lg);
+  
+  /* TWEAK 2: "Inner Bevel" - Adds a 1px white highlight at the top to give depth */
+  box-shadow: 
+    0 1px 0 0 rgba(255, 255, 255, 0.05) inset, 
+    0 4px 6px -1px rgba(0, 0, 0, 0.5);
   
   transition: transform var(--transition), border-color var(--transition);
 }
@@ -2629,7 +2633,7 @@ figure, .card { overflow: hidden; }
   justify-content: center;
   width: 2.25rem;
   height: 2.25rem;
-  background-color: #374151; /* Gray-700 circle */
+  background-color: #374151; 
   border-radius: 50%;
   font-size: 1.2rem;
   line-height: 1;
@@ -2651,30 +2655,33 @@ figure, .card { overflow: hidden; }
   line-height: 1.5;
 }
 
+/* TWEAK 3: Monospace font for labels = Engineering Aesthetic */
 .f-label {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   font-size: 0.75rem;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em; /* Open tracking for monospace */
   font-weight: 700;
   text-align: right;
-  padding-top: 0.15rem;
+  padding-top: 0.2rem;
+  opacity: 0.9;
 }
 
-/* Pain Row (Light Red for Dark Mode) */
+/* Pain Row */
 .f-pain { 
   color: #f87171; /* Red-400 */
 }
 .feature-row:has(.f-pain) .f-content {
-  color: #9ca3af; /* Gray-400 (Dimmed) */
+  color: #9ca3af; /* Gray-400 */
   text-decoration: line-through;
-  text-decoration-color: #4b5563;
+  text-decoration-color: #4b5563; /* Darker strikethrough line */
 }
 
-/* Fix Row (Emerald Green for Dark Mode) */
+/* Fix Row */
 .f-fix { 
   color: #34d399; /* Emerald-400 */
 }
 .feature-row:has(.f-fix) .f-content {
-  color: #ffffff; /* Bright White */
+  color: #ffffff; 
   font-weight: 500;
 }
