@@ -509,15 +509,46 @@ a:focus-visible,
   margin-inline: auto;
 }
 
-/* CTA card on Projects page */
+/* CTA card on Projects/Services pages */
 .card--cta {
   margin-top: 2.25rem;
   text-align: center;
 }
 
+/* Make the footer CTA button match the Hero button styles (Desktop) */
+.card--cta .ci-btn {
+  min-width: 260px;        /* Match hero width */
+  justify-content: center;
+  
+  /* MATCHING HERO TUNING */
+  padding: 0.95rem 1.5rem; 
+  font-size: 1.05rem;      
+  letter-spacing: 0.01em;  /* Adjusted to match hero */
+  
+  white-space: nowrap;     /* Prevents wrapping on tablets */
+  box-sizing: border-box;  /* Ensures padding doesn't break width */
+  
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card--cta .ci-btn:hover {
+  transform: translateY(-2px);
+}
+
 @media (min-width: 1024px) {
   .card--cta {
     margin-top: 2.75rem;
+  }
+}
+
+/* Mobile: Full width confident button */
+@media (max-width: 640px) {
+  .card--cta .ci-btn {
+    width: 100%;
+    max-width: 320px;
+    margin-inline: auto;
+    padding: 0.7rem 0.9rem; /* Match hero mobile padding */
+    font-size: 0.95rem;     /* Match hero mobile font */
   }
 }
 
@@ -614,10 +645,24 @@ a:focus-visible,
   /* Locks both buttons to the same substantial width */
   min-width: 260px; 
   justify-content: center;
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  white-space: nowrap; /* Prevents wrapping on smaller laptops */
+  letter-spacing: 0.025em;
+  
+  /* TUNING: Taller padding for a premium feel */
+  padding: 0.95rem 1.5rem; 
+  
+  /* TUNING: Slightly larger text to match the button size */
+  font-size: 1.05rem; 
+  letter-spacing: 0.01em; /* Tiny bit of air for readability */
+  
+  white-space: nowrap; 
   box-sizing: border-box;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+/* Optional: Add a subtle lift on hover to make them feel tactile */
+.hero__cta .ci-btn:hover,
+.ci-hero__cta .ci-btn:hover {
+  transform: translateY(-2px);
 }
 
 /* Footnote: its own full-width row inside the CTA flex container */
