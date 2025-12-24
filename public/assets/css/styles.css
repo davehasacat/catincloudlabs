@@ -2510,93 +2510,126 @@ figure, .card { overflow: hidden; }
   }
 }
 
-/* --- Asymmetric Pain Points Section --- */
+/* ==================================================================== */
+/* 14. DARK MODE PAIN POINTS SECTION (The "Terminal" Look)              */
+/* ==================================================================== */
 
+/* Full-width dark container */
 .pain-points-section {
-  padding-top: 4rem;
-  padding-bottom: 5rem;
+  background-color: #111827; /* Gray-900 (matches generic dark mode bg) */
+  color: #f3f4f6;            /* Gray-100 text */
+  padding-block: 6rem;       /* Vertical breathing room */
+  position: relative;        /* Context for any potential pseudo-elements */
 }
 
 /* The Layout Wrapper */
 .split-layout {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 3rem;
+  gap: 4rem;
   align-items: start;
 }
 
 /* Desktop: Side-by-Side */
 @media (min-width: 900px) {
   .split-layout {
-    grid-template-columns: 1fr 1.6fr; /* Text takes ~35%, Cards take ~65% */
-    gap: 4rem;
+    grid-template-columns: 1fr 1.5fr; /* Text takes ~40%, Cards take ~60% */
+    gap: 5rem;
   }
   
-  /* Sticky effect: Keeps the headline visible while scrolling past cards */
   .split-content {
     position: sticky;
-    top: 6rem; 
+    top: 8rem; 
   }
 }
 
-/* Typography Polish */
+/* Typography: High Contrast & Authoritative */
 .split-content h2 {
-  font-size: clamp(2rem, 3vw, 2.75rem);
-  line-height: 1.1;
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  line-height: 1.05;
   font-weight: 800;
-  letter-spacing: -0.03em;
-  color: var(--gray-900);
-  margin-bottom: 1.25rem;
+  letter-spacing: -0.04em;
+  color: #ffffff; /* Pure white for headline */
+  margin-bottom: 1.5rem;
   text-wrap: balance; 
 }
 
+/* The Italic Subhead */
 .split-content h2 em {
-  color: var(--gray-500);
+  display: block;
+  color: #9ca3af; /* Gray-400 */
   font-style: italic;
   font-weight: 400;
-  font-family: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif; /* Serif italic for contrast */
+  font-family: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif;
+  margin-top: 0.1rem;
+}
+
+/* Intro Text */
+.intro-text {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: #d1d5db; /* Gray-300 */
+  max-width: 32ch;
+  font-weight: 450;
+}
+
+/* Kicker Line (Brand Blue) */
+.split-content::before {
+  content: "";
+  display: block;
+  width: 3rem;
+  height: 4px;
+  background: var(--accent); /* Keeps brand identity in the dark */
+  margin-bottom: 1.5rem;
+  border-radius: 2px;
 }
 
 /* The Stack of Cards (Right Side) */
 .split-grid {
   display: grid;
   grid-template-columns: 1fr; 
-  gap: 1rem; /* Tighter gap between cards */
+  gap: 1.25rem; 
 }
 
-/* Card Internals */
+/* DARK CARD STYLING */
 .card--feature {
   display: flex;
   flex-direction: column;
-  padding: 1.25rem 1.5rem;
-  border-left: 4px solid transparent; /* Prepare for hover accent */
-  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+  padding: 1.5rem;
+  
+  /* Dark Surface overrides */
+  background-color: #1f2937; /* Gray-800 */
+  border: 1px solid #374151; /* Gray-700 */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5); /* Deeper shadow */
+  border-radius: var(--radius-lg);
+  
+  transition: transform var(--transition), border-color var(--transition);
 }
 
 .card--feature:hover {
-  border-left-color: var(--accent); /* Subtle branded accent on hover */
   transform: translateY(-2px);
+  border-color: var(--accent); /* Blue border glow on hover */
 }
 
 /* Title with Icon */
 .feature-title {
   font-size: 1.1rem;
   margin-bottom: 1rem;
-  color: var(--gray-900);
+  color: #ffffff;
   font-weight: 700;
   display: flex;
   align-items: center;
   gap: 0.75rem;
 }
 
-/* Icon Bubble Style */
+/* Dark Icon Bubbles */
 .feature-title span[aria-hidden="true"] {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 2.25rem;
   height: 2.25rem;
-  background-color: var(--accent-100);
+  background-color: #374151; /* Gray-700 circle */
   border-radius: 50%;
   font-size: 1.2rem;
   line-height: 1;
@@ -2611,7 +2644,7 @@ figure, .card { overflow: hidden; }
 
 .feature-row {
   display: grid;
-  grid-template-columns: 3.5rem 1fr; /* Fixed width for label */
+  grid-template-columns: 3.5rem 1fr;
   gap: 0.75rem;
   align-items: baseline;
   font-size: 0.95rem;
@@ -2624,35 +2657,24 @@ figure, .card { overflow: hidden; }
   letter-spacing: 0.08em;
   font-weight: 700;
   text-align: right;
-  padding-top: 0.15rem; /* Optical alignment with text */
+  padding-top: 0.15rem;
 }
 
-/* Pain Row Styling */
+/* Pain Row (Light Red for Dark Mode) */
 .f-pain { 
-  color: #ef4444; /* Red-500 */
+  color: #f87171; /* Red-400 */
 }
 .feature-row:has(.f-pain) .f-content {
-  color: var(--gray-500);
-  text-decoration: line-through; /* Optional: Strike-through old way */
-  text-decoration-color: var(--gray-300);
+  color: #9ca3af; /* Gray-400 (Dimmed) */
+  text-decoration: line-through;
+  text-decoration-color: #4b5563;
 }
 
-/* Fix Row Styling */
+/* Fix Row (Emerald Green for Dark Mode) */
 .f-fix { 
-  color: #10b981; /* Emerald-500 */
+  color: #34d399; /* Emerald-400 */
 }
 .feature-row:has(.f-fix) .f-content {
-  color: var(--gray-900);
+  color: #ffffff; /* Bright White */
   font-weight: 500;
-}
-
-/* Technical Monospace for Specific Terms */
-/* You can apply this manually in HTML like <span class="code">PrivateLink</span> */
-.feature-row .code {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  font-size: 0.9em;
-  color: var(--accent-700);
-  background: var(--accent-50);
-  padding: 0.1rem 0.3rem;
-  border-radius: 4px;
 }
