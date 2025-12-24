@@ -1421,6 +1421,14 @@ figure, .card { overflow: hidden; }
   margin-inline: auto;
 }
 
+/* === Center-align the subtitle and bridge text === */
+.chart-subtitle,
+.chart-bridge {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* Bridge paragraph between diagrams and exports */
 .chart-bridge {
   max-width: 60ch;
