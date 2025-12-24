@@ -1747,7 +1747,7 @@ figure, .card { overflow: hidden; }
   right: 0;
   height: 140px; /* How tall the fade is */
   /* Gradient from transparent to dark (matching the code image background) */
-  background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.6) 40%, rgba(0,0,0,0.9));
+  background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.3) 40%, rgba(0,0,0,0.9));
   pointer-events: none; /* Ensures clicks still register on the button */
   z-index: 1;
 }
