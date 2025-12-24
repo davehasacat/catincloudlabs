@@ -509,15 +509,40 @@ a:focus-visible,
   margin-inline: auto;
 }
 
-/* CTA card on Projects page */
+/* CTA card on Projects/Services pages */
 .card--cta {
   margin-top: 2.25rem;
   text-align: center;
 }
 
+/* Make the footer CTA button match the Hero button styles (Desktop) */
+.card--cta .ci-btn {
+  min-width: 260px;        /* Match hero width */
+  padding: 0.95rem 1.5rem; /* Match hero height */
+  font-size: 1.05rem;      /* Match hero text size */
+  justify-content: center;
+  letter-spacing: 0.025em;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card--cta .ci-btn:hover {
+  transform: translateY(-2px);
+}
+
 @media (min-width: 1024px) {
   .card--cta {
     margin-top: 2.75rem;
+  }
+}
+
+/* Mobile: Full width confident button */
+@media (max-width: 640px) {
+  .card--cta .ci-btn {
+    width: 100%;
+    max-width: 320px;
+    margin-inline: auto;
+    padding: 0.7rem 0.9rem; /* Match hero mobile padding */
+    font-size: 0.95rem;     /* Match hero mobile font */
   }
 }
 
