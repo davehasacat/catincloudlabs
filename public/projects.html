@@ -57,6 +57,49 @@
     <section class="section">
       <div class="container">
         <div class="stack stack--section">
+          
+          <article class="card reveal card--narrow">
+            <h2>Private-VPC Data Plane Architecture</h2>
+            <p>
+              This reference architecture demonstrates a fully private data plane. It ingests high-velocity market data into a hardened Virtual Private Cloud (VPC), orchestrates transformations via Airflow (MWAA), and delivers audit-ready datasets in Snowflake. Zero public exposure, 100% automated.
+            </p>
+            <p class="muted">
+              I adapt this exact pattern for clients who need a data platform that is secure by default and easy to maintain.
+            </p>
+
+            <div class="stack stack--section">
+              <div class="stack stack--tight center">
+                <h3>Architecture and security posture</h3>
+                <p class="chart-subtitle">
+                  The diagram below illustrates the complete lineage: Private VPC endpoints, KMS encryption, and least-privilege IAM roles orchestrating the flow from API to Analytics.
+                </p>
+              </div>
+
+              <figure id="diagram-architecture" class="diagram-figure">
+                <button 
+                  type="button" 
+                  class="proof-figure__button" 
+                  data-panel-open 
+                  data-caption="End-to-End Lineage: Orchestrating the flow from raw market APIs into S3, transforming via dbt Core, and serving analytics-ready tables in Snowflake." 
+                  aria-label="Click to zoom the architecture flow diagram"
+                >
+                  <img 
+                    src="/assets/diagrams/security-observability.v6.svg" 
+                    alt="Vertical architecture flow: Raw APIs -> S3 Ingestion -> dbt Transformation -> Snowflake Analytics" 
+                    class="diagram" 
+                    width="900" height="1200" 
+                    loading="lazy" decoding="async" 
+                    sizes="(max-width: 700px) 100vw, 900px" 
+                  />
+                  <span class="proof-zoom-pill">Click to zoom</span>
+                </button>
+                <figcaption class="diagram-caption">
+                  End-to-End Lineage: Orchestrating the flow from raw market APIs into S3, transforming via dbt Core, and serving analytics-ready tables in Snowflake.
+                </figcaption>
+              </figure>
+            </div>
+          </article>
+
           <article class="card reveal card--narrow full-width">
             <h2>Flagship Pipeline Output</h2>
             
@@ -97,7 +140,7 @@
                     <span class="proof-zoom-pill">Click to zoom</span>
                   </button>
                 </div>
-                </div>
+              </div>
             </div>
             
             <div class="dashboard-grid">
@@ -181,40 +224,6 @@
               <p class="insights-disclaimer">
                 <strong>Disclaimer:</strong> None of this is to be taken as financial advice. All data and signals presented are strictly for technical demonstration of data pipeline capabilities.
               </p>
-            </div>
-          </article>
-                    <article class="card reveal card--narrow">
-            <h2>Private-VPC Data Plane Architecture</h2>
-            <p>
-              This reference architecture demonstrates a fully private data plane. It ingests high-velocity market data into a hardened Virtual Private Cloud (VPC), orchestrates transformations via Airflow (MWAA), and delivers audit-ready datasets in Snowflake. Zero public exposure, 100% automated.
-            </p>
-            <p class="muted">
-              I adapt this exact pattern for clients who need a data platform that is secure by default and easy to maintain.
-            </p>
-
-            <div class="stack stack--section">
-              <div class="stack stack--tight">
-                <h3>Architecture and security posture</h3>
-                <p class="chart-subtitle">
-                  The high-level architecture and security/observability diagrams below show how the pieces fit together: Private VPC endpoints, KMS encryption, and least-privilege IAM roles.
-                </p>
-              </div>
-
-              <figure id="diagram-architecture" class="diagram-figure">
-                <button type="button" class="proof-figure__button" data-panel-open data-caption="High-level data flow: ingest market data, land it in S3, transform with dbt, &amp; serve from Snowflake." aria-label="Click to zoom the architecture flow diagram">
-                  <img src="/assets/diagrams/architecture-flow.v5.svg" alt="Architecture flow diagram showing MWAA orchestrating S3 to Snowflake via COPY, with dbt building marts" class="diagram" width="1160" height="300" loading="lazy" decoding="async" sizes="(max-width: 700px) 100vw, 1160px" />
-                  <span class="proof-zoom-pill">Click to zoom</span>
-                </button>
-                <figcaption class="diagram-caption">High-level data flow: ingest market data, land it in S3, transform with dbt, &amp; serve from Snowflake.</figcaption>
-              </figure>
-
-              <figure class="diagram-figure">
-                <button type="button" class="proof-figure__button" data-panel-open data-caption="High-level security view: client VPN into a private VPC; MWAA reaches encrypted S3 via gateway endpoint &amp; orchestrates Snowflake via outbound NAT." aria-label="Click to zoom the security and observability diagram">
-                  <img src="/assets/diagrams/security-observability.v5.svg" alt="Private VPC with S3 Gateway Endpoint; MWAA orchestrates Snowflake load; outbound-only egress" class="diagram" width="1160" height="300" loading="lazy" decoding="async" sizes="(max-width: 700px) 100vw, 1160px" />
-                  <span class="proof-zoom-pill">Click to zoom</span>
-                </button>
-                <figcaption class="diagram-caption">High-level security view: client VPN into a private VPC.</figcaption>
-              </figure>
             </div>
           </article>
 
