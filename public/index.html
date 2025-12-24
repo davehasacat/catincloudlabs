@@ -218,7 +218,7 @@
           <article id="architecture" class="card reveal proof-diagram card--narrow">
             <div class="stack stack--tight">
               <div class="eyebrow">The Blueprint</div>
-              <h2>Orchestrated for silence</h2>
+              <h2 class="center">Orchestrated for silence</h2>
               <p class="chart-subtitle">
                 A production-grade pipeline built on AWS, MWAA, Snowflake, and dbt Core. 
                 It demonstrates secure ingestion within a hardened VPC, using KMS-encrypted buckets and PrivateLink to deliver analytics-ready data without public exposure.
@@ -233,7 +233,7 @@
                   aria-label="Click to zoom the architecture flow diagram"
                 >
                   <img
-                    src="/assets/diagrams/security-observability.v6.svg"
+                    src="/assets/diagrams/security-observability.v7.svg"
                     alt="Vertical architecture flow: Raw APIs -> S3 Ingestion -> dbt Transformation -> Snowflake Analytics"
                     class="diagram"
                     width="900" height="1200"
@@ -248,9 +248,13 @@
           </article>
 
           <article id="proof" class="card reveal card--narrow">
-            <div class="eyebrow">Proof of Success</div>
-            <h2>Production Reality</h2>
-
+            <div class="eyebrow">The Proof</div>
+            <h2 class="center">Production Reality</h2>
+            <p class="chart-subtitle"><strong>From left to right:</strong>
+              <br>1. Daily Airflow runs for the stocks load.
+              <br>2. A partitioned, validated load DAG.
+              <br>3. Clean prices landed in Snowflake with trade and load dates.
+            </p>
             <figure class="proof-figure">
               <button
                 type="button"
@@ -272,22 +276,13 @@
                   Click to zoom
                 </span>
               </button>
-
-              <figcaption class="proof-figure__caption">
-                <strong>From left to right:</strong>
-                <ol>
-                  <li>Daily Airflow runs for the stocks load.</li>
-                  <li>A partitioned, validated load DAG.</li>
-                  <li>Clean prices landed in Snowflake with trade and load dates.</li>
-                </ol>
-              </figcaption>
             </figure>
 
           </article>
 
           <article class="card reveal card--narrow">
             <div class="eyebrow">The Architect</div>
-            <h2>5 roles in 1. Zero overhead.</h2>
+            <h2 class="center">5 roles in 1. Zero overhead.</h2>
             <p>
               I'm Dave Anaya. CatInCloud Labs is a solo practice designed to eliminate the silos that break data teams. I operate across the full stack:
             </p>

@@ -59,12 +59,10 @@
         <div class="stack stack--section">
           
           <article class="card reveal card--narrow">
-            <h2>Private-VPC Data Plane Architecture</h2>
+            <div class="eyebrow">Architecture</div>
+            <h2>Private-VPC Data Plane</h2>
             <p>
               This reference architecture demonstrates a fully private data plane. It ingests high-velocity market data into a hardened Virtual Private Cloud (VPC), orchestrates transformations via Airflow (MWAA), and delivers audit-ready datasets in Snowflake. Zero public exposure, 100% automated.
-            </p>
-            <p class="muted">
-              I adapt this exact pattern for clients who need a data platform that is secure by default and easy to maintain.
             </p>
 
             <div class="stack stack--section">
@@ -84,7 +82,7 @@
                   aria-label="Click to zoom the architecture flow diagram"
                 >
                   <img 
-                    src="/assets/diagrams/security-observability.v6.svg" 
+                    src="/assets/diagrams/security-observability.v7.svg" 
                     alt="Vertical architecture flow: Raw APIs -> S3 Ingestion -> dbt Transformation -> Snowflake Analytics" 
                     class="diagram" 
                     width="900" height="1200" 
@@ -101,19 +99,14 @@
           </article>
 
           <article class="card reveal card--narrow full-width">
+            <div class="eyebrow">Data & Analytics</div>
             <h2>Flagship Pipeline Output</h2>
-            
             <div class="callout-alert">
               <span class="callout-alert-title">2025 Year in Review Snapshot</span>
               The dashboards below are not live feeds. They render a static dataset covering 
               <strong>Jan 1 - Dec 19, 2025</strong>. This demonstrates the pipeline's ability 
               to aggregate high-velocity historical data into finalized "Gold" reporting layers.
             </div>
-
-            <p class="chart-bridge">
-              The data flows from <code>S3 (Raw) &rarr; Snowflake (Staging/Int) &rarr; dbt Marts &rarr; S3 (JSON)</code>.
-            </p>
-
             <div class="ticker-features-shell">
               <div class="ticker-features-latest">
                 <h3 class="ticker-features-heading">Pipeline Scale</h3>
@@ -188,15 +181,10 @@
             <div class="insights-panel">
               <div class="stack stack--tight">
                 <h3>Pipeline Discoveries: 2025 Year in Review</h3>
-                <p class="insights-code">
-                  // Logic: Cross-asset correlation & Regime detection (Z-Score > 2.5)
-                </p>
               </div>
-              
-              <p>
-                These insights are automated outputs from the pipeline's silver/gold dbt layers, demonstrating how raw market data transforms into narrative signals:
-              </p>
-            
+
+              <p>These insights are automated outputs from the pipeline's silver/gold dbt layers, demonstrating how raw market data transforms into narrative signals:</p>
+              <h4>Logic: Cross-asset correlation & Regime detection (Z-Score > 2.5)</h4>
               <h4>1. Mag 7 Fracture: The Basket Trade is Dead</h4>
               <ul>
                 <li>
@@ -228,6 +216,7 @@
           </article>
 
           <article class="card reveal card--narrow">
+            <div class="eyebrow">Architecture</div>
             <h2>Infrastructure as Code & Compliance</h2>
             <p>
               The platform runs on a hardened Airflow deployment inside AWS MWAA. It connects securely to ECR, CloudWatch Logs, KMS,
@@ -236,6 +225,7 @@
           </article>
 
           <article class="card reveal card--narrow">
+            <div class="eyebrow">Data & Analytics</div>
             <h2>AI-Ready Foundation</h2>
             <p>
               The cleanest ML models start with clean data. This pipeline's rigorous "Silver" and "Gold" modeling layers in dbt provide the structured, history-preserving datasets required for predictive modeling and backtesting strategies immediately.
