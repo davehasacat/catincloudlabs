@@ -608,7 +608,7 @@ a:focus-visible,
   margin-inline: auto;
 }
 
-/* FIX: Enforce equal width on desktop/tablet */
+/* FIX 1: Enforce minimum width on Desktop so they match side-by-side */
 .hero__cta .ci-btn,
 .ci-hero__cta .ci-btn {
   min-width: 260px; 
@@ -643,7 +643,7 @@ a:focus-visible,
   }
 }
 
-/* FIX: Updated breakpoint to 640px to catch large phones */
+/* FIX 2: Increased breakpoint to 640px to catch large phones */
 @media (max-width: 640px){
   :is(.hero__content, .ci-hero__content){
     padding: calc(var(--safe-top) + clamp(40px, 9vh, 72px)) 14px 14px;
@@ -663,13 +663,14 @@ a:focus-visible,
       0 0 6px rgba(0,0,0,.35);
   }
 
+  /* Force stack and consistent width */
   .hero__cta,
   .ci-hero__cta{
     flex-direction: column;
     align-items: center;
   }
 
-  /* FIX: Explicit matching width for stacked buttons */
+  /* Explicit matching width for stacked buttons */
   .hero__cta .ci-btn,
   .ci-hero__cta .ci-btn {
     width: 100%;
