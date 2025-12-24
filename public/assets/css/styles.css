@@ -1127,13 +1127,7 @@ figure, .card { overflow: hidden; }
 }
 
 /* Mobile: adjust zoom pill placement only on the architecture diagram */
-@media (max-width: 640px) {
-  #diagram-architecture .proof-zoom-pill {
-    top: 0.4rem;
-    bottom: auto;      /* move from bottom-right to top-right */
-    right: 0.5rem;
-  }
-}
+/* -- REMOVED OVERRIDE -- For vertical diagrams, bottom-right is safer than top-right */
 
 /* On hover/focus, make it clear but still small */
 .proof-figure__button:hover .proof-zoom-pill,
@@ -1743,9 +1737,9 @@ figure, .card { overflow: hidden; }
   letter-spacing: 0.09em;
   
   /* Cloud Theme: Matching the Snapshot Badge style */
-  color: var(--accent-800);             /* Deep Blue text */
-  background: var(--accent-100);        /* Light Blue Cloud background */
-  border: 1px solid var(--accent-200);  /* Soft Blue border for definition */
+  color: var(--accent-800);              /* Deep Blue text */
+  background: var(--accent-100);         /* Light Blue Cloud background */
+  border: 1px solid var(--accent-200);   /* Soft Blue border for definition */
   
   display: inline-flex;
   align-items: center;
