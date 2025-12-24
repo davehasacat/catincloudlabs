@@ -176,7 +176,7 @@
 
             <article class="card reveal card--feature">
               <h3 class="feature-title">
-                <span aria-hidden="true">🐅</span> Security
+                <span aria-hidden="true">🐯</span> Security
               </h3>
               <div class="feature-text">
                 <div class="feature-row">
@@ -243,41 +243,69 @@
                     Click to zoom
                   </span>
                 </button>
+                <figcaption class="diagram-caption">
+                  End-to-End Lineage: Orchestrating the flow from raw market APIs into S3, transforming via dbt Core, and serving analytics-ready tables in Snowflake.
+                </figcaption>
               </figure>
             </div>
           </article>
 
           <article id="proof" class="card reveal card--narrow">
-            <div class="eyebrow">The Proof</div>
-            <h2 class="center">Production Reality</h2>
-            <p class="chart-subtitle"><strong>From left to right:</strong>
-              <br>1. Daily Airflow runs for the stocks load.
-              <br>2. A partitioned, validated load DAG.
-              <br>3. Clean prices landed in Snowflake with trade and load dates.
-            </p>
-            <figure class="proof-figure">
-              <button
-                type="button"
-                class="proof-figure__button"
-                data-panel-open
-                data-caption="From scheduled Airflow runs to validated rows in Snowflake. The same pattern we'd adapt to your sources and your environment."
-                aria-label="Click to zoom the end-to-end 3-panel pipeline screenshot"
-              >
-                <img
-                  src="/assets/proof/proof-end-to-end-panel.v2.1920w.webp"
-                  alt="Three panels: daily Airflow runs for the stocks load, a partitioned validation DAG, and Snowflake rows showing prices with trade and load dates."
-                  class="proof-figure__img"
-                  width="1920"
-                  height="1080"
-                  loading="lazy"
-                  decoding="async"
-                />
-                <span class="proof-zoom-pill">
-                  Click to zoom
-                </span>
-              </button>
-            </figure>
+            <div class="eyebrow">Proof of Success</div>
+            <h2>Production Reality</h2>
 
+            <div class="proof-console">
+              
+              <div class="proof-status-bar">
+                <div class="status-item">
+                  <span class="status-dot pulse"></span>
+                  <span class="status-label">STATUS: HEALTHY</span>
+                </div>
+                <div class="status-item">
+                  <span class="status-label">FRESHNESS: &lt; 15m</span>
+                </div>
+                <div class="status-item">
+                  <span class="status-label">DQ CHECKS: PASSING</span>
+                </div>
+              </div>
+
+              <figure class="proof-figure">
+                <button
+                  type="button"
+                  class="proof-figure__button"
+                  data-panel-open
+                  data-caption="End-to-End Lineage: Airflow Orchestration (Left) -> Data Quality Gates (Center) -> Snowflake Warehouse (Right)."
+                  aria-label="Click to zoom the end-to-end 3-panel pipeline screenshot"
+                >
+                  <img
+                    src="/assets/proof/proof-end-to-end-panel.v2.1920w.webp"
+                    alt="Three panels: Airflow DAGs, Great Expectations Validation, and Snowflake Tables"
+                    class="proof-figure__img"
+                    width="1920"
+                    height="1080"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <span class="proof-zoom-pill">Click to zoom</span>
+                </button>
+              </figure>
+
+              <div class="proof-breakdown-grid">
+                <div class="proof-point">
+                  <span class="proof-num">01 // ORCHESTRATION</span>
+                  <p><strong>Idempotent DAGs</strong><br>Airflow pipelines that self-heal on failure and enforce rigid SLAs.</p>
+                </div>
+                <div class="proof-point">
+                  <span class="proof-num">02 // VALIDATION</span>
+                  <p><strong>Quality Gates</strong><br>Partitioned checks block bad data before it hits the warehouse.</p>
+                </div>
+                <div class="proof-point">
+                  <span class="proof-num">03 // DELIVERY</span>
+                  <p><strong>Audit-Ready</strong><br>Finalized, versioned tables in Snowflake ready for BI & ML.</p>
+                </div>
+              </div>
+
+            </div>
           </article>
 
           <article class="card reveal card--narrow">

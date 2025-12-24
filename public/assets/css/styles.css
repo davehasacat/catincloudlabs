@@ -2510,93 +2510,130 @@ figure, .card { overflow: hidden; }
   }
 }
 
-/* --- Asymmetric Pain Points Section --- */
+/* ==================================================================== */
+/* 14. DARK MODE PAIN POINTS SECTION (Refined "Terminal" Look)          */
+/* ==================================================================== */
 
+/* Full-width dark container */
 .pain-points-section {
-  padding-top: 4rem;
-  padding-bottom: 5rem;
+  background-color: #111827; /* Gray-900 */
+  color: #f3f4f6;            /* Gray-100 text */
+  padding-block: 6rem;       
+  position: relative;
+  
+  /* TWEAK 1: A subtle seam line to separate from the white section above */
+  border-top: 1px solid #374151; 
 }
 
 /* The Layout Wrapper */
 .split-layout {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 3rem;
+  gap: 4rem;
   align-items: start;
 }
 
 /* Desktop: Side-by-Side */
 @media (min-width: 900px) {
   .split-layout {
-    grid-template-columns: 1fr 1.6fr; /* Text takes ~35%, Cards take ~65% */
-    gap: 4rem;
+    grid-template-columns: 1fr 1.5fr; 
+    gap: 5rem;
   }
   
-  /* Sticky effect: Keeps the headline visible while scrolling past cards */
   .split-content {
     position: sticky;
-    top: 6rem; 
+    top: 8rem; 
   }
 }
 
-/* Typography Polish */
+/* Typography */
 .split-content h2 {
-  font-size: clamp(2rem, 3vw, 2.75rem);
-  line-height: 1.1;
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  line-height: 1.05;
   font-weight: 800;
-  letter-spacing: -0.03em;
-  color: var(--gray-900);
-  margin-bottom: 1.25rem;
+  letter-spacing: -0.04em;
+  color: #ffffff; 
+  margin-bottom: 1.5rem;
   text-wrap: balance; 
 }
 
 .split-content h2 em {
-  color: var(--gray-500);
+  display: block;
+  color: #9ca3af; /* Gray-400 */
   font-style: italic;
   font-weight: 400;
-  font-family: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif; /* Serif italic for contrast */
+  font-family: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif;
+  margin-top: 0.1rem;
 }
 
-/* The Stack of Cards (Right Side) */
+.intro-text {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: #d1d5db; /* Gray-300 */
+  max-width: 32ch;
+  font-weight: 450;
+}
+
+/* Kicker Line */
+.split-content::before {
+  content: "";
+  display: block;
+  width: 3rem;
+  height: 4px;
+  background: var(--accent); 
+  margin-bottom: 1.5rem;
+  border-radius: 2px;
+}
+
+/* Right Side Stack */
 .split-grid {
   display: grid;
   grid-template-columns: 1fr; 
-  gap: 1rem; /* Tighter gap between cards */
+  gap: 1.25rem; 
 }
 
-/* Card Internals */
+/* DARK CARD STYLING */
 .card--feature {
   display: flex;
   flex-direction: column;
-  padding: 1.25rem 1.5rem;
-  border-left: 4px solid transparent; /* Prepare for hover accent */
-  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+  padding: 1.5rem;
+  
+  background-color: #1f2937; /* Gray-800 */
+  border: 1px solid #374151; /* Gray-700 */
+  border-radius: var(--radius-lg);
+  
+  /* TWEAK 2: "Inner Bevel" - Adds a 1px white highlight at the top to give depth */
+  box-shadow: 
+    0 1px 0 0 rgba(255, 255, 255, 0.05) inset, 
+    0 4px 6px -1px rgba(0, 0, 0, 0.5);
+  
+  transition: transform var(--transition), border-color var(--transition);
 }
 
 .card--feature:hover {
-  border-left-color: var(--accent); /* Subtle branded accent on hover */
   transform: translateY(-2px);
+  border-color: var(--accent); /* Blue border glow on hover */
 }
 
 /* Title with Icon */
 .feature-title {
   font-size: 1.1rem;
   margin-bottom: 1rem;
-  color: var(--gray-900);
+  color: #ffffff;
   font-weight: 700;
   display: flex;
   align-items: center;
   gap: 0.75rem;
 }
 
-/* Icon Bubble Style */
+/* Dark Icon Bubbles */
 .feature-title span[aria-hidden="true"] {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 2.25rem;
   height: 2.25rem;
-  background-color: var(--accent-100);
+  background-color: #374151; 
   border-radius: 50%;
   font-size: 1.2rem;
   line-height: 1;
@@ -2611,48 +2648,156 @@ figure, .card { overflow: hidden; }
 
 .feature-row {
   display: grid;
-  grid-template-columns: 3.5rem 1fr; /* Fixed width for label */
+  grid-template-columns: 3.5rem 1fr;
   gap: 0.75rem;
   align-items: baseline;
   font-size: 0.95rem;
   line-height: 1.5;
 }
 
+/* TWEAK 3: Monospace font for labels = Engineering Aesthetic */
 .f-label {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   font-size: 0.75rem;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em; /* Open tracking for monospace */
   font-weight: 700;
   text-align: right;
-  padding-top: 0.15rem; /* Optical alignment with text */
+  padding-top: 0.2rem;
+  opacity: 0.9;
 }
 
-/* Pain Row Styling */
+/* Pain Row */
 .f-pain { 
-  color: #ef4444; /* Red-500 */
+  color: #f87171; /* Red-400 */
 }
 .feature-row:has(.f-pain) .f-content {
-  color: var(--gray-500);
-  text-decoration: line-through; /* Optional: Strike-through old way */
-  text-decoration-color: var(--gray-300);
+  color: #9ca3af; /* Gray-400 */
+  text-decoration: line-through;
+  text-decoration-color: #4b5563; /* Darker strikethrough line */
 }
 
-/* Fix Row Styling */
+/* Fix Row */
 .f-fix { 
-  color: #10b981; /* Emerald-500 */
+  color: #34d399; /* Emerald-400 */
 }
 .feature-row:has(.f-fix) .f-content {
-  color: var(--gray-900);
+  color: #ffffff; 
   font-weight: 500;
 }
 
-/* Technical Monospace for Specific Terms */
-/* You can apply this manually in HTML like <span class="code">PrivateLink</span> */
-.feature-row .code {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  font-size: 0.9em;
-  color: var(--accent-700);
-  background: var(--accent-50);
-  padding: 0.1rem 0.3rem;
-  border-radius: 4px;
+/* ==================================================================== */
+/* 15. PROOF OF SUCCESS: SYSTEM CONSOLE STYLE                           */
+/* ==================================================================== */
+
+/* Container for the whole "Console" look */
+.proof-console {
+  margin-top: 1.5rem;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  overflow: hidden; /* Clips the children to the border radius */
+  background-color: var(--bg-subtle, #f9fafb);
+}
+
+/* 1. Status Bar (Top) */
+.proof-status-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.5rem;
+  padding: 0.75rem 1rem;
+  background-color: #f1f5f9; /* Slate-100 */
+  border-bottom: 1px solid var(--gray-200);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
+  font-size: 0.75rem;
+  color: var(--gray-600);
+  letter-spacing: 0.05em;
+}
+
+.status-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #10b981; /* Emerald-500 */
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* "Live" pulsing animation */
+.status-dot.pulse {
+  box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  animation: statusPulse 2s infinite;
+}
+
+@keyframes statusPulse {
+  0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+  70% { box-shadow: 0 0 0 4px rgba(16, 185, 129, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+/* 2. Image Tweaks */
+.proof-console .proof-figure {
+  margin: 0; /* Remove default margins inside this container */
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.proof-console .proof-figure__img {
+  border-radius: 0; /* Remove rounded corners since it's inside the console */
+  box-shadow: none; /* Remove shadow, the container has the border */
+  display: block;
+}
+
+/* 3. Breakdown Grid (Bottom) */
+.proof-breakdown-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Slightly wider min-width */
+  gap: 2rem; /* More breathing room between columns */
+  padding: 2rem; /* More internal padding */
+  background-color: #ffffff;
+}
+
+.proof-point {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  /* The Fix: Strong top border aligns content perfectly */
+  border-top: 2px solid var(--gray-200); 
+  padding-top: 1rem;
+}
+
+.proof-num {
+  display: block;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
+  font-size: 0.75rem; /* Slightly larger for readability */
+  color: var(--accent-600);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.6rem;
+}
+
+.proof-point strong {
+  color: var(--gray-900);
+  display: block;
+  font-weight: 700;
+  font-size: 0.95rem; /* Distinct hierarchy */
+  margin-bottom: 0.35rem;
+}
+
+.proof-point p {
+  color: var(--gray-600);
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* Mobile Tweak: Stack vertically */
+@media (max-width: 600px) {
+  .proof-breakdown-grid {
+    grid-template-columns: 1fr; 
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
 }
