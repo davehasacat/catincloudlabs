@@ -2754,43 +2754,50 @@ figure, .card { overflow: hidden; }
 /* 3. Breakdown Grid (Bottom) */
 .proof-breakdown-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1.5rem;
-  padding: 1.5rem;
-  background-color: #fff;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Slightly wider min-width */
+  gap: 2rem; /* More breathing room between columns */
+  padding: 2rem; /* More internal padding */
+  background-color: #ffffff;
 }
 
 .proof-point {
   font-size: 0.9rem;
   line-height: 1.5;
+  /* The Fix: Strong top border aligns content perfectly */
+  border-top: 2px solid var(--gray-200); 
+  padding-top: 1rem;
 }
 
 .proof-num {
   display: block;
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
-  font-size: 0.7rem;
+  font-size: 0.75rem; /* Slightly larger for readability */
   color: var(--accent-600);
   font-weight: 700;
-  letter-spacing: 0.05em;
-  margin-bottom: 0.5rem;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.6rem;
 }
 
 .proof-point strong {
   color: var(--gray-900);
   display: block;
-  margin-bottom: 0.2rem;
+  font-weight: 700;
+  font-size: 0.95rem; /* Distinct hierarchy */
+  margin-bottom: 0.35rem;
 }
 
 .proof-point p {
   color: var(--gray-600);
   margin: 0;
-  font-size: 0.88rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
 }
 
-/* Mobile Tweak: Ensure status bar wraps nicely */
+/* Mobile Tweak: Stack vertically */
 @media (max-width: 600px) {
   .proof-breakdown-grid {
-    grid-template-columns: 1fr; /* Stack vertically on small screens */
-    gap: 1.25rem;
+    grid-template-columns: 1fr; 
+    gap: 1.5rem;
+    padding: 1.5rem;
   }
 }
