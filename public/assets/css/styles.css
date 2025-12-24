@@ -1409,12 +1409,11 @@ figure, .card { overflow: hidden; }
 }
 
 /* === MODIFIED: Center-align the subtitle and bridge text === */
-.chart-subtitle,
 .chart-bridge {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
-  max-width: 50ch;
+  max-width: 60ch;
   margin-bottom: 2rem;
 }
 
@@ -1422,6 +1421,9 @@ figure, .card { overflow: hidden; }
   margin: 0 0 0.75rem;
   font-size: 0.95rem;
   color: var(--text-muted);
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
   max-width: 60ch;
 }
 
