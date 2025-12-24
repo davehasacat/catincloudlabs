@@ -1126,8 +1126,12 @@ figure, .card { overflow: hidden; }
     transform 120ms ease;
 }
 
-/* Mobile: adjust zoom pill placement only on the architecture diagram */
-/* -- REMOVED OVERRIDE -- For vertical diagrams, bottom-right is safer than top-right */
+/* Specific override: Bottom-Left Zoom Pill for vertical diagram */
+#diagram-architecture .proof-zoom-pill {
+  right: auto;
+  left: 0.6rem;
+  bottom: 0.6rem;
+}
 
 /* On hover/focus, make it clear but still small */
 .proof-figure__button:hover .proof-zoom-pill,
@@ -1404,6 +1408,14 @@ figure, .card { overflow: hidden; }
   white-space: nowrap;
 }
 
+/* === MODIFIED: Center-align the subtitle and bridge text === */
+.chart-subtitle,
+.chart-bridge {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .chart-subtitle {
   margin: 0 0 0.75rem;
   font-size: 0.95rem;
@@ -1419,14 +1431,6 @@ figure, .card { overflow: hidden; }
   color: var(--text-muted);
   max-width: 60ch;
   margin-inline: auto;
-}
-
-/* === Center-align the subtitle and bridge text === */
-.chart-subtitle,
-.chart-bridge {
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 /* Bridge paragraph between diagrams and exports */
