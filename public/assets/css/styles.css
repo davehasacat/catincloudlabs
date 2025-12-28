@@ -2429,12 +2429,12 @@ figure, .card { overflow: hidden; }
 /* ==================================================================== */
 
 .callout-alert {
-  /* Cloud Theme: Using the site's defined blue variables */
+  /* Cloud Theme: Brand Blue (Restored) */
   background-color: var(--accent-50);   /* Very light blue tint */
   border-left: 4px solid var(--accent); /* Primary Brand Blue (#0ea5e9) */
-  color: var(--accent-900);             /* Deep Blue text for readability */
+  color: var(--accent-900);             /* Deep Blue text */
   
-  /* Keep existing layout styles */
+  /* Layout */
   padding: 1.25rem 1.5rem;
   margin-bottom: 2rem;
   border-radius: var(--radius-md);
@@ -2443,41 +2443,34 @@ figure, .card { overflow: hidden; }
   box-shadow: var(--shadow-sm);
 }
 
-/* OVERRIDE: Orange Theme (The standard "Year in Review" style) */
-/* This matches the HTML currently in projects.html */
-.callout-alert {
-  background-color: #fff7ed; /* Orange-50 */
-  border-left: 4px solid #f97316; /* Orange-500 */
-  color: #9a3412; /* Orange-900 */
-}
-
 .callout-alert-title {
   display: block;
-  color: #c2410c; /* Orange-700 */
+  color: var(--accent-700); /* Slightly darker blue for headline */
   font-weight: 700;
   margin-bottom: 0.35rem;
   font-size: 1.05rem;
   letter-spacing: -0.01em;
 }
 
-/* Reset for standard bold text inside the alert */
 .callout-alert strong {
   font-weight: 600;
   color: inherit;
   display: inline;
 }
 
-/* NEW: Style for links inside the alert */
+/* Links inside the alert */
 .callout-alert a {
-  color: inherit; /* Keep it dark orange */
+  color: var(--accent-700);
   text-decoration: underline;
   text-decoration-thickness: 2px;
   text-underline-offset: 2px;
   font-weight: 700;
   transition: color 0.2s ease;
 }
+
 .callout-alert a:hover {
-  color: #ea580c; /* Orange-600 */
+  color: var(--accent-900);
+  text-decoration-color: var(--accent);
 }
 
 /* Descriptive blurb under chart headers */
