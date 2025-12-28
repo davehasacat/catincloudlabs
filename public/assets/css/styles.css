@@ -2429,12 +2429,12 @@ figure, .card { overflow: hidden; }
 /* ==================================================================== */
 
 .callout-alert {
-  /* Cloud Theme: Using the site's defined blue variables */
+  /* Cloud Theme: Brand Blue (Restored) */
   background-color: var(--accent-50);   /* Very light blue tint */
   border-left: 4px solid var(--accent); /* Primary Brand Blue (#0ea5e9) */
-  color: var(--accent-900);             /* Deep Blue text for readability */
+  color: var(--accent-900);             /* Deep Blue text */
   
-  /* Keep existing layout styles */
+  /* Layout */
   padding: 1.25rem 1.5rem;
   margin-bottom: 2rem;
   border-radius: var(--radius-md);
@@ -2445,18 +2445,32 @@ figure, .card { overflow: hidden; }
 
 .callout-alert-title {
   display: block;
-  color: var(--accent-700); /* Slightly brighter deep blue for the headline */
+  color: var(--accent-700); /* Slightly darker blue for headline */
   font-weight: 700;
   margin-bottom: 0.35rem;
   font-size: 1.05rem;
   letter-spacing: -0.01em;
 }
 
-/* Reset for standard bold text inside the alert */
 .callout-alert strong {
   font-weight: 600;
-  color: inherit; /* Inherits the deep blue from parent */
+  color: inherit;
   display: inline;
+}
+
+/* Links inside the alert */
+.callout-alert a {
+  color: var(--accent-700);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 2px;
+  font-weight: 700;
+  transition: color 0.2s ease;
+}
+
+.callout-alert a:hover {
+  color: var(--accent-900);
+  text-decoration-color: var(--accent);
 }
 
 /* Descriptive blurb under chart headers */
@@ -2941,4 +2955,46 @@ figure, .card { overflow: hidden; }
     gap: 1.5rem;
     padding: 1.5rem;
   }
+}
+
+/* ==================================================================== */
+/* 16. LIVE SATELLITE UPDATES (catincloud.io Integration)               */
+/* ==================================================================== */
+
+/* "View Live" Badge for Chart Headers (Projects Page) */
+.snapshot-badge.view-live {
+  background-color: #10b981; /* Emerald-500 */
+  color: #ffffff;
+  text-decoration: none;
+  padding-right: 0.6rem; /* Extra padding for the arrow */
+  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.snapshot-badge.view-live:hover {
+  background-color: #059669; /* Emerald-600 */
+  transform: translateY(-1px);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+}
+
+/* Console Status Link (Home Page) */
+.status-link {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  transition: color 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+}
+
+.status-link:hover {
+  color: var(--accent-600); /* Brand blue on hover */
+  text-decoration: underline;
+}
+
+/* Utility to push the live link to the right side of the status bar */
+.push-right {
+  margin-left: auto;
 }
