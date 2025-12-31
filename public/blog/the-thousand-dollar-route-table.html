@@ -71,7 +71,7 @@
 
             <p>"Working" and "architected" are two very different things. While the NAT Gateway is the path of least resistance, it imposes a heavy tax on high-volume data.</p>
 
-            <p><strong>A single route table change saved CatInCloud Labs over $1,000 this year. Here is why "boring" networking decisions are the key to calm operations.</strong></p>
+            <p>A single route table change saved CatInCloud Labs over $1,000 this year. Here is why boring networking decisions are the key to calm operations.</p>
 
             <h3>The Context: 4TB of "Chaos" Data</h3>
 
@@ -90,24 +90,24 @@
             <p>S3 lives on the public internet. Even though it is an AWS service, it exists outside your Virtual Private Cloud (VPC). To get data from a private subnet to S3, traffic has to "leave" your network.</p>
 
             <p><strong>The Default Path (NAT Gateway):</strong></p>
-            <p>If I had routed this backfill through a standard NAT Gateway, AWS would charge a <strong>Data Processing Fee</strong> of roughly <strong>$0.045 per GB</strong>.</p>
+            <p>If I had routed this backfill through a standard NAT Gateway, AWS would charge a Data Processing Fee of roughly <strong>$0.045 per GB</strong>.</p>
             
             <div class="callout">
                 <p><strong>The Math:</strong></p>
                 <p>4,000 GB (4TB) x $0.045 = <strong>$180.00</strong></p>
             </div>
 
-            <p>That is $180 just to move the data <em>once</em>. If I re-process that data, move it to a "Clean" bucket, or run heavy queries that pull it back through the NAT, the cost doubles or triples. Combined with the hourly run rate of the gateway itself, this "lazy" configuration would cost the lab over <strong>$1,000/year</strong> for a service that provides zero additional value.</p>
+            <p>That is $180 just to move the data <em>once</em>. If I re-process that data, move it to a marts bucket, or run heavy queries that pull it back through the NAT, the cost doubles or triples. Combined with the hourly run rate of the gateway itself, this lazy configuration would cost the lab over <strong>$1,000/year</strong> for a service that provides zero additional value.</p>
 
             <h3>The Solution: The S3 Gateway Endpoint</h3>
 
-            <p>AWS offers a specialized resource for this exact problem: The <strong>VPC Gateway Endpoint</strong>.</p>
+            <p>AWS offers a specialized resource for this exact problem: the VPC Gateway Endpoint.</p>
             
             <p>Think of a Gateway Endpoint as a wormhole. Instead of routing traffic out to the public internet and back, it punches a hole directly from your VPC into S3, using the internal AWS backbone.</p>
 
             <ul>
                 <li><strong>Endpoint Type:</strong> Gateway (specifically <code>com.amazonaws.us-east-2.s3</code>)</li>
-                <li><strong>Cost:</strong> <strong>$0.00</strong> (Free).</li>
+                <li><strong>Cost:</strong> <strong>$0.00</strong></li>
                 <li><strong>Security:</strong> Traffic never leaves the private network.</li>
             </ul>
 
@@ -122,29 +122,29 @@
 
             <p><strong>The Configuration:</strong></p>
             <ol>
-                <li><strong>The Checkmark:</strong> Notice <code>vpce-00dab...</code> is selected. The type is <strong>Gateway</strong>.</li>
-                <li><strong>The Route Table:</strong> Unlike Interface Endpoints (which use ENIs and DNS), Gateway Endpoints operate at the <strong>Route Table</strong> level.</li>
-                <li><strong>The Result:</strong> Any traffic destined for S3 (<code>pl-63a54009</code>) is immediately routed to the Gateway Endpoint, bypassing the expensive NAT Gateway entirely.</li>
+                <li><strong>The Checkmark:</strong> Notice vpce-00dab... is selected. The type is Gateway.</li>
+                <li><strong>The Route Table:</strong> Unlike Interface Endpoints (which use ENIs and DNS), Gateway Endpoints operate at the route table level.</li>
+                <li><strong>The Result:</strong> Any traffic destined for S3 (pl-63a54009) is immediately routed to the Gateway Endpoint, bypassing the expensive NAT Gateway entirely.</li>
             </ol>
 
             <h3>The Nuance: When to Pay (Interface vs. Gateway)</h3>
             
-            <p>If you look closely at the screenshot above, you will see I am not a "Free Tier" absolutist. Below the S3 Gateway, there are several <strong>Interface Endpoints</strong> (Type: Interface) that I <em>do</em> pay for.</p>
+            <p>If you look closely at the screenshot above, you will see I am not a free tier absolutist. Below the S3 Gateway, there are several Interface Endpoints that I <em>do</em> pay for.</p>
 
             <ul>
-                <li><code>vpce-...secretsmanager</code></li>
-                <li><code>vpce-...ecr.api</code></li>
+                <li>vpce-...secretsmanager</li>
+                <li>vpce-...ecr.api</li>
             </ul>
 
             <p><strong>Why pay for these?</strong><br>
-            AWS does not offer free Gateway Endpoints for services like Secrets Manager or ECR. For these, I use <strong>Interface Endpoints</strong>.</p>
+            AWS does not offer free Gateway Endpoints for services like Secrets Manager or ECR. For these, I use Interface Endpoints.</p>
             
             <ul>
                 <li><strong>Cost:</strong> ~$7/month per endpoint.</li>
                 <li><strong>Value:</strong> It ensures my database credentials (Secrets Manager) and Docker images (ECR) never traverse the public internet.</li>
             </ul>
 
-            <p><strong>The Strategy:</strong> I pay for <strong>Security</strong> on low-volume control plane traffic. I refuse to pay for <strong>Transit</strong> on high-volume data plane traffic.</p>
+            <p><strong>The Strategy:</strong> I pay for <em>security</em> on low-volume control plane traffic. I refuse to pay for <em>transit</em> on high-volume data plane traffic.</p>
 
             <h3>Conclusion: Calm Architecture Doesn't Show Up on the Bill</h3>
 
