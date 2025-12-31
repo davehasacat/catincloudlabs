@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The $1,000 Route Table - CatInCloud Labs</title>
+
+  <meta name="description" content="How a single S3 Gateway Endpoint saved over $1,000/year. Why 'boring' networking decisions are critical for FinOps-aware data engineering." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://catincloudlabs.com/blog/the-1000-dollar-route-table" />
+
+  <meta property="og:title" content="The $1,000 Route Table" />
+  <meta property="og:description" content="The most dangerous phrase in cloud engineering is 'It works.' How I cut 90% of ingest costs with one config change." />
+  <meta property="og:image" content="https://catincloudlabs.com/assets/brand/social-card.v2.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" href="/assets/favicons/favicon.svg" type="image/svg+xml" />
+  <link rel="alternate icon" href="/assets/favicons/favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" href="/assets/favicons/favicon.png" />
+  <meta name="theme-color" content="#f3f4f6" />
+  <meta name="color-scheme" content="light" />
+
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+</head>
+
+<body class="page--blog-post">
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="/" aria-label="CatInCloud Labs">
+        <img src="/assets/brand/logo-wordmark-light.svg" alt="CatInCloud Labs" height="32" />
+      </a>
+      <nav class="menu" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/projects">Projects</a>
+        <a href="/services">Services</a>
+        <a href="/blog" class="button ghost active" aria-current="page">Blog</a>
+        <a href="/contact#contact-form" class="button ghost">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container hero-simple">
+        <div class="stack stack--hero">
+          <div class="kicker">
+            <a href="/blog">&larr; Engineering Log</a>
+          </div>
+          <h1 class="title">The $1,000 Route Table</h1>
+          <p class="subtitle">
+            Dec 24, 2025 · FinOps
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="stack stack--section">
+          
+          <article class="card card--narrow article-body">
+            
+            <h3>The most dangerous phrase in cloud engineering is "It works."</h3>
+
+            <p>The fastest way to wire a private subnet to S3 is a NAT Gateway. The connectivity is instant. The code runs. The Airflow DAGs turn green.</p>
+            
+            <p>It is also the fastest way to chew right through your budget.</p>
+
+            <p>"Working" and "architected" are two very different things. While the NAT Gateway is the path of least resistance, it imposes a heavy tax on high-volume data.</p>
+
+            <p><strong>A single route table change saved CatInCloud Labs over $1,000 this year. Here is why "boring" networking decisions are the key to calm operations.</strong></p>
+
+            <h3>The Context: 4TB of "Chaos" Data</h3>
+
+            <p>I recently expanded the CatInCloud platform to backfill the full history of the 2025 stock market. I wasn't just grabbing daily closes; I was ingesting the entire options chain for the most volatile tickers in the market.</p>
+
+            <ul>
+                <li><strong>Volume:</strong> 1.99 Billion options contracts.</li>
+                <li><strong>Format:</strong> Raw, uncompressed JSON.</li>
+                <li><strong>Total Size:</strong> ~4 Terabytes.</li>
+            </ul>
+
+            <p>When you are moving data at this scale, the "plumbing" of your network stops being a minor detail and becomes a major line item on your P&L.</p>
+
+            <h3>The Trap: The NAT Gateway Tax</h3>
+
+            <p>S3 lives on the public internet. Even though it is an AWS service, it exists outside your Virtual Private Cloud (VPC). To get data from a private subnet to S3, traffic has to "leave" your network.</p>
+
+            <p><strong>The Default Path (NAT Gateway):</strong></p>
+            <p>If I had routed this backfill through a standard NAT Gateway, AWS would charge a <strong>Data Processing Fee</strong> of roughly <strong>$0.045 per GB</strong>.</p>
+            
+            <div class="callout">
+                <p><strong>The Math:</strong></p>
+                <p>4,000 GB (4TB) x $0.045 = <strong>$180.00</strong></p>
+            </div>
+
+            <p>That is $180 just to move the data <em>once</em>. If I re-process that data, move it to a "Clean" bucket, or run heavy queries that pull it back through the NAT, the cost doubles or triples. Combined with the hourly run rate of the gateway itself, this "lazy" configuration would cost the lab over <strong>$1,000/year</strong> for a service that provides zero additional value.</p>
+
+            <h3>The Solution: The S3 Gateway Endpoint</h3>
+
+            <p>AWS offers a specialized resource for this exact problem: The <strong>VPC Gateway Endpoint</strong>.</p>
+            
+            <p>Think of a Gateway Endpoint as a wormhole. Instead of routing traffic out to the public internet and back, it punches a hole directly from your VPC into S3, using the internal AWS backbone.</p>
+
+            <ul>
+                <li><strong>Endpoint Type:</strong> Gateway (specifically <code>com.amazonaws.us-east-2.s3</code>)</li>
+                <li><strong>Cost:</strong> <strong>$0.00</strong> (Free).</li>
+                <li><strong>Security:</strong> Traffic never leaves the private network.</li>
+            </ul>
+
+            <p>The screenshot below is the actual production configuration for the CatInCloud VPC.</p>
+
+            <img 
+                src="/assets/images/blog/s3-gateway-endpoint.jpg" 
+                alt="AWS Console Screenshot showing Gateway Endpoint Configuration" 
+                class="article-img diagram-clean"
+                loading="lazy"
+            >
+
+            <p><strong>The Configuration:</strong></p>
+            <ol>
+                <li><strong>The Checkmark:</strong> Notice <code>vpce-00dab...</code> is selected. The type is <strong>Gateway</strong>.</li>
+                <li><strong>The Route Table:</strong> Unlike Interface Endpoints (which use ENIs and DNS), Gateway Endpoints operate at the <strong>Route Table</strong> level.</li>
+                <li><strong>The Result:</strong> Any traffic destined for S3 (<code>pl-63a54009</code>) is immediately routed to the Gateway Endpoint, bypassing the expensive NAT Gateway entirely.</li>
+            </ol>
+
+            <h3>The Nuance: When to Pay (Interface vs. Gateway)</h3>
+            
+            <p>If you look closely at the screenshot above, you will see I am not a "Free Tier" absolutist. Below the S3 Gateway, there are several <strong>Interface Endpoints</strong> (Type: Interface) that I <em>do</em> pay for.</p>
+
+            <ul>
+                <li><code>vpce-...secretsmanager</code></li>
+                <li><code>vpce-...ecr.api</code></li>
+            </ul>
+
+            <p><strong>Why pay for these?</strong><br>
+            AWS does not offer free Gateway Endpoints for services like Secrets Manager or ECR. For these, I use <strong>Interface Endpoints</strong>.</p>
+            
+            <ul>
+                <li><strong>Cost:</strong> ~$7/month per endpoint.</li>
+                <li><strong>Value:</strong> It ensures my database credentials (Secrets Manager) and Docker images (ECR) never traverse the public internet.</li>
+            </ul>
+
+            <p><strong>The Strategy:</strong> I pay for <strong>Security</strong> on low-volume control plane traffic. I refuse to pay for <strong>Transit</strong> on high-volume data plane traffic.</p>
+
+            <h3>Conclusion: Calm Architecture Doesn't Show Up on the Bill</h3>
+
+            <p>Reliability isn't just about uptime. A system that scales technically but breaks financially is not a reliable system.</p>
+
+            <p>By adding a single S3 Gateway Endpoint and updating the route tables, the CatInCloud platform ingests massive market volatility without incurring volatility in the AWS bill.</p>
+
+            <div class="pro-tip">
+                <h3>The Takeaway</h3>
+                <p>Check your route tables today. If you see <code>0.0.0.0/0 -> nat-xxxxx</code> on your private subnets, and you are heavy users of S3, you are likely burning budget that could be spent on something better.</p>
+                <p>Secure doesn't have to mean expensive. Sometimes, the best engineering decision is simply the one that costs $0.00. 🐈‍⬛</p>
+            </div>
+
+          </article>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container inner center">
+      <small>© <span id="y"></span> CatInCloud Labs - DaveHasACat LLC</small>
+      <div class="footer-links">
+        <a href="/about">About</a> ·
+        <a href="/security">Security</a> ·
+        <a href="/privacy">Privacy</a> ·
+        <a href="/terms">Terms</a> ·
+        <a href="/contact#contact-form">Contact</a>
+      </div>
+    </div>
+    <script src="/assets/js/footer-year-theme.js" defer></script>
+  </footer>
+</body>
+</html>
