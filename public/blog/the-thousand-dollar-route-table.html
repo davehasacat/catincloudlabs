@@ -83,11 +83,11 @@
                 <li><strong>Total Size:</strong> ~4 Terabytes.</li>
             </ul>
 
-            <p>When you are moving data at this scale, the "plumbing" of your network stops being a minor detail and becomes a major line item on your P&L.</p>
+            <p>When you are moving data at this scale, the plumbing of your network stops being a minor detail and becomes a major line item on your P&L.</p>
 
             <h3>The Trap: The NAT Gateway Tax</h3>
 
-            <p>S3 lives on the public internet. Even though it is an AWS service, it exists outside your Virtual Private Cloud (VPC). To get data from a private subnet to S3, traffic has to "leave" your network.</p>
+            <p>S3 lives on the public internet. Even though it is an AWS service, it exists outside your Virtual Private Cloud (VPC). To get data from a private subnet to S3, traffic has to leave your network.</p>
 
             <p><strong>The Default Path (NAT Gateway):</strong></p>
             <p>If I had routed this backfill through a standard NAT Gateway, AWS would charge a Data Processing Fee of roughly <strong>$0.045 per GB</strong>.</p>
@@ -97,7 +97,7 @@
                 <p>4,000 GB (4TB) x $0.045 = <strong>$180.00</strong></p>
             </div>
 
-            <p>That is $180 just to move the data <em>once</em>. If I re-process that data, move it to a marts bucket, or run heavy queries that pull it back through the NAT, the cost doubles or triples. Combined with the hourly run rate of the gateway itself, this lazy configuration would cost the lab over <strong>$1,000/year</strong> for a service that provides zero additional value.</p>
+            <p>That is $180 just to move the data <em>once</em>. If I re-process that data, move it to a marts bucket, or run heavy queries that pull it back through the NAT, the cost doubles or triples. Combined with the hourly run rate of the gateway itself, this configuration would cost the lab over <strong>$1,000/year</strong> for a service that provides zero additional value.</p>
 
             <h3>The Solution: The S3 Gateway Endpoint</h3>
 
