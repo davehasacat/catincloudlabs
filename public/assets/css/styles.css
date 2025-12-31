@@ -241,6 +241,8 @@ a:focus-visible,
 .nav a.brand { font-weight: 700; color: var(--gray-900); }
 .nav .menu { display: flex; gap: 1rem; }
 .nav .menu a { color: var(--gray-700); padding: .5rem .6rem; border-radius: 8px; }
+
+/* STANDARD NAV LINKS HOVER */
 .nav .menu a:hover { background: var(--gray-100); }
 
 /* Nav: visible active state + keyboard focus */
@@ -408,29 +410,31 @@ a:focus-visible,
 .button.ghost { background: white; border-color: var(--gray-200); color: var(--link); }
 .button.ghost:hover { border-color: var(--gray-300); box-shadow: var(--shadow-sm); color: var(--link-hover); }
 
-/* --- NEW: SPECIAL LAUNCH APP BUTTON --- */
+/* --- NEW: LAUNCH APP BUTTON --- */
+/* Target specifically to ensure it has correct padding/styles in nav */
+.nav .menu a.button.special,
 .button.special {
-  /* Background: Strong Brand Blue */
-  background: var(--accent-600);
-  
-  /* Text: Force White (Overrides .nav .menu a gray color) */
-  color: #ffffff !important;
-  
+  background: var(--accent-600); 
+  color: #ffffff !important; /* Force white text over generic nav link color */
   border: 1px solid var(--accent-600);
   font-weight: 600;
   box-shadow: var(--shadow-sm);
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
+  
+  /* Explicitly reset padding/radius to button standards */
+  padding: 0.7rem 1rem;
+  border-radius: var(--radius-md);
 }
 
+/* SPECIFIC OVERRIDE for Hover in Nav */
+/* This chain (.nav .menu a.button.special:hover) wins against (.nav .menu a:hover) */
+.nav .menu a.button.special:hover,
 .button.special:hover {
-  background: var(--accent-700); /* Darker blue on hover */
+  background: var(--accent-700) !important; /* Force Dark Blue, override Gray-100 */
   border-color: var(--accent-700);
-  
-  /* Ensure text stays white on hover */
-  color: #ffffff !important;
-  
+  color: #ffffff !important; /* Keep white text */
   transform: translateY(-1px);
   box-shadow: var(--shadow-md);
   text-decoration: none;
@@ -446,7 +450,7 @@ a:focus-visible,
 @media (max-width: 640px) {
   .nav .menu a.button.special {
     background: var(--gray-100) !important; /* Softer gray background on mobile */
-    color: var(--gray-900) !important;
+    color: var(--gray-900) !important; /* Reset to dark text for mobile contrast */
     border: 1px solid var(--gray-300) !important;
     padding: 0.35rem 0.85rem !important; /* Force padding back */
     border-radius: 999px;
