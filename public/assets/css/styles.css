@@ -410,9 +410,10 @@ a:focus-visible,
 
 /* --- NEW: SPECIAL LAUNCH APP BUTTON --- */
 .button.special {
-  background: var(--gray-900); /* Black/Dark Gray */
-  color: #fff; /* White text */
-  border: 1px solid var(--gray-900);
+  /* CHANGED: Switched from Black (gray-900) to Strong Blue (accent-600) */
+  background: var(--accent-600); 
+  color: #fff; 
+  border: 1px solid var(--accent-600);
   font-weight: 600;
   box-shadow: var(--shadow-sm);
   display: inline-flex;
@@ -421,8 +422,8 @@ a:focus-visible,
 }
 
 .button.special:hover {
-  background: var(--accent-600); /* Brand Blue */
-  border-color: var(--accent-600);
+  background: var(--accent-700); /* Darker blue on hover */
+  border-color: var(--accent-700);
   color: #fff;
   transform: translateY(-1px);
   box-shadow: var(--shadow-md);
@@ -430,8 +431,8 @@ a:focus-visible,
 }
 
 .button.special:active {
-  background: var(--accent-700);
-  border-color: var(--accent-700);
+  background: var(--accent-800);
+  border-color: var(--accent-800);
   transform: translateY(0);
 }
 
