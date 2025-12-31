@@ -255,10 +255,7 @@ a:focus-visible,
   border-radius: 8px;
 }
 
-/* MOBILE HEADER: LEFT-ALIGNED LOGO + FULL-WIDTH NAV STRIP
-   Top Row: Logo (Left) ......... Contact (Right)
-   Btm Row: [About] [Projects] [Services] [Blog] (Justified)
-*/
+/* MOBILE HEADER: LEFT-ALIGNED LOGO + FULL-WIDTH NAV STRIP */
 @media (max-width: 640px) {
   /* 1. Container */
   .header .nav {
@@ -301,22 +298,14 @@ a:focus-visible,
     flex-wrap: nowrap;
     overflow-x: auto;
     width: 100%;
-    
-    /* "space-between" fills the width, removing side white space. 
-       "center" clumps them in the middle. 
-       space-between is best for that "filled" app feel. */
     justify-content: space-between; 
-    
-    /* Layout tweaks */
-    gap: 0; /* Let space-between handle the gaps */
+    gap: 0; 
     margin-left: 0;
     margin-right: 0;
-    padding-left: 0.2rem;  /* Tiny buffer from edge */
+    padding-left: 0.2rem; 
     padding-right: 0.2rem; 
     padding-bottom: 0.85rem;
     padding-top: 0.35rem; 
-    
-    /* Scroll polish (hidden but functional if text gets huge) */
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
   }
@@ -333,7 +322,7 @@ a:focus-visible,
   /* 6. Style the Links */
   .menu a {
     white-space: nowrap;
-    font-size: 1rem; /* Increased size to fill space better (16px) */
+    font-size: 1rem; 
     color: var(--text-muted);
     font-weight: 500;
     padding: 0.25rem 0;
@@ -418,6 +407,48 @@ a:focus-visible,
 .button.primary:active { background: var(--primary-pressed); transform: translateY(0); }
 .button.ghost { background: white; border-color: var(--gray-200); color: var(--link); }
 .button.ghost:hover { border-color: var(--gray-300); box-shadow: var(--shadow-sm); color: var(--link-hover); }
+
+/* --- NEW: SPECIAL LAUNCH APP BUTTON --- */
+.button.special {
+  background: var(--gray-900); /* Black/Dark Gray */
+  color: #fff; /* White text */
+  border: 1px solid var(--gray-900);
+  font-weight: 600;
+  box-shadow: var(--shadow-sm);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.button.special:hover {
+  background: var(--accent-600); /* Brand Blue */
+  border-color: var(--accent-600);
+  color: #fff;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+  text-decoration: none;
+}
+
+.button.special:active {
+  background: var(--accent-700);
+  border-color: var(--accent-700);
+  transform: translateY(0);
+}
+
+/* Mobile Nav Tweak: Make the 'special' button stand out in the scrollable list */
+@media (max-width: 640px) {
+  .nav .menu a.button.special {
+    background: var(--gray-100) !important; /* Softer gray background on mobile */
+    color: var(--gray-900) !important;
+    border: 1px solid var(--gray-300) !important;
+    padding: 0.35rem 0.85rem !important; /* Force padding back */
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-left: 0.5rem; /* Separation from text links */
+    box-shadow: none;
+  }
+}
 
 /* Generic CTA buttons (hero, etc.) */
 .ci-btn {
