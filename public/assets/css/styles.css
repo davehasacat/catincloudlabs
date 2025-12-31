@@ -410,9 +410,12 @@ a:focus-visible,
 
 /* --- NEW: SPECIAL LAUNCH APP BUTTON --- */
 .button.special {
-  /* CHANGED: Switched from Black (gray-900) to Strong Blue (accent-600) */
-  background: var(--accent-600); 
-  color: #fff; 
+  /* Background: Strong Brand Blue */
+  background: var(--accent-600);
+  
+  /* Text: Force White (Overrides .nav .menu a gray color) */
+  color: #ffffff !important;
+  
   border: 1px solid var(--accent-600);
   font-weight: 600;
   box-shadow: var(--shadow-sm);
@@ -424,7 +427,10 @@ a:focus-visible,
 .button.special:hover {
   background: var(--accent-700); /* Darker blue on hover */
   border-color: var(--accent-700);
-  color: #fff;
+  
+  /* Ensure text stays white on hover */
+  color: #ffffff !important;
+  
   transform: translateY(-1px);
   box-shadow: var(--shadow-md);
   text-decoration: none;
